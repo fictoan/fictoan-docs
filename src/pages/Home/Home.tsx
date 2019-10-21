@@ -137,7 +137,7 @@ class Home extends PureComponent {
                     </Portion>
 
                     <Portion desktopWidth="two-third">
-                        
+
                     </Portion>
                 </Row>
             </section>
@@ -146,3 +146,4 @@ class Home extends PureComponent {
 }
 
 export default Home;
+
