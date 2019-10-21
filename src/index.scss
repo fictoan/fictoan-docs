@@ -1,0 +1,87 @@
+// @import "./pages/ProductCollect/ProductCollect";
+
+//  Import and transpile all the necessary files into
+//  CSS in a particular order.
+
+//  Normalize first ///////////////////////////////////////////////////////////
+@import "~reactised-fictoan/styles/vendor/normalize";
+
+
+//  Variables next ////////////////////////////////////////////////////////////
+//  Default variables
+@import "~reactised-fictoan/styles/theme/ff-variables";
+
+
+//  Variables of current project - rename accordingly
+//  THIS WILL OVER-RIDE ASSIGNMENTS IN ff-theme
+//  PUT YOUR CUSTOM VARIABLES HERE
+@import "~ffs/variables-setu";
+@import "assets/styles/variables-this-project";
+
+//  Variable assignments
+@import "~reactised-fictoan/styles/theme/ff-theme";
+
+
+//  The meat of the matter ////////////////////////////////////////////////////
+//  Opinionated baseline rules
+@import "~reactised-fictoan/styles/base/ff-reset";
+
+//  Basics
+@import "~reactised-fictoan/styles/base/ff-layout";
+
+@import "~reactised-fictoan/components/Row/Row";
+@import "~reactised-fictoan/components/Portion/Portion";
+
+@import "~reactised-fictoan/styles/base/ff-utilities";
+@import "~reactised-fictoan/styles/base/ff-responsive";
+
+@import "~reactised-fictoan/styles/design/ff-colours";
+@import "~reactised-fictoan/styles/design/ff-typography";
+
+//  Forms
+@import "~reactised-fictoan/styles/form/ff-form";
+@import "~reactised-fictoan/components/Form/Form";
+@import "~reactised-fictoan/components/Form/FormUnit/FormUnit";
+@import "~reactised-fictoan/components/Form/InputLabel/InputLabel";
+@import "~reactised-fictoan/components/Form/InputField/InputField";
+@import "~reactised-fictoan/components/Form/TextArea/TextArea";
+@import "~reactised-fictoan/components/Form/FormGroup/FormGroup";
+@import "~reactised-fictoan/components/Form/RadioGroup/RadioButton";
+
+@import "~reactised-fictoan/components/Button/Button";
+@import "~reactised-fictoan/components/HRule/HRule";
+@import "~reactised-fictoan/components/Table/Table";
+
+@import "~reactised-fictoan/components/SidebarWrapper/SidebarWrapper";
+@import "~reactised-fictoan/components/SidebarWrapper/SidebarHeader/SidebarHeader";
+@import "~reactised-fictoan/components/SidebarWrapper/SidebarItem/SidebarItem";
+@import "~reactised-fictoan/components/SidebarWrapper/SidebarItemIcon/SidebarItemIcon";
+@import "~reactised-fictoan/components/SidebarWrapper/SidebarItemText/SidebarItemText";
+@import "~reactised-fictoan/components/ContentWrapper/ContentWrapper";
+
+//  Components
+// @import "~reactised-fictoan/styles/components/ff-header";
+// @import "~reactised-fictoan/styles/components/ff-sidebar";
+
+@import "~reactised-fictoan/components/Card/Card";
+
+@import "~reactised-fictoan/styles/components/ff-table";
+// @import "~reactised-fictoan/styles/components/ff-tabs";
+// @import "~reactised-fictoan/styles/components/ff-modal";
+
+//  Code styles
+@import "~reactised-fictoan/styles/design/ff-code";
+
+
+//  Other small plugins ///////////////////////////////////////////////////////
+
+
+//  Setu-specific /////////////////////////////////////////////////////////////
+@import "~ffs/styles-setu";
+@import "~ffs/code-setu";
+
+
+//  Project-specific styling //////////////////////////////////////////////////
+//  PUT YOUR STYLE FILE HERE
+@import "assets/styles/styles-this-project";
+
