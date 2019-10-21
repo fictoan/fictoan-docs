@@ -4148,6 +4148,10 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
+"ffs@git+https://setu:F89jY-WAsW6qg8EUdWJC@gitlab.com/brokentusk/scaffold/ffs#0.1.5":
+  version "0.0.0"
+  resolved "git+https://setu:F89jY-WAsW6qg8EUdWJC@gitlab.com/brokentusk/scaffold/ffs#bc99c9583106ecda52a69f1204cd3337c4db21c0"
+
 figgy-pudding@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
@@ -8347,6 +8351,10 @@ react@^16.10.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
+
+"reactised-fictoan@git+https://f3b3df289bff16ec09ce5aa7de04fdeb5cce4d83:x-oauth-basic@github.com/sujan-s/reactised-fictoan.git#0.3.24":
+  version "0.0.0"
+  resolved "git+https://f3b3df289bff16ec09ce5aa7de04fdeb5cce4d83:x-oauth-basic@github.com/sujan-s/reactised-fictoan.git#4b3db6bba11634a1c829b3734112f428ec5cd375"
 
 read-pkg-up@^2.0.0:
   version "2.0.0"
