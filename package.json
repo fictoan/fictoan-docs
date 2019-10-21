@@ -8,6 +8,7 @@
     "@types/react": "16.9.9",
     "@types/react-dom": "16.9.2",
     "ffs": "git+https://setu:F89jY-WAsW6qg8EUdWJC@gitlab.com/brokentusk/scaffold/ffs#0.1.5",
+    "node-sass": "^4.12.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0",
