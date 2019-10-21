@@ -7,10 +7,12 @@
     "@types/node": "12.11.1",
     "@types/react": "16.9.9",
     "@types/react-dom": "16.9.2",
+    "@types/react-router-dom": "^5.1.0",
     "ffs": "git+https://setu:F89jY-WAsW6qg8EUdWJC@gitlab.com/brokentusk/scaffold/ffs#0.1.5",
     "node-sass": "^4.12.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "reactised-fictoan": "git+https://f3b3df289bff16ec09ce5aa7de04fdeb5cce4d83:x-oauth-basic@github.com/sujan-s/reactised-fictoan.git#0.3.24",
     "typescript": "3.6.4"
