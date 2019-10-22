@@ -15,8 +15,7 @@
 //  Variables of current project - rename accordingly
 //  THIS WILL OVER-RIDE ASSIGNMENTS IN ff-theme
 //  PUT YOUR CUSTOM VARIABLES HERE
-@import "~ffs/variables-setu";
-@import "assets/styles/variables-this-project";
+@import "assets/styles/variables-rf-docs";
 
 //  Variable assignments
 @import "~reactised-fictoan/dist/styles/theme/ff-theme";
@@ -76,12 +75,7 @@
 //  Other small plugins ///////////////////////////////////////////////////////
 
 
-//  Setu-specific /////////////////////////////////////////////////////////////
-@import "~ffs/styles-setu";
-@import "~ffs/code-setu";
-
-
 //  Project-specific styling //////////////////////////////////////////////////
 //  PUT YOUR STYLE FILE HERE
-@import "assets/styles/styles-this-project";
+@import "assets/styles/styles-rf-docs";
 

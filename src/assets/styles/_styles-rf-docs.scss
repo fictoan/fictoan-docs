@@ -1,0 +1,52 @@
+@font-face {
+    font-family : "Space Grotesk";
+    font-weight : 400;
+    font-style  : normal;
+    src         : url('../fonts/SpaceGrotesk-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family : "Space Grotesk";
+    font-weight : 600;
+    font-style  : normal;
+    src         : url('../fonts/SpaceGrotesk-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family : "Space Mono";
+    font-weight : 400;
+    font-style  : normal;
+    src         : url('../fonts/SpaceMono-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family : "Space Mono";
+    font-weight : 600;
+    font-style  : normal;
+    src         : url('../fonts/SpaceMono-Bold.woff') format('woff');
+}
+
+
+//  TRANSITIONS  //////////////////////////////////////////////////////////////
+.fade-enter { opacity : 0.01; }
+
+.fade-enter.fade-enter-active {
+    opacity    : 1;
+    transition : opacity 300ms ease-in;
+}
+
+.fade-exit { opacity : 1; }
+
+.fade-exit.fade-exit-active {
+    opacity    : 0.01;
+    transition : opacity 300ms ease-in;
+}
+
+div.transition-group { position : relative; }
+
+article { min-height : 100vh; }
+
+.sidebar-wrapper a.active {
+    display : inline-grid;
+    width   : 100%;
+}
