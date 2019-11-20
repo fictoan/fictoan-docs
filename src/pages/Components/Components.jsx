@@ -1,9 +1,9 @@
 import React from "react";
-import { Portion, Row } from "reactised-fictoan";
+import { Row, Portion } from "reactised-fictoan";
 
-class Typography extends React.PureComponent {
+class Components extends React.PureComponent {
     componentDidMount() {
-        document.title = "Typography — FICTOAN";
+        document.title = "Components — FICTOAN";
 
         window.scrollTo(0, 0);
     }
@@ -86,4 +86,4 @@ class Typography extends React.PureComponent {
     }
 }
 
-export default Typography;
+export default Components;

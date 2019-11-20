@@ -1,5 +1,5 @@
 import React from "react";
-import { HashLink as Link } from "react-router-hash-link";
+import { NavLink } from "react-router-dom";
 
 import {
     SidebarWrapper,
@@ -40,23 +40,23 @@ class Sidebar extends React.PureComponent {
         return (
             <SidebarWrapper className={this.state.collapsed ? "collapsed" : ""}>
                 <SidebarHeader onClick={this.headerOnClick}>
-                    <h4 className="header-logo">FICTOAN</h4>
+                    <h4 className="header-logo">R–F</h4>
                     <h5 className="header-icon">RF</h5>
                 </SidebarHeader>
 
-                <Link exact to="/">
+                <NavLink exact to="/">
                     <SidebarItem>
                         <SidebarItemIcon />
                         <SidebarItemText linkText="Home" />
                     </SidebarItem>
-                </Link>
+                </NavLink>
 
-                <Link exact to="/getting-started">
+                <NavLink exact to="/getting-started">
                     <SidebarItem>
                         <SidebarItemIcon />
                         <SidebarItemText linkText="Getting started" />
                     </SidebarItem>
-                </Link>
+                </NavLink>
 
                 <details open>
                     <summary>
@@ -67,56 +67,88 @@ class Sidebar extends React.PureComponent {
                     </summary>
 
                     <SublinkGroup>
-                        <Link scroll={el => scrollWithOffset(el, 80)} smooth to="/layout">
+                        <NavLink scroll={el => scrollWithOffset(el, 80)} smooth to="/layout">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Setup" />
                             </SidebarItem>
-                        </Link>
+                        </NavLink>
 
-                        <Link scroll={el => scrollWithOffset(el, 80)} smooth to="/layout#add-content">
+                        <NavLink scroll={el => scrollWithOffset(el, 80)} smooth to="/layout#add-content">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Add content" />
                             </SidebarItem>
-                        </Link>
+                        </NavLink>
 
-                        <Link scroll={el => scrollWithOffset(el, 20)} smooth to="/layout#responsiveness">
+                        <NavLink scroll={el => scrollWithOffset(el, 20)} smooth to="/layout#responsiveness">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Responsiveness" />
                             </SidebarItem>
-                        </Link>
+                        </NavLink>
 
-                        <Link scroll={el => scrollWithOffset(el, 80)} smooth to="/layout#visibility">
+                        <NavLink scroll={el => scrollWithOffset(el, 80)} smooth to="/layout#visibility">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Visibility" />
                             </SidebarItem>
-                        </Link>
+                        </NavLink>
 
-                        <Link scroll={el => scrollWithOffset(el, 80)} smooth to="/layout#content-padding">
+                        <NavLink scroll={el => scrollWithOffset(el, 80)} smooth to="/layout#content-padding">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Content padding" />
                             </SidebarItem>
-                        </Link>
+                        </NavLink>
 
-                        <Link scroll={el => scrollWithOffset(el, 80)} smooth to="/layout#gutter-sizing">
+                        <NavLink scroll={el => scrollWithOffset(el, 80)} smooth to="/layout#gutter-sizing">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Gutter sizing" />
                             </SidebarItem>
-                        </Link>
+                        </NavLink>
                     </SublinkGroup>
                 </details>
 
-                <Link exact to="/typography">
+                <NavLink exact to="/typography">
                     <SidebarItem>
                         <SidebarItemIcon />
                         <SidebarItemText linkText="Typography" />
                     </SidebarItem>
-                </Link>
+                </NavLink>
+
+                <NavLink exact to="/colour">
+                    <SidebarItem>
+                        <SidebarItemIcon />
+                        <SidebarItemText linkText="Colour" />
+                    </SidebarItem>
+                </NavLink>
+
+                <NavLink exact to="/form">
+                    <SidebarItem>
+                        <SidebarItemIcon />
+                        <SidebarItemText linkText="Form" />
+                    </SidebarItem>
+                </NavLink>
+
+                <details>
+                    <summary>
+                        <SidebarItem>
+                            <SidebarItemIcon />
+                            <SidebarItemText linkText="Components" />
+                        </SidebarItem>
+                    </summary>
+
+                    <SublinkGroup>
+                        <NavLink scroll={el => scrollWithOffset(el, 80)} smooth to="/layout">
+                            <SidebarItem>
+                                <SidebarItemIcon />
+                                <SidebarItemText className="sidebar-sublink" linkText="Notification" />
+                            </SidebarItem>
+                        </NavLink>
+                    </SublinkGroup>
+                </details>
             </SidebarWrapper>
         );
     }
