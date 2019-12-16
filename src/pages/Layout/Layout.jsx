@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 
-import { Row, Portion, HRule } from "reactised-fictoan";
+import { Row, Portion, HRule, BaseComponent, Heading } from "reactised-fictoan";
 
 // {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
 // {/*   SAMPLE CODES  */}
@@ -9,15 +10,15 @@ import { Row, Portion, HRule } from "reactised-fictoan";
 //  Code sample 01 ========================================================================================
 const sampleCode1 = `
 <Row>
-    <Portion desktopWidth="4/24">
+    <Portion desktopSpan="4/24">
         Some content
     </Portion>
     
-    <Portion desktopWidth="8/24">
+    <Portion desktopSpan="8/24">
         Some content
     </Portion>
     
-    <Portion desktopWidth="12/24">
+    <Portion desktopSpan="12/24">
         Some content
     </Portion>
 </Row>
@@ -26,20 +27,20 @@ const sampleCode1 = `
 //  Code sample 02 ========================================================================================
 const sampleCode2 = `
 <Row>
-    <Portion desktopWidth="2/24" />
+    <Portion desktopSpan="2" />
 
-    <Portion desktopWidth="five-sixth" />
+    <Portion desktopSpan="five-sixth" />
 
-    <Portion desktopWidth="9/24" />    
+    <Portion desktopSpan="9" />    
 
-    <Portion desktopWidth="eleven-twelfth" />
+    <Portion desktopSpan="eleven-twelfth" />
 </Row>
 `;
 
 //  Code sample 03a ========================================================================================
 const sampleCode3a = `
 <Row>
-    <Portion desktopWidth="one-sixth" tabLSWidth="8/24" tabPTWidth="half" mobileWidth="24/24" />
+    <Portion desktopSpan="one-sixth" tabLSWidth="8/24" tabPTWidth="half" mobileWidth="24/24" />
 </Row>
 `;
 
@@ -136,10 +137,12 @@ class Layout extends React.PureComponent {
 
     render() {
         return (
-            <article id="page-layout">
-                <Row sidePadding="large" className="margin-top-small margin-bottom-small">
+            <BaseComponent Element="article" id="page-layout">
+                <Row sidePadding="large" marginTop="small" marginBottom="small">
                     <Portion>
-                        <h2 className="text-hue">Layout</h2>
+                        <Heading type="h2" textColor="hue">
+                            Layout
+                        </Heading>
                     </Portion>
                 </Row>
 
@@ -147,7 +150,7 @@ class Layout extends React.PureComponent {
                 {/*   SETTING IT UP  */}
                 {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
                 <section id="setup">
-                    <Row sidePadding="large" className="margin-top-medium">
+                    <Row sidePadding="large" marginTop="medium">
                         <Portion>
                             <h4>Setting it up</h4>
                         </Portion>
@@ -170,76 +173,76 @@ class Layout extends React.PureComponent {
 
                     <div className="side-padding-tiny">
                         <Row bgColor="slate-20">
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">1</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">2</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">3</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">4</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">5</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">6</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">7</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">8</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">9</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">10</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">11</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">12</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">13</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">14</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">15</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">16</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">17</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">18</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">19</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">20</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">21</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">22</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">23</p>
                             </Portion>
-                            <Portion desktopWidth="1/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="1/24" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">24</p>
                             </Portion>
                         </Row>
@@ -284,20 +287,20 @@ class Layout extends React.PureComponent {
                         </Portion>
                     </Row>
 
-                    <div className="side-padding-large">
+                    <div className="side-padding-tiny">
                         <Row
                             bgColor="slate-20"
                             className="retain-layout-on-tab-ls retain-layout-on-tab-pt retain-layout-on-mobile"
                         >
-                            <Portion desktopWidth="4/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="4" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">4/24</p>
                             </Portion>
 
-                            <Portion desktopWidth="8/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="8" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">8/24</p>
                             </Portion>
 
-                            <Portion desktopWidth="12/24" bgColor="sky" className="padding-top-small">
+                            <Portion desktopSpan="12" bgColor="sky" className="padding-top-small">
                                 <p className="text-centre">12/24</p>
                             </Portion>
                         </Row>
@@ -314,7 +317,7 @@ class Layout extends React.PureComponent {
                             </p>
                         </Portion>
 
-                        <Portion desktopWidth="half">
+                        <Portion desktopSpan="half">
                             <table className="ff-table full-width bordered-all padding-tiny">
                                 <thead>
                                     <tr>
@@ -451,7 +454,7 @@ class Layout extends React.PureComponent {
                             </table>
                         </Portion>
 
-                        <Portion desktopWidth="half">
+                        <Portion desktopSpan="half">
                             <p>You can use any of these as classes, like so&mdash;</p>
                             <Highlight {...defaultProps} code={sampleCode2} language="jsx" theme={undefined}>
                                 {({ className, style, tokens, getLineProps, getTokenProps }) => (
@@ -493,33 +496,33 @@ class Layout extends React.PureComponent {
                             <p>
                                 There are four breakpoints as listed below. Using these, you can control the behaviour
                                 of a <code>Portion</code> component across devices. The default prop is{" "}
-                                <code>desktopWidth</code>, but you can add three more—<code>tabLSWidth</code>,{" "}
+                                <code>desktopSpan</code>, but you can add three more—<code>tabLSWidth</code>,{" "}
                                 <code>tabPTWidth</code> and <code>mobileWidth</code>.
                             </p>
                         </Portion>
 
-                        <Portion desktopWidth="one-fourth" tabLSWidth="half" tabPTWidth="half">
+                        <Portion desktopSpan="one-fourth" tabLSWidth="half" tabPTWidth="half">
                             <p className="weight-600 no-margin-bottom">Mobile</p>
                             <p>Less than 600px wide</p>
                             <code>mobileWidth</code>
                         </Portion>
 
-                        <Portion desktopWidth="one-fourth" tabLSWidth="half" tabPTWidth="half">
+                        <Portion desktopSpan="one-fourth" tabLSWidth="half" tabPTWidth="half">
                             <p className="weight-600 no-margin-bottom">Tab portrait</p>
                             <p>601px to 900px</p>
                             <code>tabPTWidth</code>
                         </Portion>
 
-                        <Portion desktopWidth="one-fourth" tabLSWidth="half" tabPTWidth="half">
+                        <Portion desktopSpan="one-fourth" tabLSWidth="half" tabPTWidth="half">
                             <p className="weight-600 no-margin-bottom">Tab landscape</p>
                             <p>901px to 1200px</p>
                             <code>tabLSWidth</code>
                         </Portion>
 
-                        <Portion desktopWidth="one-fourth" tabLSWidth="half" tabPTWidth="half">
+                        <Portion desktopSpan="one-fourth" tabLSWidth="half" tabPTWidth="half">
                             <p className="weight-600 no-margin-bottom">Desktop</p>
                             <p>1201px and above</p>
-                            <code>desktopWidth</code>
+                            <code>desktopSpan</code>
                         </Portion>
 
                         <Portion>
@@ -544,7 +547,7 @@ class Layout extends React.PureComponent {
                     <div className="side-padding-large">
                         <Row bgColor="slate-20">
                             <Portion
-                                desktopWidth="one-sixth"
+                                desktopSpan="one-sixth"
                                 tabLSWidth="one-third"
                                 tabPTWidth="half"
                                 mobileWidth="whole"
@@ -596,8 +599,8 @@ class Layout extends React.PureComponent {
                     </Row>
 
                     <HRule
-                        sideMargin="large"
                         slim
+                        sideMargin="large"
                         bgColor="slate-20"
                         className="margin-top-fixed-3x margin-bottom-fixed-3x"
                     />
@@ -876,16 +879,16 @@ class Layout extends React.PureComponent {
                     </Row>
                     <div className="side-padding-large">
                         <Row gutters="none" bgColor="slate-20">
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">1</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">2</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">3</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">4</p>
                             </Portion>
                         </Row>
@@ -918,16 +921,16 @@ class Layout extends React.PureComponent {
                     </Row>
                     <div className="side-padding-large">
                         <Row gutters="tiny" bgColor="slate-20">
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">1</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">2</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">3</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">4</p>
                             </Portion>
                         </Row>
@@ -960,16 +963,16 @@ class Layout extends React.PureComponent {
                     </Row>
                     <div className="side-padding-large">
                         <Row gutters="small" bgColor="slate-20">
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">1</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">2</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">3</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">4</p>
                             </Portion>
                         </Row>
@@ -1002,16 +1005,16 @@ class Layout extends React.PureComponent {
                     </Row>
                     <div className="side-padding-large">
                         <Row gutters="medium" bgColor="slate-20">
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">1</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">2</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">3</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">4</p>
                             </Portion>
                         </Row>
@@ -1044,16 +1047,16 @@ class Layout extends React.PureComponent {
                     </Row>
                     <div className="side-padding-large">
                         <Row gutters="large" bgColor="slate-20">
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">1</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">2</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">3</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">4</p>
                             </Portion>
                         </Row>
@@ -1086,22 +1089,22 @@ class Layout extends React.PureComponent {
                     </Row>
                     <div className="side-padding-large">
                         <Row gutters="huge" bgColor="slate-20">
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">1</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">2</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">3</p>
                             </Portion>
-                            <Portion desktopWidth="6/24" bgColor="sky" className="padding-all-fixed-3x">
+                            <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
                                 <p className="text-centre no-margin-bottom">4</p>
                             </Portion>
                         </Row>
                     </div>
                 </section>
-            </article>
+            </BaseComponent>
         );
     }
 }

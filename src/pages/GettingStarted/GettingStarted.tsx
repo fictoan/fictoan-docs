@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import { Row, Portion } from "reactised-fictoan";
 
@@ -163,10 +164,7 @@ class GettingStarted extends React.PureComponent {
     render() {
         return (
             <section id="blog">
-                <Row
-                    sidePadding="large"
-                    className="margin-top-small margin-bottom-small"
-                >
+                <Row sidePadding="large" className="margin-top-small margin-bottom-small">
                     <Portion>
                         <h2 className="text-hue">Getting started.</h2>
                     </Portion>
@@ -177,12 +175,8 @@ class GettingStarted extends React.PureComponent {
                         <p>
                             Just do&mdash;{" "}
                             <code>
-                                <span className="text-pistachio">
-                                    npm install
-                                </span>{" "}
-                                <span className="text-green">
-                                    reactised-fictoan
-                                </span>
+                                <span className="text-pistachio">npm install</span>{" "}
+                                <span className="text-green">reactised-fictoan</span>
                             </code>
                             . That’s it. Now you’re ready to use RF.
                         </p>
@@ -192,28 +186,15 @@ class GettingStarted extends React.PureComponent {
                 <Row sidePadding="large">
                     <Portion>
                         <p>
-                            Nearly everything on RF can be controlled with
-                            simple global variables. This allows us to create a
-                            nice theme file that you can use to control the look
-                            and feel of your project. Here is the full list of
-                            themeable values&mdash;
+                            Nearly everything on RF can be controlled with simple global variables. This allows us to
+                            create a nice theme file that you can use to control the look and feel of your project. Here
+                            is the full list of themeable values&mdash;
                         </p>
                     </Portion>
 
                     <Portion>
-                        <Highlight
-                            {...defaultProps}
-                            code={sampleCode1}
-                            language="scss"
-                            theme={undefined}
-                        >
-                            {({
-                                className,
-                                style,
-                                tokens,
-                                getLineProps,
-                                getTokenProps
-                            }) => (
+                        <Highlight {...defaultProps} code={sampleCode1} language="scss" theme={undefined}>
+                            {({ className, style, tokens, getLineProps, getTokenProps }) => (
                                 <pre className={className} style={style}>
                                     <code>
                                         {tokens.map((line, i) => (

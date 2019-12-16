@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 
-import { Row, Portion, HRule } from "reactised-fictoan";
+import { Row, Portion, HRule, BaseComponent, Heading, Text } from "reactised-fictoan";
 
 class Home extends PureComponent {
     componentDidMount() {
@@ -11,45 +11,49 @@ class Home extends PureComponent {
 
     render() {
         return (
-            <section id="page-home">
+            <BaseComponent Element="article" id="page-home">
                 <Row>
-                    <Portion desktopWidth="half" className="padding-all-small">
+                    <Portion desktopSpan="half" className="padding-all-small">
                         <Row retainLayoutAlways>
-                            <Portion desktopWidth="whole">
-                                <h1>
+                            <Portion desktopSpan="whole">
+                                <Heading type="h1">
                                     FICTOAN&mdash;<span className="text-hue">Reactised</span>.
-                                </h1>
-                                <h4 className="weight-400 margin-bottom-fixed-3x">
+                                </Heading>
+                                <Heading type="h4" weight="400" marginBottom="tiny">
                                     Quickly build responsive interfaces with just JSX markup.
-                                </h4>
+                                </Heading>
                                 <code className="text-medium">npm install reactised-fictoan</code>
                             </Portion>
 
-                            <Portion desktopWidth="half">
+                            <Portion desktopSpan="half">
                                 <HRule slim bgColor="slate" className="margin-top-fixed-3x margin-bottom-fixed-3x" />
-                                <h6>It’s modular.</h6>
-                                <p>Use only the components and styles you need, uncheck the rest.</p>
+                                <Heading type="h6">It’s modular.</Heading>
+                                <Text>Use only the components and styles you need, uncheck the rest.</Text>
                             </Portion>
 
-                            <Portion desktopWidth="half">
+                            <Portion desktopSpan="half">
                                 <HRule slim bgColor="slate" className="margin-top-fixed-3x margin-bottom-fixed-3x" />
-                                <h6>It’s performant.</h6>
-                                <p>Build with the bare minimum of libraries and plugins. No code bloat.</p>
+                                <Heading type="h6">It’s performant.</Heading>
+                                <Text>Build with the bare minimum of libraries and plugins. No code bloat.</Text>
                             </Portion>
 
-                            <Portion desktopWidth="half">
+                            <Portion desktopSpan="half">
                                 <HRule bgColor="slate-40" className="margin-top-fixed-3x margin-bottom-fixed-3x" />
-                                <h6>It’s intuitive.</h6>
-                                <p>All props and classes are in plain English. No complex nomenclature to memorise.</p>
+                                <Heading type="h6">It’s intuitive.</Heading>
+                                <Text>
+                                    All props and classes are in plain English. No complex nomenclature to memorise.
+                                </Text>
                             </Portion>
 
-                            <Portion desktopWidth="half">
+                            <Portion desktopSpan="half">
                                 <HRule bgColor="slate-40" className="margin-top-fixed-3x margin-bottom-fixed-3x" />
-                                <h6>It’s open-source.</h6>
-                                <p>Fork and raise PRs at will, and contribute to the project on Github. Have at it.</p>
+                                <Heading type="h6">It’s open-source.</Heading>
+                                <Text>
+                                    Fork and raise PRs at will, and contribute to the project on Github. Have at it.
+                                </Text>
                             </Portion>
 
-                            <Portion desktopWidth="half">
+                            <Portion desktopSpan="half">
                                 <HRule slim bgColor="slate" className="margin-top-fixed-3x margin-bottom-fixed-3x" />
                                 <a
                                     className="text-shade"
@@ -62,7 +66,7 @@ class Home extends PureComponent {
                                 <code className="text-medium">0.4.51</code>
                             </Portion>
 
-                            <Portion desktopWidth="half">
+                            <Portion desktopSpan="half">
                                 <HRule slim bgColor="slate" className="margin-top-fixed-3x margin-bottom-fixed-3x" />
                                 <a
                                     className="text-shade"
@@ -77,9 +81,9 @@ class Home extends PureComponent {
                         </Row>
                     </Portion>
 
-                    <Portion desktopWidth="two-third"></Portion>
+                    <Portion desktopSpan="two-third" />
                 </Row>
-            </section>
+            </BaseComponent>
         );
     }
 }

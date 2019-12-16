@@ -67,42 +67,42 @@ class Sidebar extends React.PureComponent {
                     </summary>
 
                     <SublinkGroup>
-                        <NavLink scroll={el => scrollWithOffset(el, 80)} smooth to="/layout">
+                        <NavLink to="/layout">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Setup" />
                             </SidebarItem>
                         </NavLink>
 
-                        <NavLink scroll={el => scrollWithOffset(el, 80)} smooth to="/layout#add-content">
+                        <NavLink to="/layout#add-content">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Add content" />
                             </SidebarItem>
                         </NavLink>
 
-                        <NavLink scroll={el => scrollWithOffset(el, 20)} smooth to="/layout#responsiveness">
+                        <NavLink to="/layout#responsiveness">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Responsiveness" />
                             </SidebarItem>
                         </NavLink>
 
-                        <NavLink scroll={el => scrollWithOffset(el, 80)} smooth to="/layout#visibility">
+                        <NavLink to="/layout#visibility">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Visibility" />
                             </SidebarItem>
                         </NavLink>
 
-                        <NavLink scroll={el => scrollWithOffset(el, 80)} smooth to="/layout#content-padding">
+                        <NavLink to="/layout#content-padding">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Content padding" />
                             </SidebarItem>
                         </NavLink>
 
-                        <NavLink scroll={el => scrollWithOffset(el, 80)} smooth to="/layout#gutter-sizing">
+                        <NavLink to="/layout#gutter-sizing">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Gutter sizing" />
@@ -141,7 +141,7 @@ class Sidebar extends React.PureComponent {
                     </summary>
 
                     <SublinkGroup>
-                        <NavLink scroll={el => scrollWithOffset(el, 80)} smooth to="/layout">
+                        <NavLink to="/components">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Notification" />

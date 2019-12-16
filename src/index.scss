@@ -35,7 +35,7 @@
 @import "~reactised-fictoan/dist/styles/base/ff-responsive";
 
 @import "~reactised-fictoan/dist/styles/design/ff-colours";
-@import "~reactised-fictoan/dist/styles/design/ff-typography";
+@import "~reactised-fictoan/dist/components/Type/Typography";
 
 //  Forms
 @import "~reactised-fictoan/dist/styles/form/ff-form";
@@ -60,7 +60,8 @@
 @import "~reactised-fictoan/dist/components/SidebarWrapper/SidebarItemText/SidebarItemText";
 @import "~reactised-fictoan/dist/components/ContentWrapper/ContentWrapper";
 
-@import "~reactised-fictoan/dist/components/Notification/Notification";
+@import "~reactised-fictoan/dist/components/Notifications/NotificationWrapper/NotificationWrapper";
+@import "~reactised-fictoan/dist/components/Notifications/NotificationItem/NotificationItem";
 
 //  Components
 // @import "~reactised-fictoan/dist/styles/components/ff-header";

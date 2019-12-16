@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Portion, FormUnit, InputField, HRule, Notification } from "reactised-fictoan";
+import { Row, Portion, FormUnit, InputField, HRule } from "reactised-fictoan";
 
 import Highlight, { defaultProps } from "prism-react-renderer";
 
@@ -64,14 +64,6 @@ class Forms extends React.PureComponent {
                         <h2 className="text-hue">Form</h2>
                     </Portion>
                 </Row>
-
-                <Notification
-                    isDismissible
-                    position="top-left"
-                    type="error"
-                    content="Most form elements are available as components in RF. They all come with a bit of additional
-                            functionality and design tweaks over the regular native elements."
-                />
 
                 {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*   SETTING IT UP  */}
