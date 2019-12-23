@@ -1,8 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
-import Highlight, { defaultProps } from "prism-react-renderer";
 
-import { Row, Portion, HRule, BaseComponent, Heading } from "reactised-fictoan";
+import { Row, Portion, HRule, BaseComponent, Heading, CodeBlock } from "reactised-fictoan";
 
 // {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
 // {/*   SAMPLE CODES  */}
@@ -13,11 +12,11 @@ const sampleCode1 = `
     <Portion desktopSpan="4/24">
         Some content
     </Portion>
-    
+
     <Portion desktopSpan="8/24">
         Some content
     </Portion>
-    
+
     <Portion desktopSpan="12/24">
         Some content
     </Portion>
@@ -31,7 +30,7 @@ const sampleCode2 = `
 
     <Portion desktopSpan="five-sixth" />
 
-    <Portion desktopSpan="9" />    
+    <Portion desktopSpan="9" />
 
     <Portion desktopSpan="eleven-twelfth" />
 </Row>
@@ -46,15 +45,15 @@ const sampleCode3a = `
 
 //  Code sample 03b ========================================================================================
 const sampleCode3b = `
-// Portions don’t change on tablet landscape 
+// Portions don’t change on tablet landscape
 <Row retainLayoutOnTabLS />
- 
-// Portions don’t change on tablet portrait 
+
+// Portions don’t change on tablet portrait
 <Row retainLayoutOnTabPT />
- 
+
 // Portions don’t change on mobile
 <Row retainLayoutOnMobile />
- 
+
 // Portions don’t change widths across devices
 <Row retainLayoutAlways />
 `;
@@ -269,21 +268,7 @@ class Layout extends React.PureComponent {
                                 <code>Row</code> parent. This is done by adding custom <code>props</code>. For example—
                             </p>
 
-                            <Highlight {...defaultProps} code={sampleCode1} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode1} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -456,21 +441,7 @@ class Layout extends React.PureComponent {
 
                         <Portion desktopSpan="half">
                             <p>You can use any of these as classes, like so&mdash;</p>
-                            <Highlight {...defaultProps} code={sampleCode2} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode2} language="jsx" />
                         </Portion>
                     </Row>
                 </section>
@@ -526,21 +497,7 @@ class Layout extends React.PureComponent {
                         </Portion>
 
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode3a} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode3a} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -580,21 +537,7 @@ class Layout extends React.PureComponent {
                         </Portion>
 
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode3b} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode3b} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -642,21 +585,7 @@ class Layout extends React.PureComponent {
 
                     <Row sidePadding="large" className="margin-bottom-fixed">
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode4a} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode4a} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -676,21 +605,7 @@ class Layout extends React.PureComponent {
 
                     <Row sidePadding="large" className="margin-bottom-fixed">
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode4b} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode4b} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -710,21 +625,7 @@ class Layout extends React.PureComponent {
 
                     <Row sidePadding="large" className="margin-bottom-fixed">
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode4c} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode4c} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -744,21 +645,7 @@ class Layout extends React.PureComponent {
 
                     <Row sidePadding="large" className="margin-bottom-fixed">
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode4d} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode4d} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -778,21 +665,7 @@ class Layout extends React.PureComponent {
 
                     <Row sidePadding="large" className="margin-bottom-fixed">
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode4e} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode4e} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -812,21 +685,7 @@ class Layout extends React.PureComponent {
 
                     <Row sidePadding="large" className="margin-bottom-fixed">
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode4f} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode4f} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -860,21 +719,7 @@ class Layout extends React.PureComponent {
 
                     <Row sidePadding="large" className="margin-bottom-fixed">
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode5a} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode5a} language="jsx" />
                         </Portion>
                     </Row>
                     <div className="side-padding-large">
@@ -902,21 +747,7 @@ class Layout extends React.PureComponent {
 
                     <Row sidePadding="large" className="margin-bottom-fixed">
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode5b} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode5b} language="jsx" />
                         </Portion>
                     </Row>
                     <div className="side-padding-large">
@@ -944,21 +775,7 @@ class Layout extends React.PureComponent {
 
                     <Row sidePadding="large" className="margin-bottom-fixed">
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode5c} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode5c} language="jsx" />
                         </Portion>
                     </Row>
                     <div className="side-padding-large">
@@ -986,21 +803,7 @@ class Layout extends React.PureComponent {
 
                     <Row sidePadding="large" className="margin-bottom-fixed">
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode5d} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode5d} language="jsx" />
                         </Portion>
                     </Row>
                     <div className="side-padding-large">
@@ -1028,21 +831,7 @@ class Layout extends React.PureComponent {
 
                     <Row sidePadding="large" className="margin-bottom-fixed">
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode5e} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode5e} language="jsx" />
                         </Portion>
                     </Row>
                     <div className="side-padding-large">
@@ -1070,21 +859,7 @@ class Layout extends React.PureComponent {
 
                     <Row sidePadding="large" className="margin-bottom-fixed">
                         <Portion>
-                            <Highlight {...defaultProps} code={sampleCode5f} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={sampleCode5f} language="jsx" />
                         </Portion>
                     </Row>
                     <div className="side-padding-large">

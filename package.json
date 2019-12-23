@@ -17,7 +17,7 @@
         "react-router-hash-link": "^1.2.2",
         "react-scripts": "3.2.0",
         "react-transition-group": "^4.3.0",
-        "reactised-fictoan": "git+https://f3b3df289bff16ec09ce5aa7de04fdeb5cce4d83:x-oauth-basic@github.com/sujan-s/reactised-fictoan.git#0.3.24",
+        "reactised-fictoan": "git+https://f3b3df289bff16ec09ce5aa7de04fdeb5cce4d83:x-oauth-basic@github.com/sujan-s/reactised-fictoan.git#0.4.82",
         "typescript": "3.6.4"
     },
     "scripts": {
