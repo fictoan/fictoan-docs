@@ -16,10 +16,10 @@ class Home extends PureComponent {
                     <Portion desktopSpan="half" className="padding-all-small">
                         <Row retainLayoutAlways>
                             <Portion desktopSpan="whole">
-                                <Heading type="h1">
+                                <Heading as="h1">
                                     FICTOAN&mdash;<span className="text-hue">Reactised</span>.
                                 </Heading>
-                                <Heading type="h4" weight="400" marginBottom="tiny">
+                                <Heading as="h4" weight="400" marginBottom="tiny">
                                     Quickly build responsive interfaces with just JSX markup.
                                 </Heading>
                                 <code className="text-medium">npm install reactised-fictoan</code>
@@ -27,19 +27,19 @@ class Home extends PureComponent {
 
                             <Portion desktopSpan="half">
                                 <HRule slim bgColor="slate" className="margin-top-fixed-3x margin-bottom-fixed-3x" />
-                                <Heading type="h6">It’s modular.</Heading>
+                                <Heading as="h6">It’s modular.</Heading>
                                 <Text>Use only the components and styles you need, uncheck the rest.</Text>
                             </Portion>
 
                             <Portion desktopSpan="half">
                                 <HRule slim bgColor="slate" className="margin-top-fixed-3x margin-bottom-fixed-3x" />
-                                <Heading type="h6">It’s performant.</Heading>
+                                <Heading as="h6">It’s performant.</Heading>
                                 <Text>Build with the bare minimum of libraries and plugins. No code bloat.</Text>
                             </Portion>
 
                             <Portion desktopSpan="half">
                                 <HRule bgColor="slate-40" className="margin-top-fixed-3x margin-bottom-fixed-3x" />
-                                <Heading type="h6">It’s intuitive.</Heading>
+                                <Heading as="h6">It’s intuitive.</Heading>
                                 <Text>
                                     All props and classes are in plain English. No complex nomenclature to memorise.
                                 </Text>
@@ -47,7 +47,7 @@ class Home extends PureComponent {
 
                             <Portion desktopSpan="half">
                                 <HRule bgColor="slate-40" className="margin-top-fixed-3x margin-bottom-fixed-3x" />
-                                <Heading type="h6">It’s open-source.</Heading>
+                                <Heading as="h6">It’s open-source.</Heading>
                                 <Text>
                                     Fork and raise PRs at will, and contribute to the project on Github. Have at it.
                                 </Text>
