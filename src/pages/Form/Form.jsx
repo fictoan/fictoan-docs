@@ -1,7 +1,5 @@
 import React from "react";
-import { Row, Portion, FormUnit, InputField, HRule } from "reactised-fictoan";
-
-import Highlight, { defaultProps } from "prism-react-renderer";
+import { Row, Portion, FormUnit, InputField, HRule, CodeBlock } from "reactised-fictoan";
 
 import iconLeft from "../../assets/icons/home.svg";
 
@@ -18,11 +16,11 @@ const snippetFormUnit = `
     <FormUnit>
         Some element
     </FormUnit>
-    
+
     <FormUnit>
         Some element
     </FormUnit>
-    
+
     ...how many ever you need.
 </Form>
 `;
@@ -103,21 +101,7 @@ class Forms extends React.PureComponent {
                                 spacing and margins.
                             </p>
 
-                            <Highlight {...defaultProps} code={snippetForm} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={snippetForm} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -140,21 +124,7 @@ class Forms extends React.PureComponent {
                                 equal margins and alignment between them.
                             </p>
 
-                            <Highlight {...defaultProps} code={snippetFormUnit} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={snippetFormUnit} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -188,21 +158,7 @@ class Forms extends React.PureComponent {
                                 />
                             </FormUnit>
 
-                            <Highlight {...defaultProps} code={snippetTextInput} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={snippetTextInput} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -237,21 +193,7 @@ class Forms extends React.PureComponent {
                                 />
                             </FormUnit>
 
-                            <Highlight {...defaultProps} code={snippetInputValidation} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={snippetInputValidation} language="jsx" />
                         </Portion>
                     </Row>
                 </section>
