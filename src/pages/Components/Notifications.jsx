@@ -1,7 +1,5 @@
 import React from "react";
-import { Row, Portion, NotificationWrapper, NotificationItem, HRule, Button } from "reactised-fictoan";
-
-import Highlight, { defaultProps } from "prism-react-renderer";
+import { Row, Portion, NotificationWrapper, NotificationItem, HRule, Button, CodeBlock } from "reactised-fictoan";
 
 // {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
 // {/*   SAMPLE CODES  */}
@@ -63,21 +61,7 @@ class Notifications extends React.PureComponent {
                     <Portion>
                         <p>The notification component is essentially a small box that can also be used as a toast.</p>
 
-                        <Highlight {...defaultProps} code={snippetNotificationSample} language="jsx" theme={undefined}>
-                            {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                <pre className={className} style={style}>
-                                    <code>
-                                        {tokens.map((line, i) => (
-                                            <div {...getLineProps({ line, key: i })}>
-                                                {line.map((token, key) => (
-                                                    <span {...getTokenProps({ token, key })} />
-                                                ))}
-                                            </div>
-                                        ))}
-                                    </code>
-                                </pre>
-                            )}
-                        </Highlight>
+                        <CodeBlock source={snippetNotificationSample} language="jsx" />
                     </Portion>
                 </Row>
 

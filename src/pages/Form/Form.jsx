@@ -1,9 +1,5 @@
 import React from "react";
-import { Row, Portion, FormItem, InputField, HRule } from "reactised-fictoan";
-
-import Highlight, { defaultProps } from "prism-react-renderer";
-
-import iconLeft from "../../assets/icons/home.svg";
+import { Row, Portion, FormItem, InputField, HRule, CodeBlock } from "reactised-fictoan";
 
 //  Code sample 01 ========================================================================================
 const snippetForm = `
@@ -18,11 +14,11 @@ const snippetFormItem = `
     <FormItem>
         Some element
     </FormItem>
-    
+
     <FormItem>
         Some element
     </FormItem>
-    
+
     ...how many ever you need.
 </Form>
 `;
@@ -56,7 +52,6 @@ class Forms extends React.PureComponent {
     }
 
     render() {
-        console.log(iconLeft);
         return (
             <article id="page-form">
                 <Row sidePadding="large" className="margin-top-small margin-bottom-small">
@@ -65,9 +60,9 @@ class Forms extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
+                {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*   SETTING IT UP  */}
-                {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
+                {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                 <Row sidePadding="large" className="margin-top-medium">
                     <Portion>
                         <h4>Basics</h4>
@@ -85,9 +80,9 @@ class Forms extends React.PureComponent {
 
                 <HRule sideMargin="large" thick bgColor="sky-20" />
 
-                {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
+                {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*   FORM  */}
-                {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
+                {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
 
                 <section id="add-content">
                     <Row sidePadding="large">
@@ -103,29 +98,15 @@ class Forms extends React.PureComponent {
                                 spacing and margins.
                             </p>
 
-                            <Highlight {...defaultProps} code={snippetForm} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={snippetForm} language="jsx" />
                         </Portion>
                     </Row>
 
                     <HRule sideMargin="large" thin bgColor="sky-20" />
 
-                    {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
+                    {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                     {/*   FORM UNIT  */}
-                    {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
+                    {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
 
                     <Row sidePadding="large">
                         <Portion>
@@ -140,29 +121,15 @@ class Forms extends React.PureComponent {
                                 equal margins and alignment between them.
                             </p>
 
-                            <Highlight {...defaultProps} code={snippetFormItem} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={snippetFormItem} language="jsx" />
                         </Portion>
                     </Row>
 
                     <HRule thin sideMargin="large" bgColor="sky-20" />
 
-                    {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
+                    {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                     {/*   TEXT INPUT  */}
-                    {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
+                    {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
 
                     <Row sidePadding="large">
                         <Portion>
@@ -188,21 +155,7 @@ class Forms extends React.PureComponent {
                                 />
                             </FormItem>
 
-                            <Highlight {...defaultProps} code={snippetTextInput} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={snippetTextInput} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -237,21 +190,7 @@ class Forms extends React.PureComponent {
                                 />
                             </FormItem>
 
-                            <Highlight {...defaultProps} code={snippetInputValidation} language="jsx" theme={undefined}>
-                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                    <pre className={className} style={style}>
-                                        <code>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({ line, key: i })}>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({ token, key })} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </code>
-                                    </pre>
-                                )}
-                            </Highlight>
+                            <CodeBlock source={snippetInputValidation} language="jsx" />
                         </Portion>
                     </Row>
                 </section>
