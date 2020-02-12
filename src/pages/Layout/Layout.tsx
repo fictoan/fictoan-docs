@@ -2,7 +2,7 @@
 import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 
-import { Row, Portion, HRule, BaseComponent, Heading } from "reactised-fictoan";
+import { Row, Portion, HRule, Element, Heading } from "reactised-fictoan";
 
 // {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
 // {/*   SAMPLE CODES  */}
@@ -40,7 +40,7 @@ const sampleCode2 = `
 //  Code sample 03a ========================================================================================
 const sampleCode3a = `
 <Row>
-    <Portion desktopSpan="one-sixth" tabLSWidth="8/24" tabPTWidth="half" mobileWidth="24/24" />
+    <Portion desktopSpan="one-sixth" tabLSSpan="8/24" tabPTSpan="half" mobileSpan="24/24" />
 </Row>
 `;
 
@@ -137,10 +137,10 @@ class Layout extends React.PureComponent {
 
     render() {
         return (
-            <BaseComponent Element="article" id="page-layout">
+            <Element as="article" id="page-layout">
                 <Row sidePadding="large" marginTop="small" marginBottom="small">
                     <Portion>
-                        <Heading type="h2" textColor="hue">
+                        <Heading as="h2" textColor="hue">
                             Layout
                         </Heading>
                     </Portion>
@@ -496,30 +496,30 @@ class Layout extends React.PureComponent {
                             <p>
                                 There are four breakpoints as listed below. Using these, you can control the behaviour
                                 of a <code>Portion</code> component across devices. The default prop is{" "}
-                                <code>desktopSpan</code>, but you can add three more—<code>tabLSWidth</code>,{" "}
-                                <code>tabPTWidth</code> and <code>mobileWidth</code>.
+                                <code>desktopSpan</code>, but you can add three more—<code>tabLSSpan</code>,{" "}
+                                <code>tabPTSpan</code> and <code>mobileSpan</code>.
                             </p>
                         </Portion>
 
-                        <Portion desktopSpan="one-fourth" tabLSWidth="half" tabPTWidth="half">
+                        <Portion desktopSpan="one-fourth" tabLSSpan="half" tabPTSpan="half">
                             <p className="weight-600 no-margin-bottom">Mobile</p>
                             <p>Less than 600px wide</p>
-                            <code>mobileWidth</code>
+                            <code>mobileSpan</code>
                         </Portion>
 
-                        <Portion desktopSpan="one-fourth" tabLSWidth="half" tabPTWidth="half">
+                        <Portion desktopSpan="one-fourth" tabLSSpan="half" tabPTSpan="half">
                             <p className="weight-600 no-margin-bottom">Tab portrait</p>
                             <p>601px to 900px</p>
-                            <code>tabPTWidth</code>
+                            <code>tabPTSpan</code>
                         </Portion>
 
-                        <Portion desktopSpan="one-fourth" tabLSWidth="half" tabPTWidth="half">
+                        <Portion desktopSpan="one-fourth" tabLSSpan="half" tabPTSpan="half">
                             <p className="weight-600 no-margin-bottom">Tab landscape</p>
                             <p>901px to 1200px</p>
-                            <code>tabLSWidth</code>
+                            <code>tabLSSpan</code>
                         </Portion>
 
-                        <Portion desktopSpan="one-fourth" tabLSWidth="half" tabPTWidth="half">
+                        <Portion desktopSpan="one-fourth" tabLSSpan="half" tabPTSpan="half">
                             <p className="weight-600 no-margin-bottom">Desktop</p>
                             <p>1201px and above</p>
                             <code>desktopSpan</code>
@@ -548,9 +548,9 @@ class Layout extends React.PureComponent {
                         <Row bgColor="slate-20">
                             <Portion
                                 desktopSpan="one-sixth"
-                                tabLSWidth="one-third"
-                                tabPTWidth="half"
-                                mobileWidth="whole"
+                                tabLSSpan="one-third"
+                                tabPTSpan="half"
+                                mobileSpan="whole"
                                 className="bg-sky padding-all-fixed-3x"
                             >
                                 <p className="text-centre no-margin-bottom show-only-on-desktop">
@@ -1104,7 +1104,7 @@ class Layout extends React.PureComponent {
                         </Row>
                     </div>
                 </section>
-            </BaseComponent>
+            </Element>
         );
     }
 }

@@ -2,7 +2,9 @@ import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import { ContentWrapper } from "reactised-fictoan";
+import { ThemeProvider, ContentWrapper } from "reactised-fictoan";
+
+import { RFDocsTheme } from "../../constants/theme";
 
 import Sidebar from "../Sidebar/Sidebar";
 
@@ -16,7 +18,7 @@ import Notifications from "../../pages/Components/Notifications";
 
 const Page = () => {
     return (
-        <>
+        <ThemeProvider theme={RFDocsTheme}>
             {/* ////////////////////////////////////////////////////////////////////////////////////////////////////
                 LEFT SIDEBAR
                ////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -40,7 +42,7 @@ const Page = () => {
                     </CSSTransition>
                 </TransitionGroup>
             </ContentWrapper>
-        </>
+        </ThemeProvider>
     );
 };
 

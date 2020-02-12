@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Portion, FormUnit, InputField, HRule } from "reactised-fictoan";
+import { Row, Portion, FormItem, InputField, HRule } from "reactised-fictoan";
 
 import Highlight, { defaultProps } from "prism-react-renderer";
 
@@ -13,15 +13,15 @@ const snippetForm = `
 `;
 
 //  Code sample 02 ========================================================================================
-const snippetFormUnit = `
+const snippetFormItem = `
 <Form>
-    <FormUnit>
+    <FormItem>
         Some element
-    </FormUnit>
+    </FormItem>
     
-    <FormUnit>
+    <FormItem>
         Some element
-    </FormUnit>
+    </FormItem>
     
     ...how many ever you need.
 </Form>
@@ -136,11 +136,11 @@ class Forms extends React.PureComponent {
                     <Row sidePadding="large">
                         <Portion>
                             <p>
-                                The <code>FormUnit</code> component is used to wrap individual elements and ensures
+                                The <code>FormItem</code> component is used to wrap individual elements and ensures
                                 equal margins and alignment between them.
                             </p>
 
-                            <Highlight {...defaultProps} code={snippetFormUnit} language="jsx" theme={undefined}>
+                            <Highlight {...defaultProps} code={snippetFormItem} language="jsx" theme={undefined}>
                                 {({ className, style, tokens, getLineProps, getTokenProps }) => (
                                     <pre className={className} style={style}>
                                         <code>
@@ -180,13 +180,13 @@ class Forms extends React.PureComponent {
                                 focus.
                             </p>
 
-                            <FormUnit className="margin-top-tiny margin-bottom-tiny">
+                            <FormItem className="margin-top-tiny margin-bottom-tiny">
                                 <InputField
                                     label="Label, visible by default"
                                     helpText="Help text, visible on focus"
                                     placeholder="Placeholder"
                                 />
-                            </FormUnit>
+                            </FormItem>
 
                             <Highlight {...defaultProps} code={snippetTextInput} language="jsx" theme={undefined}>
                                 {({ className, style, tokens, getLineProps, getTokenProps }) => (
@@ -226,7 +226,7 @@ class Forms extends React.PureComponent {
                                 <code>invalid</code> props as well.
                             </p>
 
-                            <FormUnit className="margin-top-tiny margin-bottom-tiny">
+                            <FormItem className="margin-top-tiny margin-bottom-tiny">
                                 <InputField
                                     label="Email"
                                     helpText="Your work email works best"
@@ -235,7 +235,7 @@ class Forms extends React.PureComponent {
                                     validateThis
                                     pattern="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
                                 />
-                            </FormUnit>
+                            </FormItem>
 
                             <Highlight {...defaultProps} code={snippetInputValidation} language="jsx" theme={undefined}>
                                 {({ className, style, tokens, getLineProps, getTokenProps }) => (
@@ -256,13 +256,13 @@ class Forms extends React.PureComponent {
                     </Row>
                 </section>
 
-                {/*<FormUnit>*/}
-                {/*    <CheckBox id="sup" label="Some label" />*/}
-                {/*</FormUnit>*/}
+                {/* <FormItem> */}
+                {/*    <CheckBox id="sup" label="Some label" /> */}
+                {/* </FormItem> */}
 
-                {/*<FormUnit>*/}
-                {/*    <Switch id="sup2" label="Some label" />*/}
-                {/*</FormUnit>*/}
+                {/* <FormItem> */}
+                {/*    <Switch id="sup2" label="Some label" /> */}
+                {/* </FormItem> */}
             </article>
         );
     }

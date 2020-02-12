@@ -7,7 +7,7 @@ import {
     SidebarItem,
     SidebarItemIcon,
     SidebarItemText,
-    SublinkGroup
+    SidebarSublinkGroup
     // HRule
 } from "reactised-fictoan";
 
@@ -28,14 +28,14 @@ class Sidebar extends React.PureComponent {
     };
 
     render() {
-        const scrollWithOffset = (el, offset) => {
-            const elementPosition = el.offsetTop - offset;
-            window.scroll({
-                top: elementPosition,
-                left: 0,
-                behavior: "smooth"
-            });
-        };
+        // const scrollWithOffset = (el, offset) => {
+        //     const elementPosition = el.offsetTop - offset;
+        //     window.scroll({
+        //         top: elementPosition,
+        //         left: 0,
+        //         behavior: "smooth"
+        //     });
+        // };
 
         return (
             <SidebarWrapper className={this.state.collapsed ? "collapsed" : ""}>
@@ -66,7 +66,7 @@ class Sidebar extends React.PureComponent {
                         </SidebarItem>
                     </summary>
 
-                    <SublinkGroup>
+                    <SidebarSublinkGroup>
                         <NavLink to="/layout">
                             <SidebarItem>
                                 <SidebarItemIcon />
@@ -108,7 +108,7 @@ class Sidebar extends React.PureComponent {
                                 <SidebarItemText className="sidebar-sublink" linkText="Gutter sizing" />
                             </SidebarItem>
                         </NavLink>
-                    </SublinkGroup>
+                    </SidebarSublinkGroup>
                 </details>
 
                 <NavLink exact to="/typography">
@@ -140,14 +140,14 @@ class Sidebar extends React.PureComponent {
                         </SidebarItem>
                     </summary>
 
-                    <SublinkGroup>
+                    <SidebarSublinkGroup>
                         <NavLink to="/components">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Notification" />
                             </SidebarItem>
                         </NavLink>
-                    </SublinkGroup>
+                    </SidebarSublinkGroup>
                 </details>
             </SidebarWrapper>
         );
