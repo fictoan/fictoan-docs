@@ -58,7 +58,7 @@ class Sidebar extends React.PureComponent {
                     </SidebarItem>
                 </NavLink>
 
-                <details open>
+                <details>
                     <summary>
                         <SidebarItem>
                             <SidebarItemIcon />
