@@ -1,12 +1,8 @@
 import React, { PureComponent } from "react";
 
-import { Row, Portion, HRule, Element, Heading, Text, CodeBlock } from "reactised-fictoan";
+import { Row, Portion, HRule, Element, Heading, Text, CodeBlock, Card, Button } from "reactised-fictoan";
 
-const installSnippet = `
-yarn add reactised-fictoan
-# or
-npm install reactised-fictoan
-`;
+import { sampleSnippet } from "../../assets/code-samples/CodeSamples";
 
 class Home extends PureComponent {
     componentDidMount() {
@@ -18,7 +14,7 @@ class Home extends PureComponent {
     render() {
         return (
             <Element as="article" id="page-home">
-                <Row sidePadding="large" marginTop="tiny" retainLayoutOnTabLS retainLayoutOnTabPT>
+                <Row sidePadding="large" marginTop="tiny" gutters="large" retainLayoutOnTabLS retainLayoutOnTabPT>
                     <Portion desktopSpan="whole">
                         <Heading as="h1">
                             FICTOAN<span className="text-hue">UI</span>.
@@ -26,9 +22,49 @@ class Home extends PureComponent {
                         <Heading as="h4" weight="400" marginBottom="tiny">
                             Quickly build responsive interfaces with React markup.
                         </Heading>
-                        <CodeBlock source={installSnippet} language="bash" />
+
+                        <Text marginBottom="tiny">
+                            FICTOAN UI is aimed at designers looking to begin coding UI on their own, straight into
+                            React, instead of an inefficient dev hand-off process. But all you front-end geeks, go ahead
+                            and take it for a spin!
+                        </Text>
+
+                        <Text>
+                            The idea is to code the UI the same way a designer designs the UI, with simple attributes
+                            for each styling aspect of the element. Check out this example of a <code>Card</code>{" "}
+                            element—
+                        </Text>
+                    </Portion>
+                </Row>
+
+                <Row sidePadding="large" marginTop="tiny" gutters="large" retainLayoutOnTabLS retainLayoutOnTabPT>
+                    <Portion desktopSpan="half">
+                        <Card padding="medium" bgColor="white" shape="rounded" shadow="soft" marginBottom="tiny">
+                            <Heading as="h2" textColor="amber">
+                                Hello.
+                            </Heading>
+                            <Text marginBottom="tiny">I am FICTOAN UI. Nice to meet you.</Text>
+
+                            <Button kind="primary" size="small" shape="rounded" shadow="mild" marginRight="fixed">
+                                Main action
+                            </Button>
+                            <Button kind="secondary" size="small" shape="rounded" shadow="mild">
+                                Other action
+                            </Button>
+                        </Card>
+
+                        <Text>
+                            Super simple, right? Notice that the attributes are all intuitive and in plain English.
+                            You’ll also see that many attributes are the same across different components.
+                        </Text>
                     </Portion>
 
+                    <Portion desktopSpan="half">
+                        <CodeBlock source={sampleSnippet} language="jsx" />
+                    </Portion>
+                </Row>
+
+                <Row sidePadding="large" marginTop="tiny" gutters="large" retainLayoutOnTabLS retainLayoutOnTabPT>
                     <Portion desktopSpan="half">
                         <HRule slim bgColor="slate" marginTop="tiny" marginBottom="tiny" />
                         <Heading as="h6">It’s modular.</Heading>
@@ -55,25 +91,21 @@ class Home extends PureComponent {
 
                     <Portion desktopSpan="half">
                         <HRule slim bgColor="slate" marginTop="tiny" marginBottom="tiny" />
+                        <Text>Souce code</Text>
                         <a
-                            className="text-shade"
                             href="https://github.com/sujan-s/reactised-fictoan"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
                             <p className="no-margin-bottom">reactised-fictoan ↗</p>
                         </a>
-                        <code className="text-medium">0.17.2</code>
+                        <code className="text-medium">0.21.31</code>
                     </Portion>
 
                     <Portion desktopSpan="half">
                         <HRule slim bgColor="slate" marginTop="tiny" marginBottom="tiny" />
-                        <a
-                            className="text-shade"
-                            href="https://github.com/sujan-s/rf-docs"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <Text>Documentation</Text>
+                        <a href="https://github.com/sujan-s/rf-docs" target="_blank" rel="noopener noreferrer">
                             <p className="no-margin-bottom">rf-docs ↗</p>
                         </a>
                         <code className="text-medium">0.3.2</code>

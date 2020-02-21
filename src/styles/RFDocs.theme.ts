@@ -18,7 +18,7 @@ export const RFDocsTheme = {
                 scale: 90
             },
             block: {
-                scale: 100
+                scale: 90
             }
         }
     }
