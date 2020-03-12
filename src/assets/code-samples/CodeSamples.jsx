@@ -39,5 +39,5 @@ export const sampleSnippet = `
     >
         Other action
     </Button>
-</Cardpadding="medium">
+</Card>
 `;

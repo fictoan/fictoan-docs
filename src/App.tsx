@@ -3,37 +3,40 @@ import { Switch, Route, BrowserRouter as Router, withRouter, RouteProps } from "
 
 import { ThemeProvider, ContentWrapper } from "reactised-fictoan";
 
+import Layout from "pages/Layout/Layout";
+import Typography from "pages/Typography/Typography";
+import Colour from "pages/Colour/Colour";
+import Notifications from "pages/Components/Notifications";
+import Sidebar from "components/Sidebar/Sidebar";
 import { GlobalStyle } from "./styles/Global.styled";
 import { GlobalFonts } from "./assets/fonts/fonts";
 
 import { RFDocsTheme } from "./styles/RFDocs.theme";
 
-import Sidebar from "./components/Sidebar/Sidebar";
-
 import Home from "./pages/Home/Home";
 import GettingStarted from "./pages/GettingStarted/GettingStarted";
-import Layout from "./pages/Layout/Layout";
-import Typography from "./pages/Typography/Typography";
-import Colour from "./pages/Colour/Colour";
 import Form from "./pages/Form/Form";
-import Notifications from "./pages/Components/Notifications";
 
 type Props = RouteProps;
 
 const Page = (props: Props) => {
     const { location } = props;
+
     return (
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+        // @ts-ignore
         <ThemeProvider theme={RFDocsTheme}>
             <GlobalStyle />
-            <GlobalFonts />
-            {/* ////////////////////////////////////////////////////////////////////////////////////////////////////
-                LEFT SIDEBAR
-               ////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Sidebar location={props.location} />
 
-            {/* ////////////////////////////////////////////////////////////////////////////////////////////////////
+            <GlobalFonts />
+            {/* /////////////////////////////////////////////////////////////////
+                LEFT SIDEBAR
+               ////////////////////////////////////////////////////////////////// */}
+            {location && location.pathname !== "/" && <Sidebar location={props.location} />}
+
+            {/* /////////////////////////////////////////////////////////////////
                 MAIN CONTENT
-           ////////////////////////////////////////////////////////////////////////////////////////////////// */}
+           ////////////////////////////////////////////////////////////////////// */}
             <ContentWrapper>
                 <Switch location={location}>
                     <Route exact component={Home} path="/" />
@@ -51,7 +54,7 @@ const Page = (props: Props) => {
 
 const WithRouterPage = withRouter(Page);
 
-class App extends React.PureComponent {
+class Landing extends React.PureComponent {
     render() {
         return (
             <Router>
@@ -61,4 +64,4 @@ class App extends React.PureComponent {
     }
 }
 
-export default App;
+export default Landing;

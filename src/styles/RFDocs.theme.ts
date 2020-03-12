@@ -11,6 +11,9 @@ export const RFDocsTheme = {
             serif: "serif",
             mono: "Space Mono, monospace"
         },
+        headings: {
+            font: "Space Grotesk, sans-serif"
+        },
         code: {
             inline: {
                 bg: baseColors.amber10,
@@ -21,5 +24,8 @@ export const RFDocsTheme = {
                 scale: 90
             }
         }
+    },
+    button: {
+        fontFamily: "Space Grotesk, sans-serif"
     }
 };
