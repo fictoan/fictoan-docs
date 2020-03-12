@@ -1,13 +1,6 @@
 import React, { ReactElement } from "react";
 
-export const InlineSVG = ({
-    data,
-    className,
-    ...props
-}: {
-    data: string;
-    className?: string;
-}): ReactElement => {
+export const InlineSVG = ({ data, className, ...props }: { data: string; className?: string }): ReactElement => {
     return (
         <div
             // eslint-disable-next-line react/no-danger
