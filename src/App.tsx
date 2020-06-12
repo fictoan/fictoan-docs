@@ -1,47 +1,57 @@
+// External deps
 import React from "react";
-import { Switch, Route, BrowserRouter, RouteProps } from "react-router-dom";
+import {
+    Switch,
+    Route,
+    BrowserRouter,
+    RouteProps
+} from "react-router-dom";
 
-import { ThemeProvider, ContentWrapper } from "reactised-fictoan";
+// Internal deps
+import {
+    ThemeProvider,
+    ContentWrapper
+} from "reactised-fictoan";
 
+// Local components
 import { AppWithSidebar } from "./AppWithSidebar";
 import { GlobalStyle } from "./styles/Global.styled";
 import { GlobalFonts } from "./assets/fonts/fonts";
-
 import { RFDocsTheme } from "./styles/RFDocs.theme";
 
 import Home from "./pages/Home/Home";
+// Local assets
+
 
 type Props = RouteProps;
+
 
 export const App = (props: Props) => {
     const { location } = props;
 
     return (
         // @ts-ignore
-        <ThemeProvider theme={RFDocsTheme}>
+        <ThemeProvider theme={ RFDocsTheme }>
             <GlobalStyle />
 
             <GlobalFonts />
 
-            {/* /////////////////////////////////////////////////////////////////
-                MAIN CONTENT
-           ////////////////////////////////////////////////////////////////////// */}
             <BrowserRouter>
                 <ContentWrapper>
-                    <Switch location={location}>
+                    <Switch location={ location }>
                         <Route
-                            component={Home}
-                            exact
-                            path="/"
+                            path="*"
+                            component={ AppWithSidebar }
                         />
 
                         <Route
-                            component={AppWithSidebar}
-                            path="*"
+                            exact
+                            path="/"
+                            component={ Home }
                         />
                     </Switch>
                 </ContentWrapper>
             </BrowserRouter>
         </ThemeProvider>
     );
-};
+}
