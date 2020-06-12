@@ -1,5 +1,11 @@
 import React from "react";
-import { Portion, Row } from "reactised-fictoan";
+
+import {
+    Row,
+    Portion,
+    Text
+} from "reactised-fictoan";
+
 
 class Typography extends React.PureComponent {
     componentDidMount() {
@@ -28,15 +34,15 @@ class Typography extends React.PureComponent {
 
                 <Row sidePadding="large">
                     <Portion>
-                        <p>
+                        <Text>
                             The below heading sizes are derived using a quick calculation using the{" "}
                             <code>$baseFontSize</code> and <code>$scaleFactor</code>, as set in the{" "}
                             <code>_ff-theme.scss</code> file.
-                        </p>
-                        <p>
+                        </Text>
+                        <Text>
                             <code>$baseFontSize</code> is set at 1em, and <code>$scaleFactor</code> to 1.24. This is a
                             variation of minor-third scale, change this to affect the heading sizes proportionally.
-                        </p>
+                        </Text>
                     </Portion>
 
                     <Portion>
@@ -72,7 +78,7 @@ class Typography extends React.PureComponent {
 
                         <div className="vertically-center-items">
                             <code className="margin-right-fixed-3x">p</code>
-                            <p>paragraph</p>
+                            <Text>paragraph</Text>
                         </div>
 
                         <div className="vertically-center-items">

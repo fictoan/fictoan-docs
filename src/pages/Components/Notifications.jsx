@@ -1,5 +1,14 @@
 import React from "react";
-import { Row, Portion, NotificationWrapper, NotificationItem, HRule, Button, CodeBlock } from "reactised-fictoan";
+import {
+    Row,
+    Portion,
+    Text,
+    NotificationsWrapper,
+    NotificationItem,
+    HRule,
+    Button,
+    CodeBlock
+} from "reactised-fictoan";
 
 // {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
 // {/*   SAMPLE CODES  */}
@@ -10,7 +19,7 @@ const snippetNotificationSample = `
     type="info"
     position="top-right"
 >
-    <p>This is a sample notification.</p>
+    <Text>This is a sample notification.</Text>
 </Notification>
 `;
 
@@ -33,25 +42,25 @@ class Notifications extends React.PureComponent {
                 {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*   SETTING IT UP  */}
                 {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
-                <NotificationWrapper position="right" anchor="top">
+                <NotificationsWrapper position="right" anchor="top">
                     <NotificationItem isDismissible type="info">
-                        <p>Just running diagnostics.</p>
+                        <Text>Just running diagnostics.</Text>
                     </NotificationItem>
 
                     <NotificationItem isDismissible type="warning">
-                        <p>Um, the telescope is picking up something on the horizon.</p>
+                        <Text>Um, the telescope is picking up something on the horizon.</Text>
                     </NotificationItem>
 
                     <NotificationItem isDismissible type="error">
-                        <p className="text-red weight-600">OH GOD! THE ALIENS ARE INVADING! SAVE YOURSELVES!</p>
+                        <Text className="text-red weight-600">OH GOD! THE ALIENS ARE INVADING! SAVE YOURSELVES!</Text>
 
                         <Button className="size-small shape-rounded bg-red text-white margin-top-fixed" value="RUN!!"/>
                     </NotificationItem>
 
                     <NotificationItem isDismissible type="success">
-                        <p>Oh. That was just a spider on the lens. You can relax now.</p>
+                        <Text>Oh. That was just a spider on the lens. You can relax now.</Text>
                     </NotificationItem>
-                </NotificationWrapper>
+                </NotificationsWrapper>
 
                 <Row sidePadding="large">
                     <Portion>
@@ -59,7 +68,7 @@ class Notifications extends React.PureComponent {
                     </Portion>
 
                     <Portion>
-                        <p>The notification component is essentially a small box that can also be used as a toast.</p>
+                        <Text>The notification component is essentially a small box that can also be used as a toast.</Text>
 
                         <CodeBlock source={snippetNotificationSample} language="jsx" />
                     </Portion>
@@ -76,12 +85,12 @@ class Notifications extends React.PureComponent {
                     <Portion>
                         <h4>Types</h4>
 
-                        <p>
+                        <Text>
                             Notifications come in four varieties, set using the <code>type</code> attribute—
-                            <code>info</code>, <code>warning</code>, <code>error</code>, and <code>success</code>.</p>
+                            <code>info</code>, <code>warning</code>, <code>error</code>, and <code>success</code>.</Text>
 
-                        <p>Each of these have individual colours, displayed in a thick left border of the notification box. For example, <code>info</code> is blue, <code>warning</code> is amber, <code>error</code> is red, and <code>success</code> is green. These can be tweaked using variables in the theme.
-                        </p>
+                        <Text>Each of these have individual colours, displayed in a thick left border of the notification box. For example, <code>info</code> is blue, <code>warning</code> is amber, <code>error</code> is red, and <code>success</code> is green. These can be tweaked using variables in the theme.
+                        </Text>
                     </Portion>
                 </Row>
 
@@ -96,11 +105,11 @@ class Notifications extends React.PureComponent {
                     <Portion>
                         <h4>Position</h4>
 
-                        <p>
+                        <Text>
                             It can be displayed in the four corners of the screen using the <code>position</code>{" "}
                             attribute, which takes <code>top-left</code>, <code>top-right</code>,{" "}
                             <code>bottom-left</code> and <code>bottom-right</code> as values.
-                        </p>
+                        </Text>
                     </Portion>
                 </Row>
             </article>

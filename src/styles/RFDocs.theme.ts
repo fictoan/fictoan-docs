@@ -1,31 +1,21 @@
-import { baseColors } from "reactised-fictoan";
-
 export const RFDocsTheme = {
-    mainColors: {
-        hue: baseColors.yellow
-    },
-
-    text: {
-        font: {
-            sans: "Space Grotesk, sans-serif",
-            serif: "serif",
-            mono: "Space Mono, monospace"
+    text : {
+        font : {
+            sans  : "Space Grotesk, sans-serif",
+            serif : "serif",
+            mono  : "Space Mono, monospace"
         },
-        headings: {
-            font: "Space Grotesk, sans-serif"
+        size : {
+            multiplier : 1.24
         },
-        code: {
-            inline: {
-                bg: baseColors.amber10,
-                text: baseColors.red,
-                scale: 90
-            },
-            block: {
-                scale: 90
-            }
-        }
+        headings : {
+            font : "Space Grotesk, sans-serif"
+        },
+        paras: {
+            lineHeight : 1.44,
+        },
     },
-    button: {
-        fontFamily: "Space Grotesk, sans-serif"
+    button : {
+        fontFamily : "Space Grotesk, sans-serif"
     }
 };

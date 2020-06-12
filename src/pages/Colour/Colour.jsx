@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Portion } from "reactised-fictoan";
+import { Row, Text,  Portion } from "reactised-fictoan";
 
 class Colour extends React.PureComponent {
     componentDidMount() {
@@ -28,15 +28,15 @@ class Colour extends React.PureComponent {
 
                 <Row sidePadding="large">
                     <Portion>
-                        <p>
+                        <Text>
                             The below heading sizes are derived using a quick calculation using the{" "}
                             <code>$baseFontSize</code> and <code>$scaleFactor</code>, as set in the{" "}
                             <code>_ff-theme.scss</code> file.
-                        </p>
-                        <p>
+                        </Text>
+                        <Text>
                             <code>$baseFontSize</code> is set at 1em, and <code>$scaleFactor</code> to 1.24. This is a
                             variation of minor-third scale, change this to affect the heading sizes proportionally.
-                        </p>
+                        </Text>
                     </Portion>
 
                     <Portion>

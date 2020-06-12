@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Portion, FormItem, InputField, HRule, CodeBlock } from "reactised-fictoan";
+import { Row, Text,  Portion, FormItem, InputField, HRule, CodeBlock } from "reactised-fictoan";
 
 //  Code sample 01 ========================================================================================
 const snippetForm = `
@@ -71,10 +71,10 @@ class Forms extends React.PureComponent {
 
                 <Row sidePadding="large">
                     <Portion>
-                        <p>
+                        <Text>
                             Most form elements are available as components in RF. They all come with a bit of additional
                             functionality and design tweaks over the regular native elements.
-                        </p>
+                        </Text>
                     </Portion>
                 </Row>
 
@@ -93,10 +93,10 @@ class Forms extends React.PureComponent {
 
                     <Row sidePadding="large">
                         <Portion>
-                            <p>
+                            <Text>
                                 The <code>Form</code> component is used to encapsulate all the form elements with proper
                                 spacing and margins.
-                            </p>
+                            </Text>
 
                             <CodeBlock source={snippetForm} language="jsx" />
                         </Portion>
@@ -116,10 +116,10 @@ class Forms extends React.PureComponent {
 
                     <Row sidePadding="large">
                         <Portion>
-                            <p>
+                            <Text>
                                 The <code>FormItem</code> component is used to wrap individual elements and ensures
                                 equal margins and alignment between them.
-                            </p>
+                            </Text>
 
                             <CodeBlock source={snippetFormItem} language="jsx" />
                         </Portion>
@@ -140,12 +140,12 @@ class Forms extends React.PureComponent {
                     <Row sidePadding="large">
                         <Portion>
                             <h6>Default</h6>
-                            <p>
+                            <Text>
                                 The <code>InputField</code> is the basic input element for text. It comes with a default{" "}
                                 <code>label</code>, a <code>helpText</code> and a native <code>placeholder</code>. The{" "}
                                 <code>label</code> is visible by default, and the <code>helpText</code> is displayed on
                                 focus.
-                            </p>
+                            </Text>
 
                             <FormItem className="margin-top-tiny margin-bottom-tiny">
                                 <InputField
@@ -164,20 +164,20 @@ class Forms extends React.PureComponent {
                     <Row sidePadding="large">
                         <Portion>
                             <h6>Validation</h6>
-                            <p>
+                            <Text>
                                 The <code>InputField</code> can do some basic validation using the <code>pattern</code>{" "}
                                 attribute. Just add the <code>validateThis</code> prop.
-                            </p>
+                            </Text>
 
-                            <p>This will add a grey check mark at the right-hand side of the field. </p>
+                            <Text>This will add a grey check mark at the right-hand side of the field. </Text>
 
-                            <p>
+                            <Text>
                                 It takes a regular expression to check against the input and adds a <code>:valid</code>{" "}
                                 or a <code>:invalid</code> pseudo-class depending on validation passing or failing. The{" "}
                                 <code>:valid</code> pseudo-class makes the check green, and the <code>:invalid</code>{" "}
                                 displays a red cross. These stylings are applied with the <code>valid</code> and{" "}
                                 <code>invalid</code> props as well.
-                            </p>
+                            </Text>
 
                             <FormItem className="margin-top-tiny margin-bottom-tiny">
                                 <InputField

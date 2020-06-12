@@ -19,22 +19,52 @@ export const AppWithSidebar = (props: Props) => {
 
     return (
         <>
-            {/* /////////////////////////////////////////////////////////////////
-                LEFT SIDEBAR
-               ////////////////////////////////////////////////////////////////// */}
+            {/*  //////////////////////////////////////////////////////////  */}
+            {/*  LEFT SIDEBAR  */}
+            {/*  //////////////////////////////////////////////////////////  */}
             <Sidebar location={props.location} />
 
-            {/* /////////////////////////////////////////////////////////////////
-                MAIN CONTENT
-           ////////////////////////////////////////////////////////////////////// */}
+            {/* ///////////////////////////////////////////////////////////  */}
+            {/*  MAIN CONTENT  */}
+            {/*  //////////////////////////////////////////////////////////  */}
             <ContentWrapper>
                 <Switch location={location}>
-                    <Route exact component={GettingStarted} path="/getting-started" />
-                    <Route exact component={Layout} path="/layout" />
-                    <Route exact component={Typography} path="/typography" />
-                    <Route exact component={Colour} path="/colour" />
-                    <Route exact component={Form} path="/form" />
-                    <Route exact component={Notifications} path="/notifications" />
+
+                    <Route
+                        component={ GettingStarted }
+                        exact
+                        path="/getting-started"
+                    />
+
+                    <Route
+                        exact
+                        path="/layout"
+                        component={ Layout }
+                    />
+
+                    <Route
+                        exact
+                        path="/typography"
+                        component={ Typography }
+                    />
+
+                    <Route
+                        exact
+                        path="/colour"
+                        component={ Colour }
+                    />
+
+                    <Route
+                        exact
+                        path="/form"
+                        component={ Form }
+                    />
+
+                    <Route
+                        exact
+                        path="/components/notifications"
+                        component={ Notifications }
+                    />
                 </Switch>
             </ContentWrapper>
         </>

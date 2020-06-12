@@ -40,8 +40,8 @@ class Sidebar extends React.PureComponent {
         return (
             <SidebarWrapper className={this.state.collapsed ? "collapsed" : ""}>
                 <SidebarHeader onClick={this.headerOnClick}>
-                    <h4 className="header-logo">FICTOAN UI</h4>
-                    <h5 className="header-icon">FUI</h5>
+                    <h5 className="header-logo">FICTOAN&nbsp;UI</h5>
+                    <h5 className="header-icon">FF</h5>
                 </SidebarHeader>
 
                 <NavLink exact to="/">
@@ -141,7 +141,7 @@ class Sidebar extends React.PureComponent {
                     </summary>
 
                     <SidebarSublinkGroup>
-                        <NavLink to="/components">
+                        <NavLink to="/components/notifications">
                             <SidebarItem>
                                 <SidebarItemIcon />
                                 <SidebarItemText className="sidebar-sublink" linkText="Notification" />
