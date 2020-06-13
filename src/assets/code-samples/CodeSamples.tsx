@@ -1,10 +1,10 @@
-export const installSnippet = `
+export const snippetInstall = `
 yarn add reactised-fictoan
 # or
 npm install reactised-fictoan
 `;
 
-export const sampleSnippet = `
+export const snippetCardSample = `
 <Card
     padding="medium"
     bgColor="amber-10"
@@ -23,7 +23,9 @@ export const sampleSnippet = `
         marginTop="none"
         marginBottom="tiny"
     >
-        I am FICTOAN UI. Nice to meet you.
+        I’m a Card component, and can be customised
+        in about 4 million different ways. Nice to meet you.
+        
     </Text>
 
     <Button

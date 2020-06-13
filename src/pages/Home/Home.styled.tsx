@@ -19,4 +19,11 @@ export const HomeStyled = styled.article`
         height                : 100vh;
     }
 
+    #demo-section { position : relative; }
+
+    #output {
+        position : sticky;
+        top      : 24px;
+    }
+
 `;

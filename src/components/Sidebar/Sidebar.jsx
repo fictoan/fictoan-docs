@@ -1,17 +1,27 @@
+// External deps
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
+// Internal deps
 import {
     SidebarWrapper,
     SidebarHeader,
     SidebarItem,
     SidebarItemIcon,
     SidebarItemText,
-    SidebarSublinkGroup
+    SidebarLinksGroup,
+    SidebarLinksGroupHeader,
+    SidebarSublinksGroup
     // HRule
 } from "reactised-fictoan";
 
+// Local components
+import { scrollWithOffset } from "../../utils/scrollOffset";
+
+// Local assets
 // import iconHome from "../../assets/icons/home.svg"
+
 
 class Sidebar extends React.PureComponent {
     constructor(props) {
@@ -28,15 +38,6 @@ class Sidebar extends React.PureComponent {
     };
 
     render() {
-        // const scrollWithOffset = (el, offset) => {
-        //     const elementPosition = el.offsetTop - offset;
-        //     window.scroll({
-        //         top: elementPosition,
-        //         left: 0,
-        //         behavior: "smooth"
-        //     });
-        // };
-
         return (
             <SidebarWrapper className={this.state.collapsed ? "collapsed" : ""}>
                 <SidebarHeader onClick={this.headerOnClick}>
@@ -58,58 +59,78 @@ class Sidebar extends React.PureComponent {
                     </SidebarItem>
                 </NavLink>
 
-                <details>
-                    <summary>
+                <SidebarLinksGroup>
+                    <SidebarLinksGroupHeader>
                         <SidebarItem>
                             <SidebarItemIcon />
                             <SidebarItemText linkText="Layout" />
                         </SidebarItem>
-                    </summary>
+                    </SidebarLinksGroupHeader>
 
-                    <SidebarSublinkGroup>
-                        <NavLink to="/layout">
+                    <NavLink to="/layout">
+                        <SidebarItem>
+                            <SidebarItemIcon />
+                            <SidebarItemText linkText="Setup" />
+                        </SidebarItem>
+                    </NavLink>
+
+                    <SidebarSublinksGroup>
+                        <HashLink
+                            smooth
+                            scroll={el => scrollWithOffset(el, 48)}
+                            to="/layout#add-content"
+                        >
                             <SidebarItem>
                                 <SidebarItemIcon />
-                                <SidebarItemText className="sidebar-sublink" linkText="Setup" />
+                                <SidebarItemText linkText="Add content" />
                             </SidebarItem>
-                        </NavLink>
+                        </HashLink>
 
-                        <NavLink to="/layout#add-content">
+                        <HashLink
+                            smooth
+                            scroll={el => scrollWithOffset(el, 48)}
+                            to="/layout#responsiveness"
+                        >
                             <SidebarItem>
                                 <SidebarItemIcon />
-                                <SidebarItemText className="sidebar-sublink" linkText="Add content" />
+                                <SidebarItemText linkText="Responsiveness" />
                             </SidebarItem>
-                        </NavLink>
+                        </HashLink>
 
-                        <NavLink to="/layout#responsiveness">
+                        <HashLink
+                            smooth
+                            scroll={el => scrollWithOffset(el, 48)}
+                            to="/layout#visibility"
+                        >
                             <SidebarItem>
                                 <SidebarItemIcon />
-                                <SidebarItemText className="sidebar-sublink" linkText="Responsiveness" />
+                                <SidebarItemText linkText="Visibility" />
                             </SidebarItem>
-                        </NavLink>
+                        </HashLink>
 
-                        <NavLink to="/layout#visibility">
+                        <HashLink
+                            smooth
+                            scroll={el => scrollWithOffset(el, 48)}
+                            to="/layout#content-padding"
+                        >
                             <SidebarItem>
                                 <SidebarItemIcon />
-                                <SidebarItemText className="sidebar-sublink" linkText="Visibility" />
+                                <SidebarItemText linkText="Content padding" />
                             </SidebarItem>
-                        </NavLink>
+                        </HashLink>
 
-                        <NavLink to="/layout#content-padding">
+                        <HashLink
+                            smooth
+                            scroll={el => scrollWithOffset(el, 48)}
+                            to="/layout#gutter-sizing"
+                        >
                             <SidebarItem>
                                 <SidebarItemIcon />
-                                <SidebarItemText className="sidebar-sublink" linkText="Content padding" />
+                                <SidebarItemText linkText="Gutter sizing" />
                             </SidebarItem>
-                        </NavLink>
-
-                        <NavLink to="/layout#gutter-sizing">
-                            <SidebarItem>
-                                <SidebarItemIcon />
-                                <SidebarItemText className="sidebar-sublink" linkText="Gutter sizing" />
-                            </SidebarItem>
-                        </NavLink>
-                    </SidebarSublinkGroup>
-                </details>
+                        </HashLink>
+                    </SidebarSublinksGroup>
+                </SidebarLinksGroup>
 
                 <NavLink exact to="/typography">
                     <SidebarItem>
@@ -140,14 +161,14 @@ class Sidebar extends React.PureComponent {
                         </SidebarItem>
                     </summary>
 
-                    <SidebarSublinkGroup>
+                    <SidebarSublinksGroup>
                         <NavLink to="/components/notifications">
                             <SidebarItem>
                                 <SidebarItemIcon />
-                                <SidebarItemText className="sidebar-sublink" linkText="Notification" />
+                                <SidebarItemText linkText="Notification" />
                             </SidebarItem>
                         </NavLink>
-                    </SidebarSublinkGroup>
+                    </SidebarSublinksGroup>
                 </details>
             </SidebarWrapper>
         );

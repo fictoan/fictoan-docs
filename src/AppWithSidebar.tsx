@@ -1,39 +1,41 @@
+// External deps
 import React from "react";
 import { Switch, Route, RouteProps } from "react-router-dom";
 
+// Internal deps
 import { ContentWrapper } from "reactised-fictoan";
 
+// Local components
 import Layout from "pages/Layout/Layout";
 import Typography from "pages/Typography/Typography";
 import Colour from "pages/Colour/Colour";
 import Notifications from "pages/Components/Notifications";
 import Sidebar from "components/Sidebar/Sidebar";
-
 import GettingStarted from "./pages/GettingStarted/GettingStarted";
 import Form from "./pages/Form/Form";
 
+// Local assets
+
+
 type Props = RouteProps;
 
-export const AppWithSidebar = (props: Props) => {
+
+export const AppWithSidebar = (props : Props) => {
     const { location } = props;
 
     return (
         <>
-            {/*  //////////////////////////////////////////////////////////  */}
-            {/*  LEFT SIDEBAR  */}
-            {/*  //////////////////////////////////////////////////////////  */}
-            <Sidebar location={props.location} />
+            {/*  LEFT SIDEBAR    ///////////////////////////////////////    */}
+            <Sidebar location={ props.location } />
 
-            {/* ///////////////////////////////////////////////////////////  */}
-            {/*  MAIN CONTENT  */}
-            {/*  //////////////////////////////////////////////////////////  */}
+            {/*  MAIN CONTENT    ///////////////////////////////////////    */}
             <ContentWrapper>
-                <Switch location={location}>
+                <Switch location={ location }>
 
                     <Route
-                        component={ GettingStarted }
                         exact
                         path="/getting-started"
+                        component={ GettingStarted }
                     />
 
                     <Route
