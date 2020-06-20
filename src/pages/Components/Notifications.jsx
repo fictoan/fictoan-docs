@@ -52,9 +52,11 @@ class Notifications extends React.PureComponent {
                     </NotificationItem>
 
                     <NotificationItem isDismissible type="error">
-                        <Text className="text-red weight-600">OH GOD! THE ALIENS ARE INVADING! SAVE YOURSELVES!</Text>
+                        <Text marginBottom="tiny" textColor="red">OH GOD! THE ALIENS ARE INVADING! SAVE YOURSELVES!</Text>
 
-                        <Button className="size-small shape-rounded bg-red text-white margin-top-fixed" value="RUN!!"/>
+                        <Button size="small" shape="rounded" bgColor="red" textColor="white">
+                            RUN!!
+                        </Button>
                     </NotificationItem>
 
                     <NotificationItem isDismissible type="success">
@@ -62,7 +64,7 @@ class Notifications extends React.PureComponent {
                     </NotificationItem>
                 </NotificationsWrapper>
 
-                <Row sidePadding="large">
+                <Row id="basics" sidePadding="large">
                     <Portion>
                         <h4>Basics</h4>
                     </Portion>
@@ -81,7 +83,7 @@ class Notifications extends React.PureComponent {
                     className="margin-top-fixed-3x margin-bottom-fixed-3x"
                 />
 
-                <Row sidePadding="large">
+                <Row id="types" sidePadding="large">
                     <Portion>
                         <h4>Types</h4>
 
@@ -101,7 +103,7 @@ class Notifications extends React.PureComponent {
                     className="margin-top-fixed-3x margin-bottom-fixed-3x"
                 />
 
-                <Row sidePadding="large">
+                <Row id="position" sidePadding="large">
                     <Portion>
                         <h4>Position</h4>
 

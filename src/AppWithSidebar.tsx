@@ -6,7 +6,7 @@ import { Switch, Route, RouteProps } from "react-router-dom";
 import { ContentWrapper } from "reactised-fictoan";
 
 // Local components
-import Layout from "pages/Layout/Layout";
+import { Layout } from "pages/Layout/Layout";
 import Typography from "pages/Typography/Typography";
 import Colour from "pages/Colour/Colour";
 import Notifications from "pages/Components/Notifications";
@@ -31,7 +31,6 @@ export const AppWithSidebar = (props : Props) => {
             {/*  MAIN CONTENT    ///////////////////////////////////////    */}
             <ContentWrapper>
                 <Switch location={ location }>
-
                     <Route
                         exact
                         path="/getting-started"

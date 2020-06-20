@@ -6,3 +6,7 @@ export const scrollWithOffset = (el: HTMLElement, offset: number) => {
         behavior: "smooth"
     });
 }
+
+export const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}

@@ -1,3 +1,5 @@
+import { baseColors } from "reactised-fictoan/dist";
+
 export const RFDocsTheme = {
     text : {
         font : {
@@ -12,10 +14,25 @@ export const RFDocsTheme = {
             font : "Space Grotesk, sans-serif"
         },
         paras: {
-            lineHeight : 1.44,
+            lineHeight : 1.56,
         },
     },
     button : {
         fontFamily : "Space Grotesk, sans-serif"
+    },
+    sidebar : {
+        isCollapsed : {
+            label : {
+                text : baseColors.white,
+            }
+        },
+        header: {
+            bg          : baseColors.white,
+            borderBottom: baseColors.white
+        },
+        footer: {
+            bg        : baseColors.white,
+            borderTop : baseColors.slate10
+        },
     }
-};
+}

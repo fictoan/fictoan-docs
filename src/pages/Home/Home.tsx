@@ -79,7 +79,7 @@ export const Home = () => {
             <Row sidePadding="huge" gutters="large" retainLayoutOnTabLS>
                 <Portion desktopSpan="one-third">
                     <Heading as="h5" marginBottom="micro">Hand-off production code</Heading>
-                    <Text>Why hand-off XD and Sketch files when you can ship production-ready React code?</Text>
+                    <Text>Why pass around XD and Sketch files when you can hand-off production-ready React code?</Text>
                 </Portion>
 
                 <Portion desktopSpan="one-third">

@@ -153,6 +153,14 @@ class Forms extends React.PureComponent {
                                     helpText="Help text, visible on focus"
                                     placeholder="Placeholder"
                                 />
+                                <InputField
+                                    label="Email"
+                                    helpText="Your work email works best"
+                                    placeholder="name@example.com"
+                                    errorText="Enter a valid email"
+                                    validateThis
+                                    pattern="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
+                                />
                             </FormItem>
 
                             <CodeBlock source={snippetTextInput} language="jsx" />

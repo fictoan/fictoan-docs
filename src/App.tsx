@@ -10,7 +10,6 @@ import {
 // Internal deps
 import {
     ThemeProvider,
-    ContentWrapper
 } from "reactised-fictoan";
 
 // Local components
@@ -37,20 +36,18 @@ export const App = (props : Props) => {
             <GlobalFonts />
 
             <BrowserRouter>
-                <ContentWrapper>
-                    <Switch location={ location }>
-                        <Route
-                            exact
-                            path="/"
-                            component={ Home }
-                        />
+                <Switch location={ location }>
+                    <Route
+                        exact
+                        path="/"
+                        component={ Home }
+                    />
 
-                        <Route
-                            path="*"
-                            component={ AppWithSidebar }
-                        />
-                    </Switch>
-                </ContentWrapper>
+                    <Route
+                        path="*"
+                        component={ AppWithSidebar }
+                    />
+                </Switch>
             </BrowserRouter>
         </ThemeProvider>
     );
