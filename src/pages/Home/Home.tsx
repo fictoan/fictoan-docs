@@ -13,7 +13,7 @@ import {
     CodeBlock,
     Card,
     Button
-} from "reactised-fictoan";
+} from "fictoan-react";
 
 // Local components
 import { HomeStyled } from "./Home.styled";

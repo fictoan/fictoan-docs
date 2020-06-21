@@ -4165,6 +4165,21 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
+fictoan-react@^0.28.0:
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/fictoan-react/-/fictoan-react-0.28.0.tgz#b5eaa090998be76553545d3f1848821511c2ea7b"
+  integrity sha512-RSO/BsobL9F848X4civ3aoHnDLHvS9x5LE0NmHKTeAIEQgj9U2d9ILB0BmBAsThmbz6iZtxTovbVqcldbIBTPw==
+  dependencies:
+    "@types/lodash" "^4.14.149"
+    "@types/react" "^16.9.23"
+    "@types/styled-components" "^5.0.1"
+    lodash "^4.17.15"
+    polished "^3.4.4"
+    prism-react-renderer "^1.1.0"
+    prismjs "^1.20.0"
+    react "^16.13.0"
+    styled-components "^5.0.1"
+
 figgy-pudding@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
@@ -8347,21 +8362,6 @@ react@^16.13.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-
-reactised-fictoan@^0.24.27:
-  version "0.24.27"
-  resolved "https://registry.yarnpkg.com/reactised-fictoan/-/reactised-fictoan-0.24.27.tgz#c5041722c1d14806ad44357e835b426726ff7f0a"
-  integrity sha512-gsFOOkFqZr7fMxUgD618i6m9v/YjG1AKgQ+ATrrM+dShdJvcKn0EekCp6EoVPLS8arb5sjZfV1oPKCKBoAvXbQ==
-  dependencies:
-    "@types/lodash" "^4.14.149"
-    "@types/react" "^16.9.23"
-    "@types/styled-components" "^5.0.1"
-    lodash "^4.17.15"
-    polished "^3.4.4"
-    prism-react-renderer "^1.1.0"
-    prismjs "^1.20.0"
-    react "^16.13.0"
-    styled-components "^5.0.1"
 
 read-pkg-up@^2.0.0:
   version "2.0.0"

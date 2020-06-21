@@ -1,7 +1,7 @@
 export const snippetInstall = `
-yarn add reactised-fictoan
+yarn add fictoan-react
 # or
-npm install reactised-fictoan
+npm install fictoan-react
 `;
 
 export const snippetCardSample = `

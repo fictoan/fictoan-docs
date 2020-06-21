@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Text,  Portion } from "reactised-fictoan";
+import { Row, Text,  Portion } from "fictoan-react";
 
 class Colour extends React.PureComponent {
     componentDidMount() {

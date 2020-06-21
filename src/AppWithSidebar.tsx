@@ -3,7 +3,7 @@ import React from "react";
 import { Switch, Route, RouteProps } from "react-router-dom";
 
 // Internal deps
-import { ContentWrapper } from "reactised-fictoan";
+import { ContentWrapper } from "fictoan-react";
 
 // Local components
 import { Layout } from "pages/Layout/Layout";

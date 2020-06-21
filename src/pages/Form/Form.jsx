@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Text,  Portion, FormItem, InputField, HRule, CodeBlock } from "reactised-fictoan";
+import { Row, Text,  Portion, FormItem, InputField, HRule, CodeBlock } from "fictoan-react";
 
 //  Code sample 01 ========================================================================================
 const snippetForm = `

@@ -10,7 +10,7 @@ import {
 // Internal deps
 import {
     ThemeProvider,
-} from "reactised-fictoan";
+} from "fictoan-react";
 
 // Local components
 import { AppWithSidebar } from "./AppWithSidebar";

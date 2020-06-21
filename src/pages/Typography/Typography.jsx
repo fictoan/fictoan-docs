@@ -4,7 +4,7 @@ import {
     Row,
     Portion,
     Text
-} from "reactised-fictoan";
+} from "fictoan-react";
 
 
 class Typography extends React.PureComponent {

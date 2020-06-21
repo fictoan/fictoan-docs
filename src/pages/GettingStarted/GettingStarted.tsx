@@ -10,7 +10,7 @@ import {
     HRule,
     ProgressBar,
     Button
-} from "reactised-fictoan";
+} from "fictoan-react";
 
 import { snippetInstall } from "../../assets/code-samples/CodeSamples";
 

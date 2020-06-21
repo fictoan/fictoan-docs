@@ -9,14 +9,14 @@ import {
     HRule,
     Card,
     CodeBlock
-} from "reactised-fictoan";
+} from "fictoan-react";
 
 import { LayoutStyled } from "./Layout.styled";
 import {
     sampleRow1,
     sampleRowAndPortion1,
-    sampleRowAndPortion2,
     sampleRowAndPortion3,
+    sampleRowAndPortion4,
     sampleCode2,
     sampleCode3a,
     sampleCode3b,
@@ -87,76 +87,76 @@ export const Layout = () => {
                         </Element>
                         <Row bgColor="slate-10" marginBottom="none" isFullHeight>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">1</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">1</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">2</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">2</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">3</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">3</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">4</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">4</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">5</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">5</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">6</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">6</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">7</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">7</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">8</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">8</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">9</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">9</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">10</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">10</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">11</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">11</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">12</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">12</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">13</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">13</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">14</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">14</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">15</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">15</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">16</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">16</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">17</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">17</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">18</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">18</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">19</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">19</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">20</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">20</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">21</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">21</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">22</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">22</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">23</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">23</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">24</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">24</Text>
                             </Portion>
                         </Row>
                     </Card>
@@ -196,82 +196,86 @@ export const Layout = () => {
 
                         <Row className="demo-row" marginBottom="none">
                             <Portion desktopSpan="12" bgColor="red-40">
-                                <Text size="small" isMono>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Portion desktopSpan="12"></Text>
+                                <Text size="small" isMono>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;Portion desktopSpan="12"><br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add content here<br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/Portion>
+                                </Text>
                             </Portion>
                         </Row>
 
                         <Row bgColor="slate-10" marginBottom="none" isFullHeight>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">1</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">1</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">2</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">2</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">3</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">3</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">4</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">4</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">5</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">5</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">6</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">6</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">7</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">7</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">8</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">8</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">9</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">9</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">10</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">10</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">11</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">11</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">12</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">12</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">13</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">13</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">14</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">14</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">15</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">15</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">16</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">16</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">17</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">17</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">18</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">18</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">19</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">19</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">20</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">20</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">21</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">21</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">22</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">22</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">23</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">23</Text>
                             </Portion>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text className="text-centre">24</Text>
+                                <Text hideOnTabPT hideOnMobile size="small" align="centre">24</Text>
                             </Portion>
                         </Row>
                     </Card>
@@ -356,83 +360,190 @@ export const Layout = () => {
                         </Row>
 
                         <Row bgColor="slate-10" marginBottom="none" isFullHeight>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">1</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">2</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">3</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">4</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">5</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">6</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">7</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">8</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">9</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">10</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">11</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">12</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">13</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">14</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">15</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">16</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">17</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">18</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">19</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">20</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">21</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">22</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">23</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro">
-                                <Text hideOnTabPT hideOnMobile className="text-centre">24</Text>
-                            </Portion>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                         </Row>
                     </Card>
                 </Element>
 
 
+                <Row sidePadding="large" marginBottom="nano">
+                    <Portion>
+                        <Text>While you can put infinite <code>Portion</code> elements inside a <code>Row</code>, it’s better to logically break it up according to your content.</Text>
+                    </Portion>
+                </Row>
+
+                <Row sidePadding="large" marginBottom="nano">
+                    <Portion>
+                        <CodeBlock source={sampleRowAndPortion4} language="jsx" />
+                    </Portion>
+                </Row>
+
+                {/*  DEMONSTRATION  ======================================  */}
+                <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="tiny">
+                    <Card className="screen-desktop free-size" shape="rounded" shadow="hard">
+                        <Element as="div" className="title-bar" bgColor="slate-20">
+                            <Heading as="h4" textColor="red-80">●</Heading>
+                            <Heading as="h4" textColor="amber-80">●</Heading>
+                            <Heading as="h4" textColor="green-80">●</Heading>
+                        </Element>
+
+
+                        <Row className="demo-parent-row" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Row className="demo-row" retainLayoutAlways>
+                                <Portion desktopSpan="12" bgColor="red-40">
+                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="12"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="12"</Text>
+                                </Portion>
+
+                                <Portion desktopSpan="12" bgColor="red-40">
+                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="12"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="12"</Text>
+                                </Portion>
+                            </Row>
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                        </Row>
+
+
+                        <Row className="demo-parent-row" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Row className="demo-row" retainLayoutAlways>
+                                <Portion desktopSpan="8" bgColor="red-40">
+                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="8"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"</Text>
+                                </Portion>
+
+                                <Portion desktopSpan="8" bgColor="red-40">
+                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="8"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"</Text>
+                                </Portion>
+
+                                <Portion desktopSpan="8" bgColor="red-40">
+                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="8"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"</Text>
+                                </Portion>
+                            </Row>
+
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                        </Row>
+
+
+
+                        <Row className="demo-parent-row" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Row className="demo-row" retainLayoutAlways>
+                                <Portion desktopSpan="5" bgColor="red-40">
+                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="5"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="5"</Text>
+                                </Portion>
+
+                                <Portion desktopSpan="13" bgColor="red-40">
+                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="13"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="13"</Text>
+                                </Portion>
+
+                                <Portion desktopSpan="6" bgColor="red-40">
+                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="6"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="6"</Text>
+                                </Portion>
+                            </Row>
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                            <Portion desktopSpan="1" bgColor="red-20" />
+                        </Row>
+
+
+                    </Card>
+                </Element>
+
+                <HRule sideMargin="large" bgColor="sky-40" />
 
 
 
@@ -467,15 +578,15 @@ export const Layout = () => {
                         className="retain-layout-on-tab-ls retain-layout-on-tab-pt retain-layout-on-mobile"
                     >
                         <Portion desktopSpan="4" bgColor="red-20" className="padding-top-small">
-                            <Text className="text-centre">4/24</Text>
+                            <Text hideOnTabPT hideOnMobile size="small" align="centre">4/24</Text>
                         </Portion>
 
                         <Portion desktopSpan="8" bgColor="red-20" className="padding-top-small">
-                            <Text className="text-centre">8/24</Text>
+                            <Text hideOnTabPT hideOnMobile size="small" align="centre">8/24</Text>
                         </Portion>
 
                         <Portion desktopSpan="12" bgColor="red-20" className="padding-top-small">
-                            <Text className="text-centre">12/24</Text>
+                            <Text hideOnTabPT hideOnMobile size="small" align="centre">12/24</Text>
                         </Portion>
                     </Row>
                 </Element>

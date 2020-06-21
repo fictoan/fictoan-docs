@@ -8,7 +8,7 @@ import {
     HRule,
     Button,
     CodeBlock
-} from "reactised-fictoan";
+} from "fictoan-react";
 
 // {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
 // {/*   SAMPLE CODES  */}

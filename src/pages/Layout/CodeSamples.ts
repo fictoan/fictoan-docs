@@ -58,6 +58,32 @@ export const sampleRowAndPortion3 = `
 </Row>
 `;
 
+
+//  Code sample 01 ========================================================================================
+export const sampleRowAndPortion4 = `
+<Row>
+    <Portion desktopSpan="12"></Portion>
+    
+    <Portion desktopSpan="12"></Portion>
+</Row>
+    
+<Row>
+    <Portion desktopSpan="8"></Portion>
+    
+    <Portion desktopSpan="8"></Portion>
+    
+    <Portion desktopSpan="8"></Portion>
+</Row>
+    
+<Row>
+    <Portion desktopSpan="5"></Portion>
+    
+    <Portion desktopSpan="13"></Portion>
+    
+    <Portion desktopSpan="6"></Portion>
+</Row>
+`;
+
 //  Code sample 02 ========================================================================================
 export const sampleCode2 = `
 <Row>

@@ -15,6 +15,8 @@ export const LayoutStyled = styled.article`
     }
 
     .screen-tall { height : 600px; }
+    
+    .free-size { height : auto; }
 
     .title-bar {
         position : sticky;
@@ -32,8 +34,12 @@ export const LayoutStyled = styled.article`
         }
     }
 
+    .demo-parent-row {
+        position : relative;
+    }
+
     .demo-row {
         position : absolute;
-        top      : 120px;
+        top      : 20px;
     }
 `;

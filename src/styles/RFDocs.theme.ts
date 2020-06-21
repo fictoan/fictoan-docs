@@ -1,4 +1,4 @@
-import { baseColors } from "reactised-fictoan/dist";
+import { baseColors } from "fictoan-react";
 
 export const RFDocsTheme = {
     text : {

@@ -15,7 +15,7 @@ import {
     SidebarItemsGroupHeader,
     SidebarNestedLinks, SidebarFooter
     // HRule
-} from "reactised-fictoan";
+} from "fictoan-react";
 
 // Local components
 import { scrollWithOffset, scrollToTop } from "../../utils/scrollHelpers";

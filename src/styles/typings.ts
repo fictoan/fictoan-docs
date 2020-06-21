@@ -1,4 +1,4 @@
-import { ThemeProps as RFThemeProps } from "reactised-fictoan";
+import { ThemeProps as RFThemeProps } from "fictoan-react";
 import { RFDocsTheme } from "./RFDocs.theme";
 
 type Theme = RFThemeProps["theme"] & typeof RFDocsTheme;
