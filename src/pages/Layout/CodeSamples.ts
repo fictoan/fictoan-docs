@@ -85,7 +85,7 @@ export const sampleRowAndPortion4 = `
 `;
 
 //  Code sample 02 ========================================================================================
-export const sampleCode2 = `
+export const sampleNamedPortions = `
 <Row>
     <Portion desktopSpan="2" />
 
@@ -98,89 +98,47 @@ export const sampleCode2 = `
 `;
 
 //  Code sample 03a ========================================================================================
-export const sampleCode3a = `
+export const sampleResonsiveness = `
 <Row>
-    <Portion desktopSpan="one-sixth" tabLSSpan="8/24" tabPTSpan="half" mobileSpan="24/24" />
+    <Portion desktopSpan="one-sixth" tabLSSpan="8" tabPTSpan="half" mobileSpan="two-third" />
 </Row>
 `;
 
 //  Code sample 03b ========================================================================================
-export const sampleCode3b = `
-// Portions don’t change on tablet landscape
-<Row retainLayoutOnTabLS />
-
-// Portions don’t change on tablet portrait
-<Row retainLayoutOnTabPT />
-
-// Portions don’t change on mobile
-<Row retainLayoutOnMobile />
-
-// Portions don’t change widths across devices
-<Row retainLayoutAlways />
+export const sampleTurnOffResponsiveness = `
+<Row retainLayoutOnTabLS /> // Portions don’t change on tablet landscape
+    
+<Row retainLayoutOnTabPT /> // Portions don’t change on tablet portrait
+    
+<Row retainLayoutOnMobile /> // Portions don’t change on mobile
+    
+<Row retainLayoutAlways /> // Portions don’t change widths across devices
 `;
 
 // =========================================================================================================
 // SIDE PADDING  ===========================================================================================
 //  Code sample 04a ========================================================================================
-export const sampleCode4a = `
-// Default behaviour
-<Row />
-`;
-
-//  Code sample 04b ========================================================================================
-export const sampleCode4b = `
+export const sampleContentPadding = `
+<Row />  // Full-width content, this is the default
+<Row sidePadding="nano" />
+<Row sidePadding="micro" />
 <Row sidePadding="tiny" />
-`;
-
-//  Code sample 04c ========================================================================================
-export const sampleCode4c = `
 <Row sidePadding="small" />
-`;
-
-//  Code sample 04d ========================================================================================
-export const sampleCode4d = `
 <Row sidePadding="medium" />
-`;
-
-//  Code sample 04e ========================================================================================
-export const sampleCode4e = `
 <Row sidePadding="large" />
-`;
-
-//  Code sample 04f ========================================================================================
-export const sampleCode4f = `
 <Row sidePadding="huge" />
 `;
 
+
 // =========================================================================================================
 // GUTTER SIZING  ==========================================================================================
-//  Code sample 05a ========================================================================================
-export const sampleCode5a = `
+export const sampleGutters = `
 <Row gutters="none" />
-`;
-
-//  Code sample 05b ========================================================================================
-export const sampleCode5b = `
+<Row gutters="nano" />
+<Row gutters="micro" />
 <Row gutters="tiny" />
-`;
-
-//  Code sample 05c ========================================================================================
-export const sampleCode5c = `
 <Row gutters="small" />
-`;
-
-//  Code sample 05d ========================================================================================
-export const sampleCode5d = `
-//  This is default
-<Row gutters="medium" />
-`;
-
-//  Code sample 05e ========================================================================================
-export const sampleCode5e = `
+<Row gutters="medium" /> // Default behaviour
 <Row gutters="large" />
-`;
-
-//  Code sample 05f ========================================================================================
-export const sampleCode5f = `
 <Row gutters="huge" />
 `;

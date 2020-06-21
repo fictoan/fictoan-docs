@@ -8,7 +8,8 @@ import {
     Text,
     HRule,
     Card,
-    CodeBlock
+    CodeBlock,
+    Table
 } from "fictoan-react";
 
 import { LayoutStyled } from "./Layout.styled";
@@ -17,21 +18,11 @@ import {
     sampleRowAndPortion1,
     sampleRowAndPortion3,
     sampleRowAndPortion4,
-    sampleCode2,
-    sampleCode3a,
-    sampleCode3b,
-    sampleCode4a,
-    sampleCode4b,
-    sampleCode4c,
-    sampleCode4d,
-    sampleCode4e,
-    sampleCode4f,
-    sampleCode5a,
-    sampleCode5b,
-    sampleCode5c,
-    sampleCode5d,
-    sampleCode5e,
-    sampleCode5f
+    sampleNamedPortions,
+    sampleResonsiveness,
+    sampleTurnOffResponsiveness,
+    sampleContentPadding,
+    sampleGutters
 } from "./CodeSamples";
 
 
@@ -163,7 +154,7 @@ export const Layout = () => {
                 </Element>
             </Element>
 
-            <HRule sideMargin="large" bgColor="sky-40" />
+            <HRule sideMargin="large" bgColor="sky-80" />
 
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*   ADDING CONTENT  */}
@@ -186,7 +177,7 @@ export const Layout = () => {
                 </Row>
 
                 {/*  DEMONSTRATION  ======================================  */}
-                <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="tiny">
+                <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="small">
                     <Card className="screen-desktop" shape="rounded" shadow="hard">
                         <Element as="div" className="title-bar" bgColor="slate-20">
                             <Heading as="h4" textColor="red-80">●</Heading>
@@ -281,8 +272,11 @@ export const Layout = () => {
                     </Card>
                 </Element>
 
+
+                {/*   MULTIPLE PORTIONS  ////////////////////////////////////////////////////////////////////////// */}
                 <Row sidePadding="large" marginBottom="nano">
                     <Portion>
+                        <Heading as="h5">Multiple Portions</Heading>
                         <Text>In the same way, you can add as many <code>Portion</code> elements inside the <code>Row</code>. If the sum of columns values exceeds <code>24</code>, they will wrap to the next line.</Text>
                     </Portion>
                 </Row>
@@ -294,7 +288,7 @@ export const Layout = () => {
                 </Row>
 
                 {/*  DEMONSTRATION  ======================================  */}
-                <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="tiny">
+                <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="small">
                     <Card className="screen-desktop screen-tall" shape="rounded" shadow="hard">
                         <Element as="div" className="title-bar" bgColor="slate-20">
                             <Heading as="h4" textColor="red-80">●</Heading>
@@ -388,9 +382,13 @@ export const Layout = () => {
                     </Card>
                 </Element>
 
+                <HRule sideMargin="large" bgColor="sky-80" />
 
+
+                {/*   MULTIPLE ROWS  ////////////////////////////////////////////////////////////////////////////// */}
                 <Row sidePadding="large" marginBottom="nano">
                     <Portion>
+                        <Heading as="h5">Multiple Rows</Heading>
                         <Text>While you can put infinite <code>Portion</code> elements inside a <code>Row</code>, it’s better to logically break it up according to your content.</Text>
                     </Portion>
                 </Row>
@@ -402,7 +400,7 @@ export const Layout = () => {
                 </Row>
 
                 {/*  DEMONSTRATION  ======================================  */}
-                <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="tiny">
+                <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="small">
                     <Card className="screen-desktop free-size" shape="rounded" shadow="hard">
                         <Element as="div" className="title-bar" bgColor="slate-20">
                             <Heading as="h4" textColor="red-80">●</Heading>
@@ -412,7 +410,7 @@ export const Layout = () => {
 
 
                         <Row className="demo-parent-row" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
-                            <Row className="demo-row" retainLayoutAlways>
+                            <Row className="demo-row" style={{"top": "12px"}} retainLayoutAlways>
                                 <Portion desktopSpan="12" bgColor="red-40">
                                     <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="12"></Text>
                                     <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="12"</Text>
@@ -451,7 +449,7 @@ export const Layout = () => {
 
 
                         <Row className="demo-parent-row" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
-                            <Row className="demo-row" retainLayoutAlways>
+                            <Row className="demo-row" style={{"top": "12px"}} retainLayoutAlways>
                                 <Portion desktopSpan="8" bgColor="red-40">
                                     <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="8"></Text>
                                     <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"</Text>
@@ -497,7 +495,7 @@ export const Layout = () => {
 
 
                         <Row className="demo-parent-row" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
-                            <Row className="demo-row" retainLayoutAlways>
+                            <Row className="demo-row" style={{"top": "12px"}} retainLayoutAlways>
                                 <Portion desktopSpan="5" bgColor="red-40">
                                     <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="5"></Text>
                                     <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="5"</Text>
@@ -543,71 +541,28 @@ export const Layout = () => {
                     </Card>
                 </Element>
 
-                <HRule sideMargin="large" bgColor="sky-40" />
+                <HRule sideMargin="large" bgColor="sky-80" />
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                {/*  DEMONSTRATION  ======================================  */}
-                <HRule sideMargin="large" marginTop="huge" bgColor="sky-40" />
-                <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginTop="huge">
-                    <Row
-                        bgColor="slate-10"
-                        className="retain-layout-on-tab-ls retain-layout-on-tab-pt retain-layout-on-mobile"
-                    >
-                        <Portion desktopSpan="4" bgColor="red-20" className="padding-top-small">
-                            <Text hideOnTabPT hideOnMobile size="small" align="centre">4/24</Text>
-                        </Portion>
-
-                        <Portion desktopSpan="8" bgColor="red-20" className="padding-top-small">
-                            <Text hideOnTabPT hideOnMobile size="small" align="centre">8/24</Text>
-                        </Portion>
-
-                        <Portion desktopSpan="12" bgColor="red-20" className="padding-top-small">
-                            <Text hideOnTabPT hideOnMobile size="small" align="centre">12/24</Text>
-                        </Portion>
-                    </Row>
-                </Element>
-
-                <Row sidePadding="large">
+                {/*   NAMING PORTIONS  ///////////////////////////////////////////////////////////////////////////  */}
+                <Row sidePadding="large" marginBottom="nano">
                     <Portion>
-                        <Text>
-                            The <code>Portion</code> width classes can take any value from <code>1/24</code> to{" "}
-                            <code>24/24</code>, and any fraction in-between. Some of these fraction classes can also
-                            be named fractions in its most reduced form, such as <code>one-third</code> instead of{" "}
-                            <code>8/24</code>, and <code>five-twelfth</code> instead of <code>10/24</code> and so
-                            on. Here is the full list&mdash;
-                        </Text>
+                        <Heading as="h5">Naming Portions</Heading>
+                        <Text>The <code>desktopSpan</code> attribute takes any whole number from <code>1</code> to <code>24</code>. You can also use the names of the fractions to set this value, like so&mdash;</Text>
+                    </Portion>
+                </Row>
+
+                <Row sidePadding="large" marginBottom="nano">
+                    <Portion desktopSpan="half">
+                        <CodeBlock source={sampleNamedPortions} language="jsx" />
                     </Portion>
 
                     <Portion desktopSpan="half">
-                        <table className="ff-table full-width bordered-all padding-tiny">
+                        <Table isFullWidth bordersFor="both" padding="tiny">
                             <thead>
                                 <tr>
                                     <td>
-                                        <strong>Fraction</strong>
+                                        <strong>Columns</strong>
                                     </td>
                                     <td>
                                         <strong>Name</strong>
@@ -617,156 +572,143 @@ export const Layout = () => {
 
                             <tbody>
                                 <tr>
-                                    <td>width-1/24</td>
+                                    <td>1</td>
                                     <td>&mdash;</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-2/24</td>
+                                    <td>2</td>
                                     <td>one-twelfth</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-3/24</td>
+                                    <td>3</td>
                                     <td>one-eighth</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-4/24</td>
+                                    <td>4</td>
                                     <td>one-sixth</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-5/24</td>
+                                    <td>5</td>
                                     <td>&mdash;</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-6/24</td>
+                                    <td>6</td>
                                     <td>one-fourth</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-7/24</td>
+                                    <td>7</td>
                                     <td>&mdash;</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-8/24</td>
+                                    <td>8</td>
                                     <td>one-third</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-9/24</td>
+                                    <td>9</td>
                                     <td>&mdash;</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-10/24</td>
+                                    <td>10</td>
                                     <td>five-twelfth</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-11/24</td>
+                                    <td>11</td>
                                     <td>&mdash;</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-12/24</td>
+                                    <td>12</td>
                                     <td>half</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-13/24</td>
+                                    <td>13</td>
                                     <td>&mdash;</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-14/24</td>
+                                    <td>14</td>
                                     <td>seven-twelfth</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-15/24</td>
+                                    <td>15</td>
                                     <td>&mdash;</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-16/24</td>
+                                    <td>16</td>
                                     <td>two-third</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-17/24</td>
+                                    <td>17</td>
                                     <td>&mdash;</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-18/24</td>
+                                    <td>18</td>
                                     <td>three-fourth</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-19/24</td>
+                                    <td>19</td>
                                     <td>&mdash;</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-20/24</td>
+                                    <td>20</td>
                                     <td>five-sixth</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-21/24</td>
+                                    <td>21</td>
                                     <td>seven-eighth</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-22/24</td>
+                                    <td>22</td>
                                     <td>eleven-twelfth</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-23/24</td>
+                                    <td>23</td>
                                     <td>&mdash;</td>
                                 </tr>
 
                                 <tr>
-                                    <td>width-24/24</td>
+                                    <td>24</td>
                                     <td>whole</td>
                                 </tr>
                             </tbody>
-                        </table>
-                    </Portion>
-
-                    <Portion desktopSpan="half">
-                        <Text>You can use any of these as classes, like so&mdash;</Text>
-                        <CodeBlock source={sampleCode2} language="jsx" />
+                        </Table>
                     </Portion>
                 </Row>
+
+                <HRule sideMargin="large" bgColor="sky-80" />
             </Element>
 
-            <HRule sideMargin="large" bgColor="sky-40" />
 
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*   RESPONSIVENESS  */}
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
-            <section id="responsiveness">
-                <Row sidePadding="large">
+            <Element as="section" id="responsiveness">
+                <Row sidePadding="large" marginBottom="nano">
                     <Portion>
-                        <h4>Behaviour across devices</h4>
-                    </Portion>
-                </Row>
-
-                <Row sidePadding="large">
-                    <Portion>
-                        <h5>Responsiveness</h5>
-                    </Portion>
-
-                    <Portion>
+                        <Heading as="h4">Responsive behaviour</Heading>
                         <Text>
                             There are four breakpoints as listed below. Using these, you can control the behaviour
-                            of a <code>Portion</code> component across devices. The default prop is{" "}
+                            of a <code>Portion</code> element across devices. The default prop is{" "}
                             <code>desktopSpan</code>, but you can add three more—<code>tabLSSpan</code>,{" "}
                             <code>tabPTSpan</code> and <code>mobileSpan</code>.
                         </Text>
@@ -797,30 +739,56 @@ export const Layout = () => {
                     </Portion>
 
                     <Portion>
-                        <CodeBlock source={sampleCode3a} language="jsx" />
+                        <CodeBlock source={sampleResonsiveness} language="jsx" />
                     </Portion>
                 </Row>
 
-                <div className="side-padding-large">
-                    <Row bgColor="slate-20">
-                        <Portion
-                            desktopSpan="one-sixth"
-                            tabLSSpan="one-third"
-                            tabPTSpan="half"
-                            mobileSpan="whole"
-                            className="bg-sky padding-all-fixed-3x"
-                        >
-                            <Text className="text-centre no-margin-bottom show-only-on-desktop">
-                                One-sixth on desktop
-                            </Text>
-                            <Text className="text-centre no-margin-bottom show-only-on-tab-ls">
-                                One-third on tab landscape
-                            </Text>
-                            <Text className="text-centre no-margin-bottom show-only-on-tab-pt">Half on tab portrait</Text>
-                            <Text className="text-centre no-margin-bottom show-only-on-mobile">Whole on mobile</Text>
-                        </Portion>
-                    </Row>
-                </div>
+                {/*  DEMONSTRATION  ======================================  */}
+                <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="small">
+                    <Card className="screen-desktop screen-short" shape="rounded" shadow="hard">
+                        <Element as="div" className="title-bar" bgColor="slate-20">
+                            <Heading as="h4" textColor="red-80">●</Heading>
+                            <Heading as="h4" textColor="amber-80">●</Heading>
+                            <Heading as="h4" textColor="green-80">●</Heading>
+                        </Element>
+
+                        <Row className="demo-row" style={{"top" : "80px"}} marginBottom="none">
+                            <Portion desktopSpan="one-sixth" tabLSSpan="8" tabPTSpan="half" mobileSpan="two-third" bgColor="red-40">
+                                <Text size="small" isMono showOnlyOnDesktop>&nbsp;&nbsp;&nbsp;&nbsp;one-sixth</Text>
+                                <Text size="small" isMono showOnlyOnTabLS>&nbsp;&nbsp;&nbsp;&nbsp;one-third</Text>
+                                <Text size="small" isMono showOnlyOnTabPT>&nbsp;&nbsp;&nbsp;&nbsp;half</Text>
+                                <Text size="small" isMono showOnlyOnMobile>&nbsp;&nbsp;&nbsp;&nbsp;two-third</Text>
+                            </Portion>
+                        </Row>
+
+                        <Row bgColor="slate-10" marginBottom="none" isFullHeight retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
+                    </Card>
+                </Element>
 
                 <HRule
                     sideMargin="large"
@@ -830,354 +798,537 @@ export const Layout = () => {
 
                 <Row sidePadding="large">
                     <Portion>
-                        <Text>
-                            You can also turn off the responsiveness across these breakpoints by using the following
-                            props.
-                        </Text>
+                        <Heading as="h5">Turn off responsiveness</Heading>
+                        <Text>You can also turn off the responsiveness across these breakpoints by using the following props.</Text>
                     </Portion>
 
                     <Portion>
-                        <CodeBlock source={sampleCode3b} language="jsx" />
+                        <CodeBlock source={sampleTurnOffResponsiveness} language="jsx" />
                     </Portion>
                 </Row>
 
-                <HRule
-                    sideMargin="large"
-                    bgColor="slate-20"
-                    className="margin-top-fixed-3x margin-bottom-fixed-3x"
-                />
+                <HRule sideMargin="large" bgColor="sky-80" />
+            </Element>
 
-                <Row id="visibility" sidePadding="large">
-                    <Portion>
-                        <h5>Visibility across devices</h5>
-                    </Portion>
 
-                    <Portion>
-                        <Text>
-                            Using the same breakpoints you can also show or hide elements, using{" "}
-                            <code>hideOnDesktop</code>, <code>showOnlyOnDesktop</code>, <code>hideOnTabLS</code>,{" "}
-                            <code>showOnlyOnTabLS</code>, <code>hideOnTabPT</code>, <code>showOnlyOnTabPT</code>,{" "}
-                            <code>hideOnMobile</code>, <code>showOnlyOnMobile</code>. You can use these on any
-                            element.
-                        </Text>
-                    </Portion>
-                </Row>
-            </section>
-
-            <HRule sideMargin="large" bgColor="sky-40" />
 
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*   CONTENT PADDING  */}
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
-            <section id="content-padding">
-                <Row sidePadding="large">
+            <Element as="section" id="gutter-sizing">
+                <Row sidePadding="large" marginBottom="nano">
                     <Portion>
-                        <h4>Padding the content</h4>
-                    </Portion>
-
-                    <Portion>
-                        <Text>
-                            Control the width of your content using the <code>content-padding</code> classes.
-                        </Text>
+                        <h4>Padding your content</h4>
+                        <Text>Control the width of your content using the <code>sidePadding</code> prop for the <code>Row</code>.</Text>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="large" className="margin-bottom-fixed">
+                <Row sidePadding="large" marginBottom="nano">
                     <Portion>
-                        <CodeBlock source={sampleCode4a} language="jsx" />
+                        <CodeBlock source={sampleContentPadding} language="jsx" />
                     </Portion>
                 </Row>
 
-                <div className="side-padding-large">
-                    <Row bgColor="slate-20" gutters="none">
-                        <Portion className="bg-sky whole padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">Full width content</Text>
-                        </Portion>
-                    </Row>
-                </div>
+                {/*  DEMONSTRATION  ======================================  */}
+                <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="small">
+                    <Card className="screen-desktop screen-extra-tall" shape="rounded" shadow="hard">
+                        <Element as="div" className="title-bar" bgColor="slate-20">
+                            <Heading as="h4" textColor="red-80">●</Heading>
+                            <Heading as="h4" textColor="amber-80">●</Heading>
+                            <Heading as="h4" textColor="green-80">●</Heading>
+                        </Element>
 
-                <HRule
-                    sideMargin="large"
-                    bgColor="slate-20"
-                    className="margin-top-fixed-3x margin-bottom-fixed-3x"
-                />
+                        <Text>&nbsp;&nbsp;&nbsp;&nbsp;No padding</Text>
+                        <Row bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <Row sidePadding="large" className="margin-bottom-fixed">
-                    <Portion>
-                        <CodeBlock source={sampleCode4b} language="jsx" />
-                    </Portion>
-                </Row>
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">sidePadding="nano"</Element>
+                        <Row sidePadding="nano" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <div className="side-padding-large">
-                    <Row sidePadding="tiny" gutters="none" bgColor="slate-20">
-                        <Portion className="bg-sky whole padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">Content</Text>
-                        </Portion>
-                    </Row>
-                </div>
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">sidePadding="micro"</Element>
+                        <Row sidePadding="micro" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <HRule
-                    sideMargin="large"
-                    bgColor="slate-20"
-                    className="margin-top-fixed-3x margin-bottom-fixed-3x"
-                />
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">sidePadding="tiny"</Element>
+                        <Row sidePadding="tiny" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <Row sidePadding="large" className="margin-bottom-fixed">
-                    <Portion>
-                        <CodeBlock source={sampleCode4c} language="jsx" />
-                    </Portion>
-                </Row>
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">sidePadding="small"</Element>
+                        <Row sidePadding="small" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <div className="side-padding-large">
-                    <Row sidePadding="small" gutters="none" bgColor="slate-20">
-                        <Portion className="bg-sky whole padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">Content</Text>
-                        </Portion>
-                    </Row>
-                </div>
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">sidePadding="medium"</Element>
+                        <Row sidePadding="medium" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <HRule
-                    sideMargin="large"
-                    bgColor="slate-20"
-                    className="margin-top-fixed-3x margin-bottom-fixed-3x"
-                />
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">sidePadding="large"</Element>
+                        <Row sidePadding="large" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <Row sidePadding="large" className="margin-bottom-fixed">
-                    <Portion>
-                        <CodeBlock source={sampleCode4d} language="jsx" />
-                    </Portion>
-                </Row>
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">sidePadding="huge"</Element>
+                        <Row sidePadding="huge" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
+                    </Card>
+                </Element>
 
-                <div className="side-padding-large">
-                    <Row sidePadding="medium" gutters="none" bgColor="slate-20">
-                        <Portion className="bg-sky whole padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">Content</Text>
-                        </Portion>
-                    </Row>
-                </div>
 
-                <HRule
-                    sideMargin="large"
-                    bgColor="slate-20"
-                    className="margin-top-fixed-3x margin-bottom-fixed-3x"
-                />
+                <HRule sideMargin="large" bgColor="sky-80" />
+            </Element>
 
-                <Row sidePadding="large" className="margin-bottom-fixed">
-                    <Portion>
-                        <CodeBlock source={sampleCode4e} language="jsx" />
-                    </Portion>
-                </Row>
-
-                <div className="side-padding-large">
-                    <Row sidePadding="large" gutters="none" bgColor="slate-20">
-                        <Portion className="bg-sky whole padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">Content</Text>
-                        </Portion>
-                    </Row>
-                </div>
-
-                <HRule
-                    sideMargin="large"
-                    bgColor="slate-20"
-                    className="margin-top-fixed-3x margin-bottom-fixed-3x"
-                />
-
-                <Row sidePadding="large" className="margin-bottom-fixed">
-                    <Portion>
-                        <CodeBlock source={sampleCode4f} language="jsx" />
-                    </Portion>
-                </Row>
-
-                <div className="side-padding-large">
-                    <Row sidePadding="huge" gutters="none" bgColor="slate-20">
-                        <Portion className="bg-sky whole padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">Content</Text>
-                        </Portion>
-                    </Row>
-                </div>
-            </section>
-
-            <HRule sideMargin="large" bgColor="sky-40" />
 
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
-            {/*   GUTTER SIZING  */}
+            {/*   CONTENT PADDING  */}
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
-            <section id="gutter-sizing">
-                <Row sidePadding="large">
+            <Element as="section" id="content-padding">
+                <Row sidePadding="large" marginBottom="nano">
                     <Portion>
-                        <h4>Gutter sizing</h4>
-                    </Portion>
-
-                    <Portion>
-                        <Text>
-                            The <code>Row</code> comes with a default 16px gutter. You can add sizing props to
-                            control gutter width.
-                        </Text>
+                        <h4>Gutters for the Row</h4>
+                        <Text>You can also change the gaps between the columns using the <code>gutters</code> props for the <code>Row</code>.</Text>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="large" className="margin-bottom-fixed">
+                <Row sidePadding="large" marginBottom="nano">
                     <Portion>
-                        <CodeBlock source={sampleCode5a} language="jsx" />
+                        <CodeBlock source={sampleGutters} language="jsx" />
                     </Portion>
                 </Row>
-                <div className="side-padding-large">
-                    <Row gutters="none" bgColor="slate-20">
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">1</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">2</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">3</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">4</Text>
-                        </Portion>
-                    </Row>
-                </div>
 
-                <HRule
-                    sideMargin="large"
-                    bgColor="slate-20"
-                    className="margin-top-fixed-3x margin-bottom-fixed-3x"
-                />
+                {/*  DEMONSTRATION  ======================================  */}
+                <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="small">
+                    <Card className="screen-desktop screen-extra-tall" shape="rounded" shadow="hard">
+                        <Element as="div" className="title-bar" bgColor="slate-20">
+                            <Heading as="h4" textColor="red-80">●</Heading>
+                            <Heading as="h4" textColor="amber-80">●</Heading>
+                            <Heading as="h4" textColor="green-80">●</Heading>
+                        </Element>
 
-                <Row sidePadding="large" className="margin-bottom-fixed">
-                    <Portion>
-                        <CodeBlock source={sampleCode5b} language="jsx" />
-                    </Portion>
-                </Row>
-                <div className="side-padding-large">
-                    <Row gutters="tiny" bgColor="slate-20">
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">1</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">2</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">3</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">4</Text>
-                        </Portion>
-                    </Row>
-                </div>
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="none"</Element>
+                        <Row sidePadding="medium" gutters="none" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <HRule
-                    sideMargin="large"
-                    bgColor="slate-20"
-                    className="margin-top-fixed-3x margin-bottom-fixed-3x"
-                />
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="nano"</Element>
+                        <Row sidePadding="medium" gutters="nano" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <Row sidePadding="large" className="margin-bottom-fixed">
-                    <Portion>
-                        <CodeBlock source={sampleCode5c} language="jsx" />
-                    </Portion>
-                </Row>
-                <div className="side-padding-large">
-                    <Row gutters="small" bgColor="slate-20">
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">1</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">2</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">3</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">4</Text>
-                        </Portion>
-                    </Row>
-                </div>
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="micro"</Element>
+                        <Row sidePadding="medium" gutters="micro" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <HRule
-                    sideMargin="large"
-                    bgColor="slate-20"
-                    className="margin-top-fixed-3x margin-bottom-fixed-3x"
-                />
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="tiny"</Element>
+                        <Row sidePadding="medium" gutters="tiny" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <Row sidePadding="large" className="margin-bottom-fixed">
-                    <Portion>
-                        <CodeBlock source={sampleCode5d} language="jsx" />
-                    </Portion>
-                </Row>
-                <div className="side-padding-large">
-                    <Row gutters="medium" bgColor="slate-20">
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">1</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">2</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">3</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">4</Text>
-                        </Portion>
-                    </Row>
-                </div>
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="small"</Element>
+                        <Row sidePadding="medium" gutters="small" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <HRule
-                    sideMargin="large"
-                    bgColor="slate-20"
-                    className="margin-top-fixed-3x margin-bottom-fixed-3x"
-                />
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="medium"</Element>
+                        <Row sidePadding="medium" gutters="medium" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <Row sidePadding="large" className="margin-bottom-fixed">
-                    <Portion>
-                        <CodeBlock source={sampleCode5e} language="jsx" />
-                    </Portion>
-                </Row>
-                <div className="side-padding-large">
-                    <Row gutters="large" bgColor="slate-20">
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">1</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">2</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">3</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">4</Text>
-                        </Portion>
-                    </Row>
-                </div>
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="large"</Element>
+                        <Row sidePadding="medium" gutters="large" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
 
-                <HRule
-                    sideMargin="large"
-                    bgColor="slate-20"
-                    className="margin-top-fixed-3x margin-bottom-fixed-3x"
-                />
+                        <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="huge"</Element>
+                        <Row sidePadding="medium" gutters="huge" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                            <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
+                        </Row>
+                    </Card>
+                </Element>
+            </Element>
 
-                <Row sidePadding="large" className="margin-bottom-fixed">
-                    <Portion>
-                        <CodeBlock source={sampleCode5f} language="jsx" />
-                    </Portion>
-                </Row>
-                <div className="side-padding-large">
-                    <Row gutters="huge" bgColor="slate-20">
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">1</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">2</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">3</Text>
-                        </Portion>
-                        <Portion desktopSpan="6/24" bgColor="sky" className="padding-all-fixed-3x">
-                            <Text className="text-centre no-margin-bottom">4</Text>
-                        </Portion>
-                    </Row>
-                </div>
-            </section>
+
+
+
+
+
+
+
         </LayoutStyled>
     );
 };

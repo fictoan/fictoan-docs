@@ -14,8 +14,10 @@ export const LayoutStyled = styled.article`
         }
     }
 
-    .screen-tall { height : 600px; }
-    
+    .screen-short { height : 160px; }
+    .screen-tall  { height : 600px; }
+    .screen-extra-tall  { height : auto; }
+
     .free-size { height : auto; }
 
     .title-bar {
@@ -28,7 +30,7 @@ export const LayoutStyled = styled.article`
         padding  : 2px 8px;
 
         * {
-            align-self    : center; 
+            align-self    : center;
             line-height   : 0;
             margin-bottom : 4px;
         }
@@ -40,6 +42,6 @@ export const LayoutStyled = styled.article`
 
     .demo-row {
         position : absolute;
-        top      : 20px;
+        top      : 120px;
     }
 `;
