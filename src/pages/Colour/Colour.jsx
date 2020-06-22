@@ -11,7 +11,7 @@ class Colour extends React.PureComponent {
     render() {
         return (
             <section id="page-colour">
-                <Row sidePadding="large" className="margin-top-small margin-bottom-small">
+                <Row sidePadding="huge" className="margin-top-small margin-bottom-small">
                     <Portion>
                         <h2 className="text-hue">Colour</h2>
                     </Portion>
@@ -20,13 +20,13 @@ class Colour extends React.PureComponent {
                 {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*   SETTING IT UP  */}
                 {/*  RF  //////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Row sidePadding="large" className="margin-top-medium">
+                <Row sidePadding="huge" className="margin-top-medium">
                     <Portion>
                         <h4>Basics</h4>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="large">
+                <Row sidePadding="huge">
                     <Portion>
                         <Text>
                             The below heading sizes are derived using a quick calculation using the{" "}

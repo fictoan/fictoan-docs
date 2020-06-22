@@ -6,12 +6,13 @@ import { Switch, Route, RouteProps } from "react-router-dom";
 import { ContentWrapper } from "fictoan-react";
 
 // Local components
+import { Sidebar } from "components/Sidebar/Sidebar";
+import { Philosophy } from "./pages/Philosophy/Philosophy";
+import { GettingStarted } from "./pages/GettingStarted/GettingStarted";
 import { Layout } from "pages/Layout/Layout";
-import Typography from "pages/Typography/Typography";
+import { Typography } from "pages/Typography/Typography";
 import Colour from "pages/Colour/Colour";
 import Notifications from "pages/Components/Notifications";
-import Sidebar from "components/Sidebar/Sidebar";
-import GettingStarted from "./pages/GettingStarted/GettingStarted";
 import Form from "./pages/Form/Form";
 
 // Local assets
@@ -26,11 +27,19 @@ export const AppWithSidebar = (props : Props) => {
     return (
         <>
             {/*  LEFT SIDEBAR    ///////////////////////////////////////    */}
+            {/*
+            // @ts-ignore*/}
             <Sidebar location={ props.location } />
 
             {/*  MAIN CONTENT    ///////////////////////////////////////    */}
             <ContentWrapper>
                 <Switch location={ location }>
+                    <Route
+                        exact
+                        path="/philosophy"
+                        component={ Philosophy }
+                    />
+
                     <Route
                         exact
                         path="/getting-started"

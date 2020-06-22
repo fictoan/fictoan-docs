@@ -14,10 +14,11 @@ import {
 
 // Local components
 import { AppWithSidebar } from "./AppWithSidebar";
+import { Home } from "./pages/Home/Home";
+
 import { GlobalStyle } from "./styles/Global.styled";
 import { GlobalFonts } from "./assets/fonts/fonts";
 import { RFDocsTheme } from "./styles/RFDocs.theme";
-import { Home } from "./pages/Home/Home";
 
 // Local assets
 

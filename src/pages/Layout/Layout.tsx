@@ -1,5 +1,7 @@
+//  External deps
 import React, { useEffect } from "react";
 
+//  Internal deps
 import {
     Element,
     Row,
@@ -12,6 +14,7 @@ import {
     Table
 } from "fictoan-react";
 
+//  Local components
 import { LayoutStyled } from "./Layout.styled";
 import {
     sampleRow1,
@@ -25,24 +28,17 @@ import {
     sampleGutters
 } from "./CodeSamples";
 
+//  Local assets
+
 
 export const Layout = () => {
     useEffect(() => {
-        document.title = "Layout — Reactised FICTOAN";
-
-        try {
-            window.scroll({
-                top : 0,
-                left: 0
-            });
-        } catch (error) {
-            window.scrollTo(0, 0);
-        }
+        document.title = "Layout — FICTOAN";
     }, []);
 
     return (
         <LayoutStyled>
-            <Row sidePadding="large" marginTop="small" marginBottom="medium">
+            <Row sidePadding="huge" marginTop="small" marginBottom="medium">
                 <Portion>
                     <Heading as="h2" textColor="hue">Layout</Heading>
                 </Portion>
@@ -52,7 +48,7 @@ export const Layout = () => {
             {/*   BASICS  */}
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             <Element as="section" id="basics">
-                <Row sidePadding="large" marginBottom="none">
+                <Row sidePadding="huge" marginBottom="none">
                     <Portion>
                         <Heading as="h4">The basics</Heading>
 
@@ -62,7 +58,7 @@ export const Layout = () => {
                     </Portion>
                 </Row>
 
-                <Row sidePadding="large" marginBottom="nano">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <CodeBlock source={sampleRow1} language="jsx" />
                     </Portion>
@@ -152,15 +148,16 @@ export const Layout = () => {
                         </Row>
                     </Card>
                 </Element>
+
+                <HRule sideMargin="huge" bgColor="sky-80" />
             </Element>
 
-            <HRule sideMargin="large" bgColor="sky-80" />
 
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*   ADDING CONTENT  */}
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
             <Element as="section" id="add-content">
-                <Row sidePadding="large" marginBottom="nano">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <Heading as="h4">Adding content</Heading>
 
@@ -170,7 +167,7 @@ export const Layout = () => {
                     </Portion>
                 </Row>
 
-                <Row sidePadding="large" marginBottom="nano">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <CodeBlock source={sampleRowAndPortion1} language="jsx" />
                     </Portion>
@@ -274,14 +271,14 @@ export const Layout = () => {
 
 
                 {/*   MULTIPLE PORTIONS  ////////////////////////////////////////////////////////////////////////// */}
-                <Row sidePadding="large" marginBottom="nano">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <Heading as="h5">Multiple Portions</Heading>
                         <Text>In the same way, you can add as many <code>Portion</code> elements inside the <code>Row</code>. If the sum of columns values exceeds <code>24</code>, they will wrap to the next line.</Text>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="large" marginBottom="nano">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <CodeBlock source={sampleRowAndPortion3} language="jsx" />
                     </Portion>
@@ -382,18 +379,18 @@ export const Layout = () => {
                     </Card>
                 </Element>
 
-                <HRule sideMargin="large" bgColor="sky-80" />
+                <HRule sideMargin="huge" bgColor="sky-80" />
 
 
                 {/*   MULTIPLE ROWS  ////////////////////////////////////////////////////////////////////////////// */}
-                <Row sidePadding="large" marginBottom="nano">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <Heading as="h5">Multiple Rows</Heading>
                         <Text>While you can put infinite <code>Portion</code> elements inside a <code>Row</code>, it’s better to logically break it up according to your content.</Text>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="large" marginBottom="nano">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <CodeBlock source={sampleRowAndPortion4} language="jsx" />
                     </Portion>
@@ -541,18 +538,18 @@ export const Layout = () => {
                     </Card>
                 </Element>
 
-                <HRule sideMargin="large" bgColor="sky-80" />
+                <HRule sideMargin="huge" bgColor="sky-80" />
 
 
                 {/*   NAMING PORTIONS  ///////////////////////////////////////////////////////////////////////////  */}
-                <Row sidePadding="large" marginBottom="nano">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <Heading as="h5">Naming Portions</Heading>
                         <Text>The <code>desktopSpan</code> attribute takes any whole number from <code>1</code> to <code>24</code>. You can also use the names of the fractions to set this value, like so&mdash;</Text>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="large" marginBottom="nano">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion desktopSpan="half">
                         <CodeBlock source={sampleNamedPortions} language="jsx" />
                     </Portion>
@@ -695,7 +692,7 @@ export const Layout = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="large" bgColor="sky-80" />
+                <HRule sideMargin="huge" bgColor="sky-80" />
             </Element>
 
 
@@ -703,7 +700,7 @@ export const Layout = () => {
             {/*   RESPONSIVENESS  */}
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
             <Element as="section" id="responsiveness">
-                <Row sidePadding="large" marginBottom="nano">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <Heading as="h4">Responsive behaviour</Heading>
                         <Text>
@@ -790,13 +787,9 @@ export const Layout = () => {
                     </Card>
                 </Element>
 
-                <HRule
-                    sideMargin="large"
-                    bgColor="slate-20"
-                    className="margin-top-fixed-3x margin-bottom-fixed-3x"
-                />
+                <HRule sideMargin="huge" bgColor="sky-80" />
 
-                <Row sidePadding="large">
+                <Row sidePadding="huge">
                     <Portion>
                         <Heading as="h5">Turn off responsiveness</Heading>
                         <Text>You can also turn off the responsiveness across these breakpoints by using the following props.</Text>
@@ -807,7 +800,7 @@ export const Layout = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="large" bgColor="sky-80" />
+                <HRule sideMargin="huge" bgColor="sky-80" />
             </Element>
 
 
@@ -815,15 +808,15 @@ export const Layout = () => {
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*   CONTENT PADDING  */}
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
-            <Element as="section" id="gutter-sizing">
-                <Row sidePadding="large" marginBottom="nano">
+            <Element as="section" id="content-padding">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <h4>Padding your content</h4>
                         <Text>Control the width of your content using the <code>sidePadding</code> prop for the <code>Row</code>.</Text>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="large" marginBottom="nano">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <CodeBlock source={sampleContentPadding} language="jsx" />
                     </Portion>
@@ -1007,7 +1000,7 @@ export const Layout = () => {
                         </Row>
 
                         <Element as="code" marginLeft="tiny" marginBottom="nano">sidePadding="large"</Element>
-                        <Row sidePadding="large" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                        <Row sidePadding="huge" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
@@ -1065,22 +1058,22 @@ export const Layout = () => {
                 </Element>
 
 
-                <HRule sideMargin="large" bgColor="sky-80" />
+                <HRule sideMargin="huge" bgColor="sky-80" />
             </Element>
 
 
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*   CONTENT PADDING  */}
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
-            <Element as="section" id="content-padding">
-                <Row sidePadding="large" marginBottom="nano">
+            <Element as="section" id="gutter-sizing">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <h4>Gutters for the Row</h4>
                         <Text>You can also change the gaps between the columns using the <code>gutters</code> props for the <code>Row</code>.</Text>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="large" marginBottom="nano">
+                <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <CodeBlock source={sampleGutters} language="jsx" />
                     </Portion>
@@ -1321,14 +1314,6 @@ export const Layout = () => {
                     </Card>
                 </Element>
             </Element>
-
-
-
-
-
-
-
-
         </LayoutStyled>
     );
-};
+}

@@ -1,8 +1,8 @@
-// External deps
+//  External deps
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-// Internal deps
+//  Internal deps
 import {
     Element,
     Row,
@@ -15,10 +15,10 @@ import {
     Button
 } from "fictoan-react";
 
-// Local components
+//  Local components
 import { HomeStyled } from "./Home.styled";
 
-// Local assets
+//  Local assets
 import { snippetCardSample } from "../../assets/code-samples/CodeSamples";
 // import HeroImage from "../../assets/images/intro.png";
 
@@ -63,9 +63,11 @@ export const Home = () => {
                             </Button>
                         </Link>
 
-                        <Button kind="secondary" shape="rounded" shadow="mild">
-                            Github ↗
-                        </Button>
+                        <a href="https://github.com/fictoan/fictoan-react" target="_blank" rel="noopener noreferrer">
+                            <Button kind="secondary" shape="rounded" shadow="mild">
+                                Github ↗
+                            </Button>
+                        </a>
                     </Element>
                 </Portion>
             </Row>
@@ -84,12 +86,12 @@ export const Home = () => {
 
                 <Portion desktopSpan="one-third">
                     <Heading as="h5" marginBottom="micro">Pixel-perfect by default</Heading>
-                    <Text>With RF, you’re in control of the UI, so you don’t have to worry about missed nuances.</Text>
+                    <Text>You’re in control of the UI, so you don’t have to worry about missed nuances during hand-off.</Text>
                 </Portion>
 
                 <Portion desktopSpan="one-third">
                     <Heading as="h5" marginBottom="micro">Easy to use</Heading>
-                    <Text>No convoluted nomenclature, no complex structures to learn, just simple styling.</Text>
+                    <Text>No convoluted nomenclature, no complex structures to learn, just simple styling, all in plain English.</Text>
                 </Portion>
             </Row>
 
@@ -117,16 +119,16 @@ export const Home = () => {
                                 Nice to meet you.
                             </Text>
 
-                            <Button kind="primary" size="small" shape="rounded" shadow="mild" marginRight="nano">
+                            <Button kind="primary" size="small" shadow="mild" marginRight="nano">
                                 Main action
                             </Button>
 
-                            <Button kind="secondary" size="small" shape="rounded" shadow="mild">
+                            <Button kind="secondary" size="small" shadow="mild">
                                 Other action
                             </Button>
                         </Card>
 
-                        <Text>Simple, straight-forward React custom <code>props</code>, exactly like settings properties in a design app. Notice that the attributes are all intuitive and in plain English. You’ll also see that many attributes are the same across different components.</Text>
+                        <Text>Simple, straight-forward React custom props, exactly like settings properties in a design app. Notice that the attributes are all intuitive and in plain English. You’ll also see that many attributes are the same across different components.</Text>
                     </Element>
                 </Portion>
 

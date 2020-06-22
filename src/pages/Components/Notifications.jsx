@@ -33,7 +33,7 @@ class Notifications extends React.PureComponent {
     render() {
         return (
             <article id="page-components">
-                <Row sidePadding="large" className="margin-top-small margin-bottom-small">
+                <Row sidePadding="huge" className="margin-top-small margin-bottom-small">
                     <Portion>
                         <h2 className="text-hue">Notifications</h2>
                     </Portion>

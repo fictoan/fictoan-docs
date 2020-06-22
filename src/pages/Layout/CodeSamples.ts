@@ -125,7 +125,7 @@ export const sampleContentPadding = `
 <Row sidePadding="tiny" />
 <Row sidePadding="small" />
 <Row sidePadding="medium" />
-<Row sidePadding="large" />
+<Row sidePadding="huge" />
 <Row sidePadding="huge" />
 `;
 

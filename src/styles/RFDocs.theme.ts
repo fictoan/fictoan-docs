@@ -1,21 +1,18 @@
 import { baseColors } from "fictoan-react";
 
+
 export const RFDocsTheme = {
     text : {
         font : {
             sans  : "Space Grotesk, sans-serif",
-            serif : "serif",
             mono  : "Space Mono, monospace"
-        },
-        size : {
-            multiplier : 1.24
-        },
-        headings : {
-            font : "Space Grotesk, sans-serif"
         },
         paras: {
             lineHeight : 1.56,
         },
+        headings : {
+            font : "Space Grotesk, sans-serif"
+        }
     },
     button : {
         fontFamily : "Space Grotesk, sans-serif"

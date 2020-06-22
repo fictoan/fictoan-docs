@@ -5,6 +5,7 @@ import SpaceGroteskBold from "./SpaceGrotesk-Bold.woff";
 import SpaceMonoRegular from "./SpaceMono-Regular.woff";
 import SpaceMonoBold from "./SpaceMono-Bold.woff";
 
+
 export const GlobalFonts = createGlobalStyle`
     @font-face {
         font-family : "Space Grotesk";

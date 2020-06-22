@@ -54,7 +54,7 @@ class Forms extends React.PureComponent {
     render() {
         return (
             <article id="page-form">
-                <Row sidePadding="large" className="margin-top-small margin-bottom-small">
+                <Row sidePadding="huge" className="margin-top-small margin-bottom-small">
                     <Portion>
                         <h2 className="text-hue">Form</h2>
                     </Portion>
@@ -63,13 +63,13 @@ class Forms extends React.PureComponent {
                 {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*   SETTING IT UP  */}
                 {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
-                <Row sidePadding="large" className="margin-top-medium">
+                <Row sidePadding="huge" className="margin-top-medium">
                     <Portion>
                         <h4>Basics</h4>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="large">
+                <Row sidePadding="huge">
                     <Portion>
                         <Text>
                             Most form elements are available as components in RF. They all come with a bit of additional
@@ -78,20 +78,20 @@ class Forms extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="large" thick bgColor="sky-20" />
+                <HRule sideMargin="huge" thick bgColor="sky-20" />
 
                 {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*   FORM  */}
                 {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
 
                 <section id="add-content">
-                    <Row sidePadding="large">
+                    <Row sidePadding="huge">
                         <Portion>
                             <h4>Form</h4>
                         </Portion>
                     </Row>
 
-                    <Row sidePadding="large">
+                    <Row sidePadding="huge">
                         <Portion>
                             <Text>
                                 The <code>Form</code> component is used to encapsulate all the form elements with proper
@@ -102,19 +102,19 @@ class Forms extends React.PureComponent {
                         </Portion>
                     </Row>
 
-                    <HRule sideMargin="large" thin bgColor="sky-20" />
+                    <HRule sideMargin="huge" thin bgColor="sky-20" />
 
                     {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                     {/*   FORM UNIT  */}
                     {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
 
-                    <Row sidePadding="large">
+                    <Row sidePadding="huge">
                         <Portion>
                             <h4>Form unit</h4>
                         </Portion>
                     </Row>
 
-                    <Row sidePadding="large">
+                    <Row sidePadding="huge">
                         <Portion>
                             <Text>
                                 The <code>FormItem</code> component is used to wrap individual elements and ensures
@@ -131,13 +131,13 @@ class Forms extends React.PureComponent {
                     {/*   TEXT INPUT  */}
                     {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
 
-                    <Row sidePadding="large">
+                    <Row sidePadding="huge">
                         <Portion>
                             <h4>Text input</h4>
                         </Portion>
                     </Row>
 
-                    <Row sidePadding="large">
+                    <Row sidePadding="huge">
                         <Portion>
                             <h6>Default</h6>
                             <Text>
@@ -169,7 +169,7 @@ class Forms extends React.PureComponent {
 
                     <HRule thin sideMargin="large" bgColor="sky-20" />
 
-                    <Row sidePadding="large">
+                    <Row sidePadding="huge">
                         <Portion>
                             <h6>Validation</h6>
                             <Text>

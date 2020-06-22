@@ -25,13 +25,11 @@ export const snippetCardSample = `
     >
         I’m a Card component, and can be customised
         in about 4 million different ways. Nice to meet you.
-        
     </Text>
 
     <Button
         kind="primary"
         size="small"
-        shape="rounded"
         shadow="mild"
         marginRight="nano"
     >
@@ -41,7 +39,6 @@ export const snippetCardSample = `
     <Button
         kind="secondary"
         size="small"
-        shape="rounded"
         shadow="mild"
     >
         Other action
