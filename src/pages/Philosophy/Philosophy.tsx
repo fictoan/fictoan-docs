@@ -35,7 +35,7 @@ export const Philosophy = () => {
                         </Text>
 
                         <Text>
-                            This framework basically aims to blur the lines between the a designer and a dev. Why must there be a rift, this gaping chasm between the two roles? The goal must be to build and ship, and not bicker about the pixel-perfectness of a particular component or the hover colour of a element. These things are best left to the designer, so that the developer can spend their time on things like performance and deployments.
+                            This framework basically aims to blur the lines between the designer and a dev. Why must there be a rift, this gaping chasm between the two roles? The goal must be to build and ship, and not bicker about the pixel-perfectness of a particular component or the hover colour of a element. These things are best left to the designer, so that the developer can spend their time on things like performance and deployments.
                         </Text>
 
                         <Text>

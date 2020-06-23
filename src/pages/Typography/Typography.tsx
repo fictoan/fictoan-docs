@@ -206,7 +206,7 @@ export const Typography = () => {
 
                 <Row sidePadding="huge" marginBottom-micro>
                     <Portion>
-                        <Heading as="h5">Inline text</Heading>
+                        <Heading as="h5">Text sizing</Heading>
                     </Portion>
 
                     <Portion desktopSpan="half">
