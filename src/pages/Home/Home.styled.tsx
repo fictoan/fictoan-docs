@@ -25,5 +25,4 @@ export const HomeStyled = styled.article`
         position : sticky;
         top      : 24px;
     }
-
 `;

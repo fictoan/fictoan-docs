@@ -1,7 +1,7 @@
 // External deps
 import React from "react";
 import {
-    Switch,
+    Switch as RouteSwitch,
     Route,
     BrowserRouter,
     RouteProps
@@ -37,7 +37,7 @@ export const App = (props : Props) => {
             <GlobalFonts />
 
             <BrowserRouter>
-                <Switch location={ location }>
+                <RouteSwitch location={ location }>
                     <Route
                         exact
                         path="/"
@@ -48,7 +48,7 @@ export const App = (props : Props) => {
                         path="*"
                         component={ AppWithSidebar }
                     />
-                </Switch>
+                </RouteSwitch>
             </BrowserRouter>
         </ThemeProvider>
     );

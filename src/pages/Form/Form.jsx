@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Text,  Portion, FormItem, InputField, HRule, CodeBlock } from "fictoan-react";
+import { Row, Text, Portion, FormItem, InputField, HRule, CodeBlock, FormItemGroup, FormWrapper } from "fictoan-react";
 
 //  Code sample 01 ========================================================================================
 const snippetForm = `
@@ -120,6 +120,24 @@ class Forms extends React.PureComponent {
                                 The <code>FormItem</code> component is used to wrap individual elements and ensures
                                 equal margins and alignment between them.
                             </Text>
+
+                            <FormWrapper spacing="large">
+                                <div>
+                                    <FormItemGroup>
+                                        <InputField
+                                            label="Label, visible by default"
+                                        />
+
+                                        <InputField
+                                            label="Label, visible by default"
+                                        />
+
+                                        <InputField
+                                            label="Label, visible by default"
+                                        />
+                                    </FormItemGroup>
+                                </div>
+                            </FormWrapper>
 
                             <CodeBlock source={snippetFormItem} language="jsx" />
                         </Portion>
