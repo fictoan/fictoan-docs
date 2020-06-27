@@ -7,7 +7,7 @@ npm install fictoan-react
 export const snippetCardSample = `
 <Card
     padding="medium"
-    bgColor="amber-10"
+    bgColour="amber-10"
     shape="rounded"
     shadow="soft"
     borderColor="blue"

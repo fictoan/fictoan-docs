@@ -18,7 +18,7 @@ export const Philosophy = () => {
 
     return (
         <PhilosophyStyled>
-            <Row sidePadding="huge" className="margin-top-small margin-bottom-small">
+            <Row sidePadding="huge" marginTop="small" marginBottom="small">
                 <Portion>
                     <Heading as="h2" className="text-hue">Philosophy</Heading>
                 </Portion>

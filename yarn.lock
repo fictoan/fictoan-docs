@@ -4182,10 +4182,10 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
-fictoan-react@^0.28.4:
-  version "0.28.4"
-  resolved "https://registry.yarnpkg.com/fictoan-react/-/fictoan-react-0.28.4.tgz#511cd079acd8e300c79a588c5942eef70aa3e4b4"
-  integrity sha512-AOzHnDxN7BM1IRAhTQd4GhILCtLGESm32VRjexYh8sbLxU8aNjmkkTOQYDrSWH51RLatrpCt2sMYAMVFtBpYXQ==
+fictoan-react@^0.29.0:
+  version "0.29.0"
+  resolved "https://registry.yarnpkg.com/fictoan-react/-/fictoan-react-0.29.0.tgz#c46befbc954d5b78bacc82d3571e186b68e80238"
+  integrity sha512-y/OWNI+Fvex9/RecJErfjfXjTodSkhfiVWNy4/ZM+bxtcFm+3IJZuezTnPIeDEj5cDNdV0a9UfGxdIYsYv4qqw==
   dependencies:
     "@types/lodash" "^4.14.149"
     "@types/react" "^16.9.23"

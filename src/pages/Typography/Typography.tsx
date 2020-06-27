@@ -34,7 +34,7 @@ export const Typography = () => {
 
     return (
         <TypographyStyled>
-            <Row sidePadding="huge" className="margin-top-small margin-bottom-small">
+            <Row sidePadding="huge" marginTop="small" marginBottom="small">
                 <Portion>
                     <Heading as="h2" className="text-hue">Typography</Heading>
                 </Portion>
@@ -71,7 +71,7 @@ export const Typography = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" bgColor="sky-80" />
+                <HRule sideMargin="huge" bgColour="sky-80" />
             </Element>
 
 
@@ -90,7 +90,7 @@ export const Typography = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" bgColor="sky-80" />
+                <HRule sideMargin="huge" bgColour="sky-80" />
             </Element>
 
 
@@ -110,7 +110,7 @@ export const Typography = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" bgColor="sky-80" />
+                <HRule sideMargin="huge" bgColour="sky-80" />
             </Element>
 
 
@@ -137,7 +137,7 @@ export const Typography = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" bgColor="sky-80" />
+                <HRule sideMargin="huge" bgColour="sky-80" />
             </Element>
 
 
@@ -202,7 +202,7 @@ export const Typography = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" marginTop="micro" marginBottom="micro" bgColor="sky-20" />
+                <HRule sideMargin="huge" marginTop="micro" marginBottom="micro" bgColour="sky-20" />
 
                 <Row sidePadding="huge" marginBottom-micro>
                     <Portion>
@@ -226,7 +226,7 @@ export const Typography = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" bgColor="sky-80" />
+                <HRule sideMargin="huge" bgColour="sky-80" />
             </Element>
         </TypographyStyled>
     );

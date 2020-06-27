@@ -12,7 +12,9 @@ import {
     SidebarItemIcon,
     SidebarItemText,
     SidebarLink,
-    SidebarNestedLinks
+    SidebarNestedLinks,
+    SidebarItemsGroup,
+    SidebarItemsGroupHeader,
 } from "fictoan-react";
 
 // Local components
@@ -236,6 +238,75 @@ export const Sidebar = () => {
                     </HashLink>
                 </SidebarNestedLinks>
             </SidebarLink>
+
+            {/*  COLOUR  /////////////////////////////////////////////////  */}
+            <SidebarLink>
+                <NavLink exact to="/colour">
+                    <SidebarItem onClick={scrollToTop}>
+                        <SidebarItemIcon />
+                        <SidebarItemText linkText="Colour" />
+                    </SidebarItem>
+                </NavLink>
+
+                <SidebarNestedLinks>
+                    <HashLink
+                        smooth
+                        scroll={el => scrollWithOffset(el, 48)}
+                        to="/colour#basics"
+                    >
+                        <SidebarItem>
+                            <SidebarItemIcon />
+                            <SidebarItemText linkText="Adding colour" />
+                        </SidebarItem>
+                    </HashLink>
+
+                    <HashLink
+                        smooth
+                        scroll={el => scrollWithOffset(el, 48)}
+                        to="/colour#colour-list"
+                    >
+                        <SidebarItem>
+                            <SidebarItemIcon />
+                            <SidebarItemText linkText="List of colours" />
+                        </SidebarItem>
+                    </HashLink>
+                </SidebarNestedLinks>
+            </SidebarLink>
+
+            {/*  /////////////////////////////////////////////////////////  */}
+            {/*  COMPONENTS  */}
+            {/*  /////////////////////////////////////////////////////////  */}
+            {/*<SidebarItemsGroup>*/}
+            {/*    <SidebarItemsGroupHeader>*/}
+            {/*        <SidebarItem>*/}
+            {/*            <SidebarItemIcon />*/}
+            {/*            <SidebarItemText linkText="Components" />*/}
+            {/*        </SidebarItem>*/}
+            {/*    </SidebarItemsGroupHeader>*/}
+
+            {/*    /!*  HRULE  //////////////////////////////////////////////  *!/*/}
+            {/*    <SidebarLink>*/}
+            {/*        <NavLink exact to="/components/hrule">*/}
+            {/*            <SidebarItem onClick={scrollToTop}>*/}
+            {/*                <SidebarItemIcon />*/}
+            {/*                <SidebarItemText weight="400" linkText="HRule" />*/}
+            {/*            </SidebarItem>*/}
+            {/*        </NavLink>*/}
+
+            {/*        <SidebarNestedLinks>*/}
+            {/*            <HashLink*/}
+            {/*                smooth*/}
+            {/*                scroll={el => scrollWithOffset(el, 48)}*/}
+            {/*                to="/components/hrule#basics"*/}
+            {/*            >*/}
+            {/*                <SidebarItem>*/}
+            {/*                    <SidebarItemIcon />*/}
+            {/*                    <SidebarItemText linkText="Basics" />*/}
+            {/*                </SidebarItem>*/}
+            {/*            </HashLink>*/}
+            {/*        </SidebarNestedLinks>*/}
+            {/*    </SidebarLink>*/}
+            {/*</SidebarItemsGroup>*/}
         </SidebarWrapper>
     );
 }

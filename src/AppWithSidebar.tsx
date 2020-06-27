@@ -1,6 +1,6 @@
 // External deps
 import React from "react";
-import { Switch, Route, RouteProps } from "react-router-dom";
+import { Switch as RouteSwitch, Route, RouteProps } from "react-router-dom";
 
 // Internal deps
 import { ContentWrapper } from "fictoan-react";
@@ -11,9 +11,10 @@ import { Philosophy } from "./pages/Philosophy/Philosophy";
 import { GettingStarted } from "./pages/GettingStarted/GettingStarted";
 import { Layout } from "pages/Layout/Layout";
 import { Typography } from "pages/Typography/Typography";
-import Colour from "pages/Colour/Colour";
+import { Colour } from "pages/Colour/Colour";
 import Notifications from "pages/Components/Notifications";
 import Form from "./pages/Form/Form";
+import { HorizontalRule } from "./pages/Components/HRule/HorizontalRule";
 
 // Local assets
 
@@ -33,7 +34,7 @@ export const AppWithSidebar = (props : Props) => {
 
             {/*  MAIN CONTENT    ///////////////////////////////////////    */}
             <ContentWrapper>
-                <Switch location={ location }>
+                <RouteSwitch location={ location }>
                     <Route
                         exact
                         path="/philosophy"
@@ -64,6 +65,14 @@ export const AppWithSidebar = (props : Props) => {
                         component={ Colour }
                     />
 
+                    {/*  COMPONENTS  /////////////////////////////////////  */}
+                    {/*  HRule  ------------------------------------------  */}
+                    <Route
+                        exact
+                        path="/components/hrule"
+                        component={ HorizontalRule }
+                    />
+
                     <Route
                         exact
                         path="/form"
@@ -75,7 +84,7 @@ export const AppWithSidebar = (props : Props) => {
                         path="/components/notifications"
                         component={ Notifications }
                     />
-                </Switch>
+                </RouteSwitch>
             </ContentWrapper>
         </>
     );

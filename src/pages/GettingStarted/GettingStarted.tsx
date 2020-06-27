@@ -21,7 +21,7 @@ export const GettingStarted = () => {
 
     return (
         <GettingStartedStyled>
-            <Row sidePadding="huge" className="margin-top-small margin-bottom-small">
+            <Row sidePadding="huge" marginTop="small" marginBottom="small">
                 <Portion>
                     <Heading as="h2" className="text-hue">Getting started</Heading>
                 </Portion>
@@ -39,25 +39,24 @@ export const GettingStarted = () => {
 
                 <Row sidePadding="huge" marginBottom="none">
                     <Portion>
-                        <Heading as="h5">Step 1 — Add FR to a React project</Heading>
+                        <Heading as="h5">Step 1 — Add FICTOAN to a React project</Heading>
                         <Text marginBottom="nano">To begin using FICTOAN, you first need a React project up and running. For that, you’d need to install a few things—</Text>
 
                         <CodeBlock source={snippetInstall} language="bash" />
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" marginTop="micro" marginBottom="micro" bgColor="sky-20" />
+                <HRule sideMargin="huge" marginTop="micro" marginBottom="micro" bgColour="sky-20" />
 
                 <Row sidePadding="huge">
                     <Portion>
                         <Heading as="h5">Step 2 — Edit the default theme</Heading>
-                        <Text marginBottom="nano">FICTOAN comes with a extensive theme that lets you control all aspects of the UI. They all have default values, so go ahead and edit the ones that you want.</Text>
-
-                        <CodeBlock source={snippetInstall} language="bash" />
+                        <Text marginBottom="nano">
+                            FICTOAN comes with a extensive theme, which you can see <a href="https://github.com/fictoan/fictoan-react/blob/master/src/styles/theme.ts">here</a>. It lets you control all aspects of the UI. They all have default values, so go ahead and edit the ones that you want.</Text>
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" bgColor="sky-80" />
+                <HRule sideMargin="huge" bgColour="sky-80" />
             </Element>
 
 
@@ -81,7 +80,7 @@ export const GettingStarted = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" marginTop="micro" marginBottom="micro" bgColor="sky-20" />
+                <HRule sideMargin="huge" marginTop="micro" marginBottom="micro" bgColour="sky-20" />
 
                 {/*   ATTRIBUTE VALUES  //////////////////////////////////////////////////////////////////////////  */}
                 <Row id="attributes" sidePadding="huge">

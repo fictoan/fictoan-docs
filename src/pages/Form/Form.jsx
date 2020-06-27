@@ -54,7 +54,7 @@ class Forms extends React.PureComponent {
     render() {
         return (
             <article id="page-form">
-                <Row sidePadding="huge" className="margin-top-small margin-bottom-small">
+                <Row sidePadding="huge" marginTop="small" marginBottom="small">
                     <Portion>
                         <h2 className="text-hue">Form</h2>
                     </Portion>
@@ -78,7 +78,7 @@ class Forms extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" thick bgColor="sky-20" />
+                <HRule sideMargin="huge" thick bgColour="sky-20" />
 
                 {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*   FORM  */}
@@ -102,7 +102,7 @@ class Forms extends React.PureComponent {
                         </Portion>
                     </Row>
 
-                    <HRule sideMargin="huge" thin bgColor="sky-20" />
+                    <HRule sideMargin="huge" thin bgColour="sky-20" />
 
                     {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                     {/*   FORM UNIT  */}
@@ -143,7 +143,7 @@ class Forms extends React.PureComponent {
                         </Portion>
                     </Row>
 
-                    <HRule thin sideMargin="large" bgColor="sky-20" />
+                    <HRule thin sideMargin="large" bgColour="sky-20" />
 
                     {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                     {/*   TEXT INPUT  */}
@@ -185,7 +185,7 @@ class Forms extends React.PureComponent {
                         </Portion>
                     </Row>
 
-                    <HRule thin sideMargin="large" bgColor="sky-20" />
+                    <HRule thin sideMargin="large" bgColour="sky-20" />
 
                     <Row sidePadding="huge">
                         <Portion>

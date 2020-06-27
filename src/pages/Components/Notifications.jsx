@@ -33,7 +33,7 @@ class Notifications extends React.PureComponent {
     render() {
         return (
             <article id="page-components">
-                <Row sidePadding="huge" className="margin-top-small margin-bottom-small">
+                <Row sidePadding="huge" marginTop="small" marginBottom="small">
                     <Portion>
                         <h2 className="text-hue">Notifications</h2>
                     </Portion>
@@ -54,7 +54,7 @@ class Notifications extends React.PureComponent {
                     <NotificationItem isDismissible type="error">
                         <Text marginBottom="tiny" textColor="red">OH GOD! THE ALIENS ARE INVADING! SAVE YOURSELVES!</Text>
 
-                        <Button size="small" shape="rounded" bgColor="red" textColor="white">
+                        <Button size="small" shape="rounded" bgColour="red" textColor="white">
                             RUN!!
                         </Button>
                     </NotificationItem>
@@ -79,7 +79,7 @@ class Notifications extends React.PureComponent {
                 <HRule
                     thin
                     sideMargin="large"
-                    bgColor="slate-20"
+                    bgColour="slate-20"
                     className="margin-top-fixed-3x margin-bottom-fixed-3x"
                 />
 
@@ -99,7 +99,7 @@ class Notifications extends React.PureComponent {
                 <HRule
                     thin
                     sideMargin="large"
-                    bgColor="slate-20"
+                    bgColour="slate-20"
                     className="margin-top-fixed-3x margin-bottom-fixed-3x"
                 />
 

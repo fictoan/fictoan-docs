@@ -52,8 +52,9 @@ export const Home = () => {
                 </Portion>
 
                 <Portion>
-                    <Heading as="h2" textColor="hue">FICTOAN</Heading>
-                    <Text textColor="white" size="tiny">*Fuck I Couldn’t Think Of A Name</Text>
+                    <Heading as="h2" textColor="hue">FICTOAN<Element as="span" textColour="white">*</Element></Heading>
+                    <Text textColor="white" size="tiny" margin="none">*Fuck I Couldn’t Think Of A Name</Text>
+                    <Heading as="h4">v0.29.0</Heading>
                     <Heading as="h4" marginBottom="micro">An intuitive framework for designers looking to code interfaces</Heading>
 
                     <Element as="div" className="wrapping-list">
@@ -69,6 +70,7 @@ export const Home = () => {
                             </Button>
                         </a>
                     </Element>
+                    <Text>Note: This documentation is still WIP, so hang tight till we add all the pages.</Text>
                 </Portion>
             </Row>
 
@@ -109,7 +111,7 @@ export const Home = () => {
 
                 <Portion desktopSpan="half">
                     <Element as="div" id="output">
-                        <Card padding="medium" bgColor="slate-10" shape="rounded" shadow="soft" borderColor="blue" marginBottom="tiny">
+                        <Card padding="medium" bgColour="slate-10" shape="rounded" shadow="soft" borderColor="blue" marginBottom="tiny">
                             <Heading as="h4" textColor="hue">Hello.</Heading>
                             <Text marginTop="none" marginBottom="micro">
                                 I’m a Card component, and can be customised in about 4 million different ways.
