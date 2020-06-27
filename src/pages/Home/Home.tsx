@@ -81,18 +81,18 @@ export const Home = () => {
             {/*  USPs  */}
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             <Row sidePadding="huge" gutters="large" retainLayoutOnTabLS>
-                <Portion desktopSpan="one-third">
-                    <Heading as="h5" marginBottom="micro">Hand-off production code</Heading>
+                <Portion desktopSpan="one-third" marginBottom="micro">
+                    <Heading as="h5">Hand-off production code</Heading>
                     <Text>Why pass around XD and Sketch files when you can hand-off production-ready React code?</Text>
                 </Portion>
 
-                <Portion desktopSpan="one-third">
-                    <Heading as="h5" marginBottom="micro">Pixel-perfect by default</Heading>
+                <Portion desktopSpan="one-third" marginBottom="micro">
+                    <Heading as="h5">Pixel-perfect by default</Heading>
                     <Text>You’re in control of the UI, so you don’t have to worry about missed nuances during hand-off.</Text>
                 </Portion>
 
-                <Portion desktopSpan="one-third">
-                    <Heading as="h5" marginBottom="micro">Easy to use</Heading>
+                <Portion desktopSpan="one-third" marginBottom="micro">
+                    <Heading as="h5">Easy to use</Heading>
                     <Text>No convoluted nomenclature, no complex structures to learn, just simple styling, all in plain English.</Text>
                 </Portion>
             </Row>
