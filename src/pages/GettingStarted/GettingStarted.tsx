@@ -28,7 +28,7 @@ export const GettingStarted = () => {
             </Row>
 
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-            {/*  HEADINGS  */}
+            {/*  FIRST STEPS  */}
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             <Element as="section" id="first-steps">
                 <Row sidePadding="huge">
@@ -138,4 +138,4 @@ export const GettingStarted = () => {
             </Element>
         </GettingStartedStyled>
     );
-}
+};
