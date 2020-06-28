@@ -53,7 +53,7 @@ export const Colour = () => {
                 </Row>
             </Element>
 
-            <HRule sideMargin="huge" bgColour="sky-80" />
+            <HRule sideMargin="huge" kind="primary" />
 
             <Element as="section" id="colour-list">
                 <Row sidePadding="huge" marginBottom="micro">

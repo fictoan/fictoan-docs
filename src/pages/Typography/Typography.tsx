@@ -71,7 +71,7 @@ export const Typography = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" bgColour="sky-80" />
+                <HRule sideMargin="huge" kind="primary" />
             </Element>
 
 
@@ -90,7 +90,7 @@ export const Typography = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" bgColour="sky-80" />
+                <HRule sideMargin="huge" kind="primary" />
             </Element>
 
 
@@ -110,7 +110,7 @@ export const Typography = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" bgColour="sky-80" />
+                <HRule sideMargin="huge" kind="primary" />
             </Element>
 
 
@@ -137,7 +137,7 @@ export const Typography = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" bgColour="sky-80" />
+                <HRule sideMargin="huge" kind="primary" />
             </Element>
 
 
@@ -202,7 +202,7 @@ export const Typography = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" marginTop="micro" marginBottom="micro" bgColour="sky-20" />
+                <HRule sideMargin="huge" kind="secondary" marginTop="micro" marginBottom="micro" />
 
                 <Row sidePadding="huge" marginBottom-micro>
                     <Portion>
@@ -225,8 +225,6 @@ export const Typography = () => {
                         <CodeBlock source={sampleTextSizing} language="jsx" />
                     </Portion>
                 </Row>
-
-                <HRule sideMargin="huge" bgColour="sky-80" />
             </Element>
         </TypographyStyled>
     );

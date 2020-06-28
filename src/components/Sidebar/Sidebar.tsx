@@ -13,8 +13,8 @@ import {
     SidebarItemText,
     SidebarLink,
     SidebarNestedLinks,
-    SidebarItemsGroup,
-    SidebarItemsGroupHeader,
+    // SidebarItemsGroup,
+    // SidebarItemsGroupHeader,
 } from "fictoan-react";
 
 // Local components

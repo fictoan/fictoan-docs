@@ -54,7 +54,7 @@ export const Home = () => {
                 <Portion>
                     <Heading as="h2" textColor="hue">FICTOAN<Element as="span" textColour="white">*</Element></Heading>
                     <Text textColor="white" size="tiny" margin="none">*Fuck I Couldn’t Think Of A Name</Text>
-                    <Heading as="h4">v0.29.0</Heading>
+                    <Heading as="h4">v0.29.1</Heading>
                     <Heading as="h4" marginBottom="micro">An intuitive framework for designers looking to code interfaces</Heading>
 
                     <Element as="div" className="wrapping-list">
@@ -74,13 +74,13 @@ export const Home = () => {
                 </Portion>
             </Row>
 
-            <HRule sideMargin="huge" marginTop="small" marginBottom="small" />
+            <HRule sideMargin="huge" kind="primary" marginTop="small" marginBottom="small" />
 
 
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*  USPs  */}
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-            <Row sidePadding="huge" gutters="large" retainLayoutOnTabLS>
+            <Row sidePadding="huge" gutters="large" marginBottom="none" retainLayoutOnTabLS>
                 <Portion desktopSpan="one-third" marginBottom="micro">
                     <Heading as="h5">Hand-off production code</Heading>
                     <Text>Why pass around XD and Sketch files when you can hand-off production-ready React code?</Text>
@@ -97,7 +97,7 @@ export const Home = () => {
                 </Portion>
             </Row>
 
-            <HRule sideMargin="huge" marginTop="tiny" marginBottom="tiny" />
+            <HRule sideMargin="huge" kind="primary" marginTop="micro" marginBottom="small" />
 
 
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
@@ -105,7 +105,7 @@ export const Home = () => {
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             <Row id="demo-section" sidePadding="huge" gutters="large" retainLayoutOnTabLS retainLayoutOnTabPT>
                 <Portion>
-                    <Heading as="h5" marginBottom="micro">“Design” it in code</Heading>
+                    <Heading as="h5">“Design” it in code</Heading>
                     <Text>Check out this example of a <code>Card</code> element—</Text>
                 </Portion>
 
@@ -138,8 +138,6 @@ export const Home = () => {
                     <CodeBlock source={snippetCardSample} language="jsx" />
                 </Portion>
             </Row>
-
-            <HRule sideMargin="huge" marginTop="micro" marginBottom="micro" />
         </HomeStyled>
     );
 };

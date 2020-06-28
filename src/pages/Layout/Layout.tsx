@@ -149,7 +149,7 @@ export const Layout = () => {
                     </Card>
                 </Element>
 
-                <HRule sideMargin="huge" bgColor="sky-80" />
+                <HRule sideMargin="huge" kind="primary" />
             </Element>
 
 
@@ -267,6 +267,8 @@ export const Layout = () => {
                             </Portion>
                         </Row>
                     </Card>
+
+                    <HRule sideMargin="huge" kind="secondary" />
                 </Element>
 
 
@@ -379,7 +381,7 @@ export const Layout = () => {
                     </Card>
                 </Element>
 
-                <HRule sideMargin="huge" bgColor="sky-80" />
+                <HRule sideMargin="huge" kind="secondary" />
 
 
                 {/*   MULTIPLE ROWS  ////////////////////////////////////////////////////////////////////////////// */}
@@ -538,7 +540,7 @@ export const Layout = () => {
                     </Card>
                 </Element>
 
-                <HRule sideMargin="huge" bgColor="sky-80" />
+                <HRule sideMargin="huge" kind="secondary" />
 
 
                 {/*   NAMING PORTIONS  ///////////////////////////////////////////////////////////////////////////  */}
@@ -692,7 +694,7 @@ export const Layout = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" bgColor="sky-80" />
+                <HRule sideMargin="huge" kind="primary" />
             </Element>
 
 
@@ -787,7 +789,7 @@ export const Layout = () => {
                     </Card>
                 </Element>
 
-                <HRule sideMargin="huge" bgColor="sky-80" />
+                <HRule sideMargin="huge" kind="secondary" />
 
                 <Row sidePadding="huge">
                     <Portion>
@@ -800,7 +802,7 @@ export const Layout = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" bgColor="sky-80" />
+                <HRule sideMargin="huge" kind="primary" />
             </Element>
 
 
@@ -1058,7 +1060,7 @@ export const Layout = () => {
                 </Element>
 
 
-                <HRule sideMargin="huge" bgColor="sky-80" />
+                <HRule sideMargin="huge" kind="primary" />
             </Element>
 
 
