@@ -1,5 +1,5 @@
-import { RFDocsTheme } from "./RFDocs.theme";
+import { RFDocsLightTheme, RFDocsDarkTheme } from "./RFDocs.theme";
 
 export interface ThemeProps {
-    theme?: typeof RFDocsTheme;
+    theme?: typeof RFDocsLightTheme | typeof RFDocsDarkTheme;
 }
