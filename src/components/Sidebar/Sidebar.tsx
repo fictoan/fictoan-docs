@@ -13,12 +13,12 @@ import {
     SidebarItemText,
     SidebarLink,
     SidebarNestedLinks,
-    // SidebarItemsGroup,
-    // SidebarItemsGroupHeader,
+    SidebarItemsGroup,
+    SidebarItemsGroupHeader,
 } from "fictoan-react";
 
 // Local components
-import { scrollWithOffset, scrollToTop } from "../../utils/scrollHelpers";
+import { scrollToTop, scrollWithOffset } from "../../utils/scrollHelpers";
 import FICTOANIcon from "../../assets/images/fictoan-icon.svg";
 
 
@@ -276,37 +276,37 @@ export const Sidebar = () => {
             {/*  /////////////////////////////////////////////////////////  */}
             {/*  COMPONENTS  */}
             {/*  /////////////////////////////////////////////////////////  */}
-            {/*<SidebarItemsGroup>*/}
-            {/*    <SidebarItemsGroupHeader>*/}
-            {/*        <SidebarItem>*/}
-            {/*            <SidebarItemIcon />*/}
-            {/*            <SidebarItemText linkText="Components" />*/}
-            {/*        </SidebarItem>*/}
-            {/*    </SidebarItemsGroupHeader>*/}
+            <SidebarItemsGroup>
+                <SidebarItemsGroupHeader>
+                    <SidebarItem>
+                        <SidebarItemIcon />
+                        <SidebarItemText linkText="Components" />
+                    </SidebarItem>
+                </SidebarItemsGroupHeader>
 
-            {/*    /!*  HRULE  //////////////////////////////////////////////  *!/*/}
-            {/*    <SidebarLink>*/}
-            {/*        <NavLink exact to="/components/hrule">*/}
-            {/*            <SidebarItem onClick={scrollToTop}>*/}
-            {/*                <SidebarItemIcon />*/}
-            {/*                <SidebarItemText weight="400" linkText="HRule" />*/}
-            {/*            </SidebarItem>*/}
-            {/*        </NavLink>*/}
+                {/*  HRULE  //////////////////////////////////////////////  */}
+                <SidebarLink>
+                    <NavLink exact to="/components/hrule">
+                        <SidebarItem onClick={scrollToTop}>
+                            <SidebarItemIcon />
+                            <SidebarItemText weight="400" linkText="HRule" />
+                        </SidebarItem>
+                    </NavLink>
 
-            {/*        <SidebarNestedLinks>*/}
-            {/*            <HashLink*/}
-            {/*                smooth*/}
-            {/*                scroll={el => scrollWithOffset(el, 48)}*/}
-            {/*                to="/components/hrule#basics"*/}
-            {/*            >*/}
-            {/*                <SidebarItem>*/}
-            {/*                    <SidebarItemIcon />*/}
-            {/*                    <SidebarItemText linkText="Basics" />*/}
-            {/*                </SidebarItem>*/}
-            {/*            </HashLink>*/}
-            {/*        </SidebarNestedLinks>*/}
-            {/*    </SidebarLink>*/}
-            {/*</SidebarItemsGroup>*/}
+                    <SidebarNestedLinks>
+                        <HashLink
+                            smooth
+                            scroll={el => scrollWithOffset(el, 48)}
+                            to="/components/hrule#basics"
+                        >
+                            <SidebarItem>
+                                <SidebarItemIcon />
+                                <SidebarItemText linkText="Basics" />
+                            </SidebarItem>
+                        </HashLink>
+                    </SidebarNestedLinks>
+                </SidebarLink>
+            </SidebarItemsGroup>
         </SidebarWrapper>
     );
 }
