@@ -54,7 +54,7 @@ export const Home = () => {
                 <Portion>
                     <Heading as="h2" textColor="hue">FICTOAN<Element as="span" textColour="white">*</Element></Heading>
                     <Text textColor="white" size="tiny" margin="none">*Fuck I Couldn’t Think Of A Name</Text>
-                    <Heading as="h4">v0.29.1</Heading>
+                    <Heading as="h4">v0.29.3</Heading>
                     <Heading as="h4" marginBottom="micro">An intuitive framework for designers looking to code interfaces</Heading>
 
                     <Element as="div" className="wrapping-list">

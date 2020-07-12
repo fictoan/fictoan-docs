@@ -1,7 +1,10 @@
 import { baseColors } from "fictoan-react";
 
 
-export const RFDocsTheme = {
+export const RFDocsLightTheme = {
+    body : {
+        bg : baseColors.white
+    },
     text : {
         font : {
             sans  : "Space Grotesk, sans-serif",
@@ -24,12 +27,12 @@ export const RFDocsTheme = {
             }
         },
         header: {
-            bg          : baseColors.white,
-            borderBottom: baseColors.white
+            bg           : baseColors.white,
+            borderBottom : baseColors.white
         },
         footer: {
             bg        : baseColors.white,
             borderTop : baseColors.slate10
         },
     }
-}
+};

@@ -4481,10 +4481,10 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
-fictoan-react@^0.29.1:
-  version "0.29.1"
-  resolved "https://registry.yarnpkg.com/fictoan-react/-/fictoan-react-0.29.1.tgz#2cb977683728d2ad3c4b93bf81722c92cba13da0"
-  integrity sha512-uRKwZ2b8CkM8z0nuQ1krgM7fXzHNx2p0ZOwJua/z0OwfPJiQ56pNr2JMmEAWKM1YYtcssiNujWOd1wDNfuXuhg==
+fictoan-react@^0.30.0:
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/fictoan-react/-/fictoan-react-0.30.0.tgz#eb1b82b76d505873db0aaf9f110e173832cdef02"
+  integrity sha512-4s7sfMi/cGINGTLyzdGCrIMwrwGXVKI9hRMKf3vl4+yFvqDerNTkos3U2JVoC+PLGUdzywvITgbNEEsKAedPaQ==
   dependencies:
     "@types/lodash" "^4.14.149"
     "@types/react" "^16.9.23"
@@ -7607,7 +7607,7 @@ pnp-webpack-plugin@1.5.0:
   dependencies:
     ts-pnp "^1.1.2"
 
-polished@^3.4.4:
+polished@^3.4.4, polished@^3.6.5:
   version "3.6.5"
   resolved "https://registry.yarnpkg.com/polished/-/polished-3.6.5.tgz#dbefdde64c675935ec55119fe2a2ab627ca82e9c"
   integrity sha512-VwhC9MlhW7O5dg/z7k32dabcAFW1VI2+7fSe8cE/kXcfL7mVdoa5UxciYGW2sJU78ldDLT6+ROEKIZKFNTnUXQ==

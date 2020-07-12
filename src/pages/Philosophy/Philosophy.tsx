@@ -5,7 +5,8 @@ import {
     Row,
     Portion,
     Heading,
-    Text
+    Text,
+    HRule
 } from "fictoan-react";
 
 import { PhilosophyStyled } from "./Philosophy.styled";
@@ -40,6 +41,20 @@ export const Philosophy = () => {
 
                         <Text>
                             While design tools are getting better and powerful by the day, there’s nothing really quite the same as passing off working code. We think this will remain true for quite some time, and in the meanwhile, see how we can make both the designer’s and the developer’s lives easier.
+                        </Text>
+                    </Portion>
+                </Row>
+
+                <HRule kind="primary" sideMargin="huge" />
+
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Text>
+                            The other principle FICTOAN is built around is simplicity and obviousness. This is best reflected in the naming conventions and the prop nomenclature.
+                        </Text>
+
+                        <Text>
+                            The idea is to remove the entry barriers for people dipping their toes into code for the first time, especially for those from a design background. The easiest way to do this is to simply keep everything in plain English, and not introduce complexities and conditional hierarchies, that is most often the case with most other frameworks.
                         </Text>
                     </Portion>
                 </Row>
