@@ -1,5 +1,5 @@
 import { baseColors } from "fictoan-react";
-import { lighten, darken } from "polished";
+import { darken } from "polished";
 
 
 export const RFDocsDarkTheme = {
