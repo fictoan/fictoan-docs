@@ -1,4 +1,22 @@
 //  Code sample 01 ////////////////////////////////////////////////////////////
+export const sampleHRuleTheme = `
+hr : {
+    primary : {
+        bg     : baseColors.blue80,
+        height : "1px"
+    },
+    secondary : {
+        bg     : baseColors.slate40,
+        height : "1px"
+    },
+    tertiary : {
+        bg     : baseColors.slate20,
+        height : "1px"
+    }
+}
+`;
+
+//  Code sample 01 ////////////////////////////////////////////////////////////
 export const sampleHRule = `
 <HRule />
 `;

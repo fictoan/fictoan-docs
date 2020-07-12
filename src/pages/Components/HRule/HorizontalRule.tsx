@@ -12,7 +12,12 @@ import {
 } from "fictoan-react";
 
 import { HRuleStyled } from "./HRule.styled";
-import { sampleHRule, sampleHRuleKinds, sampleHRuleSideMargin } from "./CodeSamples";
+import {
+    sampleHRuleTheme,
+    sampleHRule,
+    sampleHRuleKinds,
+    sampleHRuleSideMargin
+} from "./CodeSamples";
 
 
 export const HorizontalRule = () => {
@@ -34,12 +39,19 @@ export const HorizontalRule = () => {
             <Element as="section" id="usage">
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h4" marginBottom="tiny">Props</Heading>
+                        <Heading as="h4">Customisation</Heading>
+                    </Portion>
+                </Row>
+
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Heading as="h5" marginBottom="micro">Props</Heading>
 
                         <Table bordersFor="both" padding="tiny">
                             <thead className="bg-slate-10">
                                 <tr>
                                     <td className="weight-600">Prop</td>
+                                    <td className="weight-600">Description</td>
                                     <td className="weight-600">Value</td>
                                     <td className="weight-600">Default</td>
                                 </tr>
@@ -47,16 +59,28 @@ export const HorizontalRule = () => {
                             <tbody>
                                 <tr>
                                     <td><code>kind</code></td>
+                                    <td>Hierarchy of the <code>HRule</code>, used to separate content based on nesting.</td>
                                     <td><code>primary</code>, <code>secondary</code>, <code>tertiary</code>.</td>
                                     <td><code>primary</code></td>
                                 </tr>
                                 <tr>
                                     <td><code>sideMargin</code></td>
+                                    <td>Width of the <code>HRule</code>.</td>
                                     <td><code>nano</code>, <code>micro</code>, <code>tiny</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>huge</code></td>
                                     <td>&mdash;</td>
                                 </tr>
                             </tbody>
                         </Table>
+                    </Portion>
+                </Row>
+
+                <HRule sideMargin="huge" kind="secondary" />
+
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Heading as="h5" marginBottom="micro">Theming</Heading>
+
+                        <CodeBlock source={ sampleHRuleTheme } language="javascript" />
                     </Portion>
                 </Row>
             </Element>

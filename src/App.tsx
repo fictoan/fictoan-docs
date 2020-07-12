@@ -1,5 +1,5 @@
 // External deps
-import React, { useState } from "react";
+import React from "react";
 import {
     Switch as RouteSwitch,
     Route,
@@ -9,8 +9,9 @@ import {
 
 // Internal deps
 import {
+    // @ts-ignore
     CreateThemeProvider,
-    Button
+    // Button
 } from "fictoan-react";
 
 // Local components
@@ -19,7 +20,8 @@ import { Home } from "./pages/Home/Home";
 
 import { GlobalStyle } from "./styles/Global.styled";
 import { GlobalFonts } from "./assets/fonts/fonts";
-import { RFDocsLightTheme, RFDocsDarkTheme } from "./styles/RFDocs.theme";
+import { RFDocsLightTheme } from "./styles/RFDocs.LightTheme";
+import { RFDocsDarkTheme } from "./styles/RFDocs.DarkTheme";
 
 // Local assets
 
@@ -34,34 +36,34 @@ export const ThemeProvider = CreateThemeProvider({
 export const App = (props : Props) => {
     const { location } = props;
 
-    let [ currentTheme, setCurrentTheme ] = useState("light");
+    // let [ currentTheme, setCurrentTheme ] = useState("light");
 
-    const toggleTheme = () => {
-        if (currentTheme === "light") {
-            setCurrentTheme("dark")
-        } else {
-            setCurrentTheme("light")
-        }
-    }
+    let currentTheme = "light";
 
-
+    // const toggleTheme = () => {
+    //     if (currentTheme === "light") {
+    //         setCurrentTheme("dark")
+    //     } else {
+    //         setCurrentTheme("light")
+    //     }
+    // }
 
     return (
         <ThemeProvider
             // @ts-ignore
-            theme={ RFDocsLightTheme }
+            theme={ currentTheme }
         >
             <GlobalStyle />
 
             <GlobalFonts />
 
             <BrowserRouter>
-                <Button
-                    kind="secondary" size="small" shadow="mild"
-                    onClick={toggleTheme}
-                >
-                    Other action
-                </Button>
+                {/*<Button*/}
+                {/*    kind="secondary" size="small" shadow="mild"*/}
+                {/*    onClick={toggleTheme}*/}
+                {/*>*/}
+                {/*    Toggle theme*/}
+                {/*</Button>*/}
 
                 <RouteSwitch location={ location }>
                     <Route
