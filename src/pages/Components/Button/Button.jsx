@@ -1,17 +1,21 @@
 import React, { useEffect } from "react";
 
-import { Button, CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Button, Card, CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
 
 import { ButtonStyled } from "./Button.styled";
 import {
     sampleButton,
-    sampleButtonAlignText,
-    sampleButtonFullWidth,
+    sampleButtonCustomStyling1,
+    sampleButtonCustomStyling2,
+    sampleButtonCustomStyling3,
+    sampleButtonHasDelete,
+    sampleButtonIsLoading,
     sampleButtonKinds,
-    sampleButtonPadding,
-    sampleButtonStripes,
+    sampleButtonShadow,
+    sampleButtonShape,
     sampleButtonTheme
 } from "./CodeSamples";
+import { Link } from "react-router-dom";
 
 
 export const ButtonDocs = () => {
@@ -239,298 +243,208 @@ export const ButtonDocs = () => {
                 </Row>
 
 
-                <HRule kind="tertiary" sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
-                {/*  PADDING  */}
+                {/*  SIZE  */}
                 {/*  =============================================================================================  */}
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h5" marginBottom="nano">Cell padding</Heading>
+                        <Heading as="h5" marginBottom="nano">Size</Heading>
 
                         <Text marginBottom="micro">
-                            Padding adds some spacing to the cells, and accepts
-                            the <code>tiny</code> to <code>huge</code> spacing values.
+                            Sizing uses the standard values ranging from <code>tiny</code> to <code>huge</code>.
                         </Text>
 
-                        <CodeBlock source={sampleButtonPadding} language="jsx" marginBottom="micro" />
+                        <CodeBlock source={sampleButtonKinds} language="jsx" marginBottom="micro" />
 
-                        <Table bordersFor="both" padding="tiny">
-                            <thead>
-                                <tr>
-                                    <td>Header 1</td>
-                                    <td>Header 2</td>
-                                    <td>Header 3</td>
-                                </tr>
-                            </thead>
+                        <Button kind="primary" size="tiny" marginRight="nano">Tiny</Button>
+                        <Button kind="primary" size="small" marginRight="nano">Small</Button>
+                        <Button kind="primary" marginRight="nano">Medium</Button>
+                        <Button kind="primary" size="large" marginRight="nano">Large</Button>
+                        <Button kind="primary" size="huge">Huge</Button>
 
-                            <tbody>
-                                <tr>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                    <td>Cell 3</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Cell 4</td>
-                                    <td>Cell 5</td>
-                                    <td>Cell 6</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Cell 7</td>
-                                    <td>Cell 8</td>
-                                    <td>Cell 9</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Cell 10</td>
-                                    <td>Cell 11</td>
-                                    <td>Cell 12</td>
-                                </tr>
-                            </tbody>
-                        </Table>
+                        <Text marginTop="micro">
+                            All of these values come from the theme file, where you can set once for your entire project
+                            globally.
+                        </Text>
                     </Portion>
                 </Row>
 
 
-                <HRule kind="tertiary" sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
-                {/*  STRIPES  */}
+                {/*  SHAPE  */}
                 {/*  =============================================================================================  */}
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h5" marginBottom="nano">Striped rows</Heading>
+                        <Heading as="h5" marginBottom="nano">Shape</Heading>
 
                         <Text marginBottom="micro">
-                            The <code>isStriped</code> prop adds a different background colour to alternate rows, aiding
-                            readability. It also adds a coloured header row. Both these values can be set in the theme.
+                            The default button is a sharp rectangle, which you can modify with
+                            the <code>shape</code> prop. It
+                            takes <code>rounded</code>, <code>curved</code>, <code>circular</code> as values.
                         </Text>
 
-                        <CodeBlock source={sampleButtonStripes} language="jsx" marginBottom="micro" />
+                        <CodeBlock source={sampleButtonShape} language="jsx" marginBottom="micro" />
 
-                        <Table bordersFor="both" padding="tiny" isStriped>
-                            <thead>
-                                <tr>
-                                    <td>Header 1</td>
-                                    <td>Header 2</td>
-                                    <td>Header 3</td>
-                                </tr>
-                            </thead>
+                        <Button marginRight="nano">Default</Button>
+                        <Button shape="rounded" marginRight="nano">Rounded</Button>
+                        <Button shape="curved" marginRight="nano">Curved</Button>
+                        <Button shape="circular" marginRight="micro">Circular</Button>
 
-                            <tbody>
-                                <tr>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                    <td>Cell 3</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Cell 4</td>
-                                    <td>Cell 5</td>
-                                    <td>Cell 6</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Cell 7</td>
-                                    <td>Cell 8</td>
-                                    <td>Cell 9</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Cell 10</td>
-                                    <td>Cell 11</td>
-                                    <td>Cell 12</td>
-                                </tr>
-                            </tbody>
-                        </Table>
+                        <Text marginTop="micro">
+                            The value for <code>rounded</code> again comes from the theme file.
+                        </Text>
                     </Portion>
                 </Row>
 
 
-                <HRule kind="tertiary" sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
-                {/*  STRIPES  */}
+                {/*  CUSTOM STYLING  */}
                 {/*  =============================================================================================  */}
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h5" marginBottom="nano">Change row BG on hover</Heading>
+                        <Heading as="h5" marginBottom="nano">Custom BG, border and text colours</Heading>
 
                         <Text marginBottom="micro">
-                            The <code>isHoverable</code> prop adds a different background colour to a row on hover. You
-                            can change the colour again in the theme.
+                            If you prefer to custom style your buttons, you can do that too, with
+                            the <code>bgColour</code>, <code>borderColour</code> and the <code>textColour</code> props.
+                            All three take any colour value from <code>defaultColours</code> in <Link
+                            to="/colour">colours</Link>.
                         </Text>
+                    </Portion>
 
-                        <CodeBlock source={sampleButtonStripes} language="jsx" marginBottom="micro" />
+                    <Portion desktopSpan="half">
+                        <CodeBlock source={sampleButtonCustomStyling1} language="jsx" marginBottom="micro" />
+                    </Portion>
 
-                        <Table bordersFor="both" padding="tiny" isStriped isHoverable>
-                            <thead>
-                                <tr>
-                                    <td>Header 1</td>
-                                    <td>Header 2</td>
-                                    <td>Header 3</td>
-                                </tr>
-                            </thead>
+                    <Portion desktopSpan="half">
+                        <Button shape="rounded" bgColour="transparent" borderColour="red" textColour="green"
+                                marginRight="nano">Click me</Button>
+                    </Portion>
 
-                            <tbody>
-                                <tr>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                    <td>Cell 3</td>
-                                </tr>
+                    <Portion desktopSpan="half">
+                        <CodeBlock source={sampleButtonCustomStyling2} language="jsx" marginBottom="micro" />
+                    </Portion>
 
-                                <tr>
-                                    <td>Cell 4</td>
-                                    <td>Cell 5</td>
-                                    <td>Cell 6</td>
-                                </tr>
+                    <Portion desktopSpan="half">
+                        <Button shape="rounded" bgColour="amber-20" borderColour="orange" textColour="orange"
+                                marginRight="nano">Click me</Button>
+                    </Portion>
 
-                                <tr>
-                                    <td>Cell 7</td>
-                                    <td>Cell 8</td>
-                                    <td>Cell 9</td>
-                                </tr>
+                    <Portion desktopSpan="half">
+                        <CodeBlock source={sampleButtonCustomStyling3} language="jsx" marginBottom="micro" />
+                    </Portion>
 
-                                <tr>
-                                    <td>Cell 10</td>
-                                    <td>Cell 11</td>
-                                    <td>Cell 12</td>
-                                </tr>
-                            </tbody>
-                        </Table>
+                    <Portion desktopSpan="half">
+                        <Button shape="rounded" bgColour="spring" borderColour="spring" textColour="crimson"
+                                marginRight="nano">Click me</Button>
+                    </Portion>
+
+                    <Portion>
+                        <Text marginTop="micro">
+                            All of these values come from the theme file, where you can set once for your entire project
+                            globally.
+                        </Text>
                     </Portion>
                 </Row>
 
 
-                <HRule kind="tertiary" sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
-                {/*  FULL WIDTH  */}
+                {/*  SHADOW  */}
                 {/*  =============================================================================================  */}
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h5" marginBottom="nano">Full-width</Heading>
+                        <Heading as="h5" marginBottom="nano">Shadow</Heading>
 
                         <Text marginBottom="micro">
-                            You can add the <code>isFullWidth</code> prop to make the table take up the width of its
-                            parent. This is a common prop and now unique to the <code>Table</code> element.
+                            The <code>shadow</code> props takes three values&mdash;<code>mild</code>, <code>hard</code>,
+                            and <code>soft</code>.
                         </Text>
 
-                        <CodeBlock source={sampleButtonFullWidth} language="jsx" marginBottom="micro" />
+                        <CodeBlock source={sampleButtonShadow} language="jsx" marginBottom="micro" />
 
-                        <Table bordersFor="both" padding="tiny" isStriped isHoverable isFullWidth>
-                            <thead>
-                                <tr>
-                                    <td>Header 1</td>
-                                    <td>Header 2</td>
-                                    <td>Header 3</td>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                    <td>Cell 3</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Cell 4</td>
-                                    <td>Cell 5</td>
-                                    <td>Cell 6</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Cell 7</td>
-                                    <td>Cell 8</td>
-                                    <td>Cell 9</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Cell 10</td>
-                                    <td>Cell 11</td>
-                                    <td>Cell 12</td>
-                                </tr>
-                            </tbody>
-                        </Table>
+                        <Button kind="secondary" shadow="mild" marginRight="nano">Mild shadow</Button>
+                        <Button kind="secondary" shadow="hard" marginRight="nano">Hard shadow</Button>
+                        <Button kind="secondary" shadow="soft" marginRight="micro">Soft shadow</Button>
                     </Portion>
                 </Row>
 
 
-                <HRule kind="tertiary" sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
-                {/*  ALIGN TEXT  */}
+                {/*  IS LOADING  */}
                 {/*  =============================================================================================  */}
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h5" marginBottom="nano">Text alignment</Heading>
+                        <Heading as="h5" marginBottom="nano">Loading states</Heading>
 
                         <Text marginBottom="micro">
-                            There’s a <code>alignText</code> prop to align the text to
-                            the <code>left</code>, <code>right</code>, and <code>centre</code>/<code>center</code>.
+                            Add a <code>isLoading</code> prop to add a small circular spinner inside the button.
                         </Text>
 
-                        <CodeBlock source={sampleButtonAlignText} language="jsx" marginBottom="micro" />
+                        <CodeBlock source={sampleButtonIsLoading} language="jsx" marginBottom="micro" />
 
-                        <Table bordersFor="both" padding="tiny" isStriped isHoverable isFullWidth alignText="centre">
-                            <thead>
-                                <tr>
-                                    <td>Header 1</td>
-                                    <td>Header 2</td>
-                                    <td>Header 3</td>
-                                </tr>
-                            </thead>
+                        <Button kind="primary" isLoading marginRight="nano">Text</Button>
+                        <Button kind="secondary" isLoading marginRight="nano">Text</Button>
+                        <Button kind="tertiary" isLoading marginRight="nano">Text</Button>
 
-                            <tbody>
-                                <tr>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                    <td>Cell 3</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Cell 4</td>
-                                    <td>Cell 5</td>
-                                    <td>Cell 6</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Cell 7</td>
-                                    <td>Cell 8</td>
-                                    <td>Cell 9</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Cell 10</td>
-                                    <td>Cell 11</td>
-                                    <td>Cell 12</td>
-                                </tr>
-                            </tbody>
-                        </Table>
+                        <Card shape="rounded" padding="nano" bgColour="amber-20" borderColour="amber" marginTop="micro">
+                            <Text>
+                                NOTE: The <code>isLoading</code> state disables user interaction, shadows etc.
+                            </Text>
+                        </Card>
                     </Portion>
                 </Row>
 
 
-                <HRule sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
 
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
+                {/*  =============================================================================================  */}
+                {/*  WITH DELETE CROSS  */}
+                {/*  =============================================================================================  */}
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Heading as="h5" marginBottom="nano">Delete action</Heading>
+
+                        <Text marginBottom="micro">
+                            Use the <code>hasDelete</code> prop to add a small &ldquo;&times;&rdquo; to the button. The
+                            colour of the cross mark will match the text colour of the button.
+                        </Text>
+
+                        <CodeBlock source={sampleButtonHasDelete} language="jsx" marginBottom="micro" />
+
+                        <Button kind="primary" hasDelete marginRight="nano">Delete this</Button>
+                        <Button kind="secondary" hasDelete marginRight="nano">Delete this</Button>
+                    </Portion>
+                </Row>
+
+
+                <HRule kind="secondary" sideMargin="huge" />
+
+
+                {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  THEMING  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
+                {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="theming">
                     <Row sidePadding="huge" marginBottom="small">
                         <Portion>
                             <Heading as="h3" marginBottom="tiny">Theming</Heading>
 
-                            <CodeBlock source={sampleButtonTheme} language="json" />
+                            <CodeBlock source={sampleButtonTheme} language="css" />
                         </Portion>
                     </Row>
                 </Element>

@@ -198,7 +198,7 @@ export const TableDocs = () => {
                 </Row>
 
 
-                <HRule kind="tertiary" sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
@@ -254,7 +254,7 @@ export const TableDocs = () => {
                 </Row>
 
 
-                <HRule kind="tertiary" sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
@@ -310,7 +310,7 @@ export const TableDocs = () => {
                 </Row>
 
 
-                <HRule kind="tertiary" sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
@@ -366,7 +366,7 @@ export const TableDocs = () => {
                 </Row>
 
 
-                <HRule kind="tertiary" sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
@@ -422,7 +422,7 @@ export const TableDocs = () => {
                 </Row>
 
 
-                <HRule kind="tertiary" sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
