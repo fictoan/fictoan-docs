@@ -97,7 +97,7 @@ export const Sidebar = ({toggleTheme}) => {
                 </SidebarItem>
             </NavLink>
 
-            <NavLink exact to="/overview/theme">
+            <NavLink exact to="/theme">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
                         <ColourIcon />
@@ -107,7 +107,7 @@ export const Sidebar = ({toggleTheme}) => {
                 </SidebarItem>
             </NavLink>
 
-            <NavLink exact to="/overview/utilities">
+            <NavLink exact to="/utilities">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
                     </SidebarItemIcon>
@@ -200,7 +200,7 @@ export const Sidebar = ({toggleTheme}) => {
                 </SidebarItem>
             </NavLink>
 
-            <NavLink exact to="/components/dropdown">
+            <NavLink exact to="/components/progress-bar">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
                     </SidebarItemIcon>
@@ -269,7 +269,7 @@ export const Sidebar = ({toggleTheme}) => {
             </NavLink>
 
             {/*  INFO PANEL  =============================================  */}
-            <NavLink exact to="/components/notifications">
+            <NavLink exact to="/components/info-panel">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
                     </SidebarItemIcon>

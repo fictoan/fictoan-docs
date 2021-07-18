@@ -12,14 +12,14 @@ export const CardDocs = () => {
     useEffect(() => {
         document.title = "Card — Fictoan";
 
-        // try {
-        //     window.scroll({
-        //         top  : 0,
-        //         left : 0
-        //     });
-        // } catch (error) {
-        //     window.scrollTo(0, 0);
-        // }
+        try {
+            window.scroll({
+                top  : 0,
+                left : 0
+            });
+        } catch (error) {
+            window.scrollTo(0, 0);
+        }
     }, []);
 
     return (

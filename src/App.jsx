@@ -31,6 +31,7 @@ import { TableDocs } from "./pages/Components/Table/Table";
 
 //  Local assets
 import { Sidebar } from "./components/Sidebar/Sidebar";
+import { ThemeDocs } from "./pages/03Theme/Theme";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -63,14 +64,20 @@ export const App = () => {
 
                             <Route
                                 exact
+                                path="/manifesto"
+                                component={ Manifesto }
+                            />
+
+                            <Route
+                                exact
                                 path="/getting-started"
                                 component={ GettingStarted }
                             />
 
                             <Route
                                 exact
-                                path="/manifesto"
-                                component={ Manifesto }
+                                path="/theme"
+                                component={ ThemeDocs }
                             />
 
                             <Route
