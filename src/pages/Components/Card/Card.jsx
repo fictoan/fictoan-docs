@@ -4,21 +4,22 @@ import { Link } from "react-router-dom";
 import { Card, CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
 
 import { CardDocsStyled } from "./Card.styled";
-import { sampleCard, sampleCardCustomStyling, sampleCardShadow } from "./CodeSamples";
+import { sampleCard, sampleCardCustomStyling, sampleCardShadow, sampleCardTheme } from "./CodeSamples";
+import { sampleButtonTheme } from "../Button/CodeSamples";
 
 
 export const CardDocs = () => {
     useEffect(() => {
         document.title = "Card — Fictoan";
 
-        try {
-            window.scroll({
-                top  : 0,
-                left : 0
-            });
-        } catch (error) {
-            window.scrollTo(0, 0);
-        }
+        // try {
+        //     window.scroll({
+        //         top  : 0,
+        //         left : 0
+        //     });
+        // } catch (error) {
+        //     window.scrollTo(0, 0);
+        // }
     }, []);
 
     return (
@@ -278,7 +279,21 @@ export const CardDocs = () => {
                 </Row>
 
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule sideMargin="huge" />
+
+
+                {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
+                {/*  THEMING  */}
+                {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
+                <Element as="section" id="theming">
+                    <Row sidePadding="huge" marginBottom="small">
+                        <Portion>
+                            <Heading as="h3" marginBottom="tiny">Theming</Heading>
+
+                            <CodeBlock source={sampleCardTheme} language="css" />
+                        </Portion>
+                    </Row>
+                </Element>
             </Element>
         </CardDocsStyled>
     );
