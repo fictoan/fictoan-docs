@@ -1,40 +1,24 @@
 //  Code sample 01 ////////////////////////////////////////////////////////////
-export const sampleHRuleTheme = `
-hr : {
-    primary : {
-        bg     : defaultColours.blue80,
-        height : "1px"
-    },
-    secondary : {
-        bg     : defaultColours.slate40,
-        height : "1px"
-    },
-    tertiary : {
-        bg     : defaultColours.slate20,
-        height : "1px"
-    }
-}
-`;
+export const sampleCard = `<Card padding="micro"></Card>`;
+
 
 //  Code sample 01 ////////////////////////////////////////////////////////////
-export const sampleHRule = `
-<HRule />
-`;
+export const sampleCardShape = `<Card padding="micro"></Card>`;
+
 
 //  Code sample 02 ////////////////////////////////////////////////////////////
-export const sampleHRuleKinds = `
-<HRule kind="primary" />
-<HRule kind="secondary" />
-<HRule kind="tertiary" />
-`;
+export const sampleCardCustomStyling = `<Card
+    padding="micro"
+    shape="rounded"
+    bgColour="salmon-40"
+    borderColour="salmon"
+/>`;
 
-//  Code sample 02 ////////////////////////////////////////////////////////////
-export const sampleHRuleSideMargin = `
-<HRule sideMargin="nano" />
-<HRule sideMargin="micro" />
-<HRule sideMargin="tiny" />
-<HRule sideMargin="small" />
-<HRule sideMargin="medium" />
-<HRule sideMargin="large" />
-<HRule sideMargin="huge" />
-`;
+//  Code sample 03 ////////////////////////////////////////////////////////////
+export const sampleCardShadow = `<Card
+    padding="micro"
+    shape="rounded"
+    bgColour="salmon-40"
+    borderColour="salmon"
+    shadow="mild" | "hard" | "soft"
+/>`;

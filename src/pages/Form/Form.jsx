@@ -57,8 +57,7 @@ const snippetInputValidation = `
 />
 `;
 
-export const Forms = () => {
-
+export const FormDocs = () => {
     return (
         <article id="page-form">
             <Row sidePadding="huge" marginTop="small" marginBottom="small">

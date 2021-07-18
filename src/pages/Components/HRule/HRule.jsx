@@ -20,9 +20,18 @@ import {
 } from "./CodeSamples";
 
 
-export const HorizontalRule = () => {
+export const HRuleDocs = () => {
     useEffect(() => {
         document.title = "HRule — Fictoan";
+
+        try {
+            window.scroll({
+                top: 0,
+                left: 0
+            });
+        } catch (error) {
+            window.scrollTo(0, 0);
+        }
     }, []);
 
     return (
@@ -37,6 +46,7 @@ export const HorizontalRule = () => {
                 <Portion>
                     <Heading as="h3" marginBottom="micro">Props</Heading>
 
+                    <Heading as="h5" marginBottom="nano">Custom props</Heading>
                     <Table bordersFor="both" padding="tiny">
                         <thead className="bg-slate-10">
                             <tr>
@@ -73,6 +83,40 @@ export const HorizontalRule = () => {
                             </tr>
                         </tbody>
                     </Table>
+
+                    <HRule kind="tertiary" marginTop="tiny" marginBottom="tiny" />
+
+                    <Heading as="h5" marginBottom="nano">Shared props</Heading>
+                    <Table bordersFor="both" padding="tiny" isFullWidth>
+                        <thead className="bg-slate-10">
+                            <tr>
+                                <td className="weight-600">Prop</td>
+                                <td className="weight-600">Description</td>
+                                <td className="weight-600">Values</td>
+                                <td className="weight-600">Default</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <code>bgColour</code> / <code>bgColor</code>
+                                </td>
+
+                                <td>
+                                    Background colour
+                                </td>
+
+                                <td>
+                                    Any colour from <code>defaultColours</code>.
+                                </td>
+
+                                <td>
+                                    &mdash;
+                                </td>
+                            </tr>
+                        </tbody>
+                    </Table>
                 </Portion>
             </Row>
 
@@ -84,7 +128,7 @@ export const HorizontalRule = () => {
             <Element as="section" id="default">
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h3" marginBottom="nano">Default</Heading>
+                        <Heading as="h3" marginBottom="nano">Default horizontal rule</Heading>
 
                         <Text marginBottom="micro">
                             The <code>HRule</code> element is used to separate sections of content on your page. It’s a self-closing element, and doesn’t accept any children.
@@ -99,7 +143,7 @@ export const HorizontalRule = () => {
                         <HRule />
 
                         <Text>
-                            It has a default top and bottom margin of <code>4vmax</code>, which you can over ride with the <code>marginTop</code> and <code>marginBottom</code> props.
+                            It has a default top and bottom margin of <code>tiny</code>, which you can over ride with the <code>marginTop</code> and <code>marginBottom</code> props.
                         </Text>
                     </Portion>
                 </Row>
@@ -109,12 +153,16 @@ export const HorizontalRule = () => {
             <HRule sideMargin="huge" />
 
 
+            {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
+            {/*  PROPS  */}
+            {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             <Element as="section" id="usage">
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h3">Modifiers</Heading>
+                        <Heading as="h3">Props</Heading>
                     </Portion>
                 </Row>
+
                 <Row sidePadding="huge">
                     <Portion>
                         <Heading as="h5" marginBottom="nano">Kind</Heading>

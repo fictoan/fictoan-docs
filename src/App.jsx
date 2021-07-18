@@ -13,6 +13,7 @@ import { Element, ContentWrapper, ThemeProvider } from "fictoan-react";
 import { FictoanLightTheme } from "./styles/Fictoan.light.theme";
 import { FictoanDarkTheme } from "./styles/Fictoan.dark.theme";
 import { GlobalStyle } from "./styles/Global.styled";
+
 import { Home } from "./pages/Home/Home";
 import { Manifesto } from "./pages/Manifesto/Manifesto";
 
@@ -21,14 +22,15 @@ import { Layout } from "./pages/Layout/Layout";
 import { Typography } from "./pages/Typography/Typography";
 import { ColourDocs } from "./pages/Colour/ColourDocs";
 
-import { CardComponent} from "./pages/Components/Card/Card";
-import { HorizontalRule } from "./pages/Components/HRule/HorizontalRule";
+import { FormDocs } from "./pages/Form/Form";
+
 import { ButtonDocs } from "./pages/Components/Button/Button";
+import { CardDocs } from "./pages/Components/Card/Card";
+import { HRuleDocs } from "./pages/Components/HRule/HRule";
 import { TableDocs } from "./pages/Components/Table/Table";
 
 //  Local assets
 import { Sidebar } from "./components/Sidebar/Sidebar";
-import { Forms } from "./pages/Form/Form";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -92,13 +94,13 @@ export const App = () => {
                             <Route
                                 exact
                                 path="/components/card"
-                                component={ CardComponent }
+                                component={ CardDocs }
                             />
 
                             <Route
                                 exact
                                 path="/components/hrule"
-                                component={ HorizontalRule }
+                                component={ HRuleDocs }
                             />
 
                             <Route
@@ -110,7 +112,7 @@ export const App = () => {
                             <Route
                                 exact
                                 path="/components/form"
-                                component={ Forms }
+                                component={ FormDocs }
                             />
 
                             <Route

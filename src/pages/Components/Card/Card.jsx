@@ -1,41 +1,34 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import {
-    Element,
-    Row,
-    Portion,
-    Heading,
-    Text,
-    CodeBlock,
-    HRule,
-    Table,
-    Card
-} from "fictoan-react";
+import { Card, CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
 
-import { CardComponentStyled } from "./Card.styled";
-import {
-    sampleHRuleTheme,
-    sampleHRule,
-    sampleHRuleKinds,
-    sampleHRuleSideMargin
-} from "./CodeSamples";
+import { CardDocsStyled } from "./Card.styled";
+import { sampleCard, sampleCardCustomStyling, sampleCardShadow } from "./CodeSamples";
 
 
-export const CardComponent = () => {
+export const CardDocs = () => {
     useEffect(() => {
         document.title = "Card — Fictoan";
+
+        try {
+            window.scroll({
+                top  : 0,
+                left : 0
+            });
+        } catch (error) {
+            window.scrollTo(0, 0);
+        }
     }, []);
 
     return (
-        <CardComponentStyled>
+        <CardDocsStyled>
             <Row sidePadding="huge" marginTop="small" marginBottom="small">
                 <Portion>
                     <Heading as="h2" className="text-hue">Card</Heading>
-                </Portion>
-
-                <Portion>
                     <Text>
-                        The card component is an extremely versatile yet simple box that encloses content within. 
+                        The card is a simple box that encloses content within, and is one of the oft-used components in
+                        modern UI.
                     </Text>
                 </Portion>
             </Row>
@@ -44,29 +37,32 @@ export const CardComponent = () => {
                 <Portion>
                     <Heading as="h3" marginBottom="micro">Props</Heading>
 
-                    <Table bordersFor="both" padding="small">
+                    <Heading as="h5" marginBottom="nano">Custom props</Heading>
+                    <Text>None</Text>
+
+                    <HRule kind="tertiary" marginTop="tiny" marginBottom="tiny" />
+
+                    <Heading as="h5" marginBottom="nano">Shared props</Heading>
+                    <Table bordersFor="both" padding="tiny">
                         <thead className="bg-slate-10">
                             <tr>
                                 <td className="weight-600">Prop</td>
                                 <td className="weight-600">Description</td>
-                                <td className="weight-600">Value</td>
+                                <td className="weight-600">Values</td>
                                 <td className="weight-600">Default</td>
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
-                                <td><code>shape</code></td>
-                                <td>Corner radius of the card</td>
                                 <td>
-                                    <code>rounded</code><br />
-                                    <code>curved</code>
+                                    <code>padding</code>
                                 </td>
-                                <td>—</td>
-                            </tr>
-                            <tr>
-                                <td><code>padding</code></td>
-                                <td>Gap between border and content inside the card</td>
+
+                                <td>
+                                    Inner padding between the border and the content
+                                </td>
+
                                 <td>
                                     <code>nano</code><br />
                                     <code>micro</code><br />
@@ -76,25 +72,49 @@ export const CardComponent = () => {
                                     <code>large</code><br />
                                     <code>huge</code>
                                 </td>
-                                <td>&mdash;</td>
+
+                                <td>
+                                    &mdash;
+                                </td>
                             </tr>
 
                             <tr>
-                                <td><code>bgColour</code> / <code>bgColor</code></td>
-                                <td>Background colour</td>
                                 <td>
-                                    Any colour from the list of colours. Custom fallback value can be set in the theme.
+                                    <code>shape</code>
                                 </td>
-                                <td>white</td>
+
+                                <td>
+                                    Corner radius
+                                </td>
+
+                                <td>
+                                    <code>rounded</code><br />
+                                    <code>curved</code>
+                                </td>
+
+                                <td>
+                                    &mdash;
+                                </td>
                             </tr>
 
                             <tr>
-                                <td><code>borderColour</code> / <code>borderColor</code></td>
-                                <td>Outer border colour</td>
                                 <td>
-                                    Border colour
+                                    <code>shadow</code>
                                 </td>
-                                <td>&#123;lighten(0.96, defaultColours.black)&#125;</td>
+
+                                <td>
+                                    Box shadow
+                                </td>
+
+                                <td>
+                                    <code>mild</code><br />
+                                    <code>hard</code><br />
+                                    <code>soft</code>
+                                </td>
+
+                                <td>
+                                    &mdash;
+                                </td>
                             </tr>
                         </tbody>
                     </Table>
@@ -112,19 +132,26 @@ export const CardComponent = () => {
                         <Heading as="h3" marginBottom="nano">Default</Heading>
 
                         <Text marginBottom="micro">
-                            The <code>HRule</code> element is used to separate sections of content on your page. It’s a self-closing element, and doesn’t accept any children.
+                            The <code>Card</code> component is basically a rectangle to put your content into. Because
+                            it accepts children, your card can be as small or large as you need it to be. One of the
+                            first things to do with a card is to add the <code>padding</code> prop.
                         </Text>
 
-                        <CodeBlock source={ sampleHRule } language="jsx" />
+                        <CodeBlock source={sampleCard} language="jsx" />
 
                         <Text marginTop="micro" marginBottom="micro">
                             The above code will display the default <code>HRule</code>, which looks like this&mdash;
                         </Text>
 
-                        <Card />
+                        <Card padding="micro" />
 
-                        <Text>
-                            It has a default top and bottom margin of <code>4vmax</code>, which you can over ride with the <code>marginTop</code> and <code>marginBottom</code> props.
+                        <Text marginTop="micro" marginBottom="micro">
+                            Without the padding, it would just collapse into a line as its height is dependent on the
+                            cumulative heights of its children. It’s width is dependent on the parent.
+                        </Text>
+
+                        <Text marginTop="micro">
+                            The default card also comes with a very light grey border, to easily identify its boundary.
                         </Text>
                     </Portion>
                 </Row>
@@ -134,74 +161,125 @@ export const CardComponent = () => {
             <HRule sideMargin="huge" />
 
 
-            <Element as="section" id="usage">
+            {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
+            {/*  PROPS  */}
+            {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
+            <Element as="section" id="props">
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h3">Modifiers</Heading>
+                        <Heading as="h3">Props</Heading>
                     </Portion>
                 </Row>
+
+                {/*  =============================================================================================  */}
+                {/*  SHAPE  */}
+                {/*  =============================================================================================  */}
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h5" marginBottom="nano">Kind</Heading>
+                        <Heading as="h5" marginBottom="nano">Shape</Heading>
 
                         <Text marginBottom="micro">
-                            The <code>kind</code> prop accepts three values&mdash;<code>primary</code>, <code>secondary</code>, and <code>tertiary</code>. If this prop isn’t applied, it defaults back to <code>primary</code>.
+                            The default card is a sharp rectangle, which you can modify with
+                            the <code>shape</code> prop. It takes <code>rounded</code> and <code>curved</code> as
+                            values.
                         </Text>
 
-                        <CodeBlock source={ sampleHRuleKinds } language="jsx" />
+                        <CodeBlock source={sampleCard} language="jsx" marginBottom="micro" />
 
-                        <HRule kind="primary" marginTop="micro" marginBottom="micro" />
-                        <HRule kind="secondary" marginTop="micro" marginBottom="micro" />
-                        <HRule kind="tertiary" marginTop="micro" marginBottom="micro" />
+                        <Card padding="micro" marginBottom="nano">Default</Card>
+                        <Card shape="rounded" padding="micro" marginRight="nano">Rounded</Card>
 
-                        <Text>
-                            The colours of these three kinds of <code>HRule</code> can be set in the theme.
+                        <Text marginTop="micro">
+                            The radius value for <code>rounded</code> again comes from the theme file.
                         </Text>
                     </Portion>
                 </Row>
-            </Element>
 
 
-            <HRule sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
 
-            <Element as="section" id="usage">
+                {/*  =============================================================================================  */}
+                {/*  CUSTOM STYLING  */}
+                {/*  =============================================================================================  */}
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h5" marginBottom="nano">Side margin</Heading>
+                        <Heading as="h5" marginBottom="nano">Custom BG and border</Heading>
 
                         <Text marginBottom="micro">
-                            While the <code>HRule</code> takes up 100% of the available width, you might want it to be as wide as the content above and below it.
+                            You can add custom styling with the <code>bgColour</code>, and
+                            the <code>borderColour</code> props. Both take any colour value
+                            from <code>defaultColours</code> in <Link to="/colour">colours</Link>.
                         </Text>
+                    </Portion>
 
-                        <Text marginBottom="micro">
-                            The <code>sideMargin</code> prop sets the width, and aligns the rule to the centre of the page. It takes the same spacing values from <code>nano</code> all the way to <code>huge</code>.
-                        </Text>
+                    <Portion desktopSpan="half">
+                        <CodeBlock source={sampleCardCustomStyling} language="jsx" marginBottom="micro" />
+                    </Portion>
 
-                        <CodeBlock source={ sampleHRuleSideMargin } language="jsx" />
+                    <Portion desktopSpan="half">
+                        <Card
+                            padding="micro"
+                            shape="rounded"
+                            bgColour="salmon-40"
+                            borderColour="salmon"
+                        />
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="nano" marginTop="micro" marginBottom="micro" />
-                <HRule sideMargin="micro" marginTop="micro" marginBottom="micro" />
-                <HRule sideMargin="tiny" marginTop="micro" marginBottom="micro" />
-                <HRule sideMargin="small" marginTop="micro" marginBottom="micro" />
-                <HRule sideMargin="medium" marginTop="micro" marginBottom="micro" />
-                <HRule sideMargin="large" marginTop="micro" marginBottom="micro" />
-                <HRule sideMargin="huge" marginTop="micro" marginBottom="micro" />
-            </Element>
 
-            <HRule sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
-            <Element as="section" id="usage">
+
+                {/*  =============================================================================================  */}
+                {/*  SHADOW  */}
+                {/*  =============================================================================================  */}
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h3" marginBottom="micro">Theming</Heading>
+                        <Heading as="h5" marginBottom="nano">Shadow</Heading>
 
-                        <CodeBlock source={ sampleHRuleTheme } language="javascript" />
+                        <Text marginBottom="micro">
+                            The Card is one of the elements that benefit the most form the <code>shadow</code> prop. It
+                            takes the three usual shadow values—<code>mild</code>, <code>hard</code>,
+                            and <code>soft</code>.
+                        </Text>
+                    </Portion>
+
+                    <Portion desktopSpan="half">
+                        <CodeBlock source={sampleCardShadow} language="tsx" marginBottom="micro" />
+                    </Portion>
+
+                    <Portion desktopSpan="half">
+                        <Card
+                            padding="micro"
+                            shape="rounded"
+                            bgColour="salmon-40"
+                            borderColour="salmon"
+                            shadow="mild"
+                            marginBottom="micro"
+                        />
+                        <Card
+                            padding="micro"
+                            shape="rounded"
+                            bgColour="salmon-40"
+                            borderColour="salmon"
+                            shadow="hard"
+                            marginBottom="micro"
+                        />
+                        <Card
+                            padding="micro"
+                            shape="rounded"
+                            bgColour="salmon-40"
+                            borderColour="salmon"
+                            shadow="soft"
+                            marginBottom="micro"
+                        />
                     </Portion>
                 </Row>
+
+
+                <HRule kind="secondary" sideMargin="huge" />
             </Element>
-        </CardComponentStyled>
+        </CardDocsStyled>
     );
 }

@@ -22,14 +22,14 @@ export const ButtonDocs = () => {
     useEffect(() => {
         document.title = "Button — Fictoan";
 
-        // try {
-        //     window.scroll({
-        //         top: 0,
-        //         left: 0
-        //     });
-        // } catch (error) {
-        //     window.scrollTo(0, 0);
-        // }
+        try {
+            window.scroll({
+                top: 0,
+                left: 0
+            });
+        } catch (error) {
+            window.scrollTo(0, 0);
+        }
     }, []);
 
     return (
@@ -44,6 +44,7 @@ export const ButtonDocs = () => {
                 <Portion>
                     <Heading as="h3" marginBottom="micro">Props</Heading>
 
+                    <Heading as="h5" marginBottom="nano">Custom props</Heading>
                     <Table bordersFor="both" padding="tiny">
                         <thead className="bg-slate-10">
                             <tr>
@@ -109,27 +110,8 @@ export const ButtonDocs = () => {
 
                                 <td>
                                     <code>rounded</code><br />
-                                    <code>curved</code>
-                                </td>
-
-                                <td>
-                                    &mdash;
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <code>shadow</code>
-                                </td>
-
-                                <td>
-                                    Box shadow
-                                </td>
-
-                                <td>
-                                    <code>mild</code><br />
-                                    <code>hard</code><br />
-                                    <code>soft</code>
+                                    <code>curved</code><br />
+                                    <code>circular</code><br />
                                 </td>
 
                                 <td>
@@ -174,6 +156,96 @@ export const ButtonDocs = () => {
                             </tr>
                         </tbody>
                     </Table>
+
+                    <HRule kind="tertiary" marginTop="tiny" marginBottom="tiny" />
+
+                    <Heading as="h5" marginBottom="nano">Shared props</Heading>
+                    <Table bordersFor="both" padding="tiny" isFullWidth>
+                        <thead className="bg-slate-10">
+                            <tr>
+                                <td className="weight-600">Prop</td>
+                                <td className="weight-600">Description</td>
+                                <td className="weight-600">Values</td>
+                                <td className="weight-600">Default</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <code>shadow</code>
+                                </td>
+
+                                <td>
+                                    Box shadow
+                                </td>
+
+                                <td>
+                                    <code>mild</code><br />
+                                    <code>hard</code><br />
+                                    <code>soft</code>
+                                </td>
+
+                                <td>
+                                    &mdash;
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>bgColour</code> / <code>bgColor</code>
+                                </td>
+
+                                <td>
+                                    Background colour
+                                </td>
+
+                                <td>
+                                    Any colour from <code>defaultColours</code>.
+                                </td>
+
+                                <td>
+                                    &mdash;
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>borderColour</code> / <code>borderColor</code>
+                                </td>
+
+                                <td>
+                                    Border colour
+                                </td>
+
+                                <td>
+                                    Any colour from <code>defaultColours</code>.
+                                </td>
+
+                                <td>
+                                    &mdash;
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>textColour</code> / <code>textColor</code>
+                                </td>
+
+                                <td>
+                                    Text colour
+                                </td>
+
+                                <td>
+                                    Any colour from <code>defaultColours</code>.
+                                </td>
+
+                                <td>
+                                    &mdash;
+                                </td>
+                            </tr>
+                        </tbody>
+                    </Table>
                 </Portion>
             </Row>
 
@@ -185,7 +257,7 @@ export const ButtonDocs = () => {
             <Element as="section" id="default">
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h3" marginBottom="tiny">Default</Heading>
+                        <Heading as="h3" marginBottom="tiny">Default button</Heading>
 
                         <Text marginBottom="micro">
                             The <code>Button</code> uses a native <code>button</code> element that you can extend with
@@ -444,7 +516,7 @@ export const ButtonDocs = () => {
                         <Portion>
                             <Heading as="h3" marginBottom="tiny">Theming</Heading>
 
-                            <CodeBlock source={sampleButtonTheme} language="css" />
+                            <CodeBlock source={sampleButtonTheme} language="javascript" />
                         </Portion>
                     </Row>
                 </Element>
