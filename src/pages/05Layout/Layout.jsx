@@ -33,7 +33,7 @@ import {
 
 export const Layout = () => {
     useEffect(() => {
-        document.title = "Layout — Fictoan";
+        document.title = "05Layout — Fictoan";
     }, []);
 
     return (

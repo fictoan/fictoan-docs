@@ -5,7 +5,6 @@ import { Card, CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } f
 
 import { CardDocsStyled } from "./Card.styled";
 import { sampleCard, sampleCardCustomStyling, sampleCardShadow, sampleCardTheme } from "./CodeSamples";
-import { sampleButtonTheme } from "../Button/CodeSamples";
 
 
 export const CardDocs = () => {

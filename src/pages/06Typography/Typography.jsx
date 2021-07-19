@@ -29,7 +29,7 @@ import {
 
 export const Typography = () => {
     useEffect(() => {
-        document.title = "Typography — Fictoan";
+        document.title = "06Typography — Fictoan";
     }, []);
 
     return (

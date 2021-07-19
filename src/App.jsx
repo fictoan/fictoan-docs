@@ -17,10 +17,10 @@ import { GlobalStyle } from "./styles/Global.styled";
 import { Home } from "./pages/Home/Home";
 import { Manifesto } from "./pages/Manifesto/Manifesto";
 
-import { GettingStarted } from "./pages/GettingStarted/GettingStarted";
-import { Layout } from "./pages/Layout/Layout";
-import { Typography } from "./pages/Typography/Typography";
-import { ColourDocs } from "./pages/Colour/ColourDocs";
+import { GettingStarted } from "./pages/01GettingStarted/GettingStarted";
+import { Layout } from "./pages/05Layout/Layout";
+import { Typography } from "./pages/06Typography/Typography";
+import { ColourDocs } from "./pages/07Colour/ColourDocs";
 
 import { FormDocs } from "./pages/Form/Form";
 
@@ -32,6 +32,8 @@ import { TableDocs } from "./pages/Components/Table/Table";
 //  Local assets
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { ThemeDocs } from "./pages/03Theme/Theme";
+import { CodeBlockDocs } from "./pages/Components/CodeBlock/CodeBlock";
+import { BaseElementDocs } from "./pages/BaseElement/BaseElement";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -82,6 +84,12 @@ export const App = () => {
 
                             <Route
                                 exact
+                                path="/base-element"
+                                component={ BaseElementDocs }
+                            />
+
+                            <Route
+                                exact
                                 path="/layout"
                                 component={ Layout }
                             />
@@ -102,6 +110,12 @@ export const App = () => {
                                 exact
                                 path="/components/card"
                                 component={ CardDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/code-block"
+                                component={ CodeBlockDocs }
                             />
 
                             <Route

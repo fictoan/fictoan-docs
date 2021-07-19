@@ -88,7 +88,7 @@ export const Sidebar = ({toggleTheme}) => {
                 </SidebarItem>
             </NavLink>
 
-            <NavLink exact to="/overview/base-element">
+            <NavLink exact to="/base-element">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
                     </SidebarItemIcon>

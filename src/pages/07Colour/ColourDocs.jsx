@@ -17,7 +17,7 @@ import { sampleColourUsage } from "./CodeSamples";
 
 export const ColourDocs = () => {
     useEffect(() => {
-        document.title = "Colour — Fictoan";
+        document.title = "07Colour — Fictoan";
 
         try {
             window.scroll({
