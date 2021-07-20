@@ -3,7 +3,7 @@ export const sampleInfoPanelSetup = `// Initialise state --------------------
 const [isSampleInfoPanelOpen, setIsSampleInfoPanelOpen] = useState(false);
 
 
-// Opening trigger --------------------
+// Opening trigger ---------------------
 <Button
     kind="primary"
     onClick={() => setIsSampleInfoPanelOpen(true)}
@@ -12,7 +12,7 @@ const [isSampleInfoPanelOpen, setIsSampleInfoPanelOpen] = useState(false);
 </Button>
 
 
-// Actual component -------------------
+// Actual component --------------------
 <InfoPanel
     isOpen={isSampleInfoPanelOpen}
     onCloseCallback={() => setIsSampleInfoPanelOpen(false)}

@@ -35,6 +35,7 @@ import { ThemeDocs } from "./pages/03Theme/Theme";
 import { CodeBlockDocs } from "./pages/Components/CodeBlock/CodeBlock";
 import { BaseElementDocs } from "./pages/BaseElement/BaseElement";
 import { InfoPanelDocs } from "./pages/Components/InfoPanel/InfoPanel";
+import { TabsDocs } from "./pages/Components/Tabs/Tabs";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -147,6 +148,12 @@ export const App = () => {
                                 exact
                                 path="/components/table"
                                 component={ TableDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/tabs"
+                                component={ TabsDocs }
                             />
                         </RouteSwitch>
                     </ContentWrapper>
