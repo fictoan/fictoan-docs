@@ -56,6 +56,42 @@ export const CardDocs = () => {
                         <tbody>
                             <tr>
                                 <td>
+                                    <code>bgColour</code> / <code>bgColor</code>
+                                </td>
+
+                                <td>
+                                    Background colour
+                                </td>
+
+                                <td>
+                                    Any colour from <code>defaultColours</code>.
+                                </td>
+
+                                <td>
+                                    &mdash;
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>borderColour</code> / <code>borderColor</code>
+                                </td>
+
+                                <td>
+                                    Border colour
+                                </td>
+
+                                <td>
+                                    Any colour from <code>defaultColours</code>.
+                                </td>
+
+                                <td>
+                                    &mdash;
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
                                     <code>padding</code>
                                 </td>
 
@@ -80,25 +116,6 @@ export const CardDocs = () => {
 
                             <tr>
                                 <td>
-                                    <code>shape</code>
-                                </td>
-
-                                <td>
-                                    Corner radius
-                                </td>
-
-                                <td>
-                                    <code>rounded</code><br />
-                                    <code>curved</code>
-                                </td>
-
-                                <td>
-                                    &mdash;
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
                                     <code>shadow</code>
                                 </td>
 
@@ -110,6 +127,25 @@ export const CardDocs = () => {
                                     <code>mild</code><br />
                                     <code>hard</code><br />
                                     <code>soft</code>
+                                </td>
+
+                                <td>
+                                    &mdash;
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <code>shape</code>
+                                </td>
+
+                                <td>
+                                    Corner radius
+                                </td>
+
+                                <td>
+                                    <code>rounded</code><br />
+                                    <code>curved</code>
                                 </td>
 
                                 <td>

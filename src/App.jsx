@@ -34,6 +34,7 @@ import { Sidebar } from "./components/Sidebar/Sidebar";
 import { ThemeDocs } from "./pages/03Theme/Theme";
 import { CodeBlockDocs } from "./pages/Components/CodeBlock/CodeBlock";
 import { BaseElementDocs } from "./pages/BaseElement/BaseElement";
+import { InfoPanelDocs } from "./pages/Components/InfoPanel/InfoPanel";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -122,6 +123,12 @@ export const App = () => {
                                 exact
                                 path="/components/hrule"
                                 component={ HRuleDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/info-panel"
+                                component={ InfoPanelDocs }
                             />
 
                             <Route
