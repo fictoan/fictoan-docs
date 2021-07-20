@@ -3,21 +3,21 @@ import React, { useEffect } from "react";
 import { CodeBlock, Element, Heading, HRule, Portion, Row, Table, Tabs, Text } from "fictoan-react";
 
 import { TabsStyled } from "./Tabs.styled";
-import { sampleButtonKinds, sampleButtonTheme, sampleTabs } from "./CodeSamples";
+import { sampleTabsTabs, sampleTabsTheme, sampleTabs } from "./CodeSamples";
 import SpanishInquisition from "../../../assets/images/spanish-inquisition.jpeg";
 
 export const TabsDocs = () => {
     useEffect(() => {
         document.title = "Tabs — Fictoan";
-        //
-        // try {
-        //     window.scroll({
-        //         top: 0,
-        //         left: 0
-        //     });
-        // } catch (error) {
-        //     window.scrollTo(0, 0);
-        // }
+
+        try {
+            window.scroll({
+                top: 0,
+                left: 0
+            });
+        } catch (error) {
+            window.scrollTo(0, 0);
+        }
     }, []);
 
     const tabOneContent = () => (
@@ -222,7 +222,7 @@ export const TabsDocs = () => {
                             The Tabs component accepts basically one custom prop—<code>tabs</code>.
                         </Text>
 
-                        <CodeBlock source={sampleButtonKinds} language="jsx" marginBottom="micro" />
+                        <CodeBlock source={sampleTabsTabs} language="jsx" marginBottom="micro" />
 
                         <Text marginTop="micro">
                             The prop accepts an array of individual elements with <code>key</code>, <code>label</code>,
@@ -244,7 +244,7 @@ export const TabsDocs = () => {
                         <Portion>
                             <Heading as="h3" marginBottom="tiny">Theming</Heading>
 
-                            <CodeBlock source={sampleButtonTheme} language="javascript" />
+                            <CodeBlock source={sampleTabsTheme} language="css" />
                         </Portion>
                     </Row>
                 </Element>

@@ -35,7 +35,7 @@ const tabThreeContent = () => (
 
 
 //  Code sample 02 ////////////////////////////////////////////////////////////
-export const sampleButtonKinds = `tabs={[
+export const sampleTabsTabs = `tabs={[
     {
         key     : "string",
         label   : "string",
@@ -55,7 +55,7 @@ export const sampleButtonKinds = `tabs={[
 
 
 //  Code sample 07 ////////////////////////////////////////////////////////////
-export const sampleButtonTheme = `tabs : {
+export const sampleTabsTheme = `tabs : {
     label : {
         default    : {
             text : \`$\{lighten(0.16, defaultColours.grey)}\`

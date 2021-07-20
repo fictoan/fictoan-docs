@@ -36,6 +36,7 @@ import { CodeBlockDocs } from "./pages/Components/CodeBlock/CodeBlock";
 import { BaseElementDocs } from "./pages/BaseElement/BaseElement";
 import { InfoPanelDocs } from "./pages/Components/InfoPanel/InfoPanel";
 import { TabsDocs } from "./pages/Components/Tabs/Tabs";
+import { BreadcrumbsDocs } from "./pages/Components/Breadcrumbs/Breadcrumbs";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -112,6 +113,12 @@ export const App = () => {
                                 exact
                                 path="/components/card"
                                 component={ CardDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/breadcrumbs"
+                                component={ BreadcrumbsDocs }
                             />
 
                             <Route
