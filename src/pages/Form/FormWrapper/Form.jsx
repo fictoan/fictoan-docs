@@ -3,11 +3,11 @@ import React, { useEffect } from "react";
 import { CodeBlock, Element, Heading, HRule, Portion, Row, Table, Tabs, Text } from "fictoan-react";
 
 import { FormDocsStyled } from "./Form.styled";
-import { sampleTabs, sampleTabsTabs, sampleTabsTheme } from "./CodeSamples";
+import { sampleFormWrapper, sampleFormWrapperSpacing } from "./CodeSamples";
 
 export const FormDocs = () => {
     useEffect(() => {
-        document.title = "Form wrapper — Fictoan";
+        document.title = "FormWrapper — Fictoan";
 
         try {
             window.scroll({
@@ -92,7 +92,7 @@ export const FormDocs = () => {
                             props and events.
                         </Text>
 
-                        <CodeBlock source={sampleTabs} language="jsx" />
+                        <CodeBlock source={sampleFormWrapper} language="jsx" />
 
                         <Text marginTop="micro" marginBottom="micro">
                             The form wrapper acts as a simple container within which you can add individual form items,
@@ -127,7 +127,7 @@ export const FormDocs = () => {
                             The Tabs component accepts basically one custom prop—<code>tabs</code>.
                         </Text>
 
-                        <CodeBlock source={sampleTabsTabs} language="jsx" marginBottom="micro" />
+                        <CodeBlock source={sampleFormWrapperSpacing} language="jsx" marginBottom="micro" />
 
                         <Text marginTop="micro">
                             The prop accepts an array of individual elements with <code>key</code>, <code>label</code>,

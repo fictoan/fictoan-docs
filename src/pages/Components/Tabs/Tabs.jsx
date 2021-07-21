@@ -8,7 +8,7 @@ import SpanishInquisition from "../../../assets/images/spanish-inquisition.jpeg"
 
 export const TabsDocs = () => {
     useEffect(() => {
-        document.title = "Form wrapper — Fictoan";
+        document.title = "FormWrapper — Fictoan";
 
         try {
             window.scroll({

@@ -19,7 +19,7 @@ import { sampleBreadcrumb, sampleBreadcrumbTheme } from "./CodeSamples";
 
 export const BreadcrumbsDocs = () => {
     useEffect(() => {
-        document.title = "Form wrapper — Fictoan";
+        document.title = "FormWrapper — Fictoan";
 
         try {
             window.scroll({

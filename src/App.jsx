@@ -22,7 +22,7 @@ import { Layout } from "./pages/05Layout/Layout";
 import { Typography } from "./pages/06Typography/Typography";
 import { ColourDocs } from "./pages/07Colour/ColourDocs";
 
-import { FormDocs } from "./pages/Form/Form wrapper/Form";
+import { FormDocs } from "./pages/Form/FormWrapper/Form";
 
 import { ButtonDocs } from "./pages/Components/Button/Button";
 import { CardDocs } from "./pages/Components/Card/Card";
@@ -38,6 +38,8 @@ import { InfoPanelDocs } from "./pages/Components/InfoPanel/InfoPanel";
 import { TabsDocs } from "./pages/Components/Tabs/Tabs";
 import { BreadcrumbsDocs } from "./pages/Components/Breadcrumbs/Breadcrumbs";
 import { NotificationDocs } from "./pages/Components/Notifications/Notifications";
+import { CheckBoxDocs } from "./pages/Form/CheckBox/CheckBox";
+import { RadioButtonDocs } from "./pages/Form/RadioButton/RadioButton";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -150,6 +152,18 @@ export const App = () => {
                                 exact
                                 path="/components/form"
                                 component={ FormDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/checkbox"
+                                component={ CheckBoxDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/radio-button"
+                                component={ RadioButtonDocs }
                             />
 
                             <Route

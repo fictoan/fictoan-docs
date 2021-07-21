@@ -160,7 +160,7 @@ export const Sidebar = ({toggleTheme}) => {
                     <SidebarItemIcon iconType="stroked">
                     </SidebarItemIcon>
 
-                    <SidebarItemText weight="400" linkText="Basics" />
+                    <SidebarItemText weight="400" linkText="Form wrapper" />
                 </SidebarItem>
             </NavLink>
 
@@ -178,7 +178,7 @@ export const Sidebar = ({toggleTheme}) => {
                     <SidebarItemIcon iconType="stroked">
                     </SidebarItemIcon>
 
-                    <SidebarItemText weight="400" linkText="CheckBox" />
+                    <SidebarItemText weight="400" linkText="CheckBox / Switch" />
                 </SidebarItem>
             </NavLink>
 
