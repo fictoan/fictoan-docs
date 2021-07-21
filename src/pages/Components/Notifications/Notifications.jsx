@@ -28,15 +28,15 @@ import {
 export const NotificationDocs = () => {
     useEffect(() => {
         document.title = "Notification — Fictoan";
-        //
-        // try {
-        //     window.scroll({
-        //         top: 0,
-        //         left: 0
-        //     });
-        // } catch (error) {
-        //     window.scrollTo(0, 0);
-        // }
+
+        try {
+            window.scroll({
+                top: 0,
+                left: 0
+            });
+        } catch (error) {
+            window.scrollTo(0, 0);
+        }
     }, []);
 
     const [showGenericNotification, setShowGenericNotification] = useState(false);

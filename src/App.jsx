@@ -22,7 +22,7 @@ import { Layout } from "./pages/05Layout/Layout";
 import { Typography } from "./pages/06Typography/Typography";
 import { ColourDocs } from "./pages/07Colour/ColourDocs";
 
-import { FormDocs } from "./pages/Form/Form";
+import { FormDocs } from "./pages/Form/Form wrapper/Form";
 
 import { ButtonDocs } from "./pages/Components/Button/Button";
 import { CardDocs } from "./pages/Components/Card/Card";

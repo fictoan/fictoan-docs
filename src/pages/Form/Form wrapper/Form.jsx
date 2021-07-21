@@ -2,41 +2,28 @@ import React, { useEffect } from "react";
 
 import { CodeBlock, Element, Heading, HRule, Portion, Row, Table, Tabs, Text } from "fictoan-react";
 
-import { TabsStyled } from "./Tabs.styled";
-import { sampleTabsTabs, sampleTabsTheme, sampleTabs } from "./CodeSamples";
-import SpanishInquisition from "../../../assets/images/spanish-inquisition.jpeg";
+import { FormDocsStyled } from "./Form.styled";
+import { sampleTabs, sampleTabsTabs, sampleTabsTheme } from "./CodeSamples";
 
-export const TabsDocs = () => {
+export const FormDocs = () => {
     useEffect(() => {
         document.title = "Form wrapper — Fictoan";
 
         try {
             window.scroll({
-                top: 0,
-                left: 0
+                top  : 0,
+                left : 0
             });
         } catch (error) {
             window.scrollTo(0, 0);
         }
     }, []);
 
-    const tabOneContent = () => (
-        <Text>Content for tab 1</Text>
-    )
-
-    const tabTwoContent = () => (
-        <Text>Some other content for the next tab</Text>
-    )
-
-    const tabThreeContent = () => (
-        <Element as="img" src={SpanishInquisition} alt="Nobody expects the Spanish Inquisition!" />
-    )
-
     return (
-        <TabsStyled>
+        <FormDocsStyled>
             <Row sidePadding="huge" marginTop="small" marginBottom="small">
                 <Portion>
-                    <Heading as="h2" className="text-hue">Tabs</Heading>
+                    <Heading as="h2" className="text-hue">Form wrapper</Heading>
                 </Portion>
             </Row>
 
@@ -58,89 +45,26 @@ export const TabsDocs = () => {
                         <tbody>
                             <tr>
                                 <td>
-                                    <code>tabs</code>
+                                    <code>spacing</code>
                                 </td>
 
                                 <td>
-                                    An array of the individual tab objects
+                                    Margin bottom for the individual form items.
                                 </td>
 
                                 <td>
-                                    object
+                                    <code>none</code><br />
+                                    <code>nano</code><br />
+                                    <code>micro</code><br />
+                                    <code>tiny</code><br />
+                                    <code>small</code><br />
+                                    <code>medium</code><br />
+                                    <code>large</code><br />
+                                    <code>huge</code>
                                 </td>
 
                                 <td>
-                                    &mdash;
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <code>tabs.key</code>
-                                </td>
-
-                                <td>
-                                    Unique identifier of a tab
-                                </td>
-
-                                <td>
-                                    string
-                                </td>
-
-                                <td>
-
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <code>tabs.label</code>
-                                </td>
-
-                                <td>
-                                    Text that’s displayed on the tab label
-                                </td>
-
-                                <td />
-
-                                <td>
-                                    &mdash;
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <code>tabs.content</code>
-                                </td>
-
-                                <td>
-                                    Content to be displayed when its corresponding tab is active
-                                </td>
-
-                                <td>
-
-                                </td>
-
-                                <td>
-                                    &mdash;
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <code>hasAlert</code>
-                                </td>
-
-                                <td>
-                                    Adds a small red dot to the label
-                                </td>
-
-                                <td>
-                                    boolean
-                                </td>
-
-                                <td>
-                                    &mdash;
+                                    <code>small</code>
                                 </td>
                             </tr>
                         </tbody>
@@ -161,38 +85,19 @@ export const TabsDocs = () => {
             <Element as="section" id="default">
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h3" marginBottom="tiny">Default tabs</Heading>
+                        <Heading as="h3" marginBottom="tiny">Default form</Heading>
 
                         <Text marginBottom="micro">
-                            The <code>Button</code> uses a native <code>button</code> element that you can extend with
+                            The <code>Form</code> uses a native <code>form</code> element that you can extend with
                             props and events.
                         </Text>
 
                         <CodeBlock source={sampleTabs} language="jsx" />
 
                         <Text marginTop="micro" marginBottom="micro">
-                            The above code will display the default <code>Tab</code>, which looks like this&mdash;
+                            The form wrapper acts as a simple container within which you can add individual form items,
+                            and also attach the <code>action</code> attribute to.
                         </Text>
-
-                        <Tabs
-                            tabs={[
-                                {
-                                    key     : "tab1",
-                                    label   : "Tab 1",
-                                    content : tabOneContent()
-                                },
-                                {
-                                    key     : "tab2",
-                                    label   : "Tab 2",
-                                    content : tabTwoContent()
-                                },
-                                {
-                                    key     : "tab3",
-                                    label   : "Tab 3",
-                                    content : tabThreeContent()
-                                }
-                            ]}
-                        />
                     </Portion>
                 </Row>
             </Element>
@@ -216,7 +121,7 @@ export const TabsDocs = () => {
                 {/*  =============================================================================================  */}
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h5" marginBottom="nano">Tabs</Heading>
+                        <Heading as="h5" marginBottom="nano">Spacing</Heading>
 
                         <Text marginBottom="micro">
                             The Tabs component accepts basically one custom prop—<code>tabs</code>.
@@ -244,11 +149,13 @@ export const TabsDocs = () => {
                         <Portion>
                             <Heading as="h3" marginBottom="tiny">Theming</Heading>
 
-                            <CodeBlock source={sampleTabsTheme} language="css" />
+                            <Text>
+                                Nothing for the <code>FormWrapper</code>, sorry.
+                            </Text>
                         </Portion>
                     </Row>
                 </Element>
             </Element>
-        </TabsStyled>
+        </FormDocsStyled>
     );
 }
