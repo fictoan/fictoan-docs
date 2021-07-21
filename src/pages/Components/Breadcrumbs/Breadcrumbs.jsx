@@ -15,20 +15,20 @@ import {
 } from "fictoan-react";
 
 import { BreadcrumbsStyled } from "./Breadcrumbs.styled";
-import { sampleTabs, sampleTabsTabs, sampleTabsTheme } from "./CodeSamples";
+import { sampleBreadcrumb, sampleBreadcrumbTheme } from "./CodeSamples";
 
 export const BreadcrumbsDocs = () => {
     useEffect(() => {
         document.title = "Tabs — Fictoan";
-        //
-        // try {
-        //     window.scroll({
-        //         top: 0,
-        //         left: 0
-        //     });
-        // } catch (error) {
-        //     window.scrollTo(0, 0);
-        // }
+
+        try {
+            window.scroll({
+                top: 0,
+                left: 0
+            });
+        } catch (error) {
+            window.scrollTo(0, 0);
+        }
     }, []);
 
     return (
@@ -67,7 +67,7 @@ export const BreadcrumbsDocs = () => {
                             The <code>Breadcrumbs</code> uses a native <code>nav</code> and <code>li</code> elements.
                         </Text>
 
-                        <CodeBlock source={sampleTabs} language="jsx" />
+                        <CodeBlock source={sampleBreadcrumb} language="jsx" />
 
                         <Text marginTop="micro" marginBottom="micro">
                             The above code will display the default <code>Breadcrumbs</code>, which looks like
@@ -151,7 +151,7 @@ export const BreadcrumbsDocs = () => {
                         <Portion>
                             <Heading as="h3" marginBottom="tiny">Theming</Heading>
 
-                            <CodeBlock source={sampleTabsTheme} language="css" />
+                            <CodeBlock source={sampleBreadcrumbTheme} language="css" />
                         </Portion>
                     </Row>
                 </Element>

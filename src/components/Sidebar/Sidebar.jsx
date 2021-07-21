@@ -278,11 +278,11 @@ export const Sidebar = ({toggleTheme}) => {
             </NavLink>
 
             {/*  NOTIFICATIONS  ==========================================  */}
-            <NavLink exact to="/components/notifications">
+            <NavLink exact to="/components/notification">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
                     </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Notifications" />
+                    <SidebarItemText weight="400" linkText="Notification" />
                 </SidebarItem>
             </NavLink>
 
@@ -346,7 +346,6 @@ export const Sidebar = ({toggleTheme}) => {
             {/*  COMPONENTS  =============================================  */}
 
 
-            <HRule kind="tertiary" marginTop="micro" marginBottom="micro" />
 
             {/*  FOOTER  =================================================  */}
             <SidebarFooter>

@@ -30,7 +30,10 @@ export const sampleInfoPanelIsOpen = `<InfoPanel isOpen></InfoPanel>`;
 
 
 //  Code sample 04 ////////////////////////////////////////////////////////////
-export const sampleInfoPanelCallback = `<InfoPanel isOpen></InfoPanel>`;
+export const sampleInfoPanelCallback = `<InfoPanel
+    isOpen={isSampleInfoPanelOpen}
+    onCloseCallback={() => setIsSampleInfoPanelOpen(false)}
+>`;
 
 
 

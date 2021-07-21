@@ -505,7 +505,7 @@ export const ButtonDocs = () => {
                 </Row>
 
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule sideMargin="huge" />
 
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}

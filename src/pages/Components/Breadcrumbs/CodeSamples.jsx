@@ -1,5 +1,5 @@
 //  Code sample 01 ////////////////////////////////////////////////////////////
-export const sampleTabs = `<BreadcrumbsWrapper>
+export const sampleBreadcrumb = `<BreadcrumbsWrapper>
     <BreadcrumbItem>
         <NavLink exact to="/">
             Home
@@ -20,28 +20,8 @@ export const sampleTabs = `<BreadcrumbsWrapper>
 </BreadcrumbsWrapper>`;
 
 
-//  Code sample 02 ////////////////////////////////////////////////////////////
-export const sampleTabsTabs = `tabs={[
-    {
-        key     : "string",
-        label   : "string",
-        content : tabOneContent()
-    },
-    {
-        key     : "string",
-        label   : "string",
-        content : tabTwoContent()
-    },
-    {
-        key     : "string",
-        label   : "string",
-        content : tabThreeContent()
-    }
-]}`;
-
-
 //  Code sample 07 ////////////////////////////////////////////////////////////
-export const sampleTabsTheme = `breadcrumbs : {
+export const sampleBreadcrumbTheme = `breadcrumbs : {
     wrapper   : {
         bg : defaultColours.white
     },

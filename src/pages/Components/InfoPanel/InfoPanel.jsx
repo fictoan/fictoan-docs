@@ -309,7 +309,7 @@ export const InfoPanelDocs = () => {
                             the <code>useState</code> hook.
                         </Text>
 
-                        <CodeBlock source={sampleInfoPanelCallback} language="markup" marginBottom="micro" />
+                        <CodeBlock source={sampleInfoPanelCallback} language="jsx" marginBottom="micro" />
                     </Portion>
                 </Row>
 

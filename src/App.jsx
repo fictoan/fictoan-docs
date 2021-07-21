@@ -37,6 +37,7 @@ import { BaseElementDocs } from "./pages/BaseElement/BaseElement";
 import { InfoPanelDocs } from "./pages/Components/InfoPanel/InfoPanel";
 import { TabsDocs } from "./pages/Components/Tabs/Tabs";
 import { BreadcrumbsDocs } from "./pages/Components/Breadcrumbs/Breadcrumbs";
+import { NotificationDocs } from "./pages/Components/Notifications/Notifications";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -149,6 +150,12 @@ export const App = () => {
                                 exact
                                 path="/components/form"
                                 component={ FormDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/notification"
+                                component={ NotificationDocs }
                             />
 
                             <Route
