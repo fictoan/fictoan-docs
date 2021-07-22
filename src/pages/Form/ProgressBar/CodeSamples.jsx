@@ -1,57 +1,35 @@
 //  Code sample 01 ////////////////////////////////////////////////////////////
-export const sampleRadioButton = `<RadioButton
-    as="input"
-    id="radio-1"
-    name="choices"
-    value="yes"
-    label="Yes"
-/>
-
-<RadioButton
-    as="input"
-    id="radio-2"
-    name="choices"
-    value="no"
-    label="No"
-/>
-
-<RadioButton
-    as="input"
-    id="radio-3"
-    name="choices"
-    value="maybe"
-    label="Maybe"
-/>`;
-
-//  Code sample 02 ////////////////////////////////////////////////////////////
-export const sampleSwitch = `<Switch
-    as="input"
-    id="switch-1"
-    value="switch-1"
-    name="switch-1"
-    label="Toggle me"
-/>`;
+export const sampleProgressBar = `<ProgressBar />`;
 
 
 //  Code sample 02 ////////////////////////////////////////////////////////////
-export const sampleRadioButtonTheming = `radioButton : {
-    inset  : {
-        default    : {
-            bg : defaultColours.slate20
-        },
-        onHover    : {
-            bg : defaultColours.slate40
-        },
-        isSelected : {
-            bg : customColours.hue
-        },
-        isDisabled : {
-            bg : defaultColours.slate10
-        }
-    },
-    circle : {
-        default : {
-            bg : defaultColours.white
-        }
-    }
-}`;
+export const sampleProgressBarMaxAndValue1 = `<ProgressBar max="100" value="40" />`;
+export const sampleProgressBarMaxAndValue2 = `<ProgressBar max="10" value="8" />`;
+export const sampleProgressBarMaxAndValue3 = `<ProgressBar max="19874" value="13027" />`;
+export const sampleProgressBarMaxAndValue4 = `<ProgressBar max="1" value="0.36" />`;
+export const sampleProgressBarMaxAndValue5 = `<ProgressBar max="1" value="0.36" />`;
+
+
+//  Code sample 03 ////////////////////////////////////////////////////////////
+export const sampleProgressBarLabel = `<ProgressBar
+    value="40" unit="%" max="100"
+    label="Loading..."
+/>`;
+
+
+//  Code sample 04 ////////////////////////////////////////////////////////////
+export const sampleProgressBarHeight = `<ProgressBar height="8px" | "40px" | "3em" />`;
+
+
+//  Code sample 02 ////////////////////////////////////////////////////////////
+export const sampleProgressBarShape = `<ProgressBar shape="rounded" | "curved" />`;
+
+
+//  Code sample 02 ////////////////////////////////////////////////////////////
+export const sampleProgressBarTheming = `progressBar : {
+    bg           : defaultColours.slate20,
+    fill         : customColours.hue,
+    label        : customColours.shade,
+    value        : customColours.shade,
+    borderRadius : "4px"
+},`;

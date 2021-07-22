@@ -10,7 +10,6 @@ import {
     HRule,
     Portion,
     Row,
-    Table,
     Text
 } from "fictoan-react";
 
@@ -19,7 +18,7 @@ import { sampleBreadcrumb, sampleBreadcrumbTheme } from "./CodeSamples";
 
 export const BreadcrumbsDocs = () => {
     useEffect(() => {
-        document.title = "FormWrapper — Fictoan";
+        document.title = "Breadcrumbs — Fictoan";
 
         try {
             window.scroll({

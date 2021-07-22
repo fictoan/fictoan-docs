@@ -41,6 +41,7 @@ import { NotificationDocs } from "./pages/Components/Notifications/Notifications
 import { CheckBoxDocs } from "./pages/Form/CheckBox/CheckBox";
 import { RadioButtonDocs } from "./pages/Form/RadioButton/RadioButton";
 import { SelectDocs } from "./pages/Form/Select/Select";
+import { ProgressbarDocs } from "./pages/Form/ProgressBar/ProgressBar";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -171,6 +172,12 @@ export const App = () => {
                                 exact
                                 path="/components/select"
                                 component={ SelectDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/progress-bar"
+                                component={ ProgressbarDocs }
                             />
 
                             <Route
