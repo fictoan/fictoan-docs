@@ -488,7 +488,7 @@ export const TableDocs = () => {
                         <Portion>
                             <Heading as="h3" marginBottom="tiny">Theming</Heading>
 
-                            <CodeBlock source={sampleTableTheme} language="json" />
+                            <CodeBlock source={sampleTableTheme} language="css" />
                         </Portion>
                     </Row>
                 </Element>

@@ -191,12 +191,12 @@ export const Sidebar = ({toggleTheme}) => {
                 </SidebarItem>
             </NavLink>
 
-            <NavLink exact to="/components/dropdown">
+            <NavLink exact to="/components/select">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
                     </SidebarItemIcon>
 
-                    <SidebarItemText weight="400" linkText="Dropdown" />
+                    <SidebarItemText weight="400" linkText="Select" />
                 </SidebarItem>
             </NavLink>
 

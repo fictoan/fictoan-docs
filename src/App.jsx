@@ -40,6 +40,7 @@ import { BreadcrumbsDocs } from "./pages/Components/Breadcrumbs/Breadcrumbs";
 import { NotificationDocs } from "./pages/Components/Notifications/Notifications";
 import { CheckBoxDocs } from "./pages/Form/CheckBox/CheckBox";
 import { RadioButtonDocs } from "./pages/Form/RadioButton/RadioButton";
+import { SelectDocs } from "./pages/Form/Select/Select";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -164,6 +165,12 @@ export const App = () => {
                                 exact
                                 path="/components/radio-button"
                                 component={ RadioButtonDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/select"
+                                component={ SelectDocs }
                             />
 
                             <Route
