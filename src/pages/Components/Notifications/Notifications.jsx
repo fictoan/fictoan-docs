@@ -50,7 +50,7 @@ export const NotificationDocs = () => {
             <NotificationsWrapper position="right" anchor="top" order="new-on-top">
                 <NotificationItem
                     isDismissible
-                    onClose={() => setShowGenericNotification(false)}
+                    onCloseCallback={() => setShowGenericNotification(false)}
                     show={showGenericNotification}
                 >
                     <Text>Diagnostics initialised.</Text>
@@ -59,7 +59,7 @@ export const NotificationDocs = () => {
                 <NotificationItem
                     kind="info"
                     isDismissible
-                    onClose={() => setShowInfoNotification(false)}
+                    onCloseCallback={() => setShowInfoNotification(false)}
                     show={showInfoNotification}
                 >
                     <Text>First batch complete.</Text>
@@ -68,7 +68,7 @@ export const NotificationDocs = () => {
                 <NotificationItem
                     kind="warning"
                     isDismissible
-                    onClose={() => setShowWarningNotification(false)}
+                    onCloseCallback={() => setShowWarningNotification(false)}
                     show={showWarningNotification}
                 >
                     <Text>Um, the telescope is picking up something on the horizon.</Text>
@@ -77,7 +77,7 @@ export const NotificationDocs = () => {
                 <NotificationItem
                     kind="error"
                     isDismissible
-                    onClose={() => setShowErrorNotification(false)}
+                    onCloseCallback={() => setShowErrorNotification(false)}
                     show={showErrorNotification}
                 >
                     <Text marginBottom="micro" textColor="red" weight="600">OH GOD! THE ALIENS ARE INVADING! SAVE
@@ -91,7 +91,7 @@ export const NotificationDocs = () => {
                 <NotificationItem
                     kind="success"
                     isDismissible
-                    onClose={() => setShowSuccessNotification(false)}
+                    onCloseCallback={() => setShowSuccessNotification(false)}
                     show={showSuccessNotification}
                 >
                     <Text>Oh. That was just a spider on the lens. You can relax now.</Text>

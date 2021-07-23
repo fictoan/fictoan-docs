@@ -21,7 +21,7 @@ import { ReactComponent as ManifestoIcon } from "../../assets/icons/manifesto.sv
 import { ReactComponent as LayoutIcon } from "../../assets/icons/layout.svg";
 import { ReactComponent as TypographyIcon } from "../../assets/icons/typography.svg";
 import { ReactComponent as ColourIcon } from "../../assets/icons/colours.svg";
-import { ReactComponent as CardIcon } from "../../assets/icons/card.svg";
+// import { ReactComponent as CardIcon } from "../../assets/icons/card.svg";
 import { ReactComponent as HRuleIcon } from "../../assets/icons/hrule.svg";
 import { ReactComponent as ThemeIcon } from "../../assets/icons/theme.svg";
 

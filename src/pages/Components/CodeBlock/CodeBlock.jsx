@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { Card, CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
 
 import { CardDocsStyled } from "./CodeBlock.styled";
 import { sampleCodeBlock } from "./CodeSamples";

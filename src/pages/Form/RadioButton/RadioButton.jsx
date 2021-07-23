@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 
-import { CodeBlock, Element, Heading, HRule, Portion, RadioButton, Row, Switch, Table, Text } from "fictoan-react";
+import { CodeBlock, Element, Heading, HRule, Portion, RadioButton, Row, Table, Text } from "fictoan-react";
 
 import { RadioButtonDocsStyled } from "./RadioButton.styled";
-import { sampleRadioButton, sampleCheckBoxTheming, sampleSwitch, sampleRadioButtonTheming } from "./CodeSamples";
+import { sampleRadioButton, sampleRadioButtonTheming } from "./CodeSamples";
 
 export const RadioButtonDocs = () => {
     useEffect(() => {

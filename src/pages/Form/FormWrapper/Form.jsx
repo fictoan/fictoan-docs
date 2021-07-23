@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 
-import { CodeBlock, Element, Heading, HRule, Portion, Row, Table, Tabs, Text } from "fictoan-react";
+import { CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
 
 import { FormDocsStyled } from "./Form.styled";
 import { sampleFormWrapper, sampleFormWrapperSpacing } from "./CodeSamples";
 
 export const FormDocs = () => {
     useEffect(() => {
-        document.title = "FormWrapper — Fictoan";
+        document.title = "Form wrapper — Fictoan";
 
         try {
             window.scroll({

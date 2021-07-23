@@ -15,7 +15,6 @@ import {
     sampleProgressBarShape,
     sampleProgressBarTheming
 } from "./CodeSamples";
-import { sampleSelectOption } from "../Select/CodeSamples";
 
 export const ProgressbarDocs = () => {
     useEffect(() => {

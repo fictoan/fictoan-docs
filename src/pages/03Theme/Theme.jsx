@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { Button, CodeBlock, Heading, HRule, Portion, Row, Text } from "fictoan-react";
+import { CodeBlock, Heading, HRule, Portion, Row, Text } from "fictoan-react";
 
 import { ThemeStyled } from "./Theme.styled";
 import {
