@@ -1,32 +1,27 @@
 {
-    "name": "fictoan-docs",
-    "version": "0.12.3",
+    "name": "crucible-boilerplate-react",
+    "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@types/node": "12.11.1",
-        "@types/react": "16.9.9",
-        "@types/react-dom": "16.9.2",
-        "@types/react-router-dom": "^5.1.0",
-        "@types/react-router-hash-link": "^1.2.1",
-        "@types/styled-components": "^4.4.3",
-        "fictoan-react": "^0.30.0",
-        "react": "^16.10.2",
-        "react-dom": "^16.10.2",
-        "react-router-dom": "^5.1.2",
-        "react-router-hash-link": "^1.2.2",
-        "react-scripts": "3.2.0",
-        "styled-components": "^5.0.1",
-        "typescript": "3.6.4"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/fictoan/fictoan-docs"
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "fictoan-react": "^0.33.8",
+        "polished": "^4.0.4",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "4.0.1",
+        "styled-components": "^5.1.1"
     },
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
     },
     "browserslist": {
         "production": [
@@ -39,10 +34,5 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    },
-    "devDependencies": {
-        "file-loader": "^5.0.2",
-        "polished": "^3.6.5",
-        "react-ga": "^3.0.0"
     }
 }

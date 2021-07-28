@@ -1,5 +1,5 @@
 module.exports = {
-    entry: "./src/App.tsx",
+    entry: "./src/App.jsx",
     output: {
         path: `${__dirname}/dist`,
         filename: "build.js"
