@@ -124,15 +124,13 @@ export const FormDocs = () => {
                         <Heading as="h5" marginBottom="nano">Spacing</Heading>
 
                         <Text marginBottom="micro">
-                            The Tabs component accepts basically one custom prop—<code>tabs</code>.
+                            The FormWrapper component accepts basically one custom prop—<code>spacing</code>.
                         </Text>
 
                         <CodeBlock source={sampleFormWrapperSpacing} language="jsx" marginBottom="micro" />
 
                         <Text marginTop="micro">
-                            The prop accepts an array of individual elements with <code>key</code>, <code>label</code>,
-                            and <code>content</code> values. The first two are strings, the last one should point to a
-                            React component.
+                            This controls the margin bottom of each individual <code>FormItem</code> inside this wrapper.
                         </Text>
                     </Portion>
                 </Row>
