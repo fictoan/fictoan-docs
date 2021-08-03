@@ -31,9 +31,7 @@ export const HomeStyled = styled.article`
 
     #select-card { grid-area : select; }
 
-    #table-card {
-        grid-area : table;
-    }
+    #table-card { grid-area : table; }
 
     #code-card { grid-area : code; }
 
