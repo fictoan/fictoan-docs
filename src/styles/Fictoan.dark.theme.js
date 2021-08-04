@@ -1,21 +1,19 @@
 import { defaultColours } from "fictoan-react";
 import { darken, lighten } from "polished";
 
-import { setuColours } from "./SetuColours";
-
 
 export const FictoanDarkTheme = {
     themeName : "FictoanDark",
 
     body : {
-        bg : setuColours.murkyNight
+        bg : defaultColours.red
     },
 
     //  TEXT  /////////////////////////////////////////////////////////////////
     text : {
         font      : {
-            sans  : "UntitledSans",
-            mono  : "GT America Mono",
+            sans  : "SF Pro Text",
+            mono  : "JetBrains Mono",
             serif : "FF Franziska"
         },
         paras     : {
@@ -41,22 +39,22 @@ export const FictoanDarkTheme = {
             }
         },
         selection : {
-            bg   : setuColours.flashTurk,
-            text : setuColours.murkyNight
+            bg   : defaultColours.red,
+            text : defaultColours.red
         },
         code      : {
             inline : {
-                bg    : `${lighten(0.16, setuColours.salmonRouge)}`,
-                text  : setuColours.murkyNight,
+                bg    : `${lighten(0.16, defaultColours.red)}`,
+                text  : defaultColours.red,
                 scale : 88
             },
             block  : {
                 scale : 92,
-                bg    : `${lighten(0.16, setuColours.murkyNight)}`
+                bg    : `${lighten(0.16, defaultColours.red)}`
             },
             prism  : {
                 tokens : {
-                    plain : `${lighten(0.56, setuColours.murkyNight)}`
+                    plain : `${lighten(0.56, defaultColours.red)}`
                 }
             }
         }
@@ -64,28 +62,28 @@ export const FictoanDarkTheme = {
 
     //  CARD  /////////////////////////////////////////////////////////////////
     card : {
-        bg     : `${lighten(0.08, setuColours.murkyNight)}`,
-        border : `${lighten(0.16, setuColours.murkyNight)}`
+        bg     : `${lighten(0.08, defaultColours.red)}`,
+        border : `${lighten(0.16, defaultColours.red)}`
     },
 
     //  INPUT  ////////////////////////////////////////////////////////////////
     input : {
         default     : {
-            bg     : `${lighten(0.16, setuColours.murkyNight)}`,
-            border : `${lighten(0.32, setuColours.murkyNight)}`,
-            label  : `${lighten(0.48, setuColours.murkyNight)}`,
+            bg     : `${lighten(0.16, defaultColours.red)}`,
+            border : `${lighten(0.32, defaultColours.red)}`,
+            label  : `${lighten(0.48, defaultColours.red)}`,
             text   : defaultColours.white
         },
         onFocus     : {
-            bg       : `${lighten(0.16, setuColours.murkyNight)}`,
-            border   : setuColours.flashTurk,
+            bg       : `${lighten(0.16, defaultColours.red)}`,
+            border   : defaultColours.red,
             text     : defaultColours.white,
             helpText : defaultColours.slate20
         },
         isValid     : {
             bg     : defaultColours.white,
             border : defaultColours.green80,
-            label  : setuColours.murkyNight
+            label  : defaultColours.red
         },
         isInvalid   : {
             bg       : defaultColours.red10,
@@ -96,7 +94,7 @@ export const FictoanDarkTheme = {
         isReadOnly  : {
             bg     : defaultColours.grey50,
             border : defaultColours.grey50,
-            label  : setuColours.murkyNight
+            label  : defaultColours.red
         },
         required    : {
             text : defaultColours.red
@@ -106,7 +104,7 @@ export const FictoanDarkTheme = {
                 fill : defaultColours.slate30
             },
             onFocus : {
-                fill : setuColours.flashTurk
+                fill : defaultColours.red
             },
             isValid : {
                 bg     : defaultColours.grey50,
@@ -114,7 +112,7 @@ export const FictoanDarkTheme = {
             }
         },
         select      : {
-            chevron : setuColours.flashTurk
+            chevron : defaultColours.red
         },
         radioButton : {
             default : {}
@@ -126,42 +124,42 @@ export const FictoanDarkTheme = {
         font      : "Matter",
         primary   : {
             default   : {
-                bg           : `${darken(0.08, setuColours.flashTurk)}`,
-                border       : `${darken(0.08, setuColours.flashTurk)}`,
+                bg           : `${darken(0.08, defaultColours.red)}`,
+                border       : `${darken(0.08, defaultColours.red)}`,
                 text         : defaultColours.white,
                 borderRadius : "4px"
             },
             onHover   : {
-                bg     : `${lighten(0.08, setuColours.flashTurk)}`,
-                border : `${lighten(0.08, setuColours.flashTurk)}`,
+                bg     : `${lighten(0.08, defaultColours.red)}`,
+                border : `${lighten(0.08, defaultColours.red)}`,
                 text   : defaultColours.white
             },
             isActive  : {
-                bg     : setuColours.flashTurk,
-                border : setuColours.flashTurk,
+                bg     : defaultColours.red,
+                border : defaultColours.red,
                 text   : defaultColours.white
             },
             isLoading : {
-                bg            : setuColours.flashTurk,
+                bg            : defaultColours.red,
                 spinnerBorder : defaultColours.black
             }
         },
         secondary : {
             default   : {
-                bg           : `${darken(0.24, setuColours.flashTurk)}`,
-                border       : setuColours.flashTurk,
-                text         : `${lighten(0.08, setuColours.flashTurk)}`,
+                bg           : `${darken(0.24, defaultColours.red)}`,
+                border       : defaultColours.red,
+                text         : `${lighten(0.08, defaultColours.red)}`,
                 borderRadius : "4px"
             },
             onHover   : {
-                bg     : `${darken(0.24, setuColours.flashTurk)}`,
-                border : setuColours.flashTurk,
-                text   : setuColours.flashTurk
+                bg     : `${darken(0.24, defaultColours.red)}`,
+                border : defaultColours.red,
+                text   : defaultColours.red
             },
             isActive  : {
-                bg     : `${darken(0.32, setuColours.flashTurk)}`,
-                border : setuColours.flashTurk,
-                text   : setuColours.flashTurk
+                bg     : `${darken(0.32, defaultColours.red)}`,
+                border : defaultColours.red,
+                text   : defaultColours.red
             },
             isLoading : {
                 bg            : defaultColours.white,
@@ -179,45 +177,45 @@ export const FictoanDarkTheme = {
 
     //  TABLE  ////////////////////////////////////////////////////////////////
     table : {
-        bg      : `${lighten(0.16, setuColours.murkyNight)}`,
+        bg      : `${lighten(0.16, defaultColours.red)}`,
         text    : defaultColours.white,
-        border  : `${lighten(0.32, setuColours.murkyNight)}`,
+        border  : `${lighten(0.32, defaultColours.red)}`,
         striped : {
             header : {
-                bg : `${lighten(0.40, setuColours.murkyNight)}`
+                bg : `${lighten(0.40, defaultColours.red)}`
             },
             cell   : {
-                bg : `${lighten(0.24, setuColours.murkyNight)}`
+                bg : `${lighten(0.24, defaultColours.red)}`
             }
         },
         onHover : {
             bg   : defaultColours.amber20,
-            text : setuColours.murkyNight
+            text : defaultColours.red
         }
     },
 
     //  RULE  /////////////////////////////////////////////////////////////////
     hr : {
         primary   : {
-            bg     : `${lighten(0.48, setuColours.murkyNight)}`,
+            bg     : `${lighten(0.48, defaultColours.red)}`,
             height : "1px"
         },
         secondary : {
-            bg     : `${lighten(0.32, setuColours.murkyNight)}`,
+            bg     : `${lighten(0.32, defaultColours.red)}`,
             height : "1px"
         },
         tertiary  : {
-            bg     : `${lighten(0.16, setuColours.murkyNight)}`,
+            bg     : `${lighten(0.16, defaultColours.red)}`,
             height : "1px"
         }
     },
 
     //  INFO PANEL  ///////////////////////////////////////////////////////////
     infoPanel : {
-        bg            : `${lighten(0.08, setuColours.murkyNight)}`,
-        border        : `${lighten(0.16, setuColours.murkyNight)}`,
+        bg            : `${lighten(0.08, defaultColours.red)}`,
+        border        : `${lighten(0.16, defaultColours.red)}`,
         dismissButton : {
-            bg      : `${lighten(0.04, setuColours.murkyNight)}`,
+            bg      : `${lighten(0.04, defaultColours.red)}`,
             color   : defaultColours.slate90,
             content : "×"
         }
@@ -228,17 +226,17 @@ export const FictoanDarkTheme = {
         isCollapsed : {
             label : {
                 text : defaultColours.white,
-                bg   : setuColours.flashTurk
+                bg   : defaultColours.red
             }
         },
 
         header : {
-            bg           : setuColours.murkyNight,
-            borderBottom : setuColours.murkyNight
+            bg           : defaultColours.red,
+            borderBottom : defaultColours.red
         },
 
         body : {
-            bg : setuColours.murkyNight
+            bg : defaultColours.red
         },
 
         icons : {
@@ -269,22 +267,22 @@ export const FictoanDarkTheme = {
 
         links : {
             default    : {
-                bg     : setuColours.murkyNight,
-                text   : `${lighten(0.56, setuColours.murkyNight)}`,
+                bg     : defaultColours.red,
+                text   : `${lighten(0.56, defaultColours.red)}`,
                 scale  : 100,
                 weight : 600
             },
             onHover    : {
-                bg   : `${lighten(0.08, setuColours.murkyNight)}`,
-                text : setuColours.flashTurk
+                bg   : `${lighten(0.08, defaultColours.red)}`,
+                text : defaultColours.red
             },
             isSelected : {
-                bg     : `${lighten(0.16, setuColours.murkyNight)}`,
-                border : setuColours.flashTurk,
-                text   : setuColours.flashTurk
+                bg     : `${lighten(0.16, defaultColours.red)}`,
+                border : defaultColours.red,
+                text   : defaultColours.red
             },
             hasAlert   : {
-                bg : setuColours.dartRed
+                bg : defaultColours.red
             }
         },
 
@@ -294,13 +292,13 @@ export const FictoanDarkTheme = {
             },
             default : {
                 bg     : defaultColours.white,
-                text   : `${lighten(0.24, setuColours.murkyNight)}`,
+                text   : `${lighten(0.24, defaultColours.red)}`,
                 weight : 400,
                 scale  : 92
             },
             onHover : {
                 bg   : defaultColours.slate10,
-                text : setuColours.flashTurk
+                text : defaultColours.red
             },
             chevron : {
                 border : defaultColours.slate40
@@ -308,8 +306,8 @@ export const FictoanDarkTheme = {
         },
 
         footer : {
-            bg        : setuColours.murkyNight,
-            borderTop : setuColours.murkyNight
+            bg        : defaultColours.red,
+            borderTop : defaultColours.red
         }
     }
 }

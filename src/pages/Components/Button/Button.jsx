@@ -267,7 +267,7 @@ export const ButtonDocs = () => {
                         <CodeBlock source={sampleButton} language="markup" />
 
                         <Text marginTop="micro" marginBottom="micro">
-                            The above code will display the default <code>Table</code>, which looks like this&mdash;
+                            The above code will display the default <code>Button~</code>, which looks like this&mdash;
                         </Text>
 
                         <Button>Click me</Button>

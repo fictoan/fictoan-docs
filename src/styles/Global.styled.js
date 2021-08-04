@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { FictoanFontsStyled } from "./SetuFonts";
+import { FictoanFontsStyled } from "./Fonts";
 import { defaultColours } from "fictoan-react";
 
 export const GlobalStyle = createGlobalStyle`

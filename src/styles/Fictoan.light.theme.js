@@ -12,19 +12,19 @@ export const FictoanLightTheme = {
     //  TEXT  /////////////////////////////////////////////////////////////////
     text : {
         font      : {
-            sans  : "UntitledSans",
-            mono  : "GT America Mono",
+            sans  : "SF Pro Text",
+            mono  : "JetBrains Mono",
             serif : "FF Franziska"
         },
         paras     : {
-            font       : "UntitledSans",
+            font       : "SF Pro Text",
             color      : defaultColours.grey90,
             lineHeight : 1.44,
             size       : 1,
             subtext    : defaultColours.slate80
         },
         headings  : {
-            font       : "UntitledSans",
+            font       : "SF Pro Text",
             weight     : 600,
             lineHeight : 1.2,
             color      : defaultColours.grey,
@@ -121,7 +121,7 @@ export const FictoanLightTheme = {
 
     //  BUTTON  ///////////////////////////////////////////////////////////////
     button : {
-        fontFamily  : "UntitledSans",
+        // font  : "UntitledSans",
         borderWidth : "1px",
         primary     : {
             default   : {
