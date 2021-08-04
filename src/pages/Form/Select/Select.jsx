@@ -3,7 +3,12 @@ import React, { useEffect } from "react";
 import { CodeBlock, Element, Heading, HRule, Portion, Row, Select, Table, Text } from "fictoan-react";
 
 import { RadioButtonDocsStyled } from "./RadioButton.styled";
-import { sampleSelect, sampleSelectOption, sampleSelectTheming } from "./CodeSamples";
+import {
+    sampleSelect,
+    sampleSelectOption,
+    sampleSelectLabel,
+    sampleSelectTheming,
+} from "./CodeSamples";
 import { Link } from "react-router-dom";
 
 export const SelectDocs = () => {
@@ -173,7 +178,7 @@ export const SelectDocs = () => {
                             um, <code>label</code> accompany the <code>Select</code> component.
                         </Text>
 
-                        <CodeBlock source={sampleSelectOption} language="jsx" marginBottom="micro" />
+                        <CodeBlock source={sampleSelectLabel} language="jsx" marginBottom="micro" />
 
                         <Select
                             label="Your options"
