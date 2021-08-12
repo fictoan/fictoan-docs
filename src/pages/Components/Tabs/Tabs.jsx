@@ -234,20 +234,20 @@ export const TabsDocs = () => {
 
 
                 <HRule kind="secondary" sideMargin="huge" />
+            </Element>
 
 
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  THEMING  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Element as="section" id="theming">
-                    <Row sidePadding="huge" marginBottom="small">
-                        <Portion>
-                            <Heading as="h3" marginBottom="tiny">Theming</Heading>
+            {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
+            {/*  THEMING  */}
+            {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
+            <Element as="section" id="theming">
+                <Row sidePadding="huge" marginBottom="small">
+                    <Portion>
+                        <Heading as="h3" marginBottom="tiny">Theming</Heading>
 
-                            <CodeBlock source={sampleTabsTheme} language="css" />
-                        </Portion>
-                    </Row>
-                </Element>
+                        <CodeBlock source={sampleTabsTheme} language="css" />
+                    </Portion>
+                </Row>
             </Element>
         </TabsStyled>
     );

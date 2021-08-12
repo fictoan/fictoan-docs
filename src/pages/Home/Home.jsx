@@ -51,7 +51,7 @@ export const Home = () => {
                 </Portion>
 
                 <Portion desktopSpan="half" className="with-top-border">
-                    <Heading as="h4" textColour="grey-40" marginBottom="micro">v0.33.9</Heading>
+                    <Heading as="h4" textColour="grey-40" marginBottom="micro">v0.33.10</Heading>
 
                     <Element as="div" className="wrapping-list" marginBottom="micro">
                         <a

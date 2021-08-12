@@ -210,18 +210,8 @@ export const FictoanLightTheme = {
     sidebar : {
         isCollapsed : {
             label : {
-                text : defaultColours.white,
                 bg   : defaultColours.blue90
             }
-        },
-
-        header : {
-            bg           : defaultColours.white,
-            borderBottom : defaultColours.white
-        },
-
-        body : {
-            bg : defaultColours.white
         },
 
         icons : {

@@ -15,7 +15,7 @@ import { FictoanDarkTheme } from "./styles/Fictoan.dark.theme";
 import { GlobalStyle } from "./styles/Global.styled";
 
 import { Home } from "./pages/Home/Home";
-import { Manifesto } from "./pages/Manifesto/Manifesto";
+import { Manifesto } from "./pages/02Manifesto/Manifesto";
 
 import { GettingStarted } from "./pages/01GettingStarted/GettingStarted";
 import { Layout } from "./pages/05Layout/Layout";
@@ -42,6 +42,7 @@ import { CheckBoxDocs } from "./pages/Form/CheckBox/CheckBox";
 import { RadioButtonDocs } from "./pages/Form/RadioButton/RadioButton";
 import { SelectDocs } from "./pages/Form/Select/Select";
 import { ProgressbarDocs } from "./pages/Form/ProgressBar/ProgressBar";
+import { SidebarDocs } from "./pages/Components/Sidebar/Sidebar";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -184,6 +185,12 @@ export const App = () => {
                                 exact
                                 path="/components/notification"
                                 component={ NotificationDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/sidebar-wrapper"
+                                component={ SidebarDocs }
                             />
 
                             <Route
