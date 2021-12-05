@@ -1,37 +1,29 @@
 import lighten from "polished/lib/color/lighten";
 import darken from "polished/lib/color/darken";
 
-import { defaultColours } from "fictoan-react";
+import { defaultColours, FictoanTheme } from "fictoan-react";
 
-
-export function lightOrDark(color: string): 'light' | 'dark' {
-    let r, g, b;
-    if (color.match(/^rgb/)) {
-        [r, g, b] = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/) as any;
-    }
-    else {
-        const hex = +("0x" + color.slice(1).replace(color.length < 5 && /./g as any, '$&$&'));
-        r = hex >> 16;
-        g = hex >> 8 & 255;
-        b = hex & 255;
-    }
-    const hsp = Math.sqrt(
-        0.299 * (r * r) +
-        0.587 * (g * g) +
-        0.114 * (b * b)
-    );
-    return (hsp > 127.5) ? 'light' : 'dark';
+type DeepPartial<T> = {
+    [P in keyof T]?: DeepPartial<T[P]>;
+};
+export type Theme = DeepPartial<typeof FictoanTheme>;
+export interface CustomColours{
+    hue:string;
+    tint:string;
+    shade: string;
+    analogue:string;
+    accent:string;
 }
 
-export const brandColors = {
+export const brandColors:CustomColours = {
     hue: defaultColours.blue90,
     tint: defaultColours.amber,
     shade: defaultColours.grey,
     analogue: defaultColours.indigo50,
     accent: defaultColours.green80
-} as const;
+};
 
-export const makeTheme = (customColours: typeof brandColors) => ({
+export const makeTheme = (customColours: CustomColours):Theme => ({
     customColours: customColours,
 
     //  GLOBALS  //////////////////////////////////////////////////////////////
