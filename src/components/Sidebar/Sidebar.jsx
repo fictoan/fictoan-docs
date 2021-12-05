@@ -339,6 +339,23 @@ export const Sidebar = ({toggleTheme}) => {
                         <SidebarItemText weight="400" linkText="Table" />
                     </SidebarItem>
                 </NavLink>
+
+                <HRule kind="tertiary" marginTop="micro" marginBottom="micro" />
+                <SidebarItem>
+                    <SidebarItemIcon iconType="stroked" />
+                    <SidebarItemText
+                        linkText="THEME BUILDER"
+                        weight="600" textColour="slate-60" size="small"
+                    />
+                </SidebarItem>
+                {/*  THEME BUILDER =========================================== */}
+                <NavLink exact to="/themebuilder">
+                    <SidebarItem>
+                        <SidebarItemIcon iconType="stroked">
+                        </SidebarItemIcon>
+                        <SidebarItemText weight="400" linkText="Theme Builder" />
+                    </SidebarItem>
+                </NavLink>
             </SidebarLinksWrapper>
 
             {/*  FOOTER  =================================================  */}

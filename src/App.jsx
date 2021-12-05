@@ -43,6 +43,7 @@ import { RadioButtonDocs } from "./pages/Form/RadioButton/RadioButton";
 import { SelectDocs } from "./pages/Form/Select/Select";
 import { ProgressbarDocs } from "./pages/Form/ProgressBar/ProgressBar";
 import { SidebarDocs } from "./pages/Components/Sidebar/Sidebar";
+import  ThemeBuilderPage from "./pages/03ThemeBuilder/ThemeBuilder";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -89,6 +90,12 @@ export const App = () => {
                                 exact
                                 path="/theme"
                                 component={ ThemeDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/themebuilder"
+                                component={ ThemeBuilderPage }
                             />
 
                             <Route
