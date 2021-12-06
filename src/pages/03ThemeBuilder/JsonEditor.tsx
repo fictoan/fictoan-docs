@@ -1,6 +1,6 @@
-import React , {FunctionComponent, useEffect, useRef} from 'react';
-import { JsonEditor } from 'jsoneditor-react';
-import 'jsoneditor-react/es/editor.min.css';
+import React , {FunctionComponent, useEffect, useRef} from "react";
+import { JsonEditor } from "jsoneditor-react";
+import "jsoneditor-react/es/editor.min.css";
 
 interface JsonEditorType{
     jsonEditor:{

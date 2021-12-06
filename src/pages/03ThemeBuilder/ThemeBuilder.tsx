@@ -1,17 +1,18 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState } from "react";
 import {
-    Element,
-    Heading,
     Portion,
     Row,
     ThemeProvider,
-    FictoanTheme
+    FictoanTheme,
+    Card,
+    Text
 } from 'fictoan-react';
-import { brandColors, makeTheme } from './ThemeUtil';
-import './Mobile.css';
-import { ColorPicker } from './ColorPicker';
-import { ControlledJsonEditor } from './JsonEditor';
-import { Page } from './Result';
+import { brandColors, makeTheme } from "./ThemeUtil";
+import { ColorPicker } from "./ColorPicker";
+import { ControlledJsonEditor } from "./JsonEditor";
+import { Page } from "./Result";
+import { LHSStyled } from "./Styled";
+import "./Mobile.css";
 
 function throttle(callback: Function, limit: number) {
     let waiting = false;
@@ -45,20 +46,16 @@ const ThemeBuilderPage = () => {
     return (
         <Row>
             <Portion desktopSpan="half" padding="micro">
-                <Row>
-                    <Portion>
-                        <Heading as="h3">
-                            Color Customization
-                        </Heading>
-                    </Portion>
-                </Row>
-                <Element as="div">
-                    <ColorPicker title={"hue"} color={hue} onChange={(color: string, e: any) => setHue(color)} />
-                    <ColorPicker title={"tint"} color={tint} onChange={(color: string, e: any) => setTint(color)} />
-                    <ColorPicker title={"shade"} color={shade} onChange={(color: string, e: any) => setShade(color)} />
-                    <ColorPicker title={"analogue"} color={analogue} onChange={(color: string, e: any) => setAnalogue(color)} />
-                    <ColorPicker title={"accent"} color={accent} onChange={(color: string, e: any) => setAccent(color)} />
-                </Element>
+                <LHSStyled>
+                <Card padding="nano" shape="curved" shadow="mild" className="palette">
+                    <Text>Palette</Text>
+                    &nbsp;&nbsp;&nbsp;
+                    <ColorPicker color={hue} onChange={setHue}/>
+                    <ColorPicker color={tint} onChange={setTint}/>
+                    <ColorPicker color={shade} onChange={setShade}/>
+                    <ColorPicker color={analogue} onChange={setAnalogue}/>
+                    <ColorPicker color={accent} onChange={setAccent}/>
+                </Card>
                 <details open>
                     <summary>Advanced</summary>
                     <ControlledJsonEditor
@@ -66,6 +63,7 @@ const ThemeBuilderPage = () => {
                         onChange={throttle(setJson, 2000)}
                     />
                 </details>
+                </LHSStyled>
             </Portion>
             <Portion desktopSpan="half">
                 <ThemeProvider theme={json}>

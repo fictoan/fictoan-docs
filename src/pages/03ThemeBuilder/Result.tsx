@@ -1,13 +1,22 @@
-import React, { ElementType, FunctionComponent, FunctionComponentElement, ReactElement } from 'react';
-import { Button, Card, Element, FormWrapper, Heading, InputField, ProgressBar, Text } from 'fictoan-react';
-import { ResultStyled } from './Styled';
+import React, {  FunctionComponent, ReactElement } from "react";
+import { 
+    Button,
+    Card, 
+    Element, 
+    FormWrapper, 
+    Heading, 
+    InputField, 
+    ProgressBar, 
+    Text 
+} from 'fictoan-react';
+import { RHSStyled } from './Styled';
 
 const Flowing: FunctionComponent = ({ children }) => {
     return <div style={{ display: 'flex', alignItems: 'center' }}>
         {children}
     </div>
 }
-export const Page: ReactElement = (<ResultStyled>
+export const Page: ReactElement = (<RHSStyled>
     <Flowing>
         <Element
             as="img"
@@ -38,5 +47,5 @@ export const Page: ReactElement = (<ResultStyled>
         <Button kind="tertiary" marginLeft="nano">Tertiary Button</Button>
         <Button marginLeft="nano">Default Button</Button>
     </Card>
-</ResultStyled>
+</RHSStyled>
 )

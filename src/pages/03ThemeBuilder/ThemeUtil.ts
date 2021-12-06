@@ -136,10 +136,6 @@ export const makeTheme = (customColours: CustomColours):Theme => ({
 
     //  RULE  /////////////////////////////////////////////////////////////////
     hr: {
-        default: {
-            bg: String(defaultColours.blue80),
-            height: "1px"
-        },
         primary: {
             bg: String(defaultColours.blue80),
             height: "1px"
@@ -163,7 +159,6 @@ export const makeTheme = (customColours: CustomColours):Theme => ({
             label: String(customColours.shade),
             text: String(customColours.shade),
             borderRadius: "4px",
-            helpText: String(defaultColours.slate60)
         },
         onFocus: {
             bg: String(defaultColours.white),
@@ -179,12 +174,10 @@ export const makeTheme = (customColours: CustomColours):Theme => ({
             bg: String(defaultColours.red10),
             border: String(defaultColours.red80),
             label: String(defaultColours.red),
-            errorText: String(defaultColours.red)
         },
         isReadOnly: {
             bg: String(defaultColours.slate10),
             border: String(defaultColours.slate20),
-            text: String(defaultColours.slate60),
             label: String(customColours.shade)
         },
         required: {
@@ -309,11 +302,7 @@ export const makeTheme = (customColours: CustomColours):Theme => ({
 
     //  SIDEBAR  //////////////////////////////////////////////////////////////
     sidebar: {
-        width: "240px",
-        bg: String(defaultColours.white),
-
         isCollapsed: {
-            width: "48px",
             label: {
                 text: String(defaultColours.white),
                 bg: String(customColours.hue)
