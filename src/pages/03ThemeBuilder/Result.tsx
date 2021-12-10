@@ -8,8 +8,8 @@ import {
     InputField, 
     ProgressBar, 
     Text 
-} from 'fictoan-react';
-import { RHSStyled } from './Styled';
+} from "fictoan-react";
+import { RHSStyled } from "./Styled";
 
 const Flowing: FunctionComponent = ({ children }) => {
     return <div style={{ display: 'flex', alignItems: 'center' }}>
