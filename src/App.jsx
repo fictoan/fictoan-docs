@@ -32,6 +32,7 @@ import { TableDocs } from "./pages/Components/Table/Table";
 //  Local assets
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { ThemeDocs } from "./pages/03Theme/Theme";
+import { ThemeEditorDocs } from "./pages/03ThemeBuilder/ThemeEditor";
 import { CodeBlockDocs } from "./pages/Components/CodeBlock/CodeBlock";
 import { BaseElementDocs } from "./pages/BaseElement/BaseElement";
 import { InfoPanelDocs } from "./pages/Components/InfoPanel/InfoPanel";
@@ -43,7 +44,6 @@ import { RadioButtonDocs } from "./pages/Form/RadioButton/RadioButton";
 import { SelectDocs } from "./pages/Form/Select/Select";
 import { ProgressbarDocs } from "./pages/Form/ProgressBar/ProgressBar";
 import { SidebarDocs } from "./pages/Components/Sidebar/Sidebar";
-import  ThemeBuilderPage from "./pages/03ThemeBuilder/ThemeBuilder";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -94,8 +94,8 @@ export const App = () => {
 
                             <Route
                                 exact
-                                path="/themebuilder"
-                                component={ ThemeBuilderPage }
+                                path="/theme-editor"
+                                component={ ThemeEditorDocs }
                             />
 
                             <Route

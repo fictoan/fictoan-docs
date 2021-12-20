@@ -9,7 +9,7 @@
         "ace-builds": "^1.4.13",
         "acorn": "^8.6.0",
         "deep-diff": "^1.0.2",
-        "fictoan-react": "^0.33.10",
+        "fictoan-react": "^0.35.3",
         "polished": "^4.0.4",
         "react": "^16.13.1",
         "react-ace": "^9.5.0",
