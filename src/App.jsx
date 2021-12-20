@@ -32,6 +32,7 @@ import { TableDocs } from "./pages/Components/Table/Table";
 //  Local assets
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import { ThemeDocs } from "./pages/03Theme/Theme";
+import { ThemeEditorDocs } from "./pages/03ThemeBuilder/ThemeEditor";
 import { CodeBlockDocs } from "./pages/Components/CodeBlock/CodeBlock";
 import { BaseElementDocs } from "./pages/BaseElement/BaseElement";
 import { InfoPanelDocs } from "./pages/Components/InfoPanel/InfoPanel";
@@ -89,6 +90,12 @@ export const App = () => {
                                 exact
                                 path="/theme"
                                 component={ ThemeDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/theme-editor"
+                                component={ ThemeEditorDocs }
                             />
 
                             <Route

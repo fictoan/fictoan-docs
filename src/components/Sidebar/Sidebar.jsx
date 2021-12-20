@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import {
+    ExpandableContent,
     HRule,
     SidebarFooter,
     SidebarHeader,
     SidebarItem,
     SidebarItemIcon,
-    SidebarItemsGroup,
-    SidebarItemsGroupHeader,
-    SidebarItemText, SidebarLinksWrapper,
-    SidebarNestedLinks,
+    SidebarItemText,
     SidebarWrapper,
     Text
 } from "fictoan-react";
@@ -43,7 +41,7 @@ export const Sidebar = ({toggleTheme}) => {
             </SidebarHeader>
 
             {/*  COMPONENTS  =============================================  */}
-            <SidebarLinksWrapper>
+            <>
                 <NavLink exact to="/">
                     <SidebarItem>
                         <SidebarItemIcon iconType="stroked">
@@ -286,41 +284,32 @@ export const Sidebar = ({toggleTheme}) => {
                 </NavLink>
 
                 {/*  SIDEBAR  ================================================  */}
-                <SidebarItemsGroup>
-                    <SidebarItemsGroupHeader open>
+                <ExpandableContent summary="Sidebar" paddingLeft="micro">
+                    <NavLink exact to="/components/sidebar-wrapper">
                         <SidebarItem>
                             <SidebarItemIcon iconType="stroked">
                             </SidebarItemIcon>
-                            <SidebarItemText weight="400" linkText="Sidebar" />
+                            <SidebarItemText weight="400" linkText="Wrapper" />
                         </SidebarItem>
-                    </SidebarItemsGroupHeader>
+                    </NavLink>
 
-                    <SidebarNestedLinks>
-                        <NavLink exact to="/components/sidebar-wrapper">
-                            <SidebarItem>
-                                <SidebarItemIcon iconType="stroked">
-                                </SidebarItemIcon>
-                                <SidebarItemText weight="400" linkText="Wrapper" />
-                            </SidebarItem>
-                        </NavLink>
+                    <NavLink exact to="/components/sidebar-header">
+                        <SidebarItem>
+                            <SidebarItemIcon iconType="stroked">
+                            </SidebarItemIcon>
+                            <SidebarItemText weight="400" linkText="Item" />
+                        </SidebarItem>
+                    </NavLink>
 
-                        <NavLink exact to="/components/sidebar-header">
-                            <SidebarItem>
-                                <SidebarItemIcon iconType="stroked">
-                                </SidebarItemIcon>
-                                <SidebarItemText weight="400" linkText="Item" />
-                            </SidebarItem>
-                        </NavLink>
+                    <NavLink exact to="/components/expandable-group">
+                        <SidebarItem>
+                            <SidebarItemIcon iconType="stroked">
+                            </SidebarItemIcon>
+                            <SidebarItemText weight="400" linkText="Expandable group" />
+                        </SidebarItem>
+                    </NavLink>
+                </ExpandableContent>
 
-                        <NavLink exact to="/components/sidebar-header">
-                            <SidebarItem>
-                                <SidebarItemIcon iconType="stroked">
-                                </SidebarItemIcon>
-                                <SidebarItemText weight="400" linkText="Expandable group" />
-                            </SidebarItem>
-                        </NavLink>
-                    </SidebarNestedLinks>
-                </SidebarItemsGroup>
 
                 {/*  TABS  ===================================================  */}
                 <NavLink exact to="/components/tabs">
@@ -339,7 +328,7 @@ export const Sidebar = ({toggleTheme}) => {
                         <SidebarItemText weight="400" linkText="Table" />
                     </SidebarItem>
                 </NavLink>
-            </SidebarLinksWrapper>
+            </>
 
             {/*  FOOTER  =================================================  */}
             <SidebarFooter>
