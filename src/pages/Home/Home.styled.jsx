@@ -9,9 +9,9 @@ export const HomeStyled = styled.article`
         grid-gap              : 12px;
         grid-template-areas   : 
             "button  type  notification notification"
-            "select  table table        progress  "
-            ".       table table .         "
-            ".       code  code         .";
+            "select  table table        progress    "
+            ".       table table        .           "
+            ".       code  code         .           ";
 
         .grid-item {
             //aspect-ratio : 1;

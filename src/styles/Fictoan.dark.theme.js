@@ -6,7 +6,7 @@ export const FictoanDarkTheme = {
     themeName : "FictoanDark",
 
     body : {
-        bg : defaultColours.red
+        bg : `${darken(0.32, defaultColours.slate)}`
     },
 
     //  TEXT  /////////////////////////////////////////////////////////////////
@@ -17,17 +17,17 @@ export const FictoanDarkTheme = {
             serif : "FF Franziska"
         },
         paras     : {
-            font       : "UntitledSans",
-            color      : defaultColours.grey20,
+            font       : "SF Pro Text",
+            color      : defaultColours.slate80,
             lineHeight : 1.44,
             size       : 1,
             subtext    : defaultColours.slate80
         },
         headings  : {
-            font       : "UntitledSans",
+            font       : "SF Pro Text",
             weight     : 600,
             lineHeight : 1.2,
-            color      : defaultColours.grey90,
+            color      : defaultColours.white,
             multiplier : 1.24
         },
         links     : {
@@ -44,13 +44,13 @@ export const FictoanDarkTheme = {
         },
         code      : {
             inline : {
-                bg    : `${lighten(0.16, defaultColours.red)}`,
-                text  : defaultColours.red,
+                bg    : `${darken(0.16, defaultColours.slate)}`,
+                text  : defaultColours.blue40,
                 scale : 88
             },
             block  : {
-                scale : 92,
-                bg    : `${lighten(0.16, defaultColours.red)}`
+                bg    : `${darken(0.16, defaultColours.slate)}`,
+                scale : 92
             },
             prism  : {
                 tokens : {
@@ -62,8 +62,8 @@ export const FictoanDarkTheme = {
 
     //  CARD  /////////////////////////////////////////////////////////////////
     card : {
-        bg     : `${lighten(0.08, defaultColours.red)}`,
-        border : `${lighten(0.16, defaultColours.red)}`
+        bg     : `${darken(0.24, defaultColours.slate)}`,
+        border : `${darken(0.12, defaultColours.slate)}`
     },
 
     //  INPUT  ////////////////////////////////////////////////////////////////
@@ -135,7 +135,7 @@ export const FictoanDarkTheme = {
                 text   : defaultColours.white
             },
             isActive  : {
-                bg     : defaultColours.red,
+                bg     : `${darken(0.32, defaultColours.slate)}`,
                 border : defaultColours.red,
                 text   : defaultColours.white
             },
@@ -177,15 +177,15 @@ export const FictoanDarkTheme = {
 
     //  TABLE  ////////////////////////////////////////////////////////////////
     table : {
-        bg      : `${lighten(0.16, defaultColours.red)}`,
+        bg      : `${lighten(0.16, defaultColours.slate)}`,
         text    : defaultColours.white,
-        border  : `${lighten(0.32, defaultColours.red)}`,
+        border  : `${lighten(0.32, defaultColours.slate)}`,
         striped : {
             header : {
-                bg : `${lighten(0.40, defaultColours.red)}`
+                bg : defaultColours.slate
             },
             cell   : {
-                bg : `${lighten(0.24, defaultColours.red)}`
+                bg : `${lighten(0.24, defaultColours.slate)}`
             }
         },
         onHover : {
@@ -197,15 +197,15 @@ export const FictoanDarkTheme = {
     //  RULE  /////////////////////////////////////////////////////////////////
     hr : {
         primary   : {
-            bg     : `${lighten(0.48, defaultColours.red)}`,
+            bg     : `${lighten(0.48, defaultColours.slate)}`,
             height : "1px"
         },
         secondary : {
-            bg     : `${lighten(0.32, defaultColours.red)}`,
+            bg     : `${lighten(0.32, defaultColours.slate)}`,
             height : "1px"
         },
         tertiary  : {
-            bg     : `${lighten(0.16, defaultColours.red)}`,
+            bg     : `${darken(0.12, defaultColours.slate)}`,
             height : "1px"
         }
     },
@@ -223,33 +223,31 @@ export const FictoanDarkTheme = {
 
     //  SIDEBAR  //////////////////////////////////////////////////////////////
     sidebar : {
+        bg : `${darken(0.32, defaultColours.slate)}`,
+
         isCollapsed : {
             label : {
                 text : defaultColours.white,
-                bg   : defaultColours.red
+                bg   : `${darken(0.32, defaultColours.slate)}`
             }
         },
 
         header : {
-            bg           : defaultColours.red,
-            borderBottom : defaultColours.red
-        },
-
-        body : {
-            bg : defaultColours.red
+            bg           : `${darken(0.32, defaultColours.slate)}`,
+            borderBottom : `${darken(0.12, defaultColours.slate)}`
         },
 
         icons : {
             stroked : {
                 thickness : 2,
                 default   : {
-                    line : defaultColours.slate40
+                    line : defaultColours.slate
                 },
                 onHover   : {
-                    line : defaultColours.slate80
+                    line : defaultColours.grey20
                 },
                 isActive  : {
-                    line : defaultColours.slate
+                    line : defaultColours.white
                 }
             },
             filled  : {
@@ -267,19 +265,19 @@ export const FictoanDarkTheme = {
 
         links : {
             default    : {
-                bg     : defaultColours.red,
-                text   : `${lighten(0.56, defaultColours.red)}`,
+                bg     : `${darken(0.24, defaultColours.slate)}`,
+                text   : `${lighten(0.08, defaultColours.slate)}`,
                 scale  : 100,
                 weight : 600
             },
             onHover    : {
-                bg   : `${lighten(0.08, defaultColours.red)}`,
-                text : defaultColours.red
+                bg   : `${lighten(0.16, defaultColours.blue)}`,
+                text : defaultColours.slate80
             },
             isSelected : {
-                bg     : `${lighten(0.16, defaultColours.red)}`,
+                bg     : defaultColours.blue,
                 border : defaultColours.red,
-                text   : defaultColours.red
+                text   : defaultColours.white
             },
             hasAlert   : {
                 bg : defaultColours.red
@@ -291,8 +289,8 @@ export const FictoanDarkTheme = {
                 weight : 600
             },
             default : {
-                bg     : defaultColours.white,
-                text   : `${lighten(0.24, defaultColours.red)}`,
+                bg     : `${darken(0.32, defaultColours.slate)}`,
+                text   : `${lighten(0.24, defaultColours.slate)}`,
                 weight : 400,
                 scale  : 92
             },
@@ -306,8 +304,8 @@ export const FictoanDarkTheme = {
         },
 
         footer : {
-            bg        : defaultColours.red,
-            borderTop : defaultColours.red
+            bg        : `${darken(0.32, defaultColours.slate)}`,
+            borderTop : `${darken(0.12, defaultColours.slate)}`
         }
     }
 }

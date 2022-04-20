@@ -173,16 +173,6 @@ export const Sidebar = ({toggleTheme}) => {
                 </SidebarItem>
             </NavLink>
 
-            <NavLink exact to="/components/input-field">
-                <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <InputFieldIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Input field" />
-                </SidebarItem>
-            </NavLink>
-
             <NavLink exact to="/components/checkbox">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
@@ -190,6 +180,16 @@ export const Sidebar = ({toggleTheme}) => {
                     </SidebarItemIcon>
 
                     <SidebarItemText weight="400" linkText="CheckBox / Switch" />
+                </SidebarItem>
+            </NavLink>
+
+            <NavLink exact to="/components/input-field">
+                <SidebarItem>
+                    <SidebarItemIcon iconType="stroked">
+                        <InputFieldIcon />
+                    </SidebarItemIcon>
+
+                    <SidebarItemText weight="400" linkText="Input field" />
                 </SidebarItem>
             </NavLink>
 
@@ -203,16 +203,6 @@ export const Sidebar = ({toggleTheme}) => {
                 </SidebarItem>
             </NavLink>
 
-            <NavLink exact to="/components/select">
-                <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <SelectIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Select" />
-                </SidebarItem>
-            </NavLink>
-
             <NavLink exact to="/components/progress-bar">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
@@ -220,6 +210,16 @@ export const Sidebar = ({toggleTheme}) => {
                     </SidebarItemIcon>
 
                     <SidebarItemText weight="400" linkText="Progress bar" />
+                </SidebarItem>
+            </NavLink>
+
+            <NavLink exact to="/components/select">
+                <SidebarItem>
+                    <SidebarItemIcon iconType="stroked">
+                        <SelectIcon />
+                    </SidebarItemIcon>
+
+                    <SidebarItemText weight="400" linkText="Select" />
                 </SidebarItem>
             </NavLink>
 

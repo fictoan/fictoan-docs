@@ -90,9 +90,9 @@ export const Home = () => {
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*  COMPONENTS  */}
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-            <Row sidePadding="large">
+            <Row sidePadding="large" marginBottom="medium">
                 <Portion>
-                    <Element as="div" id="grid-wrapper">
+                    <Element as="div" id="grid-wrapper" marginBottom="medium">
                         <Element as="div" className="grid-item">
                             <Link to="/components/button">
                                 <Card
@@ -246,6 +246,14 @@ export const Home = () => {
                             </Link>
                         </Element>
                     </Element>
+                </Portion>
+            </Row>
+
+            <HRule sideMargin="large" bgColour="black" marginTop="micro" marginBottom="micro" />
+
+            <Row sidePadding="large">
+                <Portion>
+                    <Text>&copy; 2022 Fictoan</Text>
                 </Portion>
             </Row>
         </HomeStyled>
