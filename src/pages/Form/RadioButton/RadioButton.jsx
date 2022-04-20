@@ -32,36 +32,7 @@ export const RadioButtonDocs = () => {
                     <Heading as="h3" marginBottom="micro">Props</Heading>
 
                     <Heading as="h5" marginBottom="nano">Custom props</Heading>
-                    <Table bordersFor="both" padding="tiny" isFullWidth>
-                        <thead className="bg-slate-10">
-                            <tr>
-                                <td className="weight-600">Prop</td>
-                                <td className="weight-600">Description</td>
-                                <td className="weight-600">Values</td>
-                                <td className="weight-600">Default</td>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <code>as</code>
-                                </td>
-
-                                <td>
-                                    Component type
-                                </td>
-
-                                <td>
-                                    <code>input</code>
-                                </td>
-
-                                <td>
-                                    &mdash;
-                                </td>
-                            </tr>
-                        </tbody>
-                    </Table>
+                    <Text>None</Text>
 
                     <HRule kind="tertiary" marginTop="tiny" marginBottom="tiny" />
 
@@ -93,7 +64,6 @@ export const RadioButtonDocs = () => {
                         </Text>
 
                         <RadioButton
-                            as="input"
                             id="radio-1"
                             name="choices-1"
                             value="yes"
@@ -101,7 +71,6 @@ export const RadioButtonDocs = () => {
                         />
 
                         <RadioButton
-                            as="input"
                             id="radio-2"
                             name="choices-1"
                             value="no"
@@ -109,7 +78,6 @@ export const RadioButtonDocs = () => {
                         />
 
                         <RadioButton
-                            as="input"
                             id="radio-3"
                             name="choices-1"
                             value="maybe"

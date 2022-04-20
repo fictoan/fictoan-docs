@@ -1,6 +1,5 @@
 //  Code sample 01 ////////////////////////////////////////////////////////////
 export const sampleRadioButton = `<RadioButton
-    as="input"
     id="radio-1"
     name="choices"
     value="yes"
@@ -8,7 +7,6 @@ export const sampleRadioButton = `<RadioButton
 />
 
 <RadioButton
-    as="input"
     id="radio-2"
     name="choices"
     value="no"
@@ -16,7 +14,6 @@ export const sampleRadioButton = `<RadioButton
 />
 
 <RadioButton
-    as="input"
     id="radio-3"
     name="choices"
     value="maybe"
@@ -25,7 +22,6 @@ export const sampleRadioButton = `<RadioButton
 
 //  Code sample 02 ////////////////////////////////////////////////////////////
 export const sampleSwitch = `<Switch
-    as="input"
     id="switch-1"
     value="switch-1"
     name="switch-1"
