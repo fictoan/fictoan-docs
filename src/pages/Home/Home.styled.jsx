@@ -9,14 +9,14 @@ export const HomeStyled = styled.article`
         grid-gap              : 12px;
         grid-template-areas   : 
             "button  type  notification notification"
-            "select  table progress     ."
-            ".       table .            ."
+            "select  table table        progress  "
+            ".       table table .         "
             ".       code  code         .";
 
         .grid-item {
             //aspect-ratio : 1;
 
-            p, 
+            p,
             td,
             div { font-weight : 400 !important;}
         }
@@ -31,7 +31,11 @@ export const HomeStyled = styled.article`
 
     #select-card { grid-area : select; }
 
-    #table-card { grid-area : table; }
+    #table-card {
+        grid-area : table;
+
+        a { width : 100%; }
+    }
 
     #code-card { grid-area : code; }
 

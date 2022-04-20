@@ -51,7 +51,7 @@ export const Home = () => {
                 </Portion>
 
                 <Portion desktopSpan="half" className="with-top-border">
-                    <Heading as="h4" textColour="grey-40" marginBottom="micro">v0.33.10</Heading>
+                    <Heading as="h4" textColour="grey-40" marginBottom="micro">v0.36.2</Heading>
 
                     <Element as="div" className="wrapping-list" marginBottom="micro">
                         <a
@@ -196,33 +196,38 @@ export const Home = () => {
                                     className="component-card"
                                     padding="micro" shape="rounded" isFullHeight
                                 >
-                                    <Table padding="small" isStriped bordersFor="both">
+                                    <Table padding="small" isStriped bordersFor="both" isfullWidth>
                                         <thead>
                                             <tr>
                                                 <th>Yes,</th>
                                                 <th>I</th>
+                                                <th>would</th>
                                             </tr>
                                         </thead>
 
                                         <tbody>
                                             <tr>
-                                                <td>would</td>
+                                                <td>very</td>
+                                                <td>much</td>
                                                 <td>like</td>
                                             </tr>
 
                                             <tr>
                                                 <td>a</td>
                                                 <td>table</td>
+                                                <td>with</td>
                                             </tr>
 
                                             <tr>
-                                                <td>by</td>
                                                 <td>the</td>
+                                                <td>ocean</td>
+                                                <td>view</td>
                                             </tr>
 
                                             <tr>
-                                                <td>window</td>
-                                                <td>please</td>
+                                                <td>please.</td>
+                                                <td>Thank</td>
+                                                <td>you.</td>
                                             </tr>
                                         </tbody>
                                     </Table>

@@ -18,10 +18,22 @@ import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
 import { ReactComponent as ManifestoIcon } from "../../assets/icons/manifesto.svg";
 import { ReactComponent as LayoutIcon } from "../../assets/icons/layout.svg";
 import { ReactComponent as TypographyIcon } from "../../assets/icons/typography.svg";
-import { ReactComponent as ColourIcon } from "../../assets/icons/colours.svg";
+import { ReactComponent as ThemeIcon } from "../../assets/icons/paintbrush.svg";
+import { ReactComponent as ColourIcon } from "../../assets/icons/water.svg";
 import { ReactComponent as CardIcon } from "../../assets/icons/card.svg";
 import { ReactComponent as HRuleIcon } from "../../assets/icons/hrule.svg";
-import { ReactComponent as ThemeIcon } from "../../assets/icons/theme.svg";
+import { ReactComponent as InputFieldIcon } from "../../assets/icons/input.svg";
+import { ReactComponent as ButtonIcon } from "../../assets/icons/button.svg";
+import { ReactComponent as SelectIcon } from "../../assets/icons/dropdown.svg";
+import { ReactComponent as ProgressBarIcon } from "../../assets/icons/progress-bar.svg";
+import { ReactComponent as CodeIcon } from "../../assets/icons/braces.svg";
+import { ReactComponent as CheckboxIcon } from "../../assets/icons/checkbox.svg";
+import { ReactComponent as RadioButtonIcon } from "../../assets/icons/radio-button.svg";
+import { ReactComponent as NotificationIcon } from "../../assets/icons/notification.svg";
+import { ReactComponent as SidebarIcon } from "../../assets/icons/sidebar.svg";
+import { ReactComponent as InfoPanelIcon } from "../../assets/icons/info-panel.svg";
+import { ReactComponent as TableIcon } from "../../assets/icons/table.svg";
+import { ReactComponent as ThemeSwitchIcon } from "../../assets/icons/theme.svg";
 
 
 export const Sidebar = ({toggleTheme}) => {
@@ -96,7 +108,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/theme">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
-                        <ColourIcon />
+                        <ThemeIcon />
                     </SidebarItemIcon>
 
                     <SidebarItemText weight="400" linkText="Theme" />
@@ -133,6 +145,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/colour">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <ColourIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Colour" />
                 </SidebarItem>
@@ -163,6 +176,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/components/input-field">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <InputFieldIcon />
                     </SidebarItemIcon>
 
                     <SidebarItemText weight="400" linkText="Input field" />
@@ -172,6 +186,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/components/checkbox">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <CheckboxIcon />
                     </SidebarItemIcon>
 
                     <SidebarItemText weight="400" linkText="CheckBox / Switch" />
@@ -181,6 +196,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/components/radio-button">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <RadioButtonIcon />
                     </SidebarItemIcon>
 
                     <SidebarItemText weight="400" linkText="Radio button" />
@@ -190,6 +206,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/components/select">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <SelectIcon />
                     </SidebarItemIcon>
 
                     <SidebarItemText weight="400" linkText="Select" />
@@ -199,6 +216,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/components/progress-bar">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <ProgressBarIcon />
                     </SidebarItemIcon>
 
                     <SidebarItemText weight="400" linkText="Progress bar" />
@@ -231,6 +249,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/components/button">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <ButtonIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Button" />
                 </SidebarItem>
@@ -240,6 +259,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/components/card">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <CardIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Card" />
                 </SidebarItem>
@@ -249,6 +269,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/components/code-block">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <CodeIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Code block" />
                 </SidebarItem>
@@ -268,6 +289,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/components/info-panel">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <InfoPanelIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Info panel" />
                 </SidebarItem>
@@ -277,6 +299,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/components/notification">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <NotificationIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Notifications" />
                 </SidebarItem>
@@ -286,6 +309,7 @@ export const Sidebar = ({toggleTheme}) => {
             <ExpandableContent summary={(
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <SidebarIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Sidebar" />
                 </SidebarItem>
@@ -329,6 +353,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/components/table">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <TableIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Table" />
                 </SidebarItem>
@@ -340,7 +365,7 @@ export const Sidebar = ({toggleTheme}) => {
                     onClick={toggleTheme}
                 >
                     <SidebarItemIcon iconType="stroked">
-                        <ThemeIcon />
+                        <ThemeSwitchIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Theme" />
                 </SidebarItem>
