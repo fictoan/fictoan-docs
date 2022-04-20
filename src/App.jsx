@@ -43,6 +43,7 @@ import { RadioButtonDocs } from "./pages/Form/RadioButton/RadioButton";
 import { SelectDocs } from "./pages/Form/Select/Select";
 import { ProgressbarDocs } from "./pages/Form/ProgressBar/ProgressBar";
 import { SidebarDocs } from "./pages/Components/Sidebar/Sidebar";
+import { InputFieldDocs } from "./pages/Form/InputField/InputField";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -203,6 +204,12 @@ export const App = () => {
                                 exact
                                 path="/components/tabs"
                                 component={ TabsDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/input-field"
+                                component={ InputFieldDocs }
                             />
                         </RouteSwitch>
                     </ContentWrapper>

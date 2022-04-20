@@ -106,7 +106,7 @@ export const sampleResonsiveness = `
 
 //  Code sample 03b ========================================================================================
 export const sampleTurnOffResponsiveness = `
-<Row retainLayoutOnTabLS /> // Portions don’t change on tablet landscape
+<Row retainLayoutOnTabletLandscape /> // Portions don’t change on tablet landscape
     
 <Row retainLayoutOnTabPT /> // Portions don’t change on tablet portrait
     
