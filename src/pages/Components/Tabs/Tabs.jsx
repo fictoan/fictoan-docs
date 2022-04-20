@@ -163,11 +163,6 @@ export const TabsDocs = () => {
                     <Portion>
                         <Heading as="h3" marginBottom="tiny">Default tabs</Heading>
 
-                        <Text marginBottom="micro">
-                            The <code>Button</code> uses a native <code>button</code> element that you can extend with
-                            props and events.
-                        </Text>
-
                         <CodeBlock source={sampleTabs} language="jsx" />
 
                         <Text marginTop="micro" marginBottom="micro">
