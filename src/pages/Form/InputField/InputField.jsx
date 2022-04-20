@@ -158,7 +158,7 @@ export const InputFieldDocs = () => {
 
                     {/*  CUSTOM PROPS  ///////////////////////////////////  */}
                     <Heading as="h5" marginBottom="nano">Custom props</Heading>
-                    <Table bordersFor="both" padding="tiny" isfullwidth>
+                    <Table bordersFor="both" padding="tiny" isfullWidth>
                         <thead className="bg-slate-10">
                             <tr>
                                 <td className="weight-600">Prop</td>

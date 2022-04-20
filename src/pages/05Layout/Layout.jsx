@@ -48,13 +48,20 @@ export const Layout = () => {
             {/*   BASICS  */}
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             <Element as="section" id="basics">
-                <Row sidePadding="huge" marginBottom="none">
+                <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h4">The basics</Heading>
+                        <Heading as="h4" marginBottom="micro">The basics</Heading>
 
-                        <Text>The basis of any interface is a well-defined column-setup. RF uses a hard-coded 24-column system to build upon.</Text>
+                        <Text marginBottom="micro">
+                            The basis of any interface is a well-defined column-setup. RF uses a hard-coded 24-column
+                            system to build upon.
+                        </Text>
 
-                        <Text>RF has <code>Row</code> element as the fundamental building block of the UI. This <code>Row</code> is what constructs the column scaffolding for the rest of the elements.</Text>
+                        <Text>
+                            Fictoan has <code>Row</code> element as the fundamental building block of the UI.
+                            This <code>Row</code> is what constructs the column scaffolding for the rest of the
+                            elements.
+                        </Text>
                     </Portion>
                 </Row>
 
@@ -159,11 +166,18 @@ export const Layout = () => {
             <Element as="section" id="add-content">
                 <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
-                        <Heading as="h4">Adding content</Heading>
+                        <Heading as="h4" marginBottom="nano">Adding content</Heading>
 
-                        <Text>Content is added with the <code>Portion</code> component within the <code>Row</code>. You need to specify the number of columns you want the <code>Portion</code> to occupy.</Text>
+                        <Text marginBottom="micro">
+                            Content is added with the <code>Portion</code> component within the <code>Row</code>. You
+                            need to specify the number of columns you want the <code>Portion</code> to occupy.
+                        </Text>
 
-                        <Text>You can do this by adding a <code>desktopSpan</code> prop, and the number of columns as its value. So, if you say <code>desktopSpan="12"</code>, it means that the <code>Portion</code> will occupy twelve columns, or half the <code>Row</code>, like so—.</Text>
+                        <Text marginBottom="micro">
+                            You can do this by adding a <code>desktopSpan</code> prop, and the number of columns as
+                            its value. So, if you say <code>desktopSpan="12"</code>, it means that
+                            the <code>Portion</code> will occupy twelve columns, or half the <code>Row</code>, like so—.
+                        </Text>
                     </Portion>
                 </Row>
 
@@ -185,8 +199,8 @@ export const Layout = () => {
                         <Row className="demo-row" marginBottom="none">
                             <Portion desktopSpan="12" bgColor="red-40">
                                 <Text size="small" isMono>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;Portion desktopSpan="12"><br/>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add content here<br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;Portion desktopSpan="12"><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add content here<br />
                                     &nbsp;&nbsp;&nbsp;&nbsp;&lt;/Portion>
                                 </Text>
                             </Portion>
@@ -267,16 +281,18 @@ export const Layout = () => {
                             </Portion>
                         </Row>
                     </Card>
-
-                    <HRule sideMargin="huge" kind="secondary" />
                 </Element>
+
+                <HRule sideMargin="huge" kind="secondary" />
 
 
                 {/*   MULTIPLE PORTIONS  ////////////////////////////////////////////////////////////////////////// */}
                 <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
-                        <Heading as="h5">Multiple Portions</Heading>
-                        <Text>In the same way, you can add as many <code>Portion</code> elements inside the <code>Row</code>. If the sum of columns values exceeds <code>24</code>, they will wrap to the next line.</Text>
+                        <Heading as="h5" marginBottom="nano">Multiple Portions</Heading>
+                        <Text>In the same way, you can add as many <code>Portion</code> elements inside
+                            the <code>Row</code>. If the sum of columns values exceeds <code>24</code>, they will wrap
+                            to the next line.</Text>
                     </Portion>
                 </Row>
 
@@ -297,58 +313,80 @@ export const Layout = () => {
 
                         <Row className="demo-row" marginBottom="none">
                             <Portion desktopSpan="12" bgColor="red-40">
-                                <Text size="small" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="12"></Text>
-                                <Text size="small" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="12"></Text>
+                                <Text size="small" isMono showOnlyOnDesktop
+                                      showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="12"></Text>
+                                <Text size="small" isMono showOnlyOnTabPT
+                                      showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="12"></Text>
                             </Portion>
 
                             <Portion desktopSpan="12" bgColor="red-40">
-                                <Text size="small" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="12"></Text>
-                                <Text size="small" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="12"></Text>
+                                <Text size="small" isMono showOnlyOnDesktop
+                                      showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="12"></Text>
+                                <Text size="small" isMono showOnlyOnTabPT
+                                      showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="12"></Text>
                             </Portion>
 
                             <Portion desktopSpan="8" bgColor="red-40">
-                                <Text size="small" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="8"></Text>
-                                <Text size="small" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"></Text>
+                                <Text size="small" isMono showOnlyOnDesktop
+                                      showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="8"></Text>
+                                <Text size="small" isMono showOnlyOnTabPT
+                                      showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"></Text>
                             </Portion>
 
                             <Portion desktopSpan="8" bgColor="red-40">
-                                <Text size="small" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="8"></Text>
-                                <Text size="small" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"></Text>
+                                <Text size="small" isMono showOnlyOnDesktop
+                                      showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="8"></Text>
+                                <Text size="small" isMono showOnlyOnTabPT
+                                      showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"></Text>
                             </Portion>
 
                             <Portion desktopSpan="8" bgColor="red-40">
-                                <Text size="small" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="8"></Text>
-                                <Text size="small" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"></Text>
+                                <Text size="small" isMono showOnlyOnDesktop
+                                      showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="8"></Text>
+                                <Text size="small" isMono showOnlyOnTabPT
+                                      showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"></Text>
                             </Portion>
 
                             <Portion desktopSpan="4" bgColor="red-40">
-                                <Text size="small" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="4"></Text>
-                                <Text size="small" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="4"></Text>
+                                <Text size="small" isMono showOnlyOnDesktop
+                                      showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="4"></Text>
+                                <Text size="small" isMono showOnlyOnTabPT
+                                      showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="4"></Text>
                             </Portion>
 
                             <Portion desktopSpan="6" bgColor="red-40">
-                                <Text size="small" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="6"></Text>
-                                <Text size="small" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="6"></Text>
+                                <Text size="small" isMono showOnlyOnDesktop
+                                      showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="6"></Text>
+                                <Text size="small" isMono showOnlyOnTabPT
+                                      showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="6"></Text>
                             </Portion>
 
                             <Portion desktopSpan="14" bgColor="red-40">
-                                <Text size="small" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="14"></Text>
-                                <Text size="small" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="14"></Text>
+                                <Text size="small" isMono showOnlyOnDesktop
+                                      showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="14"></Text>
+                                <Text size="small" isMono showOnlyOnTabPT
+                                      showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="14"></Text>
                             </Portion>
 
                             <Portion desktopSpan="13" bgColor="red-40">
-                                <Text size="small" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="13"></Text>
-                                <Text size="small" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="13"></Text>
+                                <Text size="small" isMono showOnlyOnDesktop
+                                      showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="13"></Text>
+                                <Text size="small" isMono showOnlyOnTabPT
+                                      showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="13"></Text>
                             </Portion>
 
                             <Portion desktopSpan="7" bgColor="red-40">
-                                <Text size="small" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="7"></Text>
-                                <Text size="small" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="7"></Text>
+                                <Text size="small" isMono showOnlyOnDesktop
+                                      showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="7"></Text>
+                                <Text size="small" isMono showOnlyOnTabPT
+                                      showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="7"></Text>
                             </Portion>
 
                             <Portion desktopSpan="6" bgColor="red-40">
-                                <Text size="small" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="6"></Text>
-                                <Text size="small" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="6"></Text>
+                                <Text size="small" isMono showOnlyOnDesktop
+                                      showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="6"></Text>
+                                <Text size="small" isMono showOnlyOnTabPT
+                                      showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="6"></Text>
                             </Portion>
                         </Row>
 
@@ -387,8 +425,9 @@ export const Layout = () => {
                 {/*   MULTIPLE ROWS  ////////////////////////////////////////////////////////////////////////////// */}
                 <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
-                        <Heading as="h5">Multiple Rows</Heading>
-                        <Text>While you can put infinite <code>Portion</code> elements inside a <code>Row</code>, it’s better to logically break it up according to your content.</Text>
+                        <Heading as="h5" marginBottom="nano">Multiple Rows</Heading>
+                        <Text>While you can put infinite <code>Portion</code> elements inside a <code>Row</code>, it’s
+                            better to logically break it up according to your content.</Text>
                     </Portion>
                 </Row>
 
@@ -408,16 +447,21 @@ export const Layout = () => {
                         </Element>
 
 
-                        <Row className="demo-parent-row" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
-                            <Row className="demo-row" style={{"top": "12px"}} retainLayoutAlways>
+                        <Row className="demo-parent-row" bgColor="slate-10" style={{"height" : "80px"}}
+                             retainLayoutAlways>
+                            <Row className="demo-row" style={{"top" : "12px"}} retainLayoutAlways>
                                 <Portion desktopSpan="12" bgColor="red-40">
-                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="12"></Text>
-                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="12"</Text>
+                                    <Text size="tiny" isMono showOnlyOnDesktop
+                                          showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="12"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT
+                                          showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="12"</Text>
                                 </Portion>
 
                                 <Portion desktopSpan="12" bgColor="red-40">
-                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="12"></Text>
-                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="12"</Text>
+                                    <Text size="tiny" isMono showOnlyOnDesktop
+                                          showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="12"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT
+                                          showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="12"</Text>
                                 </Portion>
                             </Row>
                             <Portion desktopSpan="1" bgColor="red-20" />
@@ -447,21 +491,28 @@ export const Layout = () => {
                         </Row>
 
 
-                        <Row className="demo-parent-row" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
-                            <Row className="demo-row" style={{"top": "12px"}} retainLayoutAlways>
+                        <Row className="demo-parent-row" bgColor="slate-10" style={{"height" : "80px"}}
+                             retainLayoutAlways>
+                            <Row className="demo-row" style={{"top" : "12px"}} retainLayoutAlways>
                                 <Portion desktopSpan="8" bgColor="red-40">
-                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="8"></Text>
-                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"</Text>
+                                    <Text size="tiny" isMono showOnlyOnDesktop
+                                          showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="8"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT
+                                          showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"</Text>
                                 </Portion>
 
                                 <Portion desktopSpan="8" bgColor="red-40">
-                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="8"></Text>
-                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"</Text>
+                                    <Text size="tiny" isMono showOnlyOnDesktop
+                                          showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="8"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT
+                                          showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"</Text>
                                 </Portion>
 
                                 <Portion desktopSpan="8" bgColor="red-40">
-                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="8"></Text>
-                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"</Text>
+                                    <Text size="tiny" isMono showOnlyOnDesktop
+                                          showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="8"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT
+                                          showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="8"</Text>
                                 </Portion>
                             </Row>
 
@@ -492,22 +543,28 @@ export const Layout = () => {
                         </Row>
 
 
-
-                        <Row className="demo-parent-row" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
-                            <Row className="demo-row" style={{"top": "12px"}} retainLayoutAlways>
+                        <Row className="demo-parent-row" bgColor="slate-10" style={{"height" : "80px"}}
+                             retainLayoutAlways>
+                            <Row className="demo-row" style={{"top" : "12px"}} retainLayoutAlways>
                                 <Portion desktopSpan="5" bgColor="red-40">
-                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="5"></Text>
-                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="5"</Text>
+                                    <Text size="tiny" isMono showOnlyOnDesktop
+                                          showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="5"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT
+                                          showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="5"</Text>
                                 </Portion>
 
                                 <Portion desktopSpan="13" bgColor="red-40">
-                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="13"></Text>
-                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="13"</Text>
+                                    <Text size="tiny" isMono showOnlyOnDesktop
+                                          showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="13"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT
+                                          showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="13"</Text>
                                 </Portion>
 
                                 <Portion desktopSpan="6" bgColor="red-40">
-                                    <Text size="tiny" isMono showOnlyOnDesktop showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br/>&nbsp;&nbsp;desktopSpan="6"></Text>
-                                    <Text size="tiny" isMono showOnlyOnTabPT showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="6"</Text>
+                                    <Text size="tiny" isMono showOnlyOnDesktop
+                                          showOnlyOnTabLS>&nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="6"></Text>
+                                    <Text size="tiny" isMono showOnlyOnTabPT
+                                          showOnlyOnMobile>&nbsp;&nbsp;desktopSpan="6"</Text>
                                 </Portion>
                             </Row>
                             <Portion desktopSpan="1" bgColor="red-20" />
@@ -546,8 +603,10 @@ export const Layout = () => {
                 {/*   NAMING PORTIONS  ///////////////////////////////////////////////////////////////////////////  */}
                 <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
-                        <Heading as="h5">Naming Portions</Heading>
-                        <Text>The <code>desktopSpan</code> attribute takes any whole number from <code>1</code> to <code>24</code>. You can also use the names of the fractions to set this value, like so&mdash;</Text>
+                        <Heading as="h5" marginBottom="nano">Naming Portions</Heading>
+                        <Text>The <code>desktopSpan</code> attribute takes any whole number
+                            from <code>1</code> to <code>24</code>. You can also use the names of the fractions to set
+                            this value, like so&mdash;</Text>
                     </Portion>
                 </Row>
 
@@ -704,34 +763,34 @@ export const Layout = () => {
             <Element as="section" id="responsiveness">
                 <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
-                        <Heading as="h4">Responsive behaviour</Heading>
-                        <Text>
+                        <Heading as="h4" marginBottom="nano">Responsive behaviour</Heading>
+                        <Text marginBottom="micro">
                             There are four breakpoints as listed below. Using these, you can control the behaviour
                             of a <code>Portion</code> element across devices. The default prop is{" "}
-                            <code>desktopSpan</code>, but you can add three more—<code>tabLSSpan</code>,{" "}
-                            <code>tabPTSpan</code> and <code>mobileSpan</code>.
+                            <code>desktopSpan</code>, but you can add three more—<code>tabletLandscapeSpan</code>,{" "}
+                            <code>tabletPortraitSpan</code> and <code>mobileSpan</code>.
                         </Text>
                     </Portion>
 
-                    <Portion desktopSpan="one-fourth" tabLSSpan="half" tabPTSpan="half">
+                    <Portion desktopSpan="half" tabletLandscapeSpan="half" tabletPortraitSpan="half">
                         <Text className="weight-600 no-margin-bottom">Mobile</Text>
                         <Text>Less than 600px wide</Text>
                         <code>mobileSpan</code>
                     </Portion>
 
-                    <Portion desktopSpan="one-fourth" tabLSSpan="half" tabPTSpan="half">
+                    <Portion desktopSpan="half" tabletLandscapeSpan="half" tabletPortraitSpan="half">
                         <Text className="weight-600 no-margin-bottom">Tab portrait</Text>
                         <Text>601px to 900px</Text>
-                        <code>tabPTSpan</code>
+                        <code>tabletPortraitSpan</code>
                     </Portion>
 
-                    <Portion desktopSpan="one-fourth" tabLSSpan="half" tabPTSpan="half">
+                    <Portion desktopSpan="half" tabletLandscapeSpan="half" tabletPortraitSpan="half">
                         <Text className="weight-600 no-margin-bottom">Tab landscape</Text>
                         <Text>901px to 1200px</Text>
-                        <code>tabLSSpan</code>
+                        <code>tabletLandscapeSpan</code>
                     </Portion>
 
-                    <Portion desktopSpan="one-fourth" tabLSSpan="half" tabPTSpan="half">
+                    <Portion desktopSpan="half" tabletLandscapeSpan="half" tabletPortraitSpan="half">
                         <Text className="weight-600 no-margin-bottom">Desktop</Text>
                         <Text>1201px and above</Text>
                         <code>desktopSpan</code>
@@ -752,7 +811,8 @@ export const Layout = () => {
                         </Element>
 
                         <Row className="demo-row" style={{"top" : "80px"}} marginBottom="none">
-                            <Portion desktopSpan="one-sixth" tabLSSpan="8" tabPTSpan="half" mobileSpan="two-third" bgColor="red-40">
+                            <Portion desktopSpan="one-sixth" tabletLandscapeSpan="8" tabletPortraitSpan="half" mobileSpan="two-third"
+                                     bgColor="red-40">
                                 <Text size="small" isMono showOnlyOnDesktop>&nbsp;&nbsp;&nbsp;&nbsp;one-sixth</Text>
                                 <Text size="small" isMono showOnlyOnTabLS>&nbsp;&nbsp;&nbsp;&nbsp;one-third</Text>
                                 <Text size="small" isMono showOnlyOnTabPT>&nbsp;&nbsp;&nbsp;&nbsp;half</Text>
@@ -794,7 +854,8 @@ export const Layout = () => {
                 <Row sidePadding="huge">
                     <Portion>
                         <Heading as="h5">Turn off responsiveness</Heading>
-                        <Text>You can also turn off the responsiveness across these breakpoints by using the following props.</Text>
+                        <Text>You can also turn off the responsiveness across these breakpoints by using the following
+                            props.</Text>
                     </Portion>
 
                     <Portion>
@@ -806,7 +867,6 @@ export const Layout = () => {
             </Element>
 
 
-
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*   CONTENT PADDING  */}
             {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
@@ -814,7 +874,8 @@ export const Layout = () => {
                 <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <h4>Padding your content</h4>
-                        <Text>Control the width of your content using the <code>sidePadding</code> prop for the <code>Row</code>.</Text>
+                        <Text>Control the width of your content using the <code>sidePadding</code> prop for
+                            the <code>Row</code>.</Text>
                     </Portion>
                 </Row>
 
@@ -1071,7 +1132,8 @@ export const Layout = () => {
                 <Row sidePadding="huge" marginBottom="nano">
                     <Portion>
                         <h4>Gutters for the Row</h4>
-                        <Text>You can also change the gaps between the columns using the <code>gutters</code> props for the <code>Row</code>.</Text>
+                        <Text>You can also change the gaps between the columns using the <code>gutters</code> props for
+                            the <code>Row</code>.</Text>
                     </Portion>
                 </Row>
 
@@ -1091,7 +1153,8 @@ export const Layout = () => {
                         </Element>
 
                         <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="none"</Element>
-                        <Row sidePadding="medium" gutters="none" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                        <Row sidePadding="medium" gutters="none" bgColor="slate-10" style={{"height" : "80px"}}
+                             retainLayoutAlways>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
@@ -1119,7 +1182,8 @@ export const Layout = () => {
                         </Row>
 
                         <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="nano"</Element>
-                        <Row sidePadding="medium" gutters="nano" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                        <Row sidePadding="medium" gutters="nano" bgColor="slate-10" style={{"height" : "80px"}}
+                             retainLayoutAlways>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
@@ -1147,7 +1211,8 @@ export const Layout = () => {
                         </Row>
 
                         <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="micro"</Element>
-                        <Row sidePadding="medium" gutters="micro" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                        <Row sidePadding="medium" gutters="micro" bgColor="slate-10" style={{"height" : "80px"}}
+                             retainLayoutAlways>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
@@ -1175,7 +1240,8 @@ export const Layout = () => {
                         </Row>
 
                         <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="tiny"</Element>
-                        <Row sidePadding="medium" gutters="tiny" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                        <Row sidePadding="medium" gutters="tiny" bgColor="slate-10" style={{"height" : "80px"}}
+                             retainLayoutAlways>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
@@ -1203,7 +1269,8 @@ export const Layout = () => {
                         </Row>
 
                         <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="small"</Element>
-                        <Row sidePadding="medium" gutters="small" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                        <Row sidePadding="medium" gutters="small" bgColor="slate-10" style={{"height" : "80px"}}
+                             retainLayoutAlways>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
@@ -1231,7 +1298,8 @@ export const Layout = () => {
                         </Row>
 
                         <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="medium"</Element>
-                        <Row sidePadding="medium" gutters="medium" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                        <Row sidePadding="medium" gutters="medium" bgColor="slate-10" style={{"height" : "80px"}}
+                             retainLayoutAlways>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
@@ -1259,7 +1327,8 @@ export const Layout = () => {
                         </Row>
 
                         <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="large"</Element>
-                        <Row sidePadding="medium" gutters="large" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                        <Row sidePadding="medium" gutters="large" bgColor="slate-10" style={{"height" : "80px"}}
+                             retainLayoutAlways>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
@@ -1287,7 +1356,8 @@ export const Layout = () => {
                         </Row>
 
                         <Element as="code" marginLeft="tiny" marginBottom="nano">gutters="huge"</Element>
-                        <Row sidePadding="medium" gutters="huge" bgColor="slate-10" style={{"height" : "80px"}} retainLayoutAlways>
+                        <Row sidePadding="medium" gutters="huge" bgColor="slate-10" style={{"height" : "80px"}}
+                             retainLayoutAlways>
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />
                             <Portion desktopSpan="1" bgColor="red-20" paddingTop="micro" />

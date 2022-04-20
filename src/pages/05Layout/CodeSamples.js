@@ -100,7 +100,7 @@ export const sampleNamedPortions = `
 //  Code sample 03a ========================================================================================
 export const sampleResonsiveness = `
 <Row>
-    <Portion desktopSpan="one-sixth" tabLSSpan="8" tabPTSpan="half" mobileSpan="two-third" />
+    <Portion desktopSpan="one-sixth" tabletLandscapeSpan="8" tabletPortraitSpan="half" mobileSpan="two-third" />
 </Row>
 `;
 
