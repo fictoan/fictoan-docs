@@ -10,7 +10,7 @@ import {
     Heading,
     Button,
     Text,
-    HRule, Card, NotificationItem, Select, Table, CodeBlock, ProgressBar
+    HRule, Card, NotificationItem, Select, Table, CodeBlock, ProgressBar, ExpandableContent
 } from "fictoan-react";
 
 //  Local components

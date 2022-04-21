@@ -121,49 +121,50 @@ export const FictoanDarkTheme = {
 
     //  BUTTON  ///////////////////////////////////////////////////////////////
     button : {
-        font      : "Matter",
-        primary   : {
+        // font  : "UntitledSans",
+        borderWidth : "1px",
+        primary     : {
             default   : {
-                bg           : `${darken(0.08, defaultColours.red)}`,
-                border       : `${darken(0.08, defaultColours.red)}`,
+                bg           : defaultColours.blue90,
+                border       : defaultColours.blue90,
                 text         : defaultColours.white,
                 borderRadius : "4px"
             },
             onHover   : {
-                bg     : `${lighten(0.08, defaultColours.red)}`,
-                border : `${lighten(0.08, defaultColours.red)}`,
+                bg     : `${lighten(0.08, defaultColours.blue90)}`,
+                border : `${lighten(0.08, defaultColours.blue90)}`,
                 text   : defaultColours.white
             },
             isActive  : {
-                bg     : `${darken(0.32, defaultColours.slate)}`,
-                border : defaultColours.red,
+                bg     : defaultColours.blue90,
+                border : defaultColours.blue90,
                 text   : defaultColours.white
             },
             isLoading : {
-                bg            : defaultColours.red,
-                spinnerBorder : defaultColours.black
+                bg            : defaultColours.blue90,
+                spinnerBorder : defaultColours.white
             }
         },
-        secondary : {
+        secondary   : {
             default   : {
-                bg           : `${darken(0.24, defaultColours.red)}`,
-                border       : defaultColours.red,
-                text         : `${lighten(0.08, defaultColours.red)}`,
+                bg           : `${lighten(0.36, defaultColours.blue90)}`,
+                border       : defaultColours.blue90,
+                text         : defaultColours.blue90,
                 borderRadius : "4px"
             },
             onHover   : {
-                bg     : `${darken(0.24, defaultColours.red)}`,
-                border : defaultColours.red,
-                text   : defaultColours.red
+                bg     : `${lighten(0.4, defaultColours.blue90)}`,
+                border : defaultColours.blue90,
+                text   : defaultColours.blue90
             },
             isActive  : {
-                bg     : `${darken(0.32, defaultColours.red)}`,
-                border : defaultColours.red,
-                text   : defaultColours.red
+                bg     : `${lighten(0.2, defaultColours.blue90)}`,
+                border : defaultColours.blue90,
+                text   : defaultColours.blue90
             },
             isLoading : {
                 bg            : defaultColours.white,
-                spinnerBorder : defaultColours.black
+                spinnerBorder : defaultColours.blue90
             }
         }
     },
@@ -177,9 +178,9 @@ export const FictoanDarkTheme = {
 
     //  TABLE  ////////////////////////////////////////////////////////////////
     table : {
-        bg      : `${lighten(0.16, defaultColours.slate)}`,
+        bg      : `${darken(0.12, defaultColours.slate)}`,
         text    : defaultColours.white,
-        border  : `${lighten(0.32, defaultColours.slate)}`,
+        border  : `${darken(0.24, defaultColours.slate)}`,
         striped : {
             header : {
                 bg : defaultColours.slate
@@ -228,7 +229,7 @@ export const FictoanDarkTheme = {
         isCollapsed : {
             label : {
                 text : defaultColours.white,
-                bg   : `${darken(0.32, defaultColours.slate)}`
+                bg   : `${darken(0.24, defaultColours.slate)}`
             }
         },
 
@@ -271,12 +272,12 @@ export const FictoanDarkTheme = {
                 weight : 600
             },
             onHover    : {
-                bg   : `${lighten(0.16, defaultColours.blue)}`,
-                text : defaultColours.slate80
+                bg   : `${lighten(0.2, defaultColours.blue)}`,
+                text : defaultColours.grey20
             },
             isSelected : {
-                bg     : defaultColours.blue,
-                border : defaultColours.red,
+                bg     : `${lighten(0.16, defaultColours.blue)}`,
+                border : defaultColours.blue,
                 text   : defaultColours.white
             },
             hasAlert   : {

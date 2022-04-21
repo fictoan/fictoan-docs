@@ -33,6 +33,7 @@ import { ReactComponent as NotificationIcon } from "../../assets/icons/notificat
 import { ReactComponent as SidebarIcon } from "../../assets/icons/sidebar.svg";
 import { ReactComponent as InfoPanelIcon } from "../../assets/icons/info-panel.svg";
 import { ReactComponent as TableIcon } from "../../assets/icons/table.svg";
+import { ReactComponent as BaseElementIcon } from "../../assets/icons/building-block.svg";
 import { ReactComponent as ThemeSwitchIcon } from "../../assets/icons/theme.svg";
 
 
@@ -99,6 +100,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/base-element">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
+                        <BaseElementIcon />
                     </SidebarItemIcon>
 
                     <SidebarItemText weight="400" linkText="Base element" />

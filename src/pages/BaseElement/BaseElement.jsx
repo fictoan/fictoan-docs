@@ -37,8 +37,8 @@ export const BaseElementDocs = () => {
                     <Heading as="h3" marginBottom="micro">Props</Heading>
 
                     <Heading as="h5" marginBottom="nano">Custom props</Heading>
-                    <Table bordersFor="both" padding="tiny">
-                        <thead className="bg-slate-10">
+                    <Table bordersFor="both" padding="tiny" isStriped>
+                        <thead>
                             <tr>
                                 <td className="weight-600">Prop</td>
                                 <td className="weight-600">Description</td>
