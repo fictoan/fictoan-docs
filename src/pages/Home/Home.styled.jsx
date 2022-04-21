@@ -27,6 +27,17 @@ export const HomeStyled = styled.article`
             display       : grid;
             place-content : center;
         }
+
+        @media all and (max-width : 1000px) {
+            display        : flex;
+            flex-direction : column;
+
+            & > div {
+                width : 100%;
+
+                img { width : 90% }
+            }
+        }
     }
 
     #notification-card { grid-area : notification; }
