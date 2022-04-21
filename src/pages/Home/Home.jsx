@@ -15,11 +15,12 @@ import {
 
 //  Local components
 import { HomeStyled } from "./Home.styled";
+import { FictoanDarkTheme } from "../../styles/Fictoan.dark.theme";
 
 //  Local assets
 
 
-export const Home = () => {
+export const Home = (currentTheme) => {
     useEffect(() => {
         document.title = "Home — Fictoan";
 
@@ -47,8 +48,15 @@ export const Home = () => {
             <Row sidePadding="large" marginTop="tiny" marginBottom="none">
                 <Portion marginTop="small" marginBottom="small">
                     <Heading as="h1" textColour="black" marginBottom="nano">Fictoan</Heading>
-                    <Text textColor="white" size="tiny" margin="none">*Fuck, I Couldn’t Think Of A Name</Text>
+                    <Text
+                        id="fictoan-full-form"
+                        size="tiny"
+                    >
+                        *Fuck, I Couldn’t Think Of A Name
+                    </Text>
                 </Portion>
+
+                {console.log(currentTheme)}
 
                 <Portion desktopSpan="half" className="with-top-border">
                     <Heading as="h4" textColour="grey-40" marginBottom="micro">v0.36.2</Heading>

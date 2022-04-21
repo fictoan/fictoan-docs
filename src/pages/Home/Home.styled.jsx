@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 
 export const HomeStyled = styled.article`
+    #fictoan-full-form { color: ${props => props.theme.body.bg}; }
+    
     #grid-wrapper {
         display               : grid;
         grid-template-columns : repeat(4, 1fr);

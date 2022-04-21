@@ -18,7 +18,7 @@ export const FictoanDarkTheme = {
         },
         paras     : {
             font       : "SF Pro Text",
-            color      : defaultColours.slate80,
+            color      : defaultColours.grey90,
             lineHeight : 1.44,
             size       : 1,
             subtext    : defaultColours.slate80
@@ -27,8 +27,8 @@ export const FictoanDarkTheme = {
             font       : "SF Pro Text",
             weight     : 600,
             lineHeight : 1.2,
-            color      : defaultColours.white,
-            multiplier : 1.24
+            color      : defaultColours.grey,
+            multiplier : 1.16
         },
         links     : {
             default : {

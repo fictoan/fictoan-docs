@@ -1,5 +1,6 @@
-import { defaultColours } from "fictoan-react";
 import { lighten } from "polished";
+
+import { defaultColours } from "fictoan-react";
 
 
 export const FictoanLightTheme = {
