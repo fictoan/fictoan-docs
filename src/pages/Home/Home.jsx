@@ -47,7 +47,7 @@ export const Home = (currentTheme) => {
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             <Row sidePadding="large" marginTop="tiny" marginBottom="none">
                 <Portion marginTop="small" marginBottom="small">
-                    <Heading as="h1" textColour="black" marginBottom="nano">Fictoan</Heading>
+                    <Heading as="h1" marginBottom="nano">Fictoan</Heading>
                     <Text
                         id="fictoan-full-form"
                         size="tiny"

@@ -27,7 +27,7 @@ export const FictoanDarkTheme = {
             font       : "SF Pro Text",
             weight     : 600,
             lineHeight : 1.2,
-            color      : defaultColours.grey,
+            color      : defaultColours.grey40,
             multiplier : 1.16
         },
         links     : {
