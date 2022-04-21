@@ -124,7 +124,7 @@ export const Sidebar = ({toggleTheme}) => {
             <NavLink exact to="/utilities">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
-                        <ToolboxIcon />gs
+                        <ToolboxIcon />
                     </SidebarItemIcon>
 
                     <SidebarItemText weight="400" linkText="Utilities" />
