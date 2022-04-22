@@ -19,7 +19,7 @@ import { Manifesto } from "./pages/02Manifesto/Manifesto";
 
 import { GettingStarted } from "./pages/01GettingStarted/GettingStarted";
 import { Layout } from "./pages/05Layout/Layout";
-import { Typography } from "./pages/06Typography/Typography";
+import { TypographyDocs } from "./pages/06Typography/Typography";
 import { ColourDocs } from "./pages/07Colour/ColourDocs";
 
 import { FormDocs } from "./pages/Form/FormWrapper/Form";
@@ -107,7 +107,7 @@ export const App = () => {
                             <Route
                                 exact
                                 path="/typography"
-                                component={ Typography }
+                                component={ TypographyDocs }
                             />
 
                             <Route

@@ -15,7 +15,6 @@ import {
 
 //  Local components
 import { HomeStyled } from "./Home.styled";
-import { FictoanDarkTheme } from "../../styles/Fictoan.dark.theme";
 
 //  Local assets
 
@@ -26,8 +25,8 @@ export const Home = (currentTheme) => {
 
         try {
             window.scroll({
-                top: 0,
-                left: 0
+                top  : 0,
+                left : 0
             });
         } catch (error) {
             window.scrollTo(0, 0);
@@ -56,8 +55,6 @@ export const Home = (currentTheme) => {
                     </Text>
                 </Portion>
 
-                {console.log(currentTheme)}
-
                 <Portion desktopSpan="half" className="with-top-border">
                     <Heading as="h4" textColour="grey-40" marginBottom="micro">v0.36.2</Heading>
 
@@ -66,7 +63,11 @@ export const Home = (currentTheme) => {
                             href="http://fictoan-storybook.s3-website.eu-central-1.amazonaws.com/"
                             target="_blank" rel="noopener noreferrer"
                         >
-                            <Button kind="secondary" size="small" shape="rounded" shadow="hard" marginRight="nano" marginBottom="nano">
+                            <Button
+                                kind="secondary"
+                                size="small" shape="rounded" shadow="hard"
+                                marginRight="nano" marginBottom="nano"
+                            >
                                 Storybook ↗
                             </Button>
                         </a>
@@ -141,7 +142,7 @@ export const Home = (currentTheme) => {
                         <Element as="div" className="grid-item" id="notification-card">
                             <Link to="/components/notification">
                                 <Card
-                                     className="component-card"
+                                    className="component-card"
                                     padding="micro" shape="rounded" isFullHeight
                                 >
                                     <NotificationItem
@@ -157,7 +158,7 @@ export const Home = (currentTheme) => {
                         <Element as="div" className="grid-item" id="progress-card">
                             <Link to="/components/progress-bar">
                                 <Card
-                                     className="component-card"
+                                    className="component-card"
                                     padding="micro" shape="rounded" isFullHeight
                                 >
                                     <ProgressBar
@@ -249,9 +250,27 @@ export const Home = (currentTheme) => {
                                     id="" className="component-card"
                                     shape="rounded" isFullHeight
                                 >
-                                    <CodeBlock source={sampleCode} language="jsx" marginTop="micro" marginBottom="micro" />
+                                    <CodeBlock source={sampleCode} language="jsx" marginTop="micro"
+                                               marginBottom="micro" />
                                 </Card>
                             </Link>
+                        </Element>
+
+                        <Element as="div" className="grid-item" id="colour-card">
+                            <Card
+                                className="component-card"
+                                shape="rounded" isFullHeight
+                            >
+                                <Link to="/colour">
+                                    <Card
+                                        id="gradient-card"
+                                        shape="rounded" borderColour="transparent"
+                                        isFullHeight
+                                    >
+                                        <Text textColour="white">Colour</Text>
+                                    </Card>
+                                </Link>
+                            </Card>
                         </Element>
                     </Element>
                 </Portion>
@@ -261,6 +280,11 @@ export const Home = (currentTheme) => {
 
             <Row sidePadding="large">
                 <Portion>
+                    <Element as="div">
+                        <Text>what</Text>
+                        <Text>what</Text>
+                    </Element>
+
                     <Text>&copy; 2022 Fictoan</Text>
                 </Portion>
             </Row>

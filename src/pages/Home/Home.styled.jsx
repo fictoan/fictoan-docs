@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 
 export const HomeStyled = styled.article`
-    #fictoan-full-form { color: ${props => props.theme.body.bg}; }
-    
+    #fictoan-full-form { color : ${props => props.theme.body.bg}; }
+
     #grid-wrapper {
         display               : grid;
         grid-template-columns : repeat(4, 1fr);
@@ -12,8 +12,8 @@ export const HomeStyled = styled.article`
         grid-template-areas   : 
             "button  type  notification notification"
             "select  table table        progress    "
-            ".       table table        .           "
-            ".       code  code         .           ";
+            ".       table table        colour      "
+            ".       code  code         colour      ";
 
         .grid-item {
             //aspect-ratio : 1;
@@ -55,4 +55,30 @@ export const HomeStyled = styled.article`
     #progress-card { grid-area : progress; }
 
     #progress-card progress { width : 160px; }
+
+    #colour-card {
+        grid-area : colour;
+
+        a {
+            width      : 100%;
+            height     : 240px;
+            display    : flex;
+            align-self : stretch;
+        }
+    }
+
+    #gradient-card {
+        display       : grid;
+        width         : 100px;
+        height        : 200px;
+        place-content : center;
+        border        : none;
+
+        background    : linear-gradient(180deg,
+        rgba(255, 201, 0, 1) 0%,
+        rgba(230, 65, 65, 1) 23%,
+        rgba(241, 105, 236, 1) 50%,
+        rgba(87, 116, 255, 1) 77%,
+        rgba(95, 246, 247, 1) 100%);
+    }
 `;

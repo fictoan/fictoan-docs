@@ -27,9 +27,9 @@ import {
 //  Local assets
 
 
-export const Typography = () => {
+export const TypographyDocs = () => {
     useEffect(() => {
-        document.title = "06Typography — Fictoan";
+        document.title = "Typography — Fictoan";
     }, []);
 
     return (
@@ -46,7 +46,7 @@ export const Typography = () => {
             <Element as="section" id="basics">
                 <Row sidePadding="huge" className="margin-top-medium">
                     <Portion>
-                        <Heading as="h4">Basics</Heading>
+                        <Heading as="h4" marginBottom="nano">Basics</Heading>
                         <Text>
                             There are three main kinds of type elements—the <code>Heading</code>, <code>Text</code> and links.
                         </Text>
@@ -81,7 +81,7 @@ export const Typography = () => {
             <Element as="section" id="headings">
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h4">Headings</Heading>
+                        <Heading as="h4" marginBottom="nano">Headings</Heading>
                         <Text>The <code>Heading</code> element is common across all six sizes, and is invoked with the <code>as</code> prop, like so&mdash;</Text>
                     </Portion>
 
@@ -101,7 +101,7 @@ export const Typography = () => {
             <Element as="section" id="text">
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h4">Text</Heading>
+                        <Heading as="h4" marginBottom="nano">Text</Heading>
                         <Text>The <code>Text</code> element pretty straight-forward&mdash;</Text>
                     </Portion>
 
@@ -120,7 +120,7 @@ export const Typography = () => {
             <Element as="section" id="global-styling">
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h4">Global styling</Heading>
+                        <Heading as="h4" marginBottom="nano">Global styling</Heading>
                     </Portion>
 
                     <Portion desktopSpan="half">
@@ -147,15 +147,15 @@ export const Typography = () => {
             <Element as="section" id="sizing">
                 <Row sidePadding="huge" marginBottom="micro">
                     <Portion>
-                        <Heading as="h4">Sizing</Heading>
+                        <Heading as="h4" marginBottom="nano">Sizing</Heading>
                     </Portion>
 
                     <Portion desktopSpan="half">
-                        <Text>Notice the <code>size</code> key in <code>paras</code>. The value is the size of your body font in <code>em</code> units.</Text>
+                        <Text marginBottom="micro">Notice the <code>size</code> key in <code>paras</code>. The value is the size of your body font in <code>em</code> units.</Text>
 
-                        <Text>This base font size is is run through a power function to calculate heading sizes, using the <code>multiplier</code> value. So, we get&mdash;</Text>
+                        <Text marginBottom="micro">This base font size is is run through a power function to calculate heading sizes, using the <code>multiplier</code> value. So, we get&mdash;</Text>
 
-                        <Table bordersFor="both" padding="tiny">
+                        <Table bordersFor="both" padding="tiny" marginBottom="micro">
                             <thead>
                                 <tr>
                                     <td className="weight-600">Element</td>
@@ -206,11 +206,13 @@ export const Typography = () => {
 
                 <Row sidePadding="huge" marginBottom-micro>
                     <Portion>
-                        <Heading as="h5">Text sizing</Heading>
+                        <Heading as="h5" marginBottom="nano">Text sizing</Heading>
                     </Portion>
 
                     <Portion desktopSpan="half">
-                        <Text>Now, you might not want to use headings every time you want to change the size of the text. For this, you can use a prop called <code>size</code> to increase or decrease body font.</Text>
+                        <Text marginBottom="micro">
+                            Now, you might not want to use headings every time you want to change the size of the text. For this, you can use a prop called <code>size</code> to increase or decrease body font.
+                        </Text>
 
                         <Text size="nano" marginBottom="none">Nano text</Text>
                         <Text size="micro" marginBottom="none">Micro text</Text>
