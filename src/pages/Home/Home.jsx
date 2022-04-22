@@ -280,11 +280,6 @@ export const Home = (currentTheme) => {
 
             <Row sidePadding="large">
                 <Portion>
-                    <Element as="div">
-                        <Text>what</Text>
-                        <Text>what</Text>
-                    </Element>
-
                     <Text>&copy; 2022 Fictoan</Text>
                 </Portion>
             </Row>
