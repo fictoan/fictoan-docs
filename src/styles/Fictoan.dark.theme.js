@@ -235,7 +235,9 @@ export const FictoanDarkTheme = {
 
         header : {
             bg           : `${darken(0.32, defaultColours.slate)}`,
-            borderBottom : `${darken(0.12, defaultColours.slate)}`
+            borderBottom : `${darken(0.12, defaultColours.slate)}`,
+            logoWidth : "200px",
+            iconWidth : "40px"
         },
 
         icons : {

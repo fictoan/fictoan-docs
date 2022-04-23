@@ -210,7 +210,8 @@ export const FictoanLightTheme = {
     //  SIDEBAR  //////////////////////////////////////////////////////////////
     sidebar : {
         header : {
-            logoWidth : "200px"
+            logoWidth : "200px",
+            iconWidth : "40px"
         },
 
         isCollapsed : {
