@@ -209,6 +209,10 @@ export const FictoanLightTheme = {
 
     //  SIDEBAR  //////////////////////////////////////////////////////////////
     sidebar : {
+        header : {
+            logoWidth : "200px"
+        },
+
         isCollapsed : {
             label : {
                 bg   : defaultColours.blue90
