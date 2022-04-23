@@ -10,7 +10,13 @@ import {
     Heading,
     Button,
     Text,
-    HRule, Card, NotificationItem, Select, Table, CodeBlock, ProgressBar
+    HRule,
+    Card,
+    NotificationItem,
+    Select,
+    Table,
+    CodeBlock,
+    ProgressBar
 } from "fictoan-react";
 
 //  Local components
@@ -19,7 +25,7 @@ import { HomeStyled } from "./Home.styled";
 //  Local assets
 
 
-export const Home = (currentTheme) => {
+export const Home = () => {
     useEffect(() => {
         document.title = "Home — Fictoan";
 

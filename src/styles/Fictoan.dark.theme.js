@@ -308,5 +308,10 @@ export const FictoanDarkTheme = {
             bg        : `${darken(0.32, defaultColours.slate)}`,
             borderTop : `${darken(0.12, defaultColours.slate)}`
         }
-    }
+    },
+
+    toast : {
+        bg   : String(defaultColours.slate10),
+        text : String(defaultColours.slate)
+    },
 }

@@ -44,6 +44,7 @@ import { SelectDocs } from "./pages/Form/Select/Select";
 import { ProgressbarDocs } from "./pages/Form/ProgressBar/ProgressBar";
 import { SidebarDocs } from "./pages/Components/Sidebar/Sidebar";
 import { InputFieldDocs } from "./pages/Form/InputField/InputField";
+import { ToastDocs } from "./pages/Components/Toast/Toast";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -210,6 +211,12 @@ export const App = () => {
                                 exact
                                 path="/components/input-field"
                                 component={ InputFieldDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/toast"
+                                component={ ToastDocs }
                             />
                         </RouteSwitch>
                     </ContentWrapper>

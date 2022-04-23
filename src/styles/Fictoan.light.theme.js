@@ -285,5 +285,11 @@ export const FictoanLightTheme = {
             bg        : defaultColours.white,
             borderTop : defaultColours.slate10
         }
-    }
+    },
+
+
+    toast : {
+        bg   : String(defaultColours.slate),
+        text : String(defaultColours.slate10)
+    },
 }

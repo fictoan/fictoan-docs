@@ -38,6 +38,7 @@ import { ReactComponent as TabsIcon } from "../../assets/icons/tabs.svg";
 import { ReactComponent as BreadcrumbsIcon } from "../../assets/icons/breadcrumbs.svg";
 import { ReactComponent as FormWrapperIcon } from "../../assets/icons/writing.svg";
 import { ReactComponent as ToolboxIcon } from "../../assets/icons/toolbox.svg";
+import { ReactComponent as ToastIcon } from "../../assets/icons/toast.svg";
 import { ReactComponent as ThemeSwitchIcon } from "../../assets/icons/theme.svg";
 
 
@@ -367,6 +368,16 @@ export const Sidebar = ({toggleTheme}) => {
                         <TableIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Table" />
+                </SidebarItem>
+            </NavLink>
+
+            {/*  TOAST  ==================================================  */}
+            <NavLink exact to="/components/toast">
+                <SidebarItem>
+                    <SidebarItemIcon iconType="stroked">
+                        <ToastIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Toast" />
                 </SidebarItem>
             </NavLink>
 

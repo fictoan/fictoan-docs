@@ -74,11 +74,12 @@ export const HomeStyled = styled.article`
         place-content : center;
         border        : none;
 
-        background    : linear-gradient(180deg,
-        rgba(255, 201, 0, 1) 0%,
-        rgba(230, 65, 65, 1) 23%,
-        rgba(241, 105, 236, 1) 50%,
-        rgba(87, 116, 255, 1) 77%,
-        rgba(95, 246, 247, 1) 100%);
+        background    :
+            linear-gradient(180deg,
+                rgba(255, 201,   0, 1) 0%,
+                rgba(230,  65,  65, 1) 23%,
+                rgba(241, 105, 236, 1) 50%,
+                rgba( 87, 116, 255, 1) 77%,
+                rgba( 95, 246, 247, 1) 100%);
     }
 `;
