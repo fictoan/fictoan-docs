@@ -465,25 +465,6 @@ export const NotificationDocs = () => {
 
                 <HRule kind="secondary" sideMargin="huge" />
 
-                {/*  =============================================================================================  */}
-                {/*  STACKING ORDER  */}
-                {/*  =============================================================================================  */}
-                <Row sidePadding="huge">
-                    <Portion>
-                        <Heading as="h5" marginBottom="nano">Stacking order</Heading>
-
-                        <Text marginBottom="micro">
-                            The <code>order</code> prop stacks incoming notification either <code>new-on-top</code>,
-                            or <code>new-on-bottom</code>.
-                        </Text>
-
-                        <CodeBlock source={sampleNotificationsOrder} language="jsx" marginBottom="micro" />
-                    </Portion>
-                </Row>
-
-
-                <HRule sideMargin="huge" />
-
 
                 {/*  =============================================================================================  */}
                 {/*  IS DISMISSIBLE  */}
@@ -502,7 +483,7 @@ export const NotificationDocs = () => {
                 </Row>
 
 
-                <HRule sideMargin="huge" />
+                <HRule kind="secondary" sideMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
@@ -542,7 +523,7 @@ export const NotificationDocs = () => {
                 </Row>
 
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule sideMargin="huge" />
 
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
