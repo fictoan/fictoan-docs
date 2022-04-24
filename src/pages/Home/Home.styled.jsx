@@ -7,14 +7,14 @@ export const HomeStyled = styled.article`
     #grid-wrapper {
         display               : grid;
         grid-template-columns : repeat(4, 1fr);
-        grid-template-rows    : repeat(6, 1fr);
+        grid-template-rows    : repeat(5, 1fr);
         grid-gap              : 12px;
         grid-template-areas   : 
             "button      type        notification notification"
             "input       table       table        progress    "
             "select      table       table        colour      "
             "breadcrumbs breadcrumbs radio        colour      "
-            "checkbox    code        code         .           "
+            "checkbox    code        code         badge       "
             ".           .           .            .           ";
 
         .grid-item {
@@ -50,6 +50,16 @@ export const HomeStyled = styled.article`
 
     #checkbox-card { grid-area : checkbox; }
 
+    #badge-card { grid-area : badge; }
+
+    #badge-wrapper {
+        display        : flex;
+        flex-direction : row;
+        flex-wrap      : wrap;
+        align-items    : center;
+    }
+
+
     #table-card {
         grid-area : table;
 
@@ -58,7 +68,13 @@ export const HomeStyled = styled.article`
 
     #code-card { grid-area : code; }
 
-    #breadcrumbs-card { grid-area : breadcrumbs; }
+    #breadcrumbs-card {
+        grid-area : breadcrumbs;
+        
+        nav {
+            background-color: ${props => props.theme.card.bg};
+        }
+    }
 
     #progress-card { grid-area : progress; }
 
@@ -82,12 +98,11 @@ export const HomeStyled = styled.article`
         place-content : center;
         border        : none;
 
-        background    :
-            linear-gradient(180deg,
-                rgba(255, 201,   0, 1) 0%,
-                rgba(230,  65,  65, 1) 23%,
-                rgba(241, 105, 236, 1) 50%,
-                rgba( 87, 116, 255, 1) 77%,
-                rgba( 95, 246, 247, 1) 100%);
+        background    : linear-gradient(180deg,
+        rgba(255, 201, 0, 1) 0%,
+        rgba(230, 65, 65, 1) 23%,
+        rgba(241, 105, 236, 1) 50%,
+        rgba(87, 116, 255, 1) 77%,
+        rgba(95, 246, 247, 1) 100%);
     }
 `;

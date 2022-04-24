@@ -193,16 +193,6 @@ export const Sidebar = ({toggleTheme}) => {
                 </SidebarItem>
             </NavLink>
 
-            <NavLink exact to="/components/checkbox">
-                <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <CheckboxIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="CheckBox / Switch" />
-                </SidebarItem>
-            </NavLink>
-
             <NavLink exact to="/components/input-field">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
@@ -210,6 +200,16 @@ export const Sidebar = ({toggleTheme}) => {
                     </SidebarItemIcon>
 
                     <SidebarItemText weight="400" linkText="Input field" />
+                </SidebarItem>
+            </NavLink>
+
+            <NavLink exact to="/components/checkbox">
+                <SidebarItem>
+                    <SidebarItemIcon iconType="stroked">
+                        <CheckboxIcon />
+                    </SidebarItemIcon>
+
+                    <SidebarItemText weight="400" linkText="CheckBox / Switch" />
                 </SidebarItem>
             </NavLink>
 

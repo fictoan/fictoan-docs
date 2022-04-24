@@ -24,6 +24,7 @@ import { HomeStyled } from "./Home.styled";
 
 //  Local assets
 import { ReactComponent as FictoanLogo } from "../../assets/images/logo.svg";
+import { Badge } from "fictoan-react/dist/es/components/Badge/Badge";
 
 export const Home = () => {
     useEffect(() => {
@@ -136,8 +137,8 @@ export const Home = () => {
 
                 <Portion desktopSpan="half">
                     <Heading as="h6" weight="400" marginBottom="nano">
-                        We want designers also to be able to contribute in code&mdash;they can focus on layout, theming and
-                        pixel-perfection while engineers can focus on the integration&mdash;this saves time and
+                        We want designers also to be able to contribute in code&mdash;they can focus on layout, theming
+                        and pixel-perfection while engineers can focus on the integration&mdash;this saves time and
                         headaches.
                     </Heading>
 
@@ -151,6 +152,8 @@ export const Home = () => {
                         source={sampleCode} language="jsx"
                         marginTop="micro" marginBottom="micro"
                     />
+
+                    <Text marginTop="nano">How simple is that markup?</Text>
                 </Portion>
             </Row>
 
@@ -165,7 +168,7 @@ export const Home = () => {
                 </Portion>
 
                 <Portion>
-                    <Element as="div" id="grid-wrapper" marginBottom="medium">
+                    <Element as="div" id="grid-wrapper">
                         <Element as="div" className="grid-item">
                             <Link to="/components/button">
                                 <Card
@@ -331,7 +334,13 @@ export const Home = () => {
                                     <BreadcrumbsWrapper>
                                         <BreadcrumbItem>
                                             <NavLink exact to="/components/breadcrumbs">
-                                                Long
+                                                A
+                                            </NavLink>
+                                        </BreadcrumbItem>
+
+                                        <BreadcrumbItem>
+                                            <NavLink exact to="/components/breadcrumbs">
+                                                long
                                             </NavLink>
                                         </BreadcrumbItem>
 
@@ -437,7 +446,54 @@ export const Home = () => {
                                 </Link>
                             </Card>
                         </Element>
+
+                        {/*<Element as="div" className="grid-item" id="badge-card">*/}
+                        {/*    <Link to="/components/badge">*/}
+                        {/*        <Card*/}
+                        {/*            className="component-card"*/}
+                        {/*            padding="micro" shape="rounded" isFullHeight*/}
+                        {/*        >*/}
+                        {/*            <Element as="div" id="badge-wrapper">*/}
+                        {/*                <Badge*/}
+                        {/*                    bgColour="red-20" textColour="red-90"*/}
+                        {/*                    shape="curved"*/}
+                        {/*                    margin="nano"*/}
+                        {/*                >*/}
+                        {/*                    A*/}
+                        {/*                </Badge>*/}
+
+                        {/*                <Badge*/}
+                        {/*                    bgColour="green-20" textColour="green"*/}
+                        {/*                    shape="curved" size="large"*/}
+                        {/*                    margin="nano"*/}
+                        {/*                >*/}
+                        {/*                    BADGE*/}
+                        {/*                </Badge>*/}
+
+                        {/*                <Badge*/}
+                        {/*                    bgColour="amber-20" textColour="orange"*/}
+                        {/*                    shape="rounded"*/}
+                        {/*                    margin="nano"*/}
+                        {/*                >*/}
+                        {/*                    of*/}
+                        {/*                </Badge>*/}
+
+                        {/*                <Badge*/}
+                        {/*                    bgColour="purple-20" textColour="purple"*/}
+                        {/*                    shape="rounded" size="medium"*/}
+                        {/*                    margin="nano"*/}
+                        {/*                >*/}
+                        {/*                    HONOUR*/}
+                        {/*                </Badge>*/}
+                        {/*            </Element>*/}
+                        {/*        </Card>*/}
+                        {/*    </Link>*/}
+                        {/*</Element>*/}
                     </Element>
+                </Portion>
+
+                <Portion>
+                    <Text>...and many more.</Text>
                 </Portion>
             </Row>
 

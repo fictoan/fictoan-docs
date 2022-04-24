@@ -9,6 +9,13 @@ export const FictoanDarkTheme = {
         bg : `${darken(0.32, defaultColours.slate)}`
     },
 
+    //  BREADCRUMBS  ///////////////////////////////////////////////////////////
+    breadcrumbs : {
+        wrapper : {
+            bg : `${darken(0.32, defaultColours.slate)}`
+        }
+    },
+
     //  TEXT  /////////////////////////////////////////////////////////////////
     text : {
         font      : {
@@ -54,7 +61,8 @@ export const FictoanDarkTheme = {
             },
             prism  : {
                 tokens : {
-                    plain : `${lighten(0.56, defaultColours.red)}`
+                    plain : `${lighten(0.56, defaultColours.red)}`,
+                    selector : defaultColours.violet70
                 }
             }
         }
@@ -116,6 +124,38 @@ export const FictoanDarkTheme = {
         },
         radioButton : {
             default : {}
+        }
+    },
+
+    //  SWITCH  ///////////////////////////////////////////////////////////////
+    toggleSwitch : {
+        case : {
+            default   : {
+                bg : defaultColours.slate50
+            },
+            onHover   : {
+                bg : defaultColours.green40
+            },
+            isChecked : {
+                bg : defaultColours.green90
+            },
+            isDisabled : {
+                bg : defaultColours.grey
+            }
+        },
+        actuator : {
+            default   : {
+                bg : defaultColours.white
+            },
+            onHover   : {
+                bg : defaultColours.white
+            },
+            isChecked : {
+                bg : defaultColours.white
+            },
+            isDisabled : {
+                bg : defaultColours.grey70
+            }
         }
     },
 

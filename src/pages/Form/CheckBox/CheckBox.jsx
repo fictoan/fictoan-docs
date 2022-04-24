@@ -114,6 +114,7 @@ export const CheckBoxDocs = () => {
                             value="switch-1"
                             name="switch-1"
                             label="Toggle me"
+                            disabled
                         />
 
                         <Switch
