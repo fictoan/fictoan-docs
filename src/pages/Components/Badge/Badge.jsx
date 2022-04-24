@@ -1,9 +1,19 @@
 import React, { useEffect } from "react";
 
-import { Badge, CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import {
+    Element,
+    Row,
+    Portion,
+    Badge,
+    CodeBlock,
+    Heading,
+    HRule,
+    Table,
+    Text
+} from "fictoan-react";
 
 import { RadioButtonDocsStyled } from "./Badge.styled";
-import { sampleBadge, sampleBadgeSibling, sampleRadioButtonTheming } from "./CodeSamples";
+import { sampleBadge, sampleBadgeSibling } from "./CodeSamples";
 
 export const BadgeDocs = () => {
     useEffect(() => {
