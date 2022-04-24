@@ -23,7 +23,7 @@ import {
 import { HomeStyled } from "./Home.styled";
 
 //  Local assets
-
+import { ReactComponent as FictoanLogo } from "../../assets/images/logo.svg";
 
 export const Home = () => {
     useEffect(() => {
@@ -39,32 +39,67 @@ export const Home = () => {
         }
     }, []);
 
+    const sampleCode = `<Row gutters="large">
+    <Portion desktopSpan="half" mobileSpan="two-third">
+        <Heading as="h4" marginBottom="micro">Profile</Heading>
+        
+        <Card
+            shape="rounded" padding="micro"
+            bgColour="slate-10" borderColour="red-90"
+        >
+            <Text weight="600">{user.name}</Text>
+            <Text marginBottom="nano">{user.location.city}</Text>
+            
+            <Button
+                kind="primary" shadow="soft"
+                onClick={() => setShowUserDetails(true)}
+            >
+                Open profile
+            </Button>
+        </Card>
+    </Portion>
+</Row>`;
+
     const [, setShowNotification1] = useState(true);
 
-    const sampleCode = `const clickHere = () => {
+    const cardComponentSample = `const clickHere = () => {
     window.load("/components/card");
 }`;
+
 
     return (
         <HomeStyled>
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*  INTRO  */}
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-            <Row sidePadding="large" marginTop="tiny" marginBottom="none">
-                <Portion marginTop="small" marginBottom="small">
-                    <Heading as="h1" marginBottom="nano">Fictoan</Heading>
+            <Row sidePadding="large" marginTop="small" marginBottom="none">
+                <Portion desktopSpan="half">
+                    <FictoanLogo />
                     <Text
                         id="fictoan-full-form"
                         size="tiny"
                     >
                         *Fuck, I Couldn’t Think Of A Name
                     </Text>
+
                 </Portion>
 
-                <Portion desktopSpan="half" className="with-top-border">
+                <Portion desktopSpan="half">
+                    <Heading as="h4" marginBottom="micro">
+                        A performant and intuitive framework for quickly iterating UI design with code
+                    </Heading>
                     <Heading as="h4" textColour="grey-40" marginBottom="micro">v0.37.1</Heading>
 
                     <Element as="div" className="wrapping-list" marginBottom="micro">
+                        <a href="https://github.com/fictoan/fictoan-react" target="_blank" rel="noopener noreferrer">
+                            <Button
+                                kind="secondary" size="small" shape="rounded" shadow="hard"
+                                marginRight="nano" marginBottom="nano"
+                            >
+                                Github ↗
+                            </Button>
+                        </a>
+
                         <a
                             href="http://fictoan-storybook.s3-website.eu-central-1.amazonaws.com/"
                             target="_blank" rel="noopener noreferrer"
@@ -72,40 +107,63 @@ export const Home = () => {
                             <Button
                                 kind="secondary"
                                 size="small" shape="rounded" shadow="hard"
-                                marginRight="nano" marginBottom="nano"
                             >
                                 Storybook ↗
                             </Button>
                         </a>
-
-                        <a href="https://github.com/fictoan/fictoan-react" target="_blank" rel="noopener noreferrer">
-                            <Button kind="secondary" size="small" shape="rounded" shadow="hard">
-                                Github ↗
-                            </Button>
-                        </a>
                     </Element>
                 </Portion>
+            </Row>
 
-                <Portion desktopSpan="half" className="with-top-border">
-                    <Heading as="h5">
-                        An intuitive framework for quickly iterating UI design with code
+            <HRule kind="primary" sideMargin="large" />
+
+            <Row sidePadding="large" marginTop="small" marginBottom="none">
+                <Portion>
+                    <Portion>
+                        <Heading as="h4" marginBottom="nano">The idea</Heading>
+                    </Portion>
+                </Portion>
+
+                <Portion desktopSpan="half">
+                    <Heading as="h6" weight="400" marginBottom="nano">
+                        Fictoan focuses on code readability, and is primed for ease and speed of iteration.
                     </Heading>
 
+                    <Heading as="h6" weight="400" marginBottom="nano">
+                        Props, attributes and values are all plain English.
+                    </Heading>
+                </Portion>
 
-                    <HRule kind="primary" marginTop="micro" marginBottom="micro" />
+                <Portion desktopSpan="half">
+                    <Heading as="h6" weight="400" marginBottom="nano">
+                        We want designers also to be able to contribute in code&mdash;they can focus on layout, theming and
+                        pixel-perfection while engineers can focus on the integration&mdash;this saves time and
+                        headaches.
+                    </Heading>
 
                     <Link to="/manifesto">
                         Read the manifesto &rarr;
                     </Link>
                 </Portion>
 
-                <Portion desktopSpan="whole" className="with-top-border" />
+                <Portion>
+                    <CodeBlock
+                        source={sampleCode} language="jsx"
+                        marginTop="micro" marginBottom="micro"
+                    />
+                </Portion>
             </Row>
+
+            <HRule kind="primary" sideMargin="large" />
 
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*  COMPONENTS  */}
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             <Row sidePadding="large" marginBottom="medium">
+                <Portion>
+                    <Heading as="h4">Components</Heading>
+                </Portion>
+
                 <Portion>
                     <Element as="div" id="grid-wrapper" marginBottom="medium">
                         <Element as="div" className="grid-item">
@@ -256,7 +314,7 @@ export const Home = () => {
                                     id="" className="component-card"
                                     shape="rounded" isFullHeight
                                 >
-                                    <CodeBlock source={sampleCode} language="jsx" marginTop="micro"
+                                    <CodeBlock source={cardComponentSample} language="jsx" marginTop="micro"
                                                marginBottom="micro" />
                                 </Card>
                             </Link>
