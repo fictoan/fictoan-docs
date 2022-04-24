@@ -276,6 +276,16 @@ export const Sidebar = ({toggleTheme}) => {
                 </SidebarItem>
             </NavLink>
 
+            {/*  CALLOUT  ==========================================  */}
+            <NavLink exact to="/components/callout">
+                <SidebarItem>
+                    <SidebarItemIcon iconType="stroked">
+                        <NotificationIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Callout" />
+                </SidebarItem>
+            </NavLink>
+
             {/*  CODE BLOCK  =============================================  */}
             <NavLink exact to="/components/code-block">
                 <SidebarItem>
