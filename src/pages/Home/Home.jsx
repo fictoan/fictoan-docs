@@ -1,6 +1,6 @@
 //  External deps
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 //  Internal deps
 import {
@@ -16,7 +16,7 @@ import {
     Select,
     Table,
     CodeBlock,
-    ProgressBar
+    ProgressBar, BreadcrumbItem, BreadcrumbsWrapper, InputField, RadioButton, CheckBox, Switch
 } from "fictoan-react";
 
 //  Local components
@@ -29,14 +29,14 @@ export const Home = () => {
     useEffect(() => {
         document.title = "Home — Fictoan";
 
-        try {
-            window.scroll({
-                top  : 0,
-                left : 0
-            });
-        } catch (error) {
-            window.scrollTo(0, 0);
-        }
+        // try {
+        //     window.scroll({
+        //         top  : 0,
+        //         left : 0
+        //     });
+        // } catch (error) {
+        //     window.scrollTo(0, 0);
+        // }
     }, []);
 
     const sampleCode = `<Row gutters="large">
@@ -235,6 +235,20 @@ export const Home = () => {
                             </Link>
                         </Element>
 
+                        <Element as="div" className="grid-item" id="input-card">
+                            <Link to="/components/input-field">
+                                <Card
+                                    className="component-card"
+                                    padding="micro" shape="rounded" isFullHeight
+                                >
+                                    <InputField
+                                        label="Enter"
+                                        placeholder="here"
+                                    />
+                                </Card>
+                            </Link>
+                        </Element>
+
                         <Element as="div" className="grid-item" id="select-card">
                             <Link to="/components/select">
                                 <Card
@@ -308,14 +322,101 @@ export const Home = () => {
                             </Link>
                         </Element>
 
+                        <Element as="div" className="grid-item" id="breadcrumbs-card">
+                            <Link to="/components/breadcrumbs">
+                                <Card
+                                    id="" className="component-card"
+                                    shape="rounded" isFullHeight
+                                >
+                                    <BreadcrumbsWrapper>
+                                        <BreadcrumbItem>
+                                            <NavLink exact to="/components/breadcrumbs">
+                                                Long
+                                            </NavLink>
+                                        </BreadcrumbItem>
+
+                                        <BreadcrumbItem>
+                                            <NavLink exact to="/components/breadcrumbs">
+                                                trail
+                                            </NavLink>
+                                        </BreadcrumbItem>
+
+                                        <BreadcrumbItem>
+                                            <NavLink exact to="/components/breadcrumbs">
+                                                of
+                                            </NavLink>
+                                        </BreadcrumbItem>
+
+                                        <BreadcrumbItem>
+                                            <NavLink exact to="/components/breadcrumbs">
+                                                crumbs
+                                            </NavLink>
+                                        </BreadcrumbItem>
+                                    </BreadcrumbsWrapper>
+                                </Card>
+                            </Link>
+                        </Element>
+
+                        <Element as="div" className="grid-item" id="radio-card">
+                            <Link to="/components/radio-button">
+                                <Card
+                                    className="component-card"
+                                    padding="micro" shape="rounded" isFullHeight
+                                >
+                                    <Element as="div" marginBottom="micro">
+                                        <RadioButton
+                                            id="radio-1"
+                                            name="choices-1"
+                                            value="yes"
+                                            label="This"
+                                        />
+                                    </Element>
+
+                                    <RadioButton
+                                        id="radio-2"
+                                        name="choices-1"
+                                        value="no"
+                                        label="That"
+                                    />
+                                </Card>
+                            </Link>
+                        </Element>
+
+                        <Element as="div" className="grid-item" id="checkbox-card">
+                            <Link to="/components/checkbox">
+                                <Card
+                                    className="component-card"
+                                    padding="micro" shape="rounded" isFullHeight
+                                >
+                                    <Element as="div" marginBottom="micro">
+                                        <CheckBox
+                                            id="checkbox-1"
+                                            value="checkbox-1"
+                                            name="checkbox-1"
+                                            label="Check me"
+                                        />
+                                    </Element>
+
+                                    <Switch
+                                        id="switch-1"
+                                        value="switch-1"
+                                        name="switch-1"
+                                        label="Toggle me"
+                                    />
+                                </Card>
+                            </Link>
+                        </Element>
+
                         <Element as="div" className="grid-item" id="code-card">
                             <Link to="/components/code-block">
                                 <Card
                                     id="" className="component-card"
                                     shape="rounded" isFullHeight
                                 >
-                                    <CodeBlock source={cardComponentSample} language="jsx" marginTop="micro"
-                                               marginBottom="micro" />
+                                    <CodeBlock
+                                        source={cardComponentSample} language="jsx"
+                                        marginTop="micro" marginBottom="micro"
+                                    />
                                 </Card>
                             </Link>
                         </Element>
