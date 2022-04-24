@@ -447,48 +447,48 @@ export const Home = () => {
                             </Card>
                         </Element>
 
-                        {/*<Element as="div" className="grid-item" id="badge-card">*/}
-                        {/*    <Link to="/components/badge">*/}
-                        {/*        <Card*/}
-                        {/*            className="component-card"*/}
-                        {/*            padding="micro" shape="rounded" isFullHeight*/}
-                        {/*        >*/}
-                        {/*            <Element as="div" id="badge-wrapper">*/}
-                        {/*                <Badge*/}
-                        {/*                    bgColour="red-20" textColour="red-90"*/}
-                        {/*                    shape="curved"*/}
-                        {/*                    margin="nano"*/}
-                        {/*                >*/}
-                        {/*                    A*/}
-                        {/*                </Badge>*/}
+                        <Element as="div" className="grid-item" id="badge-card">
+                            <Link to="/components/badge">
+                                <Card
+                                    className="component-card"
+                                    padding="micro" shape="rounded" isFullHeight
+                                >
+                                    <Element as="div" id="badge-wrapper">
+                                        <Badge
+                                            bgColour="red-20" textColour="red-90"
+                                            shape="curved"
+                                            margin="nano"
+                                        >
+                                            A
+                                        </Badge>
 
-                        {/*                <Badge*/}
-                        {/*                    bgColour="green-20" textColour="green"*/}
-                        {/*                    shape="curved" size="large"*/}
-                        {/*                    margin="nano"*/}
-                        {/*                >*/}
-                        {/*                    BADGE*/}
-                        {/*                </Badge>*/}
+                                        <Badge
+                                            bgColour="green-20" textColour="green"
+                                            shape="curved" size="large"
+                                            margin="nano"
+                                        >
+                                            BADGE
+                                        </Badge>
 
-                        {/*                <Badge*/}
-                        {/*                    bgColour="amber-20" textColour="orange"*/}
-                        {/*                    shape="rounded"*/}
-                        {/*                    margin="nano"*/}
-                        {/*                >*/}
-                        {/*                    of*/}
-                        {/*                </Badge>*/}
+                                        <Badge
+                                            bgColour="amber-20" textColour="orange"
+                                            shape="rounded"
+                                            margin="nano"
+                                        >
+                                            of
+                                        </Badge>
 
-                        {/*                <Badge*/}
-                        {/*                    bgColour="purple-20" textColour="purple"*/}
-                        {/*                    shape="rounded" size="medium"*/}
-                        {/*                    margin="nano"*/}
-                        {/*                >*/}
-                        {/*                    HONOUR*/}
-                        {/*                </Badge>*/}
-                        {/*            </Element>*/}
-                        {/*        </Card>*/}
-                        {/*    </Link>*/}
-                        {/*</Element>*/}
+                                        <Badge
+                                            bgColour="purple-20" textColour="purple"
+                                            shape="rounded" size="medium"
+                                            margin="nano"
+                                        >
+                                            HONOUR
+                                        </Badge>
+                                    </Element>
+                                </Card>
+                            </Link>
+                        </Element>
                     </Element>
                 </Portion>
 

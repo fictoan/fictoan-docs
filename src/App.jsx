@@ -45,6 +45,7 @@ import { ProgressbarDocs } from "./pages/Form/ProgressBar/ProgressBar";
 import { SidebarDocs } from "./pages/Components/Sidebar/Sidebar";
 import { InputFieldDocs } from "./pages/Form/InputField/InputField";
 import { ToastDocs } from "./pages/Components/Toast/Toast";
+import { BadgeDocs } from "./pages/Components/Badge/Badge";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
@@ -145,6 +146,12 @@ export const App = () => {
                                 exact
                                 path="/components/info-panel"
                                 component={ InfoPanelDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/badge"
+                                component={ BadgeDocs }
                             />
 
                             <Route
