@@ -46,9 +46,12 @@ import { SidebarDocs } from "./pages/Components/Sidebar/Sidebar";
 import { InputFieldDocs } from "./pages/Form/InputField/InputField";
 import { ToastDocs } from "./pages/Components/Toast/Toast";
 import { BadgeDocs } from "./pages/Components/Badge/Badge";
+import { MobileHeader } from "./components/MobileHeader/MobileHeader";
 
 export const App = () => {
     let [currentTheme, setCurrentTheme] = useState("light");
+
+    let [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
     const toggleTheme = () => {
         if (currentTheme === "light") {
@@ -56,6 +59,10 @@ export const App = () => {
         } else {
             setCurrentTheme("light");
         }
+    }
+
+    const toggleSidebarVisibility = () => {
+        setIsSidebarVisible(!isSidebarVisible);
     }
 
     return (
@@ -66,9 +73,16 @@ export const App = () => {
                 <BrowserRouter>
                     <GlobalStyle />
 
-                    <Sidebar toggleTheme={toggleTheme} />
+                    <Sidebar
+                        toggleTheme={toggleTheme}
+                        isVisible={isSidebarVisible}
+                        setIsSidebarVisible={setIsSidebarVisible}
+                    />
 
                     <ContentWrapper>
+                        {/* Only visible on viewport width < 900px */}
+                        <MobileHeader currentTheme={currentTheme} toggleSidebarVisibility={toggleSidebarVisibility} />
+
                         <RouteSwitch>
                             <Route
                                 exact

@@ -28,6 +28,7 @@ export const HomeStyled = styled.article`
         .component-card {
             display       : grid;
             place-content : center;
+            overflow      : scroll;
         }
 
         @media all and (max-width : 1000px) {
@@ -70,9 +71,9 @@ export const HomeStyled = styled.article`
 
     #breadcrumbs-card {
         grid-area : breadcrumbs;
-        
+
         nav {
-            background-color: ${props => props.theme.card.bg};
+            background-color : ${props => props.theme.card.bg};
         }
     }
 

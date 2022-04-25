@@ -50,7 +50,7 @@ import { ReactComponent as TabsIcon } from "../../assets/icons/tabs.svg";
 import { ReactComponent as ToastIcon } from "../../assets/icons/toast.svg";
 
 
-export const Sidebar = ({toggleTheme}) => {
+export const Sidebar = ({toggleTheme, isVisible, setIsSidebarVisible}) => {
     const [sidebarState, setSidebarState] = useState("");
     // const themeContext = React.useContext(ThemeContext);
 
@@ -59,7 +59,10 @@ export const Sidebar = ({toggleTheme}) => {
     }
 
     return (
-        <SidebarWrapper className={`${sidebarState === "collapsed" ? "collapsed" : ""}`}>
+        <SidebarWrapper
+            id="docs-sidebar"
+            className={`${sidebarState === "collapsed" ? "collapsed" : ""} ${isVisible ? "visible" : ""}`}
+        >
             <SidebarHeader isSticky onClick={headerOnClick}>
                 <div className="header-logo">
                     <FictoanLogo />

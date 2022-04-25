@@ -15,4 +15,6 @@ export const GlobalStyle = createGlobalStyle`
         border-top  : 2px solid ${defaultColours.black};
         padding-top : 32px;
     }
+
+    #docs-sidebar.visible { left : 0; }
 `;
