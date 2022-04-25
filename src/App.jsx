@@ -26,6 +26,7 @@ import { FormDocs } from "./pages/Form/FormWrapper/Form";
 
 import { ButtonDocs } from "./pages/Components/Button/Button";
 import { CardDocs } from "./pages/Components/Card/Card";
+import { CalloutDocs } from "./pages/Components/Callout/Callout";
 import { HRuleDocs } from "./pages/Components/HRule/HRule";
 import { TableDocs } from "./pages/Components/Table/Table";
 
@@ -142,6 +143,12 @@ export const App = () => {
                                 exact
                                 path="/components/breadcrumbs"
                                 component={ BreadcrumbsDocs }
+                            />
+
+                            <Route
+                                exact
+                                path="/components/callout"
+                                component={ CalloutDocs }
                             />
 
                             <Route

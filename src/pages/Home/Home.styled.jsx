@@ -14,6 +14,7 @@ export const HomeStyled = styled.article`
             "input       table       table        progress    "
             "select      table       table        colour      "
             "breadcrumbs breadcrumbs radio        colour      "
+            "callout     callout     callout      badge           "
             "checkbox    code        code         badge       "
             ".           .           .            .           ";
 
@@ -105,5 +106,10 @@ export const HomeStyled = styled.article`
         rgba(241, 105, 236, 1) 50%,
         rgba(87, 116, 255, 1) 77%,
         rgba(95, 246, 247, 1) 100%);
+    }
+
+    #callout-card {
+        grid-area : callout;
+
     }
 `;

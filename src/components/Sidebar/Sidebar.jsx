@@ -37,6 +37,7 @@ import { ReactComponent as ProgressBarIcon } from "../../assets/icons/progress-b
 import { ReactComponent as SelectIcon } from "../../assets/icons/dropdown.svg";
 
 import { ReactComponent as BadgeIcon } from "../../assets/icons/badge.svg";
+import { ReactComponent as CalloutIcon } from "../../assets/icons/callout.svg";
 import { ReactComponent as BreadcrumbsIcon } from "../../assets/icons/breadcrumbs.svg";
 import { ReactComponent as ButtonIcon } from "../../assets/icons/button.svg";
 import { ReactComponent as CardIcon } from "../../assets/icons/card.svg";
@@ -299,6 +300,16 @@ export const Sidebar = ({toggleTheme, isVisible, setIsSidebarVisible}) => {
                         <CardIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Card" />
+                </SidebarItem>
+            </NavLink>
+
+            {/*  CALLOUT  ==========================================  */}
+            <NavLink exact to="/components/callout">
+                <SidebarItem>
+                    <SidebarItemIcon iconType="stroked">
+                        <CalloutIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Callout" />
                 </SidebarItem>
             </NavLink>
 
