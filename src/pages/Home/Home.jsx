@@ -16,6 +16,7 @@ import {
     Select,
     Table,
     CodeBlock,
+    Callout,
     ProgressBar, BreadcrumbItem, BreadcrumbsWrapper, InputField, RadioButton, CheckBox, Switch
 } from "fictoan-react";
 
@@ -486,6 +487,20 @@ export const Home = () => {
                                             HONOUR
                                         </Badge>
                                     </Element>
+                                </Card>
+                            </Link>
+                        </Element>
+                        <Element as="div" className="grid-item" id="callout-card">
+                            <Link to="/components/callout">
+                                <Card
+                                    className="component-card"
+                                    padding="micro" shape="rounded" isFullHeight
+                                >
+                                    <Callout
+                                        kind="success"
+                                    >
+                                        I’d also just like to call out that FICTOAN is awesome.
+                                    </Callout>
                                 </Card>
                             </Link>
                         </Element>
