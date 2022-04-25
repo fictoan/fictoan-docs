@@ -11,7 +11,7 @@ import {
     Row,
     Table,
     Text,
-    Tag
+    Badge
 } from "fictoan-react";
 
 import { CalloutDocsStyled } from "./Callout.styled";
@@ -38,11 +38,17 @@ export const CalloutDocs = () => {
     return (
         <CalloutDocsStyled>
 
+            <Row sidePadding="huge" marginTop="medium" marginBottom="small">
+                <Portion>
+                    <Heading as="h2" className="text-hue">Callout</Heading>
+                </Portion>
+            </Row>
+
             <Row sidePadding="huge">
                 <Portion>
                     <Heading as="h3" marginBottom="micro">Props</Heading>
 
-                    <Heading as="h5" marginBottom="nano">Custom props — Callout</Heading>
+                    <Heading as="h5" marginBottom="nano">Custom props</Heading>
                     <Table bordersFor="both" padding="tiny" isFullWidth>
                         <thead className="bg-slate-10">
                             <tr>
@@ -71,7 +77,7 @@ export const CalloutDocs = () => {
                                 </td>
 
                                 <td>
-                                    <Callout>This.</Callout>
+                                    <Text>&mdash;</Text>
                                 </td>
                             </tr>
 
@@ -131,21 +137,19 @@ export const CalloutDocs = () => {
                         </Row>
 
                         <Text marginTop="micro" marginBottom="micro">
-                            Feel free to modify this. Wrap any markup inside
+                            Also, wrap any markup inside
                             the <code>Callout</code>.
                         </Text>
                         <Callout kind="info" marginBottom="nano">
-                            <Element as="div" className="vertically-centre-items push-to-ends">
-                                <Element as="div">
-                                    <Heading as="h3" marginBottom="nano">Add headings.</Heading>
-                                    <Text marginBottom="nano">Type regular text or insert some <code>code</code>.</Text>
-                                </Element>
-                                <Tag shape="rounded" bgColor="grey-20" borderColor="grey-80" textColor="grey-80" marginBottom="tiny">Or a status tag</Tag>
+                            <Element as="div" className="vertically-centre-items" marginBottom="nano">
+                                <Heading as="h3">Add headings.&nbsp;</Heading>
+                                <Badge shape="rounded" bgColor="blue-40" borderColor="blue-80" textColor="blue">Or a status tag</Badge>
                             </Element>
-                            <Text>Seriously, anything.</Text>
+                            <Text marginBottom="tiny">Type regular text or insert some <code>code</code>.</Text>
+                            <Text>Seriously, add anything.</Text>
                             <CodeBlock source={sampleCodeInsideCallout} language="css" marginBottom="tiny"/>
 
-                            <Button kind="primary">End with a button?</Button>
+                            <Button kind="primary">And end with a button?</Button>
                         </Callout>
                     </Portion>
                 </Row>
