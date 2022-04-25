@@ -34,7 +34,7 @@ export const ThemeDocs = () => {
 
     return (
         <ThemeStyled>
-            <Row sidePadding="huge" marginTop="small" marginBottom="small">
+            <Row sidePadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h2" className="text-hue" marginBottom="small">Theme reference</Heading>
                     <Text marginBottom="micro">

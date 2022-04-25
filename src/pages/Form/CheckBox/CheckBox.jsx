@@ -21,7 +21,7 @@ export const CheckBoxDocs = () => {
 
     return (
         <CheckBoxDocsStyled>
-            <Row sidePadding="huge" marginTop="small" marginBottom="small">
+            <Row sidePadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h2" className="text-hue">CheckBox / Switch</Heading>
                 </Portion>
@@ -63,7 +63,6 @@ export const CheckBoxDocs = () => {
                         </Text>
 
                         <CheckBox
-                            as="input"
                             id="checkbox-1"
                             value="checkbox-1"
                             name="checkbox-1"
@@ -71,7 +70,6 @@ export const CheckBoxDocs = () => {
                         />
 
                         <CheckBox
-                            as="input"
                             id="checkbox-2"
                             value="checkbox-2"
                             name="checkbox-2"
@@ -79,7 +77,6 @@ export const CheckBoxDocs = () => {
                         />
 
                         <CheckBox
-                            as="input"
                             id="checkbox-3"
                             value="checkbox-3"
                             name="checkbox-3"
@@ -113,15 +110,14 @@ export const CheckBoxDocs = () => {
                         </Text>
 
                         <Switch
-                            as="input"
                             id="switch-1"
                             value="switch-1"
                             name="switch-1"
                             label="Toggle me"
+                            disabled
                         />
 
                         <Switch
-                            as="input"
                             id="switch-2"
                             value="switch-2"
                             name="switch-2"
@@ -129,7 +125,6 @@ export const CheckBoxDocs = () => {
                         />
 
                         <Switch
-                            as="input"
                             id="switch-3"
                             value="switch-3"
                             name="switch-3"

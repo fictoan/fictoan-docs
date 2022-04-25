@@ -1,6 +1,6 @@
 //  External deps
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 //  Internal deps
 import {
@@ -16,14 +16,15 @@ import {
     Select,
     Table,
     CodeBlock,
-    ProgressBar
+    ProgressBar, BreadcrumbItem, BreadcrumbsWrapper, InputField, RadioButton, CheckBox, Switch
 } from "fictoan-react";
 
 //  Local components
 import { HomeStyled } from "./Home.styled";
 
 //  Local assets
-
+import { ReactComponent as FictoanLogo } from "../../assets/images/logo.svg";
+import { Badge } from "fictoan-react/dist/es/components/Badge/Badge";
 
 export const Home = () => {
     useEffect(() => {
@@ -39,32 +40,67 @@ export const Home = () => {
         }
     }, []);
 
+    const sampleCode = `<Row gutters="large">
+    <Portion desktopSpan="half" mobileSpan="two-third">
+        <Heading as="h4" marginBottom="micro">Profile</Heading>
+        
+        <Card
+            shape="rounded" padding="micro"
+            bgColour="slate-10" borderColour="red-90"
+        >
+            <Text weight="600">{user.name}</Text>
+            <Text marginBottom="nano">{user.location.city}</Text>
+            
+            <Button
+                kind="primary" shadow="soft"
+                onClick={() => setShowUserDetails(true)}
+            >
+                Open profile
+            </Button>
+        </Card>
+    </Portion>
+</Row>`;
+
     const [, setShowNotification1] = useState(true);
 
-    const sampleCode = `const clickHere = () => {
+    const cardComponentSample = `const clickHere = () => {
     window.load("/components/card");
 }`;
+
 
     return (
         <HomeStyled>
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*  INTRO  */}
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-            <Row sidePadding="large" marginTop="tiny" marginBottom="none">
-                <Portion marginTop="small" marginBottom="small">
-                    <Heading as="h1" marginBottom="nano">Fictoan</Heading>
+            <Row sidePadding="large" marginTop="small" marginBottom="none">
+                <Portion desktopSpan="half">
+                    <FictoanLogo />
                     <Text
                         id="fictoan-full-form"
                         size="tiny"
                     >
                         *Fuck, I Couldn’t Think Of A Name
                     </Text>
+
                 </Portion>
 
-                <Portion desktopSpan="half" className="with-top-border">
+                <Portion desktopSpan="half">
+                    <Heading as="h4" marginBottom="micro">
+                        A performant and intuitive framework for quickly iterating UI design with code
+                    </Heading>
                     <Heading as="h4" textColour="grey-40" marginBottom="micro">v0.37.1</Heading>
 
                     <Element as="div" className="wrapping-list" marginBottom="micro">
+                        <a href="https://github.com/fictoan/fictoan-react" target="_blank" rel="noopener noreferrer">
+                            <Button
+                                kind="secondary" size="small" shape="rounded" shadow="hard"
+                                marginRight="nano" marginBottom="nano"
+                            >
+                                Github ↗
+                            </Button>
+                        </a>
+
                         <a
                             href="http://fictoan-storybook.s3-website.eu-central-1.amazonaws.com/"
                             target="_blank" rel="noopener noreferrer"
@@ -72,42 +108,67 @@ export const Home = () => {
                             <Button
                                 kind="secondary"
                                 size="small" shape="rounded" shadow="hard"
-                                marginRight="nano" marginBottom="nano"
                             >
                                 Storybook ↗
                             </Button>
                         </a>
-
-                        <a href="https://github.com/fictoan/fictoan-react" target="_blank" rel="noopener noreferrer">
-                            <Button kind="secondary" size="small" shape="rounded" shadow="hard">
-                                Github ↗
-                            </Button>
-                        </a>
                     </Element>
                 </Portion>
+            </Row>
 
-                <Portion desktopSpan="half" className="with-top-border">
-                    <Heading as="h5">
-                        An intuitive framework for quickly iterating UI design with code
+            <HRule kind="primary" sideMargin="large" />
+
+            <Row sidePadding="large" marginTop="small" marginBottom="none">
+                <Portion>
+                    <Portion>
+                        <Heading as="h4" marginBottom="nano">The idea</Heading>
+                    </Portion>
+                </Portion>
+
+                <Portion desktopSpan="half">
+                    <Heading as="h6" weight="400" marginBottom="nano">
+                        Fictoan focuses on code readability, and is primed for ease and speed of iteration.
                     </Heading>
 
+                    <Heading as="h6" weight="400" marginBottom="nano">
+                        Props, attributes and values are all plain English.
+                    </Heading>
+                </Portion>
 
-                    <HRule kind="primary" marginTop="micro" marginBottom="micro" />
+                <Portion desktopSpan="half">
+                    <Heading as="h6" weight="400" marginBottom="nano">
+                        We want designers also to be able to contribute in code&mdash;they can focus on layout, theming
+                        and pixel-perfection while engineers can focus on the integration&mdash;this saves time and
+                        headaches.
+                    </Heading>
 
                     <Link to="/manifesto">
                         Read the manifesto &rarr;
                     </Link>
                 </Portion>
 
-                <Portion desktopSpan="whole" className="with-top-border" />
+                <Portion>
+                    <CodeBlock
+                        source={sampleCode} language="jsx"
+                        marginTop="micro" marginBottom="micro"
+                    />
+
+                    <Text marginTop="nano">How simple is that markup?</Text>
+                </Portion>
             </Row>
+
+            <HRule kind="primary" sideMargin="large" />
 
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*  COMPONENTS  */}
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             <Row sidePadding="large" marginBottom="medium">
                 <Portion>
-                    <Element as="div" id="grid-wrapper" marginBottom="medium">
+                    <Heading as="h4">Components</Heading>
+                </Portion>
+
+                <Portion>
+                    <Element as="div" id="grid-wrapper">
                         <Element as="div" className="grid-item">
                             <Link to="/components/button">
                                 <Card
@@ -172,6 +233,20 @@ export const Home = () => {
                                         label="Loading..."
                                         barBg="green-20" barFill="green-90"
                                         height="8px" shape="rounded"
+                                    />
+                                </Card>
+                            </Link>
+                        </Element>
+
+                        <Element as="div" className="grid-item" id="input-card">
+                            <Link to="/components/input-field">
+                                <Card
+                                    className="component-card"
+                                    padding="micro" shape="rounded" isFullHeight
+                                >
+                                    <InputField
+                                        label="Enter"
+                                        placeholder="here"
                                     />
                                 </Card>
                             </Link>
@@ -250,14 +325,107 @@ export const Home = () => {
                             </Link>
                         </Element>
 
+                        <Element as="div" className="grid-item" id="breadcrumbs-card">
+                            <Link to="/components/breadcrumbs">
+                                <Card
+                                    id="" className="component-card"
+                                    shape="rounded" isFullHeight
+                                >
+                                    <BreadcrumbsWrapper>
+                                        <BreadcrumbItem>
+                                            <NavLink exact to="/components/breadcrumbs">
+                                                A
+                                            </NavLink>
+                                        </BreadcrumbItem>
+
+                                        <BreadcrumbItem>
+                                            <NavLink exact to="/components/breadcrumbs">
+                                                long
+                                            </NavLink>
+                                        </BreadcrumbItem>
+
+                                        <BreadcrumbItem>
+                                            <NavLink exact to="/components/breadcrumbs">
+                                                trail
+                                            </NavLink>
+                                        </BreadcrumbItem>
+
+                                        <BreadcrumbItem>
+                                            <NavLink exact to="/components/breadcrumbs">
+                                                of
+                                            </NavLink>
+                                        </BreadcrumbItem>
+
+                                        <BreadcrumbItem>
+                                            <NavLink exact to="/components/breadcrumbs">
+                                                crumbs
+                                            </NavLink>
+                                        </BreadcrumbItem>
+                                    </BreadcrumbsWrapper>
+                                </Card>
+                            </Link>
+                        </Element>
+
+                        <Element as="div" className="grid-item" id="radio-card">
+                            <Link to="/components/radio-button">
+                                <Card
+                                    className="component-card"
+                                    padding="micro" shape="rounded" isFullHeight
+                                >
+                                    <Element as="div" marginBottom="micro">
+                                        <RadioButton
+                                            id="radio-1"
+                                            name="choices-1"
+                                            value="yes"
+                                            label="This"
+                                        />
+                                    </Element>
+
+                                    <RadioButton
+                                        id="radio-2"
+                                        name="choices-1"
+                                        value="no"
+                                        label="That"
+                                    />
+                                </Card>
+                            </Link>
+                        </Element>
+
+                        <Element as="div" className="grid-item" id="checkbox-card">
+                            <Link to="/components/checkbox">
+                                <Card
+                                    className="component-card"
+                                    padding="micro" shape="rounded" isFullHeight
+                                >
+                                    <Element as="div" marginBottom="micro">
+                                        <CheckBox
+                                            id="checkbox-1"
+                                            value="checkbox-1"
+                                            name="checkbox-1"
+                                            label="Check me"
+                                        />
+                                    </Element>
+
+                                    <Switch
+                                        id="switch-1"
+                                        value="switch-1"
+                                        name="switch-1"
+                                        label="Toggle me"
+                                    />
+                                </Card>
+                            </Link>
+                        </Element>
+
                         <Element as="div" className="grid-item" id="code-card">
                             <Link to="/components/code-block">
                                 <Card
                                     id="" className="component-card"
                                     shape="rounded" isFullHeight
                                 >
-                                    <CodeBlock source={sampleCode} language="jsx" marginTop="micro"
-                                               marginBottom="micro" />
+                                    <CodeBlock
+                                        source={cardComponentSample} language="jsx"
+                                        marginTop="micro" marginBottom="micro"
+                                    />
                                 </Card>
                             </Link>
                         </Element>
@@ -278,7 +446,54 @@ export const Home = () => {
                                 </Link>
                             </Card>
                         </Element>
+
+                        <Element as="div" className="grid-item" id="badge-card">
+                            <Link to="/components/badge">
+                                <Card
+                                    className="component-card"
+                                    padding="micro" shape="rounded" isFullHeight
+                                >
+                                    <Element as="div" id="badge-wrapper">
+                                        <Badge
+                                            bgColour="red-20" textColour="red-90"
+                                            shape="curved"
+                                            margin="nano"
+                                        >
+                                            A
+                                        </Badge>
+
+                                        <Badge
+                                            bgColour="green-20" textColour="green"
+                                            shape="curved" size="large"
+                                            margin="nano"
+                                        >
+                                            BADGE
+                                        </Badge>
+
+                                        <Badge
+                                            bgColour="amber-20" textColour="orange"
+                                            shape="rounded"
+                                            margin="nano"
+                                        >
+                                            of
+                                        </Badge>
+
+                                        <Badge
+                                            bgColour="purple-20" textColour="purple"
+                                            shape="rounded" size="medium"
+                                            margin="nano"
+                                        >
+                                            HONOUR
+                                        </Badge>
+                                    </Element>
+                                </Card>
+                            </Link>
+                        </Element>
                     </Element>
+                </Portion>
+
+                <Portion>
+                    <Text>...and many more.</Text>
                 </Portion>
             </Row>
 

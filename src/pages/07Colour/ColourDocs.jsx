@@ -31,7 +31,7 @@ export const ColourDocs = () => {
 
     return (
         <ColourStyled>
-            <Row sidePadding="huge" marginTop="small" marginBottom="small">
+            <Row sidePadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h2" textColour="hue">Colour</Heading>
                 </Portion>
