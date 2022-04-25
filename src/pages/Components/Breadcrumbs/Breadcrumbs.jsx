@@ -32,7 +32,7 @@ export const BreadcrumbsDocs = () => {
 
     return (
         <BreadcrumbsStyled>
-            <Row sidePadding="huge" marginTop="small" marginBottom="small">
+            <Row sidePadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h2" className="text-hue">Breadcrumbs</Heading>
                 </Portion>

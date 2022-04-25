@@ -30,7 +30,7 @@ export const TableDocs = () => {
 
     return (
         <TableStyled>
-            <Row sidePadding="huge" marginTop="small" marginBottom="small">
+            <Row sidePadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h2" className="text-hue">Table</Heading>
                 </Portion>

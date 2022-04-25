@@ -34,7 +34,7 @@ export const ButtonDocs = () => {
 
     return (
         <ButtonStyled>
-            <Row sidePadding="huge" marginTop="small" marginBottom="small">
+            <Row sidePadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h2" className="text-hue">Button</Heading>
                 </Portion>
