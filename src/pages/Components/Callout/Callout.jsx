@@ -60,7 +60,7 @@ export const CalloutDocs = () => {
                                 </td>
 
                                 <td>
-                                    <Text>Callouts for various scenarios.</Text>
+                                    <Text>Default callouts for different situations.</Text>
                                 </td>
 
                                 <td>
@@ -114,7 +114,7 @@ export const CalloutDocs = () => {
                         <Heading as="h3" marginBottom="tiny">Default</Heading>
                         <Row>
                             <Portion>
-                                <Text>The <code>Callout</code> lets you highlight messages with these easy defaults.</Text>
+                                <Text>The <code>Callout</code> component lets you highlight messages with these easy defaults.</Text>
                             </Portion>
                             <Portion desktopSpan="half">
                                 <Callout kind="info" marginBottom="nano">This works. Just FYI.</Callout>
