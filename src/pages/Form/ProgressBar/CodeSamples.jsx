@@ -14,6 +14,12 @@ export const sampleProgressBarMaxAndValue5 = `<ProgressBar max="1" value="0.36" 
 export const sampleProgressBarLabel = `<ProgressBar
     value="40" unit="%" max="100"
     label="Loading..."
+/>
+
+<ProgressBar
+    max="100" value="12"
+    label="Downloading"
+    unit="&nbsp;files done"
 />`;
 
 
