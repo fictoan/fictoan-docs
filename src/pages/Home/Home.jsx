@@ -83,7 +83,6 @@ export const Home = () => {
                     >
                         *Fuck, I Couldn’t Think Of A Name
                     </Text>
-
                 </Portion>
 
                 <Portion desktopSpan="half">
