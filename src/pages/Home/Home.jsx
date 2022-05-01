@@ -89,7 +89,7 @@ export const Home = () => {
                     <Heading as="h4" marginBottom="micro">
                         A performant and intuitive framework for quickly iterating UI design with code
                     </Heading>
-                    <Heading as="h4" textColour="grey-40" marginBottom="micro">v0.37.1</Heading>
+                    <Heading as="h4" textColour="grey-40" marginBottom="micro">v0.39.2</Heading>
 
                     <Element as="div" className="wrapping-list" marginBottom="micro">
                         <a href="https://github.com/fictoan/fictoan-react" target="_blank" rel="noopener noreferrer">
