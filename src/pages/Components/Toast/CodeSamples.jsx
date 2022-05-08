@@ -35,7 +35,7 @@ export const sampleNotificationsCallback = `<NotificationItem
 
 //  Code sample 03 ////////////////////////////////////////////////////////////
 export const sampleToastTimeout = `<ToastItem
-    timeout={5000}  // 5 seconds
+    showFor={5000}  // 5 seconds
 />`;
 
 

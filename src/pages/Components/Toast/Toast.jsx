@@ -128,11 +128,11 @@ export const ToastDocs = () => {
 
                             <tr>
                                 <td>
-                                    <code>timeout</code>
+                                    <code>showFor</code>
                                 </td>
 
                                 <td>
-                                    Milliseconds after which to remove the notification
+                                    Milliseconds after which to remove the toast
                                 </td>
 
                                 <td>
@@ -352,10 +352,10 @@ export const ToastDocs = () => {
                 {/*  =============================================================================================  */}
                 <Row sidePadding="huge">
                     <Portion>
-                        <Heading as="h5" marginBottom="nano">Timeout</Heading>
+                        <Heading as="h5" marginBottom="nano">Show for</Heading>
 
                         <Text marginBottom="micro">
-                            You can also add a <code>timeout</code> prop with a millisecond duration to keep the
+                            You can also add a <code>showFor</code> prop with a millisecond duration value to keep the
                             toast on-screen for that long.
                         </Text>
 

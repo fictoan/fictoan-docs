@@ -17,7 +17,14 @@ import {
     Table,
     CodeBlock,
     Callout,
-    ProgressBar, BreadcrumbItem, BreadcrumbsWrapper, InputField, RadioButton, CheckBox, Switch
+    ProgressBar,
+    BreadcrumbItem,
+    BreadcrumbsWrapper,
+    InputField,
+    RadioButton,
+    CheckBox,
+    Switch,
+    Badge
 } from "fictoan-react";
 
 //  Local components
@@ -25,7 +32,6 @@ import { HomeStyled } from "./Home.styled";
 
 //  Local assets
 import { ReactComponent as FictoanLogo } from "../../assets/images/logo.svg";
-import { Badge } from "fictoan-react/dist/es/components/Badge/Badge";
 
 export const Home = () => {
     useEffect(() => {
@@ -89,7 +95,7 @@ export const Home = () => {
                     <Heading as="h4" marginBottom="micro">
                         A performant and intuitive framework for quickly iterating UI design with code
                     </Heading>
-                    <Heading as="h4" textColour="grey-40" marginBottom="micro">v0.39.2</Heading>
+                    <Heading as="h4" textColour="grey-40" marginBottom="micro">v0.41.1</Heading>
 
                     <Element as="div" className="wrapping-list" marginBottom="micro">
                         <a href="https://github.com/fictoan/fictoan-react" target="_blank" rel="noopener noreferrer">

@@ -81,7 +81,7 @@ export const App = () => {
                     />
 
                     <ContentWrapper>
-                        {/* Only visible on viewport width < 900px */}
+                         {/*Only visible on viewport width < 900px */}
                         <MobileHeader currentTheme={currentTheme} toggleSidebarVisibility={toggleSidebarVisibility} />
 
                         <RouteSwitch>
