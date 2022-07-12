@@ -14,11 +14,12 @@ import { FictoanLightTheme } from "./styles/Fictoan.light.theme";
 import { FictoanDarkTheme } from "./styles/Fictoan.dark.theme";
 import { GlobalStyle } from "./styles/Global.styled";
 
-import { Home } from "./pages/Home/Home";
-import { Manifesto } from "./pages/02Manifesto/Manifesto";
+import { Home } from "./pages/00-1Home/Home";
+import { Manifesto } from "./pages/00-2Manifesto/Manifesto";
 
 import { GettingStarted } from "./pages/01GettingStarted/GettingStarted";
 import { Layout } from "./pages/05Layout/Layout";
+import { UtilitiesDocs } from "./pages/Utilities/Utilities";
 import { TypographyDocs } from "./pages/06Typography/Typography";
 import { ColourDocs } from "./pages/07Colour/ColourDocs";
 
@@ -85,167 +86,66 @@ export const App = () => {
                         <MobileHeader currentTheme={currentTheme} toggleSidebarVisibility={toggleSidebarVisibility} />
 
                         <RouteSwitch>
-                            <Route
-                                exact
-                                path="/"
-                                component={ Home }
-                            />
+                            {/*  INTRO  ==========================================================================  */}
+                            <Route exact path="/" component={ Home } />
 
-                            <Route
-                                exact
-                                path="/manifesto"
-                                component={ Manifesto }
-                            />
+                            <Route exact path="/manifesto" component={ Manifesto } />
 
-                            <Route
-                                exact
-                                path="/getting-started"
-                                component={ GettingStarted }
-                            />
+                            {/*  BASICS  =========================================================================  */}
+                            <Route exact path="/getting-started" component={ GettingStarted } />
 
-                            <Route
-                                exact
-                                path="/theme"
-                                component={ ThemeDocs }
-                            />
+                            <Route exact path="/theme" component={ ThemeDocs } />
 
-                            <Route
-                                exact
-                                path="/base-element"
-                                component={ BaseElementDocs }
-                            />
+                            <Route exact path="/base-element" component={ BaseElementDocs } />
 
-                            <Route
-                                exact
-                                path="/layout"
-                                component={ Layout }
-                            />
+                            <Route exact path="/utilities" component={ UtilitiesDocs } />
 
-                            <Route
-                                exact
-                                path="/typography"
-                                component={ TypographyDocs }
-                            />
+                            <Route exact path="/layout" component={ Layout } />
 
-                            <Route
-                                exact
-                                path="/colour"
-                                component={ ColourDocs }
-                            />
+                            <Route exact path="/typography" component={ TypographyDocs } />
 
-                            <Route
-                                exact
-                                path="/components/card"
-                                component={ CardDocs }
-                            />
+                            <Route exact path="/colour" component={ ColourDocs } />
 
-                            <Route
-                                exact
-                                path="/components/breadcrumbs"
-                                component={ BreadcrumbsDocs }
-                            />
+                            {/*  FORM  ===========================================================================  */}
+                            <Route exact path="/components/form" component={ FormDocs } />
 
-                            <Route
-                                exact
-                                path="/components/callout"
-                                component={ CalloutDocs }
-                            />
+                            <Route exact path="/components/checkbox" component={ CheckBoxDocs } />
 
-                            <Route
-                                exact
-                                path="/components/code-block"
-                                component={ CodeBlockDocs }
-                            />
+                            <Route exact path="/components/radio-button" component={ RadioButtonDocs } />
 
-                            <Route
-                                exact
-                                path="/components/hrule"
-                                component={ HRuleDocs }
-                            />
+                            <Route exact path="/components/progress-bar" component={ ProgressbarDocs } />
 
-                            <Route
-                                exact
-                                path="/components/info-panel"
-                                component={ InfoPanelDocs }
-                            />
+                            <Route exact path="/components/select" component={ SelectDocs } />
 
-                            <Route
-                                exact
-                                path="/components/badge"
-                                component={ BadgeDocs }
-                            />
+                            {/*  COMPONENTS  ====================================================================== */}
+                            <Route exact path="/components/card" component={ CardDocs } />
 
-                            <Route
-                                exact
-                                path="/components/button"
-                                component={ ButtonDocs }
-                            />
+                            <Route exact path="/components/breadcrumbs" component={ BreadcrumbsDocs } />
 
-                            <Route
-                                exact
-                                path="/components/form"
-                                component={ FormDocs }
-                            />
+                            <Route exact path="/components/callout" component={ CalloutDocs } />
 
-                            <Route
-                                exact
-                                path="/components/checkbox"
-                                component={ CheckBoxDocs }
-                            />
+                            <Route exact path="/components/code-block" component={ CodeBlockDocs } />
 
-                            <Route
-                                exact
-                                path="/components/radio-button"
-                                component={ RadioButtonDocs }
-                            />
+                            <Route exact path="/components/hrule" component={ HRuleDocs } />
 
-                            <Route
-                                exact
-                                path="/components/select"
-                                component={ SelectDocs }
-                            />
+                            <Route exact path="/components/info-panel" component={ InfoPanelDocs } />
 
-                            <Route
-                                exact
-                                path="/components/progress-bar"
-                                component={ ProgressbarDocs }
-                            />
+                            <Route exact path="/components/badge" component={ BadgeDocs } />
 
-                            <Route
-                                exact
-                                path="/components/notification"
-                                component={ NotificationDocs }
-                            />
+                            <Route exact path="/components/button" component={ ButtonDocs } />
 
-                            <Route
-                                exact
-                                path="/components/sidebar-wrapper"
-                                component={ SidebarDocs }
-                            />
 
-                            <Route
-                                exact
-                                path="/components/table"
-                                component={ TableDocs }
-                            />
+                            <Route exact path="/components/notification" component={ NotificationDocs } />
 
-                            <Route
-                                exact
-                                path="/components/tabs"
-                                component={ TabsDocs }
-                            />
+                            <Route exact path="/components/sidebar-wrapper" component={ SidebarDocs } />
 
-                            <Route
-                                exact
-                                path="/components/input-field"
-                                component={ InputFieldDocs }
-                            />
+                            <Route exact path="/components/table" component={ TableDocs } />
 
-                            <Route
-                                exact
-                                path="/components/toast"
-                                component={ ToastDocs }
-                            />
+                            <Route exact path="/components/tabs" component={ TabsDocs } />
+
+                            <Route exact path="/components/input-field" component={ InputFieldDocs } />
+
+                            <Route exact path="/components/toast" component={ ToastDocs } />
                         </RouteSwitch>
                     </ContentWrapper>
                 </BrowserRouter>

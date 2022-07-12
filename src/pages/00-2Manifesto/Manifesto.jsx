@@ -14,7 +14,7 @@ import { ManifestoStyled } from "./Manifesto.styled";
 
 export const Manifesto = () => {
     useEffect(() => {
-        document.title = "02Manifesto — Fictoan";
+        document.title = "00-2Manifesto — Fictoan";
     }, []);
 
     return (
