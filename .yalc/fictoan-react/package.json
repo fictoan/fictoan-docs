@@ -1,0 +1,30 @@
+{
+    "name": "fictoan-react",
+    "version": "1.0.0",
+    "private": false,
+    "description": "",
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        }
+    },
+    "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "build": "vite build && tsc",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "peerDependencies": {
+        "react": "^18.2.0"
+    },
+    "yalcSig": "6625b7ba903d8a4612ca027a0e6a77a3"
+}
