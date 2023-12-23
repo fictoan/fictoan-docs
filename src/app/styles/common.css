@@ -1,0 +1,5 @@
+.theme-dark {
+    #fictoan-logo {
+        filter: invert(1);
+    }
+}

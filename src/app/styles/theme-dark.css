@@ -1,0 +1,290 @@
+/* BODY ////////.//////////////////////////////////////////////////////////// */
+:root {
+    --body-bg : var(--black);
+}
+
+/* BOTTOM DRAWER //////////////////////////////////////////////////////////// */
+:root {
+    --bottom-drawer-bg              : var(--white);
+    --bottom-drawer-border          : var(--slate20);
+    --bottom-drawer-border-radius   : var(--global-border-radius);
+
+    --bottom-drawer-overlay-bg      : var(--black);
+    --bottom-drawer-overlay-opacity : 0.4;
+    --bottom-drawer-overlay-blur    : "4px";
+
+    --bottom-drawer-dismiss-button  : var(--slate90);
+}
+
+/* BUTTON /////////////////////////////////////////////////////////////////// */
+/* PRIMARY BUTTON =========================================================== */
+:root {
+    --button-primary-default-bg             : var(--blue);
+    --button-primary-default-text           : var(--white);
+    --button-primary-default-border-colour  : var(--blue);
+    --button-primary-default-border-width   : var(--global-border-width);
+    --button-primary-default-border-radius  : var(--global-border-radius);
+
+    --button-primary-hover-bg               : var(--blue80);
+    --button-primary-hover-text             : var(--white);
+    --button-primary-hover-border-colour    : var(--blue80);
+    --button-primary-hover-border-width     : var(--global-border-width);
+    --button-primary-hover-border-radius    : var(--global-border-radius);
+
+    --button-primary-loading-spinner-colour : var(--blue);
+
+    --button-primary-disabled-bg            : var(--blue10);
+    --button-primary-disabled-text          : var(--white);
+    --button-primary-disabled-border-colour : var(--blue10);
+    --button-primary-disabled-border-width  : var(--global-border-width);
+    --button-primary-disabled-border-radius : var(--global-border-radius);
+}
+
+/* SECONDARY BUTTON ========================================================= */
+:root {
+    --button-secondary-default-bg             : var(--blue);
+    --button-secondary-default-text           : var(--white);
+    --button-secondary-default-border-colour  : var(--blue);
+    --button-secondary-default-border-width   : var(--global-border-width);
+    --button-secondary-default-border-radius  : var(--global-border-radius);
+
+    --button-secondary-hover-bg               : var(--blue80);
+    --button-secondary-hover-text             : var(--white);
+    --button-secondary-hover-border-colour    : var(--blue80);
+    --button-secondary-hover-border-width     : var(--global-border-width);
+    --button-secondary-hover-border-radius    : var(--global-border-radius);
+
+    --button-secondary-loading-spinner-colour : var(--blue);
+
+    --button-secondary-disabled-bg            : var(--blue10);
+    --button-secondary-disabled-text          : var(--white);
+    --button-secondary-disabled-border-colour : var(--blue10);
+    --button-secondary-disabled-border-width  : var(--global-border-width);
+    --button-secondary-disabled-border-radius : var(--global-border-radius);
+}
+
+/* TERTIARY BUTTON ========================================================== */
+:root {
+    --button-tertiary-default-bg             : var(--blue);
+    --button-tertiary-default-text           : var(--white);
+    --button-tertiary-default-border-colour  : var(--blue);
+    --button-tertiary-default-border-width   : var(--global-border-width);
+    --button-tertiary-default-border-radius  : var(--global-border-radius);
+
+    --button-tertiary-hover-bg               : var(--blue80);
+    --button-tertiary-hover-text             : var(--white);
+    --button-tertiary-hover-border-colour    : var(--blue80);
+    --button-tertiary-hover-border-width     : var(--global-border-width);
+    --button-tertiary-hover-border-radius    : var(--global-border-radius);
+
+    --button-tertiary-loading-spinner-colour : var(--blue);
+
+    --button-tertiary-disabled-bg            : var(--blue10);
+    --button-tertiary-disabled-text          : var(--white);
+    --button-tertiary-disabled-border-colour : var(--blue10);
+    --button-tertiary-disabled-border-width  : var(--global-border-width);
+    --button-tertiary-disabled-border-radius : var(--global-border-radius);
+}
+
+/* ROUND BUTTON ============================================================= */
+:root {
+    --button-round-size-tiny   : 24px;
+    --button-round-size-small  : 32px;
+    --button-round-size-medium : 64px;
+    --button-round-size-large  : 80px;
+    --button-round-size-huge   : 128px;
+}
+
+/* GENERIC LOADING BUTTON =================================================== */
+:root {
+    --button-round-size-tiny   : 24px;
+    --button-round-size-small  : 32px;
+    --button-round-size-medium : 64px;
+    --button-round-size-large  : 80px;
+    --button-round-size-huge   : 128px;
+}
+
+/* H-RULE /////////////////////////////////////////////////////////////////// */
+:root {
+    --hr-default-height   : 1px;
+    --hr-default-bg       : var(--hue);
+
+    --hr-primary-height   : 4px;
+    --hr-primary-bg       : var(--slate);
+
+    --hr-secondary-height : 2px;
+    --hr-secondary-bg     : var(--slate60);
+
+    --hr-tertiary-height  : 1px;
+    --hr-tertiary-bg      : var(--slate20);
+}
+
+/* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
+:root {
+    --sidebar-bg                               : var(--black);
+    --sidebar-width-default                    : 240px;
+    --sidebar-width-collapsed                  : 48px;
+
+    --sidebar-collapsed-item-link-text         : var(--white);
+    --sidebar-collapsed-item-bg                : var(--hue);
+    --sidebar-collapsed-item-border-radius     : var(--global-border-radius);
+
+    --sidebar-header-bg                        : var(--white);
+    --sidebar-header-border-bottom             : var(--slate10);
+    --sidebar-header-logo-width                : 50%;
+    --sidebar-header-icon-width                : 40px;
+
+    --sidebar-item-icon-width                  : 24px;
+    --sidebar-item-icon-default-stroke-colour  : var(--slate40);
+    --sidebar-item-icon-default-stroke-width   : 2px;
+    --sidebar-item-icon-hover-stroke-colour    : var(--slate80);
+    --sidebar-item-icon-active-stroke-colour   : var(--slate);
+    --sidebar-item-icon-default-fill-colour    : var(--slate40);
+    --sidebar-item-icon-hover-fill-colour      : var(--slate80);
+    --sidebar-item-icon-active-fill-colour     : var(--slate);
+
+    --sidebar-item-default-link-bg             : var(--white);
+    --sidebar-item-default-link-text           : var(--shade);
+    --sidebar-item-default-link-scale          : 100%;
+    --sidebar-item-default-link-font-wright    : 600;
+
+    --sidebar-item-hover-link-bg               : var(--slate10);
+    --sidebar-item-hover-link-text             : var(--hue);
+
+    --sidebar-item-active-link-bg              : var(--white);
+    --sidebar-item-active-link-text            : var(--hue);
+    --sidebar-item-active-link-border          : var(--hue);
+    --sidebar-item-active-link-border-width    : 2px;
+
+    --sidebar-item-has-alert-bg                : var(--red70);
+
+    --sidebar-item-icon-size                   : 24px;
+    --sidebar-item-icon-stroke-width           : 2px;
+    --sidebar-item-icon-stroke-colour-default  : var(--slate40);
+    --sidebar-item-icon-stroke-colour-hover    : var(--slate80);
+    --sidebar-item-icon-stroke-colour-selected : var(--slate);
+
+    --sidebar-item-icon-fill-colour-default    : var(--slate40);
+    --sidebar-item-icon-fill-colour-hover      : var(--slate80);
+    --sidebar-item-icon-fill-colour-selected   : var(--slate);
+
+    --sidebar-footer-height                    : 32px;
+    --sidebar-footer-bg                        : var(--white);
+    --sidebar-footer-border-top                : var(--slate10);
+}
+
+/* TEXT ///////////////////////////////////////////////////////////////////// */
+:root {
+    /* GENERICS ============================================================= */
+    --font-family-sans-serif    : "Inter", sans-serif;
+    --font-family-serif         : serif;
+    --font-family-mono          : monospace;
+
+    /* PARAGRAPHS =========================================================== */
+    --paragraph-font-family     : var(--font-family-sans-serif);
+    --paragraph-font-size       : 0.92rem;
+    --paragraph-line-height     : 1.24;
+    --paragraph-font-weight     : 400;
+    --paragraph-text-colour     : var(--grey);
+
+    --paragraph-subtext-colour  : var(--slate80);
+    --paragraph-subtext-size    : 0.8rem;
+
+    @media screen and (min-width: 640px) {
+        --paragraph-font-size: calc(0.72rem + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    }
+
+    @media screen and (min-width: 1600px) {
+        --paragraph-font-size: 1.3rem;
+    }
+
+    /* HEADINGS ============================================================= */
+    --heading-font-family       : var(--font-family-sans-serif);
+    --heading-font-size         : 1.5rem;
+    --heading-line-height       : 1.14;
+    --heading-font-weight       : 600;
+    --heading-text-colour       : var(--white);
+    --heading-size-multiplier   : 1.8;
+
+    /* LINKS ================================================================ */
+    --link-font-family          : var(--font-family-sans-serif);
+    --link-text-default         : var(--white);
+    --link-text-hover           : var(--blue60);
+
+    /* SELECTION ============================================================ */
+    --text-selected             : var(--white);
+    --text-bg-selected          : var(--hue);
+
+    /* CODE ================================================================= */
+    --code-font-family          : var(--font-family-mono);
+    --code-inline-font-size     : 0.92rem;
+    --code-inline-bg            : var(--blue10);
+    --code-inline-text          : var(--blue90);
+    --code-inline-border-radius : var(--global-border-radius);
+
+    --code-block-font-size      : 0.92rem;
+    --code-block-bg             : var(--blue10);
+    --code-block-text           : var(--blue90);
+    --code-block-line-height    : 1.8;
+    --code-block-border-radius  : var(--global-border-radius);
+
+    /*  KBD ================================================================= */
+    --kbd-font-family           : var(--font-family-mono);
+    --kbd-bg                    : var(--grey10);
+    --kbd-text                  : var(--grey);
+    --kbd-border-radius         : var(--global-border-radius);
+
+    /* TOKENS =============================================================== */
+    --token-tag                 : var(--violet);
+    --token-atrule              : var(--teal90);
+    --token-attrName            : var(--orange);
+    --token-attrValue           : var(--green80);
+    --token-boolean             : var(--green80);
+    --token-cdata               : var(--grey70);
+    --token-className           : var(--red);
+    --token-comment             : var(--grey70);
+    --token-constant            : var(--green80);
+    --token-deleted             : var(--slate80);
+    --token-delimiter           : var(--grey90);
+    --token-doctype             : var(--grey90);
+    --token-entity              : var(--green80);
+    --token-function            : var(--orange);
+    --token-hexcode             : var(--green);
+    --token-inserted            : var(--green80);
+    --token-italic              : var(--green80);
+    --token-keyword             : var(--orange90);
+    --token-namespace           : var(--green80);
+    --token-number              : var(--green80);
+    --token-operator            : var(--pistachio);
+    --token-plain               : var(--grey);
+    --token-prolog              : var(--grey90);
+    --token-property            : var(--red90);
+    --token-punctuation         : var(--grey60);
+    --token-regex               : var(--green80);
+    --token-selector            : var(--violet);
+    --token-string              : var(--crimson60);
+    --token-symbol              : var(--green80);
+    --token-url                 : var(--green80);
+    --token-variable            : var(--orange80);
+}
+
+
+/*prism : {*/
+/*    languages : {*/
+/*    css       : {*/
+/*    fallback  : String(defaultColours.orange90)*/
+/*},*/
+/*html: {*/
+/*    fallback  : String(defaultColours.grey)*/
+/*},*/
+/*js: {*/
+/*    fallback  : String(defaultColours.violet90)*/
+/*},*/
+/*json: {*/
+/*    fallback  : String(defaultColours.teal),*/
+/*    tokens    : {*/
+/*    string    : String(defaultColours.teal)*/
+/*}*/
+/*}*/
+/*}*/
+/*}*/
