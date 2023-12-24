@@ -385,7 +385,7 @@ const Home = () => {
                                 <Element as="div" className="component-card">
                                     <Element as="div" id="badge-wrapper">
                                         <Badge
-                                            bgColour="red-20" textColour="red-90"
+                                            bgColour="red-light-40" textColour="red-dark-10"
                                             shape="curved"
                                             margin="nano"
                                         >
@@ -393,7 +393,7 @@ const Home = () => {
                                         </Badge>
 
                                         <Badge
-                                            bgColour="green-20" textColour="green"
+                                            bgColour="green-light-40" textColour="green-dark-20"
                                             shape="curved" size="large"
                                             margin="nano"
                                         >
@@ -401,7 +401,7 @@ const Home = () => {
                                         </Badge>
 
                                         <Badge
-                                            bgColour="amber-20" textColour="orange"
+                                            bgColour="amber-light-20" textColour="orange-dark-10"
                                             shape="rounded"
                                             margin="nano"
                                         >
@@ -409,7 +409,7 @@ const Home = () => {
                                         </Badge>
 
                                         <Badge
-                                            bgColour="purple-20" textColour="purple"
+                                            bgColour="violet" textColour="white"
                                             shape="rounded" size="medium"
                                             margin="nano"
                                         >
@@ -430,8 +430,9 @@ const Home = () => {
                             <GlowCard>
                                 <Element as="div" className="component-card">
                                     <Callout kind="success">
-                                        I’d also just like to call out that FICTOAN is awesome.
+                                        <Text textColour="white">I’d also just like to call out that FICTOAN is awesome.</Text>
                                     </Callout>
+
                                     <Element as="footer">
                                         <Link href="/components/button">
                                             Callout &rarr;
