@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import { ContentWrapper, SidebarWrapper } from "fictoan-react";
-import "./styles/theme-dark.css";
-import "./styles/common.css";
+import "../styles/theme-dark.css";
+import "../styles/common.css";
 
 const inter = Inter({ subsets : ["latin"] });
 

@@ -10,18 +10,19 @@ import {
     Button,
     Text,
     HRule,
-    Card,
     NotificationItem,
     Table,
     Callout,
     ProgressBar,
     BreadcrumbItem,
     BreadcrumbsWrapper,
-    Badge,
+    Badge, Card,
 } from "fictoan-react";
 
-import "./home.css";
 
+import { GlowCard } from "@/components/GlowCard/GlowCard";
+
+import "./home.css";
 
 const Home = () => {
     return (
@@ -67,320 +68,377 @@ const Home = () => {
 
                 <Portion>
                     <Element as="div" id="grid-wrapper">
-                        <Element as="div" className="grid-item">
-                            <Card
-                                id="button-card" className="component-card" bgColour="amber" borderColour="amber"
-                                padding="micro" shape="rounded" isFullHeight
-                            >
-                                <Button
-                                    kind="primary" shape="rounded"
-                                    bgColour="violet-40" textColour="violet"
-                                    marginBottom="nano"
-                                >
-                                    Click me
-                                </Button>
+                        <Element as="div" className="grid-item" id="button-card">
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    <Button
+                                        kind="primary" shape="rounded"
+                                        bgColour="violet-40" textColour="violet"
+                                        marginBottom="nano"
+                                        isFullWidth
+                                    >
+                                        Click me
+                                    </Button>
 
-                                <Button
-                                    kind="custom" shape="rounded"
-                                    bgColour="amber-40" textColour="amber"
-                                    isLoading isFullWidth
-                                >
-                                    Load
-                                </Button>
+                                    <Button
+                                        kind="custom" shape="rounded"
+                                        bgColour="amber-40" textColour="amber"
+                                        isLoading isFullWidth
+                                    >
+                                        Load
+                                    </Button>
 
-                                <Element as="footer">
-                                    <Link href="/components/button">
-                                        Button docs &rarr;
-                                    </Link>
+                                    <Element as="footer">
+                                        <Link href="/components/button">
+                                            Button &rarr;
+                                        </Link>
+                                    </Element>
                                 </Element>
-                            </Card>
+                            </GlowCard>
                         </Element>
 
                         <Element as="div" className="grid-item" id="type-card">
-                            <Card
-                                className="component-card"
-                                padding="micro" shape="rounded" isFullHeight
-                            >
-                                <Heading as="h1" textColour="pistachio">Hi.</Heading>
-                                <Text weight="600">I’m just your type.</Text>
-                            </Card>
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    <Heading as="h1" textColour="pistachio">Hi.</Heading>
+                                    <Text weight="600">I’m just your type.</Text>
+
+                                    <Element as="footer">
+                                        <Link href="/components/typography">
+                                            Typography &rarr;
+                                        </Link>
+                                    </Element>
+                                </Element>
+                            </GlowCard>
                         </Element>
 
                         <Element as="div" className="grid-item" id="notification-card">
-                            <Card
-                                className="component-card"
-                                padding="micro" shape="rounded" isFullHeight
-                            >
-                                <NotificationItem
-                                    show kind="info"
-                                    onCloseCallback={() => setShowNotification1(false)}
-                                >
-                                    I am here to notify you that...um, wait, I forgot.
-                                </NotificationItem>
-                            </Card>
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    <NotificationItem
+                                        show kind="info"
+                                        onCloseCallback={() => setShowNotification1(false)}
+                                    >
+                                        I am here to notify you that...um, wait, I forgot.
+                                    </NotificationItem>
+
+                                    <Element as="footer">
+                                        <Link href="/components/notifications">
+                                            Notifiactions &rarr;
+                                        </Link>
+                                    </Element>
+                                </Element>
+                            </GlowCard>
                         </Element>
 
                         <Element as="div" className="grid-item" id="progress-card">
-                            <Card
-                                className="component-card"
-                                padding="micro" shape="rounded" isFullHeight
-                            >
-                                <ProgressBar
-                                    value="60" max="100" unit="%"
-                                    label="Loading..."
-                                    barBg="green-20" barFill="green-90"
-                                    height="8px" shape="rounded"
-                                />
-                            </Card>
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    <ProgressBar
+                                        value="60" max="100" unit="%"
+                                        label="Loading..."
+                                        barBg="green-20" barFill="green-90"
+                                        height="8px" shape="rounded"
+                                    />
+
+                                    <Element as="footer">
+                                        <Link href="/components/button">
+                                            Progress bar &rarr;
+                                        </Link>
+                                    </Element>
+                                </Element>
+                            </GlowCard>
                         </Element>
 
                         <Element as="div" className="grid-item" id="input-card">
-                            <Card
-                                className="component-card"
-                                padding="micro" shape="rounded" isFullHeight
-                            >
-                                {/* <InputField */}
-                                {/*     label="Enter" */}
-                                {/*     placeholder="here" */}
-                                {/* /> */}
-                            </Card>
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    {/* <InputField */}
+                                    {/*     label="Enter" */}
+                                    {/*     placeholder="here" */}
+                                    {/* /> */}
+
+                                    <Element as="footer">
+                                        <Link href="/components/button">
+                                            Input field &rarr;
+                                        </Link>
+                                    </Element>
+                                </Element>
+                            </GlowCard>
                         </Element>
 
                         <Element as="div" className="grid-item" id="select-card">
-                            <Card
-                                className="component-card"
-                                padding="micro" shape="rounded" isFullHeight
-                            >
-                                {/* <Select */}
-                                {/*     options={[ */}
-                                {/*         { */}
-                                {/*             name     : "What’s your pick?", */}
-                                {/*             value    : "select-an-option", */}
-                                {/*             disabled : true, */}
-                                {/*             selected : true */}
-                                {/*         }, */}
-                                {/*         { */}
-                                {/*             name  : "Pick me!", */}
-                                {/*             value : "option-1" */}
-                                {/*         }, */}
-                                {/*         { */}
-                                {/*             name  : "Mee!", */}
-                                {/*             value : "option-2" */}
-                                {/*         } */}
-                                {/*     ]} */}
-                                {/* /> */}
-                            </Card>
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    {/* <Select */}
+                                    {/*     options={[ */}
+                                    {/*         { */}
+                                    {/*             name     : "What’s your pick?", */}
+                                    {/*             value    : "select-an-option", */}
+                                    {/*             disabled : true, */}
+                                    {/*             selected : true */}
+                                    {/*         }, */}
+                                    {/*         { */}
+                                    {/*             name  : "Pick me!", */}
+                                    {/*             value : "option-1" */}
+                                    {/*         }, */}
+                                    {/*         { */}
+                                    {/*             name  : "Mee!", */}
+                                    {/*             value : "option-2" */}
+                                    {/*         } */}
+                                    {/*     ]} */}
+                                    {/* /> */}
+
+                                    <Element as="footer">
+                                        <Link href="/components/button">
+                                            Select &rarr;
+                                        </Link>
+                                    </Element>
+                                </Element>
+                            </GlowCard>
                         </Element>
 
                         <Element as="div" className="grid-item" id="table-card">
-                            <Card
-                                className="component-card"
-                                padding="micro" shape="rounded" isFullHeight
-                            >
-                                <Table padding="small" isStriped bordersFor="both" isfullWidth>
-                                    <thead>
-                                        <tr>
-                                            <th>Yes,</th>
-                                            <th>I</th>
-                                            <th>would</th>
-                                        </tr>
-                                    </thead>
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    <Table padding="small" isStriped bordersFor="both" isfullWidth>
+                                        <thead>
+                                            <tr>
+                                                <th>Yes,</th>
+                                                <th>I</th>
+                                                <th>would</th>
+                                            </tr>
+                                        </thead>
 
-                                    <tbody>
-                                        <tr>
-                                            <td>very</td>
-                                            <td>much</td>
-                                            <td>like</td>
-                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td>very</td>
+                                                <td>much</td>
+                                                <td>like</td>
+                                            </tr>
 
-                                        <tr>
-                                            <td>a</td>
-                                            <td>table</td>
-                                            <td>with</td>
-                                        </tr>
+                                            <tr>
+                                                <td>a</td>
+                                                <td>table</td>
+                                                <td>with</td>
+                                            </tr>
 
-                                        <tr>
-                                            <td>the</td>
-                                            <td>ocean</td>
-                                            <td>view</td>
-                                        </tr>
+                                            <tr>
+                                                <td>the</td>
+                                                <td>ocean</td>
+                                                <td>view</td>
+                                            </tr>
 
-                                        <tr>
-                                            <td>please.</td>
-                                            <td>Thank</td>
-                                            <td>you.</td>
-                                        </tr>
-                                    </tbody>
-                                </Table>
-                            </Card>
+                                            <tr>
+                                                <td>please.</td>
+                                                <td>Thank</td>
+                                                <td>you.</td>
+                                            </tr>
+                                        </tbody>
+                                    </Table>
+
+                                    <Element as="footer">
+                                        <Link href="/components/button">
+                                            Table &rarr;
+                                        </Link>
+                                    </Element>
+                                </Element>
+                            </GlowCard>
                         </Element>
 
                         <Element as="div" className="grid-item" id="breadcrumbs-card">
-                            <Card
-                                id="" className="component-card"
-                                shape="rounded" isFullHeight
-                            >
-                                <BreadcrumbsWrapper>
-                                    <BreadcrumbItem>
-                                        <Link exact href="/components/breadcrumbs">
-                                            A
-                                        </Link>
-                                    </BreadcrumbItem>
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    <BreadcrumbsWrapper>
+                                        <BreadcrumbItem>
+                                            <Link exact href="/components/breadcrumbs">
+                                                A
+                                            </Link>
+                                        </BreadcrumbItem>
 
-                                    <BreadcrumbItem>
-                                        <Link exact href="/components/breadcrumbs">
-                                            long
-                                        </Link>
-                                    </BreadcrumbItem>
+                                        <BreadcrumbItem>
+                                            <Link exact href="/components/breadcrumbs">
+                                                long
+                                            </Link>
+                                        </BreadcrumbItem>
 
-                                    <BreadcrumbItem>
-                                        <Link exact href="/components/breadcrumbs">
-                                            trail
-                                        </Link>
-                                    </BreadcrumbItem>
+                                        <BreadcrumbItem>
+                                            <Link exact href="/components/breadcrumbs">
+                                                trail
+                                            </Link>
+                                        </BreadcrumbItem>
 
-                                    <BreadcrumbItem>
-                                        <Link exact href="/components/breadcrumbs">
-                                            of
-                                        </Link>
-                                    </BreadcrumbItem>
+                                        <BreadcrumbItem>
+                                            <Link exact href="/components/breadcrumbs">
+                                                of
+                                            </Link>
+                                        </BreadcrumbItem>
 
-                                    <BreadcrumbItem>
-                                        <Link exact href="/components/breadcrumbs">
-                                            crumbs
+                                        <BreadcrumbItem>
+                                            <Link exact href="/components/breadcrumbs">
+                                                crumbs
+                                            </Link>
+                                        </BreadcrumbItem>
+                                    </BreadcrumbsWrapper>
+
+                                    <Element as="footer">
+                                        <Link href="/components/button">
+                                            Breadcrumbs &rarr;
                                         </Link>
-                                    </BreadcrumbItem>
-                                </BreadcrumbsWrapper>
-                            </Card>
+                                    </Element>
+                                </Element>
+                            </GlowCard>
                         </Element>
 
                         <Element as="div" className="grid-item" id="radio-card">
-                            <Card
-                                className="component-card"
-                                padding="micro" shape="rounded" isFullHeight
-                            >
-                                <Element as="div" marginBottom="micro">
-                                    {/* <RadioButton */}
-                                    {/*     id="radio-1" */}
-                                    {/*     name="choices-1" */}
-                                    {/*     value="yes" */}
-                                    {/*     label="This" */}
-                                    {/* /> */}
-                                </Element>
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    <Element as="div" marginBottom="micro">
+                                        {/* <RadioButton */}
+                                        {/*     id="radio-1" */}
+                                        {/*     name="choices-1" */}
+                                        {/*     value="yes" */}
+                                        {/*     label="This" */}
+                                        {/* /> */}
+                                    </Element>
 
-                                {/* <RadioButton */}
-                                {/*     id="radio-2" */}
-                                {/*     name="choices-1" */}
-                                {/*     value="no" */}
-                                {/*     label="That" */}
-                                {/* /> */}
-                            </Card>
+                                    {/* <RadioButton */}
+                                    {/*     id="radio-2" */}
+                                    {/*     name="choices-1" */}
+                                    {/*     value="no" */}
+                                    {/*     label="That" */}
+                                    {/* /> */}
+
+                                    <Element as="footer">
+                                        <Link href="/components/button">
+                                            Radio buttons &rarr;
+                                        </Link>
+                                    </Element>
+                                </Element>
+                            </GlowCard>
                         </Element>
 
                         <Element as="div" className="grid-item" id="checkbox-card">
-                            <Card
-                                className="component-card"
-                                padding="micro" shape="rounded" isFullHeight
-                            >
-                                <Element as="div" marginBottom="micro">
-                                    {/* <CheckBox */}
-                                    {/*     id="checkbox-1" */}
-                                    {/*     value="checkbox-1" */}
-                                    {/*     name="checkbox-1" */}
-                                    {/*     label="Check me" */}
-                                    {/* /> */}
-                                </Element>
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    <Element as="div" marginBottom="micro">
+                                        {/* <CheckBox */}
+                                        {/*     id="checkbox-1" */}
+                                        {/*     value="checkbox-1" */}
+                                        {/*     name="checkbox-1" */}
+                                        {/*     label="Check me" */}
+                                        {/* /> */}
+                                    </Element>
 
-                                {/* <Switch */}
-                                {/*     id="switch-1" */}
-                                {/*     value="switch-1" */}
-                                {/*     name="switch-1" */}
-                                {/*     label="Toggle me" */}
-                                {/* /> */}
-                            </Card>
+                                    {/* <Switch */}
+                                    {/*     id="switch-1" */}
+                                    {/*     value="switch-1" */}
+                                    {/*     name="switch-1" */}
+                                    {/*     label="Toggle me" */}
+                                    {/* /> */}
+
+                                    <Element as="footer">
+                                        <Link href="/components/button">
+                                            Switch &rarr;
+                                        </Link>
+                                    </Element>
+                                </Element>
+                            </GlowCard>
                         </Element>
 
                         <Element as="div" className="grid-item" id="code-card">
-                            <Card
-                                id="" className="component-card"
-                                shape="rounded" isFullHeight
-                            >
-                                {/* <CodeBlock */}
-                                {/*     source={cardComponentSample} language="jsx" */}
-                                {/*     marginTop="micro" marginBottom="micro" */}
-                                {/* /> */}
-                            </Card>
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    {/* <CodeBlock */}
+                                    {/*     source={cardComponentSample} language="jsx" */}
+                                    {/*     marginTop="micro" marginBottom="micro" */}
+                                    {/* /> */}
+
+                                    <Element as="footer">
+                                        <Link href="/components/button">
+                                            CodeBlock &rarr;
+                                        </Link>
+                                    </Element>
+                                </Element>
+                            </GlowCard>
                         </Element>
 
                         <Element as="div" className="grid-item" id="colour-card">
-                            <Card
-                                className="component-card"
-                                shape="rounded" isFullHeight
-                            >
-                                <Link href="/colour">
-                                    <Card
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    <Element as="div"
                                         id="gradient-card"
                                         shape="rounded" borderColour="transparent"
-                                        isFullHeight
-                                    >
-                                        <Text textColour="white">Colour</Text>
-                                    </Card>
-                                </Link>
-                            </Card>
+                                    />
+
+                                    <Element as="footer">
+                                        <Link href="/components/colour/">
+                                            Colour &rarr;
+                                        </Link>
+                                    </Element>
+                                </Element>
+                            </GlowCard>
                         </Element>
 
                         <Element as="div" className="grid-item" id="badge-card">
-                            <Card
-                                className="component-card"
-                                padding="micro" shape="rounded" isFullHeight
-                            >
-                                <Element as="div" id="badge-wrapper">
-                                    <Badge
-                                        bgColour="red-20" textColour="red-90"
-                                        shape="curved"
-                                        margin="nano"
-                                    >
-                                        A
-                                    </Badge>
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    <Element as="div" id="badge-wrapper">
+                                        <Badge
+                                            bgColour="red-20" textColour="red-90"
+                                            shape="curved"
+                                            margin="nano"
+                                        >
+                                            A
+                                        </Badge>
 
-                                    <Badge
-                                        bgColour="green-20" textColour="green"
-                                        shape="curved" size="large"
-                                        margin="nano"
-                                    >
-                                        BADGE
-                                    </Badge>
+                                        <Badge
+                                            bgColour="green-20" textColour="green"
+                                            shape="curved" size="large"
+                                            margin="nano"
+                                        >
+                                            BADGE
+                                        </Badge>
 
-                                    <Badge
-                                        bgColour="amber-20" textColour="orange"
-                                        shape="rounded"
-                                        margin="nano"
-                                    >
-                                        of
-                                    </Badge>
+                                        <Badge
+                                            bgColour="amber-20" textColour="orange"
+                                            shape="rounded"
+                                            margin="nano"
+                                        >
+                                            of
+                                        </Badge>
 
-                                    <Badge
-                                        bgColour="purple-20" textColour="purple"
-                                        shape="rounded" size="medium"
-                                        margin="nano"
-                                    >
-                                        HONOUR
-                                    </Badge>
+                                        <Badge
+                                            bgColour="purple-20" textColour="purple"
+                                            shape="rounded" size="medium"
+                                            margin="nano"
+                                        >
+                                            HONOUR
+                                        </Badge>
+                                    </Element>
+
+                                    <Element as="footer">
+                                        <Link href="/components/button">
+                                            Badge &rarr;
+                                        </Link>
+                                    </Element>
                                 </Element>
-                            </Card>
+                            </GlowCard>
                         </Element>
 
                         <Element as="div" className="grid-item" id="callout-card">
-                            <Card
-                                className="component-card"
-                                padding="micro" shape="rounded" isFullHeight
-                            >
-                                <Callout
-                                    kind="success"
-                                >
-                                    I’d also just like to call out that FICTOAN is awesome.
-                                </Callout>
-                            </Card>
+                            <GlowCard>
+                                <Element as="div" className="component-card">
+                                    <Callout kind="success">
+                                        I’d also just like to call out that FICTOAN is awesome.
+                                    </Callout>
+                                    <Element as="footer">
+                                        <Link href="/components/button">
+                                            Callout &rarr;
+                                        </Link>
+                                    </Element>
+                                </Element>
+                            </GlowCard>
                         </Element>
                     </Element>
                 </Portion>

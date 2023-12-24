@@ -1,6 +1,7 @@
 const ButtonDocs = () => {
     return (
-        <div><p>Hello button</p></div>
+        <article id="page-button">
+        </article>
     )
 }
 

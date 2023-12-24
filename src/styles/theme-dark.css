@@ -259,3 +259,22 @@
     --token-url                 : var(--green80);
     --token-variable            : var(--orange80);
 }
+
+/* TABLE //////////////////////////////////////////////////////////////////// */
+:root {
+    --table-bg                           : var(--black);
+    --table-border                       : var(--grey);
+    --table-font-family                  : var(--paragraph-font-family);
+    --table-text                         : var(--grey40);
+
+    --table-striped-header-bg            : var(--blue40);
+    --table-striped-cell-bg              : var(--grey90);
+
+    --table-bg-hover                     : var(--amber20);
+    --table-text-hover                   : var(--paragraph-text-colour);
+
+    --table-pagination-bg                : var(--white);
+    --table-pagination-border-radius     : var(--global-border-radius);
+    --table-pagination-text              : var(--paragraph-text-colour);
+    --table-pagination-nav-icon-bg-hover : var(--slate60);
+}
