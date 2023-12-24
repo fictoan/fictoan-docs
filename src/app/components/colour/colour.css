@@ -1,6 +1,0 @@
-#page-colour {
-    .colour-row {
-        display               : grid;
-        grid-template-columns : repeat(9, 1fr);
-    }
-}
