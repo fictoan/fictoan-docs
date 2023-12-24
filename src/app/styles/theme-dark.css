@@ -116,7 +116,7 @@
     --hr-secondary-bg     : var(--slate60);
 
     --hr-tertiary-height  : 1px;
-    --hr-tertiary-bg      : var(--slate20);
+    --hr-tertiary-bg      : var(--grey);
 }
 
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
@@ -182,7 +182,7 @@
 
     /* PARAGRAPHS =========================================================== */
     --paragraph-font-family     : var(--font-family-sans-serif);
-    --paragraph-font-size       : 0.92rem;
+    --paragraph-font-size       : 1rem;
     --paragraph-line-height     : 1.24;
     --paragraph-font-weight     : 400;
     --paragraph-text-colour     : var(--grey);
@@ -190,21 +190,13 @@
     --paragraph-subtext-colour  : var(--slate80);
     --paragraph-subtext-size    : 0.8rem;
 
-    @media screen and (min-width: 640px) {
-        --paragraph-font-size: calc(0.72rem + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-    }
-
-    @media screen and (min-width: 1600px) {
-        --paragraph-font-size: 1.3rem;
-    }
-
     /* HEADINGS ============================================================= */
     --heading-font-family       : var(--font-family-sans-serif);
     --heading-font-size         : 1.5rem;
-    --heading-line-height       : 1.14;
-    --heading-font-weight       : 600;
+    --heading-line-height       : 1;
+    --heading-font-weight       : 400;
     --heading-text-colour       : var(--white);
-    --heading-size-multiplier   : 1.8;
+    --heading-size-multiplier   : 2;
 
     /* LINKS ================================================================ */
     --link-font-family          : var(--font-family-sans-serif);
@@ -267,24 +259,3 @@
     --token-url                 : var(--green80);
     --token-variable            : var(--orange80);
 }
-
-
-/*prism : {*/
-/*    languages : {*/
-/*    css       : {*/
-/*    fallback  : String(defaultColours.orange90)*/
-/*},*/
-/*html: {*/
-/*    fallback  : String(defaultColours.grey)*/
-/*},*/
-/*js: {*/
-/*    fallback  : String(defaultColours.violet90)*/
-/*},*/
-/*json: {*/
-/*    fallback  : String(defaultColours.teal),*/
-/*    tokens    : {*/
-/*    string    : String(defaultColours.teal)*/
-/*}*/
-/*}*/
-/*}*/
-/*}*/
