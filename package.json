@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^8.1.0",
     "color": "^4.2.3",
     "fictoan-react": "file:.yalc/fictoan-react",
     "gsap": "^3.12.4",

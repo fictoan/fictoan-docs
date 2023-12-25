@@ -8,10 +8,7 @@ gsap.registerPlugin(Flip);
 import "./GlowCard.css";
 
 const CONFIG = {
-    body     : "rgb(0, 10, 15)",
-    icon     : 0,
-    movement : 150,
-
+    movement               : 150,
     explode                : false,
     border                 : 2,
     radius                 : 12,
