@@ -5,17 +5,27 @@ import React from "react";
 import { CodeBlock, Heading, HRule, Portion, Row, Text } from "fictoan-react";
 
 import {
+    sampleThemeBadge,
     sampleThemeBody,
+    sampleThemeBottomDrawer,
     sampleThemeBreadcrumbs,
     sampleThemeButton,
+    sampleThemeCallout,
     sampleThemeCard,
+    sampleThemeCheckbox,
+    sampleThemeExpandableContent,
     sampleThemeGlobals,
     sampleThemeHRule,
     sampleThemeInfoPanel,
     sampleThemeInput,
     sampleThemeNotification,
-    sampleThemeProgressBar, sampleThemeSidebar, sampleThemeTable, sampleThemeTabs,
-    sampleThemeText
+    sampleThemeProgressBar,
+    sampleThemeRadioButton,
+    sampleThemeSelectDropdown,
+    sampleThemeSidebar, sampleThemeSpinner, sampleThemeSwitch,
+    sampleThemeTable,
+    sampleThemeTabs,
+    sampleThemeText, sampleThemeToast,
 } from "./CodeSamples";
 
 import "./page-theming.css";
@@ -54,7 +64,19 @@ const ThemingDocs = () => {
                 <HRule kind="secondary" sideMargin="huge" />
 
 
-                {/*  BODY  */}
+                {/* BADGE ////////////////////////////////////////////////////////////////////////////////////////// */}
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Text size="large" weight="700" marginBottom="micro">Badge</Text>
+
+                        <CodeBlock source={sampleThemeBadge} language="css" marginBottom="micro" />
+                    </Portion>
+                </Row>
+
+                <HRule kind="secondary" sideMargin="huge" />
+
+
+                {/* BODY /////////////////////////////////////////////////////////////////////////////////////////// */}
                 <Row sidePadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Body</Text>
@@ -66,7 +88,19 @@ const ThemingDocs = () => {
                 <HRule kind="secondary" sideMargin="huge" />
 
 
-                {/*  BREADCRUMBS  */}
+                {/* BottomDrawer /////////////////////////////////////////////////////////////////////////////////// */}
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Text size="large" weight="700" marginBottom="micro">BottomDrawer</Text>
+
+                        <CodeBlock source={sampleThemeBottomDrawer} language="css" marginBottom="micro" />
+                    </Portion>
+                </Row>
+
+                <HRule kind="secondary" sideMargin="huge" />
+
+
+                {/* BREADCRUMBS //////////////////////////////////////////////////////////////////////////////////// */}
                 <Row sidePadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Breadcrumbs</Text>
@@ -78,7 +112,7 @@ const ThemingDocs = () => {
                 <HRule kind="secondary" sideMargin="huge" />
 
 
-                {/*  BUTTON  */}
+                {/* BUTTON ///////////////////////////////////////////////////////////////////////////////////////// */}
                 <Row sidePadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Button</Text>
@@ -90,7 +124,19 @@ const ThemingDocs = () => {
                 <HRule kind="secondary" sideMargin="huge" />
 
 
-                {/*  CARD  */}
+                {/* CALLOUT //////////////////////////////////////////////////////////////////////////////////////// */}
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Text size="large" weight="700" marginBottom="micro">Callout</Text>
+
+                        <CodeBlock source={sampleThemeCallout} language="css" marginBottom="micro" />
+                    </Portion>
+                </Row>
+
+                <HRule kind="secondary" sideMargin="huge" />
+
+
+                {/* CARD */}
                 <Row sidePadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Card</Text>
@@ -102,7 +148,31 @@ const ThemingDocs = () => {
                 <HRule kind="secondary" sideMargin="huge" />
 
 
-                {/*  H-RULE  */}
+                {/* CHECKBOX */}
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Text size="large" weight="700" marginBottom="micro">Checkbox</Text>
+
+                        <CodeBlock source={sampleThemeCheckbox} language="css" marginBottom="micro" />
+                    </Portion>
+                </Row>
+
+                <HRule kind="secondary" sideMargin="huge" />
+
+
+                {/* EXPANDABLE CONTENT */}
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Text size="large" weight="700" marginBottom="micro">ExpandableContent</Text>
+
+                        <CodeBlock source={sampleThemeExpandableContent} language="css" marginBottom="micro" />
+                    </Portion>
+                </Row>
+
+                <HRule kind="secondary" sideMargin="huge" />
+
+
+                {/* H-RULE */}
                 <Row sidePadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Horizontal rule</Text>
@@ -114,19 +184,7 @@ const ThemingDocs = () => {
                 <HRule kind="secondary" sideMargin="huge" />
 
 
-                {/*  INPUT  */}
-                <Row sidePadding="huge">
-                    <Portion>
-                        <Text size="large" weight="700" marginBottom="micro">Input</Text>
-
-                        <CodeBlock source={sampleThemeInput} language="css" marginBottom="micro" />
-                    </Portion>
-                </Row>
-
-                <HRule kind="secondary" sideMargin="huge" />
-
-
-                {/*  INFO PANEL  */}
+                {/* INFO PANEL */}
                 <Row sidePadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Info panel</Text>
@@ -138,7 +196,19 @@ const ThemingDocs = () => {
                 <HRule kind="secondary" sideMargin="huge" />
 
 
-                {/*  NOTIFICATION  */}
+                {/* INPUT */}
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Text size="large" weight="700" marginBottom="micro">Input</Text>
+
+                        <CodeBlock source={sampleThemeInput} language="css" marginBottom="micro" />
+                    </Portion>
+                </Row>
+
+                <HRule kind="secondary" sideMargin="huge" />
+
+
+                {/* NOTIFICATION */}
                 <Row sidePadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Notification</Text>
@@ -150,7 +220,7 @@ const ThemingDocs = () => {
                 <HRule kind="secondary" sideMargin="huge" />
 
 
-                {/*  PROGRESS BAR  */}
+                {/* PROGRESS BAR */}
                 <Row sidePadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Progress bar</Text>
@@ -162,7 +232,19 @@ const ThemingDocs = () => {
                 <HRule kind="secondary" sideMargin="huge" />
 
 
-                {/*  SIDEBAR  */}
+                {/* RADIO BUTTON */}
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Text size="large" weight="700" marginBottom="micro">Radio button</Text>
+
+                        <CodeBlock source={sampleThemeRadioButton} language="css" marginBottom="micro" />
+                    </Portion>
+                </Row>
+
+                <HRule kind="secondary" sideMargin="huge" />
+
+
+                {/* SIDEBAR */}
                 <Row sidePadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Sidebar</Text>
@@ -174,7 +256,31 @@ const ThemingDocs = () => {
                 <HRule kind="secondary" sideMargin="huge" />
 
 
-                {/*  TABLE  */}
+                {/* SELECT DROPDOWN */}
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Text size="large" weight="700" marginBottom="micro">Select dropdown</Text>
+
+                        <CodeBlock source={sampleThemeSelectDropdown} language="css" marginBottom="micro" />
+                    </Portion>
+                </Row>
+
+                <HRule kind="secondary" sideMargin="huge" />
+
+
+                {/* SPINNER */}
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Text size="large" weight="700" marginBottom="micro">Spinner</Text>
+
+                        <CodeBlock source={sampleThemeSpinner} language="css" marginBottom="micro" />
+                    </Portion>
+                </Row>
+
+                <HRule kind="secondary" sideMargin="huge" />
+
+
+                {/* TABLE */}
                 <Row sidePadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Table</Text>
@@ -186,7 +292,7 @@ const ThemingDocs = () => {
                 <HRule kind="secondary" sideMargin="huge" />
 
 
-                {/*  TABS  */}
+                {/* TABS */}
                 <Row sidePadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Tabs</Text>
@@ -198,12 +304,34 @@ const ThemingDocs = () => {
                 <HRule kind="secondary" sideMargin="huge" />
 
 
-                {/*  TEXT  */}
+                {/* TOAST */}
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Text size="large" weight="700" marginBottom="micro">Toast</Text>
+
+                        <CodeBlock source={sampleThemeToast} language="css" marginBottom="micro" />
+                    </Portion>
+                </Row>
+
+                <HRule kind="secondary" sideMargin="huge" />
+
+
+                {/* TEXT */}
                 <Row sidePadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Text</Text>
 
                         <CodeBlock source={sampleThemeText} language="css" marginBottom="micro" />
+                    </Portion>
+                </Row>
+
+
+                {/* SWITCH */}
+                <Row sidePadding="huge">
+                    <Portion>
+                        <Text size="large" weight="700" marginBottom="micro">Switch</Text>
+
+                        <CodeBlock source={sampleThemeSwitch} language="css" marginBottom="micro" />
                     </Portion>
                 </Row>
             </article>

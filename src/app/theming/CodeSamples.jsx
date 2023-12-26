@@ -1,4 +1,4 @@
-//  Code sample 01 ////////////////////////////////////////////////////////////
+// Code sample 01 //////////////////////////////////////////////////////////////
 export const sampleThemeGlobals = `--global-border-radius : 8px;
 --global-border-width  : 1px;
 
@@ -11,11 +11,73 @@ export const sampleThemeGlobals = `--global-border-radius : 8px;
 --huge   : 24vmax;`;
 
 
-//  Code sample 01 ////////////////////////////////////////////////////////////
+// Code sample 01 //////////////////////////////////////////////////////////////
+export const sampleThemeBadge = `--badge-font-family   : var(--paragraph-font-family);
+--badge-border-radius : var(--global-border-radius);
+--badge-border-width  : var(--global-border-width);`;
+
+
+// Code sample 01 //////////////////////////////////////////////////////////////
+export const sampleThemeBottomDrawer = `--bottom-drawer-bg              : var(--white);
+--bottom-drawer-border          : var(--slate-light-20);
+--bottom-drawer-border-radius   : var(--global-border-radius);
+
+--bottom-drawer-overlay-bg      : var(--black);
+--bottom-drawer-overlay-opacity : 0.4;
+--bottom-drawer-overlay-blur    : 4px;
+
+--bottom-drawer-dismiss-button  : var(--slate-light-40);`;
+
+
+// Code sample 01 //////////////////////////////////////////////////////////////
+export const sampleThemeCallout = `--callout-border-radius  : var(--global-border-radius);
+--callout-border-width   : var(--nano);
+
+--callout-info-bg        : var(--blue-light-40);
+--callout-info-border    : var(--blue-dark-40);
+
+--callout-success-bg     : var(--green-light-40);
+--callout-success-border : var(--green-dark-40);
+
+--callout-warning-bg     : var(--amber-light-40);
+--callout-warning-border : var(--amber-dark-40);
+
+--callout-error-bg       : var(--red-light-40);
+--callout-error-border   : var(--red-dark-40);`;
+
+// Code sample 01 //////////////////////////////////////////////////////////////
+export const sampleThemeCheckbox = `--checkbox-square-border-radius : var(--global-border-radius);
+
+--checkbox-square-bg-default    : var(--slate-light-60);
+--checkbox-square-bg-hover      : var(--slate-light-40);
+--checkbox-square-bg-checked    : var(--hue);
+--checkbox-square-bg-disabled   : var(--slate-light-90);
+
+--checkbox-tick                 : var(--white);`;
+
+// Code sample 01 //////////////////////////////////////////////////////////////
+export const sampleThemeExpandableContent = `--expandable-content-chevron : var(--slate);`;
+
+// Code sample 01 //////////////////////////////////////////////////////////////
+export const sampleThemeRadioButton = `--radio-button-circle-bg-default  : var(--slate-light-60);
+--radio-button-circle-bg-hover    : var(--slate-light-40);
+--radio-button-circle-bg-checked  : var(--hue);
+--radio-button-circle-bg-disabled : var(--slate-light-90);
+
+--radio-button-dot                : var(--white);`;
+
+// Code sample 01 //////////////////////////////////////////////////////////////
+export const sampleThemeSelectDropdown = `--dropdown-chevron : var(--slate-light-40);`;
+
+// Code sample 01 //////////////////////////////////////////////////////////////
+export const sampleThemeSpinner = `--spinner-border : var(--hue);`;
+
+
+// Code sample 01 //////////////////////////////////////////////////////////////
 export const sampleThemeBody = `--body-bg : var(--white);`;
 
 
-//  Code sample 02 ////////////////////////////////////////////////////////////
+// Code sample 02 //////////////////////////////////////////////////////////////
 export const sampleThemeBreadcrumbs = `--breadcrumbs-wrapper-bg             : var(--transparent);
 
 --breadcrumb-item-separator          : "/";
@@ -25,8 +87,8 @@ export const sampleThemeBreadcrumbs = `--breadcrumbs-wrapper-bg             : va
 --breadcrumb-item-text-colour-active : var(--paragraph-text-colour);`;
 
 
-//  Code sample 02 ////////////////////////////////////////////////////////////
-export const sampleThemeButton = `/* PRIMARY BUTTON ======================================================= */
+// Code sample 02 //////////////////////////////////////////////////////////////
+export const sampleThemeButton = `/* PRIMARY BUTTON */
 --button-primary-default-bg               : var(--blue);
 --button-primary-default-text             : var(--white);
 --button-primary-default-border-colour    : var(--blue);
@@ -48,7 +110,8 @@ export const sampleThemeButton = `/* PRIMARY BUTTON ============================
 --button-primary-disabled-border-radius   : var(--global-border-radius);
 
 
-/* SECONDARY BUTTON ===================================================== */
+
+/* SECONDARY BUTTON */
 --button-secondary-default-bg             : var(--blue);
 --button-secondary-default-text           : var(--white);
 --button-secondary-default-border-colour  : var(--blue);
@@ -70,7 +133,7 @@ export const sampleThemeButton = `/* PRIMARY BUTTON ============================
 --button-secondary-disabled-border-radius : var(--global-border-radius);
 
 
-/* TERTIARY BUTTON ====================================================== */
+/* TERTIARY BUTTON */
 --button-tertiary-default-bg              : var(--blue);
 --button-tertiary-default-text            : var(--white);
 --button-tertiary-default-border-colour   : var(--blue);
@@ -92,7 +155,7 @@ export const sampleThemeButton = `/* PRIMARY BUTTON ============================
 --button-tertiary-disabled-border-radius  : var(--global-border-radius);
 
 
-/* ROUND BUTTON ========================================================= */
+/* ROUND BUTTON */
 --button-round-size-tiny                  : 24px;
 --button-round-size-small                 : 32px;
 --button-round-size-medium                : 64px;
@@ -100,14 +163,14 @@ export const sampleThemeButton = `/* PRIMARY BUTTON ============================
 --button-round-size-huge                  : 128px;`;
 
 
-//  Code sample 02 ////////////////////////////////////////////////////////////
+// Code sample 02 //////////////////////////////////////////////////////////////
 export const sampleThemeCard = `--card-bg            : var(--white);
 --card-border        : var(--slate);
 --card-border-radius : var(--global-border-radius);
 --card-border-width  : var(--global-border-width);`;
 
 
-//  Code sample 02 ////////////////////////////////////////////////////////////
+// Code sample 02 //////////////////////////////////////////////////////////////
 export const sampleThemeHRule = `--hr-default-height   : 1px;
 --hr-default-bg       : var(--hue);
 
@@ -121,7 +184,14 @@ export const sampleThemeHRule = `--hr-default-height   : 1px;
 --hr-tertiary-bg      : var(--slate-light-20);`;
 
 
-//  Code sample 02 ////////////////////////////////////////////////////////////
+// Code sample 02 //////////////////////////////////////////////////////////////
+export const sampleThemeInfoPanel = `--info-panel-bg                           : var(--white);
+--info-panel-border                       : var(--slate-light-10);
+
+--info-panel-dismiss-button               : var(--slate-dark-90);
+--info-panel-dismiss-button-border-radius : var(--slate-dark-90);`;
+
+// Code sample 02 //////////////////////////////////////////////////////////////
 export const sampleThemeInput = `--input-bg-default            : var(--white);
 --input-border-default        : var(--slate-light-40);
 --input-border-radius-default : var(--global-border-radius);
@@ -162,16 +232,7 @@ export const sampleThemeInput = `--input-bg-default            : var(--white);
 --input-icon-focus            : var(--hue);
 --input-icon-valid            : var(--green-dark-30);`;
 
-
-//  Code sample 02 ////////////////////////////////////////////////////////////
-export const sampleThemeInfoPanel = `--info-panel-bg                           : var(--white);
---info-panel-border                       : var(--slate-light-10);
-
---info-panel-dismiss-button               : var(--slate-dark-90);
---info-panel-dismiss-button-border-radius : var(--slate-dark-90);`;
-
-
-//  Code sample 02 ////////////////////////////////////////////////////////////
+// Code sample 02 //////////////////////////////////////////////////////////////
 export const sampleThemeNotification = `--notification-item-border-radius           : var(--global-border-radius);
 
 --notification-item-generic-bg              : var(--white);
@@ -194,7 +255,7 @@ export const sampleThemeNotification = `--notification-item-border-radius       
 --notification-dismiss-button-border-radius : var(--slate-dark-90);`;
 
 
-//  Code sample 02 ////////////////////////////////////////////////////////////
+// Code sample 02 //////////////////////////////////////////////////////////////
 export const sampleThemeProgressBar = `--progress-bar-bg            : var(--slate-light-20);
 --progress-bar-fill          : var(--hue);
 --progress-bar-label         : var(--shade);
@@ -203,7 +264,7 @@ export const sampleThemeProgressBar = `--progress-bar-bg            : var(--slat
 --progress-bar-height        : 8px;`;
 
 
-//  Code sample 02 ////////////////////////////////////////////////////////////
+// Code sample 02 //////////////////////////////////////////////////////////////
 export const sampleThemeSidebar = `--sidebar-bg                             : var(--white);
 --sidebar-width-default                  : 240px;
 --sidebar-width-collapsed                : 48px;
@@ -246,7 +307,7 @@ export const sampleThemeSidebar = `--sidebar-bg                             : va
 --sidebar-collapsed-item-border-radius   : var(--global-border-radius);`;
 
 
-//  Code sample 02 ////////////////////////////////////////////////////////////
+// Code sample 02 //////////////////////////////////////////////////////////////
 export const sampleThemeTable = `--table-bg                           : var(--white);
 --table-border                       : var(--slate-light-10);
 --table-font-family                  : var(--paragraph-font-family);
@@ -264,7 +325,7 @@ export const sampleThemeTable = `--table-bg                           : var(--wh
 --table-pagination-nav-icon-bg-hover : var(--slate-dark-60);`;
 
 
-//  Code sample 02 ////////////////////////////////////////////////////////////
+// Code sample 02 //////////////////////////////////////////////////////////////
 export const sampleThemeTabs = `--tabs-bg                     : var(--transparent);
 
 --tab-default-label           : var(--shade);
@@ -277,13 +338,13 @@ export const sampleThemeTabs = `--tabs-bg                     : var(--transparen
 --tab-with-alert-badge-border : var(--red-dark-70);`;
 
 
-//  Code sample 01 ////////////////////////////////////////////////////////////
-export const sampleThemeText = `/* GENERICS ============================================================= */
+// Code sample 01 //////////////////////////////////////////////////////////////
+export const sampleThemeText = `/* GENERICS */
 --font-family-sans-serif    : sans-serif;
 --font-family-serif         : serif;
 --font-family-mono          : monospace;
 
-/* PARAGRAPHS =========================================================== */
+/* PARAGRAPHS */
 --paragraph-font-family     : var(--font-family-sans-serif);
 --paragraph-font-size       : 1rem;
 --paragraph-line-height     : 1.2;
@@ -293,7 +354,7 @@ export const sampleThemeText = `/* GENERICS ====================================
 --paragraph-subtext-colour  : var(--slate-dark-30);
 --paragraph-subtext-size    : 0.8rem;
 
-/* HEADINGS ============================================================= */
+/* HEADINGS */
 --heading-font-family       : var(--font-family-sans-serif);
 --heading-font-size         : 1.5rem;
 --heading-size-multiplier   : 1.6;
@@ -301,16 +362,16 @@ export const sampleThemeText = `/* GENERICS ====================================
 --heading-font-weight       : 700;
 --heading-text-colour       : var(--slate);
 
-/* LINKS ================================================================ */
+/* LINKS */
 --link-font-family          : var(--font-family-sans-serif);
 --link-text-default         : var(--blue);
 --link-text-hover           : var(--blue);
 
-/* SELECTION ============================================================ */
+/* SELECTION */
 --text-selected             : var(--white);
 --text-bg-selected          : var(--hue);
 
-/* CODE ================================================================= */
+/* CODE */
 --code-font-family          : var(--font-family-mono);
 --code-inline-font-size     : 0.8rem;
 --code-inline-bg            : var(--blue-light-80);
@@ -323,13 +384,13 @@ export const sampleThemeText = `/* GENERICS ====================================
 --code-block-line-height    : 1.8;
 --code-block-border-radius  : var(--global-border-radius);
 
-/*  KBD ================================================================= */
+/*  KBD */
 --kbd-font-family           : var(--font-family-mono);
 --kbd-bg                    : var(--grey-light-10);
 --kbd-text                  : var(--grey);
 --kbd-border-radius         : var(--global-border-radius);
 
-/* TOKENS =============================================================== */
+/* TOKENS */
 --token-tag                 : var(--violet);
 --token-atrule              : var(--teal);
 --token-attrName            : var(--orange);
@@ -365,3 +426,22 @@ export const sampleThemeText = `/* GENERICS ====================================
 --token-html-fallback       : var(--red);
 --token-js-fallback         : var(--red);
 --token-json-token-string   : var(--red);`;
+
+
+// Code sample 01 //////////////////////////////////////////////////////////////
+export const sampleThemeToast = `--toast-bg            : var(--slate-light-10);
+--toast-text          : var(--black);
+--toast-border-radius : var(--global-border-radius);`;
+
+
+// Code sample 01 //////////////////////////////////////////////////////////////
+export const sampleThemeSwitch = `--switch-bg-default         : var(--slate-light-60);
+--switch-bg-hover           : var(--slate-light-40);
+--switch-bg-checked         : var(--hue);
+--switch-bg-disabled        : var(--slate-light-90);
+
+--switch-slider-bg-default  : var(--white);
+--switch-slider-bg-hover    : var(--white);
+--switch-slider-bg-checked  : var(--white);
+--switch-slider-bg-disabled : var(--slate-light-40);
+}`;
