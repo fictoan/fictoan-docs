@@ -130,7 +130,7 @@
 
     --heading-text-colour     : var(--slate-light-10);
     --heading-size-multiplier : 1.6;
-    --heading-line-height     : 1.1;
+    --heading-line-height     : 1.2;
 
     --code-inline-bg          : var(--slate-dark-60);
     --code-inline-text        : var(--slate-light-40);

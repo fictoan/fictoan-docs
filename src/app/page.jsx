@@ -3,6 +3,8 @@
 // EXTERNAL DEPS ///////////////////////////////////////////////////////////////
 import Link from "next/link";
 import Image from "next/image";
+import ReactDOM from "react-dom";
+import Tilt from "react-parallax-tilt";
 
 // INTERNAL DEPS ///////////////////////////////////////////////////////////////
 import {
@@ -34,18 +36,20 @@ import { GlowCard } from "@/components/GlowCard/GlowCard";
 
 // STYLES //////////////////////////////////////////////////////////////////////
 import "./home.css";
-import { sampleTextSizing } from "@/app/typography/CodeSamples";
 
 // ASSETS //////////////////////////////////////////////////////////////////////
-
-
 
 
 const Home = () => {
 
     const sampleCodeFictoan = `<Row sidepadding="large" gutters="small">
     <Portion desktopSpan="one-third" mobileSpan="half">
-        <Text weight="600">Hello there.</Text>
+        <Text weight="600" marginBottom="micro">Hello there.</Text>
+        
+        <Button
+            bgColour="amber" textColor="white">
+            Click me
+        </Button>
     </Portion>
 </Row>`;
 
@@ -79,13 +83,19 @@ const Home = () => {
                                 *Fuck I Couldn’t Think Of A Name
                             </Text>
                         </Element>
-
-                        <Heading as="h1" id="intro-headline">
-                            Write markup<br /> the same way you think.
-                        </Heading>
-
-                        <CodeBlock source={sampleCodeFictoan} language="jsx" />
                     </Element>
+                </Portion>
+
+                <Portion desktopSpan="half">
+                    <Heading as="h2" weight="400" id="intro-headline">
+                        Write markup the same way you think.
+                    </Heading>
+                </Portion>
+
+                <Portion desktopSpan="half">
+                    <GlowCard>
+                        <CodeBlock source={sampleCodeFictoan} language="jsx" />
+                    </GlowCard>
                 </Portion>
             </Row>
 
@@ -209,16 +219,16 @@ const Home = () => {
                                                 name     : "What’s your pick?",
                                                 value    : "select-an-option",
                                                 disabled : true,
-                                                selected : true
+                                                selected : true,
                                             },
                                             {
                                                 name  : "Pick me!",
-                                                value : "option-1"
+                                                value : "option-1",
                                             },
                                             {
                                                 name  : "No, me!",
-                                                value : "option-2"
-                                            }
+                                                value : "option-2",
+                                            },
                                         ]}
                                     />
 
@@ -400,8 +410,8 @@ const Home = () => {
                             <GlowCard>
                                 <Element as="div" className="component-card">
                                     <Element as="div"
-                                        id="gradient-card"
-                                        shape="rounded" borderColour="transparent"
+                                             id="gradient-card"
+                                             shape="rounded" borderColour="transparent"
                                     />
 
                                     <Element as="footer">
@@ -463,7 +473,8 @@ const Home = () => {
                             <GlowCard>
                                 <Element as="div" className="component-card">
                                     <Callout kind="success">
-                                        <Text textColour="green-dark-60">I’d also just like to call out that FICTOAN is awesome.</Text>
+                                        <Text textColour="green-dark-60">I’d also just like to call out that FICTOAN is
+                                            awesome.</Text>
                                     </Callout>
 
                                     <Element as="footer">
