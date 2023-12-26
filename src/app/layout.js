@@ -18,6 +18,7 @@ import {
     SidebarItemIcon,
     SidebarItemText,
     SidebarWrapper,
+    ThemeProvider,
 } from "fictoan-react";
 
 // STYLES //////////////////////////////////////////////////////////////////////
@@ -77,6 +78,7 @@ export default function RootLayout({ children }) {
         </head>
 
         <body>
+        <ThemeProvider currentTheme="dark">
         <SidebarWrapper
             className={`${sidebarState === "collapsed" ? "collapsed" : ""}`}
         >
@@ -445,6 +447,7 @@ export default function RootLayout({ children }) {
         </SidebarWrapper>
 
         <ContentWrapper>{children}</ContentWrapper>
+        </ThemeProvider>
         </body>
         </html>
     );
