@@ -145,7 +145,7 @@ export default function RootLayout({ children }) {
                 </SidebarItem>
             </Link>
 
-            <Link href="/theme">
+            <Link href="/theming" className={`${pathname === "/theming" ? "active" : ""}`}>
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
                         <ThemeIcon />
