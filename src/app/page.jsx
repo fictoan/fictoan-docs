@@ -34,6 +34,7 @@ import { GlowCard } from "@/components/GlowCard/GlowCard";
 
 // STYLES //////////////////////////////////////////////////////////////////////
 import "./home.css";
+import { sampleTextSizing } from "@/app/typography/CodeSamples";
 
 // ASSETS //////////////////////////////////////////////////////////////////////
 
@@ -41,6 +42,12 @@ import "./home.css";
 
 
 const Home = () => {
+
+    const sampleCodeFictoan = `<Row sidepadding="large" gutters="small">
+    <Portion desktopSpan="one-third" mobileSpan="half">
+        <Text weight="600">Hello there.</Text>
+    </Portion>
+</Row>`;
 
     const cardComponentSample = `const clickHere = () => {
     window.load("/components/card");
@@ -68,11 +75,16 @@ const Home = () => {
                                 height={48}
                                 priority
                             />
+                            <Text textColour="black" size="tiny">
+                                *Fuck I Couldn’t Think Of A Name
+                            </Text>
                         </Element>
 
                         <Heading as="h1" id="intro-headline">
-                            The cleanest and most readable markup ever.
+                            Write markup<br /> the same way you think.
                         </Heading>
+
+                        <CodeBlock source={sampleCodeFictoan} language="jsx" />
                     </Element>
                 </Portion>
             </Row>
@@ -451,7 +463,7 @@ const Home = () => {
                             <GlowCard>
                                 <Element as="div" className="component-card">
                                     <Callout kind="success">
-                                        <Text textColour="white">I’d also just like to call out that FICTOAN is awesome.</Text>
+                                        <Text textColour="green-dark-60">I’d also just like to call out that FICTOAN is awesome.</Text>
                                     </Callout>
 
                                     <Element as="footer">
