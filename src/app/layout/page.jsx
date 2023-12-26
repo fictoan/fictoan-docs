@@ -5,13 +5,17 @@ import React from "react";
 import { Card, CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
 
 import "./page-layout.css";
+
 import {
-    sampleContentPadding, sampleGutters,
-    sampleNamedPortions, sampleResonsiveness,
+    sampleContentPadding,
+    sampleGutters,
+    sampleNamedPortions,
+    sampleResonsiveness,
     sampleRow1,
     sampleRowAndPortion1,
     sampleRowAndPortion3,
-    sampleRowAndPortion4, sampleTurnOffResponsiveness,
+    sampleRowAndPortion4,
+    sampleTurnOffResponsiveness,
 } from "./CodeSamples";
 
 const LayoutDocs = () => {
@@ -274,7 +278,7 @@ const LayoutDocs = () => {
                     {/* MULTIPLE PORTIONS ////////////////////////////////////////////////////////////////////////////// */}
                     <Row sidePadding="huge" marginBottom="nano">
                         <Portion>
-                            <Heading as="h5" marginBottom="nano">Multiple Portions</Heading>
+                            <Heading as="h6" marginBottom="nano">Multiple Portions</Heading>
                             <Text>In the same way, you can add as many <code>Portion</code> elements inside
                                 the <code>Row</code>. If the sum of columns values exceeds <code>24</code>, they will wrap
                                 to the next line.</Text>
@@ -432,7 +436,7 @@ const LayoutDocs = () => {
                     {/* MULTIPLE ROWS ////////////////////////////////////////////////////////////////////////////////// */}
                     <Row sidePadding="huge" marginBottom="nano">
                         <Portion>
-                            <Heading as="h5" marginBottom="nano">Multiple Rows</Heading>
+                            <Heading as="h6" marginBottom="nano">Multiple Rows</Heading>
                             <Text>While you can put infinite <code>Portion</code> elements inside a <code>Row</code>, it’s
                                 better to logically break it up according to your content.</Text>
                         </Portion>
@@ -626,7 +630,7 @@ const LayoutDocs = () => {
                     {/* NAMING PORTIONS //////////////////////////////////////////////////////////////////////////////// */}
                     <Row sidePadding="huge" marginBottom="nano">
                         <Portion>
-                            <Heading as="h5" marginBottom="nano">Naming Portions</Heading>
+                            <Heading as="h6" marginBottom="nano">Naming Portions</Heading>
                             <Text>The <code>desktopSpan</code> attribute takes any whole number
                                 from <code>1</code> to <code>24</code>. You can also use the names of the fractions to set
                                 this value, like so&mdash;</Text>
@@ -876,7 +880,7 @@ const LayoutDocs = () => {
 
                     <Row sidePadding="huge">
                         <Portion>
-                            <Heading as="h5">Turn off responsiveness</Heading>
+                            <Heading as="h6">Turn off responsiveness</Heading>
                             <Text>You can also turn off the responsiveness across these breakpoints by using the following
                                 props.</Text>
                         </Portion>
