@@ -129,7 +129,7 @@
     --paragraph-text-colour   : var(--grey-light-10);
 
     --heading-text-colour     : var(--slate-light-10);
-    --heading-size-multiplier : 1.8;
+    --heading-size-multiplier : 1.6;
     --heading-line-height     : 1;
 
     --code-inline-bg          : var(--slate-dark-60);

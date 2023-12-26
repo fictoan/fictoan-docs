@@ -9,7 +9,10 @@ import { usePathname } from "next/navigation";
 
 // INTERNAL DEPS ///////////////////////////////////////////////////////////////
 import {
-    ContentWrapper, ExpandableContent, HRule, SidebarFooter,
+    ContentWrapper,
+    ExpandableContent,
+    HRule,
+    SidebarFooter,
     SidebarHeader,
     SidebarItem,
     SidebarItemIcon,
@@ -19,6 +22,7 @@ import {
 
 // STYLES //////////////////////////////////////////////////////////////////////
 import "../styles/globals.css";
+import "../styles/theme-dark.css";
 
 // ASSETS //////////////////////////////////////////////////////////////////////
 import FictoanLogo from "../assets/images/fictoan-logo.svg";
@@ -57,11 +61,6 @@ import TabsIcon from "../assets/icons/tabs.svg";
 import ToastIcon from "../assets/icons/toast.svg";
 
 const inter = Inter({ subsets : ["latin"] });
-
-// export const metadata = {
-//     title: "FICTOAN docs",
-//     description: "Documentation for the FICTOAN Framework",
-// };
 
 export default function RootLayout({ children }) {
     const pathname = usePathname();
