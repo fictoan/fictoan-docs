@@ -5,18 +5,6 @@
 
 /* BODY ///////////////////////////////////////////////////////////////////// */
 :root {
-    --sidebar-bg                   : var(--grey-dark-90);
-    --sidebar-header-bg            : var(--grey-dark-90);
-    --sidebar-header-border-bottom : var(--grey-dark-60);
-
-    --sidebar-item-icon-default-stroke-colour  : var(--slate-dark-40);
-
-    --sidebar-footer-bg            : var(--grey-dark-90);
-    --sidebar-footer-border-top    : var(--grey-dark-60);
-}
-
-/* BODY ///////////////////////////////////////////////////////////////////// */
-:root {
     --callout-border-radius  : var(--global-border-radius);
     --callout-border-width   : var(--nano);
 
@@ -31,6 +19,17 @@
 
     --callout-error-bg       : var(--red-light-40);
     --callout-error-border   : var(--red-dark-40);
+}
+
+/* BREADCRUMBS ////////////////////////////////////////////////////////////// */
+:root {
+    --breadcrumbs-wrapper-bg             : var(--transparent);
+
+    --breadcrumb-item-separator          : "/";
+    --breadcrumb-item-separator-colour   : var(--slate-light-10);
+
+    --breadcrumb-item-text-colour        : var(--paragraph-text-colour);
+    --breadcrumb-item-text-colour-active : var(--paragraph-text-colour);
 }
 
 /* H-RULE /////////////////////////////////////////////////////////////////// */
@@ -91,16 +90,46 @@
     --input-icon-valid            : var(--green-dark-30);
 }
 
+/* SIDEBAR ////////////////////////////////////////////////////////////////// */
+:root {
+    --sidebar-bg                              : var(--grey-dark-90);
+    --sidebar-header-bg                       : var(--grey-dark-90);
+    --sidebar-header-border-bottom            : var(--grey-dark-60);
+
+    --sidebar-item-icon-default-stroke-colour : var(--slate-dark-40);
+
+    --sidebar-footer-bg                       : var(--grey-dark-90);
+    --sidebar-footer-border-top               : var(--grey-dark-60);
+}
+
+:root {
+    --table-bg                           : var(--slate-dark-80);
+    --table-border                       : var(--slate-dark-60);
+    --table-font-family                  : var(--paragraph-font-family);
+    --table-text                         : var(--paragraph-text-colour);
+
+    --table-striped-header-bg            : var(--slate-dark-40);
+    --table-striped-cell-bg              : var(--slate-light-20);
+
+    --table-bg-hover                     : var(--amber-light-20);
+    --table-text-hover                   : var(--paragraph-text-colour);
+
+    --table-pagination-bg                : var(--white);
+    --table-pagination-border-radius     : var(--global-border-radius);
+    --table-pagination-text              : var(--paragraph-text-colour);
+    --table-pagination-nav-icon-bg-hover : var(--slate-dark-60);
+}
+
 /* TEXT ///////////////////////////////////////////////////////////////////// */
 :root {
     --font-family-sans-serif  : "Inter", sans-serif;
 
-    --paragraph-font-size       : 1rem;
-    --paragraph-line-height     : 1.4;
-    --paragraph-text-colour     : var(--grey-light-10);
+    --paragraph-font-size     : 1rem;
+    --paragraph-line-height   : 1.4;
+    --paragraph-text-colour   : var(--grey-light-10);
 
-    --heading-text-colour       : var(--slate-light-10);
-    --heading-size-multiplier : 2.2;
+    --heading-text-colour     : var(--slate-light-10);
+    --heading-size-multiplier : 1.8;
     --heading-line-height     : 1;
 
     --code-inline-bg          : var(--slate-dark-60);
