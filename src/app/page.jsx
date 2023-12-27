@@ -3,32 +3,29 @@
 // EXTERNAL DEPS ///////////////////////////////////////////////////////////////
 import Link from "next/link";
 import Image from "next/image";
-import ReactDOM from "react-dom";
-import Tilt from "react-parallax-tilt";
+import { useEffect, useRef, useState } from 'react';
 
 // INTERNAL DEPS ///////////////////////////////////////////////////////////////
 import {
-    Element,
-    Row,
-    Portion,
-    Heading,
-    Button,
-    Text,
-    HRule,
-    NotificationItem,
-    Table,
-    Callout,
-    ProgressBar,
+    Badge,
     BreadcrumbItem,
     BreadcrumbsWrapper,
-    Badge,
-    Card,
-    InputField,
-    Switch,
+    Button,
+    Callout,
     CheckBox,
-    RadioButton,
-    Select,
     CodeBlock,
+    Element,
+    Heading,
+    InputField,
+    NotificationItem,
+    Portion,
+    ProgressBar,
+    RadioButton,
+    Row,
+    Select,
+    Switch,
+    Table,
+    Text,
 } from "fictoan-react";
 
 // COMPONENTS //////////////////////////////////////////////////////////////////
@@ -40,8 +37,17 @@ import "./home.css";
 // ASSETS //////////////////////////////////////////////////////////////////////
 
 
-const Home = () => {
+const debounce = (func, delay) => {
+    let timer;
+    return function(...args) {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+            func.apply(this, args);
+        }, delay);
+    };
+};
 
+const Home = () => {
     const sampleCodeFictoan = `<Row sidepadding="large" gutters="small">
     <Portion desktopSpan="one-third" mobileSpan="half">
         <Text weight="600" marginBottom="micro">Hello there.</Text>
@@ -57,49 +63,85 @@ const Home = () => {
     window.load("/components/card");
 }`;
 
+    const videoRef = useRef(null);
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const handleScroll = () => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        // Ensure scrollPosition is a number between 0 and 1
+        setScrollPosition(Math.min(Math.max(scrolled / scrollable, 0), 1));
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (video && !isNaN(video.duration)) {
+            const videoTime = scrollPosition * video.duration;
+            // Check if videoTime is a finite number before setting currentTime
+            if (isFinite(videoTime)) {
+                video.currentTime = videoTime;
+            }
+        }
+    }, [scrollPosition]);
+
     return (
         <article id="home-page">
-            <Row sidePadding="medium" marginTop="nano">
-                <Portion desktopSpan="one-third">
-                    <Link href="https://github.com/fictoan/fictoan-react">
-                        <Text weight="400">Github</Text>
-                    </Link>
-                </Portion>
-            </Row>
+            {/* <Row sidePadding="medium" marginTop="nano"> */}
+            {/*     <Portion desktopSpan="one-third"> */}
+            {/*         <Link href="https://github.com/fictoan/fictoan-react"> */}
+            {/*             <Text weight="400">Github</Text> */}
+            {/*         </Link> */}
+            {/*     </Portion> */}
+            {/* </Row> */}
 
-            <Row sidePadding="medium" marginBottom="medium">
-                <Portion>
+            <Row sidePadding="medium" padding="small">
+                <Portion desktopSpan="half">
                     <Element as="header" marginTop="small">
-                        <Element as="div" opacity="80" marginBottom="small">
+                        <Element as="div" opacity="60">
                             <Image
                                 src="/fictoan-logo.svg"
                                 alt="Fictoan Framework Logo"
                                 id="fictoan-logo"
                                 width={120}
-                                height={48}
+                                height={32}
                                 priority
                             />
-                            <Text textColour="black" size="tiny">
-                                *Fuck I Couldn’t Think Of A Name
-                            </Text>
                         </Element>
+
+                        <Text textColour="black" size="tiny">
+                            *Fuck I Couldn’t Think Of A Name
+                        </Text>
+
+                        <Heading as="h2" textColour="white" id="intro-headline">
+                            A dead-simple UI component library
+                        </Heading>
                     </Element>
                 </Portion>
 
-                <Portion desktopSpan="half">
-                    <Heading as="h2" weight="400" id="intro-headline">
-                        Write markup the same way you think.
-                    </Heading>
+                <Portion desktopSpan="one-third">
                 </Portion>
 
                 <Portion desktopSpan="half">
-                    <GlowCard>
-                        <CodeBlock source={sampleCodeFictoan} language="jsx" />
-                    </GlowCard>
+                    {/* <CodeBlock source={sampleCodeFictoan} language="jsx" /> */}
                 </Portion>
             </Row>
 
-            <HRule kind="tertiary" sideMargin="medium" marginTop="medium" marginBottom="medium" />
+            <video id="fictoan-bg" ref={videoRef}>
+                <source src="/logo-render.mp4" />
+            </video>
+            {/* <Image */}
+            {/*     src="/ff-logo.jpg" */}
+            {/*     alt="Fictoan Framework Logo" */}
+            {/*     id="fictoan-bg" */}
+            {/*     width={120} */}
+            {/*     height={32} */}
+            {/*     priority */}
+            {/* /> */}
 
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
             {/*  COMPONENTS  */}

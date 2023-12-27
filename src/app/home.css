@@ -1,12 +1,27 @@
 #home-page {
+    scroll-behavior: smooth;
+
+
     #fictoan-logo {
         filter : invert(1);
     }
 
     #intro-headline {
-        background              : -webkit-linear-gradient(270deg, #adb2ff 0%, #264be1 100%);
-        -webkit-background-clip : text;
-        -webkit-text-fill-color : transparent;
+        /*background              : -webkit-linear-gradient(270deg, #adb2ff 0%, #264be1 100%);*/
+        /*-webkit-background-clip : text;*/
+        /*-webkit-text-fill-color : transparent;*/
+    }
+
+    #fictoan-bg {
+        position  : fixed;
+        top       : -20%;
+        left      : 0%;
+        width     : 100%;
+        height    : auto;
+        z-index   : -1;
+        transform : rotate(-40deg);
+        opacity   : 0.4;
+        filter    : saturate(150%);
     }
 
     /* GRID COMPONENTS ////////////////////////////////////////////////////// */

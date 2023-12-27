@@ -6,7 +6,7 @@
     --saturation           : 100;
     --lightness            : 50;
     --size                 : 150;
-    --backdrop             : hsl(0 0% 60% / 0.15);
+    --backdrop             : hsl(0 0% 10% / 0.95);
     --backup-border        : hsl(0 0% 60% / 0.2);
     --cardBlur             : 4;
     --bg-spot-opacity      : 0.1;
@@ -26,7 +26,7 @@
     grid-template-rows : 1fr auto;
     box-shadow         : 0 1rem 2rem -1rem black;
     display            : grid;
-    backdrop-filter    : blur(calc(var(--cardBlur, 5) * 1px));
+    backdrop-filter    : blur(8px) saturate(180%);
     touch-action       : none;
 }
 
@@ -39,7 +39,7 @@
             var(--spotlight-size) var(--spotlight-size) at calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px),
             hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--bg-spot-opacity, 0.1)), transparent
     );
-    background-color      : var(--backdrop, transparent);
+    background-color      : hsl(0 0% 4% / 0.8);
     background-size       : calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
     background-position   : 50% 50%;
     background-attachment : fixed;

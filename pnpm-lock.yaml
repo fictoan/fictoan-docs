@@ -26,9 +26,6 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
-  react-parallax-tilt:
-    specifier: ^1.7.179
-    version: 1.7.179(react-dom@18.2.0)(react@18.2.0)
 
 packages:
 
@@ -2136,16 +2133,6 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
-    dev: false
-
-  /react-parallax-tilt@1.7.179(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-9Gd7VPJ+IGzSBXc/FBBh6Zq43tcIKfY4RmAPQtseTG9VJjjOMo2ciO8soCeUQj4iyV40cxh636tZg++kbXlLdw==}
-    peerDependencies:
-      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /react@18.2.0:
