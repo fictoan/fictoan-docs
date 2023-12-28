@@ -13,7 +13,6 @@ import {
     Button,
     Callout,
     CheckBox,
-    CodeBlock,
     Element,
     Heading,
     InputField,
@@ -27,6 +26,7 @@ import {
     Table,
     Text,
 } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS //////////////////////////////////////////////////////////////////
 import { GlowCard } from "@/components/GlowCard/GlowCard";
@@ -268,16 +268,14 @@ const Home = () => {
                                                 value : "option-1",
                                             },
                                             {
-                                                name  : "No, me!",
-                                                value : "option-2",
+                                                name: "No, me!",
+                                                value: "option-2",
                                             },
                                         ]}
                                     />
 
                                     <Element as="footer">
-                                        <Link href="/components/button">
-                                            Select &rarr;
-                                        </Link>
+                                        <Link href="/components/button">Select &rarr;</Link>
                                     </Element>
                                 </Element>
                             </GlowCard>
@@ -323,9 +321,7 @@ const Home = () => {
                                     </Table>
 
                                     <Element as="footer">
-                                        <Link href="/components/button">
-                                            Table &rarr;
-                                        </Link>
+                                        <Link href="/components/button">Table &rarr;</Link>
                                     </Element>
                                 </Element>
                             </GlowCard>
@@ -336,40 +332,28 @@ const Home = () => {
                                 <Element as="div" className="component-card">
                                     <BreadcrumbsWrapper>
                                         <BreadcrumbItem>
-                                            <Link href="/components/breadcrumbs">
-                                                A
-                                            </Link>
+                                            <Link href="/components/breadcrumbs">A</Link>
                                         </BreadcrumbItem>
 
                                         <BreadcrumbItem>
-                                            <Link href="/components/breadcrumbs">
-                                                long
-                                            </Link>
+                                            <Link href="/components/breadcrumbs">long</Link>
                                         </BreadcrumbItem>
 
                                         <BreadcrumbItem>
-                                            <Link href="/components/breadcrumbs">
-                                                trail
-                                            </Link>
+                                            <Link href="/components/breadcrumbs">trail</Link>
                                         </BreadcrumbItem>
 
                                         <BreadcrumbItem>
-                                            <Link href="/components/breadcrumbs">
-                                                of
-                                            </Link>
+                                            <Link href="/components/breadcrumbs">of</Link>
                                         </BreadcrumbItem>
 
                                         <BreadcrumbItem>
-                                            <Link href="/components/breadcrumbs">
-                                                crumbs
-                                            </Link>
+                                            <Link href="/components/breadcrumbs">crumbs</Link>
                                         </BreadcrumbItem>
                                     </BreadcrumbsWrapper>
 
                                     <Element as="footer">
-                                        <Link href="/components/button">
-                                            Breadcrumbs &rarr;
-                                        </Link>
+                                        <Link href="/components/button">Breadcrumbs &rarr;</Link>
                                     </Element>
                                 </Element>
                             </GlowCard>
@@ -379,25 +363,13 @@ const Home = () => {
                             <GlowCard>
                                 <Element as="div" className="component-card">
                                     <Element as="div" marginBottom="micro">
-                                        <RadioButton
-                                            id="radio-1"
-                                            name="choices-1"
-                                            value="yes"
-                                            label="This"
-                                        />
+                                        <RadioButton id="radio-1" name="choices-1" value="yes" label="This" />
                                     </Element>
 
-                                    <RadioButton
-                                        id="radio-2"
-                                        name="choices-1"
-                                        value="no"
-                                        label="That"
-                                    />
+                                    <RadioButton id="radio-2" name="choices-1" value="no" label="That" />
 
                                     <Element as="footer">
-                                        <Link href="/components/button">
-                                            Radio buttons &rarr;
-                                        </Link>
+                                        <Link href="/components/button">Radio buttons &rarr;</Link>
                                     </Element>
                                 </Element>
                             </GlowCard>
@@ -415,17 +387,10 @@ const Home = () => {
                                         />
                                     </Element>
 
-                                    <Switch
-                                        id="switch-1"
-                                        value="switch-1"
-                                        name="switch-1"
-                                        label="Toggle me"
-                                    />
+                                    <Switch id="switch-1" value="switch-1" name="switch-1" label="Toggle me" />
 
                                     <Element as="footer">
-                                        <Link href="/components/button">
-                                            Switch &rarr;
-                                        </Link>
+                                        <Link href="/components/button">Switch &rarr;</Link>
                                     </Element>
                                 </Element>
                             </GlowCard>
@@ -435,14 +400,14 @@ const Home = () => {
                             <GlowCard>
                                 <Element as="div" className="component-card">
                                     <CodeBlock
-                                        source={cardComponentSample} language="jsx"
-                                        marginTop="micro" marginBottom="micro"
+                                        source={cardComponentSample}
+                                        language="jsx"
+                                        marginTop="micro"
+                                        marginBottom="micro"
                                     />
 
                                     <Element as="footer">
-                                        <Link href="/components/button">
-                                            CodeBlock &rarr;
-                                        </Link>
+                                        <Link href="/components/button">CodeBlock &rarr;</Link>
                                     </Element>
                                 </Element>
                             </GlowCard>
@@ -451,15 +416,10 @@ const Home = () => {
                         <Element as="div" className="grid-item" id="colour-card">
                             <GlowCard>
                                 <Element as="div" className="component-card">
-                                    <Element as="div"
-                                             id="gradient-card"
-                                             shape="rounded" borderColour="transparent"
-                                    />
+                                    <Element as="div" id="gradient-card" shape="rounded" borderColour="transparent" />
 
                                     <Element as="footer">
-                                        <Link href="/colour/">
-                                            Colour &rarr;
-                                        </Link>
+                                        <Link href="/colour/">Colour &rarr;</Link>
                                     </Element>
                                 </Element>
                             </GlowCard>
@@ -470,7 +430,8 @@ const Home = () => {
                                 <Element as="div" className="component-card">
                                     <Element as="div" id="badge-wrapper">
                                         <Badge
-                                            bgColour="red-light-40" textColour="red-dark-10"
+                                            bgColour="red-light-40"
+                                            textColour="red-dark-10"
                                             shape="curved"
                                             margin="nano"
                                         >
@@ -478,15 +439,18 @@ const Home = () => {
                                         </Badge>
 
                                         <Badge
-                                            bgColour="green-light-40" textColour="green-dark-20"
-                                            shape="curved" size="large"
+                                            bgColour="green-light-40"
+                                            textColour="green-dark-20"
+                                            shape="curved"
+                                            size="large"
                                             margin="nano"
                                         >
                                             BADGE
                                         </Badge>
 
                                         <Badge
-                                            bgColour="amber-light-20" textColour="orange-dark-10"
+                                            bgColour="amber-light-20"
+                                            textColour="orange-dark-10"
                                             shape="rounded"
                                             margin="nano"
                                         >
@@ -494,8 +458,10 @@ const Home = () => {
                                         </Badge>
 
                                         <Badge
-                                            bgColour="violet" textColour="white"
-                                            shape="rounded" size="medium"
+                                            bgColour="violet"
+                                            textColour="white"
+                                            shape="rounded"
+                                            size="medium"
                                             margin="nano"
                                         >
                                             HONOUR
@@ -503,9 +469,7 @@ const Home = () => {
                                     </Element>
 
                                     <Element as="footer">
-                                        <Link href="/components/button">
-                                            Badge &rarr;
-                                        </Link>
+                                        <Link href="/components/button">Badge &rarr;</Link>
                                     </Element>
                                 </Element>
                             </GlowCard>
@@ -515,14 +479,13 @@ const Home = () => {
                             <GlowCard>
                                 <Element as="div" className="component-card">
                                     <Callout kind="success">
-                                        <Text textColour="green-dark-60">I’d also just like to call out that FICTOAN is
-                                            awesome.</Text>
+                                        <Text textColour="green-dark-60">
+                                            I’d also just like to call out that FICTOAN is awesome.
+                                        </Text>
                                     </Callout>
 
                                     <Element as="footer">
-                                        <Link href="/components/button">
-                                            Callout &rarr;
-                                        </Link>
+                                        <Link href="/components/button">Callout &rarr;</Link>
                                     </Element>
                                 </Element>
                             </GlowCard>
