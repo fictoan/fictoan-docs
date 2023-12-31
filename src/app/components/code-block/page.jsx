@@ -2,7 +2,8 @@
 
 import React from "react";
 
-import { CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components"
 
 import "./page-code-block.css";
 import { sampleCodeBlock } from "./CodeSamples";
