@@ -1,0 +1,18 @@
+#site-header {
+    .links-wrapper {
+        display        : flex;
+        flex-direction : column;
+        gap            : 4px;
+    }
+
+    a {
+        font-size   : 90%;
+        font-weight : normal;
+        color       : var(--paragraph-text-colour);
+    }
+
+    input {
+        padding   : 6px 12px;
+        font-size : 14px;
+    }
+}
