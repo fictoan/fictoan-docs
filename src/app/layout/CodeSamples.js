@@ -1,5 +1,10 @@
 // Code sample 01 ==============================================================
-export const sampleRow1 = `<Row>
+export const sampleGridRow = `<Row layout="grid">
+    
+</Row>`;
+
+// Code sample 01 ==============================================================
+export const sampleFlexboxRow = `<Row layout="flexbox">
     
 </Row>`;
 

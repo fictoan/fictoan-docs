@@ -1,17 +1,23 @@
 "use client";
 
+// EXTERNAL DEPS ===============================================================
 import React, { useEffect } from "react";
 
+// INTERNAL DEPS ===============================================================
 import {
     Element,
     Row,
     Portion,
     Heading,
     Text,
-    HRule, CodeBlock,
+    HRule, Card, RadioGroup, RadioButton,
 } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
-import { snippetInstall } from "../../assets/code-samples/CodeSamples";
+// COMPONENTS ==================================================================
+import { snippetInstall, snippetUsage } from "../../assets/code-samples/CodeSamples";
+import { InteractiveCardExample } from "./InteractiveCardExample";
+import Link from "next/link";
 
 
 const GettingStarted = () => {
@@ -21,70 +27,89 @@ const GettingStarted = () => {
 
     return (
         <article>
-            <Row sidePadding="huge" marginTop="medium" marginBottom="small">
+            <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h4" className="text-hue">Getting started</Heading>
+                    <Heading as="h1" className="text-hue">Getting started</Heading>
                 </Portion>
             </Row>
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/*  FIRST STEPS  */}
+            {/* FIRST STEPS */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="first-steps">
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h6">First steps</Heading>
+                        <Heading as="h4">First steps</Heading>
                     </Portion>
-                </Row>
 
-                <Row sidePadding="huge" marginBottom="none">
                     <Portion>
-                        <Text weight="700" size="large" marginBottom="nano">
-                            Step 1 — Add Fictoan to a React project
+                        <Text weight="700" size="large" marginBotto textColour="white" m="nano">
+                            Step 1 —
                         </Text>
+
                         <Text marginBottom="micro">
-                            To begin using Fictoan, you first need a React project up and
-                            running. For that, you’d need to install a few things—
+                            If you’re starting a new project from scratch, consider using the <a
+                            href="https://fictoan.io/boilerplate" target="_blank" rel="noreferrer">Fictoan
+                            boilerplate &#8599;</a>. It’s a simple, bare-bones NextJS app with Fictoan already
+                            installed, and a few basics already setup.
+                        </Text>
+
+                        <Text marginBottom="micro">
+                            Or, you can install it in your existing project—
                         </Text>
 
                         <CodeBlock source={snippetInstall} language="bash" />
                     </Portion>
+
+                    {/* <Portion> */}
+                    {/*     <Text weight="700" size="large" textColour="white" marginBottom="nano">Step 2 — Edit the default theme</Text> */}
+
+                    {/*     <Text marginBottom="nano"> */}
+                    {/*         Fictoan comes with a extensive theme, which you can see <a */}
+                    {/*         href="https://github.com/fictoan/fictoan-react/blob/master/src/styles/theme.ts" */}
+                    {/*         target="_blank" rel="noreferrer">here</a>. It lets you control all aspects of the UI. They */}
+                    {/*         all have default values, so go ahead and edit the ones that you want.</Text> */}
+                    {/* </Portion> */}
                 </Row>
-
-                <HRule sideMargin="huge" kind="secondary" marginTop="micro" marginBottom="micro" />
-
-                <Row sidePadding="huge">
-                    <Portion>
-                        <Text weight="700" size="large" marginBottom="nano">Step 2 — Edit the default theme</Text>
-                        <Text marginBottom="nano">
-                            Fictoan comes with a extensive theme, which you can see <a
-                            href="https://github.com/fictoan/fictoan-react/blob/master/src/styles/theme.ts"
-                            target="_blank" rel="noreferrer">here</a>. It lets you control all aspects of the UI. They
-                            all have default values, so go ahead and edit the ones that you want.</Text>
-                    </Portion>
-                </Row>
-
-                <HRule sideMargin="huge" kind="primary" />
             </Element>
 
+            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-            {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-            {/*  COMMON PATTERNS  */}
-            {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* COMMON PATTERNS */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="patterns">
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h6">Common patterns</Heading>
+                        <Heading as="h4">Using components</Heading>
                     </Portion>
                 </Row>
 
-                {/*   NOMENCLATURE  //////////////////////////////////////////////////////////////////////////////  */}
-                <Row id="nomenclature" sidePadding="huge" marginBottom="nano">
+                {/* NOMENCLATURE =========================================== */}
+                <Row
+                    id="nomenclature"
+                    layout="grid"
+                    horizontalPadding="huge" marginBottom="nano"
+                >
                     <Portion>
-                        <Text weight="700" size="large" marginBottom="nano">Nomenclature</Text>
+                        <Text weight="700" size="large" textColour="white" marginBottom="nano">Importing</Text>
+
                         <Text marginBottom="micro">
-                            Naming things in Fictoan is all mostly straightforward and plain English. This is true for
-                            elements, components, attributes, props and also their values.
+                            In your content files, just import the components you need at the top, and use them inside
+                            the return function like so—
+                        </Text>
+
+                        <CodeBlock source={snippetUsage} language="javascript" marginBottom="micro" />
+
+                        <Text marginBottom="micro">Now you’re ready to use Fictoan components in your project.</Text>
+                    </Portion>
+
+                    <Portion>
+                        <Text weight="700" size="large" textColour="white" marginBottom="nano">Usage</Text>
+
+                        <Text marginBottom="micro">
+                            Fictoan components are just simple wrappers around HTML elements. You can extend their look
+                            and feel by passing props to them.
                         </Text>
 
                         <Text marginBottom="micro">
@@ -94,15 +119,40 @@ const GettingStarted = () => {
                             don’t have to remember complex terminology, and Fictoan tries to be as intuitive as
                             possible.
                         </Text>
+
+                        <Text marginBottom="micro">
+                            Here’s an interactive example. Here we have a default <code>Card</code> component. It looks
+                            like just a line because all you’re seeing is the border. Start by adding some padding to
+                            it.
+                        </Text>
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" kind="secondary" marginTop="micro" marginBottom="micro" />
+                <InteractiveCardExample />
+
+                <Row layout="grid" horizontalPadding="huge">
+                    <Portion>
+                        <Text marginBottom="micro">
+                            It’s that easy. The markup is clean, easy to understand, and no complex nomenclature or
+                            cryptic notation to remember.
+                        </Text>
+
+                        <Text>
+                            The global default values for the background colour, border colour and width, and the
+                            border-radius value are set via the theme file. You can change them by creating your own
+                            theme file and over-riding the values. <Link href="/theming">Read more about theming
+                            here</Link>.
+                        </Text>
+                    </Portion>
+                </Row>
+
+                <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
                 {/*   ATTRIBUTE VALUES  //////////////////////////////////////////////////////////////////////////  */}
-                <Row id="attributes" sidePadding="huge">
+                <Row layout="grid" id="attributes" horizontalPadding="huge">
                     <Portion>
-                        <Text weight="700" size="large" marginBottom="nano">Attribute values</Text>
+                        <Text weight="700" size="large" marginBotto textColour="white" m="nano">Attribute values</Text>
+
                         <Text marginBottom="micro">
                             Keeping in line with the reduced terminology to remember, most elements and components have
                             the same list of values for their props.
@@ -121,46 +171,63 @@ const GettingStarted = () => {
                     </Portion>
 
                     <Portion>
-                        <Row marginBottom="none" retainLayoutAlways>
+                        <Row layout="grid" marginBottom="none" retainLayoutAlways>
                             <Portion desktopSpan="half">
-                                <Text weight="600" marginBottom="none">Prop</Text>
-                                <Text marginBottom="nano"><code>margin</code></Text>
-                                <Text marginBottom="nano"><code>marginTop</code></Text>
-                                <Text marginBottom="nano"><code>marginRight</code></Text>
-                                <Text marginBottom="nano"><code>marginBottom</code></Text>
-                                <Text marginBottom="nano"><code>marginLeft</code></Text>
-                                <Text marginBottom="nano"><code>padding</code></Text>
-                                <Text marginBottom="nano"><code>paddingTop</code></Text>
-                                <Text marginBottom="nano"><code>paddingRight</code></Text>
-                                <Text marginBottom="nano"><code>paddingBottom</code></Text>
-                                <Text marginBottom="nano"><code>paddingLeft</code></Text>
-                                <Text marginBottom="nano"><code>size</code></Text>
-                                <Text marginBottom="nano"><code>spacing</code></Text>
-                                <Text marginBottom="nano"><code>sidePadding</code></Text>
-                                <Text marginBottom="nano"><code>sideMargin</code></Text>
-                                <Text marginBottom="nano"><code>gutters</code></Text>
+                                <Text weight="700" size="large" marginBottom="none">Prop</Text>
+
+                                <HRule kind="tertiary" verticalMargin="nano" />
+
+                                <Element as="div" marginBottom="micro">
+                                    <Text marginBottom="nano"><code>margin</code></Text>
+                                    <Text marginBottom="nano"><code>marginTop</code></Text>
+                                    <Text marginBottom="nano"><code>marginRight</code></Text>
+                                    <Text marginBottom="nano"><code>marginBottom</code></Text>
+                                    <Text marginBottom="nano"><code>marginLeft</code></Text>
+                                    <Text marginBottom="nano"><code>horizontalMargin</code></Text>
+                                    <Text marginBottom="nano"><code>verticalMargin</code></Text>
+                                </Element>
+
+                                <Element as="div" marginBottom="micro">
+                                    <Text marginBottom="nano"><code>padding</code></Text>
+                                    <Text marginBottom="nano"><code>paddingTop</code></Text>
+                                    <Text marginBottom="nano"><code>paddingRight</code></Text>
+                                    <Text marginBottom="nano"><code>paddingBottom</code></Text>
+                                    <Text marginBottom="nano"><code>paddingLeft</code></Text>
+                                    <Text marginBottom="nano"><code>horizontalPadding</code></Text>
+                                    <Text marginBottom="nano"><code>verticalPadding</code></Text>
+                                </Element>
+
+                                <Element as="div" marginBottom="micro">
+                                    <Text marginBottom="nano"><code>size</code></Text>
+                                    <Text marginBottom="nano"><code>gutters</code></Text>
+                                </Element>
                             </Portion>
+
                             <Portion desktopSpan="half">
-                                <Text weight="600" marginBottom="none">Possible value</Text>
-                                <Text marginBottom="nano"><code>none</code></Text>
-                                <Text marginBottom="nano"><code>nano</code></Text>
-                                <Text marginBottom="nano"><code>micro</code></Text>
-                                <Text marginBottom="nano"><code>tiny</code></Text>
-                                <Text marginBottom="nano"><code>small</code></Text>
-                                <Text marginBottom="nano"><code>medium</code></Text>
-                                <Text marginBottom="nano"><code>large</code></Text>
-                                <Text marginBottom="nano"><code>huge</code></Text>
+                                <Text weight="700" size="large">Possible value</Text>
+
+                                <HRule kind="tertiary" verticalMargin="nano" />
+
+                                <Text marginBottom="nano"><code>none</code> — 0</Text>
+                                <Text marginBottom="nano"><code>nano</code> — 8px</Text>
+                                <Text marginBottom="nano"><code>micro</code> — 24px</Text>
+                                <Text marginBottom="nano"><code>tiny</code> — 2vmax</Text>
+                                <Text marginBottom="nano"><code>small</code> — 4vmax</Text>
+                                <Text marginBottom="nano"><code>medium</code> — 8vmax</Text>
+                                <Text marginBottom="nano"><code>large</code> — 16vmax</Text>
+                                <Text marginBottom="nano"><code>huge</code> — 24vmax</Text>
                             </Portion>
                         </Row>
                     </Portion>
 
                     <Portion>
                         <Text marginBottom="micro">
-                            Now, of these values, the <code>nano</code> and the <code>micro</code> are static, fixed
-                            unit values&mdash;8px and 24px respectively. The rest are dynamic, usually using
-                            the <code>vh</code> and <code>vw</code> units, and so change from screen to screen, so as to
-                            offer a manageable system across various screen densities.
+                            Each of these values can be again changed in the theme file.
                         </Text>
+
+                        <HRule kind="secondary" verticalMargin="micro" />
+
+                        <Text weight="700" size="large" marginBotto textColour="white" m="nano">Contextual values</Text>
 
                         <Text marginBottom="micro">
                             Another thing to keep in mind is that they are also contextual. For

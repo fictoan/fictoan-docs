@@ -1,6 +1,20 @@
 export const snippetInstall = `yarn add fictoan-react
 # or
-npm install fictoan-react`;
+npm install fictoan-react
+# or
+pnpm install fictoan-react`;
+
+export const snippetUsage = `import { Element, Text, Button } from "fictoan-react";
+
+export const HomePage = () => {
+    return (
+        <Element as="article">
+            <Text>Hello, world!</Text>
+            
+            <Button kind="primary">Click me!</Button>
+        </Element>
+    );
+}`;
 
 export const snippetCardSample = `
 <Card

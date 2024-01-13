@@ -2,7 +2,8 @@
 
 import React from "react";
 
-import { Card, CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Card, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 import "./base-element.css";
 import { sampleElement } from "./CodeSamples";
@@ -15,7 +16,7 @@ const BaseElementDocs = () => {
             </head>
 
             <article id="page-base-element">
-                <Row sidePadding="huge" marginTop="medium" marginBottom="small">
+                <Row layout="grid" sidePadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h4" className="text-hue" marginBottom="small">Base element</Heading>
                         <Text>
@@ -25,7 +26,7 @@ const BaseElementDocs = () => {
                     </Portion>
                 </Row>
 
-                <Row sidePadding="huge">
+                <Row layout="grid" sidePadding="huge">
                     <Portion>
                         <Heading as="h6" marginBottom="micro">Props</Heading>
 
@@ -81,7 +82,7 @@ const BaseElementDocs = () => {
                 {/* BASICS */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 <Element as="section" id="default">
-                    <Row sidePadding="huge">
+                    <Row layout="grid" sidePadding="huge">
                         <Portion>
                             <Heading as="h3" marginBottom="nano">Default</Heading>
 

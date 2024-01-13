@@ -1,116 +1,175 @@
 "use client";
+// EXTERNAL DEPS ///////////////////////////////////////////////////////////////
+import React, { useEffect } from "react";
 
-import React from "react";
-
-import "./page-manifesto.css";
-
+// INTERNAL DEPS ///////////////////////////////////////////////////////////////
 import {
     Element,
     Row,
     Portion,
     Heading,
-    Text,
-    HRule, Button, Tooltip,
+    Text, HRule,
 } from "fictoan-react";
+
+// COMPONENTS //////////////////////////////////////////////////////////////////
+
+// STYLES //////////////////////////////////////////////////////////////////////
+import "./page-manifesto.css";
+
+// ASSETS //////////////////////////////////////////////////////////////////////
 
 
 const Manifesto = () => {
+    useEffect(() => {
+        document.title = "Manifesto — Fictoan";
+    }, []);
+
     return (
         <article id="page-manifesto">
+            {/* INTRO ////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Row layout="grid" sidePadding="large" marginTop="medium" marginBottom="medium">
+                {/* PROBLEM ================================================ */}
+                <Portion>
+                    <Text weight="700" marginBottom="small">MANIFESTO</Text>
+                </Portion>
 
-            {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-            {/*  BASICS  */}
-            {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-            <Element as="section" marginTop="medium">
-                <Row sidePadding="small" marginBottom="medium">
-                    <Portion desktopSpan="one-third">
-                        <Text weight="600" marginBottom="small">MANIFESTO</Text>
+                <Portion desktopSpan="half">
+                    <Heading as="h1" weight="400" textColour="white" marginBottom="micro">
+                        The hand-off process is broken
+                    </Heading>
 
-                        <Heading as="h3" weight="400" textColour="white" marginBottom="micro">
-                            The hand-off process is broken
-                        </Heading>
-
-                        <Text size="large" marginBottom="micro">
-                            Hand-offs are treated akin to passing baton, and a its-your-problem-now attitude.
-                        </Text>
-
-                        <Text size="large" marginBottom="micro" title="hello">
-                            We want it to be a lot more collaborative and iterative, and a lot less of a one-way street
-                            paved with Jira tickets.
-                        </Text>
-                    </Portion>
-
-                    <Portion desktopSpan="one-sixth" />
-
-                    <Portion desktopSpan="one-fourth">
-                        <video id="handoff-video" autoPlay muted loop>
-                            <source src="/handoff.mp4" />
-                        </video>
-                    </Portion>
-                </Row>
-
-                <Row sidePadding="small">
-                    <Portion desktopSpan="one-sixth" />
-
-                    <Portion desktopSpan="one-third">
-                        <Heading as="h3" weight="400" textColour="white" marginBottom="micro">
-                            The designer is responsible for pixel perfection
-                        </Heading>
-
-                        <Text size="large" marginBottom="micro">
-                            It’s the designer who understands the design best—shouldn’t they be in charge of the final
-                            output?
-                        </Text>
-
-                        <Text size="large" marginBottom="micro">
-                            A meticulously-crafted Figma file should not be the end of the line. A designer should
-                            translate that to reality—and not let other interpret it as they see fit.
-                        </Text>
-                    </Portion>
-
-                    <Portion desktopSpan="one-sixth" />
-
-                    <Portion desktopSpan="one-fourth">
-                    </Portion>
-                </Row>
-
-                <Row sidePadding="huge" marginTop="huge">
-                <Text marginBottom="micro">
-                        Fictoan stems from the idea that true hand-off between the designer and developer must be in
-                        code, rather than a set of static images or artboards. The designer should be in complete
-                        control of the interface and the experience, rather than the developer trying to interpret the
-                        designer’s intentions via a document.
+                    <Text size="large" marginBottom="micro">
+                        Hand-offs are treated akin to passing baton, and a its-your-problem-now attitude.
                     </Text>
 
+                    <Text size="large" marginBottom="micro">
+                        Designers and developers bickering over details is a common sight.
+                    </Text>
+
+                    <Text size="large" marginBottom="micro">
+                        Back and forth over specifics is a massive time-sponge.
+                    </Text>
+
+                    <Text size="large" marginBottom="micro">
+                        It shouldn’t be this way.
+                    </Text>
+                </Portion>
+
+                <Portion desktopSpan="4" tabletPortraitSpan="one-third" />
+
+                {/* VIDEO ================================================== */}
+                <Portion desktopSpan="one-third" tabletPortraitSpan="one-third">
+                    <video id="handoff-video" autoPlay muted loop>
+                        <source src="/handoff.mp4" />
+                    </video>
+                </Portion>
+            </Row>
+
+            {/* IDEOLOGY /////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Row layout="grid" sidePadding="large" marginTop="medium" marginBottom="medium">
+                <Portion desktopSpan="half">
+                    <Heading as="h1" weight="400" textColour="white" marginBottom="micro">
+                        Pixel perfection is a designer’s job
+                    </Heading>
+                </Portion>
+
+                <Portion desktopSpan="half">
+                    <Text size="large" marginBottom="micro">
+                        A meticulously-crafted Figma file should not be the end of the line. A designer should be
+                        able to translate that to reality—and not let other interpret it as they see fit.
+                    </Text>
+
+                    <Text size="large" marginBottom="micro">
+                        Instead of constant back and forth with the dev about specifics, why not made the changes in
+                        code directly, and save time and headaches?
+                    </Text>
+                </Portion>
+            </Row>
+
+            <HRule kind="secondary" sideMargin="large" marginTop="medium" marginBottom="medium" />
+
+            {/* APPROACH /////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Row layout="grid" sidePadding="small">
+                <Portion desktopSpan="one-sixth" />
+
+                <Portion desktopSpan="two-third">
+                    <Heading as="h1" weight="400" marginBottom="small">
+                        The margin’s off? The hover state is the wrong tint? The font weight feels wrong?
+                    </Heading>
+
+                    <Heading as="h1" weight="400" textColour="white" marginBottom="small">
+                        Sacrilege, yes. But wait—don’t raise tickets.
+                    </Heading>
+
+                    <Heading as="h1" weight="400" textColour="white" marginBottom="small">
+                        Fix it in code.
+                    </Heading>
+
+                    <Heading as="h1" weight="400" textColour="white" marginBottom="small">
+                        It’s not that scary.
+                    </Heading>
+
+                    <Heading
+                        id="down-arrow"
+                        as="h1" weight="400" textColour="white" align="centre"
+                    >
+                        🡐
+                    </Heading>
+                </Portion>
+            </Row>
+
+            <Row layout="grid" sidePadding="small" marginBottom="large">
+                <Portion desktopSpan="one-sixth" />
+
+                <Portion desktopSpan="two-third">
+                    <Heading as="h1" weight="400" textColour="white" marginBottom="micro">
+                        Enter FICTOAN
+                    </Heading>
+
+                    <Text size="huge" marginBottom="micro">
+                        Fictoan stems from the idea that true hand-off between the designer and developer must be in
+                        code, rather than a set of static images or art-boards.
+                    </Text>
+
+                    <Text size="huge" marginBottom="micro">
+                        The designer should be in complete control of the interface and the experience, rather than the
+                        developer trying to interpret the designer’s intentions via a document.
+                    </Text>
+                </Portion>
+            </Row>
+
+            {/* APPROACH /////////////////////////////////////////////////////////////////////////////////////////// */}
+
+
+            <Row layout="grid" sidePadding="huge" marginTop="huge">
+                <Text marginBottom="micro">
+                    This framework basically aims to blur the lines between the designer and a developer. Why must
+                    there be a rift, this gaping chasm between the two roles? The goal must be to build and ship,
+                    and not bicker about the pixel-perfectness of a particular component or the hover colour of a
+                    element. These things are best left to the designer, so that the developer can spend their time
+                    on things like performance and deployments.
+                </Text>
+
+                <Text>
+                    While design tools are getting better and powerful by the day, there’s nothing really quite the
+                    same as passing off working code. We think this will remain true for quite some time, and in the
+                    meanwhile, see how we can make the lives of a designer and a developer easier.
+                </Text>
+
+                <Portion>
                     <Text marginBottom="micro">
-                        This framework basically aims to blur the lines between the designer and a developer. Why must
-                        there be a rift, this gaping chasm between the two roles? The goal must be to build and ship,
-                        and not bicker about the pixel-perfectness of a particular component or the hover colour of a
-                        element. These things are best left to the designer, so that the developer can spend their time
-                        on things like performance and deployments.
+                        The other principle Fictoan is built around is simplicity and obviousness. This is best
+                        reflected in the naming conventions and the prop nomenclature.
                     </Text>
 
                     <Text>
-                        While design tools are getting better and powerful by the day, there’s nothing really quite the
-                        same as passing off working code. We think this will remain true for quite some time, and in the
-                        meanwhile, see how we can make the lives of a designer and a developer easier.
+                        The idea is to remove the entry barriers for people dipping their toes into code for the
+                        first time, especially for those from a design background. The easiest way to do this is to
+                        simply keep everything in plain English, and not introduce complexities and conditional
+                        hierarchies, that is most often the case with most other frameworks.
                     </Text>
-
-                    <Portion>
-                        <Text marginBottom="micro">
-                            The other principle Fictoan is built around is simplicity and obviousness. This is best
-                            reflected in the naming conventions and the prop nomenclature.
-                        </Text>
-
-                        <Text>
-                            The idea is to remove the entry barriers for people dipping their toes into code for the
-                            first time, especially for those from a design background. The easiest way to do this is to
-                            simply keep everything in plain English, and not introduce complexities and conditional
-                            hierarchies, that is most often the case with most other frameworks.
-                        </Text>
-                    </Portion>
-                </Row>
-            </Element>
+                </Portion>
+            </Row>
         </article>
     );
 };

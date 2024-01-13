@@ -3,6 +3,10 @@
 
 img { width: auto; }
 
+* {
+    transition: all 0.2s ease-in-out;
+}
+
 /* MANIFESTO CARD BORDER ANIMATION */
 /* For some reason, unable to keep this with the home page CSS, so putting it here */
 @keyframes border-glow {

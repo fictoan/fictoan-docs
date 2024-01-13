@@ -323,6 +323,16 @@ export default function Sidebar({ sidebarState, setSidebarState, toggleTheme }) 
                 </SidebarItem>
             </Link>
 
+            {/* DRAWER ===================================================== */}
+            <Link href="/components/drawer">
+                <SidebarItem>
+                    <SidebarItemIcon iconType="stroked">
+                        <InfoPanelIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Drawer" />
+                </SidebarItem>
+            </Link>
+
             {/* H-RULE ===================================================== */}
             <Link href="/components/h-rule">
                 <SidebarItem>
@@ -330,16 +340,6 @@ export default function Sidebar({ sidebarState, setSidebarState, toggleTheme }) 
                         <HRuleIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="H-Rule" />
-                </SidebarItem>
-            </Link>
-
-            {/* INFO PANEL ================================================= */}
-            <Link href="/components/info-panel">
-                <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <InfoPanelIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Info panel" />
                 </SidebarItem>
             </Link>
 

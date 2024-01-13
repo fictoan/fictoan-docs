@@ -5,54 +5,53 @@ import { Element, Card, Heading, Text, HRule, Portion, Row, Callout } from "fict
 import "./page-colour.css";
 import { useState } from "react";
 
+export const listOfColours = [
+    "red",
+    "salmon",
+    "orange",
+    "amber",
+    "yellow",
+    "spring",
+    "pistachio",
+    "green",
+    "teal",
+    "cyan",
+    "sky",
+    "blue",
+    "indigo",
+    "violet",
+    "purple",
+    "pink",
+    "crimson",
+    "brick",
+    "sienna",
+    "brown",
+    "slate",
+    "grey",
+];
+
+export const generateShades = (color) => [
+    `${color}-dark-90`,
+    `${color}-dark-80`,
+    `${color}-dark-70`,
+    `${color}-dark-60`,
+    `${color}-dark-50`,
+    `${color}-dark-40`,
+    `${color}-dark-30`,
+    `${color}-dark-20`,
+    `${color}-dark-10`,
+    color,
+    `${color}-light-10`,
+    `${color}-light-20`,
+    `${color}-light-30`,
+    `${color}-light-40`,
+    `${color}-light-50`,
+    `${color}-light-60`,
+    `${color}-light-70`,
+    `${color}-light-80`,
+    `${color}-light-90`,
+];
 const ColourDocs = () => {
-    const listOfColours = [
-        "red",
-        "salmon",
-        "orange",
-        "amber",
-        "yellow",
-        "spring",
-        "pistachio",
-        "green",
-        "teal",
-        "cyan",
-        "sky",
-        "blue",
-        "indigo",
-        "violet",
-        "purple",
-        "pink",
-        "crimson",
-        "brick",
-        "sienna",
-        "brown",
-        "slate",
-        "grey",
-    ];
-
-    const generateShades = (color) => [
-        `${color}-dark-90`,
-        `${color}-dark-80`,
-        `${color}-dark-70`,
-        `${color}-dark-60`,
-        `${color}-dark-50`,
-        `${color}-dark-40`,
-        `${color}-dark-30`,
-        `${color}-dark-20`,
-        `${color}-dark-10`,
-        color,
-        `${color}-light-10`,
-        `${color}-light-20`,
-        `${color}-light-30`,
-        `${color}-light-40`,
-        `${color}-light-50`,
-        `${color}-light-60`,
-        `${color}-light-70`,
-        `${color}-light-80`,
-        `${color}-light-90`,
-    ];
-
     const [copiedShade, setCopiedShade] = useState(null);
 
     const copyToClipboard = (shade) => {
@@ -69,7 +68,7 @@ const ColourDocs = () => {
     return (
         <article id="page-colour">
             <Element as="section" id="basics" marginTop="small">
-                <Row sidePadding="huge" marginBottom="micro">
+                <Row layout="grid" sidePadding="huge" marginBottom="micro">
                     <Portion>
                         <Heading as="h4" marginBottom="nano">
                             Adding a bit of colour to your projects

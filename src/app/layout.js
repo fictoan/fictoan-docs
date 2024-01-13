@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
         <head>
-            <title>Fictoan framework — Documentation</title>
+            <title>Fictoan framework</title>
         </head>
 
         <body>

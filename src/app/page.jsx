@@ -52,6 +52,7 @@ const Home = () => {
     </Portion>
 </Row>`;
 
+    // VIDEO SCRUBBING BASED ON SCROLL =========================================
     const videoRef = useRef(null);
     const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -82,46 +83,47 @@ const Home = () => {
         <article id="home-page">
             <SiteHeader />
 
-            <Row sidePadding="medium" marginTop="medium" marginBottom="tiny">
-                <Portion desktopSpan="one-third">
-                    <Element as="header">
-                        <Element as="div" verticallyCentreItems>
-                            <Image
-                                src="/fictoan-logo.svg"
-                                alt="Fictoan Framework Logo"
-                                id="fictoan-logo"
-                                width={120}
-                                height={32}
-                                priority
-                            />
+            <Row layout="grid" sidePadding="medium" marginTop="medium" marginBottom="tiny">
+                <Portion desktopSpan="one-sixth" />
 
-                            <Badge size="small" shape="rounded" marginLeft="nano">
-                                v1.0.0
-                            </Badge>
-                        </Element>
-
-                        <Text textColour="black" size="tiny">
-                            *Fuck I Couldn’t Think Of A Name
-                        </Text>
-
-                        <Heading
-                            id="intro-headline"
-                            as="h2" textColour="indigo-light-20"
-                            marginBottom="nano"
-                        >
-                            Dead-simple UI component system
-                        </Heading>
+                <Portion desktopSpan="two-third">
+                    <Element
+                        as="div"
+                        id="code-block-wrapper"
+                    >
+                        <CodeBlock source={sampleCodeFictoan} language="jsx" />
                     </Element>
                 </Portion>
 
-                <Portion desktopSpan="two-third">
-                    <Card shape="rounded" shadow="soft" padding="nano" bgColour="blue-dark-30">
-                        <CodeBlock source={sampleCodeFictoan} language="jsx" />
-                    </Card>
+                <Portion desktopSpan="half">
+                    <Element as="div">
+                        <Image
+                            src="/fictoan-logo.svg"
+                            alt="Fictoan Framework Logo"
+                            id="fictoan-logo"
+                            width={120}
+                            height={32}
+                            priority
+                        />
+                    </Element>
+
+                    <Text textColour="black" size="tiny">
+                        *Fuck I Couldn’t Think Of A Name
+                    </Text>
+
+                    <Heading
+                        id="intro-headline"
+                        as="h1" textColour="indigo-light-20"
+                        marginBottom="nano"
+                    >
+                        Dead-simple UI component system
+                    </Heading>
                 </Portion>
+
+
             </Row>
 
-            <Row sidePadding="medium" gutters="large" marginBottom="small">
+            <Row layout="grid" sidePadding="medium" gutters="large" marginBottom="small">
                 <Portion desktopSpan="one-third">
                     <Text size="huge" textColour="white" marginBottom="nano">
                         Intuitive markup
@@ -156,7 +158,7 @@ const Home = () => {
                 </Portion>
             </Row>
 
-            <Row sidePadding="medium" marginBottom="medium">
+            <Row layout="grid" sidePadding="medium" marginBottom="medium">
                 <Portion>
                     <Element as="div" className="manifesto-card" shadow="soft">
                         <Element as="div" className="manifesto-card-content" verticallyCentreItems pushItemsToEnds>
@@ -166,7 +168,9 @@ const Home = () => {
 
                             <Link href="/manifesto">
                                 <Button kind="tertiary" marginLeft="nano">
-                                    Read our<wbr/>manifesto&nbsp;&rarr;
+                                    Read our
+                                    <wbr />
+                                    manifesto&nbsp;&rarr;
                                 </Button>
                             </Link>
                         </Element>

@@ -3,12 +3,31 @@
 
     #fictoan-logo {
         filter : invert(1);
+        width  : 240px;
     }
 
     #intro-headline {
         background              : -webkit-linear-gradient(270deg, #adb2ff 0%, #264be1 100%);
         -webkit-background-clip : text;
         -webkit-text-fill-color : transparent;
+        font-size               : 4rem;
+    }
+
+    #code-block-wrapper {
+        position : relative;
+    }
+
+    #code-block-wrapper::after {
+        filter     : blur(8px);
+        background : rgb(131, 58, 180);
+        background : linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+        position   : absolute;
+        top        : -4px;
+        left       : -4px;
+        width      : calc(100% + 8px);
+        height     : calc(100% + 8px);
+        content    : "";
+        z-index    : -1;
     }
 
     #fictoan-bg {

@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 
-import { Button, CodeBlock, Element, Heading, HRule, InfoPanel, Portion, Row, Table, Text } from "fictoan-react";
+import { Button, Element, Heading, HRule, Drawer, Portion, Row, Table, Text } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
-import "./page-info-panel.css";
+import "./page-drawer.css";
 import {
     sampleInfoPanelCallback,
     sampleInfoPanelIsOpen,
@@ -13,7 +14,7 @@ import {
     sampleInfoPanelWidth,
 } from "./CodeSamples";
 
-const InfoPanelDocs = () => {
+const DrawerDocs = () => {
     const [isSampleInfoPanelOpen, setIsSampleInfoPanelOpen] = useState(false);
 
     const [isTinyInfoPanelOpen, setIsTinyInfoPanelOpen] = useState(false);
@@ -25,17 +26,17 @@ const InfoPanelDocs = () => {
     return (
         <>
             <head>
-                <title>Info panel — Fictoan documentation</title>
+                <title>Drawer — Fictoan documentation</title>
             </head>
 
-            <article id="page-info-panel">
-                <Row sidePadding="huge" marginTop="medium" marginBottom="small">
+            <article id="page-drawer">
+                <Row layout="grid" sidePadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h2" className="text-hue">Info panel</Heading>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="huge">
+                <Row layout="grid" sidePadding="huge">
                     <Portion>
                         <Heading as="h3" marginBottom="micro">Props</Heading>
 
@@ -122,7 +123,7 @@ const InfoPanelDocs = () => {
                 {/*  DEFAULT  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="default">
-                    <Row sidePadding="huge">
+                    <Row layout="grid" sidePadding="huge">
                         <Portion>
                             <Heading as="h3" marginBottom="tiny">Default info panel</Heading>
 
@@ -134,7 +135,7 @@ const InfoPanelDocs = () => {
                                 kind="primary" shadow="hard" marginBottom="micro"
                                 onClick={() => setIsSampleInfoPanelOpen(true)}
                             >
-                                Open info panel
+                                Open Drawer
                             </Button>
 
                             <CodeBlock source={sampleInfoPanelSetup} language="jsx" />
@@ -145,15 +146,16 @@ const InfoPanelDocs = () => {
                                 that cross mark inside.
                             </Text>
 
-                            <InfoPanel
-                                isOpen={isSampleInfoPanelOpen}
+                            <Drawer
+                                position="left"
                                 padding="tiny"
+                                isOpen={isSampleInfoPanelOpen}
                                 onCloseCallback={() => setIsSampleInfoPanelOpen(false)}
                                 closeOnClickOutside
                             >
                                 <Heading as="h5" marginBottom="nano">Hello</Heading>
                                 <Text>You can add all sorts of content here inside the info panel.</Text>
-                            </InfoPanel>
+                            </Drawer>
                         </Portion>
                     </Row>
                 </Element>
@@ -165,7 +167,7 @@ const InfoPanelDocs = () => {
                 {/*  PROPS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="props">
-                    <Row sidePadding="huge">
+                    <Row layout="grid" sidePadding="huge">
                         <Portion>
                             <Heading as="h3">Props</Heading>
                         </Portion>
@@ -174,7 +176,7 @@ const InfoPanelDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  KIND  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row layout="grid" sidePadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Width</Heading>
 
@@ -221,45 +223,45 @@ const InfoPanelDocs = () => {
                             </Button>
 
 
-                            <InfoPanel
+                            <Drawer
                                 width="tiny"
                                 isOpen={isTinyInfoPanelOpen}
                                 onCloseCallback={() => setIsTinyInfoPanelOpen(false)}
                             >
                                 <Heading as="h5" marginBottom="nano">Tiny info panel</Heading>
-                            </InfoPanel>
+                            </Drawer>
 
-                            <InfoPanel
+                            <Drawer
                                 width="small"
                                 isOpen={isSmallInfoPanelOpen}
                                 onCloseCallback={() => setIsSmallInfoPanelOpen(false)}
                             >
                                 <Heading as="h5" marginBottom="nano">Small info panel</Heading>
-                            </InfoPanel>
+                            </Drawer>
 
-                            <InfoPanel
+                            <Drawer
                                 width="medium"
                                 isOpen={isMediumInfoPanelOpen}
                                 onCloseCallback={() => setIsMediumInfoPanelOpen(false)}
                             >
                                 <Heading as="h5" marginBottom="nano">Medium info panel</Heading>
-                            </InfoPanel>
+                            </Drawer>
 
-                            <InfoPanel
+                            <Drawer
                                 width="large"
                                 isOpen={isLargeInfoPanelOpen}
                                 onCloseCallback={() => setIsLargeInfoPanelOpen(false)}
                             >
                                 <Heading as="h5" marginBottom="nano">Large info panel</Heading>
-                            </InfoPanel>
+                            </Drawer>
 
-                            <InfoPanel
+                            <Drawer
                                 width="huge"
                                 isOpen={isHugeInfoPanelOpen}
                                 onCloseCallback={() => setIsHugeInfoPanelOpen(false)}
                             >
                                 <Heading as="h5" marginBottom="nano">Huge info panel</Heading>
-                            </InfoPanel>
+                            </Drawer>
 
                             <Text marginTop="micro">
                                 All of these values come from the theme file, where you can set once for your entire project
@@ -275,7 +277,7 @@ const InfoPanelDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  IS OPEN  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row layout="grid" sidePadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Open and close</Heading>
 
@@ -294,7 +296,7 @@ const InfoPanelDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  CALLBACK  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row layout="grid" sidePadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Callback for closing</Heading>
 
@@ -314,7 +316,7 @@ const InfoPanelDocs = () => {
                     {/*  THEMING  */}
                     {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
                     <Element as="section" id="theming">
-                        <Row sidePadding="huge" marginBottom="small">
+                        <Row layout="grid" sidePadding="huge" marginBottom="small">
                             <Portion>
                                 <Heading as="h3" marginBottom="tiny">Theming</Heading>
 
@@ -328,4 +330,4 @@ const InfoPanelDocs = () => {
     );
 };
 
-export default InfoPanelDocs;
+export default DrawerDocs;
