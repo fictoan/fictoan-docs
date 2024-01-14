@@ -83,7 +83,7 @@ const Home = () => {
         <article id="home-page">
             <SiteHeader />
 
-            <Row layout="grid" sidePadding="medium" marginTop="medium" marginBottom="tiny">
+            <Row layout="grid" horizontalPadding="medium" marginTop="medium" marginBottom="tiny">
                 <Portion desktopSpan="one-sixth" />
 
                 <Portion desktopSpan="two-third">
@@ -123,7 +123,7 @@ const Home = () => {
 
             </Row>
 
-            <Row layout="grid" sidePadding="medium" gutters="large" marginBottom="small">
+            <Row layout="grid" horizontalPadding="medium" gutters="large" marginBottom="small">
                 <Portion desktopSpan="one-third">
                     <Text size="huge" textColour="white" marginBottom="nano">
                         Intuitive markup
@@ -158,7 +158,7 @@ const Home = () => {
                 </Portion>
             </Row>
 
-            <Row layout="grid" sidePadding="medium" marginBottom="medium">
+            <Row layout="grid" horizontalPadding="medium" marginBottom="medium">
                 <Portion>
                     <Element as="div" className="manifesto-card" shadow="soft">
                         <Element as="div" className="manifesto-card-content" verticallyCentreItems pushItemsToEnds>
@@ -180,14 +180,14 @@ const Home = () => {
                 </Portion>
             </Row>
 
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* COMPONENTS */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <ComponentGrid />
+
             <video id="fictoan-bg" ref={videoRef}>
                 <source src="/logo-render.mp4" />
             </video>
-
-            {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-            {/*  COMPONENTS  */}
-            {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-            <ComponentGrid />
         </article>
     );
 };

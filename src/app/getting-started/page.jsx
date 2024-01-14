@@ -1,7 +1,8 @@
 "use client";
 
 // EXTERNAL DEPS ===============================================================
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 // INTERNAL DEPS ===============================================================
 import {
@@ -10,14 +11,22 @@ import {
     Portion,
     Heading,
     Text,
-    HRule, Card, RadioGroup, RadioButton,
+    HRule,
+    Drawer,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
-import { snippetInstall, snippetUsage } from "../../assets/code-samples/CodeSamples";
 import { InteractiveCardExample } from "./InteractiveCardExample";
-import Link from "next/link";
+
+// CODE SAMPLES ================================================================
+import {
+    snippetInstall,
+    snippetPageSetupJSX,
+    snippetPageSetupCSS,
+    snippetStructure,
+    snippetUsage,
+} from "../../assets/code-samples/CodeSamples";
 
 
 const GettingStarted = () => {
@@ -25,8 +34,10 @@ const GettingStarted = () => {
         document.title = "Getting started — Fictoan";
     }, []);
 
+    const [isComplexSetupDrawerOpen, setIsComplexSetupDrawerOpen] = useState(false);
+
     return (
-        <article>
+        <article id="page-getting-started">
             <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1" className="text-hue">Getting started</Heading>
@@ -43,8 +54,8 @@ const GettingStarted = () => {
                     </Portion>
 
                     <Portion>
-                        <Text weight="700" size="large" marginBotto textColour="white" m="nano">
-                            Step 1 —
+                        <Text weight="700" size="large" textColour="white" marginBottom="nano">
+                            Installation
                         </Text>
 
                         <Text marginBottom="micro">
@@ -61,15 +72,97 @@ const GettingStarted = () => {
                         <CodeBlock source={snippetInstall} language="bash" />
                     </Portion>
 
-                    {/* <Portion> */}
-                    {/*     <Text weight="700" size="large" textColour="white" marginBottom="nano">Step 2 — Edit the default theme</Text> */}
+                    <Portion>
+                        <HRule kind="tertiary" verticalMargin="micro" />
+                    </Portion>
 
-                    {/*     <Text marginBottom="nano"> */}
-                    {/*         Fictoan comes with a extensive theme, which you can see <a */}
-                    {/*         href="https://github.com/fictoan/fictoan-react/blob/master/src/styles/theme.ts" */}
-                    {/*         target="_blank" rel="noreferrer">here</a>. It lets you control all aspects of the UI. They */}
-                    {/*         all have default values, so go ahead and edit the ones that you want.</Text> */}
-                    {/* </Portion> */}
+                    <Portion>
+                        <Text weight="700" size="large" textColour="white" marginBottom="nano">
+                            Boilerplate structure
+                        </Text>
+
+                        <Text marginBottom="micro">
+                            The <a
+                            href="https://fictoan.io/boilerplate" target="_blank" rel="noreferrer">Fictoan
+                            boilerplate &#8599;</a> is a NextJS project and uses the latest <a
+                            href="https://nextjs.org/docs/app" target="_blank" rel="noreferrer">App
+                            router &#8599;</a> setup. The folder structure looks like this—
+                        </Text>
+
+                        <CodeBlock
+                            id="boilerplate-structure"
+                            source={snippetStructure} language="bash" marginBottom="micro"
+                        />
+
+                        <Text marginBottom="micro">
+                            There are four main folders—<code>app</code>, <code>components</code>, <code>styles</code>,
+                            and <code>assets</code>.
+                        </Text>
+
+                        <HRule kind="tertiary" verticalMargin="nano" />
+
+                        {/* /app =========================================== */}
+                        <Text weight="700" marginBottom="nano">/app</Text>
+
+                        <Text marginBottom="nano">
+                            <code>page.tsx</code> is where you can start adding your content.
+                        </Text>
+
+                        <Text marginBottom="micro">
+                            <code>layout.tsx</code> is the main entry point for the app. We have
+                            a <code>RootClientSideLayout</code> component which contains
+                            the <code>ThemeProvider</code> and
+                        </Text>
+
+                        <Text marginBottom="micro">
+                            Why such a roundabout setup, you ask? Click
+                            <Element as="span" textColour="blue"
+                                     onClick={() => setIsComplexSetupDrawerOpen(true)}> here </Element>
+                            for a rant.
+                        </Text>
+
+                        <Drawer
+                            position="right"
+                            openWhen={isComplexSetupDrawerOpen}
+                            closeWhen={() => setIsComplexSetupDrawerOpen(false)}
+                            width="large"
+                            showOverlay
+                            closeOnClickOutside
+                            padding="micro"
+                        >
+                            <Text>NextJS sucks</Text>
+                        </Drawer>
+
+                        <HRule kind="tertiary" verticalMargin="nano" />
+
+                        {/* /app/About =========================================== */}
+                        <Text weight="700" marginBottom="nano">/app/about</Text>
+
+                        <Text marginBottom="nano">
+                            This is a sample sub-page that you can use as a reference for creating your own pages.
+                            Routing is based on the folder structure, so this one is available at <code>/about</code>.
+                        </Text>
+
+                        <CodeBlock
+                            id="boilerplate-structure"
+                            source={snippetPageSetupJSX} language="jsx" marginBottom="micro"
+                        />
+
+                        <CodeBlock
+                            id="boilerplate-structure"
+                            source={snippetPageSetupCSS} language="css" marginBottom="micro"
+                        />
+
+                        <Text marginBottom="micro">
+                            We’re using a simple method to scope the CSS to the page—the <code>id</code> of the page is
+                            used as the parent-most selector, and the CSS is written inside it. This way, the CSS is
+                            scoped to the page, and doesn’t leak to other pages.
+                        </Text>
+
+                        <Text>
+                            THe components also follow a similar structure.
+                        </Text>
+                    </Portion>
                 </Row>
             </Element>
 

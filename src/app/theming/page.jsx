@@ -1,8 +1,19 @@
 "use client";
 
+// EXTERNAL DEPS ===============================================================
 import React from "react";
 
-import { CodeBlock, Heading, HRule, Portion, Row, Text } from "fictoan-react";
+// INTERNAL DEPS ===============================================================
+import { Heading, HRule, Portion, Row, Text } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
+
+// COMPONENTS ==================================================================
+
+// STYLES ======================================================================
+import "./page-theming.css";
+
+// CODE SNIPPETS ===============================================================
+
 
 import {
     sampleThemeBadge,
@@ -28,17 +39,12 @@ import {
     sampleThemeText, sampleThemeToast,
 } from "./CodeSamples";
 
-import "./page-theming.css";
 
 const ThemingDocs = () => {
     return (
         <>
-            <head>
-                <title>Theming — Fictoan documentation</title>
-            </head>
-
             <article id="page-theming">
-                <Row sidePadding="huge" marginTop="medium" marginBottom="small">
+                <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h4" marginBottom="small">Theme reference</Heading>
                         <Text marginBottom="micro">
@@ -53,7 +59,7 @@ const ThemingDocs = () => {
                 </Row>
 
                 {/* GLOBALS //////////////////////////////////////////////////////////////////////////////////////// */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Globals</Text>
 
@@ -61,11 +67,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* BADGE ////////////////////////////////////////////////////////////////////////////////////////// */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Badge</Text>
 
@@ -73,11 +79,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* BODY /////////////////////////////////////////////////////////////////////////////////////////// */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Body</Text>
 
@@ -85,11 +91,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* BottomDrawer /////////////////////////////////////////////////////////////////////////////////// */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">BottomDrawer</Text>
 
@@ -97,11 +103,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* BREADCRUMBS //////////////////////////////////////////////////////////////////////////////////// */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Breadcrumbs</Text>
 
@@ -109,11 +115,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* BUTTON ///////////////////////////////////////////////////////////////////////////////////////// */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Button</Text>
 
@@ -121,11 +127,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* CALLOUT //////////////////////////////////////////////////////////////////////////////////////// */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Callout</Text>
 
@@ -133,11 +139,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* CARD */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Card</Text>
 
@@ -145,11 +151,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* CHECKBOX */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Checkbox</Text>
 
@@ -157,11 +163,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* EXPANDABLE CONTENT */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">ExpandableContent</Text>
 
@@ -169,11 +175,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* H-RULE */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Horizontal rule</Text>
 
@@ -181,11 +187,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* INFO PANEL */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Info panel</Text>
 
@@ -193,11 +199,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* INPUT */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Input</Text>
 
@@ -205,11 +211,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* NOTIFICATION */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Notification</Text>
 
@@ -217,11 +223,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* PROGRESS BAR */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Progress bar</Text>
 
@@ -229,11 +235,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* RADIO BUTTON */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Radio button</Text>
 
@@ -241,11 +247,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* SIDEBAR */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Sidebar</Text>
 
@@ -253,11 +259,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* SELECT DROPDOWN */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Select dropdown</Text>
 
@@ -265,11 +271,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* SPINNER */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Spinner</Text>
 
@@ -277,11 +283,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* TABLE */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Table</Text>
 
@@ -289,11 +295,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* TABS */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Tabs</Text>
 
@@ -301,11 +307,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* TOAST */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Toast</Text>
 
@@ -313,11 +319,11 @@ const ThemingDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/* TEXT */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Text</Text>
 
@@ -327,7 +333,7 @@ const ThemingDocs = () => {
 
 
                 {/* SWITCH */}
-                <Row sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text size="large" weight="700" marginBottom="micro">Switch</Text>
 

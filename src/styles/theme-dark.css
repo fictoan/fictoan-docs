@@ -51,7 +51,7 @@
     --input-border-radius-default             : var(--global-border-radius);
     --input-label-default                     : var(--paragraph-text-colour);
     --input-placeholder-default               : var(--slate-light-40);
-    --input-text-default                      : var(--paragraph-text-colour);
+    --input-text-default                      : var(--slate-light-60);
 
     --input-bg-focus                          : var(--grey-dark-50);
     --input-border-focus                      : var(--grey-light-20);

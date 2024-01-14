@@ -1,7 +1,10 @@
 "use client";
 
+// EXTERNAL DEPS ===============================================================
 import React from "react";
+import Link from "next/link";
 
+// INTERNAL DEPS ===============================================================
 import {
     Badge,
     BreadcrumbItem,
@@ -22,12 +25,13 @@ import {
     Table,
     Text,
 } from "fictoan-react";
-
 import { CodeBlock } from "fictoan-react/components";
 
-import "./component-grid.css";
+// COMPONENTS ==================================================================
 import { GlowCard } from "@/components/GlowCard/GlowCard";
-import Link from "next/link";
+
+// STYLES ======================================================================
+import "./component-grid.css";
 
 export const ComponentGrid = () => {
     const cardComponentSample = `const clickHere = () => {
@@ -37,7 +41,7 @@ export const ComponentGrid = () => {
     return (
         <>
             <div id="component-grid">
-                <Row sidePadding="medium" marginBottom="medium">
+                <Row layout="grid" horizontalPadding="medium" marginBottom="medium">
                     <Portion>
                         <Heading as="h6">Components</Heading>
                     </Portion>

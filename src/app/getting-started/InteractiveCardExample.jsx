@@ -29,26 +29,28 @@ export const InteractiveCardExample = () => {
     };
 
     const handleShapeChange = (event) => {
-        setSelectedShape(event.target.value);
+        setSelectedShape(event.target.value !== "none" ? event.target.value : undefined);
     };
 
     const handleShadowChange = (event) => {
-        setSelectedShadow(event.target.value);
+        setSelectedShadow(event.target.value !== "none" ? event.target.value : undefined);
     };
 
     const handleBgColourChange = (event) => {
-        setSelectedBgColour(event.target.value);
+        setSelectedBgColour(event.target.value !== "none" ? event.target.value : undefined);
     };
 
     const handleBorderColourChange = (event) => {
-        setSelectedBorderColour(event.target.value);
-    }
+        setSelectedBorderColour(event.target.value !== "none" ? event.target.value : undefined);
+    };
 
     const colorOptions = listOfColours.flatMap(color =>
-        generateShades(color).map(shade => ({
-            name: shade,
-            value: shade
-        }))
+        generateShades(color).map(shade => (
+            {
+                name  : shade,
+                value : shade,
+            }
+        )),
     );
 
     return (
@@ -130,12 +132,12 @@ export const InteractiveCardExample = () => {
                             <Select
                                 label="Background colour"
                                 options={[{
-                                    name: "Select an option",
-                                    value: "select-an-option",
-                                    disabled: true,
-                                    selected: true
+                                    name     : "Select an option",
+                                    value    : "select-an-option",
+                                    disabled : true,
+                                    selected : true,
                                 },
-                                ...colorOptions
+                                    ...colorOptions,
                                 ]}
                                 onChange={handleBgColourChange}
                                 isFullWidth
@@ -146,12 +148,12 @@ export const InteractiveCardExample = () => {
                             <Select
                                 label="Border colour"
                                 options={[{
-                                    name: "Select an option",
-                                    value: "select-an-option",
-                                    disabled: true,
-                                    selected: true
+                                    name     : "Select an option",
+                                    value    : "select-an-option",
+                                    disabled : true,
+                                    selected : true,
                                 },
-                                ...colorOptions
+                                    ...colorOptions,
                                 ]}
                                 onChange={handleBorderColourChange}
                                 isFullWidth
@@ -162,15 +164,18 @@ export const InteractiveCardExample = () => {
             </Portion>
 
             <Portion desktopSpan="half">
-                <CodeBlock language="jsx" marginBottom="micro">{`<Card
-    ${selectedPadding !== undefined ? ` padding="${selectedPadding}"` : ""}
-    ${selectedShape !== undefined ? ` shape="${selectedShape}"` : ""}
-    ${selectedShadow !== undefined ? ` shadow="${selectedShadow}"` : ""}
-    ${selectedBgColour !== undefined ? ` bgColour="${selectedBgColour}"` : ""}
-    ${selectedBorderColour !== undefined ? ` borderColor="${selectedBorderColour}"` : ""}
->
-    {/* Add any content here */}
-</Card>`}
+                <CodeBlock language="jsx" marginBottom="micro">{[
+                    // Lol, hacky max pro
+                    `<Card`,
+                    selectedPadding && `    padding="${selectedPadding}"`,
+                    selectedShape && `    shape="${selectedShape}"`,
+                    selectedShadow && `    shadow="${selectedShadow}"`,
+                    selectedBgColour && `    bgColour="${selectedBgColour}"`,
+                    selectedBorderColour && `    borderColor="${selectedBorderColour}"`,
+                    `>`,
+                    `    {/* Add any content here */}`,
+                    `</Card>`
+                ].filter(Boolean).join("\n")}
                 </CodeBlock>
             </Portion>
 
@@ -178,11 +183,21 @@ export const InteractiveCardExample = () => {
                 <Element as="div" padding="tiny" shape="rounded" bgColour="slate-light-80">
                     <Card
                         id="interactive-card"
-                        {...(selectedPadding !== undefined ? { padding : selectedPadding } : {})}
-                        {...(selectedShape !== undefined ? { shape : selectedShape } : {})}
-                        {...(selectedShadow !== undefined ? { shadow : selectedShadow } : {})}
-                        {...(selectedBgColour !== undefined ? { bgColour : selectedBgColour } : {})}
-                        {...(selectedBorderColour !== undefined ? { borderColor : selectedBorderColour } : {})}
+                        {...(
+                            selectedPadding !== undefined ? { padding : selectedPadding } : {}
+                        )}
+                        {...(
+                            selectedShape !== undefined ? { shape : selectedShape } : {}
+                        )}
+                        {...(
+                            selectedShadow !== undefined ? { shadow : selectedShadow } : {}
+                        )}
+                        {...(
+                            selectedBgColour !== undefined ? { bgColour : selectedBgColour } : {}
+                        )}
+                        {...(
+                            selectedBorderColour !== undefined ? { borderColor : selectedBorderColour } : {}
+                        )}
                     >
                     </Card>
                 </Element>

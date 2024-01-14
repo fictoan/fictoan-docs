@@ -18,6 +18,7 @@ import "../styles/globals.css";
 
 // ASSETS //////////////////////////////////////////////////////////////////////
 
+
 export default function RootLayout({ children }) {
     const [sidebarState, setSidebarState] = useState("");
     const [currentTheme, setCurrentTheme] = useState(typeof window !== "undefined" ? localStorage.getItem("theme") || "light" : "light");
@@ -29,7 +30,6 @@ export default function RootLayout({ children }) {
     const toggleTheme = () => {
         setCurrentTheme(currentTheme === "light" ? "theme-dark" : "light");
     };
-
 
     return (
         <html lang="en">
