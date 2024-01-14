@@ -12,16 +12,23 @@ import {
     Heading,
     Text,
     HRule,
-    Drawer,
+    Drawer, Tabs,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
 import { InteractiveCardExample } from "./InteractiveCardExample";
 
+// STYLES ======================================================================
+import "./getting-started.css";
+
+// STYLES ======================================================================
+import PNPMIcon from "../../assets/icons/pnpm.svg";
+import YarnIcon from "../../assets/icons/yarn.svg";
+import NPMIcon from "../../assets/icons/npm.svg";
+
 // CODE SAMPLES ================================================================
 import {
-    snippetInstall,
     snippetPageSetupJSX,
     snippetPageSetupCSS,
     snippetStructure,
@@ -33,6 +40,24 @@ const GettingStarted = () => {
     useEffect(() => {
         document.title = "Getting started — Fictoan";
     }, []);
+
+    const tabOneContent = () => (
+        <CodeBlock language="bash">
+            pnpm install fictoan-react
+        </CodeBlock>
+    );
+
+    const tabTwoContent = () => (
+        <CodeBlock language="bash">
+            yarn add fictoan-react
+        </CodeBlock>
+    );
+
+    const tabThreeContent = () => (
+        <CodeBlock language="bash">
+            npm install fictoan-react
+        </CodeBlock>
+    );
 
     const [isComplexSetupDrawerOpen, setIsComplexSetupDrawerOpen] = useState(false);
 
@@ -69,7 +94,38 @@ const GettingStarted = () => {
                             Or, you can install it in your existing project—
                         </Text>
 
-                        <CodeBlock source={snippetInstall} language="bash" />
+                        <Tabs
+                            tabs={[
+                                {
+                                    key     : "tab1",
+                                    label   :
+                                        <Element verticallyCentreItems>
+                                            <PNPMIcon />
+                                            <Text marginLeft="nano">pnpm</Text>
+                                        </Element>,
+                                    content : tabOneContent(),
+                                },
+                                {
+                                    key     : "tab2",
+                                    label   :
+                                        <Element verticallyCentreItems>
+                                            <YarnIcon />
+                                            <Text marginLeft="nano">yarn</Text>
+                                        </Element>,
+                                    content : tabTwoContent(),
+                                },
+                                {
+                                    key     : "tab3",
+                                    label   :
+                                        <Element verticallyCentreItems>
+                                            <NPMIcon />
+                                            <Text marginLeft="nano">npm</Text>
+                                        </Element>,
+                                    content : tabThreeContent(),
+                                },
+                            ]}
+                            marginBottom="micro"
+                        />
                     </Portion>
 
                     <Portion>
