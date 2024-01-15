@@ -4,7 +4,6 @@ import React from "react";
 
 import {
     CheckBox,
-    CodeBlock,
     FormItem,
     FormItemGroup,
     FormWrapper,
@@ -14,6 +13,7 @@ import {
     Row, Switch,
     Text,
 } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 import "./page-form.css";
 
@@ -51,7 +51,7 @@ const FormWrapperDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" thick bgColour="sky-20" />
+                <HRule horizontalMargin="huge" thick bgColour="sky-20" />
                 {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*   FORM  */}
                 {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
@@ -73,7 +73,7 @@ const FormWrapperDocs = () => {
                         </Portion>
                     </Row>
 
-                    <HRule sideMargin="huge" thin bgColour="sky-20" />
+                    <HRule horizontalMargin="huge" thin bgColour="sky-20" />
 
                     {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                     {/*   FORM UNIT  */}
@@ -114,7 +114,7 @@ const FormWrapperDocs = () => {
                         </Portion>
                     </Row>
 
-                    <HRule thin sideMargin="large" bgColour="sky-20" />
+                    <HRule thin horizontalMargin="large" bgColour="sky-20" />
 
                     {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
                     {/*   TEXT INPUT  */}
@@ -157,7 +157,7 @@ const FormWrapperDocs = () => {
                         </Portion>
                     </Row>
 
-                    <HRule thin sideMargin="large" bgColour="sky-20" />
+                    <HRule thin horizontalMargin="large" bgColour="sky-20" />
 
                     <Row sidePadding="huge">
                         <Portion>

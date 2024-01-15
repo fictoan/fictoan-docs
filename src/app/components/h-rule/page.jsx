@@ -2,13 +2,14 @@
 
 import React from "react";
 
-import { CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 import "./page-h-rule.css";
 import {
     sampleHRule,
     sampleHRuleKinds,
-    sampleHRuleSideMargin, sampleHRuleTheme,
+    sampleHRulehorizontalMargin, sampleHRuleTheme,
 } from "./CodeSamples";
 
 const HRuleDocs = () => {
@@ -51,7 +52,7 @@ const HRuleDocs = () => {
                                     <td><code>primary</code></td>
                                 </tr>
                                 <tr>
-                                    <td><code>sideMargin</code></td>
+                                    <td><code>horizontalMargin</code></td>
                                     <td>Width of the <code>HRule</code>.</td>
                                     <td>
                                         <code>nano</code><br />
@@ -103,7 +104,7 @@ const HRuleDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  BASICS  */}
@@ -133,7 +134,7 @@ const HRuleDocs = () => {
                 </Element>
 
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
@@ -168,7 +169,7 @@ const HRuleDocs = () => {
                 </Element>
 
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
 
                 <Element as="section" id="usage">
@@ -181,23 +182,23 @@ const HRuleDocs = () => {
                             </Text>
 
                             <Text marginBottom="micro">
-                                The <code>sideMargin</code> prop sets the width, and aligns the rule to the centre of the page. It takes the same spacing values from <code>nano</code> all the way to <code>huge</code>.
+                                The <code>horizontalMargin</code> prop sets the width, and aligns the rule to the centre of the page. It takes the same spacing values from <code>nano</code> all the way to <code>huge</code>.
                             </Text>
 
-                            <CodeBlock source={ sampleHRuleSideMargin } language="jsx" />
+                            <CodeBlock source={ sampleHRulehorizontalMargin } language="jsx" />
                         </Portion>
                     </Row>
 
-                    <HRule sideMargin="nano" marginTop="micro" marginBottom="micro" />
-                    <HRule sideMargin="micro" marginTop="micro" marginBottom="micro" />
-                    <HRule sideMargin="tiny" marginTop="micro" marginBottom="micro" />
-                    <HRule sideMargin="small" marginTop="micro" marginBottom="micro" />
-                    <HRule sideMargin="medium" marginTop="micro" marginBottom="micro" />
-                    <HRule sideMargin="large" marginTop="micro" marginBottom="micro" />
-                    <HRule sideMargin="huge" marginTop="micro" marginBottom="micro" />
+                    <HRule horizontalMargin="nano" marginTop="micro" marginBottom="micro" />
+                    <HRule horizontalMargin="micro" marginTop="micro" marginBottom="micro" />
+                    <HRule horizontalMargin="tiny" marginTop="micro" marginBottom="micro" />
+                    <HRule horizontalMargin="small" marginTop="micro" marginBottom="micro" />
+                    <HRule horizontalMargin="medium" marginTop="micro" marginBottom="micro" />
+                    <HRule horizontalMargin="large" marginTop="micro" marginBottom="micro" />
+                    <HRule horizontalMargin="huge" marginTop="micro" marginBottom="micro" />
                 </Element>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 <Element as="section" id="usage">
                     <Row sidePadding="huge">

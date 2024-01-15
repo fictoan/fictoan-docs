@@ -101,7 +101,7 @@ const CodeBlockDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  BASICS  */}
@@ -133,7 +133,7 @@ const CodeBlockDocs = () => {
                 </Element>
 
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}

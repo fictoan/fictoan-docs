@@ -2,7 +2,8 @@
 
 import React from "react";
 
-import { Badge, CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Badge, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 import "./page-name.css";
 import { sampleBadge, sampleBadgeSibling } from "./CodeSamples";
@@ -171,7 +172,7 @@ const BadgeDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="primary" sideMargin="huge" />
+                <HRule kind="primary" horizontalMargin="huge" />
 
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/*  DEFAULT BADGE */}
@@ -215,7 +216,7 @@ const BadgeDocs = () => {
                 </Element>
 
 
-                <HRule kind="primary" sideMargin="huge" />
+                <HRule kind="primary" horizontalMargin="huge" />
 
 
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}

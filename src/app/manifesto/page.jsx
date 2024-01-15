@@ -86,7 +86,7 @@ const Manifesto = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="secondary" sideMargin="large" marginTop="medium" marginBottom="medium" />
+            <HRule kind="secondary" horizontalMargin="large" marginTop="medium" marginBottom="medium" />
 
             {/* APPROACH /////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row layout="grid" sidePadding="small">

@@ -2,7 +2,8 @@
 
 import React from "react";
 
-import { CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 import "./page-typography.css";
 
@@ -60,7 +61,7 @@ const TypographyDocs = () => {
                         </Portion>
                     </Row>
 
-                    <HRule sideMargin="huge" kind="primary" />
+                    <HRule horizontalMargin="huge" kind="primary" />
                 </Element>
 
 
@@ -79,7 +80,7 @@ const TypographyDocs = () => {
                         </Portion>
                     </Row>
 
-                    <HRule sideMargin="huge" kind="primary" />
+                    <HRule horizontalMargin="huge" kind="primary" />
                 </Element>
 
 
@@ -99,7 +100,7 @@ const TypographyDocs = () => {
                         </Portion>
                     </Row>
 
-                    <HRule sideMargin="huge" kind="primary" />
+                    <HRule horizontalMargin="huge" kind="primary" />
                 </Element>
 
 
@@ -126,7 +127,7 @@ const TypographyDocs = () => {
                         </Portion>
                     </Row>
 
-                    <HRule sideMargin="huge" kind="primary" />
+                    <HRule horizontalMargin="huge" kind="primary" />
                 </Element>
 
 
@@ -191,7 +192,7 @@ const TypographyDocs = () => {
                         </Portion>
                     </Row>
 
-                    <HRule sideMargin="huge" kind="secondary" marginTop="micro" marginBottom="micro" />
+                    <HRule horizontalMargin="huge" kind="secondary" marginTop="micro" marginBottom="micro" />
 
                     <Row sidePadding="huge" marginBottom-micro>
                         <Portion>

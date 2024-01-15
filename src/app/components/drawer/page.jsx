@@ -117,7 +117,7 @@ const DrawerDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  DEFAULT  */}
@@ -161,7 +161,7 @@ const DrawerDocs = () => {
                 </Element>
 
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  PROPS  */}
@@ -271,7 +271,7 @@ const DrawerDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
 
                     {/*  =============================================================================================  */}
@@ -290,7 +290,7 @@ const DrawerDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
 
                     {/*  =============================================================================================  */}
@@ -310,7 +310,7 @@ const DrawerDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
                     {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
                     {/*  THEMING  */}

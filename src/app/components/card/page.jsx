@@ -3,7 +3,8 @@
 import React from "react";
 import Link from "next/link";
 
-import { Card, CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Card, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 import "./page-card.css";
 import {
@@ -154,7 +155,7 @@ const CardDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  BASICS  */}
@@ -194,7 +195,7 @@ const CardDocs = () => {
                 </Element>
 
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
@@ -232,7 +233,7 @@ const CardDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
 
                     {/*  =============================================================================================  */}
@@ -264,7 +265,7 @@ const CardDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
 
                     {/*  =============================================================================================  */}
@@ -315,7 +316,7 @@ const CardDocs = () => {
                     </Row>
 
 
-                    <HRule sideMargin="huge" />
+                    <HRule horizontalMargin="huge" />
 
 
                     {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 import {
-    Button, CodeBlock, Element,
+    Button, Element,
     Heading,
     HRule,
     NotificationItem,
@@ -13,6 +13,7 @@ import {
     Table,
     Text,
 } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 import "./page-notifications.css";
 import {
@@ -286,7 +287,7 @@ const NotificationsDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  DEFAULT  */}
@@ -365,7 +366,7 @@ const NotificationsDocs = () => {
                     </Row>
                 </Element>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  PROPS  */}
@@ -404,7 +405,7 @@ const NotificationsDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
                     {/*  =============================================================================================  */}
                     {/*  STACKING ORDER  */}
@@ -423,7 +424,7 @@ const NotificationsDocs = () => {
                     </Row>
 
 
-                    <HRule sideMargin="huge" />
+                    <HRule horizontalMargin="huge" />
                 </Element>
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
@@ -454,7 +455,7 @@ const NotificationsDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
 
                     {/*  =============================================================================================  */}
@@ -474,7 +475,7 @@ const NotificationsDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
 
                     {/*  =============================================================================================  */}
@@ -494,7 +495,7 @@ const NotificationsDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
 
                     {/*  =============================================================================================  */}
@@ -514,7 +515,7 @@ const NotificationsDocs = () => {
                     </Row>
 
 
-                    <HRule sideMargin="huge" />
+                    <HRule horizontalMargin="huge" />
 
 
                     {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}

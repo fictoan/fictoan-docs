@@ -156,7 +156,7 @@ const TabsDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  DEFAULT  */}
@@ -195,7 +195,7 @@ const TabsDocs = () => {
                     </Row>
                 </Element>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  PROPS  */}
@@ -229,7 +229,7 @@ const TabsDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
                 </Element>
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}

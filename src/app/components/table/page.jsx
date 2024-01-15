@@ -2,7 +2,8 @@
 
 import React from "react";
 
-import { CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 import "./page-table.css";
 import {
@@ -69,7 +70,7 @@ const TableDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  DEFAULT  */}
@@ -122,7 +123,7 @@ const TableDocs = () => {
                 </Element>
 
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  Props  */}
@@ -187,7 +188,7 @@ const TableDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
 
                     {/*  =============================================================================================  */}
@@ -243,7 +244,7 @@ const TableDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
 
                     {/*  =============================================================================================  */}
@@ -299,7 +300,7 @@ const TableDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
 
                     {/*  =============================================================================================  */}
@@ -355,7 +356,7 @@ const TableDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
 
                     {/*  =============================================================================================  */}
@@ -411,7 +412,7 @@ const TableDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
 
                     {/*  =============================================================================================  */}
@@ -466,7 +467,7 @@ const TableDocs = () => {
                     </Row>
 
 
-                    <HRule sideMargin="huge" />
+                    <HRule horizontalMargin="huge" />
 
 
                     {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}

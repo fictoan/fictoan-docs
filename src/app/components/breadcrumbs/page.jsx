@@ -5,7 +5,6 @@ import React from "react";
 import {
     BreadcrumbItem,
     BreadcrumbsWrapper,
-    CodeBlock,
     Element,
     Heading,
     HRule,
@@ -13,6 +12,7 @@ import {
     Row,
     Text,
 } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 import "./page-breadcrumbs.css";
 import { sampleBreadcrumb, sampleBreadcrumbTheme } from "./CodeSamples";
@@ -46,7 +46,7 @@ const BreadcrumbsDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="primary" sideMargin="huge" />
+                <HRule kind="primary" horizontalMargin="huge" />
 
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/* DEFAULT */}
@@ -108,7 +108,7 @@ const BreadcrumbsDocs = () => {
                 </Element>
 
 
-                <HRule kind="primary" sideMargin="huge" />
+                <HRule kind="primary" horizontalMargin="huge" />
 
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/* PROPS */}
@@ -132,7 +132,7 @@ const BreadcrumbsDocs = () => {
                     </Row>
 
 
-                    <HRule sideMargin="huge" />
+                    <HRule horizontalMargin="huge" />
 
 
                     {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
