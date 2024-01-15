@@ -12,8 +12,8 @@ dependencies:
     specifier: ^4.2.3
     version: 4.2.3
   fictoan-react:
-    specifier: file:.yalc/fictoan-react
-    version: file:.yalc/fictoan-react(prism-react-renderer@2.3.1)(react@18.2.0)
+    specifier: 1.0.0-alpha.2
+    version: 1.0.0-alpha.2(prism-react-renderer@2.3.1)(react@18.2.0)
   gsap:
     specifier: ^3.12.4
     version: 3.12.4
@@ -1934,6 +1934,20 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /fictoan-react@1.0.0-alpha.2(prism-react-renderer@2.3.1)(react@18.2.0):
+    resolution: {integrity: sha512-+u44pFk/j0QZI0B1LQKvP4RzmjvL2Vy7oKwEoGL52J0vUJDNMWShHhKmiOwX5haohypJtkVZxIXwwRJUts143Q==}
+    requiresBuild: true
+    peerDependencies:
+      prism-react-renderer: '>=2.0.0'
+      react: ^18.2.0
+    peerDependenciesMeta:
+      prism-react-renderer:
+        optional: true
+    dependencies:
+      prism-react-renderer: 2.3.1(react@18.2.0)
+      react: 18.2.0
+    dev: false
+
   /function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
     dev: false
@@ -2393,20 +2407,4 @@ packages:
 
   /yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
-    dev: false
-
-  file:.yalc/fictoan-react(prism-react-renderer@2.3.1)(react@18.2.0):
-    resolution: {directory: .yalc/fictoan-react, type: directory}
-    id: file:.yalc/fictoan-react
-    name: fictoan-react
-    requiresBuild: true
-    peerDependencies:
-      prism-react-renderer: '>=2.0.0'
-      react: ^18.2.0
-    peerDependenciesMeta:
-      prism-react-renderer:
-        optional: true
-    dependencies:
-      prism-react-renderer: 2.3.1(react@18.2.0)
-      react: 18.2.0
     dev: false
