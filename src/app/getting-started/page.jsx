@@ -126,9 +126,7 @@ const GettingStarted = () => {
                             ]}
                             marginBottom="micro"
                         />
-                    </Portion>
 
-                    <Portion>
                         <HRule kind="tertiary" verticalMargin="micro" />
                     </Portion>
 
@@ -139,7 +137,7 @@ const GettingStarted = () => {
 
                         <Text marginBottom="micro">
                             The <a
-                            href="https://fictoan.io/boilerplate" target="_blank" rel="noreferrer">Fictoan
+                            href="https://github.com/fictoan/react-boilerplate" target="_blank" rel="noreferrer">Fictoan
                             boilerplate &#8599;</a> is a NextJS project and uses the latest <a
                             href="https://nextjs.org/docs/app" target="_blank" rel="noreferrer">App
                             router &#8599;</a> setup. The folder structure looks like this—
@@ -225,7 +223,7 @@ const GettingStarted = () => {
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* COMMON PATTERNS */}
+            {/* USAGE */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="patterns">
                 <Row layout="grid" horizontalPadding="huge">
@@ -234,7 +232,7 @@ const GettingStarted = () => {
                     </Portion>
                 </Row>
 
-                {/* NOMENCLATURE =========================================== */}
+                {/* IMPORT ================================================= */}
                 <Row
                     id="nomenclature"
                     layout="grid"
@@ -242,6 +240,15 @@ const GettingStarted = () => {
                 >
                     <Portion>
                         <Text weight="700" size="large" textColour="white" marginBottom="nano">Importing</Text>
+
+                        <Text marginBottom="micro">
+                            Import the main CSS file in your app entry point. This will make sure that the Fictoan
+                            styles are available to all components.
+                        </Text>
+
+                        <CodeBlock language="JavaScript" marginBottom="micro">
+                            import "fictoan-react/dist/index.css";
+                        </CodeBlock>
 
                         <Text marginBottom="micro">
                             In your content files, just import the components you need at the top, and use them inside

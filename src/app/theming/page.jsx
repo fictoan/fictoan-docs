@@ -5,7 +5,7 @@ import React from "react";
 
 // INTERNAL DEPS ===============================================================
 import { Heading, HRule, Portion, Row, Text } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
+import { CodeBlock, SlidingSelector } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
 
@@ -14,31 +14,13 @@ import "./page-theming.css";
 
 // CODE SNIPPETS ===============================================================
 import {
-    sampleThemeBadge,
-    sampleThemeBody,
-    sampleThemeBottomDrawer,
-    sampleThemeBreadcrumbs,
-    sampleThemeButton,
-    sampleThemeCallout,
-    sampleThemeCard,
-    sampleThemeCheckbox,
-    sampleThemeExpandableContent,
+    sampleThemeProviderSetup,
+    sampleHeaderSetup,
+    sampleCSSSetup,
     sampleThemeGlobals,
-    sampleThemeHRule,
-    sampleThemeInfoPanel,
-    sampleThemeInput,
-    sampleThemeNotification,
-    sampleThemeProgressBar,
-    sampleThemeRadioButton,
-    sampleThemeSelectDropdown,
-    sampleThemeSidebar,
-    sampleThemeSpinner,
-    sampleThemeSwitch,
-    sampleThemeTable,
-    sampleThemeTabs,
-    sampleThemeText,
-    sampleThemeToast,
+    sampleFictoanTheme,
 } from "./CodeSamples";
+import { SearchableCodeBlock } from "./SearchableCodeBlock";
 
 
 const ThemingDocs = () => {
@@ -47,7 +29,7 @@ const ThemingDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge" marginTop="medium">
+            <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1" marginBottom="micro">Theming</Heading>
                     <Text size="large">
@@ -57,286 +39,51 @@ const ThemingDocs = () => {
                 </Portion>
             </Row>
 
-            {/* GLOBALS //////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* GLOBALS ==================================================== */}
             <Row layout="grid" horizontalPadding="huge">
                 <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Globals</Text>
+                    <Heading as="h4" marginBottom="nano">Usage</Heading>
+                    <Text marginBottom="micro">
+                        Here’s a typical setup for the <code>ThemeProvider</code> and a child component that controls
+                        the toggle.
+                    </Text>
+
+                    <CodeBlock source={sampleThemeProviderSetup} language="jsx" marginBottom="micro" />
+                    <CodeBlock source={sampleHeaderSetup} language="jsx" marginBottom="micro" />
+                    <CodeBlock source={sampleCSSSetup} language="css" marginBottom="micro" />
+
+                    <Text marginBottom="micro">
+                        Here, the Fictoan theme is first loaded as the default theme. You can also create your own theme,
+                        with a class, and put in all your custom variables there. This will over-ride the default values.
+                    </Text>
+
+                    <Text>Make sure you import the theme file globally.</Text>
+                </Portion>
+            </Row>
+
+            <HRule kind="primary" horizontalMargin="huge" verticalMargin="micro" />
+
+            {/* GLOBALS ==================================================== */}
+            <Row layout="grid" horizontalPadding="huge">
+                <Portion>
+                    <Heading as="h4" marginBottom="micro">Variables</Heading>
+
+                    <Text size="large" weight="700" textColour="white" marginBottom="nano">Globals</Text>
 
                     <CodeBlock source={sampleThemeGlobals} language="css" marginBottom="micro" />
                 </Portion>
             </Row>
 
-            <HRule kind="secondary" horizontalMargin="huge" />
+            <HRule kind="secondary" horizontalMargin="huge" verticalMargin="micro" />
 
 
-            {/* BADGE ////////////////////////////////////////////////////////////////////////////////////////// */}
+
+            {/* BADGE ====================================================== */}
             <Row layout="grid" horizontalPadding="huge">
                 <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Badge</Text>
+                    <Text size="large" weight="700" textColour="white" marginBottom="nano">Components</Text>
 
-                    <CodeBlock source={sampleThemeBadge} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* BODY /////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Body</Text>
-
-                    <CodeBlock source={sampleThemeBody} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* BottomDrawer /////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">BottomDrawer</Text>
-
-                    <CodeBlock source={sampleThemeBottomDrawer} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* BREADCRUMBS //////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Breadcrumbs</Text>
-
-                    <CodeBlock source={sampleThemeBreadcrumbs} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* BUTTON ///////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Button</Text>
-
-                    <CodeBlock source={sampleThemeButton} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* CALLOUT //////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Callout</Text>
-
-                    <CodeBlock source={sampleThemeCallout} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* CARD */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Card</Text>
-
-                    <CodeBlock source={sampleThemeCard} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* CHECKBOX */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Checkbox</Text>
-
-                    <CodeBlock source={sampleThemeCheckbox} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* EXPANDABLE CONTENT */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">ExpandableContent</Text>
-
-                    <CodeBlock source={sampleThemeExpandableContent} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* H-RULE */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Horizontal rule</Text>
-
-                    <CodeBlock source={sampleThemeHRule} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* INFO PANEL */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Info panel</Text>
-
-                    <CodeBlock source={sampleThemeInfoPanel} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* INPUT */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Input</Text>
-
-                    <CodeBlock source={sampleThemeInput} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* NOTIFICATION */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Notification</Text>
-
-                    <CodeBlock source={sampleThemeNotification} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* PROGRESS BAR */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Progress bar</Text>
-
-                    <CodeBlock source={sampleThemeProgressBar} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* RADIO BUTTON */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Radio button</Text>
-
-                    <CodeBlock source={sampleThemeRadioButton} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* SIDEBAR */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Sidebar</Text>
-
-                    <CodeBlock source={sampleThemeSidebar} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* SELECT DROPDOWN */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Select dropdown</Text>
-
-                    <CodeBlock source={sampleThemeSelectDropdown} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* SPINNER */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Spinner</Text>
-
-                    <CodeBlock source={sampleThemeSpinner} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* TABLE */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Table</Text>
-
-                    <CodeBlock source={sampleThemeTable} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* TABS */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Tabs</Text>
-
-                    <CodeBlock source={sampleThemeTabs} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* TOAST */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Toast</Text>
-
-                    <CodeBlock source={sampleThemeToast} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-            <HRule kind="secondary" horizontalMargin="huge" />
-
-
-            {/* TEXT */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Text</Text>
-
-                    <CodeBlock source={sampleThemeText} language="css" marginBottom="micro" />
-                </Portion>
-            </Row>
-
-
-            {/* SWITCH */}
-            <Row layout="grid" horizontalPadding="huge">
-                <Portion>
-                    <Text size="large" weight="700" marginBottom="micro">Switch</Text>
-
-                    <CodeBlock source={sampleThemeSwitch} language="css" marginBottom="micro" />
+                    <SearchableCodeBlock source={sampleFictoanTheme} language="css" marginBottom="micro" />
                 </Portion>
             </Row>
         </article>

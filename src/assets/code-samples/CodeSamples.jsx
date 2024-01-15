@@ -1,9 +1,5 @@
 // INSTALLATION ================================================================
-export const snippetInstall = `yarn add fictoan-react
-# or
-npm install fictoan-react
-# or
-pnpm install fictoan-react`;
+export const snippetInstallation = `@import "fictoan-react/dist/index.css";`;
 
 // FOLDER STRUCTURE ============================================================
 export const snippetStructure = `fictoan-boilerplate
