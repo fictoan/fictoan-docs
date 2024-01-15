@@ -1,37 +1,45 @@
 import React, { useState } from "react";
-import { Element, InputField, Text } from "fictoan-react";
+import { InputField, Text } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 export const SearchableCodeBlock = ({ source, language, ...props }) => {
     const [searchString, setSearchString] = useState("");
-    const [isSearching, setIsSearching] = useState(false);
     const [filteredSource, setFilteredSource] = useState(source);
+    const [matchCount, setMatchCount] = useState(0);
 
     const handleSearch = (e) => {
-        const search = e.target.value;
+        const search = e.target.value.toLowerCase();
         setSearchString(search);
-        setIsSearching(search.length > 0);
 
         if (!search) {
             setFilteredSource(source);
+            setMatchCount(0);
             return;
         }
 
-        const filteredLines = source.split("\n")
-            .filter(line => line.toLowerCase().includes(search.toLowerCase()))
-            .map(line => line.replace(/\s*:\s*/g, " : ").trim()); // Replace colons with spaces and trim whitespace
+        const sourceLines = source.split("\n");
+        let currentGroup = "";
+        let groupedResults = {};
+        let totalMatches = 0;
 
-        setFilteredSource(filteredLines.join("\n"));
-    };
+        sourceLines.forEach(line => {
+            if (line.startsWith("/*") && line.endsWith("*/")) {
+                currentGroup = line;
+                groupedResults[currentGroup] = [];
+            } else if (line.toLowerCase().includes(search)) {
+                const formattedLine = line.replace(/\s*:\s*/g, " : ").trim();
+                groupedResults[currentGroup].push(formattedLine);
+                totalMatches++;
+            }
+        });
 
-    const countMatches = () => {
-        return filteredSource ? filteredSource.split("\n").filter(line => line.trim().length > 0).length : 0;
-    };
+        const resultString = Object.entries(groupedResults)
+            .filter(([group, lines]) => lines.length > 0)
+            .map(([group, lines]) => `${group}\n${lines.join("\n")}`)
+            .join("\n\n");
 
-    const clearSearch = () => {
-        setSearchString("");
-        setIsSearching(false);
-        setFilteredSource(source);
+        setFilteredSource(resultString);
+        setMatchCount(totalMatches);
     };
 
     return (
@@ -43,13 +51,12 @@ export const SearchableCodeBlock = ({ source, language, ...props }) => {
                 placeholder="Search for a variable"
                 marginBottom="micro"
             />
-            {isSearching && (
+            {searchString && (
                 <Text verticalMargin="nano">
-                    {countMatches()} variable{countMatches() !== 1 ? "s" : ""} matching <code>{searchString}</code>
-                    &nbsp;— <Element as="span" textColour="red" onClick={clearSearch} className="is-clickable">Clear</Element>
+                    Found {matchCount} result{matchCount !== 1 ? "s" : ""} for <code>{searchString}</code>
                 </Text>
             )}
-            <CodeBlock source={isSearching ? filteredSource : source} language={language} {...props} />
+            <CodeBlock source={filteredSource} language={language} {...props} />
         </>
     );
 };
