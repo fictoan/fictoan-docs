@@ -5,9 +5,10 @@ import React from "react";
 
 // INTERNAL DEPS ===============================================================
 import { Heading, HRule, Portion, Row, Text } from "fictoan-react";
-import { CodeBlock, SlidingSelector } from "fictoan-react/components";
+import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
+import { SearchableCodeBlock } from "./SearchableCodeBlock";
 
 // STYLES ======================================================================
 import "./page-theming.css";
@@ -20,15 +21,14 @@ import {
     sampleThemeGlobals,
     sampleFictoanTheme,
 } from "./CodeSamples";
-import { SearchableCodeBlock } from "./SearchableCodeBlock";
 
 
 const ThemingDocs = () => {
     return (
         <article id="page-theming">
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////// */}
             {/* INTRO */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////// */}
             <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1" marginBottom="micro">Theming</Heading>

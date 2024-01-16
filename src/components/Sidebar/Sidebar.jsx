@@ -138,16 +138,6 @@ export default function Sidebar({ sidebarState, setSidebarState, toggleTheme }) 
                 </SidebarItem>
             </Link>
 
-            <Link href="/utilities">
-                <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <ToolboxIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Utilities" />
-                </SidebarItem>
-            </Link>
-
             <Link href="/layout">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">

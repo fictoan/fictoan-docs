@@ -46,11 +46,11 @@
     --hr-tertiary-bg                          : var(--grey-dark-80);
 
     /* INPUT FIELD ////////////////////////////////////////////////////////////// */
-    --input-bg-default                        : var(--grey-dark-60);
+    --input-bg-default                        : var(--grey-dark-70);
     --input-border-default                    : var(--grey-dark-40);
     --input-border-radius-default             : var(--global-border-radius);
     --input-label-default                     : var(--paragraph-text-colour);
-    --input-placeholder-default               : var(--slate-light-40);
+    --input-placeholder-default               : var(--red-light-60);
     --input-text-default                      : var(--slate-light-60);
 
     --input-bg-focus                          : var(--grey-dark-50);

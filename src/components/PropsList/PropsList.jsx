@@ -2,14 +2,18 @@
 
 import React from "react";
 
-import { HRule, Portion, Row, Text } from "fictoan-react";
+import { Heading, HRule, Portion, Row, Text } from "fictoan-react";
 
 import "./props-list.css";
 
-export const PropsList = ({ props }) => {
+export const PropsList = ({ propData }) => {
     return (
         <>
             <Row layout="grid" gutters="huge" horizontalPadding="large" marginBottom="none">
+                <Portion>
+                    <Heading as="h6">{propData.elementName}</Heading>
+                </Portion>
+
                 <Portion desktopSpan="5">
                     <Text weight="700">Name</Text>
                 </Portion>
@@ -29,7 +33,7 @@ export const PropsList = ({ props }) => {
 
             <HRule kind="secondary" horizontalMargin="large" verticalMargin="nano" />
 
-            {props.map((props) => (
+            {propData?.props.map((props) => (
                 <>
                     <Row
                         layout="grid"
@@ -39,7 +43,11 @@ export const PropsList = ({ props }) => {
                         marginBottom="none"
                     >
                         <Portion desktopSpan="5">
-                            <code>{props.name}</code>
+                            <Text>
+                                {
+                                    <span dangerouslySetInnerHTML={{ __html: props.name }} />
+                                }
+                            </Text>
                         </Portion>
 
                         <Portion desktopSpan="9">
@@ -57,7 +65,10 @@ export const PropsList = ({ props }) => {
                         </Portion>
 
                         <Portion desktopSpan="5">
-                            <code>{props.defaultValue}</code>
+                            {props.defaultValue
+                                ? <code>{props.defaultValue}</code>
+                                : <Text>—</Text>
+                            }
                         </Portion>
                     </Row>
 

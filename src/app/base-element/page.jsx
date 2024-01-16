@@ -4,26 +4,27 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Card, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Element, Heading, HRule, Portion, Row, Text } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
+import { PropsList } from "../../components/PropsList/PropsList";
 
 // STYLES ======================================================================
 import "./base-element.css";
 
 // CODE SNIPPETS ===============================================================
 import { sampleElement } from "./CodeSamples";
-import { PropsList } from "../../components/PropsList/PropsList";
-import { listOfBaseElementProps } from "./propsList";
 
+// DATA ========================================================================
+import { listOfBaseElementProps } from "./propsList";
 
 const BaseElementDocs = () => {
     return (
-        <article id="page-base-element">
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+        <Element as="article" id="page-base-element">
+            {/* //////////////////////////////////////////////////////////// */}
             {/* INTRO */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////// */}
             <Row layout="grid" horizontalPadding="huge" marginTop="medium">
                 <Portion>
                     <Heading as="h1" marginBottom="micro">Base element</Heading>
@@ -34,13 +35,13 @@ const BaseElementDocs = () => {
                 </Portion>
             </Row>
 
-            <PropsList props={listOfBaseElementProps} />
+            <PropsList propData={listOfBaseElementProps} />
 
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="tiny" />
 
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////// */}
             {/* USAGE */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////// */}
             <Row layout="grid" horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="nano">Usage</Heading>
@@ -57,7 +58,7 @@ const BaseElementDocs = () => {
                     </Text>
                 </Portion>
             </Row>
-        </article>
+        </Element>
     );
 };
 

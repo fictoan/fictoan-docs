@@ -12,62 +12,74 @@ export const sampleText = `<Text>Sample text goes here</Text>`;
 
 
 // Code sample 02 ==============================================================
-export const sampleTextTheme = `text : {
-    font : {
-        sans  : "sans-serif",
-        serif : "serif",
-        mono  : "monospace",
-    },
+export const sampleTextTheme = `/* GENERICS ============================================================= */
+--font-sans-serif           : "IBM Plex Sans", sans-serif;
+--font-serif                : "IBM Plex Serif", serif;
+--font-mono                 : "IBM Plex Mono", monospace;
 
-    paras : {
-        size       : 1,
-        color      : defaultColours.grey,
-        weight     : 400,
-        lineHeight : 1.64,
-    },
+/* PARAGRAPHS =========================================================== */
+--paragraph-font            : var(--font-sans-serif);
+--paragraph-font-size       : 1rem;
+--paragraph-line-height     : 1.2;
+--paragraph-font-weight     : 400;
+--paragraph-text-colour     : var(--grey);
 
-    headings : {
-        font       : "sans-serif",
-        color      : mainColors.shade,
-        weight     : 600,
-        multiplier : 1.16,
-        lineHeight : 1.24
-    },
+--paragraph-subtext-colour  : var(--slate-dark-30);
+--paragraph-subtext-size    : 0.8rem;
 
-    links : {
-        default : {
-            color : defaultColours.blue90,
-        },
-        onHover : {
-            color : defaultColours.blue60
-        }
-    },
+/* HEADINGS ============================================================= */
+--heading-font              : var(--font-sans-serif);
+--heading-font-size         : 1.5rem;
+--heading-size-multiplier   : 1.2;
+--heading-line-height       : 1;
+--heading-font-weight       : 700;
+--heading-text-colour       : var(--slate);
 
-    selection : {
-        bg   : mainColors.hue,
-        text : defaultColours.white
-    },
-}`;
+/* LINKS ================================================================ */
+--link-font                 : var(--paragraph-font);
+--link-text-default         : var(--blue);
+--link-text-hover           : var(--blue);
+
+/* SELECTION ============================================================ */
+--text-selected             : var(--white);
+--text-bg-selected          : var(--hue);`;
 
 
 // Code sample 03 ==============================================================
-export const sampleDocsTheme = `font : {
-    sans  : "Space Grotesk, sans-serif",
-    serif : "serif",
-    mono  : "Space Mono, monospace"
-},`;
+export const sampleColouring1 = `<Heading as="h6" textColour="red-light-30">I’m red-light-30</Heading>`;
+export const sampleColouring2 = `<Text textColor="violet-dark-10">I’m violet-dark-10</Text>`;
+export const sampleColouring3 = `<Heading as="h4" textColour="pistachio">I’m pistachio</Heading>`;
+
+
+// Code sample 03 ==============================================================
+export const sampleFontImport = `// fonts.css
+@font-face {
+    font-family : "IBM Plex Sans";
+    src         : url("../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Regular.woff2") format("woff2");
+    font-weight : 400;
+    font-style  : normal;
+}
+
+@font-face {
+    font-family : "IBM Plex Sans";
+    src         : url("../assets/fonts/IBM-Plex-Sans/IBMPlexSans-Bold.woff2") format("woff2");
+    font-weight : 700;
+    font-style  : normal;
+}`;
 
 
 // Code sample 04 ==============================================================
-export const sampleHeadingSizing = `text : {
-    paras : {
-        size : 1,
-    },
+export const sampleHeadingSizing = `--paragraph-font-size     : 1rem;
+--heading-font-size       : 1.5rem;
+--heading-size-multiplier : 1.2;`;
 
-    headings : {
-        multiplier : 1.16
-    }
-}`;
+// Code sample 04 ==============================================================
+export const sampleHeadingSizingCalc = `h1 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 2.4); }
+h2 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 2); }
+h3 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.64); }
+h4 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.48); }
+h5 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.24); }
+h6 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.16); }`;
 
 
 // Code sample 04 ==============================================================
