@@ -11,7 +11,7 @@ import {
     HRule, Card, RadioGroup, RadioButton, Select,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
-import { generateShades, listOfColours } from "../colour/page";
+import { listOfColours, generateShades } from "../../utils/colours";
 
 // COMPONENTS ==================================================================
 

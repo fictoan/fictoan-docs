@@ -244,13 +244,13 @@ const TypographyDocs = () => {
                             For this, you can use a prop called <code>size</code> to increase or decrease body font.
                         </Text>
 
-                        <Text size="nano" marginBottom="none">Text sizing — </Text>
-                        <Text size="micro" marginBottom="none">Text sizing — </Text>
-                        <Text size="tiny" marginBottom="none">Text sizing — </Text>
-                        <Text size="small" marginBottom="none">Text sizing — </Text>
-                        <Text size="medium" marginBottom="none">Text sizing — </Text>
-                        <Text size="large" marginBottom="none">Text sizing — </Text>
-                        <Text size="huge" marginBottom="none">Text sizing — </Text>
+                        <Text size="nano" marginBottom="none">Nano text</Text>
+                        <Text size="micro" marginBottom="none">Micro text</Text>
+                        <Text size="tiny" marginBottom="none">Tiny text</Text>
+                        <Text size="small" marginBottom="none">Small text</Text>
+                        <Text size="medium" marginBottom="none">Medium text</Text>
+                        <Text size="large" marginBottom="none">Large text</Text>
+                        <Text size="huge" marginBottom="none">Huge text</Text>
                     </Portion>
 
                     <Portion>

@@ -70,7 +70,7 @@ const LayoutDocs = () => {
                         align="center"
                     />
 
-                    <HRule sideMargin="huge" kind="primary" />
+                    <HRule horizontalMargin="huge" kind="primary" />
                 </Element>
 
 
@@ -199,7 +199,7 @@ const LayoutDocs = () => {
                         </Card>
                     </Element>
 
-                    <HRule sideMargin="huge" kind="secondary" />
+                    <HRule horizontalMargin="huge" kind="secondary" />
 
 
                     {/* MULTIPLE PORTIONS ////////////////////////////////////////////////////////////////////////////// */}
@@ -369,7 +369,7 @@ const LayoutDocs = () => {
                         </Card>
                     </Element>
 
-                    <HRule sideMargin="huge" kind="secondary" />
+                    <HRule horizontalMargin="huge" kind="secondary" />
 
 
                     {/* MULTIPLE ROWS ////////////////////////////////////////////////////////////////////////////////// */}
@@ -583,7 +583,7 @@ const LayoutDocs = () => {
                         </Card>
                     </Element>
 
-                    <HRule sideMargin="huge" kind="secondary" />
+                    <HRule horizontalMargin="huge" kind="secondary" />
 
 
                     {/* NAMING PORTIONS //////////////////////////////////////////////////////////////////////////////// */}
@@ -740,7 +740,7 @@ const LayoutDocs = () => {
                         </Portion>
                     </Row>
 
-                    <HRule sideMargin="huge" kind="primary" />
+                    <HRule horizontalMargin="huge" kind="primary" />
                 </Element>
 
 
@@ -842,7 +842,7 @@ const LayoutDocs = () => {
                         </Card>
                     </Element>
 
-                    <HRule sideMargin="huge" kind="secondary" />
+                    <HRule horizontalMargin="huge" kind="secondary" />
 
                     <Row layout="grid" sidePadding="huge">
                         <Portion>
@@ -857,7 +857,7 @@ const LayoutDocs = () => {
                         </Portion>
                     </Row>
 
-                    <HRule sideMargin="huge" kind="primary" />
+                    <HRule horizontalMargin="huge" kind="primary" />
                 </Element>
 
 
@@ -1122,7 +1122,7 @@ const LayoutDocs = () => {
                     </Element>
 
 
-                    <HRule sideMargin="huge" kind="primary" />
+                    <HRule horizontalMargin="huge" kind="primary" />
                 </Element>
 
 

@@ -23,10 +23,10 @@ export const sampleHRuleKinds = `<HRule kind="primary" />
 <HRule kind="tertiary" />`;
 
 //  Code sample 02 ////////////////////////////////////////////////////////////
-export const sampleHRuleSideMargin = `<HRule sideMargin="nano" />
-<HRule sideMargin="micro" />
-<HRule sideMargin="tiny" />
-<HRule sideMargin="small" />
-<HRule sideMargin="medium" />
-<HRule sideMargin="large" />
-<HRule sideMargin="huge" />`;
+export const sampleHRulehorizontalMargin = `<HRule horizontalMargin="nano" />
+<HRule horizontalMargin="micro" />
+<HRule horizontalMargin="tiny" />
+<HRule horizontalMargin="small" />
+<HRule horizontalMargin="medium" />
+<HRule horizontalMargin="large" />
+<HRule horizontalMargin="huge" />`;

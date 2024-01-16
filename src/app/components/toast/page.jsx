@@ -4,7 +4,6 @@ import React, { useState } from "react";
 
 import {
     Button,
-    CodeBlock,
     Element,
     Heading,
     HRule,
@@ -15,6 +14,7 @@ import {
     ToastItem,
     ToastsWrapper,
 } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 import "./page-toast.css";
 import {
@@ -233,7 +233,7 @@ const ToastDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  DEFAULT  */}
@@ -273,7 +273,7 @@ const ToastDocs = () => {
                     </Row>
                 </Element>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  PROPS  */}
@@ -302,7 +302,7 @@ const ToastDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
                 </Element>
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
@@ -337,7 +337,7 @@ const ToastDocs = () => {
                     </Row>
 
 
-                    <HRule kind="secondary" sideMargin="huge" />
+                    <HRule kind="secondary" horizontalMargin="huge" />
 
 
                     {/*  =============================================================================================  */}
@@ -357,7 +357,7 @@ const ToastDocs = () => {
                     </Row>
 
 
-                    <HRule sideMargin="huge" />
+                    <HRule horizontalMargin="huge" />
 
 
                     {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}

@@ -3,7 +3,8 @@
 import React from "react";
 import Link from "next/link";
 
-import { Button, Callout, Card, CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Button, Callout, Card, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 import "./page-button.css";
 import {
@@ -221,7 +222,7 @@ const ButtonDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  DEFAULT  */}
@@ -248,7 +249,7 @@ const ButtonDocs = () => {
                 </Element>
 
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  =============================================================================================  */}
                 {/*  KIND  */}
@@ -277,7 +278,7 @@ const ButtonDocs = () => {
                 </Row>
 
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
@@ -307,7 +308,7 @@ const ButtonDocs = () => {
                 </Row>
 
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
@@ -337,7 +338,7 @@ const ButtonDocs = () => {
                 </Row>
 
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
@@ -391,7 +392,7 @@ const ButtonDocs = () => {
                 </Row>
 
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
@@ -415,7 +416,7 @@ const ButtonDocs = () => {
                 </Row>
 
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/*  =============================================================================================  */}
@@ -444,7 +445,7 @@ const ButtonDocs = () => {
                 </Row>
 
 
-                <HRule kind="secondary" sideMargin="huge" />
+                <HRule kind="secondary" horizontalMargin="huge" />
 
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}

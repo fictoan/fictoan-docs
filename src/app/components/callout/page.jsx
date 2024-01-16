@@ -2,7 +2,8 @@
 
 import React from "react";
 
-import { Badge, Button, Callout, CodeBlock, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Badge, Button, Callout, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 import "./page-callout.css";
 
@@ -79,7 +80,7 @@ const CalloutDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/* DEFAULT */}
@@ -140,7 +141,7 @@ const CalloutDocs = () => {
                 </Element>
 
 
-                <HRule sideMargin="huge" />
+                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  THEMING  */}
