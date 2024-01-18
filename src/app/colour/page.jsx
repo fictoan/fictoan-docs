@@ -1,9 +1,21 @@
 "use client";
 
-import { Element, Card, Heading, Text, HRule, Portion, Row, Callout } from "fictoan-react";
+// EXTERNAL DEPS ===============================================================
+import React, { useState } from "react";
 
+// INTERNAL DEPS ===============================================================
+import { Element, Card, Heading, Text, HRule, Portion, Row, Callout } from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
+
+// COMPONENTS ==================================================================
+
+// STYLES ======================================================================
 import "./page-colour.css";
-import { useState } from "react";
+
+// CODE SNIPPETS ===============================================================
+import { sampleUsage1, sampleUsage2, sampleUsage3 } from "./CodeSamples";
+
+// DATA ========================================================================
 import { listOfColours, generateShades } from "../../utils/colours"
 
 const ColourDocs = () => {
@@ -21,15 +33,18 @@ const ColourDocs = () => {
     };
 
     return (
-        <article id="page-colour">
-            <Element as="section" id="basics" marginTop="small">
-                <Row layout="grid" sidePadding="huge" marginBottom="micro">
+        <Element as="article" id="page-colour">
+            {/* //////////////////////////////////////////////////////////// */}
+            {/* INTRO */}
+            {/* //////////////////////////////////////////////////////////// */}
+            <Element as="section" id="basics" marginTop="medium" marginBottom="small">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h4" marginBottom="nano">
-                            Adding a bit of colour to your projects
-                        </Heading>
+                        <Heading as="h1" className="text-hue">Colour</Heading>
                     </Portion>
+                </Row>
 
+                <Row layout="grid" horizontalPadding="huge" marginBottom="micro">
                     <Portion>
                         <Text marginBottom="micro">
                             Fictoan comes with 22 different named colours, apart
@@ -38,38 +53,62 @@ const ColourDocs = () => {
                         </Text>
 
                         <Text marginBottom="micro">
-                            There are five props&mdash;<br />
-                            <code>bgColour</code>,<br />
+                            There are three colour props&mdash;<br />
                             <code>textColour</code>,<br />
+                            <code>bgColour</code>,<br />
                             <code>borderColour</code>,<br />
-                            <code>strokeColour</code>,<br />
-                            and <code>fillColour</code><br />&mdash;that
-                            accept any value from the list of colours below. Use them like so&mdash;
+                            and they accept any value from the list of colours below. Use them like so&mdash;
                         </Text>
 
-                        <Text marginBottom="micro">
-                            The last two props&mdash;<code>strokeColour</code> and <code>fillColour</code>&mdash;work
-                            only for SVG elements.
-                        </Text>
-
-                        <Callout kind="info" marginBottom="micro">
+                        <Callout kind="info" marginBottom="small">
                             <Text textColour="white">
                                 And oh, you can use either spelling colour/color in the props above.
                             </Text>
                         </Callout>
 
-                        <Text>
-                            The last two props&mdash;<code>strokeColour</code> and <code>fillColour</code>&mdash;work
-                            only for SVG elements.
-                        </Text>
+                        <Element as="div" id="usage-examples">
+                            <Element as="div" marginBottom="micro">
+                                <CodeBlock source={sampleUsage1} language="jsx" marginBottom="nano" />
+                                <Card padding="small" bgColour="crimson-light-10" borderColour="pistachio-light-30" />
+                            </Element>
+
+                            <HRule kind="tertiary" verticalMargin="micro" />
+
+                            <Element as="div" marginBottom="micro">
+                                <CodeBlock source={sampleUsage2} language="jsx" marginBottom="nano" />
+                                <Element as="section" bgColour="amber-light-30" padding="small" />
+                            </Element>
+
+                            <HRule kind="tertiary" verticalMargin="micro" />
+
+                            <Element as="div" marginBottom="micro">
+                                <CodeBlock source={sampleUsage3} language="jsx" marginBottom="nano" />
+                                <Element as="ul" borderColour="cyan-dark-10" bgColour="slate-light-70" padding="micro">
+                                    <Element as="li" borderColour="pink-light-30">
+                                        Hello
+                                    </Element>
+
+                                    <Element as="li" borderColour="spring-dark-60">
+                                        Hello
+                                    </Element>
+
+                                    <Element as="li" borderColour="blue">
+                                        Hello
+                                    </Element>
+                                </Element>
+                            </Element>
+                        </Element>
                     </Portion>
                 </Row>
             </Element>
 
-            <HRule horizontalMargin="huge" kind="primary" />
+            <HRule horizontalMargin="huge" kind="primary" verticalMargin="small" />
 
+            {/* //////////////////////////////////////////////////////////// */}
+            {/* LIST OF COLOURS */}
+            {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="colour-list">
-                <Row sidePadding="huge" marginBottom="micro">
+                <Row layout="grid" horizontalPadding="huge" marginBottom="micro">
                     <Portion>
                         <Heading as="h6" marginBottom="nano">List of colours</Heading>
                         <Text>Use any of these below values as variables with the above props.</Text>
@@ -77,7 +116,7 @@ const ColourDocs = () => {
                 </Row>
 
 
-                <Row sidePadding="small" gutters="small" marginBottom="tiny">
+                <Row layout="grid" horizontalPadding="small" gutters="small" marginBottom="tiny">
                     {listOfColours.map((color) => (
                         <Portion desktopSpan="one-fourth" key={color}>
                             <Element as="div" className="colour-column" marginBottom="micro">
@@ -119,10 +158,10 @@ const ColourDocs = () => {
                 </Row>
 
                 {/* BLACK WHITE TRANSPARENT ================================ */}
-                <Row sidePadding="tiny" gutters="none" marginBottom="tiny">
+                <Row layout="grid" horizontalPadding="tiny" gutters="none" marginBottom="tiny">
                 </Row>
+        </Element>
             </Element>
-        </article>
     );
 };
 

@@ -33,7 +33,7 @@ export const PropsList = ({ propData }) => {
 
             <HRule kind="secondary" horizontalMargin="large" verticalMargin="nano" />
 
-            {propData?.props.map((props) => (
+            {propData.props.map((props) => (
                 <>
                     <Row
                         layout="grid"

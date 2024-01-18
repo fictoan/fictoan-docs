@@ -128,7 +128,7 @@ export default function Sidebar({ sidebarState, setSidebarState, toggleTheme }) 
                 </SidebarItem>
             </Link>
 
-            <Link href="/theming" className={`${pathname === "/theming" ? "active" : ""}`}>
+            <Link href="/theming" className={`${pathname === "/theme" ? "active" : ""}`}>
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
                         <ThemeIcon />

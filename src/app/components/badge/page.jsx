@@ -1,12 +1,25 @@
 "use client";
 
+// EXTERNAL DEPS ===============================================================
 import React from "react";
 
+// INTERNAL DEPS ===============================================================
 import { Badge, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
+// COMPONENTS ==================================================================
+import { PropsList } from "../../../components/PropsList/PropsList";
+
+// STYLES ======================================================================
 import "./page-name.css";
-import { sampleBadge, sampleBadgeSibling } from "./CodeSamples";
+
+// CODE SNIPPETS ===============================================================
+import { sampleBadge, sampleBadgeSibling, sampleBadgeTheming } from "./CodeSamples";
+
+// DATA ========================================================================
+import { listOfBadgeProps } from "./propsList";
+
+
 
 const BadgeDocs = () => {
     return (
@@ -16,171 +29,23 @@ const BadgeDocs = () => {
             </head>
 
             <article id="page-badge">
-                <Row sidePadding="huge" marginTop="medium" marginBottom="small">
+                <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
-                        <Heading as="h4" className="text-hue">Badge</Heading>
+                        <Heading as="h1" className="text-hue">Badge</Heading>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="huge">
-                    <Portion>
-                        <Heading as="h6" marginBottom="micro">Props</Heading>
+                <PropsList propData={listOfBadgeProps} />
 
-                        <Table bordersFor="both" padding="tiny" isFullWidth>
-                            <thead className="bg-slate-10">
-                                <tr>
-                                    <td className="weight-600">Native prop</td>
-                                    <td className="weight-600">Description</td>
-                                    <td className="weight-600">Values</td>
-                                    <td className="weight-600">Default</td>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <code>size</code>
-                                    </td>
-
-                                    <td>
-                                        The, um, size of the button
-                                    </td>
-
-                                    <td>
-                                        <code>tiny</code><br />
-                                        <code>small</code><br />
-                                        <code>medium</code><br />
-                                        <code>large</code><br />
-                                        <code>huge</code>
-                                    </td>
-
-                                    <td>
-                                        <code>medium</code>, auto-applied
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>shape</code>
-                                    </td>
-
-                                    <td>
-                                        Corner radius
-                                    </td>
-
-                                    <td>
-                                        <code>rounded</code><br />
-                                        <code>curved</code><br />
-                                        <code>circular</code><br />
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
-
-                        <HRule kind="tertiary" marginTop="tiny" marginBottom="tiny" />
-
-                        <Table bordersFor="both" padding="tiny" isFullWidth>
-                            <thead className="bg-slate-10">
-                                <tr>
-                                    <td className="weight-600">Shared prop</td>
-                                    <td className="weight-600">Description</td>
-                                    <td className="weight-600">Values</td>
-                                    <td className="weight-600">Default</td>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <code>shadow</code>
-                                    </td>
-
-                                    <td>
-                                        Box shadow
-                                    </td>
-
-                                    <td>
-                                        <code>mild</code><br />
-                                        <code>hard</code><br />
-                                        <code>soft</code>
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>bgColour</code> / <code>bgColor</code>
-                                    </td>
-
-                                    <td>
-                                        Background colour
-                                    </td>
-
-                                    <td>
-                                        Any colour from <code>defaultColours</code>.
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>borderColour</code> / <code>borderColor</code>
-                                    </td>
-
-                                    <td>
-                                        Border colour
-                                    </td>
-
-                                    <td>
-                                        Any colour from <code>defaultColours</code>.
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>textColour</code> / <code>textColor</code>
-                                    </td>
-
-                                    <td>
-                                        Text colour
-                                    </td>
-
-                                    <td>
-                                        Any colour from <code>defaultColours</code>.
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
-                    </Portion>
-                </Row>
-
-                <HRule kind="primary" horizontalMargin="huge" />
+                <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/*  DEFAULT BADGE */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 <Element as="section" id="default">
-                    <Row sidePadding="huge">
+                    <Row layout="grid" horizontalPadding="huge">
                         <Portion>
-                            <Heading as="h6" marginBottom="tiny">Default badge</Heading>
+                            <Heading as="h4" marginBottom="tiny">Default badge</Heading>
 
                             <Text marginBottom="micro">
                                 The <code>Badge</code> is a modified native <code>mark</code> element. By default, it uses a
@@ -203,7 +68,7 @@ const BadgeDocs = () => {
 
                             <Element as="div" verticallyCentreItems>
                                 <Heading as="h6" marginRight="nano">Apple sundae</Heading>
-                                <Badge shape="curved" bgColour="green-dark-20" textColour="white">
+                                <Badge size="small" shape="curved" bgColour="green-light-60" textColour="green-dark-40">
                                     NEW
                                 </Badge>
                             </Element>
@@ -216,18 +81,18 @@ const BadgeDocs = () => {
                 </Element>
 
 
-                <HRule kind="primary" horizontalMargin="huge" />
+                <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
 
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/*  THEMING  */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 <Element as="section" id="theming">
-                    <Row sidePadding="huge" marginBottom="small">
+                    <Row layout="grid" horizontalPadding="huge" marginBottom="small">
                         <Portion>
-                            <Heading as="h6" marginBottom="tiny">Theming</Heading>
+                            <Heading as="h4" marginBottom="tiny">Theming</Heading>
 
-                            <Text>Nothing here, but you can use all the props you would for a <code>Button</code>, such as <code>bgColour</code>, <code>textColour</code> and <code>borderColour</code>.</Text>
+                            <CodeBlock source={sampleBadgeTheming} language="css" />
                         </Portion>
                     </Row>
                 </Element>

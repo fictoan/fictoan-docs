@@ -8,9 +8,14 @@ export const sampleBadgeSibling = `<Element as="div" verticallyCentreItems>
     </Heading>
 
     <Badge
-        shape="curved"
-        bgColour="green-20" textColour="green"
+        shape="curved" size="small"
+        bgColour="green-light-60" textColour="green-dark-40"
     >
         NEW
     </Badge>
 </Element>`;
+
+// Code sample 03 //////////////////////////////////////////////////////////////
+export const sampleBadgeTheming = `--badge-font          : var(--paragraph-font);
+--badge-border-radius : var(--global-border-radius);
+--badge-border-width  : var(--global-border-width);`;
