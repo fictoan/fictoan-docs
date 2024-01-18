@@ -28,7 +28,7 @@ import {
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
-import { GlowCard } from "@/components/GlowCard/GlowCard";
+import { GlowCard } from "../GlowCard/GlowCard";
 
 // STYLES ======================================================================
 import "./component-grid.css";
