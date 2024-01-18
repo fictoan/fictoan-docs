@@ -12,8 +12,8 @@ dependencies:
     specifier: ^4.2.3
     version: 4.2.3
   fictoan-react:
-    specifier: file:.yalc/fictoan-react
-    version: file:.yalc/fictoan-react(prism-react-renderer@2.3.1)(react@18.2.0)
+    specifier: 1.0.0-alpha.4
+    version: 1.0.0-alpha.4(prism-react-renderer@2.3.1)(react@18.2.0)
   gsap:
     specifier: ^3.12.4
     version: 3.12.4
@@ -1932,6 +1932,21 @@ packages:
   /esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /fictoan-react@1.0.0-alpha.4(prism-react-renderer@2.3.1)(react@18.2.0):
+    resolution: {integrity: sha512-IWEH5oHIQUlM7atUylKtT/71AVSAHzVb74D+SF49jxo8xtkjDaB8Ki1eH848wb2Z1RWrKCls5kh8MuUmWMsHbg==}
+    requiresBuild: true
+    peerDependencies:
+      prism-react-renderer: '>=2.0.0'
+      react: ^18.2.0
+    peerDependenciesMeta:
+      prism-react-renderer:
+        optional: true
+    dependencies:
+      fictoan-react: file:.yalc/fictoan-react(prism-react-renderer@2.3.1)(react@18.2.0)
+      prism-react-renderer: 2.3.1(react@18.2.0)
+      react: 18.2.0
     dev: false
 
   /function-bind@1.1.2:
