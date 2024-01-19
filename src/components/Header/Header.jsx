@@ -11,8 +11,9 @@ export const SiteHeader = () => {
     return (
         <>
             <Row
+                layout="grid"
                 id="site-header"
-                sidePadding="medium"
+                horizontalPadding="medium"
                 marginTop="micro"
             >
                 <Portion desktopSpan="one-third">

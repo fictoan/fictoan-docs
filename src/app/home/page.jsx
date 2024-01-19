@@ -2,46 +2,39 @@
 
 import React from "react";
 
-import { Button, Card, Element, Heading, InputField, Portion, Row, Text } from "fictoan-react";
+import { Button, Card, Element, Form, Heading, InputField, Portion, Row, Text } from "fictoan-react";
 
-import "./page-name.css";
+import "./page-home.css";
 
 const HomePage = () => {
     return (
-        <>
-            <Row
-                layout="grid" bgColour="blue-light-10" padding="small" gutters="huge"
-            >
-                <Portion>
-                    <Heading as="h1" textColour="white">Hello there!</Heading>
+        <Element as="article" id="page-home">
+            <Row layout="grid" marginTop="medium" horizontalPadding="medium">
+                <Portion desktopSpan="two-third">
+                    <Heading as="h1">Hello!</Heading>
+                    <Heading as="h6" weight="400">Please login to continue</Heading>
                 </Portion>
 
-                <Portion desktopSpan="one-fourth">
-                    <Card padding="micro" shape="rounded" shadow="hard">
-                        <Text textColour="red">[Magna, Luctus, Quam, Vel][ram, josephine, matthew]</Text>
-                    </Card>
-                </Portion>
-                <Portion desktopSpan="one-fourth">
-                    <Card padding="micro" shape="rounded" shadow="hard">
-                        <Text weight="700" size="huge">Some text</Text>
+                <Portion desktopSpan="one-third">
+                    <Card padding="micro" shape="rounded">
+                        <Heading as="h6" marginBottom="micro">Login</Heading>
 
-                        <InputField placeholder="ss" id="ss" label="sds" />
+                        <Form>
+                            <InputField label="Email" type="email" />
+                            <InputField label="Password" type="password" />
 
-                        <Button
-                            bgColour="orange-dark-10" shadow="hard" shape="rounded"
-                            textColour="white" borderColour="white"
-                        >
-                            Click me!
-                        </Button>
-                    </Card>
-                </Portion>
-                <Portion desktopSpan="half">
-                    <Card padding="micro" shape="rounded" shadow="hard" bgColour="pistachio-light-10">
-                        <Text marginBottom="tiny">Some text</Text>
+                            <Button
+                                bgColour="red"
+                                shape="rounded"
+                                textColour="white"
+                            >
+                                LOGIN
+                            </Button>
+                        </Form>
                     </Card>
                 </Portion>
             </Row>
-        </>
+        </Element>
     );
 };
 

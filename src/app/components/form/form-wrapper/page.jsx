@@ -1,245 +1,117 @@
 "use client";
 
+// EXTERNAL DEPS ===============================================================
 import React from "react";
 
+// INTERNAL DEPS ===============================================================
 import {
-    CheckBox,
+    CheckBox, Element,
     FormItem,
     FormItemGroup,
-    FormWrapper,
+    Form,
+    Heading,
     HRule,
     InputField,
-    Portion, RadioButton,
-    Row, Switch,
+    Portion,
+    RadioButton,
+    Row,
+    Switch,
     Text,
 } from "fictoan-react";
+
+// COMPONENTS ==================================================================
 import { CodeBlock } from "fictoan-react/components";
 
+// STYLES ======================================================================
 import "./page-form.css";
 
+// CODE SNIPPETS ===============================================================
 import { snippetForm, snippetFormItem, snippetTextInput, snippetInputValidation } from "./CodeSamples";
 
-const FormWrapperDocs = () => {
+// DATA ========================================================================
+
+
+const FormDocs = () => {
     return (
-        <>
-            <head>
-                <title>Form — Fictoan documentation</title>
-            </head>
-
-            <article id="page-form">
-                <Row sidePadding="huge" marginTop="small" marginBottom="small">
+        <Element as="article" id="page-form">
+            <Element as="section" id="intro" marginTop="medium" marginBottom="small">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
-                        <h2 className="text-hue">Form</h2>
+                        <Heading as="h1" marginBottom="micro">Form wrapper</Heading>
+
+                        <Text size="large">
+                            The Form parent allows for consistent spacing and margins between form elements.
+                        </Text>
+                    </Portion>
+                </Row>
+            </Element>
+
+            <section id="add-content">
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
+                {/* USAGE */}
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
+                <Row layout="grid" horizontalPadding="huge">
+                    <Portion>
+                        <Heading as="h4">Usage</Heading>
                     </Portion>
                 </Row>
 
-                {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*   SETTING IT UP  */}
-                {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
-                <Row sidePadding="huge" className="margin-top-medium">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
-                        <h4>Basics</h4>
+                        <Text marginBottom="micro">
+                            The <code>Form</code> component is used to encapsulate all the form elements with proper
+                            spacing and margins.
+                        </Text>
+
+                        <CodeBlock source={snippetForm} language="jsx" />
                     </Portion>
                 </Row>
 
-                <Row sidePadding="huge">
+                <HRule horizontalMargin="huge" verticalMargin="small" />
+
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
+                {/*   FORM UNIT  */}
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
+                        <Heading as="h4" marginBottom="nano">Form unit</Heading>
                         <Text>
-                            Most form elements are available as components in RF. They all come with a bit of additional
-                            functionality and design tweaks over the regular native elements.
+                            The <code>FormItem</code> component is used to wrap individual elements and ensures
+                            equal margins and alignment between them.
                         </Text>
                     </Portion>
                 </Row>
 
-                <HRule horizontalMargin="huge" thick bgColour="sky-20" />
-                {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*   FORM  */}
-                {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
-                <section id="add-content">
-                    <Row sidePadding="huge">
-                        <Portion>
-                            <h4>Form</h4>
-                        </Portion>
-                    </Row>
+                <Row layout="grid" horizontalPadding="huge">
+                    <Portion>
+                        <Form spacing="huge">
+                            <FormItemGroup>
+                                <InputField label="Label" />
 
-                    <Row sidePadding="huge">
-                        <Portion>
-                            <Text>
-                                The <code>Form</code> component is used to encapsulate all the form elements with proper
-                                spacing and margins.
-                            </Text>
+                                <InputField label="Label" />
+                            </FormItemGroup>
 
-                            <CodeBlock source={snippetForm} language="jsx" />
-                        </Portion>
-                    </Row>
+                            <FormItemGroup spacing="tiny">
+                                <InputField label="Label" />
 
-                    <HRule horizontalMargin="huge" thin bgColour="sky-20" />
+                                <InputField label="Label" />
 
-                    {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
-                    {/*   FORM UNIT  */}
-                    {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
+                                <InputField label="Label" />
+                            </FormItemGroup>
+                        </Form>
 
-                    <Row sidePadding="huge">
-                        <Portion>
-                            <h4>Form unit</h4>
-                        </Portion>
-                    </Row>
+                        <CodeBlock source={snippetFormItem} language="jsx" />
+                    </Portion>
+                </Row>
 
-                    <Row sidePadding="huge">
-                        <Portion>
-                            <Text>
-                                The <code>FormItem</code> component is used to wrap individual elements and ensures
-                                equal margins and alignment between them.
-                            </Text>
+                <HRule horizontalMargin="huge" verticalMargin="small" />
 
-                            <FormWrapper spacing="large">
-                                <div>
-                                    <FormItemGroup>
-                                        <InputField
-                                            label="Label, visible by default"
-                                        />
-
-                                        <InputField
-                                            label="Label, visible by default"
-                                        />
-
-                                        <InputField
-                                            label="Label, visible by default"
-                                        />
-                                    </FormItemGroup>
-                                </div>
-                            </FormWrapper>
-
-                            <CodeBlock source={snippetFormItem} language="jsx" />
-                        </Portion>
-                    </Row>
-
-                    <HRule thin horizontalMargin="large" bgColour="sky-20" />
-
-                    {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
-                    {/*   TEXT INPUT  */}
-                    {/*  RF  //////////////////////////////////////////////////////////////////////////////////////  */}
-
-                    <Row sidePadding="huge">
-                        <Portion>
-                            <h4>Text input</h4>
-                        </Portion>
-                    </Row>
-
-                    <Row sidePadding="huge">
-                        <Portion>
-                            <h6>Default</h6>
-                            <Text>
-                                The <code>InputField</code> is the basic input element for text. It comes with a
-                                default{" "}
-                                <code>label</code>, a <code>helpText</code> and a native <code>placeholder</code>. The{" "}
-                                <code>label</code> is visible by default, and the <code>helpText</code> is displayed on
-                                focus.
-                            </Text>
-
-                            <FormItem className="margin-top-tiny margin-bottom-tiny">
-                                <InputField
-                                    label="Label, visible by default"
-                                    helpText="Help text, visible on focus"
-                                    placeholder="Placeholder"
-                                />
-                                <InputField
-                                    label="Email"
-                                    helpText="Your work email works best"
-                                    placeholder="name@example.com"
-                                    errorText="Enter a valid email"
-                                    validateThis
-                                    pattern="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
-                                />
-                            </FormItem>
-
-                            <CodeBlock source={snippetTextInput} language="jsx" />
-                        </Portion>
-                    </Row>
-
-                    <HRule thin horizontalMargin="large" bgColour="sky-20" />
-
-                    <Row sidePadding="huge">
-                        <Portion>
-                            <h6>Validation</h6>
-                            <Text>
-                                The <code>InputField</code> can do some basic validation using the <code>pattern</code>{" "}
-                                attribute. Just add the <code>validateThis</code> prop.
-                            </Text>
-
-                            <Text>This will add a grey check mark at the right-hand side of the field. </Text>
-
-                            <Text>
-                                It takes a regular expression to check against the input and adds a <code>:valid</code>{" "}
-                                or a <code>:invalid</code> pseudo-class depending on validation passing or failing. The{" "}
-                                <code>:valid</code> pseudo-class makes the check green, and the <code>:invalid</code>{" "}
-                                displays a red cross. These stylings are applied with the <code>valid</code> and{" "}
-                                <code>invalid</code> props as well.
-                            </Text>
-
-                            <FormItem className="margin-top-tiny margin-bottom-tiny">
-                                <InputField
-                                    label="Email"
-                                    helpText="Your work email works best"
-                                    placeholder="name@example.com"
-                                    errorText="Enter a valid email"
-                                    validateThis
-                                    pattern="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
-                                />
-                            </FormItem>
-
-                            <CodeBlock source={snippetInputValidation} language="jsx" marginBottom="micro" />
-
-                            <FormItem>
-                                <CheckBox
-                                    as="input"
-                                    id="one"
-                                    marginBottom="nano"
-                                    value="yo1"
-                                    name="c1"
-                                    label="PCI"
-                                />
-                                <CheckBox
-                                    as="input"
-                                    id="two"
-                                    marginBottom="nano"
-                                    value="yo2"
-                                    name="c2"
-                                    label="CPER"
-                                />
-                            </FormItem>
-
-                            <FormItem>
-                                <RadioButton
-                                    as="input"
-                                    id="fggf"
-                                    name="choices"
-                                    value="yes"
-                                    label="Yes"
-                                />
-                                <RadioButton
-                                    as="input"
-                                    id="fghr"
-                                    name="choices"
-                                    value="no"
-                                    label="No"
-                                />
-                                <RadioButton
-                                    as="input"
-                                    id="sf3f"
-                                    name="choices"
-                                    value="maybe"
-                                    label="Maybe"
-                                />
-                            </FormItem>
-
-                            <Switch id="customer-credit-card-details" name="customer-credit-card-details" label="what" />
-                        </Portion>
-                    </Row>
-                </section>
-            </article>
-        </>
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
+                {/*   TEXT INPUT  */}
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
+            </section>
+        </Element>
     );
 };
 
-export default FormWrapperDocs;
+export default FormDocs;

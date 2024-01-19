@@ -21,7 +21,7 @@
     /* CARD ///////////////////////////////////////////////////////////////////// */
     --card-bg                                 : var(--grey-dark-90);
     --card-border                             : var(--slate-dark-60);
-    --card-border-radius                      : var(--global-border-radius);
+    --card-border-radius                      : 16px;
     --card-border-width                       : var(--global-border-width);
 
     /* BREADCRUMBS ////////////////////////////////////////////////////////////// */

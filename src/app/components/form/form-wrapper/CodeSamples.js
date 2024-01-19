@@ -1,21 +1,23 @@
 //  Code sample 01 ========================================================================================
-export const snippetForm = `
-<Form>
-    All form elements
-</Form>
-`;
+export const snippetForm = `<Form>
+    {/* All form elements */}
+</Form>`;
 
 //  Code sample 02 ========================================================================================
 export const snippetFormItem = `<Form>
-    <FormItem>
-        Some element
-    </FormItem>
+    <FormItemGroup spacing="tiny">
+        <InputField label="Label" />
 
-    <FormItem>
-        Some element
-    </FormItem>
+        <InputField label="Label" />
+    </FormItemGroup>
 
-    ...how many ever you need.
+    <FormItemGroup spacing="tiny">
+        <InputField label="Label" />
+
+        <InputField label="Label" />
+
+        <InputField label="Label" />
+    </FormItemGroup>
 </Form>`;
 
 //  Code sample 03 ========================================================================================
@@ -26,8 +28,7 @@ export const snippetTextInput = `<InputField
 />`;
 
 //  Code sample04
-export const snippetInputValidation = `
-<InputField
+export const snippetInputValidation = `<InputField
     label="Email"
     helpText="Your work email works best"
     placeholder="name@example.com"
