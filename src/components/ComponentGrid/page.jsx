@@ -11,7 +11,7 @@ import {
     BreadcrumbsWrapper,
     Button,
     Callout,
-    CheckBox,
+    Checkbox,
     Element,
     Heading,
     InputField,
@@ -302,7 +302,7 @@ export const ComponentGrid = () => {
                                 <GlowCard>
                                     <Element as="div" className="component-card">
                                         <Element as="div" marginBottom="micro">
-                                            <CheckBox
+                                            <Checkbox
                                                 id="checkbox-1"
                                                 value="checkbox-1"
                                                 name="checkbox-1"

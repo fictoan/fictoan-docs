@@ -204,7 +204,7 @@ export default function Sidebar({ sidebarState, setSidebarState, toggleTheme }) 
                         <CheckboxIcon />
                     </SidebarItemIcon>
 
-                    <SidebarItemText weight="400" linkText="CheckBox / Switch" />
+                    <SidebarItemText weight="400" linkText="Checkbox / Switch" />
                 </SidebarItem>
             </Link>
 

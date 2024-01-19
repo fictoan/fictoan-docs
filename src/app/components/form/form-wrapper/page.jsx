@@ -5,8 +5,7 @@ import React from "react";
 
 // INTERNAL DEPS ===============================================================
 import {
-    CheckBox, Element,
-    FormItem,
+    Element,
     FormItemGroup,
     Form,
     Heading,
@@ -26,7 +25,7 @@ import { CodeBlock } from "fictoan-react/components";
 import "./page-form.css";
 
 // CODE SNIPPETS ===============================================================
-import { snippetForm, snippetFormItem, snippetTextInput, snippetInputValidation } from "./CodeSamples";
+import { snippetForm, snippetFormItem } from "./CodeSamples";
 
 // DATA ========================================================================
 
@@ -35,6 +34,9 @@ const FormDocs = () => {
     return (
         <Element as="article" id="page-form">
             <Element as="section" id="intro" marginTop="medium" marginBottom="small">
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
+                {/* INTRO */}
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Heading as="h1" marginBottom="micro">Form wrapper</Heading>
