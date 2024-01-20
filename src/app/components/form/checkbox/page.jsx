@@ -34,7 +34,7 @@ import {
 
 // DATA ========================================================================
 
-const HomePage = () => {
+const CheckboxDocs = () => {
     return (
         <Element as="article" id="page-checkbox">
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -245,4 +245,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default CheckboxDocs;
