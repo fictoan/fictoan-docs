@@ -1,37 +1,24 @@
 //  Code sample 01 ////////////////////////////////////////////////////////////
 export const sampleBreadcrumb = `<BreadcrumbsWrapper>
     <BreadcrumbItem>
-        <NavLink exact to="/">
-            Home
-        </NavLink>
+        <Link to="/">Home</Link>
     </BreadcrumbItem>
 
     <BreadcrumbItem>
-        <NavLink exact to="/components">
-            Components
-        </NavLink>
+        <Link to="/components">Components</Link>
     </BreadcrumbItem>
 
     <BreadcrumbItem>
-        <NavLink exact to="/components/breadcrumbs">
-            Breadcrumbs
-        </NavLink>
+        <Link to="/components/breadcrumbs">Breadcrumbs</Link>
     </BreadcrumbItem>
 </BreadcrumbsWrapper>`;
 
 
 //  Code sample 07 ////////////////////////////////////////////////////////////
-export const sampleBreadcrumbTheme = `breadcrumbs : {
-    wrapper   : {
-        bg : defaultColours.white
-    },
-    item      : {
-        text     : customColours.shade,
-        active   : customColours.shade,
-        inactive : customColours.shade
-    },
-    separator : {
-        text    : defaultColours.slate80,
-        content : "\\"/\\""
-    }
-}`;
+export const sampleBreadcrumbTheme = `--breadcrumbs-wrapper-bg             : var(--transparent);
+
+--breadcrumb-item-separator          : "/";
+--breadcrumb-item-separator-colour   : var(--slate-light-10);
+
+--breadcrumb-item-text-colour        : var(--paragraph-text-colour);
+--breadcrumb-item-text-colour-active : var(--paragraph-text-colour);`;

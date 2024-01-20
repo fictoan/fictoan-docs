@@ -16,13 +16,13 @@ const CodeBlockDocs = () => {
             </head>
 
             <article id="page-code-block">
-                <Row sidePadding="huge" marginTop="medium" marginBottom="small">
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h2" className="text-hue">CodeBlock</Heading>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h3" marginBottom="micro">Props</Heading>
 
@@ -107,7 +107,7 @@ const CodeBlockDocs = () => {
                 {/*  BASICS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="default">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3" marginBottom="nano">Default</Heading>
 
@@ -144,7 +144,7 @@ const CodeBlockDocs = () => {
                     {/*  THEMING  */}
                     {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
                     <Element as="section" id="theming">
-                        <Row sidePadding="huge" marginBottom="small">
+                        <Row horizontalPadding="huge" marginBottom="small">
                             <Portion>
                                 <Heading as="h3" marginBottom="tiny">Theming</Heading>
 

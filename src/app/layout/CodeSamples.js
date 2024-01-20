@@ -108,13 +108,13 @@ export const sampleTurnOffResponsiveness = `<Row retainLayoutOnTabletLandscape /
 // SIDE PADDING  ===============================================================
 //  Code sample 04a ============================================================
 export const sampleContentPadding = `<Row />  // Full-width content, this is the default
-<Row sidePadding="nano" />
-<Row sidePadding="micro" />
-<Row sidePadding="tiny" />
-<Row sidePadding="small" />
-<Row sidePadding="medium" />
-<Row sidePadding="huge" />
-<Row sidePadding="huge" />`;
+<Row horizontalPadding="nano" />
+<Row horizontalPadding="micro" />
+<Row horizontalPadding="tiny" />
+<Row horizontalPadding="small" />
+<Row horizontalPadding="medium" />
+<Row horizontalPadding="huge" />
+<Row horizontalPadding="huge" />`;
 
 
 // =============================================================================

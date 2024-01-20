@@ -20,13 +20,13 @@ const TableDocs = () => {
             </head>
 
             <article id="page-table">
-                <Row sidePadding="huge" marginTop="medium" marginBottom="small">
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h2" className="text-hue">Table</Heading>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h3" marginBottom="micro">Props</Heading>
 
@@ -76,7 +76,7 @@ const TableDocs = () => {
                 {/*  DEFAULT  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="default">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3" marginBottom="tiny">Default</Heading>
 
@@ -129,7 +129,7 @@ const TableDocs = () => {
                 {/*  Props  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="props">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3">Props</Heading>
                         </Portion>
@@ -138,7 +138,7 @@ const TableDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  BORDERS FOR  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Cell borders</Heading>
 
@@ -194,7 +194,7 @@ const TableDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  PADDING  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Cell padding</Heading>
 
@@ -250,7 +250,7 @@ const TableDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  STRIPES  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Striped rows</Heading>
 
@@ -306,7 +306,7 @@ const TableDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  STRIPES  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Change row BG on hover</Heading>
 
@@ -362,7 +362,7 @@ const TableDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  FULL WIDTH  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Full-width</Heading>
 
@@ -418,7 +418,7 @@ const TableDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  ALIGN TEXT  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Text alignment</Heading>
 
@@ -474,7 +474,7 @@ const TableDocs = () => {
                     {/*  THEMING  */}
                     {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                     <Element as="section" id="theming">
-                        <Row sidePadding="huge" marginBottom="small">
+                        <Row horizontalPadding="huge" marginBottom="small">
                             <Portion>
                                 <Heading as="h3" marginBottom="tiny">Theming</Heading>
 

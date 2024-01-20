@@ -47,13 +47,13 @@ const ToastDocs = () => {
                     </ToastItem>
                 </ToastsWrapper>
 
-                <Row sidePadding="huge" marginTop="small" marginBottom="small">
+                <Row horizontalPadding="huge" marginTop="small" marginBottom="small">
                     <Portion>
                         <Heading as="h2" className="text-hue">Toast</Heading>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h3" marginBottom="micro">Props</Heading>
 
@@ -239,7 +239,7 @@ const ToastDocs = () => {
                 {/*  DEFAULT  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="default">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3" marginBottom="tiny">Default toast</Heading>
 
@@ -279,7 +279,7 @@ const ToastDocs = () => {
                 {/*  PROPS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="wrapper-props">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3">Props — ToastsWrapper</Heading>
                         </Portion>
@@ -288,7 +288,7 @@ const ToastDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  POSITION  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Position</Heading>
 
@@ -309,7 +309,7 @@ const ToastDocs = () => {
                 {/*  PROPS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="item-props">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3">Props — Toast</Heading>
                         </Portion>
@@ -318,7 +318,7 @@ const ToastDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  POSITION  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Show</Heading>
 
@@ -343,7 +343,7 @@ const ToastDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  TIMEOUT  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Show for</Heading>
 
@@ -364,7 +364,7 @@ const ToastDocs = () => {
                     {/*  THEMING  */}
                     {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
                     <Element as="section" id="theming">
-                        <Row sidePadding="huge" marginBottom="small">
+                        <Row horizontalPadding="huge" marginBottom="small">
                             <Portion>
                                 <Heading as="h3" marginBottom="tiny">Theming</Heading>
 

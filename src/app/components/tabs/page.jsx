@@ -37,13 +37,13 @@ const TabsDocs = () => {
             </head>
 
             <article id="page-tabs">
-                <Row sidePadding="huge" marginTop="medium" marginBottom="small">
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h2" className="text-hue">Tabs</Heading>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h3" marginBottom="micro">Props</Heading>
 
@@ -162,7 +162,7 @@ const TabsDocs = () => {
                 {/*  DEFAULT  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="default">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3" marginBottom="tiny">Default tabs</Heading>
 
@@ -201,7 +201,7 @@ const TabsDocs = () => {
                 {/*  PROPS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="props">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3">Props</Heading>
                         </Portion>
@@ -210,7 +210,7 @@ const TabsDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  KIND  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Tabs</Heading>
 
@@ -236,7 +236,7 @@ const TabsDocs = () => {
                 {/*  THEMING  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="theming">
-                    <Row sidePadding="huge" marginBottom="small">
+                    <Row horizontalPadding="huge" marginBottom="small">
                         <Portion>
                             <Heading as="h3" marginBottom="tiny">Theming</Heading>
 

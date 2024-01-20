@@ -20,13 +20,13 @@ const HRuleDocs = () => {
             </head>
 
             <article id="page-name">
-                <Row sidePadding="huge" marginTop="medium" marginBottom="small">
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h2" className="text-hue">Horizontal rule</Heading>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h3" marginBottom="micro">Props</Heading>
 
@@ -110,7 +110,7 @@ const HRuleDocs = () => {
                 {/*  BASICS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="default">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3" marginBottom="nano">Default horizontal rule</Heading>
 
@@ -141,13 +141,13 @@ const HRuleDocs = () => {
                 {/*  PROPS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="usage">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3">Props</Heading>
                         </Portion>
                     </Row>
 
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Kind</Heading>
 
@@ -173,7 +173,7 @@ const HRuleDocs = () => {
 
 
                 <Element as="section" id="usage">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Side margin</Heading>
 
@@ -201,7 +201,7 @@ const HRuleDocs = () => {
                 <HRule horizontalMargin="huge" />
 
                 <Element as="section" id="usage">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3" marginBottom="micro">Theming</Heading>
 

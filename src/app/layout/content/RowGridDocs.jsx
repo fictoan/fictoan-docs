@@ -11,7 +11,7 @@ const RowGridDocs = () => {
     return (
         <>
             <div>
-                <Row layout="grid" sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Heading as="h6" weight="700">Grid</Heading>
                         <Text marginBottom="nano">
@@ -116,7 +116,7 @@ const RowGridDocs = () => {
                     </Card>
                 </Element>
 
-                <Row layout="grid" sidePadding="huge">
+                <Row layout="grid" horizontalPadding="huge">
                     <Portion>
                         <Text marginBottom="nano">
                             Now you can add content to it using the <code>Portion</code> component.

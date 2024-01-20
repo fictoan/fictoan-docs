@@ -26,7 +26,7 @@ const ButtonDocs = () => {
             </head>
 
             <article id="page-button">
-                <Row sidePadding="huge" marginTop="medium" marginBottom="small">
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h4" className="text-hue">Button</Heading>
                     </Portion>
@@ -35,7 +35,7 @@ const ButtonDocs = () => {
                 {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  PROPS  */}
                 {/*  //////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Table bordersFor="both" padding="tiny">
                             <thead className="bg-slate-10">
@@ -228,7 +228,7 @@ const ButtonDocs = () => {
                 {/*  DEFAULT  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="default">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h6" marginBottom="tiny">Default button</Heading>
 
@@ -254,7 +254,7 @@ const ButtonDocs = () => {
                 {/*  =============================================================================================  */}
                 {/*  KIND  */}
                 {/*  =============================================================================================  */}
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h6" marginBottom="nano">Kind</Heading>
 
@@ -284,7 +284,7 @@ const ButtonDocs = () => {
                 {/*  =============================================================================================  */}
                 {/*  SIZE  */}
                 {/*  =============================================================================================  */}
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h6" marginBottom="nano">Size</Heading>
 
@@ -314,7 +314,7 @@ const ButtonDocs = () => {
                 {/*  =============================================================================================  */}
                 {/*  SHAPE  */}
                 {/*  =============================================================================================  */}
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h6" marginBottom="nano">Shape</Heading>
 
@@ -344,7 +344,7 @@ const ButtonDocs = () => {
                 {/*  =============================================================================================  */}
                 {/*  CUSTOM STYLING  */}
                 {/*  =============================================================================================  */}
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h6" marginBottom="nano">Custom BG, border and text colours</Heading>
 
@@ -398,7 +398,7 @@ const ButtonDocs = () => {
                 {/*  =============================================================================================  */}
                 {/*  SHADOW  */}
                 {/*  =============================================================================================  */}
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h6" marginBottom="nano">Shadow</Heading>
 
@@ -422,7 +422,7 @@ const ButtonDocs = () => {
                 {/*  =============================================================================================  */}
                 {/*  IS LOADING  */}
                 {/*  =============================================================================================  */}
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h6" marginBottom="nano">Loading states</Heading>
 
@@ -452,7 +452,7 @@ const ButtonDocs = () => {
                 {/*  THEMING  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="theming">
-                    <Row sidePadding="huge" marginBottom="small">
+                    <Row horizontalPadding="huge" marginBottom="small">
                         <Portion>
                             <Heading as="h6" marginBottom="tiny">Theming</Heading>
 

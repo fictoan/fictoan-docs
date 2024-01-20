@@ -17,13 +17,13 @@ const CalloutDocs = () => {
             </head>
 
             <article id="page-callout">
-                <Row sidePadding="huge" marginTop="medium" marginBottom="small">
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h4" className="text-hue">Callout</Heading>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Table bordersFor="both" padding="tiny" isFullWidth>
                             <thead className="bg-slate-10">
@@ -86,7 +86,7 @@ const CalloutDocs = () => {
                 {/* DEFAULT */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 <Element as="section" id="default">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h6" marginBottom="tiny">Default</Heading>
                             <Row>
@@ -149,7 +149,7 @@ const CalloutDocs = () => {
                 <Element as="section" id="item-props">
 
                     <Element as="section" id="theming">
-                        <Row sidePadding="huge" marginBottom="small">
+                        <Row horizontalPadding="huge" marginBottom="small">
                             <Portion>
                                 <Heading as="h6" marginBottom="tiny">Theming</Heading>
                                 <CodeBlock source={sampleCalloutTheme} language="css" />

@@ -27,7 +27,7 @@ const Manifesto = () => {
     return (
         <article id="page-manifesto">
             {/* INTRO ////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" sidePadding="large" marginTop="medium" marginBottom="medium">
+            <Row layout="grid" horizontalPadding="large" marginTop="medium" marginBottom="medium">
                 {/* PROBLEM ================================================ */}
                 <Portion>
                     <Text weight="700" marginBottom="small">MANIFESTO</Text>
@@ -66,7 +66,7 @@ const Manifesto = () => {
             </Row>
 
             {/* IDEOLOGY /////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" sidePadding="large" marginTop="medium" marginBottom="medium">
+            <Row layout="grid" horizontalPadding="large" marginTop="medium" marginBottom="medium">
                 <Portion desktopSpan="half">
                     <Heading as="h1" weight="400" textColour="white" marginBottom="micro">
                         Pixel perfection is a designer’s job
@@ -89,7 +89,7 @@ const Manifesto = () => {
             <HRule kind="secondary" horizontalMargin="large" marginTop="medium" marginBottom="medium" />
 
             {/* APPROACH /////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" sidePadding="small">
+            <Row layout="grid" horizontalPadding="small">
                 <Portion desktopSpan="one-sixth" />
 
                 <Portion desktopSpan="two-third">
@@ -118,7 +118,7 @@ const Manifesto = () => {
                 </Portion>
             </Row>
 
-            <Row layout="grid" sidePadding="small" marginBottom="large">
+            <Row layout="grid" horizontalPadding="small" marginBottom="large">
                 <Portion desktopSpan="one-sixth" />
 
                 <Portion desktopSpan="two-third">
@@ -141,7 +141,7 @@ const Manifesto = () => {
             {/* APPROACH /////////////////////////////////////////////////////////////////////////////////////////// */}
 
 
-            <Row layout="grid" sidePadding="huge" marginTop="huge">
+            <Row layout="grid" horizontalPadding="huge" marginTop="huge">
                 <Text marginBottom="micro">
                     This framework basically aims to blur the lines between the designer and a developer. Why must
                     there be a rift, this gaping chasm between the two roles? The goal must be to build and ship,

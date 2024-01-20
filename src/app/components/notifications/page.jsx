@@ -91,13 +91,13 @@ const NotificationsDocs = () => {
                     </NotificationItem>
                 </NotificationsWrapper>
 
-                <Row sidePadding="huge" marginTop="small" marginBottom="small">
+                <Row horizontalPadding="huge" marginTop="small" marginBottom="small">
                     <Portion>
                         <Heading as="h2" className="text-hue">Notifications</Heading>
                     </Portion>
                 </Row>
 
-                <Row sidePadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h3" marginBottom="micro">Props</Heading>
 
@@ -293,7 +293,7 @@ const NotificationsDocs = () => {
                 {/*  DEFAULT  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="default">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3" marginBottom="tiny">Default notifications</Heading>
 
@@ -372,7 +372,7 @@ const NotificationsDocs = () => {
                 {/*  PROPS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="wrapper-props">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3">Props — NotificationsWrapper</Heading>
                         </Portion>
@@ -381,7 +381,7 @@ const NotificationsDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  POSITION  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Position and anchor</Heading>
 
@@ -410,7 +410,7 @@ const NotificationsDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  STACKING ORDER  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Stacking order</Heading>
 
@@ -431,7 +431,7 @@ const NotificationsDocs = () => {
                 {/*  PROPS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="item-props">
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3">Props — NotificationItem</Heading>
                         </Portion>
@@ -440,7 +440,7 @@ const NotificationsDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  POSITION  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Kind</Heading>
 
@@ -461,7 +461,7 @@ const NotificationsDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  IS DISMISSIBLE  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Manually dismissible notifications</Heading>
 
@@ -481,7 +481,7 @@ const NotificationsDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  CLOSE CALLBACK  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Callback for closing</Heading>
 
@@ -501,7 +501,7 @@ const NotificationsDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  TIMEOUT  */}
                     {/*  =============================================================================================  */}
-                    <Row sidePadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Show for</Heading>
 
@@ -522,7 +522,7 @@ const NotificationsDocs = () => {
                     {/*  THEMING  */}
                     {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
                     <Element as="section" id="theming">
-                        <Row sidePadding="huge" marginBottom="small">
+                        <Row horizontalPadding="huge" marginBottom="small">
                             <Portion>
                                 <Heading as="h3" marginBottom="tiny">Theming</Heading>
 

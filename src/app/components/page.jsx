@@ -13,7 +13,7 @@ const BreadcrumbsDemoDocs = () => {
             </head>
 
             <article id="page-breadcrumbs-demo">
-                <Row sidePadding="huge" marginTop="medium" marginBottom="small">
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h6" weight="400" marginBottom="micro">
                             This page only exists so that the demo link on the Breadcrumbs components doesn’t return a 404 error.
