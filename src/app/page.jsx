@@ -97,9 +97,9 @@ const Home = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row layout="grid" horizontalPadding="medium" marginTop="tiny" marginBottom="small">
                 <Portion>
-                    <video autoPlay muted loop>
-                        <source src="/ficotan-code.mp4 " />
-                    </video>
+                    {/* <video autoPlay muted loop> */}
+                    {/*     <source src="/ficotan-code.mp4 " /> */}
+                    {/* </video> */}
                 </Portion>
 
                 <Portion desktopSpan="two-third">
