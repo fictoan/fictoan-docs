@@ -7,8 +7,8 @@
 }
 
 div:first-of-type {
-    --base   : 180;
-    --spread : 500;
+    --base   : 8;
+    --spread : 100;
     --outer  : 1;
 }
 
@@ -26,7 +26,7 @@ div:last-of-type {
     /*box-shadow         : 0 1rem 2rem -1rem black;*/
     display            : grid;
     border             : 1px solid hsl(0 0% 100% / 0.15);
-    backdrop-filter    : blur(8px);
+    backdrop-filter    : blur(40px);
     touch-action       : none;
 }
 
@@ -38,8 +38,7 @@ div:last-of-type {
     background-image      :
             radial-gradient(
                     var(--spotlight-size) var(--spotlight-size) at calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px),
-                    hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--bg-spot-opacity, 0.1)), transparent
-    );
+                    hsla(210, 100%, 50%, 0.1), transparent);
     background-color      : var(--backdrop, transparent);
     background-size       : calc(100% + 1px) calc(100% + 1px);
     background-position   : 50% 50%;
@@ -69,11 +68,10 @@ div:last-of-type {
 /* This is the emphasis light */
 [data-glow]::before {
     filter           : brightness(2);
-    background-image :
+    background-image      :
             radial-gradient(
-                calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px),
-                hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 50) * 1%) / var(--border-spot-opacity, 1)), transparent 100%
-            );
+                    var(--spotlight-size) var(--spotlight-size) at calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px),
+                    hsla(210, 100%, 50%, 0.1), transparent);
 }
 
 /* This is the spotlight */

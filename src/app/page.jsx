@@ -43,6 +43,23 @@ const Home = () => {
     </Portion>
 </Row>`;
 
+    // VIDEO BACK AND FORWARD ==================================================
+    document.addEventListener("DOMContentLoaded", () => {
+        const video = document.getElementById("fictoan-bg");
+
+        video.onended = () => {
+            video.playbackRate = -1;
+            video.play();
+        };
+
+        video.onplay = () => {
+            if (video.currentTime === 0 && video.playbackRate === -1) {
+                video.playbackRate = 1;
+            }
+        };
+    });
+
+
     // VIDEO SCRUBBING BASED ON SCROLL =========================================
     // const videoRef = useRef(null);
     // const [scrollPosition, setScrollPosition] = useState(0);
@@ -89,7 +106,7 @@ const Home = () => {
 
                 <Portion desktopSpan="two-third">
                     <Text textColour="black" size="tiny">
-                    *Fuck I Couldn’t Think Of A Name
+                        *Fuck I Couldn’t Think Of A Name
                     </Text>
 
                     <Heading

@@ -153,17 +153,17 @@ export const ComponentGrid = () => {
                                         <Select
                                             options={[
                                                 {
-                                                    name     : "What’s your pick?",
+                                                    label    : "What’s your pick?",
                                                     value    : "select-an-option",
                                                     disabled : true,
                                                     selected : true,
                                                 },
                                                 {
-                                                    name  : "Pick me!",
+                                                    label : "Pick me!",
                                                     value : "option-1",
                                                 },
                                                 {
-                                                    name  : "No, me!",
+                                                    label : "No, me!",
                                                     value : "option-2",
                                                 },
                                             ]}
