@@ -1,7 +1,7 @@
 "use client";
 
 // EXTERNAL DEPS ===============================================================
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 // INTERNAL DEPS ===============================================================
@@ -34,6 +34,8 @@ import { GlowCard } from "../GlowCard/GlowCard";
 import "./component-grid.css";
 
 export const ComponentGrid = () => {
+    const [showNotification1, setShowNotification1] = useState(false);
+
     const cardComponentSample = `const clickHere = () => {
     window.load("/components/card");
 }`;
@@ -68,7 +70,7 @@ export const ComponentGrid = () => {
                                             Load
                                         </Button>
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/components/button">
                                                 Button &rarr;
                                             </Link>
@@ -83,7 +85,7 @@ export const ComponentGrid = () => {
                                         <Heading as="h1" textColour="pistachio">Hi.</Heading>
                                         <Text weight="600">I’m just your type.</Text>
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/components/typography">
                                                 Typography &rarr;
                                             </Link>
@@ -102,9 +104,9 @@ export const ComponentGrid = () => {
                                             I am here to notify you that...um, wait, I forgot.
                                         </NotificationItem>
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/components/notifications">
-                                                Notifiactions &rarr;
+                                                Notifications &rarr;
                                             </Link>
                                         </Element>
                                     </Div>
@@ -121,7 +123,7 @@ export const ComponentGrid = () => {
                                             height="8px" shape="rounded"
                                         />
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/components/button">
                                                 Progress bar &rarr;
                                             </Link>
@@ -138,7 +140,7 @@ export const ComponentGrid = () => {
                                             placeholder="here"
                                         />
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/components/button">
                                                 Input field &rarr;
                                             </Link>
@@ -169,7 +171,7 @@ export const ComponentGrid = () => {
                                             ]}
                                         />
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/components/button">
                                                 Select &rarr;
                                             </Link>
@@ -217,7 +219,7 @@ export const ComponentGrid = () => {
                                             </tbody>
                                         </Table>
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/components/button">
                                                 Table &rarr;
                                             </Link>
@@ -261,7 +263,7 @@ export const ComponentGrid = () => {
                                             </BreadcrumbItem>
                                         </BreadcrumbsWrapper>
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/components/button">
                                                 Breadcrumbs &rarr;
                                             </Link>
@@ -289,7 +291,7 @@ export const ComponentGrid = () => {
                                             label="That"
                                         />
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/components/button">
                                                 Radio buttons &rarr;
                                             </Link>
@@ -317,7 +319,7 @@ export const ComponentGrid = () => {
                                             label="Toggle me"
                                         />
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/components/button">
                                                 Switch &rarr;
                                             </Link>
@@ -334,7 +336,7 @@ export const ComponentGrid = () => {
                                             marginTop="micro" marginBottom="micro"
                                         />
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/components/button">
                                                 CodeBlock &rarr;
                                             </Link>
@@ -351,7 +353,7 @@ export const ComponentGrid = () => {
                                                  shape="rounded" borderColour="transparent"
                                         />
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/colour/">
                                                 Colour &rarr;
                                             </Link>
@@ -397,7 +399,7 @@ export const ComponentGrid = () => {
                                             </Badge>
                                         </Div>
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/components/button">
                                                 Badge &rarr;
                                             </Link>
@@ -415,7 +417,7 @@ export const ComponentGrid = () => {
                                                 awesome.</Text>
                                         </Callout>
 
-                                        <Element as="footer">
+                                        <Element as="footer" className="footer-bottom">
                                             <Link href="/components/button">
                                                 Callout &rarr;
                                             </Link>
