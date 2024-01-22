@@ -8,7 +8,7 @@ import {
     Row,
     Portion,
     Heading,
-    Text, HRule, Article
+    Text, HRule, Article,
 } from "fictoan-react";
 
 // COMPONENTS //////////////////////////////////////////////////////////////////
@@ -25,7 +25,7 @@ const Manifesto = () => {
     }, []);
 
     return (
-        <article id="page-manifesto">
+        <Article id="page-manifesto">
             {/* INTRO ////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row layout="grid" horizontalPadding="large" marginTop="medium" marginBottom="medium">
                 {/* PROBLEM ================================================ */}
@@ -98,11 +98,7 @@ const Manifesto = () => {
                     </Heading>
 
                     <Heading as="h1" weight="400" textColour="white" marginBottom="small">
-                        Sacrilege, yes. But wait—don’t raise tickets.
-                    </Heading>
-
-                    <Heading as="h1" weight="400" textColour="white" marginBottom="small">
-                        Fix it in code.
+                        Sacrilege, yes. But wait—why not just fix it instead of raising a ticket?
                     </Heading>
 
                     <Heading as="h1" weight="400" textColour="white" marginBottom="small">
@@ -118,7 +114,7 @@ const Manifesto = () => {
                 </Portion>
             </Row>
 
-            <Row layout="grid" horizontalPadding="small" marginBottom="large">
+            <Row layout="grid" horizontalPadding="small" marginBottom="medium">
                 <Portion desktopSpan="one-sixth" />
 
                 <Portion desktopSpan="two-third">
@@ -135,34 +131,43 @@ const Manifesto = () => {
                         The designer should be in complete control of the interface and the experience, rather than the
                         developer trying to interpret the designer’s intentions via a document.
                     </Text>
+
+                    <Text size="huge" marginBottom="micro">
+                        That way, the designer can focus on usability, accessibility, and aesthetics, while the
+                        developer can focus on performance, scalability, and maintainability.
+                    </Text>
+
+                    <Text size="huge" marginBottom="micro">
+                        The goal must be to build and ship, and not bicker whose job it is to fix UI bugs. These things
+                        are best left to the designer, so that the developer can spend their time on things like
+                        performance and deployments.
+                    </Text>
                 </Portion>
             </Row>
 
             {/* APPROACH /////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Row layout="grid" horizontalPadding="small">
+                <Portion desktopSpan="one-sixth" />
 
+                <Portion desktopSpan="two-third">
+                    <Text size="huge">
+                        While design tools are getting better and powerful by the day, there’s nothing really quite the
+                        same as passing off working code. We think this will remain true for quite some time, and in the
+                        meanwhile, see how we can make the lives of a designer and a developer easier.
+                    </Text>
+                </Portion>
+            </Row>
 
-            <Row layout="grid" horizontalPadding="huge" marginTop="huge">
-                <Text marginBottom="micro">
-                    This framework basically aims to blur the lines between the designer and a developer. Why must
-                    there be a rift, this gaping chasm between the two roles? The goal must be to build and ship,
-                    and not bicker about the pixel-perfectness of a particular component or the hover colour of a
-                    element. These things are best left to the designer, so that the developer can spend their time
-                    on things like performance and deployments.
-                </Text>
+            <Row layout="grid" horizontalPadding="small" marginBottom="medium">
+                <Portion desktopSpan="one-sixth" />
 
-                <Text>
-                    While design tools are getting better and powerful by the day, there’s nothing really quite the
-                    same as passing off working code. We think this will remain true for quite some time, and in the
-                    meanwhile, see how we can make the lives of a designer and a developer easier.
-                </Text>
-
-                <Portion>
-                    <Text marginBottom="micro">
+                <Portion desktopSpan="two-third">
+                    <Text size="huge" marginBottom="micro">
                         The other principle Fictoan is built around is simplicity and obviousness. This is best
                         reflected in the naming conventions and the prop nomenclature.
                     </Text>
 
-                    <Text>
+                    <Text size="huge">
                         The idea is to remove the entry barriers for people dipping their toes into code for the
                         first time, especially for those from a design background. The easiest way to do this is to
                         simply keep everything in plain English, and not introduce complexities and conditional
@@ -170,7 +175,7 @@ const Manifesto = () => {
                     </Text>
                 </Portion>
             </Row>
-        </article>
+        </Article>
     );
 };
 
