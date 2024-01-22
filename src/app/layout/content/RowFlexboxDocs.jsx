@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Card, Element, Heading, Portion, Row, Text } from "fictoan-react";
+import { Card, Element, Heading, Portion, Row, Text, Article } from "fictoan-react";
 
 import { CodeBlock } from "fictoan-react/components";
 import { sampleFlexboxRow, sampleGridRow } from "../CodeSamples";

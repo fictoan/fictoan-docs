@@ -11,7 +11,7 @@ import {
     Portion,
     Row,
     Table,
-    Text,
+    Text, Article
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 

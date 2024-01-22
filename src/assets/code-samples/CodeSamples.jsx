@@ -34,7 +34,7 @@ export const snippetPageSetupJSX = `import "./page-about.css";
 
 export const AboutPage = () => {
     return (
-        <Element as="article" id="page-about">
+        <Article id="page-about">
             {/* Your page content here */>}
         </Element>
     );
@@ -49,7 +49,7 @@ export const snippetUsage = `import { Element, Text, Button } from "fictoan-reac
 
 export const HomePage = () => {
     return (
-        <Element as="article" id="page-home">
+        <Article id="page-home">
             <Text>Hello, world!</Text>
             
             <Button kind="primary">Click me!</Button>

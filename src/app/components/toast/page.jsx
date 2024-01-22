@@ -12,7 +12,7 @@ import {
     Table,
     Text,
     ToastItem,
-    ToastsWrapper,
+    ToastsWrapper, Article
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 

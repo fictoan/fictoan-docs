@@ -13,6 +13,7 @@ import {
     Row,
     Switch,
     Text,
+    Article
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -36,7 +37,7 @@ import {
 
 const CheckboxDocs = () => {
     return (
-        <Element as="article" id="page-checkbox">
+        <Article id="page-checkbox">
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -241,7 +242,7 @@ const CheckboxDocs = () => {
                     </Portion>
                 </Row>
             </Element>
-        </Element>
+        </Article>
     );
 };
 

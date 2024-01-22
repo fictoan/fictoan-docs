@@ -198,6 +198,16 @@ export default function Sidebar({ sidebarState, setSidebarState, toggleTheme }) 
                 </SidebarItem>
             </Link>
 
+            <Link href="/components/form/pin-input-field">
+                <SidebarItem>
+                    <SidebarItemIcon iconType="stroked">
+                        <InputFieldIcon />
+                    </SidebarItemIcon>
+
+                    <SidebarItemText weight="400" linkText="Pin Input" />
+                </SidebarItem>
+            </Link>
+
             <Link href="/components/form/checkbox">
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">

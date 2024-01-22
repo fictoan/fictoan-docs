@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { Button, Callout, Card, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Button, Callout, Card, Element, Heading, HRule, Portion, Row, Table, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 import "./page-button.css";

@@ -4,7 +4,7 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Callout, Element, Heading, HRule, Portion, Row, Select, Text } from "fictoan-react";
+import { Callout, Element, Heading, HRule, Portion, Row, Select, Text, Article } from "fictoan-react";
 
 // COMPONENTS ==================================================================
 import { PropsList } from "../../../../components/PropsList/PropsList";
@@ -28,7 +28,7 @@ import { listOfSelectProps } from "./propsList";
 
 const SelectDocs = () => {
     return (
-        <Element as="article" id="page-select">
+        <Article id="page-select">
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -218,7 +218,7 @@ const SelectDocs = () => {
                     <CodeBlock source={sampleSelectTheming} language="css" />
                 </Portion>
             </Row>
-        </Element>
+        </Article>
     );
 };
 

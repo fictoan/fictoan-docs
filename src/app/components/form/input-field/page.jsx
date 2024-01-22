@@ -13,6 +13,7 @@ import {
     HRule,
     InputField,
     Callout,
+    Article,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -56,7 +57,7 @@ const InputFieldDocs = () => {
 />`;
 
     return (
-        <Element as="article" id="page-input-field">
+        <Article id="page-input-field">
             {/* //////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////// */}
@@ -148,13 +149,9 @@ const InputFieldDocs = () => {
                             The <code>helpText</code> prop allows you to add a description of what is a valid entry for
                             the input.
                         </Text>
-                    </Portion>
 
-                    <Portion>
                         <CodeBlock source={sampleInputHelpText} language="jsx" marginBottom="micro" />
-                    </Portion>
 
-                    <Portion>
                         <InputField
                             label="Email"
                             placeholder="Work email preferred"
@@ -277,14 +274,14 @@ const InputFieldDocs = () => {
                 <Element as="section" id="theming">
                     <Row layout="grid" horizontalPadding="huge" marginBottom="small">
                         <Portion>
-                            <Heading as="h4" marginBottom="tiny">Theming</Heading>
+                            <Heading as="h4" marginBottom="tiny">Theme</Heading>
 
                             <CodeBlock source={sampleInputTheme} language="css" />
                         </Portion>
                     </Row>
                 </Element>
             </Element>
-        </Element>
+        </Article>
     );
 };
 

@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Element, Card, Heading, Text, HRule, Portion, Row, Callout } from "fictoan-react";
+import { Element, Card, Heading, Text, HRule, Portion, Row, Callout, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
@@ -16,7 +16,7 @@ import "./page-colour.css";
 import { sampleUsage1, sampleUsage2, sampleUsage3 } from "./CodeSamples";
 
 // DATA ========================================================================
-import { listOfColours, generateShades } from "../../utils/colours"
+import { listOfColours, generateShades } from "../../utils/colours";
 
 const ColourDocs = () => {
     const [copiedShade, setCopiedShade] = useState(null);
@@ -33,7 +33,7 @@ const ColourDocs = () => {
     };
 
     return (
-        <Element as="article" id="page-colour">
+        <Article id="page-colour">
             {/* //////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////// */}
@@ -160,8 +160,8 @@ const ColourDocs = () => {
                 {/* BLACK WHITE TRANSPARENT ================================ */}
                 <Row layout="grid" horizontalPadding="tiny" gutters="none" marginBottom="tiny">
                 </Row>
-        </Element>
             </Element>
+        </Article>
     );
 };
 

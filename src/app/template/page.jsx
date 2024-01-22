@@ -4,7 +4,7 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Element } from "fictoan-react";
+import { Element, Article } from "fictoan-react";
 
 // COMPONENTS ==================================================================
 
@@ -19,9 +19,18 @@ import "./page-progress-bar.css";
 
 const ProgressBarDocs = () => {
     return (
-        <Element as="article" id="page-progress-bar">
+        <Article id="page-progress-bar">
+            {/* <Element as="div" layoutAsGrid columns="8" gap="small"> */}
+            {/*     <Element as="div" desktopSpan="half"> */}
+            {/*         <Element as="div">Content</Element> */}
+            {/*     </Element> */}
 
-        </Element>
+            {/*     <Element as="div" desktopSpan="3"> */}
+            {/*         <Element as="div">Content</Element> */}
+            {/*     </Element> */}
+            {/* </Element> */}
+
+        </Article>
     );
 };
 

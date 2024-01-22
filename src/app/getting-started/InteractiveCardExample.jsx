@@ -8,7 +8,7 @@ import {
     Portion,
     Heading,
     Text,
-    HRule, Card, RadioGroup, RadioButton, Select,
+    HRule, Card, RadioGroup, Select,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 import { listOfColours, generateShades } from "../../utils/colours";
@@ -47,7 +47,7 @@ export const InteractiveCardExample = () => {
     const colorOptions = listOfColours.flatMap(color =>
         generateShades(color).map(shade => (
             {
-                name  : shade,
+                label : shade,
                 value : shade,
             }
         )),

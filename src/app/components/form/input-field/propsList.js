@@ -1,5 +1,5 @@
 export const listOfInputFieldProps = {
-    elementName : "sd",
+    elementName : "",
     props       : [
         {
             name          : "<code>type</code>",

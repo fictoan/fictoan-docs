@@ -12,7 +12,7 @@ import {
     Heading,
     Text,
     HRule,
-    Drawer, Tabs,
+    Drawer, Tabs, Article
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 

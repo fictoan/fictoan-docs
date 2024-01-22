@@ -4,7 +4,7 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Element, Heading, HRule, Portion, ProgressBar, Row, Text } from "fictoan-react";
+import { Element, Heading, HRule, Portion, ProgressBar, Row, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
@@ -33,7 +33,7 @@ import { listOfProgressBarProps } from "./propsList";
 
 const ProgressBarDocs = () => {
     return (
-        <Element as="article" id="page-progress-bar">
+        <Article id="page-progress-bar">
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -182,7 +182,7 @@ const ProgressBarDocs = () => {
                     <CodeBlock source={sampleProgressBarTheming} language="css" />
                 </Portion>
             </Row>
-        </Element>
+        </Article>
     );
 };
 

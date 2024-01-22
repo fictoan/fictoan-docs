@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InputField, Text } from "fictoan-react";
+import { InputField, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 export const SearchableCodeBlock = ({ source, language, ...props }) => {

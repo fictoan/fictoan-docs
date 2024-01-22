@@ -11,7 +11,7 @@ import {
     Portion,
     RadioButton,
     Row,
-    Text,
+    Text, Article
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -27,7 +27,7 @@ import { sampleRadioButton, sampleRadioButtonTheming, sampleRadioChecked, sample
 
 const HomePage = () => {
     return (
-        <Element as="article" id="page-radio-button">
+        <Article id="page-radio-button">
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -176,13 +176,13 @@ const HomePage = () => {
             <Element as="section" id="theming">
                 <Row layout="grid" horizontalPadding="huge" marginBottom="small">
                     <Portion>
-                        <Heading as="h4" marginBottom="tiny">Theming</Heading>
+                        <Heading as="h4" marginBottom="tiny">Theme</Heading>
 
                         <CodeBlock source={sampleRadioButtonTheming} language="css" />
                     </Portion>
                 </Row>
             </Element>
-        </Element>
+        </Article>
     );
 };
 

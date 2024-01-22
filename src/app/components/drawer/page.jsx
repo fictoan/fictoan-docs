@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-import { Button, Element, Heading, HRule, Drawer, Portion, Row, Table, Text } from "fictoan-react";
+import { Button, Element, Heading, HRule, Drawer, Portion, Row, Table, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 import "./page-drawer.css";

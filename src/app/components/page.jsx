@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { Heading, Portion, Row, Text } from "fictoan-react";
+import { Heading, Portion, Row, Text, Article } from "fictoan-react";
 
 const BreadcrumbsDemoDocs = () => {
     return (

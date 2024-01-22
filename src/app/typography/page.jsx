@@ -4,7 +4,7 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Element, Heading, HRule, Portion, Row, Table, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================

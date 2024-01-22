@@ -2,13 +2,13 @@
 
 import React from "react";
 
-import { Button, Card, Element, Form, Heading, InputField, Portion, Row, Text } from "fictoan-react";
+import { Button, Card, Element, Form, Heading, InputField, Portion, Row, Text, Article } from "fictoan-react";
 
 import "./page-home.css";
 
 const HomePage = () => {
     return (
-        <Element as="article" id="page-home">
+        <Article id="page-home">
             <Row layout="grid" marginTop="medium" horizontalPadding="medium">
                 <Portion desktopSpan="two-third">
                     <Heading as="h1">Hello!</Heading>
@@ -34,7 +34,7 @@ const HomePage = () => {
                     </Card>
                 </Portion>
             </Row>
-        </Element>
+        </Article>
     );
 };
 

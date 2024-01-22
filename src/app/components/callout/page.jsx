@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Badge, Button, Callout, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Badge, Button, Callout, Element, Heading, HRule, Portion, Row, Table, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 import "./page-callout.css";

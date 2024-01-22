@@ -31,7 +31,7 @@ import { sampleBreadcrumb, sampleBreadcrumbTheme } from "./CodeSamples";
 
 const BreadcrumbsDocs = () => {
     return (
-        <Element as="article" id="page-breadcrumbs">
+        <Article id="page-breadcrumbs">
             <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1" className="text-hue">Breadcrumbs</Heading>
@@ -106,13 +106,13 @@ const BreadcrumbsDocs = () => {
             <Element as="section" id="theming">
                 <Row layout="grid" horizontalPadding="huge" marginBottom="small">
                     <Portion>
-                        <Heading as="h4" marginBottom="tiny">Theming</Heading>
+                        <Heading as="h4" marginBottom="tiny">Theme</Heading>
 
                         <CodeBlock source={sampleBreadcrumbTheme} language="css" />
                     </Portion>
                 </Row>
             </Element>
-        </Element>
+        </Article>
     );
 };
 

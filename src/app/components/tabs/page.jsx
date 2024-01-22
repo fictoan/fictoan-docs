@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 
-import { Element, Heading, HRule, Portion, Row, Table, Tabs, Text } from "fictoan-react";
+import { Element, Heading, HRule, Portion, Row, Table, Tabs, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 import "./page-tabs.css";

@@ -4,7 +4,7 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Badge, Element, Heading, HRule, Portion, Row, Table, Text } from "fictoan-react";
+import { Badge, Element, Heading, HRule, Portion, Row, Table, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
@@ -90,7 +90,7 @@ const BadgeDocs = () => {
                 <Element as="section" id="theming">
                     <Row layout="grid" horizontalPadding="huge" marginBottom="small">
                         <Portion>
-                            <Heading as="h4" marginBottom="tiny">Theming</Heading>
+                            <Heading as="h4" marginBottom="tiny">Theme</Heading>
 
                             <CodeBlock source={sampleBadgeTheming} language="css" />
                         </Portion>

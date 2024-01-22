@@ -4,7 +4,7 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Element, Heading, HRule, Portion, Row, Text } from "fictoan-react";
+import { Element, Heading, HRule, Portion, Row, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
@@ -21,7 +21,7 @@ import { listOfBaseElementProps } from "./propsList";
 
 const BaseElementDocs = () => {
     return (
-        <Element as="article" id="page-base-element">
+        <Article id="page-base-element">
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -58,7 +58,7 @@ const BaseElementDocs = () => {
                     </Text>
                 </Portion>
             </Row>
-        </Element>
+        </Article>
     );
 };
 

@@ -15,7 +15,7 @@ import {
     RadioButton,
     Row,
     Switch,
-    Text,
+    Text, Article
 } from "fictoan-react";
 
 // COMPONENTS ==================================================================
@@ -32,7 +32,7 @@ import { snippetForm, snippetFormItem } from "./CodeSamples";
 
 const FormDocs = () => {
     return (
-        <Element as="article" id="page-form">
+        <Article id="page-form">
             <Element as="section" id="intro" marginTop="medium" marginBottom="small">
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/* INTRO */}
@@ -112,7 +112,7 @@ const FormDocs = () => {
                 {/*   TEXT INPUT  */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
             </section>
-        </Element>
+        </Article>
     );
 };
 
