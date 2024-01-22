@@ -4,7 +4,7 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Element, Article } from "fictoan-react";
+import { Element, Article, Div } from "fictoan-react";
 
 // COMPONENTS ==================================================================
 
@@ -16,19 +16,34 @@ import "./page-progress-bar.css";
 // DATA ========================================================================
 
 
-
 const ProgressBarDocs = () => {
+    const style = {};
+
+    if (gridContainer) {
+        style.display = "grid";
+        style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+        style.gap = gap;
+    }
+
+    if (desktopSpan) {
+        if (desktopSpan === "half") {
+            style.gridColumn = `span ${Math.floor(columns / 2)}`;
+        } else {
+            style.gridColumn = `span ${desktopSpan}`;
+        }
+    }
+
     return (
         <Article id="page-progress-bar">
-            {/* <Element as="div" layoutAsGrid columns="8" gap="small"> */}
-            {/*     <Element as="div" desktopSpan="half"> */}
-            {/*         <Element as="div">Content</Element> */}
-            {/*     </Element> */}
+            <Div gridContainer columns="8" gap="small">
+                <Div desktopSpan="half">
+                    <Div>Content</Div>
+                </Div>
 
-            {/*     <Element as="div" desktopSpan="3"> */}
-            {/*         <Element as="div">Content</Element> */}
-            {/*     </Element> */}
-            {/* </Element> */}
+                <Div desktopSpan="3">
+                    <Div>Content</Div>
+                </Div>
+            </Div>
         </Article>
     );
 };
