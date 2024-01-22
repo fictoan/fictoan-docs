@@ -34,7 +34,7 @@ const Manifesto = () => {
                 </Portion>
 
                 <Portion desktopSpan="half">
-                    <Heading as="h1" weight="400" textColour="white" marginBottom="micro">
+                    <Heading as="h1" weight="400" marginBottom="micro">
                         The hand-off process is broken
                     </Heading>
 
@@ -68,7 +68,7 @@ const Manifesto = () => {
             {/* IDEOLOGY /////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row layout="grid" horizontalPadding="large" marginTop="medium" marginBottom="medium">
                 <Portion desktopSpan="half">
-                    <Heading as="h1" weight="400" textColour="white" marginBottom="micro">
+                    <Heading as="h1" weight="400" marginBottom="micro">
                         Pixel perfection is a designer’s job
                     </Heading>
                 </Portion>
@@ -97,17 +97,17 @@ const Manifesto = () => {
                         The margin’s off? The hover state is the wrong tint? The font weight feels wrong?
                     </Heading>
 
-                    <Heading as="h1" weight="400" textColour="white" marginBottom="small">
+                    <Heading as="h1" weight="400" marginBottom="small">
                         Sacrilege, yes. But wait—why not just fix it instead of raising a ticket?
                     </Heading>
 
-                    <Heading as="h1" weight="400" textColour="white" marginBottom="small">
+                    <Heading as="h1" weight="400" marginBottom="small">
                         It’s not that scary.
                     </Heading>
 
                     <Heading
                         id="down-arrow"
-                        as="h1" weight="400" textColour="white" align="centre"
+                        as="h1" weight="400" align="centre"
                     >
                         🡐
                     </Heading>
@@ -118,7 +118,7 @@ const Manifesto = () => {
                 <Portion desktopSpan="one-sixth" />
 
                 <Portion desktopSpan="two-third">
-                    <Heading as="h1" weight="400" textColour="white" marginBottom="micro">
+                    <Heading as="h1" weight="400" marginBottom="micro">
                         Enter FICTOAN
                     </Heading>
 

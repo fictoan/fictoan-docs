@@ -1,5 +1,6 @@
 @import "fictoan-react/dist/index.css";
 @import "./theme-dark.css";
+@import "./theme-light.css";
 
 img { width: auto; }
 
@@ -7,7 +8,8 @@ img { width: auto; }
     transition: all 0.2s ease-in-out;
 }
 
-/* MANIFESTO CARD BORDER ANIMATION */
+/* MANIFESTO CARD BORDER ANIMATION ========================================== */
+/* This is the glowing rotating card border on the home page */
 /* For some reason, unable to keep this with the home page CSS, so putting it here */
 @keyframes border-glow {
     0%   { transform: translateY(-25%) translateX(40%) rotate(0deg); }
@@ -15,4 +17,9 @@ img { width: auto; }
     50%  { transform: translateY(-25%) translateX(-40%) rotate(180deg); }
     75%  { transform: translateY(0) translateX(0) rotate(270deg); }
     100% { transform: translateY(-25%) translateX(40%) rotate(360deg); }
+}
+
+/* LOGO CHANGE BLACK AND WHITE BASED ON THEME =============================== */
+.theme-dark .header-logo {
+    filter : invert(1);
 }

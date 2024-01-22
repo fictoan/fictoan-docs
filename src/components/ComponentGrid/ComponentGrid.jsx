@@ -45,12 +45,12 @@ export const ComponentGrid = () => {
             <div id="component-grid">
                 <Row layout="grid" horizontalPadding="medium" marginBottom="medium">
                     <Portion>
-                        <Heading as="h6">Components</Heading>
+                        <Heading as="h6">Some components</Heading>
                     </Portion>
 
                     <Portion>
                         <Div id="grid-wrapper">
-                            <Div className="grid-item" id="button-card">
+                            <Div id="button-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <Button
@@ -79,7 +79,7 @@ export const ComponentGrid = () => {
                                 </Card>
                             </Div>
 
-                            <Div className="grid-item" id="type-card">
+                            <Div id="type-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <Heading as="h1" textColour="pistachio">Hi.</Heading>
@@ -94,7 +94,7 @@ export const ComponentGrid = () => {
                                 </Card>
                             </Div>
 
-                            <Div className="grid-item" id="notification-card">
+                            <Div id="notification-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <NotificationItem
@@ -113,7 +113,7 @@ export const ComponentGrid = () => {
                                 </Card>
                             </Div>
 
-                            <Div className="grid-item" id="progress-card">
+                            <Div id="progress-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <ProgressBar
@@ -132,7 +132,7 @@ export const ComponentGrid = () => {
                                 </Card>
                             </Div>
 
-                            <Div className="grid-item" id="input-card">
+                            <Div id="input-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <InputField
@@ -149,7 +149,7 @@ export const ComponentGrid = () => {
                                 </Card>
                             </Div>
 
-                            <Div className="grid-item" id="select-card">
+                            <Div id="select-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <Select
@@ -180,7 +180,7 @@ export const ComponentGrid = () => {
                                 </Card>
                             </Div>
 
-                            <Div className="grid-item" id="table-card">
+                            <Div id="table-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <Table padding="small" isStriped bordersFor="both" isfullWidth>
@@ -228,7 +228,7 @@ export const ComponentGrid = () => {
                                 </Card>
                             </Div>
 
-                            <Div className="grid-item" id="breadcrumbs-card">
+                            <Div id="breadcrumbs-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <BreadcrumbsWrapper>
@@ -272,7 +272,7 @@ export const ComponentGrid = () => {
                                 </Card>
                             </Div>
 
-                            <Div className="grid-item" id="radio-card">
+                            <Div id="radio-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <Div marginBottom="micro">
@@ -300,7 +300,7 @@ export const ComponentGrid = () => {
                                 </Card>
                             </Div>
 
-                            <Div className="grid-item" id="checkbox-card">
+                            <Div id="checkbox-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <Div marginBottom="micro">
@@ -328,7 +328,7 @@ export const ComponentGrid = () => {
                                 </Card>
                             </Div>
 
-                            <Div className="grid-item" id="code-card">
+                            <Div id="code-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <CodeBlock
@@ -345,7 +345,7 @@ export const ComponentGrid = () => {
                                 </Card>
                             </Div>
 
-                            <Div className="grid-item" id="colour-card">
+                            <Div id="colour-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <Element as="div"
@@ -362,7 +362,7 @@ export const ComponentGrid = () => {
                                 </Card>
                             </Div>
 
-                            <Div className="grid-item" id="badge-card">
+                            <Div id="badge-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <Div id="badge-wrapper">
@@ -408,7 +408,7 @@ export const ComponentGrid = () => {
                                 </Card>
                             </Div>
 
-                            <Div className="grid-item" id="callout-card">
+                            <Div id="callout-card" className="grid-item">
                                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                                     <Div className="component-card">
                                         <Callout kind="success">

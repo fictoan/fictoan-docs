@@ -77,10 +77,6 @@
 
     #breadcrumbs-card {
         grid-area : breadcrumbs;
-
-        nav {
-            /*background-color : ${props => props.theme.card.bg};*/
-        }
     }
 
     #progress-card { grid-area : progress; }
@@ -111,8 +107,9 @@
 
     /* CARD COMMON CLASSES ================================================== */
     .component-wrapper {
-        background-color : rgba(0, 0, 0, 0.4);
-        backdrop-filter  : blur(40px);;
+        background-color : var(--component-card-bg);
+        backdrop-filter  : blur(4px);;
+        overflow      : hidden;
     }
 
     .component-card {

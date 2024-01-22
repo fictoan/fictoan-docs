@@ -16,8 +16,8 @@ import {
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS //////////////////////////////////////////////////////////////////
-import { ComponentGrid } from "@/components/ComponentGrid/page";
-import { SiteHeader } from "@/components/Header/Header";
+import { SiteHeader } from "../components/Header/Header";
+import { ComponentGrid } from "../components/ComponentGrid/ComponentGrid";
 
 // STYLES //////////////////////////////////////////////////////////////////////
 import "../styles/home.css";
@@ -132,22 +132,22 @@ const Home = () => {
                 <Portion desktopSpan="one-third" />
 
                 <Portion desktopSpan="one-third">
-                    <Text size="huge" textColour="white" marginBottom="nano">
+                    <Heading as="h6" weight="400" opacity="80" marginBottom="nano">
                         Code the way you design
-                    </Text>
+                    </Heading>
 
-                    <Text marginBottom="tiny" textColour="white" opacity="60">
+                    <Text marginBottom="tiny">
                         Plain-English props, attributes and values. No complex keywords or convoluted abbreviations to
                         remember.
                     </Text>
                 </Portion>
 
                 <Portion desktopSpan="one-third">
-                    <Text size="huge" textColour="white" marginBottom="nano">
+                    <Heading as="h6" weight="400" opacity="80" marginBottom="nano">
                         As fast as you
-                    </Text>
+                    </Heading>
 
-                    <Text marginBottom="tiny" textColour="white" opacity="60">
+                    <Text marginBottom="tiny">
                         Built for rapid iteration, so you can quickly create complex layouts and flows and still
                         customise every aspect of the UI.
                     </Text>
@@ -158,30 +158,28 @@ const Home = () => {
 
             <Row layout="grid" horizontalPadding="medium" gutters="large" marginBottom="tiny">
                 <Portion desktopSpan="one-third">
-                    <Text size="huge" textColour="white" marginBottom="nano">
-                        <Heading as="h4" weight="400">
-                            It’s for devs too
-                        </Heading>
-                    </Text>
+                    <Heading as="h6" weight="400" opacity="80" marginBottom="nano">
+                        It’s for devs too
+                    </Heading>
                 </Portion>
 
                 <Portion desktopSpan="one-third">
-                    <Text size="huge" textColour="white" marginBottom="nano">
+                    <Heading as="h6" weight="400" opacity="80" marginBottom="nano">
                         Performant
-                    </Text>
+                    </Heading>
 
-                    <Text marginBottom="tiny" textColour="white" opacity="60">
+                    <Text marginBottom="tiny">
                         No JS, plain CSS styling. No dependencies. No bloat. As close to the metal as it
                         gets. How apps were meant to be built.
                     </Text>
                 </Portion>
 
                 <Portion desktopSpan="one-third">
-                    <Text size="huge" textColour="white" marginBottom="nano">
+                    <Heading as="h6" weight="400" opacity="80" marginBottom="nano">
                         Scalable
-                    </Text>
+                    </Heading>
 
-                    <Text marginBottom="tiny" textColour="white" opacity="60">
+                    <Text marginBottom="tiny">
                         Customise all aspects with a single theme file.
                     </Text>
                 </Portion>
@@ -220,9 +218,9 @@ const Home = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* VIDEO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <video id="fictoan-bg" autoPlay muted loop>
-                <source src="/logo-render.mp4" />
-            </video>
+            {/* <video id="fictoan-bg" autoPlay muted loop> */}
+            {/*     <source src="/logo-render.mp4" /> */}
+            {/* </video> */}
         </article>
     );
 };

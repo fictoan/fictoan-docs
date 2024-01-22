@@ -1,11 +1,6 @@
 #home-page {
     scroll-behavior : smooth;
 
-    #fictoan-logo {
-        filter : invert(1);
-        width  : 160px;
-    }
-
     #intro-headline {
         background              : -webkit-linear-gradient(270deg, #adb2ff 0%, #264be1 100%);
         -webkit-background-clip : text;
@@ -48,7 +43,7 @@
         max-width     : 1000px;
         padding       : 2px;
         overflow      : hidden;
-        background    : linear-gradient(0deg, rgba(4, 9, 22, 0.5), rgba(4, 8, 22, 0.5)), linear-gradient(100.41deg, #5591ff .52%, #375fff 100.52%);
+        background    : linear-gradient(0deg, rgba(4, 9, 22, 0.5), rgba(4, 8, 22, 0.5)), linear-gradient(90deg, #5591ff .52%, #375fff 90%);
         border-radius : 16px;
         transform     : translateZ(0)
     }

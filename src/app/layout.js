@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
     }, [currentTheme]);
 
     const toggleTheme = () => {
-        setCurrentTheme(currentTheme === "light" ? "theme-dark" : "light");
+        setCurrentTheme(currentTheme === "theme-light" ? "theme-dark" : "theme-light");
     };
 
     return (
@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
         </head>
 
         <body>
-        <ThemeProvider currentTheme={currentTheme === "dark" ? "light" : "theme-dark"}>
+        <ThemeProvider currentTheme={currentTheme === "theme-light" ? "theme-light" : "theme-dark"}>
             <Sidebar
                 sidebarState={sidebarState}
                 setSidebarState={setSidebarState}
