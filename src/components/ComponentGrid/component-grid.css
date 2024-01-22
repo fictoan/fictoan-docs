@@ -110,6 +110,11 @@
     }
 
     /* CARD COMMON CLASSES ================================================== */
+    .component-wrapper {
+        background-color : rgba(0, 0, 0, 0.4);
+        backdrop-filter  : blur(40px);;
+    }
+
     .component-card {
         position      : relative;
         display       : grid;

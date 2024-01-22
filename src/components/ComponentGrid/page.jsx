@@ -10,8 +10,8 @@ import {
     BreadcrumbItem,
     BreadcrumbsWrapper,
     Button,
-    Callout,
-    Checkbox,
+    Callout, Card,
+    Checkbox, Div,
     Element,
     Heading,
     InputField,
@@ -47,10 +47,10 @@ export const ComponentGrid = () => {
                     </Portion>
 
                     <Portion>
-                        <Element as="div" id="grid-wrapper">
-                            <Element as="div" className="grid-item" id="button-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
+                        <Div id="grid-wrapper">
+                            <Div className="grid-item" id="button-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
                                         <Button
                                             kind="primary" shape="rounded"
                                             bgColour="violet-40" textColour="violet"
@@ -73,13 +73,13 @@ export const ComponentGrid = () => {
                                                 Button &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
 
-                            <Element as="div" className="grid-item" id="type-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
+                            <Div className="grid-item" id="type-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
                                         <Heading as="h1" textColour="pistachio">Hi.</Heading>
                                         <Text weight="600">I’m just your type.</Text>
 
@@ -88,13 +88,13 @@ export const ComponentGrid = () => {
                                                 Typography &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
 
-                            <Element as="div" className="grid-item" id="notification-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
+                            <Div className="grid-item" id="notification-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
                                         <NotificationItem
                                             show kind="info"
                                             onCloseCallback={() => setShowNotification1(false)}
@@ -107,13 +107,13 @@ export const ComponentGrid = () => {
                                                 Notifiactions &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
 
-                            <Element as="div" className="grid-item" id="progress-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
+                            <Div className="grid-item" id="progress-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
                                         <ProgressBar
                                             value="60" max="100" unit="%"
                                             label="Loading..."
@@ -126,13 +126,13 @@ export const ComponentGrid = () => {
                                                 Progress bar &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
 
-                            <Element as="div" className="grid-item" id="input-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
+                            <Div className="grid-item" id="input-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
                                         <InputField
                                             label="Enter"
                                             placeholder="here"
@@ -143,13 +143,13 @@ export const ComponentGrid = () => {
                                                 Input field &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
 
-                            <Element as="div" className="grid-item" id="select-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
+                            <Div className="grid-item" id="select-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
                                         <Select
                                             options={[
                                                 {
@@ -174,13 +174,13 @@ export const ComponentGrid = () => {
                                                 Select &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
 
-                            <Element as="div" className="grid-item" id="table-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
+                            <Div className="grid-item" id="table-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
                                         <Table padding="small" isStriped bordersFor="both" isfullWidth>
                                             <thead>
                                                 <tr>
@@ -222,13 +222,13 @@ export const ComponentGrid = () => {
                                                 Table &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
 
-                            <Element as="div" className="grid-item" id="breadcrumbs-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
+                            <Div className="grid-item" id="breadcrumbs-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
                                         <BreadcrumbsWrapper>
                                             <BreadcrumbItem>
                                                 <Link href="/components/breadcrumbs">
@@ -266,21 +266,21 @@ export const ComponentGrid = () => {
                                                 Breadcrumbs &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
 
-                            <Element as="div" className="grid-item" id="radio-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
-                                        <Element as="div" marginBottom="micro">
+                            <Div className="grid-item" id="radio-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
+                                        <Div marginBottom="micro">
                                             <RadioButton
                                                 id="radio-1"
                                                 name="choices-1"
                                                 value="yes"
                                                 label="This"
                                             />
-                                        </Element>
+                                        </Div>
 
                                         <RadioButton
                                             id="radio-2"
@@ -294,21 +294,21 @@ export const ComponentGrid = () => {
                                                 Radio buttons &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
 
-                            <Element as="div" className="grid-item" id="checkbox-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
-                                        <Element as="div" marginBottom="micro">
+                            <Div className="grid-item" id="checkbox-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
+                                        <Div marginBottom="micro">
                                             <Checkbox
                                                 id="checkbox-1"
                                                 value="checkbox-1"
                                                 name="checkbox-1"
                                                 label="Check me"
                                             />
-                                        </Element>
+                                        </Div>
 
                                         <Switch
                                             id="switch-1"
@@ -322,13 +322,13 @@ export const ComponentGrid = () => {
                                                 Switch &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
 
-                            <Element as="div" className="grid-item" id="code-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
+                            <Div className="grid-item" id="code-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
                                         <CodeBlock
                                             source={cardComponentSample} language="jsx"
                                             marginTop="micro" marginBottom="micro"
@@ -339,13 +339,13 @@ export const ComponentGrid = () => {
                                                 CodeBlock &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
 
-                            <Element as="div" className="grid-item" id="colour-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
+                            <Div className="grid-item" id="colour-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
                                         <Element as="div"
                                                  id="gradient-card"
                                                  shape="rounded" borderColour="transparent"
@@ -356,14 +356,14 @@ export const ComponentGrid = () => {
                                                 Colour &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
 
-                            <Element as="div" className="grid-item" id="badge-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
-                                        <Element as="div" id="badge-wrapper">
+                            <Div className="grid-item" id="badge-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
+                                        <Div id="badge-wrapper">
                                             <Badge
                                                 bgColour="red-light-40" textColour="red-dark-10"
                                                 shape="curved"
@@ -395,22 +395,23 @@ export const ComponentGrid = () => {
                                             >
                                                 HONOUR
                                             </Badge>
-                                        </Element>
+                                        </Div>
 
                                         <Element as="footer">
                                             <Link href="/components/button">
                                                 Badge &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
 
-                            <Element as="div" className="grid-item" id="callout-card">
-                                <GlowCard>
-                                    <Element as="div" className="component-card">
+                            <Div className="grid-item" id="callout-card">
+                                <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                    <Div className="component-card">
                                         <Callout kind="success">
-                                            <Text textColour="green-dark-60">I’d also just like to call out that FICTOAN is
+                                            <Text textColour="green-dark-60">I’d also just like to call out that FICTOAN
+                                                is
                                                 awesome.</Text>
                                         </Callout>
 
@@ -419,10 +420,10 @@ export const ComponentGrid = () => {
                                                 Callout &rarr;
                                             </Link>
                                         </Element>
-                                    </Element>
-                                </GlowCard>
-                            </Element>
-                        </Element>
+                                    </Div>
+                                </Card>
+                            </Div>
+                        </Div>
                     </Portion>
 
                     <Portion>

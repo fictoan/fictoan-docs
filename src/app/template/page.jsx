@@ -29,7 +29,6 @@ const ProgressBarDocs = () => {
             {/*         <Element as="div">Content</Element> */}
             {/*     </Element> */}
             {/* </Element> */}
-
         </Article>
     );
 };

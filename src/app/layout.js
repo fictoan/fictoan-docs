@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
         </head>
 
         <body>
-        <ThemeProvider currentTheme={currentTheme === "light" ? "light" : "theme-dark"}>
+        <ThemeProvider currentTheme={currentTheme === "dark" ? "light" : "theme-dark"}>
             <Sidebar
                 sidebarState={sidebarState}
                 setSidebarState={setSidebarState}
