@@ -152,4 +152,7 @@
     /* CUSTOM COMPONENTS */
     /* ////////////////////////////////////////////////////////////////////// */
     --component-card-bg                       : rgba(236, 236, 236, 0.4);
+
+    --site-header-bg                          : var(--grey-light-90);
+    --site-header-border                      : var(--grey-light-60);
 }

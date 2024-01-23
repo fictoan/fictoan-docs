@@ -37,40 +37,49 @@
         filter    : saturate(150%);
     }
 
+    /* MANIFESTO-CARD ======================================================= */
     .manifesto-card {
         position      : relative;
         min-width     : 100%;
-        max-width     : 1000px;
         padding       : 2px;
         overflow      : hidden;
-        background    : linear-gradient(0deg, rgba(4, 9, 22, 0.5), rgba(4, 8, 22, 0.5)), linear-gradient(90deg, #5591ff .52%, #375fff 90%);
+        background    : linear-gradient(90deg, var(--indigo), var(--indigo-dark-40));
         border-radius : 16px;
-        transform     : translateZ(0)
+        transform     : translateZ(0);
+
+        svg {
+            position : absolute;
+            bottom   : -32px;
+            right    : 40px;
+            height   : 120%;
+            stroke   : var(--blue);
+            fill     : none;
+            opacity  : 0.32;
+            z-index  : -1;
+        }
     }
 
+    .manifesto-card-content {
+        position      : relative;
+        z-index       : 1;
+        padding       : 32px;
+        background    : linear-gradient(0deg, rgba(4, 7, 22, 0.96), rgba(4, 10, 22, 0.96));
+        border        : 1px solid hsla(0, 0%, 100%, .1);
+        border-radius : 12px
+    }
+
+    /* THE GLOWING BORDER */
     #manifesto-card-bg {
         position         : absolute;
         inset            : 0;
         top              : 24%;
         left             : 0;
         height           : 100%;
-        background       : conic-gradient(transparent 1%, #5764f5 80deg, transparent 100deg);
+        background       : conic-gradient(transparent 1%, var(--blue) 80deg, transparent 100deg);
         filter           : blur(8px);
-        border-radius    : 16px;
         transform-origin : center;
         /* Keyframes are defined in globals.css, doesn't work if kept here */
         animation        : border-glow -.64s linear 4s infinite;
         will-change      : transform
-    }
-
-    .manifesto-card-content {
-        position      : relative;
-        z-index       : 1;
-        display       : flex;
-        align-items   : center;
-        padding       : 20px 24px;
-        background    : linear-gradient(0deg, rgba(4, 7, 22, 0.96), rgba(4, 10, 22, 0.96)), linear-gradient(100.41deg, #3770ff .52%, #0030ab 100.52%);
-        border        : 1px solid hsla(0, 0%, 100%, .1);
-        border-radius : 12px
     }
 }

@@ -141,4 +141,7 @@
     /* CUSTOM COMPONENTS */
     /* ////////////////////////////////////////////////////////////////////// */
     --component-card-bg                       : rgba(0, 0, 0, 0.4);
+
+    --site-header-bg                          : var(--grey-light-90);
+    --site-header-border                      : var(--grey-dark-60);
 }

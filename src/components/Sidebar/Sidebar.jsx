@@ -1,5 +1,5 @@
 // EXTERNAL DEPS ///////////////////////////////////////////////////////////////
-import React from "react";
+import React, { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -13,6 +13,7 @@ import {
     SidebarFooter,
     HRule,
     ExpandableContent,
+    Div,
 } from "fictoan-react";
 
 // COMPONENTS //////////////////////////////////////////////////////////////////
@@ -52,17 +53,25 @@ import TabsIcon from "@/assets/icons/tabs.svg";
 import ToastIcon from "@/assets/icons/toast.svg";
 
 
-export default function Sidebar({ sidebarState, setSidebarState, toggleTheme }) {
+export const Sidebar = React.forwardRef(({ sidebarState, setSidebarState, toggleTheme }, ref) => {
+    const [showMobileSidebar, setShowMobileSidebar] = useState(false);
+
+    const toggleMobileSidebar = () => {
+        setShowMobileSidebar(!showMobileSidebar);
+    };
+
     const pathname = usePathname();
 
     const headerOnClick = () => {
         setSidebarState(sidebarState === "collapsed" ? "" : "collapsed");
     };
 
-    // Sidebar JSX and logic
     return (
         <SidebarWrapper
-            className={`${sidebarState === "collapsed" ? "collapsed" : ""}`}
+            ref={ref}
+            showMobileSidebar={showMobileSidebar}
+            closeOnClickOutside={toggleMobileSidebar}
+            className={`${sidebarState === "collapsed" ? "collapsed" : ""} ${showMobileSidebar ? "show-sidebar" : ""}`}
         >
             {/* //////////////////////////////////////////////////////////// */}
             {/* HEADER */}
@@ -431,4 +440,4 @@ export default function Sidebar({ sidebarState, setSidebarState, toggleTheme }) 
             </SidebarFooter>
         </SidebarWrapper>
     );
-}
+});

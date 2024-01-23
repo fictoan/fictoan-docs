@@ -1,28 +1,29 @@
 "use client";
 
-// EXTERNAL DEPS ///////////////////////////////////////////////////////////////
+// EXTERNAL DEPS ===============================================================
 import Link from "next/link";
 
-// INTERNAL DEPS ///////////////////////////////////////////////////////////////
+// INTERNAL DEPS ===============================================================
 import {
     Button,
+    Div,
     Element,
-    Heading, HRule,
+    Heading,
+    HRule,
     Portion,
     Row,
     Text,
 } from "fictoan-react";
 
-import { CodeBlock } from "fictoan-react/components";
-
-// COMPONENTS //////////////////////////////////////////////////////////////////
-import { SiteHeader } from "../components/Header/Header";
+// COMPONENTS ==================================================================
 import { ComponentGrid } from "../components/ComponentGrid/ComponentGrid";
 
-// STYLES //////////////////////////////////////////////////////////////////////
+// STYLES ======================================================================
 import "../styles/home.css";
 
-// ASSETS //////////////////////////////////////////////////////////////////////
+// ASSETS ======================================================================
+import ManifestoIcon from "@/assets/icons/manifesto.svg";
+import React from "react";
 
 const Home = () => {
     const listOfUITools = [
@@ -90,23 +91,16 @@ const Home = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* HEADER */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <SiteHeader />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* HERO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row layout="grid" horizontalPadding="medium" marginTop="tiny" marginBottom="small">
                 <Portion>
-                    {/* <video autoPlay muted loop> */}
-                    {/*     <source src="/ficotan-code.mp4 " /> */}
-                    {/* </video> */}
+
                 </Portion>
 
                 <Portion desktopSpan="two-third">
-                    <Text textColour="black" size="tiny">
-                        *Fuck I Couldn’t Think Of A Name
-                    </Text>
-
                     <Heading
                         id="intro-headline"
                         as="h2" textColour="indigo-light-20"
@@ -158,7 +152,7 @@ const Home = () => {
 
             <Row layout="grid" horizontalPadding="medium" gutters="large" marginBottom="tiny">
                 <Portion desktopSpan="one-third">
-                    <Heading as="h6" weight="400" opacity="80" marginBottom="nano">
+                    <Heading as="h4" weight="400" marginBottom="nano">
                         It’s for devs too
                     </Heading>
                 </Portion>
@@ -188,25 +182,35 @@ const Home = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* MANIFESTO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="medium" marginBottom="medium">
+            <Row layout="grid" horizontalPadding="medium" verticalMargin="large">
                 <Portion>
-                    <Element as="div" className="manifesto-card" shadow="soft">
-                        <Element as="div" className="manifesto-card-content" verticallyCentreItems pushItemsToEnds>
-                            <Text size="large">
-                                We want to blur the lines between designers and developers.
-                            </Text>
+                    <Div className="manifesto-card" shadow="soft">
+                        <Div className="manifesto-card-content">
+                            <Row layout="grid" marginBottom="none">
+                                <Portion desktopSpan="half">
+                                    <Heading as="h5" weight="400" textColour="blue">
+                                        We want to blur the lines between designers and developers.
+                                    </Heading>
 
-                            <Link href="/manifesto">
-                                <Button kind="tertiary" marginLeft="nano">
-                                    Read our
-                                    <wbr />
-                                    manifesto&nbsp;&rarr;
-                                </Button>
-                            </Link>
-                        </Element>
+                                    <Div marginTop="micro" showOnlyOnMobile />
+                                </Portion>
 
-                        <div id="manifesto-card-bg" />
-                    </Element>
+                                <Portion desktopSpan="one-fourth" />
+
+                                <Portion desktopSpan="one-fourth">
+                                    <Link href="/manifesto">
+                                        <Button kind="tertiary" isFullWidth>
+                                            Read our manifesto&nbsp;&rarr;
+                                        </Button>
+                                    </Link>
+                                </Portion>
+                            </Row>
+
+                            <ManifestoIcon />
+                        </Div>
+
+                        <Div id="manifesto-card-bg" />
+                    </Div>
                 </Portion>
             </Row>
 

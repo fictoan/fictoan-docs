@@ -1,50 +1,52 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 
-import { Element, InputField, Portion, Row, Text } from "fictoan-react";
+import { Div, Element, Header, Heading, InputField, Portion, Row, Text } from "fictoan-react";
 
 import "./header.css";
 
-export const SiteHeader = () => {
+export const SiteHeader = ({ toggleSidebarOnMobile }) => {
     return (
-        <>
-            <Row
-                layout="grid"
-                id="site-header"
-                horizontalPadding="medium"
-                marginTop="micro"
+        <Header id="site-header" horizontalPadding="micro" verticalPadding="nano">
+            <Div
+                id="menu-toggle"
+                showOnlyOnMobile showOnlyOnTabletPortrait
+                // onClick={toggleSidebarOnMobile}
             >
-                <Portion desktopSpan="one-third">
-                    <Element as="div" className="links-wrapper">
-                        <Link href="https://github.com/fictoan/fictoan-react">
-                            Github
-                        </Link>
+                <Heading as="h5">&mdash;</Heading>
+                <Heading as="h5">&ndash;</Heading>
+            </Div>
 
-                        <Link href="https://github.com/fictoan/fictoan-react">
-                            Storybook
-                        </Link>
-                    </Element>
-                </Portion>
+            {/* <Portion desktopSpan="one-third"> */}
+            {/*     <Element as="div" className="links-wrapper"> */}
+            {/*         <Link href="https://github.com/fictoan/fictoan-react"> */}
+            {/*             Github */}
+            {/*         </Link> */}
 
-                <Portion desktopSpan="one-third">
-                    <Element as="div" className="links-wrapper">
-                        <Link href="https://github.com/fictoan/fictoan-react">
-                            Boilerplate
-                        </Link>
-                    </Element>
-                </Portion>
+            {/*         <Link href="https://github.com/fictoan/fictoan-react"> */}
+            {/*             Storybook */}
+            {/*         </Link> */}
+            {/*     </Element> */}
+            {/* </Portion> */}
 
-                <Portion desktopSpan="one-third">
-                    <InputField
-                        type="search"
-                        placeholder="Search"
-                        bgColour="black"
-                        borderColour="slate-dark-60"
-                    />
-                </Portion>
-            </Row>
-        </>
+            {/* <Portion desktopSpan="one-third"> */}
+            {/*     <Element as="div" className="links-wrapper"> */}
+            {/*         <Link href="https://github.com/fictoan/fictoan-react"> */}
+            {/*             Boilerplate */}
+            {/*         </Link> */}
+            {/*     </Element> */}
+            {/* </Portion> */}
+
+            {/* <Portion desktopSpan="one-third"> */}
+            {/*     <InputField */}
+            {/*         type="search" */}
+            {/*         placeholder="Search" */}
+            {/*         bgColour="black" */}
+            {/*         borderColour="slate-dark-60" */}
+            {/*     /> */}
+            {/* </Portion> */}
+            {/* MOBILE HEADER ////////////////////////////////////////////// */}
+        </Header>
     );
 };
