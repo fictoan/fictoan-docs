@@ -7,12 +7,17 @@ import { Div, Element, Header, Heading, InputField, Portion, Row, Text } from "f
 import "./header.css";
 
 export const SiteHeader = ({ toggleSidebarOnMobile }) => {
+    const handleMenuToggleClick = (e) => {
+        e.stopPropagation(); // Prevent event from propagating
+        toggleSidebarOnMobile();
+    };
+
     return (
         <Header id="site-header" horizontalPadding="micro" verticalPadding="nano">
             <Div
                 id="menu-toggle"
                 showOnlyOnMobile showOnlyOnTabletPortrait
-                // onClick={toggleSidebarOnMobile}
+                onClick={handleMenuToggleClick}
             >
                 <Heading as="h5">&mdash;</Heading>
                 <Heading as="h5">&ndash;</Heading>

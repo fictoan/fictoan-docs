@@ -71,7 +71,7 @@ export const Sidebar = React.forwardRef(({ sidebarState, setSidebarState, toggle
             ref={ref}
             showMobileSidebar={showMobileSidebar}
             closeOnClickOutside={toggleMobileSidebar}
-            className={`${sidebarState === "collapsed" ? "collapsed" : ""} ${showMobileSidebar ? "show-sidebar" : ""}`}
+            className={`${sidebarState === "collapsed" ? "collapsed" : ""}`}
         >
             {/* //////////////////////////////////////////////////////////// */}
             {/* HEADER */}

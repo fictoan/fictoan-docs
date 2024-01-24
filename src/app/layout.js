@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
             />
 
             <ContentWrapper>
-                <SiteHeader  />
+                <SiteHeader />
                 {children}
             </ContentWrapper>
         </ThemeProvider>

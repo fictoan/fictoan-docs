@@ -8,20 +8,22 @@ import {
     Portion,
     Heading,
     Text,
-    HRule, Card, RadioGroup, Select,
+    HRule, Card, RadioGroup, Select, Badge, InputField, SelectWithSearch,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
-import { listOfColours, generateShades } from "../../utils/colours";
+import { listOfColours, generateShades } from "../../../utils/colours";
 
 // COMPONENTS ==================================================================
 
 
-export const InteractiveCardExample = () => {
+export const BadgeConfigurator = () => {
+    const [label, setLabel] = useState("");
     const [selectedPadding, setSelectedPadding] = useState("");
     const [selectedShape, setSelectedShape] = useState("");
     const [selectedShadow, setSelectedShadow] = useState("");
     const [selectedBgColour, setSelectedBgColour] = useState("white");
     const [selectedBorderColour, setSelectedBorderColour] = useState("slate");
+    const [selectedTextColour, setSelectedTextColour] = useState("slate");
 
     // Function to handle radio button change
     const handlePaddingChange = (event) => {
@@ -44,6 +46,10 @@ export const InteractiveCardExample = () => {
         setSelectedBorderColour(event.target.value !== "none" ? event.target.value : undefined);
     };
 
+    const handleTextColourChange = (event) => {
+        setSelectedTextColour(event.target.value !== "none" ? event.target.value : undefined);
+    };
+
     const colorOptions = listOfColours.flatMap(color =>
         generateShades(color).map(shade => (
             {
@@ -57,6 +63,23 @@ export const InteractiveCardExample = () => {
         <Row layout="grid" horizontalPadding="large">
             <Portion>
                 <Card padding="micro" shape="rounded">
+                    <Row layout="grid" marginBottom="none">
+                        <Portion desktopSpan="one-fourth">
+                            <Text marginBottom="none">Label</Text>
+                        </Portion>
+
+                        <Portion desktopSpan="three-fourth">
+                            <InputField
+                                type="text"
+                                placeholder="Label"
+                                disabled
+                                onChange={(e) => setLabel(e.target.value)}
+                            />
+                        </Portion>
+                    </Row>
+
+                    <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+
                     <Row layout="grid" marginBottom="none">
                         <Portion desktopSpan="one-fourth">
                             <Text marginBottom="none">Padding</Text>
@@ -148,7 +171,7 @@ export const InteractiveCardExample = () => {
                             <Select
                                 label="Border colour"
                                 options={[{
-                                    name     : "Select an option",
+                                    label    : "Select an option",
                                     value    : "select-an-option",
                                     disabled : true,
                                     selected : true,
@@ -159,30 +182,47 @@ export const InteractiveCardExample = () => {
                                 isFullWidth
                             />
                         </Portion>
+
+                        <Portion desktopSpan="one-fourth">
+                            <SelectWithSearch
+                                label="Text colour"
+                                options={[{
+                                    label    : "Select an option",
+                                    value    : "select-an-option",
+                                    disabled : true,
+                                    selected : true,
+                                },
+                                    ...colorOptions,
+                                ]}
+                                onChange={handleTextColourChange}
+                                isFullWidth
+                            />
+                        </Portion>
                     </Row>
                 </Card>
             </Portion>
 
             <Portion desktopSpan="half">
-                <CodeBlock language="jsx" marginBottom="micro">{[
+                <CodeBlock language="jsx" showCopyButton marginBottom="micro">{[
                     // Lol, hacky max pro
-                    `<Card`,
+                    `<Badge`,
                     selectedPadding && `    padding="${selectedPadding}"`,
                     selectedShape && `    shape="${selectedShape}"`,
                     selectedShadow && `    shadow="${selectedShadow}"`,
                     selectedBgColour && `    bgColour="${selectedBgColour}"`,
                     selectedBorderColour && `    borderColor="${selectedBorderColour}"`,
+                    selectedTextColour && `    textColour="${selectedTextColour}"`,
                     `>`,
-                    `    {/* Add any content here */}`,
-                    `</Card>`
+                    `    {${label}}`,
+                    `</Badge>`
                 ].filter(Boolean).join("\n")}
                 </CodeBlock>
             </Portion>
 
             <Portion desktopSpan="half">
                 <Element as="div" padding="tiny" shape="rounded" bgColour="slate-light-80">
-                    <Card
-                        id="interactive-card"
+                    <Badge
+                        id="interactive-badge"
                         {...(
                             selectedPadding !== undefined ? { padding : selectedPadding } : {}
                         )}
@@ -196,10 +236,14 @@ export const InteractiveCardExample = () => {
                             selectedBgColour !== undefined ? { bgColour : selectedBgColour } : {}
                         )}
                         {...(
-                            selectedBorderColour !== undefined ? { borderColor : selectedBorderColour } : {}
+                            selectedBorderColour !== undefined ? { borderColour : selectedBorderColour } : {}
+                        )}
+                        {...(
+                            selectedTextColour !== undefined ? { textColour : selectedTextColour } : {}
                         )}
                     >
-                    </Card>
+                        {label || "Label"}
+                    </Badge>
                 </Element>
             </Portion>
         </Row>

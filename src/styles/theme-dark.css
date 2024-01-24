@@ -67,10 +67,10 @@
     --input-text-invalid                      : var(--red);
     --input-error-text-invalid                : var(--red);
 
-    --input-bg-disabled                       : var(--slate-light-40);
-    --input-border-disabled                   : var(--slate-light-40);
+    --input-bg-disabled                       : var(--slate-dark-70);
+    --input-border-disabled                   : var(--slate-dark-70);
     --input-label-disabled                    : var(--slate-dark-40);
-    --input-text-disabled                     : var(--slate-dark-60);
+    --input-text-disabled                     : var(--slate-dark-40);
 
     --input-bg-read-only                      : var(--slate-light-40);
     --input-border-read-only                  : var(--slate-light-40);
