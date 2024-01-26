@@ -21,9 +21,10 @@ import "../styles/globals.css";
 
 
 export default function RootLayout({ children }) {
-    const sidebarRef = useRef(null);
 
     const [sidebarState, setSidebarState] = useState("");
+    const [showSidebarOnMobile, setShowSidebarOnMobile] = useState(false)
+
     const [currentTheme, setCurrentTheme] = useState(typeof window !== "undefined" ? localStorage.getItem("theme") || "light" : "light");
 
     useEffect(() => {
@@ -32,6 +33,10 @@ export default function RootLayout({ children }) {
 
     const toggleTheme = () => {
         setCurrentTheme(currentTheme === "theme-light" ? "theme-dark" : "theme-light");
+    };
+
+    const toggleSidebarOnMobile = () => {
+        setShowSidebarOnMobile(isShowing => !isShowing);
     };
 
     return (
@@ -46,11 +51,12 @@ export default function RootLayout({ children }) {
                 sidebarState={sidebarState}
                 setSidebarState={setSidebarState}
                 toggleTheme={toggleTheme}
-                ref={sidebarRef}
+                showSidebarOnMobile={showSidebarOnMobile}
+                setShowSidebarOnMobile={setShowSidebarOnMobile}
             />
 
             <ContentWrapper>
-                <SiteHeader />
+                <SiteHeader toggleSidebarOnMobile={toggleSidebarOnMobile} />
                 {children}
             </ContentWrapper>
         </ThemeProvider>
