@@ -1,7 +1,9 @@
 "use client";
 
+// EXTERNAL DEPS ===============================================================
 import React, { useMemo, useState } from "react";
 
+// INTERNAL DEPS ===============================================================
 import {
     Element,
     Card,
@@ -16,10 +18,21 @@ import {
     Text,
     Badge,
 } from "fictoan-react";
-
-import "./configurator.css";
-import { generateShades, listOfColours } from "../../utils/colours";
 import { CodeBlock } from "fictoan-react/components";
+
+// COMPONENTS ==================================================================
+
+// UTILS =======================================================================
+import { generateShades, listOfColours } from "../../utils/colours";
+
+// STYLES ======================================================================
+import "./configurator.css";
+
+// CODE SNIPPETS ===============================================================
+
+// DATA ========================================================================
+
+
 
 export const ComponentConfigurator = ({ component, properties }) => {
     const [label, setLabel] = useState("Text");
@@ -144,22 +157,25 @@ export const ComponentConfigurator = ({ component, properties }) => {
             {/* LABEL */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {properties.includes("label") ? (
-                <Row layout="grid" marginBottom="none">
-                    <Portion desktopSpan="one-fourth">
-                        <Text marginBottom="none">Label</Text>
-                    </Portion>
+                <>
+                    <Row layout="grid" marginBottom="none">
+                        <Portion desktopSpan="one-fourth">
+                            <Text marginBottom="none">Label</Text>
+                        </Portion>
 
-                    <Portion desktopSpan="three-fourth">
-                        <InputField
-                            type="text"
-                            placeholder="Label"
-                            onChange={(e) => setLabel(e.target.value)}
-                        />
-                    </Portion>
-                </Row>
+                        <Portion desktopSpan="three-fourth">
+                            <InputField
+                                type="text"
+                                placeholder="Label"
+                                onChange={(e) => setLabel(e.target.value)}
+                            />
+                        </Portion>
+                    </Row>
+
+                    <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+                </>
             ) : null}
 
-            <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* PADDING */}
