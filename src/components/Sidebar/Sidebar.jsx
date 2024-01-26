@@ -53,12 +53,16 @@ import TabsIcon from "@/assets/icons/tabs.svg";
 import ToastIcon from "@/assets/icons/toast.svg";
 
 
-export const Sidebar = React.forwardRef(({ sidebarState, setSidebarState, toggleTheme }, ref) => {
-    const [showMobileSidebar, setShowMobileSidebar] = useState(false);
+export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSidebarOnMobile, setShowSidebarOnMobile }) => {
+    const ref = useRef(null);
 
-    const toggleMobileSidebar = () => {
-        setShowMobileSidebar(!showMobileSidebar);
+    const openMobileSidebar = () => {
+        setShowSidebarOnMobile(true);
     };
+
+    const closeMobileSidebar = () => {
+        setShowSidebarOnMobile(false);
+    }
 
     const pathname = usePathname();
 
@@ -69,8 +73,8 @@ export const Sidebar = React.forwardRef(({ sidebarState, setSidebarState, toggle
     return (
         <SidebarWrapper
             ref={ref}
-            showMobileSidebar={showMobileSidebar}
-            closeOnClickOutside={toggleMobileSidebar}
+            showMobileSidebar={showSidebarOnMobile}
+            closeOnClickOutside={closeMobileSidebar}
             className={`${sidebarState === "collapsed" ? "collapsed" : ""}`}
         >
             {/* //////////////////////////////////////////////////////////// */}
@@ -440,4 +444,4 @@ export const Sidebar = React.forwardRef(({ sidebarState, setSidebarState, toggle
             </SidebarFooter>
         </SidebarWrapper>
     );
-});
+};

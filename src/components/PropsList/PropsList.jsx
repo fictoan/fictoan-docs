@@ -33,11 +33,10 @@ export const PropsList = ({ propData }) => {
 
             <HRule kind="secondary" horizontalMargin="large" verticalMargin="nano" />
 
-            {propData.props.map((props) => (
-                <>
+            {propData.props.map((props, index) => (
+                <React.Fragment key={`props.name - ${index}`}>
                     <Row
                         layout="grid"
-                        key={props.name}
                         gutters="huge"
                         horizontalPadding="large"
                         marginBottom="none"
@@ -59,8 +58,8 @@ export const PropsList = ({ propData }) => {
                         </Portion>
 
                         <Portion desktopSpan="5" className="props-values-list">
-                            {props.values.map((value) => (
-                                <code>{value}</code>
+                            {props.values.map((value, index) => (
+                                <code key={index}>{value}</code>
                             ))}
                         </Portion>
 
@@ -73,7 +72,7 @@ export const PropsList = ({ propData }) => {
                     </Row>
 
                     <HRule kind="tertiary" horizontalMargin="large" verticalMargin="nano" />
-                </>
+                </React.Fragment>
             ))}
         </>
     );
