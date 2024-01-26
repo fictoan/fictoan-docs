@@ -91,7 +91,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </SidebarHeader>
 
             <Link href="/" className={`${pathname === "/" ? "active" : ""}`}>
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <HomeIcon />
                     </SidebarItemIcon>
@@ -100,7 +100,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             <Link href="/manifesto" className={`${pathname === "/manifesto" ? "active" : ""}`}>
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <ManifestoIcon />
                     </SidebarItemIcon>
@@ -123,7 +123,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </SidebarItem>
 
             <Link href="/getting-started">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <HomeIcon />
                     </SidebarItemIcon>
@@ -132,7 +132,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             <Link href="/base-element">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <BaseElementIcon />
                     </SidebarItemIcon>
@@ -142,7 +142,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             <Link href="/theme" className={`${pathname === "/theme" ? "active" : ""}`}>
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <ThemeIcon />
                     </SidebarItemIcon>
@@ -152,7 +152,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             <Link href="/layout">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <LayoutIcon />
                     </SidebarItemIcon>
@@ -161,7 +161,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             <Link href="/typography">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <TypographyIcon />
                     </SidebarItemIcon>
@@ -170,7 +170,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             <Link href="/colour" className={`${pathname === "/colour" ? "active" : ""}`}>
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <ColourIcon />
                     </SidebarItemIcon>
@@ -192,7 +192,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </SidebarItem>
 
             <Link href="/components/form/form-wrapper">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <FormWrapperIcon />
                     </SidebarItemIcon>
@@ -202,7 +202,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             <Link href="/components/form/input-field">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <InputFieldIcon />
                     </SidebarItemIcon>
@@ -212,7 +212,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             <Link href="/components/form/pin-input-field">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <InputFieldIcon />
                     </SidebarItemIcon>
@@ -222,7 +222,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             <Link href="/components/form/checkbox">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <CheckboxIcon />
                     </SidebarItemIcon>
@@ -232,7 +232,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             <Link href="/components/form/radio-button">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}> 
                     <SidebarItemIcon iconType="stroked">
                         <RadioButtonIcon />
                     </SidebarItemIcon>
@@ -242,7 +242,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             <Link href="/components/form/progress-bar">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <ProgressBarIcon />
                     </SidebarItemIcon>
@@ -252,7 +252,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             <Link href="/components/form/select">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <SelectIcon />
                     </SidebarItemIcon>
@@ -276,7 +276,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
 
             {/* BADGE ====================================================== */}
             <Link href="/components/badge">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <BadgeIcon />
                     </SidebarItemIcon>
@@ -287,7 +287,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
 
             {/* BREADCRUMBS ================================================ */}
             <Link href="/components/breadcrumbs">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <BreadcrumbsIcon />
                     </SidebarItemIcon>
@@ -298,7 +298,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
 
             {/* BUTTON ===================================================== */}
             <Link href="/components/button">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <ButtonIcon />
                     </SidebarItemIcon>
@@ -308,7 +308,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
 
             {/* CALLOUT ==================================================== */}
             <Link href="/components/callout">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <CalloutIcon />
                     </SidebarItemIcon>
@@ -318,7 +318,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
 
             {/* CARD ======================================================= */}
             <Link href="/components/card">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <CardIcon />
                     </SidebarItemIcon>
@@ -328,7 +328,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
 
             {/* CODE BLOCK ================================================= */}
             <Link href="/components/code-block">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <CodeIcon />
                     </SidebarItemIcon>
@@ -338,7 +338,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
 
             {/* DRAWER ===================================================== */}
             <Link href="/components/drawer">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <InfoPanelIcon />
                     </SidebarItemIcon>
@@ -348,7 +348,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
 
             {/* H-RULE ===================================================== */}
             <Link href="/components/h-rule">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <HRuleIcon />
                     </SidebarItemIcon>
@@ -358,7 +358,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
 
             {/* NOTIFICATIONS ============================================== */}
             <Link href="/components/notifications">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <NotificationIcon />
                     </SidebarItemIcon>
@@ -377,7 +377,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             )}>
 
                 <Link href="/components/sidebar-wrapper">
-                    <SidebarItem>
+                    <SidebarItem onClick={closeMobileSidebar}>
                         <SidebarItemIcon iconType="stroked">
                         </SidebarItemIcon>
                         <SidebarItemText weight="400" linkText="Wrapper" />
@@ -385,7 +385,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </Link>
 
                 <Link href="/components/sidebar-item">
-                    <SidebarItem>
+                    <SidebarItem onClick={closeMobileSidebar}>
                         <SidebarItemIcon iconType="stroked">
                         </SidebarItemIcon>
                         <SidebarItemText weight="400" linkText="Item" />
@@ -393,7 +393,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </Link>
 
                 <Link href="/components/expandable-group">
-                    <SidebarItem>
+                    <SidebarItem onClick={closeMobileSidebar}>
                         <SidebarItemIcon iconType="stroked">
                         </SidebarItemIcon>
                         <SidebarItemText weight="400" linkText="Expandable group" />
@@ -403,7 +403,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
 
             {/* TABLE ====================================================== */}
             <Link href="/components/table">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <TableIcon />
                     </SidebarItemIcon>
@@ -413,7 +413,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
 
             {/* TABS ======================================================= */}
             <Link href="/components/tabs">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <TabsIcon />
                     </SidebarItemIcon>
@@ -423,7 +423,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
 
             {/* TOAST ====================================================== */}
             <Link href="/components/toast">
-                <SidebarItem>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <ToastIcon />
                     </SidebarItemIcon>
