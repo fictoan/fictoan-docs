@@ -1,7 +1,7 @@
 #component-configurator {
     .demo-row pre,
     .rendered-component {
-        height : 400px;
+        height : 300px;
     }
 
     .rendered-component {

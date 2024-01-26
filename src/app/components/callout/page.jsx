@@ -8,6 +8,8 @@ import { CodeBlock } from "fictoan-react/components";
 import "./page-callout.css";
 
 import { sampleCalloutTheme, sampleCodeInsideCallout } from "./CodeSamples";
+import { ComponentConfigurator } from "../../../components/Configurator/Configurator";
+import { calloutProps } from "./config";
 
 const CalloutDocs = () => {
     return (
@@ -17,76 +19,31 @@ const CalloutDocs = () => {
             </head>
 
             <article id="page-callout">
-                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
+                <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h4" className="text-hue">Callout</Heading>
                     </Portion>
                 </Row>
 
-                <Row horizontalPadding="huge">
+                <HRule horizontalMargin="huge" />
+
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+                {/*  CONFIGURATOR */}
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+                <Row layout="grid" horizontalPadding="small" marginTop="medium" marginBottom="small">
                     <Portion>
-                        <Table bordersFor="both" padding="tiny" isFullWidth>
-                            <thead className="bg-slate-10">
-                                <tr>
-                                    <td className="weight-600">Prop</td>
-                                    <td className="weight-600">Description</td>
-                                    <td className="weight-600">Values</td>
-                                    <td className="weight-600">Default</td>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <code>kind</code>
-                                    </td>
-
-                                    <td>
-                                        <Text>Default callouts for different situations.</Text>
-                                    </td>
-
-                                    <td>
-                                        <code>info</code><br />
-                                        <code>success</code><br />
-                                        <code>warning</code><br />
-                                        <code>error</code><br />
-                                    </td>
-
-                                    <td>
-                                        <Text>&mdash;</Text>
-                                    </td>
-                                </tr>
-
-
-                                <tr>
-                                    <td>
-                                        <code>children</code>
-                                    </td>
-
-                                    <td>
-                                        <Text>Accepts any other markup as part of the callout.</Text>
-                                    </td>
-
-                                    <td>
-                                        <Text>&mdash;</Text>
-                                    </td>
-
-                                    <td>
-                                        <Text>&mdash;</Text>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
+                        <ComponentConfigurator
+                            component={calloutProps.component}
+                            properties={calloutProps.properties}
+                        />
                     </Portion>
                 </Row>
-
-                <HRule horizontalMargin="huge" />
 
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/* DEFAULT */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 <Element as="section" id="default">
-                    <Row horizontalPadding="huge">
+                    <Row layout="grid" horizontalPadding="huge">
                         <Portion>
                             <Heading as="h6" marginBottom="tiny">Default</Heading>
                             <Row>
@@ -149,7 +106,7 @@ const CalloutDocs = () => {
                 <Element as="section" id="item-props">
 
                     <Element as="section" id="theming">
-                        <Row horizontalPadding="huge" marginBottom="small">
+                        <Row layout="grid" horizontalPadding="huge" marginBottom="small">
                             <Portion>
                                 <Heading as="h6" marginBottom="tiny">Theming</Heading>
                                 <CodeBlock source={sampleCalloutTheme} language="css" />

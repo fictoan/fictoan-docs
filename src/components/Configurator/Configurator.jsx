@@ -10,13 +10,12 @@ import {
     HRule,
     InputField,
     Portion,
-    RadioGroup,
     Row,
     Select,
     SelectWithSearch,
     RadioTabGroup,
     Text,
-    Badge,
+    Badge, Button, Callout,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -33,16 +32,45 @@ import "./configurator.css";
 // DATA ========================================================================
 
 
-
 export const ComponentConfigurator = ({ component, properties }) => {
     const [label, setLabel] = useState("Text");
+    const [selectedKind, setSelectedKind] = useState("info");
     const [selectedPadding, setSelectedPadding] = useState("");
     const [selectedSize, setSelectedSize] = useState("medium");
     const [selectedShape, setSelectedShape] = useState("none");
     const [selectedShadow, setSelectedShadow] = useState("none");
-    const [selectedBgColour, setSelectedBgColour] = useState("white");
-    const [selectedBorderColour, setSelectedBorderColour] = useState("slate");
-    const [selectedTextColour, setSelectedTextColour] = useState("slate");
+    const [selectedBgColour, setSelectedBgColour] = useState("");
+    const [selectedBorderColour, setSelectedBorderColour] = useState("");
+    const [selectedTextColour, setSelectedTextColour] = useState("");
+
+    const Component = useMemo(() => {
+        switch (component) {
+            case "Badge":
+                return (
+                    Badge
+                );
+            case "Button":
+                return (
+                    Button
+                );
+            case "Callout":
+                return (
+                    Callout
+                );
+            case "Card":
+                return (
+                    Card
+                );
+            default:
+                return (
+                    Badge
+                );
+        }
+    }, [component]);
+
+    const handleKindChange = (event) => {
+        setSelectedKind(event.target.value);
+    };
 
     const handlePaddingChange = (event) => {
         setSelectedPadding(event.target.value !== "none" ? event.target.value : undefined);
@@ -82,15 +110,6 @@ export const ComponentConfigurator = ({ component, properties }) => {
         )),
     );
 
-    const Component = useMemo(() => {
-        switch (component) {
-            case "Badge":
-                return (Badge);
-            default:
-                return (Badge);
-        }
-    }, [component]);
-
     return (
         <Card id="component-configurator" padding="micro" shape="rounded">
             <Row className="demo-row" layout="grid" marginBottom="micro">
@@ -101,12 +120,13 @@ export const ComponentConfigurator = ({ component, properties }) => {
                     <CodeBlock language="jsx" showCopyButton marginBottom="micro">{[
                         // Lol, hacky max pro
                         `<${component}`,
+                        selectedKind && `    kind="${selectedKind}"`,
                         selectedPadding && `    padding="${selectedPadding}"`,
                         selectedShape && `    shape="${selectedShape}"`,
                         selectedSize && `    size="${selectedSize}"`,
                         selectedShadow && `    shadow="${selectedShadow}"`,
                         selectedBgColour && `    bgColour="${selectedBgColour}"`,
-                        selectedBorderColour && `    borderColor="${selectedBorderColour}"`,
+                        selectedBorderColour && `    borderColour="${selectedBorderColour}"`,
                         selectedTextColour && `    textColour="${selectedTextColour}"`,
                         `>`,
                         `    ${label}`,
@@ -124,7 +144,10 @@ export const ComponentConfigurator = ({ component, properties }) => {
                         as="div" padding="tiny" shape="rounded" bgColour="slate-light-80"
                     >
                         <Component
-                            id="interactive-card"
+                            id="interactive-component"
+                            {...(
+                                selectedKind !== undefined ? { kind : selectedKind } : {}
+                            )}
                             {...(
                                 selectedPadding !== undefined ? { padding : selectedPadding } : {}
                             )}
@@ -181,179 +204,231 @@ export const ComponentConfigurator = ({ component, properties }) => {
             {/* PADDING */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {properties.includes("padding") ? (
-                <Row layout="grid" marginBottom="none">
-                    <Portion desktopSpan="one-fourth">
-                        <Text marginBottom="none">Padding</Text>
-                    </Portion>
+                <>
+                    <Row layout="grid" marginBottom="none">
+                        <Portion desktopSpan="one-fourth">
+                            <Text marginBottom="none">Padding</Text>
+                        </Portion>
 
-                    <Portion desktopSpan="three-fourth">
-                        <RadioGroup
-                            name="padding"
-                            options={[
-                                { id : "padding-opt-0", value : "none", label : "none" },
-                                { id : "padding-opt-1", value : "nano", label : "nano" },
-                                { id : "padding-opt-2", value : "micro", label : "micro" },
-                                { id : "padding-opt-3", value : "tiny", label : "tiny" },
-                                { id : "padding-opt-4", value : "small", label : "small" },
-                                { id : "padding-opt-5", value : "medium", label : "medium" },
-                                { id : "padding-opt-6", value : "large", label : "large" },
-                                { id : "padding-opt-7", value : "huge", label : "huge" },
-                            ]}
-                            defaultValue={selectedPadding}
-                            onChange={handlePaddingChange}
-                        />
-                    </Portion>
-                </Row>
+                        <Portion desktopSpan="three-fourth">
+                            <RadioTabGroup
+                                name="padding"
+                                options={[
+                                    { id : "padding-opt-0", value : "none", label : "none" },
+                                    { id : "padding-opt-1", value : "nano", label : "nano" },
+                                    { id : "padding-opt-2", value : "micro", label : "micro" },
+                                    { id : "padding-opt-3", value : "tiny", label : "tiny" },
+                                    { id : "padding-opt-4", value : "small", label : "small" },
+                                    { id : "padding-opt-5", value : "medium", label : "medium" },
+                                    { id : "padding-opt-6", value : "large", label : "large" },
+                                    { id : "padding-opt-7", value : "huge", label : "huge" },
+                                ]}
+                                defaultValue={selectedPadding}
+                                onChange={handlePaddingChange}
+                            />
+                        </Portion>
+                    </Row>
+
+                    <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+                </>
             ) : null}
 
-            <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* SIZE */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {properties.includes("size") ? (
-                <Row layout="grid" marginBottom="none">
-                    <Portion desktopSpan="one-fourth">
-                        <Text marginBottom="none">Size</Text>
-                    </Portion>
+                <>
+                    <Row layout="grid" marginBottom="none">
+                        <Portion desktopSpan="one-fourth">
+                            <Text marginBottom="none">Size</Text>
+                        </Portion>
 
-                    <Portion desktopSpan="three-fourth">
-                        <RadioTabGroup
-                            name="size"
-                            options={[
-                                { id : "size-opt-0", value : "none", label : "none" },
-                                { id : "size-opt-1", value : "nano", label : "nano" },
-                                { id : "size-opt-2", value : "micro", label : "micro" },
-                                { id : "size-opt-3", value : "tiny", label : "tiny" },
-                                { id : "size-opt-4", value : "small", label : "small" },
-                                { id : "size-opt-5", value : "medium", label : "medium" },
-                                { id : "size-opt-6", value : "large", label : "large" },
-                                { id : "size-opt-7", value : "huge", label : "huge" },
-                            ]}
-                            defaultValue={selectedSize}
-                            onChange={handleSizeChange}
-                        />
-                    </Portion>
-                </Row>
+                        <Portion desktopSpan="three-fourth">
+                            <RadioTabGroup
+                                name="size"
+                                options={[
+                                    { id : "size-opt-0", value : "none", label : "none" },
+                                    { id : "size-opt-1", value : "nano", label : "nano" },
+                                    { id : "size-opt-2", value : "micro", label : "micro" },
+                                    { id : "size-opt-3", value : "tiny", label : "tiny" },
+                                    { id : "size-opt-4", value : "small", label : "small" },
+                                    { id : "size-opt-5", value : "medium", label : "medium" },
+                                    { id : "size-opt-6", value : "large", label : "large" },
+                                    { id : "size-opt-7", value : "huge", label : "huge" },
+                                ]}
+                                defaultValue={selectedSize}
+                                onChange={handleSizeChange}
+                            />
+                        </Portion>
+                    </Row>
+
+                    <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+                </>
             ) : null}
 
-            <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* KIND */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {properties.includes("kind") ? (
+                <>
+                    <Row layout="grid" marginBottom="none">
+                        <Portion desktopSpan="one-fourth">
+                            <Text marginBottom="none">Kind</Text>
+                        </Portion>
+
+                        <Portion desktopSpan="three-fourth">
+                            <RadioTabGroup
+                                name="kind"
+                                options={[
+                                    { id : "kind-opt-0", value : "info", label : "info" },
+                                    { id : "kind-opt-1", value : "warning", label : "warning" },
+                                    { id : "kind-opt-2", value : "error", label : "error" },
+                                    { id : "kind-opt-3", value : "success", label : "success" },
+                                ]}
+                                defaultValue={selectedKind}
+                                onChange={handleKindChange}
+                            />
+                        </Portion>
+                    </Row>
+
+                    <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+                </>
+            ) : null}
+
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* SHAPE */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {properties.includes("shape") ? (
-                <Row layout="grid" marginBottom="none">
-                    <Portion desktopSpan="one-fourth">
-                        <Text marginBottom="none">Shape</Text>
-                    </Portion>
+                <>
+                    <Row layout="grid" marginBottom="none">
+                        <Portion desktopSpan="one-fourth">
+                            <Text marginBottom="none">Shape</Text>
+                        </Portion>
 
-                    <Portion desktopSpan="three-fourth">
-                        <RadioTabGroup
-                            name="shape"
-                            options={[
-                                { id : "shape-opt-0", value : "none", label : "none" },
-                                { id : "shape-opt-1", value : "rounded", label : "rounded" },
-                                { id : "shape-opt-2", value : "curved", label : "curved" },
-                            ]}
-                            defaultValue={selectedShape}
-                            onChange={handleShapeChange}
-                        />
-                    </Portion>
-                </Row>
+                        <Portion desktopSpan="three-fourth">
+                            <RadioTabGroup
+                                name="shape"
+                                options={[
+                                    { id : "shape-opt-0", value : "none", label : "none" },
+                                    { id : "shape-opt-1", value : "rounded", label : "rounded" },
+                                    { id : "shape-opt-2", value : "curved", label : "curved" },
+                                ]}
+                                defaultValue={selectedShape}
+                                onChange={handleShapeChange}
+                            />
+                        </Portion>
+                    </Row>
+
+                    <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+                </>
             ) : null}
 
-            <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* SHADOW */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {properties.includes("shadow") ? (
-                <Row layout="grid" marginBottom="none">
-                    <Portion desktopSpan="one-fourth">
-                        <Text marginBottom="none">Shadow</Text>
-                    </Portion>
+                <>
+                    <Row layout="grid" marginBottom="none">
+                        <Portion desktopSpan="one-fourth">
+                            <Text marginBottom="none">Shadow</Text>
+                        </Portion>
 
-                    <Portion desktopSpan="three-fourth">
-                        <RadioTabGroup
-                            name="shadow"
-                            options={[
-                                { id : "shadow-opt-0", value : "none", label : "none" },
-                                { id : "shadow-opt-1", value : "mild", label : "mild" },
-                                { id : "shadow-opt-3", value : "hard", label : "hard" },
-                                { id : "shadow-opt-2", value : "soft", label : "soft" },
-                            ]}
-                            defaultValue={selectedShadow}
-                            onChange={handleShadowChange}
-                        />
-                    </Portion>
-                </Row>
+                        <Portion desktopSpan="three-fourth">
+                            <RadioTabGroup
+                                name="shadow"
+                                options={[
+                                    { id : "shadow-opt-0", value : "none", label : "none" },
+                                    { id : "shadow-opt-1", value : "mild", label : "mild" },
+                                    { id : "shadow-opt-3", value : "hard", label : "hard" },
+                                    { id : "shadow-opt-2", value : "soft", label : "soft" },
+                                ]}
+                                defaultValue={selectedShadow}
+                                onChange={handleShadowChange}
+                            />
+                        </Portion>
+                    </Row>
+
+                    <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+                </>
             ) : null}
 
-            <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* COLOURS */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" marginBottom="none">
-                <Portion desktopSpan="one-fourth">
-                    <Text marginBottom="none">Colours</Text>
-                </Portion>
+            {properties.includes("bgColour" || "bgColor" || "borderColour" || "borderColor" || "textColour" || "textColor")
+                ? (
+                    <Row layout="grid" marginBottom="none">
+                        <Portion desktopSpan="one-fourth">
+                            <Text marginBottom="none">Colours</Text>
+                        </Portion>
 
-                {/* BG COLOUR ============================================== */}
-                <Portion desktopSpan="one-fourth">
-                    <Select
-                        label="Background colour"
-                        options={[{
-                            label    : "Select an option",
-                            value    : "select-an-option",
-                            disabled : true,
-                            selected : true,
-                        },
-                            ...colorOptions,
-                        ]}
-                        defaultValue={selectedBgColour}
-                        onChange={handleBgColourChange}
-                        isFullWidth
-                    />
-                </Portion>
+                        {/* BG COLOUR ============================================== */}
+                        {properties.includes("bgColour" || "bgColor") ? (
+                            <Portion desktopSpan="one-fourth">
+                                <Select
+                                    label="Background colour"
+                                    options={[{
+                                        label    : "Select an option",
+                                        value    : "select-an-option",
+                                        disabled : true,
+                                        selected : true,
+                                    },
+                                        ...colorOptions,
+                                    ]}
+                                    defaultValue={selectedBgColour}
+                                    onChange={handleBgColourChange}
+                                    isFullWidth
+                                />
+                            </Portion>
+                        ) : null}
 
-                {/* BORDER COLOUR ========================================== */}
-                <Portion desktopSpan="one-fourth">
-                    <Select
-                        label="Border colour"
-                        options={[{
-                            label    : "Select an option",
-                            value    : "select-an-option",
-                            disabled : true,
-                            selected : true,
-                        },
-                            ...colorOptions,
-                        ]}
-                        defaultValue={selectedBorderColour}
-                        onChange={handleBorderColourChange}
-                        isFullWidth
-                    />
-                </Portion>
+                        {/* BORDER COLOUR ========================================== */}
+                        {properties.includes("borderColour" || "borderColor") ? (
+                            <Portion desktopSpan="one-fourth">
+                                <Select
+                                    label="Border colour"
+                                    options={[{
+                                        label    : "Select an option",
+                                        value    : "select-an-option",
+                                        disabled : true,
+                                        selected : true,
+                                    },
+                                        ...colorOptions,
+                                    ]}
+                                    defaultValue={selectedBorderColour}
+                                    onChange={handleBorderColourChange}
+                                    isFullWidth
+                                />
+                            </Portion>
+                        ) : null}
 
-                {/* TEXT COLOUR ============================================ */}
-                <Portion desktopSpan="one-fourth">
-                    <SelectWithSearch
-                        label="Text colour"
-                        options={[{
-                            label    : "Select an option",
-                            value    : "select-an-option",
-                            disabled : true,
-                            selected : true,
-                        },
-                            ...colorOptions,
-                        ]}
-                        defaultValue={selectedTextColour}
-                        onChange={handleTextColourChange}
-                        isFullWidth
-                    />
-                </Portion>
-            </Row>
+                        {/* TEXT COLOUR ============================================ */}
+                        {properties.includes("textColour" || "textColor") ? (
+                            <Portion desktopSpan="one-fourth">
+                                <SelectWithSearch
+                                    label="Text colour"
+                                    options={[{
+                                        label    : "Select an option",
+                                        value    : "select-an-option",
+                                        disabled : true,
+                                        selected : true,
+                                    },
+                                        ...colorOptions,
+                                    ]}
+                                    defaultValue={selectedTextColour}
+                                    onChange={handleTextColourChange}
+                                    isFullWidth
+                                />
+                            </Portion>
+                        ) : null}
+                    </Row>
+                ) : null
+            }
         </Card>
     );
 };

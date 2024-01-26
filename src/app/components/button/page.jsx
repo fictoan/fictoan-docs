@@ -30,6 +30,8 @@ import { PropsList } from "../../../components/PropsList/PropsList";
 
 // DATA ========================================================================
 import { listOfButtonProps } from "./propsList";
+import { ComponentConfigurator } from "../../../components/Configurator/Configurator";
+import { buttonProps } from "./config";
 
 
 const ButtonDocs = () => {
@@ -47,6 +49,18 @@ const ButtonDocs = () => {
             <PropsList propData={listOfButtonProps} />
 
             <HRule horizontalMargin="huge" verticalMargin="small" />
+
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/*  CONFIGURATOR */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Row layout="grid" horizontalPadding="small" marginTop="medium" marginBottom="small">
+                <Portion>
+                    <ComponentConfigurator
+                        component={buttonProps.component}
+                        properties={buttonProps.properties}
+                    />
+                </Portion>
+            </Row>
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  DEFAULT  */}

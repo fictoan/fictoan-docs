@@ -8,6 +8,7 @@ import { Badge, Element, Heading, HRule, Portion, Row, Table, Text, Article, Sec
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
+import { ComponentConfigurator } from "../../../components/Configurator/Configurator";
 import { PropsList } from "../../../components/PropsList/PropsList";
 
 // STYLES ======================================================================
@@ -18,7 +19,6 @@ import { sampleBadge, sampleBadgeSibling, sampleBadgeTheming } from "./CodeSampl
 
 // DATA ========================================================================
 import { listOfBadgeProps } from "./propsList";
-import { ComponentConfigurator } from "../../../components/Configurator/Configurator";
 import { badgeProps } from "./config";
 
 

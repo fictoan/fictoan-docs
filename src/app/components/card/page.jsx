@@ -1,27 +1,36 @@
 "use client";
 
+// EXTERNAL DEPS ===============================================================
 import React from "react";
 import Link from "next/link";
 
+// INTERNAL DEPS ===============================================================
 import { Card, Element, Heading, HRule, Portion, Row, Table, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
+// COMPONENTS ==================================================================
+import { ComponentConfigurator } from "../../../components/Configurator/Configurator";
+
+// STYLES ======================================================================
 import "./page-card.css";
+
+// CODE SNIPPETS ===============================================================
 import {
     sampleCard,
     sampleCardCustomStyling,
-    sampleCardShadow, sampleCardTheme,
+    sampleCardShadow,
+    sampleCardTheme,
 } from "./CodeSamples";
+
+// DATA ========================================================================
+import { cardProps } from "./config";
+
+
 
 const CardDocs = () => {
     return (
-        <>
-            <head>
-                <title>Card — Fictoan documentation</title>
-            </head>
-
-            <article id="page-card">
-                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
+            <Article id="page-card">
+                <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h2" className="text-hue">Card</Heading>
                         <Text>
@@ -31,137 +40,25 @@ const CardDocs = () => {
                     </Portion>
                 </Row>
 
-                <Row horizontalPadding="huge">
+                <HRule horizontalMargin="huge" />
+
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+                {/*  CONFIGURATOR */}
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+                <Row layout="grid" horizontalPadding="small" marginTop="medium" marginBottom="small">
                     <Portion>
-                        <Heading as="h3" marginBottom="micro">Props</Heading>
-
-                        <Heading as="h5" marginBottom="nano">Custom props</Heading>
-                        <Text>None</Text>
-
-                        <HRule kind="tertiary" marginTop="tiny" marginBottom="tiny" />
-
-                        <Heading as="h5" marginBottom="nano">Shared props</Heading>
-                        <Table bordersFor="both" padding="tiny">
-                            <thead className="bg-slate-10">
-                                <tr>
-                                    <td className="weight-600">Prop</td>
-                                    <td className="weight-600">Description</td>
-                                    <td className="weight-600">Values</td>
-                                    <td className="weight-600">Default</td>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <code>bgColour</code> / <code>bgColor</code>
-                                    </td>
-
-                                    <td>
-                                        Background colour
-                                    </td>
-
-                                    <td>
-                                        Any colour from <code>defaultColours</code>.
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>borderColour</code> / <code>borderColor</code>
-                                    </td>
-
-                                    <td>
-                                        Border colour
-                                    </td>
-
-                                    <td>
-                                        Any colour from <code>defaultColours</code>.
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>padding</code>
-                                    </td>
-
-                                    <td>
-                                        Inner padding between the border and the content
-                                    </td>
-
-                                    <td>
-                                        <code>nano</code><br />
-                                        <code>micro</code><br />
-                                        <code>tiny</code><br />
-                                        <code>small</code><br />
-                                        <code>medium</code><br />
-                                        <code>large</code><br />
-                                        <code>huge</code>
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>shadow</code>
-                                    </td>
-
-                                    <td>
-                                        Box shadow
-                                    </td>
-
-                                    <td>
-                                        <code>mild</code><br />
-                                        <code>hard</code><br />
-                                        <code>soft</code>
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>shape</code>
-                                    </td>
-
-                                    <td>
-                                        Corner radius
-                                    </td>
-
-                                    <td>
-                                        <code>rounded</code><br />
-                                        <code>curved</code>
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
+                        <ComponentConfigurator
+                            component={cardProps.component}
+                            properties={cardProps.properties}
+                        />
                     </Portion>
                 </Row>
-
-                <HRule horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  BASICS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="default">
-                    <Row horizontalPadding="huge">
+                    <Row layout="grid" horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3" marginBottom="nano">Default</Heading>
 
@@ -202,7 +99,7 @@ const CardDocs = () => {
                 {/*  PROPS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="props">
-                    <Row horizontalPadding="huge">
+                    <Row layout="grid" horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3">Props</Heading>
                         </Portion>
@@ -211,7 +108,7 @@ const CardDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  SHAPE  */}
                     {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
+                    <Row layout="grid" horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Shape</Heading>
 
@@ -239,7 +136,7 @@ const CardDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  CUSTOM STYLING  */}
                     {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
+                    <Row layout="grid" horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Custom BG and border</Heading>
 
@@ -271,7 +168,7 @@ const CardDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  SHADOW  */}
                     {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
+                    <Row layout="grid" horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Shadow</Heading>
 
@@ -323,7 +220,7 @@ const CardDocs = () => {
                     {/*  THEMING  */}
                     {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
                     <Element as="section" id="theming">
-                        <Row horizontalPadding="huge" marginBottom="small">
+                        <Row layout="grid" horizontalPadding="huge" marginBottom="small">
                             <Portion>
                                 <Heading as="h3" marginBottom="tiny">Theming</Heading>
 
@@ -332,8 +229,7 @@ const CardDocs = () => {
                         </Row>
                     </Element>
                 </Element>
-            </article>
-        </>
+        </Article>
     );
 };
 
