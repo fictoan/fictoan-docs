@@ -8,6 +8,7 @@
     backdrop-filter : blur(12px);
     height          : 56px;
     align-items     : center;
+    justify-content : space-between;
 
     #menu-toggle * {
         line-height  : 9px;
@@ -30,5 +31,9 @@
     input {
         padding   : 6px 12px;
         font-size : 14px;
+    }
+
+    #wip-badge {
+        margin-left : auto;
     }
 }

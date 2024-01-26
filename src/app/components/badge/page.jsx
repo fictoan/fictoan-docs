@@ -18,7 +18,8 @@ import { sampleBadge, sampleBadgeSibling, sampleBadgeTheming } from "./CodeSampl
 
 // DATA ========================================================================
 import { listOfBadgeProps } from "./propsList";
-import { BadgeConfigurator } from "./BadgeConfigurator";
+import { ComponentConfigurator } from "../../../components/Configurator/Configurator";
+import { badgeProps } from "./config";
 
 
 const BadgeDocs = () => {
@@ -33,12 +34,24 @@ const BadgeDocs = () => {
             <PropsList propData={listOfBadgeProps} />
 
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/*  CONFIGURATOR */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Row layout="grid" horizontalPadding="small" marginTop="medium" marginBottom="small">
+                <Portion>
+                    <ComponentConfigurator
+                        component={badgeProps.component}
+                        properties={badgeProps.properties}
+                    />
+                </Portion>
+            </Row>
 
-            <BadgeConfigurator />
+            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            {/* <BadgeConfigurator /> */}
 
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  DEFAULT BADGE */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Section id="default">
                 <Row layout="grid" horizontalPadding="huge">
                     <Portion>

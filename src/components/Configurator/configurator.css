@@ -1,0 +1,11 @@
+#component-configurator {
+    .demo-row pre,
+    .rendered-component {
+        height : 400px;
+    }
+
+    .rendered-component {
+        display     : grid;
+        place-items : center;
+    }
+}

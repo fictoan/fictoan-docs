@@ -8,7 +8,7 @@ import {
     Portion,
     Heading,
     Text,
-    HRule, Card, RadioGroup, Select, Badge, InputField, SelectWithSearch,
+    HRule, Card, RadioGroup, Select, Badge, InputField, SelectWithSearch, RadioTabGroup,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 import { listOfColours, generateShades } from "../../../utils/colours";
@@ -72,7 +72,6 @@ export const BadgeConfigurator = () => {
                             <InputField
                                 type="text"
                                 placeholder="Label"
-                                disabled
                                 onChange={(e) => setLabel(e.target.value)}
                             />
                         </Portion>
@@ -87,15 +86,16 @@ export const BadgeConfigurator = () => {
 
                         <Portion desktopSpan="three-fourth">
                             <RadioGroup
+                                name="padding"
                                 options={[
-                                    { id : "padding-opt-0", name : "padding", value : "none", label : "none" },
-                                    { id : "padding-opt-1", name : "padding", value : "nano", label : "nano" },
-                                    { id : "padding-opt-2", name : "padding", value : "micro", label : "micro" },
-                                    { id : "padding-opt-3", name : "padding", value : "tiny", label : "tiny" },
-                                    { id : "padding-opt-4", name : "padding", value : "small", label : "small" },
-                                    { id : "padding-opt-5", name : "padding", value : "medium", label : "medium" },
-                                    { id : "padding-opt-6", name : "padding", value : "large", label : "large" },
-                                    { id : "padding-opt-7", name : "padding", value : "huge", label : "huge" },
+                                    { id : "padding-opt-0", value : "none", label : "none" },
+                                    { id : "padding-opt-1", value : "nano", label : "nano" },
+                                    { id : "padding-opt-2", value : "micro", label : "micro" },
+                                    { id : "padding-opt-3", value : "tiny", label : "tiny" },
+                                    { id : "padding-opt-4", value : "small", label : "small" },
+                                    { id : "padding-opt-5", value : "medium", label : "medium" },
+                                    { id : "padding-opt-6", value : "large", label : "large" },
+                                    { id : "padding-opt-7", value : "huge", label : "huge" },
                                 ]}
                                 defaultValue={selectedPadding}
                                 onChange={handlePaddingChange}
@@ -112,10 +112,11 @@ export const BadgeConfigurator = () => {
 
                         <Portion desktopSpan="three-fourth">
                             <RadioGroup
+                                name="shape"
                                 options={[
-                                    { id : "shape-opt-0", name : "shape", value : "none", label : "none" },
-                                    { id : "shape-opt-1", name : "shape", value : "rounded", label : "rounded" },
-                                    { id : "shape-opt-2", name : "shape", value : "curved", label : "curved" },
+                                    { id : "shape-opt-0", value : "none", label : "none" },
+                                    { id : "shape-opt-1", value : "rounded", label : "rounded" },
+                                    { id : "shape-opt-2", value : "curved", label : "curved" },
                                 ]}
                                 defaultValue={selectedShape}
                                 onChange={handleShapeChange}
@@ -131,12 +132,13 @@ export const BadgeConfigurator = () => {
                         </Portion>
 
                         <Portion desktopSpan="three-fourth">
-                            <RadioGroup
+                            <RadioTabGroup
+                                name="shadow"
                                 options={[
-                                    { id : "shadow-opt-0", name : "shadow", value : "none", label : "none" },
-                                    { id : "shadow-opt-1", name : "shadow", value : "mild", label : "mild" },
-                                    { id : "shadow-opt-3", name : "shadow", value : "hard", label : "hard" },
-                                    { id : "shadow-opt-2", name : "shadow", value : "soft", label : "soft" },
+                                    { id : "shadow-opt-0", value : "none", label : "none" },
+                                    { id : "shadow-opt-1", value : "mild", label : "mild" },
+                                    { id : "shadow-opt-3", value : "hard", label : "hard" },
+                                    { id : "shadow-opt-2", value : "soft", label : "soft" },
                                 ]}
                                 defaultValue={selectedShadow}
                                 onChange={handleShadowChange}
