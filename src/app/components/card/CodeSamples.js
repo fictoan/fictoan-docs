@@ -24,8 +24,7 @@ export const sampleCardShadow = `<Card
 />`;
 
 //  Code sample 04 ////////////////////////////////////////////////////////////
-export const sampleCardTheme = `card : {
-    bg           : defaultColours.white,
-    border       : \`$\{lighten(0.96, defaultColours.black)}\`
-    borderRadius : "4px"
-}`;
+export const sampleCardTheme = `--card-bg            : var(--grey-dark-90);
+--card-border        : var(--slate-dark-60);
+--card-border-radius : 16px;
+--card-border-width  : var(--global-border-width);`;

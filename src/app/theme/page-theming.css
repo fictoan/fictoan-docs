@@ -1,3 +1,5 @@
-#page-layout {
-
+#page-theming {
+    .range-wrapper > *:not(:last-child) {
+        margin-bottom : 32px;
+    }
 }

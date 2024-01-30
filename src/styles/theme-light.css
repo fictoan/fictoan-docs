@@ -19,7 +19,7 @@
     --callout-error-border                    : var(--red-dark-40);
 
     /* CARD ///////////////////////////////////////////////////////////////// */
-    --card-bg                                 : var(--grey-dark-90);
+    --card-bg                                 : var(--white);
     --card-border                             : var(--slate-light-60);
     --card-border-radius                      : 16px;
     --card-border-width                       : var(--global-border-width);
@@ -37,23 +37,23 @@
     --hr-default-height                       : 1px;
 
     --hr-primary-height                       : 2px;
-    --hr-primary-bg                           : var(--grey-dark-20);
+    --hr-primary-bg                           : var(--grey-light-20);
 
     --hr-secondary-height                     : 2px;
-    --hr-secondary-bg                         : var(--grey-dark-60);
+    --hr-secondary-bg                         : var(--grey-light-60);
 
     --hr-tertiary-height                      : 1px;
-    --hr-tertiary-bg                          : var(--grey-dark-80);
+    --hr-tertiary-bg                          : var(--grey-light-80);
 
     /* INPUT FIELD ////////////////////////////////////////////////////////// */
-    --input-bg-default                        : var(--grey-dark-70);
-    --input-border-default                    : var(--grey-dark-40);
+    --input-bg-default                        : var(--grey-light-90);
+    --input-border-default                    : var(--grey-light-40);
     --input-border-radius-default             : var(--global-border-radius);
     --input-label-default                     : var(--paragraph-text-colour);
     --input-placeholder-default               : var(--red-light-60);
     --input-text-default                      : var(--slate-light-60);
 
-    --input-bg-focus                          : var(--grey-dark-50);
+    --input-bg-focus                          : var(--grey-light-70);
     --input-border-focus                      : var(--grey-light-20);
     --input-text-focus                        : var(--grey-light-80);
 
@@ -91,15 +91,15 @@
     --sidebar-header-bg                       : var(--grey-light-90);
     --sidebar-header-border-bottom            : var(--grey-light-70);
 
-    --sidebar-item-text-colour-default       : var(--grey-dark-20);
+    --sidebar-item-text-colour-default        : var(--grey-dark-20);
     --sidebar-item-icon-stroke-default        : var(--grey-light-40);
 
-    --sidebar-item-bg-hover                  : var(--blue-light-70);
-    --sidebar-item-icon-stroke-hover         : var(--blue-light-30);
+    --sidebar-item-bg-hover                   : var(--blue-light-70);
+    --sidebar-item-icon-stroke-hover          : var(--blue-light-30);
 
-    --sidebar-item-bg-active                 : var(--blue-light-80);
-    --sidebar-item-text-active               : var(--blue);
-    --sidebar-item-icon-stroke-active        : var(--blue);
+    --sidebar-item-bg-active                  : var(--blue-light-80);
+    --sidebar-item-text-active                : var(--blue);
+    --sidebar-item-icon-stroke-active         : var(--blue);
 
     --sidebar-item-icon-default-stroke-colour : var(--slate-dark-40);
 
@@ -134,8 +134,11 @@
     --heading-size-multiplier                 : 1.2;
     --heading-line-height                     : 1.2;
 
-    --code-inline-bg                          : var(--slate-dark-60);
-    --code-inline-text                        : var(--slate-light-40);
+    --code-inline-bg                          : var(--slate-light-70);
+    --code-inline-text                        : var(--slate-dark-50);
+
+    --code-block-font-size                    : 0.8rem;
+    --code-block-bg                           : var(--slate-light-90);
 
     /* SWITCH /////////////////////////////////////////////////////////////// */
     --switch-bg-default                       : var(--slate-dark-40);

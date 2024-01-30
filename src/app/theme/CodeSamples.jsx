@@ -66,19 +66,19 @@ export const sampleThemeGlobals = `--global-border-radius : 8px;
 
 
 // Code sample 01 //////////////////////////////////////////////////////////////
-export const sampleFictoanTheme = `/* BADGE //////////////////////////////////////////////////////////////// */
+export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////////////////////////// */
 :root {
     --badge-font          : var(--paragraph-font);
     --badge-border-radius : var(--global-border-radius);
     --badge-border-width  : var(--global-border-width);
 }
 
-/* BODY ///////////////////////////////////////////////////////////////// */
+/* BODY /////////////////////////////////////////////////////////// */
 :root {
     --body-bg : var(--white);
 }
 
-/* BOTTOM DRAWER //////////////////////////////////////////////////////// */
+/* BOTTOM DRAWER ////////////////////////////////////////////////// */
 :root {
     --drawer-bg              : var(--white);
     --drawer-border          : var(--slate-light-20);
@@ -91,7 +91,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --drawer-dismiss-button  : var(--slate-light-40);
 }
 
-/* BREADCRUMBS ////////////////////////////////////////////////////////// */
+/* BREADCRUMBS //////////////////////////////////////////////////// */
 :root {
     --breadcrumbs-wrapper-bg             : var(--transparent);
 
@@ -102,9 +102,9 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --breadcrumb-item-text-colour-active : var(--paragraph-text-colour);
 }
 
-/* BUTTON /////////////////////////////////////////////////////////////// */
+/* BUTTON ///////////////////////////////////////////////////////// */
 :root {
-    /* PRIMARY BUTTON =================================================== */
+    /* PRIMARY BUTTON ============================================= */
     --button-primary-default-bg               : var(--blue);
     --button-primary-default-text             : var(--white);
     --button-primary-default-border-colour    : var(--blue);
@@ -126,7 +126,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --button-primary-disabled-border-radius   : var(--global-border-radius);
 
 
-    /* SECONDARY BUTTON ================================================= */
+    /* SECONDARY BUTTON =========================================== */
     --button-secondary-default-bg             : var(--blue-light-50);
     --button-secondary-default-text           : var(--blue);
     --button-secondary-default-border-colour  : var(--blue-light-50);
@@ -148,7 +148,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --button-secondary-disabled-border-radius : var(--global-border-radius);
 
 
-    /* TERTIARY BUTTON ================================================== */
+    /* TERTIARY BUTTON ============================================ */
     --button-tertiary-default-bg              : var(--transparent);
     --button-tertiary-default-text            : var(--blue);
     --button-tertiary-default-border-colour   : var(--blue);
@@ -170,7 +170,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --button-tertiary-disabled-border-radius  : var(--global-border-radius);
 
 
-    /* ROUND BUTTON ===================================================== */
+    /* ROUND BUTTON =============================================== */
     --button-round-size-tiny                  : 24px;
     --button-round-size-small                 : 32px;
     --button-round-size-medium                : 64px;
@@ -178,7 +178,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --button-round-size-huge                  : 128px;
 }
 
-/* CALLOUT ////////////////////////////////////////////////////////////// */
+/* CALLOUT //////////////////////////////////////////////////////// */
 :root {
     --callout-border-radius  : var(--global-border-radius);
     --callout-border-width   : var(--nano);
@@ -196,7 +196,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --callout-error-border   : var(--red-dark-40);
 }
 
-/* CARD ///////////////////////////////////////////////////////////////// */
+/* CARD /////////////////////////////////////////////////////////// */
 :root {
     --card-bg            : var(--white);
     --card-border        : var(--slate);
@@ -204,7 +204,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --card-border-width  : var(--global-border-width);
 }
 
-/* CHECKBOX //////////////////////////////////////////////////////////// */
+/* CHECKBOX ////////////////////////////////////////////////////// */
 :root {
     --checkbox-square-border-radius : var(--global-border-radius);
 
@@ -216,12 +216,12 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --checkbox-tick                 : var(--white);
 }
 
-/* EXPANDABLE CONTENT /////////////////////////////////////////////////// */
+/* EXPANDABLE CONTENT ///////////////////////////////////////////// */
 :root {
     --expandable-content-chevron : var(--slate);
 }
 
-/* H-RULE /////////////////////////////////////////////////////////////// */
+/* H-RULE ///////////////////////////////////////////////////////// */
 :root {
     --hr-default-height   : 1px;
     --hr-default-bg       : var(--slate);
@@ -236,7 +236,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --hr-tertiary-bg      : var(--slate-light-20);
 }
 
-/* INPUT FIELD ////////////////////////////////////////////////////////// */
+/* INPUT FIELD //////////////////////////////////////////////////// */
 :root {
     --input-bg-default            : var(--white);
     --input-border-default        : var(--slate-light-40);
@@ -279,7 +279,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --input-icon-valid            : var(--green-dark-30);
 }
 
-/* NOTIFICATIONS //////////////////////////////////////////////////////// */
+/* NOTIFICATIONS ////////////////////////////////////////////////// */
 :root {
     --notification-item-border-radius           : var(--global-border-radius);
 
@@ -303,7 +303,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --notification-dismiss-button-border-radius : var(--slate-dark-90);
 }
 
-/* PROGRESS BAR ///////////////////////////////////////////////////////// */
+/* PROGRESS BAR /////////////////////////////////////////////////// */
 :root {
     --progress-bar-bg            : var(--slate-light-20);
     --progress-bar-fill          : var(--hue);
@@ -313,7 +313,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --progress-bar-height        : 8px;
 }
 
-/* RADIO BUTTON ///////////////////////////////////////////////////////// */
+/* RADIO BUTTON /////////////////////////////////////////////////// */
 :root {
     --radio-button-circle-bg-default  : var(--slate-light-60);
     --radio-button-circle-bg-hover    : var(--slate-light-40);
@@ -323,14 +323,14 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --radio-button-dot                : var(--white);
 }
 
-/* RANGE //////////////////////////////////////////////////////////// */
+/* RANGE ////////////////////////////////////////////////////// */
 :root {
     --range-slider-bg            : var(--blue-light-20);
     --range-slider-border-focus  : var(--blue);
     --range-slider-outline-focus : var(--blue);
 }
 
-/* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////// */
+/* SIDEBAR + CONTENT WRAPPER ////////////////////////////////////// */
 :root {
     --sidebar-bg                             : var(--white);
     --sidebar-width-default                  : 240px;
@@ -374,17 +374,17 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --sidebar-collapsed-item-border-radius   : var(--global-border-radius);
 }
 
-/* SELECT DROPDOWN ////////////////////////////////////////////////////// */
+/* SELECT DROPDOWN //////////////////////////////////////////////// */
 :root {
     --dropdown-chevron : var(--slate-light-40);
 }
 
-/* SPINNER ////////////////////////////////////////////////////////////// */
+/* SPINNER //////////////////////////////////////////////////////// */
 :root {
     --spinner-border : var(--hue);
 }
 
-/* TABLE //////////////////////////////////////////////////////////////// */
+/* TABLE ////////////////////////////////////////////////////////// */
 :root {
     --table-bg                           : var(--white);
     --table-border                       : var(--slate-light-10);
@@ -403,7 +403,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --table-pagination-nav-icon-bg-hover : var(--slate-dark-60);
 }
 
-/* TABS ///////////////////////////////////////////////////////////////// */
+/* TABS /////////////////////////////////////////////////////////// */
 :root {
     --tabs-bg                     : var(--transparent);
 
@@ -417,21 +417,21 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --tab-with-alert-badge-border : var(--red-dark-70);
 }
 
-/* TOAST //////////////////////////////////////////////////////////////// */
+/* TOAST ////////////////////////////////////////////////////////// */
 :root {
     --toast-bg            : var(--slate-light-10);
     --toast-text          : var(--black);
     --toast-border-radius : var(--global-border-radius);
 }
 
-/* TEXT ///////////////////////////////////////////////////////////////// */
+/* TEXT /////////////////////////////////////////////////////////// */
 :root {
-    /* GENERICS =================================================== */
+    /* GENERICS ============================================= */
     --font-sans-serif           : sans-serif;
     --font-serif                : serif;
     --font-mono                 : monospace;
 
-    /* PARAGRAPHS ================================================= */
+    /* PARAGRAPHS =========================================== */
     --paragraph-font            : var(--font-sans-serif);
     --paragraph-font-size       : 1rem;
     --paragraph-line-height     : 1.2;
@@ -441,7 +441,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --paragraph-subtext-colour  : var(--slate-dark-30);
     --paragraph-subtext-size    : 0.8rem;
 
-    /* HEADINGS =================================================== */
+    /* HEADINGS ============================================= */
     --heading-font              : var(--font-sans-serif);
     --heading-font-size         : 1.5rem;
     --heading-size-multiplier   : 1.2;
@@ -449,16 +449,16 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --heading-font-weight       : 700;
     --heading-text-colour       : var(--slate);
 
-    /* LINKS ====================================================== */
+    /* LINKS ================================================ */
     --link-font                 : var(--paragraph-font);
     --link-text-default         : var(--blue);
     --link-text-hover           : var(--blue);
 
-    /* SELECTION ================================================== */
+    /* SELECTION ============================================ */
     --text-selected             : var(--white);
     --text-bg-selected          : var(--hue);
 
-    /* CODE ======================================================= */
+    /* CODE ================================================= */
     --code-font                 : var(--font-mono);
     --code-inline-font-size     : 0.8rem;
     --code-inline-bg            : var(--blue-light-80);
@@ -471,13 +471,13 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --code-block-line-height    : 1.8;
     --code-block-border-radius  : var(--global-border-radius);
 
-    /*  KBD ======================================================= */
+    /*  KBD ================================================= */
     --kbd-font                  : var(--font-mono);
     --kbd-bg                    : var(--grey-light-10);
     --kbd-text                  : var(--grey);
     --kbd-border-radius         : var(--global-border-radius);
 
-    /* TOKENS ===================================================== */
+    /* TOKENS =============================================== */
     --token-tag                 : var(--violet);
     --token-atrule              : var(--teal);
     --token-attrName            : var(--orange);
@@ -515,7 +515,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --token-json-token-string   : var(--red);
 }
 
-/* SWITCH /////////////////////////////////////////////////////////////// */
+/* SWITCH ///////////////////////////////////////////////////////// */
 :root {
     --switch-bg-default         : var(--slate-light-60);
     --switch-bg-hover           : var(--slate-light-40);

@@ -21,8 +21,8 @@
     /* CARD ///////////////////////////////////////////////////////////////// */
     --card-bg                                 : var(--grey-dark-90);
     --card-border                             : var(--slate-dark-60);
-    --card-border-radius                      : 16px;
     --card-border-width                       : var(--global-border-width);
+    --card-border-radius                      : 8px;
 
     /* BREADCRUMBS ////////////////////////////////////////////////////////// */
     --breadcrumbs-wrapper-bg                  : var(--transparent);
@@ -96,6 +96,7 @@
     --sidebar-footer-bg                       : var(--grey-dark-90);
     --sidebar-footer-border-top               : var(--grey-dark-60);
 
+    /* TABLE //////////////////////////////////////////////////////////////// */
     --table-bg                                : var(--slate-dark-80);
     --table-border                            : var(--slate-dark-60);
     --table-font-family                       : var(--paragraph-font);
@@ -126,6 +127,8 @@
     --code-inline-bg                          : var(--slate-dark-60);
     --code-inline-text                        : var(--slate-light-40);
 
+    --code-block-font-size                    : 0.8rem;
+
     /* SWITCH /////////////////////////////////////////////////////////////// */
     --switch-bg-default                       : var(--slate-dark-40);
     --switch-bg-hover                         : var(--slate-dark-20);
@@ -136,6 +139,44 @@
     --switch-slider-bg-hover                  : var(--white);
     --switch-slider-bg-checked                : var(--white);
     --switch-slider-bg-disabled               : var(--slate-light-40);
+
+    /* TOKENS =============================================================== */
+    --token-atrule              : var(--teal);
+    --token-attrName            : var(--orange);
+    --token-attrValue           : var(--green);
+    --token-boolean             : var(--green);
+    --token-cdata               : var(--grey);
+    --token-className           : var(--red);
+    --token-comment             : var(--grey);
+    --token-constant            : var(--green);
+    --token-deleted             : var(--slate);
+    --token-delimiter           : var(--grey);
+    --token-doctype             : var(--grey);
+    --token-entity              : var(--green);
+    --token-function            : var(--orange);
+    --token-hexcode             : var(--green);
+    --token-inserted            : var(--green);
+    --token-italic              : var(--green);
+    --token-keyword             : var(--orange);
+    --token-namespace           : var(--green);
+    --token-number              : var(--green);
+    --token-operator            : var(--pistachio);
+    --token-plain               : var(--grey);
+    --token-prolog              : var(--grey);
+    --token-property            : var(--red);
+    --token-punctuation         : var(--grey);
+    --token-regex               : var(--green);
+    --token-selector            : var(--violet);
+    --token-string              : var(--crimson);
+    --token-symbol              : var(--green);
+    --token-tag                 : var(--violet-dark-60);
+    --token-url                 : var(--green);
+    --token-variable            : var(--orange);
+
+    --token-css-fallback        : var(--red);
+    --token-html-fallback       : var(--red);
+    --token-js-fallback         : var(--red);
+    --token-json-token-string   : var(--red);
 
     /* ////////////////////////////////////////////////////////////////////// */
     /* CUSTOM COMPONENTS */

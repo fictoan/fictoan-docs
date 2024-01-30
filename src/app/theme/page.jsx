@@ -25,10 +25,10 @@ import {
 
 const ThemingDocs = () => {
     return (
-        <article id="page-theming">
-            {/* //////////////////////////////////////////////////////////// */}
+        <Article id="page-theming">
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1" marginBottom="micro">Theming</Heading>
@@ -61,7 +61,7 @@ const ThemingDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="micro" />
+            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* GLOBALS ==================================================== */}
             <Row layout="grid" horizontalPadding="huge">
@@ -78,7 +78,7 @@ const ThemingDocs = () => {
 
 
 
-            {/* BADGE ====================================================== */}
+            {/* COMPONENTS ================================================= */}
             <Row layout="grid" horizontalPadding="huge">
                 <Portion>
                     <Text size="large" weight="700" textColour="white" marginBottom="nano">Components</Text>
@@ -86,7 +86,7 @@ const ThemingDocs = () => {
                     <SearchableCodeBlock source={sampleFictoanTheme} language="css" marginBottom="micro" />
                 </Portion>
             </Row>
-        </article>
+        </Article>
     );
 };
 

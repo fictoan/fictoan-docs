@@ -69,7 +69,7 @@ export const ComponentConfigurator = ({ component, properties }) => {
     }, [component]);
 
     const handleKindChange = (event) => {
-        setSelectedKind(event.target.value);
+        setSelectedKind(event.target.value !== "none" ? event.target.value : undefined);
     };
 
     const handlePaddingChange = (event) => {
@@ -114,31 +114,9 @@ export const ComponentConfigurator = ({ component, properties }) => {
         <Card id="component-configurator" padding="micro" shape="rounded">
             <Row className="demo-row" layout="grid" marginBottom="micro">
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
-                {/* CODE BLOCK */}
-                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
-                <Portion desktopSpan="half">
-                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">{[
-                        // Lol, hacky max pro
-                        `<${component}`,
-                        selectedKind && `    kind="${selectedKind}"`,
-                        selectedPadding && `    padding="${selectedPadding}"`,
-                        selectedShape && `    shape="${selectedShape}"`,
-                        selectedSize && `    size="${selectedSize}"`,
-                        selectedShadow && `    shadow="${selectedShadow}"`,
-                        selectedBgColour && `    bgColour="${selectedBgColour}"`,
-                        selectedBorderColour && `    borderColour="${selectedBorderColour}"`,
-                        selectedTextColour && `    textColour="${selectedTextColour}"`,
-                        `>`,
-                        `    ${label}`,
-                        `</${component}>`,
-                    ].filter(Boolean).join("\n")}
-                    </CodeBlock>
-                </Portion>
-
-                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/* RENDERED COMPONENT */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
-                <Portion desktopSpan="half">
+                <Portion>
                     <Element
                         className="rendered-component"
                         as="div" padding="tiny" shape="rounded" bgColour="slate-light-80"
@@ -174,45 +152,50 @@ export const ComponentConfigurator = ({ component, properties }) => {
                         </Component>
                     </Element>
                 </Portion>
-            </Row>
 
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* LABEL */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {properties.includes("label") ? (
-                <>
-                    <Row layout="grid" marginBottom="none">
-                        <Portion desktopSpan="one-fourth">
-                            <Text marginBottom="none">Label</Text>
-                        </Portion>
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
+                {/* CODE BLOCK */}
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="one-fourth">
+                    <Text weight="700">JSX</Text>
+                    {/* Lol, hacky max pro */}
+                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">{[
+                        `<${component}`,
+                        selectedKind && `    kind="${selectedKind}"`,
+                        selectedPadding && `    padding="${selectedPadding}"`,
+                        selectedShape && `    shape="${selectedShape}"`,
+                        selectedSize && `    size="${selectedSize}"`,
+                        selectedShadow && `    shadow="${selectedShadow}"`,
+                        selectedBgColour && `    bgColour="${selectedBgColour}"`,
+                        selectedBorderColour && `    borderColour="${selectedBorderColour}"`,
+                        selectedTextColour && `    textColour="${selectedTextColour}"`,
+                        `>`,
+                        `    ${label}`,
+                        `</${component}>`,
+                    ].filter(Boolean).join("\n")}
+                    </CodeBlock>
+                </Portion>
 
-                        <Portion desktopSpan="three-fourth">
+                <Portion desktopSpan="three-fourth">
+                    {/* LABEL ====================================================================================== */}
+                    {properties.includes("label") && (
+                        <>
                             <InputField
                                 type="text"
                                 placeholder="Label"
                                 onChange={(e) => setLabel(e.target.value)}
                             />
-                        </Portion>
-                    </Row>
 
-                    <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
-                </>
-            ) : null}
+                            <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+                        </>
+                    )}
 
-
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* PADDING */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {properties.includes("padding") ? (
-                <>
-                    <Row layout="grid" marginBottom="none">
-                        <Portion desktopSpan="one-fourth">
-                            <Text marginBottom="none">Padding</Text>
-                        </Portion>
-
-                        <Portion desktopSpan="three-fourth">
+                    {/* PADDING ==================================================================================== */}
+                    {properties.includes("padding") && (
+                        <>
                             <RadioTabGroup
                                 name="padding"
+                                label="Padding"
                                 options={[
                                     { id : "padding-opt-0", value : "none", label : "none" },
                                     { id : "padding-opt-1", value : "nano", label : "nano" },
@@ -226,18 +209,23 @@ export const ComponentConfigurator = ({ component, properties }) => {
                                 defaultValue={selectedPadding}
                                 onChange={handlePaddingChange}
                             />
-                        </Portion>
-                    </Row>
 
-                    <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
-                </>
-            ) : null}
+                            <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+                        </>
+                    )}
+                </Portion>
+            </Row>
+
+
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* PADDING */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
 
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* SIZE */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {properties.includes("size") ? (
+            {properties.includes("size") && (
                 <>
                     <Row layout="grid" marginBottom="none">
                         <Portion desktopSpan="one-fourth">
@@ -265,13 +253,13 @@ export const ComponentConfigurator = ({ component, properties }) => {
 
                     <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
                 </>
-            ) : null}
+            )}
 
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* KIND */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {properties.includes("kind") ? (
+            {properties.includes("kind") && (
                 <>
                     <Row layout="grid" marginBottom="none">
                         <Portion desktopSpan="one-fourth">
@@ -295,13 +283,13 @@ export const ComponentConfigurator = ({ component, properties }) => {
 
                     <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
                 </>
-            ) : null}
+            )}
 
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* SHAPE */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {properties.includes("shape") ? (
+            {properties.includes("shape") && (
                 <>
                     <Row layout="grid" marginBottom="none">
                         <Portion desktopSpan="one-fourth">
@@ -324,13 +312,13 @@ export const ComponentConfigurator = ({ component, properties }) => {
 
                     <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
                 </>
-            ) : null}
+            )}
 
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* SHADOW */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {properties.includes("shadow") ? (
+            {properties.includes("shadow") && (
                 <>
                     <Row layout="grid" marginBottom="none">
                         <Portion desktopSpan="one-fourth">
@@ -354,7 +342,7 @@ export const ComponentConfigurator = ({ component, properties }) => {
 
                     <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
                 </>
-            ) : null}
+            )}
 
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
