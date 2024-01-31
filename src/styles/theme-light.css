@@ -21,8 +21,8 @@
     /* CARD ///////////////////////////////////////////////////////////////// */
     --card-bg                                 : var(--white);
     --card-border                             : var(--slate-light-60);
-    --card-border-radius                      : 16px;
     --card-border-width                       : var(--global-border-width);
+    --card-border-radius                      : 16px;
 
     /* BREADCRUMBS ////////////////////////////////////////////////////////// */
     --breadcrumbs-wrapper-bg                  : var(--transparent);

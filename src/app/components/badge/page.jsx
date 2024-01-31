@@ -20,12 +20,13 @@ import { sampleBadge, sampleBadgeSibling, sampleBadgeTheming } from "./CodeSampl
 // DATA ========================================================================
 import { listOfBadgeProps } from "./propsList";
 import { badgeProps } from "./config";
+import { badgeVariablesStructure } from "./variablesStructure";
 
 
 const BadgeDocs = () => {
     return (
         <Article id="page-badge">
-            <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1" className="text-hue">Badge</Heading>
                 </Portion>
@@ -37,11 +38,12 @@ const BadgeDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="small" marginTop="medium" marginBottom="small">
+            <Row horizontalPadding="small" marginTop="medium" marginBottom="small">
                 <Portion>
                     <ComponentConfigurator
                         component={badgeProps.component}
                         properties={badgeProps.properties}
+                        variablesStructure={badgeVariablesStructure}
                     />
                 </Portion>
             </Row>
@@ -53,7 +55,7 @@ const BadgeDocs = () => {
             {/*  DEFAULT BADGE */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Section id="default">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4" marginBottom="tiny">Default badge</Heading>
 
@@ -99,7 +101,7 @@ const BadgeDocs = () => {
             {/*  THEMING  */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="theming">
-                <Row layout="grid" horizontalPadding="huge" marginBottom="small">
+                <Row horizontalPadding="huge" marginBottom="small">
                     <Portion>
                         <Heading as="h4" marginBottom="tiny">Theme</Heading>
 

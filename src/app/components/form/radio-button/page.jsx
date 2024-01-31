@@ -31,7 +31,7 @@ const HomePage = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1">Radio button</Heading>
                 </Portion>
@@ -41,7 +41,7 @@ const HomePage = () => {
             {/*  USAGE */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="cehckbox">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4" marginBottom="micro">Usage</Heading>
 
@@ -89,7 +89,7 @@ const HomePage = () => {
             {/*  STATES */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="states">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4" marginBottom="micro">States</Heading>
                     </Portion>
@@ -174,7 +174,7 @@ const HomePage = () => {
             {/*  THEMING  */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="theming">
-                <Row layout="grid" horizontalPadding="huge" marginBottom="small">
+                <Row horizontalPadding="huge" marginBottom="small">
                     <Portion>
                         <Heading as="h4" marginBottom="tiny">Theme</Heading>
 

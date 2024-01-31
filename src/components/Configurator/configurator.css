@@ -1,11 +1,20 @@
 #component-configurator {
-    .demo-row pre,
-    .rendered-component {
+    .demo-row pre {
         height : 300px;
     }
 
     .rendered-component {
+        position : sticky;
+        top      : 72px;
+        z-index  : 10;
+    }
+
+    .component-wrapper {
         display     : grid;
         place-items : center;
+    }
+
+    [data-radio-tab-group] label {
+        padding : 0 16px;
     }
 }

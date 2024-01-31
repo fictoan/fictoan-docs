@@ -77,7 +77,7 @@ const InputFieldDocs = () => {
             {/*  BASICS  */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="default">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4" marginBottom="nano">Default</Heading>
 
@@ -104,7 +104,7 @@ const InputFieldDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="props">
                 {/* NUMBER OF FIELDS ======================================= */}
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h5" marginBottom="nano">Number of fields</Heading>
 
@@ -124,7 +124,7 @@ const InputFieldDocs = () => {
 
 
                 {/* TYPE =================================================== */}
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h5" marginBottom="nano">Type</Heading>
 
@@ -157,7 +157,7 @@ const InputFieldDocs = () => {
 
 
                 {/* MASK =================================================== */}
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h5" marginBottom="nano">Mask</Heading>
 
@@ -176,7 +176,7 @@ const InputFieldDocs = () => {
 
 
                 {/* OTP ==================================================== */}
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h5" marginBottom="nano">OTP</Heading>
 
@@ -199,7 +199,7 @@ const InputFieldDocs = () => {
                 {/* THEMING */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
                 <Element as="section" id="theming">
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="small">
+                    <Row horizontalPadding="huge" marginBottom="small">
                         <Portion>
                             <Heading as="h4" marginBottom="tiny">Theme</Heading>
 

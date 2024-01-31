@@ -38,13 +38,13 @@ const ColourDocs = () => {
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="basics" marginTop="medium" marginBottom="small">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h1" className="text-hue">Colour</Heading>
                     </Portion>
                 </Row>
 
-                <Row layout="grid" horizontalPadding="huge" marginBottom="micro">
+                <Row horizontalPadding="huge" marginBottom="micro">
                     <Portion>
                         <Text marginBottom="micro">
                             Fictoan comes with 22 different named colours, apart
@@ -108,7 +108,7 @@ const ColourDocs = () => {
             {/* LIST OF COLOURS */}
             {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="colour-list">
-                <Row layout="grid" horizontalPadding="huge" marginBottom="micro">
+                <Row horizontalPadding="huge" marginBottom="micro">
                     <Portion>
                         <Heading as="h6" marginBottom="nano">List of colours</Heading>
                         <Text>Use any of these below values as variables with the above props.</Text>
@@ -116,7 +116,7 @@ const ColourDocs = () => {
                 </Row>
 
 
-                <Row layout="grid" horizontalPadding="small" gutters="small" marginBottom="tiny">
+                <Row horizontalPadding="small" gutters="small" marginBottom="tiny">
                     {listOfColours.map((color) => (
                         <Portion desktopSpan="one-fourth" key={color}>
                             <Element as="div" className="colour-column" marginBottom="micro">
@@ -158,7 +158,7 @@ const ColourDocs = () => {
                 </Row>
 
                 {/* BLACK WHITE TRANSPARENT ================================ */}
-                <Row layout="grid" horizontalPadding="tiny" gutters="none" marginBottom="tiny">
+                <Row horizontalPadding="tiny" gutters="none" marginBottom="tiny">
                 </Row>
             </Element>
         </Article>

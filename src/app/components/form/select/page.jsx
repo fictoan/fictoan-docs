@@ -32,7 +32,7 @@ const SelectDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1" marginBottom="micro">Select dropdown</Heading>
                 </Portion>
@@ -46,7 +46,7 @@ const SelectDocs = () => {
             {/* USAGE */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* DEFAULT ==================================================== */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="nano">Default</Heading>
 
@@ -79,7 +79,7 @@ const SelectDocs = () => {
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* LABEL ====================================================== */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="nano">Label</Heading>
 
@@ -104,7 +104,7 @@ const SelectDocs = () => {
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* OPTIONS ==================================================== */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="nano">Options</Heading>
 
@@ -207,7 +207,7 @@ const SelectDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* THEME */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Theme</Heading>
                     <Text marginBottom="micro">

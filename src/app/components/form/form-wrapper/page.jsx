@@ -37,7 +37,7 @@ const FormDocs = () => {
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/* INTRO */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h1" marginBottom="micro">Form wrapper</Heading>
 
@@ -52,13 +52,13 @@ const FormDocs = () => {
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/* USAGE */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4">Usage</Heading>
                     </Portion>
                 </Row>
 
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Text marginBottom="micro">
                             The <code>Form</code> component is used to encapsulate all the form elements with proper
@@ -74,7 +74,7 @@ const FormDocs = () => {
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/*   FORM UNIT  */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4" marginBottom="nano">Form unit</Heading>
                         <Text>
@@ -84,7 +84,7 @@ const FormDocs = () => {
                     </Portion>
                 </Row>
 
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Form spacing="huge">
                             <FormItemGroup>

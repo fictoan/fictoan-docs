@@ -54,10 +54,10 @@ export const InteractiveCardExample = () => {
     );
 
     return (
-        <Row layout="grid" horizontalPadding="large">
+        <Row horizontalPadding="large">
             <Portion>
                 <Card padding="micro" shape="rounded">
-                    <Row layout="grid" marginBottom="none">
+                    <Row marginBottom="none">
                         <Portion desktopSpan="one-fourth">
                             <Text marginBottom="none">Padding</Text>
                         </Portion>
@@ -82,7 +82,7 @@ export const InteractiveCardExample = () => {
 
                     <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
 
-                    <Row layout="grid" marginBottom="none">
+                    <Row marginBottom="none">
                         <Portion desktopSpan="one-fourth">
                             <Text marginBottom="none">Shape</Text>
                         </Portion>
@@ -102,7 +102,7 @@ export const InteractiveCardExample = () => {
 
                     <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
 
-                    <Row layout="grid" marginBottom="none">
+                    <Row marginBottom="none">
                         <Portion desktopSpan="one-fourth">
                             <Text marginBottom="none">Shadow</Text>
                         </Portion>
@@ -123,7 +123,7 @@ export const InteractiveCardExample = () => {
 
                     <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
 
-                    <Row layout="grid" marginBottom="none">
+                    <Row marginBottom="none">
                         <Portion desktopSpan="one-fourth">
                             <Text marginBottom="none">Colours</Text>
                         </Portion>

@@ -43,7 +43,7 @@ export const ComponentGrid = () => {
 
     return (
         <Div id="component-grid">
-            <Row layout="grid" horizontalPadding="medium">
+            <Row horizontalPadding="medium">
                 <Portion>
                     <Heading as="h6">Some components</Heading>
                 </Portion>

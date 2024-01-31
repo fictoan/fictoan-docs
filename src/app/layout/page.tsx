@@ -33,7 +33,7 @@ const LayoutDocs = () => {
             </head>
 
             <article id="page-layout">
-                <Row layout="grid" horizontalPadding="huge" marginTop="small" marginBottom="medium">
+                <Row horizontalPadding="huge" marginTop="small" marginBottom="medium">
                     <Portion>
                         <Heading as="h2" textColour="hue">Layout</Heading>
                     </Portion>
@@ -43,7 +43,7 @@ const LayoutDocs = () => {
                 {/*   BASICS  */}
                 {/* //////////////////////////////////////////////////////////// */}
                 <Element as="section" id="basics">
-                    <Row layout="grid" horizontalPadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h4" marginBottom="nano">The Row element</Heading>
 
@@ -78,7 +78,7 @@ const LayoutDocs = () => {
                 {/*   ADDING CONTENT  */}
                 {/* //////////////////////////////////////////////////////////// */}
                 <Element as="section" id="add-content">
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
                             <Heading as="h6" marginBottom="nano">Adding content</Heading>
 
@@ -97,7 +97,7 @@ const LayoutDocs = () => {
                         </Portion>
                     </Row>
 
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
                             <CodeBlock source={sampleRowAndPortion1} language="jsx" />
                         </Portion>
@@ -112,7 +112,7 @@ const LayoutDocs = () => {
                                 <Text textColour="green">●</Text>
                             </Element>
 
-                            <Row layout="grid" className="demo-row" marginBottom="none">
+                            <Row className="demo-row" marginBottom="none">
                                 <Portion desktopSpan="12" bgColour="sky-light-20">
                                     <Text size="small" fontStyle="monospace">
                                         &nbsp;&nbsp;&nbsp;&nbsp;&lt;Portion desktopSpan="12"&gt;
@@ -122,7 +122,7 @@ const LayoutDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <Row layout="grid" bgColour="slate-10" marginBottom="none" isFullHeight>
+                            <Row bgColour="slate-10" marginBottom="none" isFullHeight>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
                                     <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">1</Text>
                                 </Portion>
@@ -203,7 +203,7 @@ const LayoutDocs = () => {
 
 
                     {/* MULTIPLE PORTIONS ////////////////////////////////////////////////////////////////////////////// */}
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
                             <Heading as="h6" marginBottom="nano">Multiple Portions</Heading>
                             <Text>In the same way, you can add as many <code>Portion</code> elements inside
@@ -213,7 +213,7 @@ const LayoutDocs = () => {
                         </Portion>
                     </Row>
 
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
                             <CodeBlock source={sampleRowAndPortion3} language="jsx" />
                         </Portion>
@@ -228,7 +228,7 @@ const LayoutDocs = () => {
                                 <Text textColour="green">●</Text>
                             </Element>
 
-                            <Row layout="grid" className="demo-row" marginBottom="none">
+                            <Row className="demo-row" marginBottom="none">
                                 <Portion desktopSpan="12" bgColour="sky-light-20">
                                     <Text size="small" fontStyle="monospace" showOnlyOnDesktop
                                           showOnlyOnTabletLandscape>
@@ -340,7 +340,7 @@ const LayoutDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <Row layout="grid" bgColour="slate-10" marginBottom="none" isFullHeight>
+                            <Row bgColour="slate-10" marginBottom="none" isFullHeight>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -373,7 +373,7 @@ const LayoutDocs = () => {
 
 
                     {/* MULTIPLE ROWS ////////////////////////////////////////////////////////////////////////////////// */}
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
                             <Heading as="h6" marginBottom="nano">Multiple Rows</Heading>
                             <Text>While you can put infinite <code>Portion</code> elements inside a <code>Row</code>,
@@ -382,7 +382,7 @@ const LayoutDocs = () => {
                         </Portion>
                     </Row>
 
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
                             <CodeBlock source={sampleRowAndPortion4} language="jsx" />
                         </Portion>
@@ -398,10 +398,10 @@ const LayoutDocs = () => {
                             </Element>
 
 
-                            <Row layout="grid" className="demo-parent-row" bgColour="slate-10"
+                            <Row className="demo-parent-row" bgColour="slate-10"
                                  style={{ "height" : "80px" }}
                                  retainLayoutAlways>
-                                <Row layout="grid" className="demo-row" style={{ "top" : "12px" }} retainLayoutAlways>
+                                <Row className="demo-row" style={{ "top" : "12px" }} retainLayoutAlways>
                                     <Portion desktopSpan="12" bgColour="sky-light-20">
                                         <Text size="tiny" fontStyle="monospace" showOnlyOnDesktop
                                               showOnlyOnTabletLandscape>
@@ -451,10 +451,10 @@ const LayoutDocs = () => {
                             </Row>
 
 
-                            <Row layout="grid" className="demo-parent-row" bgColour="slate-10"
+                            <Row className="demo-parent-row" bgColour="slate-10"
                                  style={{ "height" : "80px" }}
                                  retainLayoutAlways>
-                                <Row layout="grid" className="demo-row" style={{ "top" : "12px" }} retainLayoutAlways>
+                                <Row className="demo-row" style={{ "top" : "12px" }} retainLayoutAlways>
                                     <Portion desktopSpan="8" bgColour="sky-light-20">
                                         <Text size="tiny" fontStyle="monospace" showOnlyOnDesktop
                                               showOnlyOnTabletLandscape>
@@ -516,10 +516,10 @@ const LayoutDocs = () => {
                             </Row>
 
 
-                            <Row layout="grid" className="demo-parent-row" bgColour="slate-10"
+                            <Row className="demo-parent-row" bgColour="slate-10"
                                  style={{ "height" : "80px" }}
                                  retainLayoutAlways>
-                                <Row layout="grid" className="demo-row" style={{ "top" : "12px" }} retainLayoutAlways>
+                                <Row className="demo-row" style={{ "top" : "12px" }} retainLayoutAlways>
                                     <Portion desktopSpan="5" bgColour="sky-light-20">
                                         <Text size="tiny" fontStyle="monospace" showOnlyOnDesktop
                                               showOnlyOnTabletLandscape>
@@ -587,7 +587,7 @@ const LayoutDocs = () => {
 
 
                     {/* NAMING PORTIONS //////////////////////////////////////////////////////////////////////////////// */}
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
                             <Heading as="h6" marginBottom="nano">Naming Portions</Heading>
                             <Text>The <code>desktopSpan</code> attribute takes any whole number
@@ -597,7 +597,7 @@ const LayoutDocs = () => {
                         </Portion>
                     </Row>
 
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion desktopSpan="half">
                             <CodeBlock source={sampleNamedPortions} language="jsx" />
                         </Portion>
@@ -748,7 +748,7 @@ const LayoutDocs = () => {
                 {/*  RESPONSIVENESS */}
                 {/* //////////////////////////////////////////////////////////// */}
                 <Element as="section" id="responsiveness">
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
                             <Heading as="h6" marginBottom="nano">Responsive behaviour</Heading>
                             <Text marginBottom="micro">
@@ -798,7 +798,7 @@ const LayoutDocs = () => {
                                 <Text textColour="green">●</Text>
                             </Element>
 
-                            <Row layout="grid" className="demo-row" style={{ "top" : "80px" }} marginBottom="none">
+                            <Row className="demo-row" style={{ "top" : "80px" }} marginBottom="none">
                                 <Portion desktopSpan="one-sixth" tabletLandscapeSpan="8" tabletPortraitSpan="half"
                                          mobileSpan="two-third"
                                          bgColour="sky-light-20">
@@ -813,7 +813,7 @@ const LayoutDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <Row layout="grid" bgColour="slate-10" marginBottom="none" isFullHeight retainLayoutAlways>
+                            <Row bgColour="slate-10" marginBottom="none" isFullHeight retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -844,7 +844,7 @@ const LayoutDocs = () => {
 
                     <HRule horizontalMargin="huge" kind="secondary" />
 
-                    <Row layout="grid" horizontalPadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h6">Turn off responsiveness</Heading>
                             <Text>You can also turn off the responsiveness across these breakpoints by using the
@@ -865,7 +865,7 @@ const LayoutDocs = () => {
                 {/*   CONTENT PADDING  */}
                 {/* //////////////////////////////////////////////////////////// */}
                 <Element as="section" id="content-padding">
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
                             <Heading as="h6">Padding your content</Heading>
                             <Text>Control the width of your content using the <code>horizontalPadding</code> prop for
@@ -873,7 +873,7 @@ const LayoutDocs = () => {
                         </Portion>
                     </Row>
 
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
                             <CodeBlock source={sampleContentPadding} language="jsx" />
                         </Portion>
@@ -889,7 +889,7 @@ const LayoutDocs = () => {
                             </Element>
 
                             <Text>&nbsp;&nbsp;&nbsp;&nbsp;No padding</Text>
-                            <Row layout="grid" bgColour="slate-10" style={{ "height" : "80px" }} retainLayoutAlways>
+                            <Row bgColour="slate-10" style={{ "height" : "80px" }} retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -917,7 +917,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="nano"</Element>
-                            <Row layout="grid" horizontalPadding="nano" bgColour="slate-10" style={{ "height" : "80px" }}
+                            <Row horizontalPadding="nano" bgColour="slate-10" style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -946,7 +946,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="micro"</Element>
-                            <Row layout="grid" horizontalPadding="micro" bgColour="slate-10" style={{ "height" : "80px" }}
+                            <Row horizontalPadding="micro" bgColour="slate-10" style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -975,7 +975,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="tiny"</Element>
-                            <Row layout="grid" horizontalPadding="tiny" bgColour="slate-10" style={{ "height" : "80px" }}
+                            <Row horizontalPadding="tiny" bgColour="slate-10" style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -1004,7 +1004,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="small"</Element>
-                            <Row layout="grid" horizontalPadding="small" bgColour="slate-10" style={{ "height" : "80px" }}
+                            <Row horizontalPadding="small" bgColour="slate-10" style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -1033,7 +1033,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="medium"</Element>
-                            <Row layout="grid" horizontalPadding="medium" bgColour="slate-10" style={{ "height" : "80px" }}
+                            <Row horizontalPadding="medium" bgColour="slate-10" style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -1062,7 +1062,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="large"</Element>
-                            <Row layout="grid" horizontalPadding="huge" bgColour="slate-10" style={{ "height" : "80px" }}
+                            <Row horizontalPadding="huge" bgColour="slate-10" style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -1091,7 +1091,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="huge"</Element>
-                            <Row layout="grid" horizontalPadding="huge" bgColour="slate-10" style={{ "height" : "80px" }}
+                            <Row horizontalPadding="huge" bgColour="slate-10" style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -1130,7 +1130,7 @@ const LayoutDocs = () => {
                 {/*   CONTENT PADDING  */}
                 {/* //////////////////////////////////////////////////////////// */}
                 <Element as="section" id="gutter-sizing">
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
                             <Heading as="h6">Gutters for the Row</Heading>
                             <Text>You can also change the gaps between the columns using the <code>gutters</code> props
@@ -1139,7 +1139,7 @@ const LayoutDocs = () => {
                         </Portion>
                     </Row>
 
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
                             <CodeBlock source={sampleGutters} language="jsx" />
                         </Portion>
@@ -1155,7 +1155,7 @@ const LayoutDocs = () => {
                             </Element>
 
                             <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="none"</Element>
-                            <Row layout="grid" horizontalPadding="medium" gutters="none" bgColour="slate-10"
+                            <Row horizontalPadding="medium" gutters="none" bgColour="slate-10"
                                  style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -1185,7 +1185,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="nano"</Element>
-                            <Row layout="grid" horizontalPadding="medium" gutters="nano" bgColour="slate-10"
+                            <Row horizontalPadding="medium" gutters="nano" bgColour="slate-10"
                                  style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -1215,7 +1215,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="micro"</Element>
-                            <Row layout="grid" horizontalPadding="medium" gutters="micro" bgColour="slate-10"
+                            <Row horizontalPadding="medium" gutters="micro" bgColour="slate-10"
                                  style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -1245,7 +1245,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="tiny"</Element>
-                            <Row layout="grid" horizontalPadding="medium" gutters="tiny" bgColour="slate-10"
+                            <Row horizontalPadding="medium" gutters="tiny" bgColour="slate-10"
                                  style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -1275,7 +1275,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="small"</Element>
-                            <Row layout="grid" horizontalPadding="medium" gutters="small" bgColour="slate-10"
+                            <Row horizontalPadding="medium" gutters="small" bgColour="slate-10"
                                  style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -1305,7 +1305,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="medium"</Element>
-                            <Row layout="grid" horizontalPadding="medium" gutters="medium" bgColour="slate-10"
+                            <Row horizontalPadding="medium" gutters="medium" bgColour="slate-10"
                                  style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -1335,7 +1335,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="large"</Element>
-                            <Row layout="grid" horizontalPadding="medium" gutters="large" bgColour="slate-10"
+                            <Row horizontalPadding="medium" gutters="large" bgColour="slate-10"
                                  style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />
@@ -1365,7 +1365,7 @@ const LayoutDocs = () => {
                             </Row>
 
                             <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="huge"</Element>
-                            <Row layout="grid" horizontalPadding="medium" gutters="huge" bgColour="slate-10"
+                            <Row horizontalPadding="medium" gutters="huge" bgColour="slate-10"
                                  style={{ "height" : "80px" }}
                                  retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro" />

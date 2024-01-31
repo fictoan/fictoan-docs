@@ -33,7 +33,7 @@ import { sampleBreadcrumb, sampleBreadcrumbTheme } from "./CodeSamples";
 const BreadcrumbsDocs = () => {
     return (
         <Article id="page-breadcrumbs">
-            <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1" className="text-hue">Breadcrumbs</Heading>
                 </Portion>
@@ -43,7 +43,7 @@ const BreadcrumbsDocs = () => {
             {/* DEFAULT */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="default">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4" marginBottom="micro">Usage</Heading>
 
@@ -82,7 +82,7 @@ const BreadcrumbsDocs = () => {
 
                 <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4" marginBottom="micro">Separator</Heading>
                         <Text>
@@ -105,7 +105,7 @@ const BreadcrumbsDocs = () => {
             {/*  THEMING  */}
             {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
             <Element as="section" id="theming">
-                <Row layout="grid" horizontalPadding="huge" marginBottom="small">
+                <Row horizontalPadding="huge" marginBottom="small">
                     <Portion>
                         <Heading as="h4" marginBottom="tiny">Theme</Heading>
 

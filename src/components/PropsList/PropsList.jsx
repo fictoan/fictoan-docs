@@ -9,7 +9,7 @@ import "./props-list.css";
 export const PropsList = ({ propData }) => {
     return (
         <>
-            <Row layout="grid" gutters="huge" horizontalPadding="large" marginBottom="none">
+            <Row gutters="huge" horizontalPadding="large" marginBottom="none">
                 <Portion>
                     <Heading as="h6">{propData.elementName}</Heading>
                 </Portion>

@@ -37,7 +37,7 @@ const ProgressBarDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1" marginBottom="micro">Progress bar</Heading>
                 </Portion>
@@ -51,7 +51,7 @@ const ProgressBarDocs = () => {
             {/* USAGE */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* DEFAULT ==================================================== */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="nano">Default</Heading>
 
@@ -75,7 +75,7 @@ const ProgressBarDocs = () => {
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* MAX AND VALUE ============================================== */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="nano">Max and value</Heading>
 
@@ -110,7 +110,7 @@ const ProgressBarDocs = () => {
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* LABELS ===================================================== */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="nano">Labels and units</Heading>
 
@@ -135,7 +135,7 @@ const ProgressBarDocs = () => {
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* LABELS ===================================================== */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="nano">Height</Heading>
 
@@ -153,7 +153,7 @@ const ProgressBarDocs = () => {
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* SHAPE ====================================================== */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="nano">Shape</Heading>
 
@@ -175,7 +175,7 @@ const ProgressBarDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* THEME */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="tiny">Theme</Heading>
 

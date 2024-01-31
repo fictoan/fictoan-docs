@@ -63,7 +63,7 @@ const GettingStarted = () => {
 
     return (
         <article id="page-getting-started">
-            <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1" className="text-hue">Getting started</Heading>
                 </Portion>
@@ -73,7 +73,7 @@ const GettingStarted = () => {
             {/* FIRST STEPS */}
             {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="first-steps">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4">First steps</Heading>
                     </Portion>
@@ -226,7 +226,7 @@ const GettingStarted = () => {
             {/* USAGE */}
             {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="patterns">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4">Using components</Heading>
                     </Portion>
@@ -286,7 +286,7 @@ const GettingStarted = () => {
 
                 <InteractiveCardExample />
 
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Text marginBottom="micro">
                             It’s that easy. The markup is clean, easy to understand, and no complex nomenclature or
@@ -305,7 +305,7 @@ const GettingStarted = () => {
                 <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
                 {/*   ATTRIBUTE VALUES  //////////////////////////////////////////////////////////////////////////  */}
-                <Row layout="grid" id="attributes" horizontalPadding="huge">
+                <Row id="attributes" horizontalPadding="huge">
                     <Portion>
                         <Text weight="700" size="large" marginBotto textColour="white" m="nano">Attribute values</Text>
 
@@ -327,7 +327,7 @@ const GettingStarted = () => {
                     </Portion>
 
                     <Portion>
-                        <Row layout="grid" marginBottom="none" retainLayoutAlways>
+                        <Row marginBottom="none" retainLayoutAlways>
                             <Portion desktopSpan="half">
                                 <Text weight="700" size="large" marginBottom="none">Prop</Text>
 

@@ -27,7 +27,7 @@ const Manifesto = () => {
     return (
         <Article id="page-manifesto">
             {/* INTRO ////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="large" marginTop="medium" marginBottom="medium">
+            <Row horizontalPadding="large" marginTop="medium" marginBottom="medium">
                 {/* PROBLEM ================================================ */}
                 <Portion>
                     <Text weight="700" marginBottom="small">MANIFESTO</Text>
@@ -66,7 +66,7 @@ const Manifesto = () => {
             </Row>
 
             {/* IDEOLOGY /////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="large" marginTop="medium" marginBottom="medium">
+            <Row horizontalPadding="large" marginTop="medium" marginBottom="medium">
                 <Portion desktopSpan="half">
                     <Heading as="h1" weight="400" marginBottom="micro">
                         Pixel perfection is a designer’s job
@@ -89,7 +89,7 @@ const Manifesto = () => {
             <HRule kind="secondary" horizontalMargin="large" marginTop="medium" marginBottom="medium" />
 
             {/* APPROACH /////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="small">
+            <Row horizontalPadding="small">
                 <Portion desktopSpan="one-sixth" />
 
                 <Portion desktopSpan="two-third">
@@ -114,7 +114,7 @@ const Manifesto = () => {
                 </Portion>
             </Row>
 
-            <Row layout="grid" horizontalPadding="small" marginBottom="medium">
+            <Row horizontalPadding="small" marginBottom="medium">
                 <Portion desktopSpan="one-sixth" />
 
                 <Portion desktopSpan="two-third">
@@ -146,7 +146,7 @@ const Manifesto = () => {
             </Row>
 
             {/* APPROACH /////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="small">
+            <Row horizontalPadding="small">
                 <Portion desktopSpan="one-sixth" />
 
                 <Portion desktopSpan="two-third">
@@ -158,7 +158,7 @@ const Manifesto = () => {
                 </Portion>
             </Row>
 
-            <Row layout="grid" horizontalPadding="small" marginBottom="medium">
+            <Row horizontalPadding="small" marginBottom="medium">
                 <Portion desktopSpan="one-sixth" />
 
                 <Portion desktopSpan="two-third">

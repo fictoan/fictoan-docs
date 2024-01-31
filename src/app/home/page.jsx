@@ -9,7 +9,7 @@ import "./page-home.css";
 const HomePage = () => {
     return (
         <Article id="page-home">
-            <Row layout="grid" marginTop="medium" horizontalPadding="medium">
+            <Row marginTop="medium" horizontalPadding="medium">
                 <Portion desktopSpan="two-third">
                     <Heading as="h1">Hello!</Heading>
                     <Heading as="h6" weight="400">Please login to continue</Heading>

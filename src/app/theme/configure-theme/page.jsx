@@ -76,13 +76,12 @@ const ThemingDocs = () => {
         document.documentElement.style.setProperty(varName, `${newValue}${cssValues[varName].unit}`);
     };
 
-
     return (
         <Article id="page-theming">
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1" marginBottom="micro">Configure theme</Heading>
                     <Text size="large">
@@ -100,8 +99,10 @@ const ThemingDocs = () => {
                         Globals
                     </Button>
 
-                    <Button kind={activeTab === "text" ? "primary" : "tertiary"} size="small"
-                            onClick={() => setActiveTab("text")}>
+                    <Button
+                        kind={activeTab === "text" ? "primary" : "tertiary"} size="small"
+                        onClick={() => setActiveTab("text")}
+                    >
                         Text
                     </Button>
                 </Portion>
@@ -112,10 +113,10 @@ const ThemingDocs = () => {
             {/* GLOBALS */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {activeTab === "globals" && (
-                <Row layout="grid" horizontalPadding="small">
+                <Row horizontalPadding="small">
                     <Portion desktopSpan="10">
                         <Card padding="micro" shape="rounded" marginBottom="micro">
-                            <Row layout="grid" marginBottom="none">
+                            <Row marginBottom="none">
                                 <Portion>
                                     <Text size="large" weight="700">Global variables</Text>
                                 </Portion>
@@ -145,7 +146,7 @@ const ThemingDocs = () => {
 
                     <Portion desktopSpan="14">
                         <Card padding="micro" shape="rounded">
-                            <Row layout="grid" marginBottom="none">
+                            <Row marginBottom="none">
                                 <Portion desktopSpan="one-fourth">
                                     <Button kind="primary" isFullWidth>Primary button</Button>
                                 </Portion>
@@ -179,10 +180,10 @@ const ThemingDocs = () => {
             {/* TEXT */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {activeTab === "text" && (
-                <Row layout="grid" horizontalPadding="small">
+                <Row horizontalPadding="small">
                     <Portion desktopSpan="10">
                         <Card padding="micro" shape="rounded" marginBottom="micro">
-                            <Row layout="grid" marginBottom="none">
+                            <Row marginBottom="none">
                                 <Portion>
                                     <Text size="large" weight="700">Text</Text>
                                 </Portion>
@@ -212,7 +213,7 @@ const ThemingDocs = () => {
 
                     <Portion desktopSpan="14">
                         <Card padding="micro" shape="rounded">
-                            <Row layout="grid" marginBottom="none">
+                            <Row marginBottom="none">
                                 <Portion>
                                     <Heading as="h1" marginBottom="nano">Heading 1</Heading>
                                     <Heading as="h2" marginBottom="nano">Heading 2</Heading>

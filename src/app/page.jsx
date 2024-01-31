@@ -95,7 +95,7 @@ const Home = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* HERO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="medium" marginTop="tiny" marginBottom="small">
+            <Row horizontalPadding="medium" marginTop="tiny" marginBottom="small">
                 <Portion>
 
                 </Portion>
@@ -106,7 +106,7 @@ const Home = () => {
                         as="h2" textColour="indigo-light-20"
                         marginBottom="nano"
                     >
-                        Designers, ditch {randomUITool}.
+                        Ship in half the time.
                     </Heading>
 
                     <Heading as="h4" weight="400" marginBottom="micro">
@@ -122,7 +122,7 @@ const Home = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* BULLET POINTS */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="medium" gutters="large" marginBottom="tiny">
+            <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
                 <Portion desktopSpan="one-third" />
 
                 <Portion desktopSpan="one-third">
@@ -150,7 +150,7 @@ const Home = () => {
 
             <HRule kind="tertiary" horizontalMargin="medium" verticalMargin="tiny" />
 
-            <Row layout="grid" horizontalPadding="medium" gutters="large" marginBottom="tiny">
+            <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
                 <Portion desktopSpan="one-third">
                     <Heading as="h4" weight="400" marginBottom="nano">
                         It’s for devs too
@@ -182,11 +182,11 @@ const Home = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* MANIFESTO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="medium" verticalMargin="large">
+            <Row horizontalPadding="medium" verticalMargin="large">
                 <Portion>
                     <Div className="manifesto-card" shadow="soft">
                         <Div className="manifesto-card-content">
-                            <Row layout="grid" marginBottom="none">
+                            <Row marginBottom="none">
                                 <Portion desktopSpan="half">
                                     <Heading as="h5" weight="400" textColour="blue">
                                         We want to blur the lines between designers and developers.

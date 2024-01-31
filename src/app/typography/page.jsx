@@ -37,7 +37,7 @@ const TypographyDocs = () => {
             {/* //////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1" className="text-hue">Typography</Heading>
                 </Portion>
@@ -53,7 +53,7 @@ const TypographyDocs = () => {
             {/* BASICS */}
             {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="basics">
-                <Row layout="grid" horizontalPadding="huge" className="margin-top-medium">
+                <Row horizontalPadding="huge" className="margin-top-medium">
                     <Portion>
                         <Heading as="h4" marginBottom="nano">Basics</Heading>
                         <Text>
@@ -89,7 +89,7 @@ const TypographyDocs = () => {
             {/* HEADINGS */}
             {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="headings">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4" marginBottom="nano">Heading</Heading>
                         <Text>The <code>Heading</code> element is common across all six sizes, and is invoked with
@@ -108,7 +108,7 @@ const TypographyDocs = () => {
             {/* TEXT */}
             {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="text">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4" marginBottom="nano">Text</Heading>
                         <Text>The <code>Text</code> element pretty straight-forward&mdash;</Text>
@@ -126,7 +126,7 @@ const TypographyDocs = () => {
             {/* TEXT */}
             {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="text">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4" marginBottom="nano">Colouring</Heading>
                         <Text marginBottom="micro">
@@ -163,7 +163,7 @@ const TypographyDocs = () => {
             {/* GLOBAL STYLING */}
             {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="global-styling">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4" marginBottom="nano">Global variables</Heading>
                     </Portion>
@@ -209,7 +209,7 @@ const TypographyDocs = () => {
             {/* GLOBAL STYLING */}
             {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="sizing">
-                <Row layout="grid" horizontalPadding="huge" marginBottom="micro">
+                <Row horizontalPadding="huge" marginBottom="micro">
                     <Portion>
                         <Heading as="h4" marginBottom="micro">Sizing</Heading>
                     </Portion>
@@ -234,7 +234,7 @@ const TypographyDocs = () => {
 
                 <HRule horizontalMargin="huge" kind="secondary" marginTop="micro" marginBottom="micro" />
 
-                <Row layout="grid" horizontalPadding="huge" marginBottom-micro>
+                <Row horizontalPadding="huge" marginBottom-micro>
                     <Portion>
                         <Heading as="h6" marginBottom="nano">Text sizing</Heading>
                     </Portion>

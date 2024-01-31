@@ -37,7 +37,7 @@ import { buttonProps } from "./config";
 const ButtonDocs = () => {
     return (
         <Article id="page-button">
-            <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1">Button</Heading>
                 </Portion>
@@ -53,7 +53,7 @@ const ButtonDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="small" marginTop="medium" marginBottom="small">
+            <Row horizontalPadding="small" marginTop="medium" marginBottom="small">
                 <Portion>
                     <ComponentConfigurator
                         component={buttonProps.component}
@@ -66,7 +66,7 @@ const ButtonDocs = () => {
             {/*  DEFAULT  */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="default">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4" marginBottom="tiny">Default button</Heading>
 
@@ -90,7 +90,7 @@ const ButtonDocs = () => {
             <HRule horizontalMargin="huge" verticalMargin="small" />
 
             {/*  KIND  */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Kind</Heading>
 
@@ -118,7 +118,7 @@ const ButtonDocs = () => {
 
 
             {/*  SIZE  */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Size</Heading>
 
@@ -146,7 +146,7 @@ const ButtonDocs = () => {
 
 
             {/*  SHAPE  */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Shape</Heading>
 
@@ -174,7 +174,7 @@ const ButtonDocs = () => {
 
 
             {/*  CUSTOM STYLING  */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Custom BG, border and text colours</Heading>
 
@@ -226,7 +226,7 @@ const ButtonDocs = () => {
 
 
             {/*  SHADOW  */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Shadow</Heading>
 
@@ -248,7 +248,7 @@ const ButtonDocs = () => {
 
 
             {/*  IS LOADING  */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Loading states</Heading>
 
@@ -278,7 +278,7 @@ const ButtonDocs = () => {
             {/* THEME */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="theming">
-                <Row layout="grid" horizontalPadding="huge" marginBottom="small">
+                <Row horizontalPadding="huge" marginBottom="small">
                     <Portion>
                         <Heading as="h6" marginBottom="tiny">Theme</Heading>
 

@@ -25,7 +25,7 @@ const BaseElementDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge" marginTop="medium">
+            <Row horizontalPadding="huge" marginTop="medium">
                 <Portion>
                     <Heading as="h1" marginBottom="micro">Base element</Heading>
                     <Text size="large">
@@ -42,7 +42,7 @@ const BaseElementDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* USAGE */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="nano">Usage</Heading>
 

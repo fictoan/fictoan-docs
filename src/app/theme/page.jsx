@@ -29,7 +29,7 @@ const ThemingDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1" marginBottom="micro">Theming</Heading>
                     <Text size="large">
@@ -40,7 +40,7 @@ const ThemingDocs = () => {
             </Row>
 
             {/* GLOBALS ==================================================== */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="nano">Usage</Heading>
                     <Text marginBottom="micro">
@@ -64,7 +64,7 @@ const ThemingDocs = () => {
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* GLOBALS ==================================================== */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Variables</Heading>
 
@@ -79,7 +79,7 @@ const ThemingDocs = () => {
 
 
             {/* COMPONENTS ================================================= */}
-            <Row layout="grid" horizontalPadding="huge">
+            <Row horizontalPadding="huge">
                 <Portion>
                     <Text size="large" weight="700" textColour="white" marginBottom="nano">Components</Text>
 

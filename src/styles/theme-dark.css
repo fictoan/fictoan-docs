@@ -22,7 +22,7 @@
     --card-bg                                 : var(--grey-dark-90);
     --card-border                             : var(--slate-dark-60);
     --card-border-width                       : var(--global-border-width);
-    --card-border-radius                      : 8px;
+    --card-border-radius                      : 16px;
 
     /* BREADCRUMBS ////////////////////////////////////////////////////////// */
     --breadcrumbs-wrapper-bg                  : var(--transparent);
@@ -85,6 +85,9 @@
     --input-icon-default                      : var(--slate-light-40);
     --input-icon-focus                        : var(--hue);
     --input-icon-valid                        : var(--green-dark-30);
+
+    /* RADIO BUTTON ///////////////////////////////////////////////////////// */
+    --radio-tabs-height                      : 32px;
 
     /* SIDEBAR ////////////////////////////////////////////////////////////// */
     --sidebar-bg                              : var(--grey-dark-90);

@@ -62,7 +62,7 @@ const InputFieldDocs = () => {
             {/* INTRO */}
             {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="intro" marginTop="medium" marginBottom="small">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h1" className="text-hue">Input field</Heading>
                     </Portion>
@@ -77,7 +77,7 @@ const InputFieldDocs = () => {
             {/*  BASICS  */}
             {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="default">
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h4" marginBottom="nano">Default</Heading>
 
@@ -112,7 +112,7 @@ const InputFieldDocs = () => {
             {/* //////////////////////////////////////////////////////////// */}
             <Element as="section" id="props">
                 {/* LABEL and PLACEHOLDER ================================== */}
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h5" marginBottom="nano">Label and placeholder</Heading>
 
@@ -141,7 +141,7 @@ const InputFieldDocs = () => {
 
 
                 {/* HELP TEXT ============================================== */}
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h5" marginBottom="nano">Help text</Heading>
 
@@ -165,7 +165,7 @@ const InputFieldDocs = () => {
 
 
                 {/* REQUIRED =============================================== */}
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h5" marginBottom="nano">Required</Heading>
 
@@ -193,7 +193,7 @@ const InputFieldDocs = () => {
 
 
                 {/* VALIDATION ============================================= */}
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h5" marginBottom="nano">Validation</Heading>
 
@@ -272,7 +272,7 @@ const InputFieldDocs = () => {
                 {/* THEMING */}
                 {/* //////////////////////////////////////////////////////////// */}
                 <Element as="section" id="theming">
-                    <Row layout="grid" horizontalPadding="huge" marginBottom="small">
+                    <Row horizontalPadding="huge" marginBottom="small">
                         <Portion>
                             <Heading as="h4" marginBottom="tiny">Theme</Heading>
 

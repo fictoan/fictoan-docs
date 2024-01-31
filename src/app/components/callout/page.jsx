@@ -19,7 +19,7 @@ const CalloutDocs = () => {
             </head>
 
             <article id="page-callout">
-                <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h4" className="text-hue">Callout</Heading>
                     </Portion>
@@ -30,7 +30,7 @@ const CalloutDocs = () => {
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/*  CONFIGURATOR */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-                <Row layout="grid" horizontalPadding="small" marginTop="medium" marginBottom="small">
+                <Row horizontalPadding="small" marginTop="medium" marginBottom="small">
                     <Portion>
                         <ComponentConfigurator
                             component={calloutProps.component}
@@ -43,7 +43,7 @@ const CalloutDocs = () => {
                 {/* DEFAULT */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 <Element as="section" id="default">
-                    <Row layout="grid" horizontalPadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h6" marginBottom="tiny">Default</Heading>
                             <Row>
@@ -106,7 +106,7 @@ const CalloutDocs = () => {
                 <Element as="section" id="item-props">
 
                     <Element as="section" id="theming">
-                        <Row layout="grid" horizontalPadding="huge" marginBottom="small">
+                        <Row horizontalPadding="huge" marginBottom="small">
                             <Portion>
                                 <Heading as="h6" marginBottom="tiny">Theming</Heading>
                                 <CodeBlock source={sampleCalloutTheme} language="css" />

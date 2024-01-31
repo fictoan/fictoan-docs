@@ -30,13 +30,13 @@ const DrawerDocs = () => {
             </head>
 
             <article id="page-drawer">
-                <Row layout="grid" horizontalPadding="huge" marginTop="medium" marginBottom="small">
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
                         <Heading as="h2" className="text-hue">Info panel</Heading>
                     </Portion>
                 </Row>
 
-                <Row layout="grid" horizontalPadding="huge">
+                <Row horizontalPadding="huge">
                     <Portion>
                         <Heading as="h3" marginBottom="micro">Props</Heading>
 
@@ -123,7 +123,7 @@ const DrawerDocs = () => {
                 {/*  DEFAULT  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="default">
-                    <Row layout="grid" horizontalPadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3" marginBottom="tiny">Default info panel</Heading>
 
@@ -167,7 +167,7 @@ const DrawerDocs = () => {
                 {/*  PROPS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 <Element as="section" id="props">
-                    <Row layout="grid" horizontalPadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h3">Props</Heading>
                         </Portion>
@@ -176,7 +176,7 @@ const DrawerDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  KIND  */}
                     {/*  =============================================================================================  */}
-                    <Row layout="grid" horizontalPadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Width</Heading>
 
@@ -277,7 +277,7 @@ const DrawerDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  IS OPEN  */}
                     {/*  =============================================================================================  */}
-                    <Row layout="grid" horizontalPadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Open and close</Heading>
 
@@ -296,7 +296,7 @@ const DrawerDocs = () => {
                     {/*  =============================================================================================  */}
                     {/*  CALLBACK  */}
                     {/*  =============================================================================================  */}
-                    <Row layout="grid" horizontalPadding="huge">
+                    <Row horizontalPadding="huge">
                         <Portion>
                             <Heading as="h5" marginBottom="nano">Callback for closing</Heading>
 
@@ -316,7 +316,7 @@ const DrawerDocs = () => {
                     {/*  THEMING  */}
                     {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
                     <Element as="section" id="theming">
-                        <Row layout="grid" horizontalPadding="huge" marginBottom="small">
+                        <Row horizontalPadding="huge" marginBottom="small">
                             <Portion>
                                 <Heading as="h3" marginBottom="tiny">Theming</Heading>
 
