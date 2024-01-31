@@ -1,7 +1,7 @@
 "use client";
 
 // EXTERNAL DEPS ///////////////////////////////////////////////////////////////
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 
 // INTERNAL DEPS ///////////////////////////////////////////////////////////////
@@ -14,6 +14,9 @@ import {
 import { Sidebar } from "../components/Sidebar/Sidebar";
 import { SiteHeader } from "../components/Header/Header";
 
+// CONTEXTS //////////////////////////////////////////////////////////////////
+import { CustomThemeContext } from "./contexts/theme";
+
 // STYLES //////////////////////////////////////////////////////////////////////
 import "../styles/globals.css";
 
@@ -21,9 +24,9 @@ import "../styles/globals.css";
 
 
 export default function RootLayout({ children }) {
-
     const [sidebarState, setSidebarState] = useState("");
     const [showSidebarOnMobile, setShowSidebarOnMobile] = useState(false)
+    const [customTheme, setCustomTheme] = useState({});
 
     const [currentTheme, setCurrentTheme] = useState(typeof window !== "undefined" ? localStorage.getItem("theme") || "light" : "light");
 
@@ -46,20 +49,22 @@ export default function RootLayout({ children }) {
         </head>
 
         <body>
-        <ThemeProvider currentTheme={currentTheme === "theme-light" ? "theme-light" : "theme-dark"}>
-            <Sidebar
-                sidebarState={sidebarState}
-                setSidebarState={setSidebarState}
-                toggleTheme={toggleTheme}
-                showSidebarOnMobile={showSidebarOnMobile}
-                setShowSidebarOnMobile={setShowSidebarOnMobile}
-            />
+            <CustomThemeContext.Provider value={{ customTheme, setCustomTheme }}>
+                <ThemeProvider theme={customTheme} currentTheme={currentTheme === "theme-light" ? "theme-light" : "theme-dark"}>
+                    <Sidebar
+                        sidebarState={sidebarState}
+                        setSidebarState={setSidebarState}
+                        toggleTheme={toggleTheme}
+                        showSidebarOnMobile={showSidebarOnMobile}
+                        setShowSidebarOnMobile={setShowSidebarOnMobile}
+                    />
 
-            <ContentWrapper>
-                <SiteHeader toggleSidebarOnMobile={toggleSidebarOnMobile} />
-                {children}
-            </ContentWrapper>
-        </ThemeProvider>
+                    <ContentWrapper>
+                        <SiteHeader toggleSidebarOnMobile={toggleSidebarOnMobile} />
+                        {children}
+                    </ContentWrapper>
+                </ThemeProvider>
+            </CustomThemeContext.Provider>
         </body>
         </html>
     );

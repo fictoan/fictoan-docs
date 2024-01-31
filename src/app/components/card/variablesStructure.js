@@ -1,18 +1,18 @@
 export const cardVariablesStructure = {
-    "--card-bg"            : {
+    "card-bg"            : {
         type         : "reference",
         defaultValue : "--white",
     },
-    "--card-border"        : {
+    "card-border"        : {
         type         : "reference",
         defaultValue : "--slate-light-60",
     },
-    "--card-border-width"  : {
+    "card-border-width"  : {
         type         : "value-unit",
         defaultValue : 1,
         unit         : "px",
     },
-    "--card-border-radius" : {
+    "card-border-radius" : {
         type         : "value-unit",
         defaultValue : 8,
         unit         : "px",

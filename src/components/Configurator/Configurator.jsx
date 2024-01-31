@@ -1,7 +1,7 @@
 "use client";
 
 // EXTERNAL DEPS ===============================================================
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useContext, useState } from "react";
 
 // INTERNAL DEPS ===============================================================
 import {
@@ -12,7 +12,6 @@ import {
     Portion,
     Row,
     Select,
-    SelectWithSearch,
     RadioTabGroup,
     Text,
     Badge,
@@ -31,7 +30,8 @@ import { generateShades, listOfColours } from "../../utils/colours";
 // STYLES ======================================================================
 import "./configurator.css";
 
-// CODE SNIPPETS ===============================================================
+// CONTEXTS ===============================================================
+import { CustomThemeContext } from "../../app/contexts/theme"
 
 // DATA ========================================================================
 
@@ -46,6 +46,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
     const [selectedBgColour, setSelectedBgColour] = useState(null);
     const [selectedBorderColour, setSelectedBorderColour] = useState(undefined);
     const [selectedTextColour, setSelectedTextColour] = useState("");
+    const {customTheme, setCustomTheme} = useContext(CustomThemeContext);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // COMPONENT LIST
@@ -224,7 +225,11 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
             default:
                 cssValue = newValue; // For simple values
         }
-        document.documentElement.style.setProperty(varName, cssValue);
+        setCustomTheme(prevValues => ({
+            ...prevValues,
+            [varName] : cssValue,
+        }))
+        // document.documentElement.style.setProperty(varName, cssValue);
     };
 
     // STEP 4 — Hope for the best.
