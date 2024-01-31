@@ -141,14 +141,31 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
         const root = document.documentElement;
         const styles = getComputedStyle(root);
 
-        return Object.entries(variablesStructure).reduce((acc, [key, value]) => {
+        return Object.entries(variablesStructure).reduce((acc, [key, varStruct]) => {
+            const computedValue = styles.getPropertyValue(key).trim();
+            let value, unit;
+
+            if (varStruct.type === "value-unit") {
+                // Extract the numeric part of the computed value if it exists, otherwise use default value
+                const match = computedValue.match(/^(\d+(?:\.\d+)?)/);
+                value = match ? parseFloat(match[1]) : varStruct.defaultValue;
+                unit = varStruct.unit;
+            } else {
+                // For non value-unit types
+                value = computedValue || varStruct.defaultValue;
+                unit = '';
+            }
+
             acc[key] = {
-                ...value,
-                value : styles.getPropertyValue(key).trim() || value.defaultValue,
+                ...varStruct,
+                value: value,
+                unit: unit
             };
+
             return acc;
         }, {});
     };
+
 
     // This is just for doing column-indent alignment in the CSS code block, heh
     const findLongestVarNameLength = (variables) => {
@@ -482,37 +499,47 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                         {/* CONTROLS =============================================================================== */}
                         <Row marginBottom="none">
                             <Portion desktopSpan="half">
-                                <Select
-                                    label="Background colour"
-                                    options={[{
-                                        label    : "Select a colour",
-                                        value    : "select-a-colour",
-                                        disabled : true,
-                                        selected : true,
-                                    },
-                                        ...colorOptions,
-                                    ]}
-                                    defaultValue="select-a-colour"
-                                    onChange={(e) => handleVariableChange("--card-bg", e.target.value)}
-                                    isFullWidth
-                                />
+                                {Object.entries(componentVariables)
+                                    .filter(([varName, varDetails]) => varName.endsWith("-bg"))
+                                    .map(([varName, varDetails]) => (
+                                        <Portion desktopSpan="half" key={varName}>
+                                            <Select
+                                                label="Background colour"
+                                                options={[{
+                                                    label    : "Select a colour",
+                                                    value    : "select-a-colour",
+                                                    disabled : true,
+                                                    selected : true,
+                                                }, ...colorOptions]}
+                                                defaultValue={varDetails.value || "select-a-colour"}
+                                                onChange={(e) => handleVariableChange(varName, e.target.value)}
+                                                isFullWidth
+                                            />
+                                        </Portion>
+                                    ))
+                                }
                             </Portion>
 
                             <Portion desktopSpan="half">
-                                <Select
-                                    label="Border colour"
-                                    options={[{
-                                        label    : "Select a colour",
-                                        value    : "select-a-colour",
-                                        disabled : true,
-                                        selected : true,
-                                    },
-                                        ...colorOptions,
-                                    ]}
-                                    defaultValue="select-a-colour"
-                                    onChange={(e) => handleVariableChange("--card-border", e.target.value)}
-                                    isFullWidth marginBottom="micro"
-                                />
+                                {Object.entries(componentVariables)
+                                    .filter(([varName, varDetails]) => varName.endsWith("-border"))
+                                    .map(([varName, varDetails]) => (
+                                        <Portion desktopSpan="half" key={varName}>
+                                            <Select
+                                                label="Border colour"
+                                                options={[{
+                                                    label    : "Select a colour",
+                                                    value    : "select-a-colour",
+                                                    disabled : true,
+                                                    selected : true,
+                                                }, ...colorOptions]}
+                                                defaultValue={varDetails.value || "select-a-colour"}
+                                                onChange={(e) => handleVariableChange(varName, e.target.value)}
+                                                isFullWidth
+                                            />
+                                        </Portion>
+                                    ))
+                                }
                             </Portion>
                         </Row>
 
@@ -545,15 +572,6 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                 />
                             ))
                         }
-
-
-                        {/* <Range */}
-                        {/*     label="Border width" */}
-                        {/*     value={componentVariables["--card-border-width"].value} */}
-                        {/*     onChange={(e) => handleVariableChange("--card-border-width", e.target.value)} */}
-                        {/*     suffix={componentVariables["--card-border-width"].unit} */}
-                        {/*     min={0} max={50} step={1} */}
-                        {/* /> */}
                     </Card>
                 </Portion>
             </Row>

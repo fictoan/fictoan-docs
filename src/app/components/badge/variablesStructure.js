@@ -1,14 +1,16 @@
 export const badgeVariablesStructure = {
     "--badge-font"          : {
         type         : "reference",
-        defaultValue : "var(--paragraph-font)",
+        defaultValue : "--paragraph-font",
     },
     "--badge-border-radius" : {
-        type         : "reference",
-        defaultValue : "var(--global-border-radius)",
+        type         : "value-unit",
+        defaultValue : 8,
+        unit         : "px",
     },
     "--badge-border-width"  : {
-        type         : "reference",
-        defaultValue : "var(--global-border-width)",
+        type         : "value-unit",
+        defaultValue : 1,
+        unit         : "px",
     },
 };
