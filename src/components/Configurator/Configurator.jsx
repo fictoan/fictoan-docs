@@ -18,7 +18,7 @@ import {
     Button,
     Callout,
     Div,
-    Range,
+    Range, Form, Header,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -31,7 +31,7 @@ import { generateShades, listOfColours } from "../../utils/colours";
 import "./configurator.css";
 
 // CONTEXTS ===============================================================
-import { CustomThemeContext } from "../../app/contexts/theme"
+import { CustomThemeContext } from "../../app/contexts/theme";
 
 // DATA ========================================================================
 
@@ -46,7 +46,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
     const [selectedBgColour, setSelectedBgColour] = useState(null);
     const [selectedBorderColour, setSelectedBorderColour] = useState(undefined);
     const [selectedTextColour, setSelectedTextColour] = useState("");
-    const {customTheme, setCustomTheme} = useContext(CustomThemeContext);
+    const { customTheme, setCustomTheme } = useContext(CustomThemeContext);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // COMPONENT LIST
@@ -154,13 +154,13 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
             } else {
                 // For non value-unit types
                 value = computedValue || varStruct.defaultValue;
-                unit = '';
+                unit = "";
             }
 
             acc[key] = {
                 ...varStruct,
-                value: value,
-                unit: unit
+                value : value,
+                unit  : unit,
             };
 
             return acc;
@@ -176,7 +176,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
     // STEP 2 — Arrange all the variables for use in the CodeBlock =====================================================
     const generateCSSVariablesList = (variables) => {
         const longestVarNameLength = findLongestVarNameLength(variables);
-        return Object.entries(variables).map(([varName, varDetails]) => {
+        const variablesString = Object.entries(variables).map(([varName, varDetails]) => {
             let cssValue;
             switch (varDetails.type) {
                 case "value-unit":
@@ -189,9 +189,12 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                     cssValue = varDetails.value;
             }
             const paddedVarName = varName.padEnd(longestVarNameLength);
-            return `${paddedVarName} : ${cssValue};`;
+            return `--${paddedVarName} : ${cssValue};`;
         }).join("\n");
+
+        return "// Paste this in your theme file\n" + variablesString;
     };
+
 
     const [componentVariables, setComponentVariables] = useState(getDefaultVariableValues());
     const [cssVariablesList, setCssVariablesList] = useState(generateCSSVariablesList(componentVariables));
@@ -225,10 +228,12 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
             default:
                 cssValue = newValue; // For simple values
         }
-        setCustomTheme(prevValues => ({
-            ...prevValues,
-            [varName] : cssValue,
-        }))
+        setCustomTheme(prevValues => (
+            {
+                ...prevValues,
+                [varName] : cssValue,
+            }
+        ));
         // document.documentElement.style.setProperty(varName, cssValue);
     };
 
@@ -494,89 +499,97 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                 {/* GLOBAL THEME VALUES //////////////////////////////////////////////////////////////////////////// */}
                 <Portion desktopSpan="half">
                     <Card padding="micro" shape="rounded">
-                        <Text size="large" weight="700" textColour="white" marginBottom="nano">
-                            Set values globally
-                        </Text>
+
+                        <Form>
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="nano">
+                                    Set values globally
+                                </Text>
+                            </Header>
 
                         {/* CODE BLOCK ============================================================================= */}
                         <CodeBlock language="css" showCopyButton marginBottom="micro" source={cssVariablesList} />
 
-                        {/* CONTROLS =============================================================================== */}
-                        <Row marginBottom="none">
-                            <Portion desktopSpan="half">
-                                {Object.entries(componentVariables)
-                                    .filter(([varName, varDetails]) => varName.endsWith("-bg"))
-                                    .map(([varName, varDetails]) => (
-                                        <Portion desktopSpan="half" key={varName}>
-                                            <Select
-                                                label="Background colour"
-                                                options={[{
-                                                    label    : "Select a colour",
-                                                    value    : "select-a-colour",
-                                                    disabled : true,
-                                                    selected : true,
-                                                }, ...colorOptions]}
-                                                defaultValue={varDetails.value || "select-a-colour"}
-                                                onChange={(e) => handleVariableChange(varName, e.target.value)}
-                                                isFullWidth
-                                            />
-                                        </Portion>
-                                    ))
-                                }
-                            </Portion>
+                            {/* CONTROLS =============================================================================== */}
+                            <Row>
+                                {/* BG COLOUR ========================================================================== */}
+                                <Portion desktopSpan="half">
+                                    {Object.entries(componentVariables)
+                                        .filter(([varName, varDetails]) => varName.endsWith("-bg"))
+                                        .map(([varName, varDetails]) => (
+                                            <Portion desktopSpan="half" key={varName}>
+                                                <Select
+                                                    label="Background colour"
+                                                    options={[{
+                                                        label    : "Select a colour",
+                                                        value    : "select-a-colour",
+                                                        disabled : true,
+                                                        selected : true,
+                                                    }, ...colorOptions]}
+                                                    defaultValue={varDetails.value || "select-a-colour"}
+                                                    onChange={(e) => handleVariableChange(varName, e.target.value)}
+                                                    isFullWidth
+                                                />
+                                            </Portion>
+                                        ))
+                                    }
+                                </Portion>
 
-                            <Portion desktopSpan="half">
-                                {Object.entries(componentVariables)
-                                    .filter(([varName, varDetails]) => varName.endsWith("-border"))
-                                    .map(([varName, varDetails]) => (
-                                        <Portion desktopSpan="half" key={varName}>
-                                            <Select
-                                                label="Border colour"
-                                                options={[{
-                                                    label    : "Select a colour",
-                                                    value    : "select-a-colour",
-                                                    disabled : true,
-                                                    selected : true,
-                                                }, ...colorOptions]}
-                                                defaultValue={varDetails.value || "select-a-colour"}
-                                                onChange={(e) => handleVariableChange(varName, e.target.value)}
-                                                isFullWidth
-                                            />
-                                        </Portion>
-                                    ))
-                                }
-                            </Portion>
-                        </Row>
+                                {/* BORDER COLOUR ====================================================================== */}
+                                <Portion desktopSpan="half">
+                                    {Object.entries(componentVariables)
+                                        .filter(([varName, varDetails]) => varName.endsWith("-border"))
+                                        .map(([varName, varDetails]) => (
+                                            <Portion desktopSpan="half" key={varName}>
+                                                <Select
+                                                    label="Border colour"
+                                                    options={[{
+                                                        label    : "Select a colour",
+                                                        value    : "select-a-colour",
+                                                        disabled : true,
+                                                        selected : true,
+                                                    }, ...colorOptions]}
+                                                    defaultValue={varDetails.value || "select-a-colour"}
+                                                    onChange={(e) => handleVariableChange(varName, e.target.value)}
+                                                    isFullWidth
+                                                />
+                                            </Portion>
+                                        ))
+                                    }
+                                </Portion>
+                            </Row>
 
-                        {Object.entries(componentVariables)
-                            .filter(([varName, _]) => varName.endsWith("-border-radius"))
-                            .map(([varName, varDetails]) => (
-                                <Range
-                                    key={varName}
-                                    label="Border radius"
-                                    value={varDetails.value}
-                                    onChange={(e) => handleVariableChange(varName, e.target.value)}
-                                    min={0} max={50} step={1}
-                                    suffix={varDetails.unit}
-                                    marginBottom="micro"
-                                />
-                            ))
-                        }
+                            {/* BORDER RADIUS ========================================================================= */}
+                            {Object.entries(componentVariables)
+                                .filter(([varName, _]) => varName.endsWith("-border-radius"))
+                                .map(([varName, varDetails]) => (
+                                    <Range
+                                        key={varName}
+                                        label="Border radius"
+                                        value={varDetails.value}
+                                        onChange={(e) => handleVariableChange(varName, e.target.value)}
+                                        min={0} max={50} step={1}
+                                        suffix={varDetails.unit}
+                                        marginBottom="micro"
+                                    />
+                                ))
+                            }
 
-                        {Object.entries(componentVariables)
-                            .filter(([varName, _]) => varName.endsWith("-border-width"))
-                            .map(([varName, varDetails]) => (
-                                <Range
-                                    key={varName}
-                                    label="Border width"
-                                    value={varDetails.value}
-                                    onChange={(e) => handleVariableChange(varName, e.target.value)}
-                                    min={0} max={50} step={1}
-                                    suffix={varDetails.unit}
-                                    marginBottom="micro"
-                                />
-                            ))
-                        }
+                            {/* BORDER WIDTH =========================================================================== */}
+                            {Object.entries(componentVariables)
+                                .filter(([varName, _]) => varName.endsWith("-border-width"))
+                                .map(([varName, varDetails]) => (
+                                    <Range
+                                        key={varName}
+                                        label="Border width"
+                                        value={varDetails.value}
+                                        onChange={(e) => handleVariableChange(varName, e.target.value)}
+                                        min={0} max={50} step={1}
+                                        suffix={varDetails.unit}
+                                    />
+                                ))
+                            }
+                        </Form>
                     </Card>
                 </Portion>
             </Row>

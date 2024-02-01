@@ -23,7 +23,6 @@ import "./page-card.css";
 
 // DATA ========================================================================
 import { cardProps } from "./config";
-import { cardVariablesStructure } from "./variablesStructure";
 
 
 const CardDocs = () => {
@@ -31,7 +30,7 @@ const CardDocs = () => {
         <Article id="page-card">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="tiny">
                 <Portion>
-                    <Heading as="h2" marginBottom="micro">Card</Heading>
+                    <Heading as="h1" marginBottom="micro">Card</Heading>
                     <Text size="large" marginBottom="small">
                         The card is a simple box that encloses content within, and is one of the oft-used components
                         in modern UI.
@@ -60,7 +59,7 @@ const CardDocs = () => {
                     <ComponentConfigurator
                         component={cardProps.component}
                         properties={cardProps.properties}
-                        variablesStructure={cardVariablesStructure}
+                        variablesStructure={cardProps.variables}
                     />
                 </Portion>
             </Row>
