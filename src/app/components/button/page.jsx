@@ -58,6 +58,7 @@ const ButtonDocs = () => {
                     <ComponentConfigurator
                         component={buttonProps.component}
                         properties={buttonProps.properties}
+                        // variablesStructure={buttonProps.variables}
                     />
                 </Portion>
             </Row>

@@ -18,7 +18,11 @@ import {
     Button,
     Callout,
     Div,
-    Range, Form, Header,
+    Range,
+    Form,
+    Header,
+    BreadcrumbsWrapper,
+    BreadcrumbItem,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -32,11 +36,14 @@ import "./configurator.css";
 
 // CONTEXTS ===============================================================
 import { CustomThemeContext } from "../../app/contexts/theme";
+import { BreadcrumbsComponent } from "../../app/components/breadcrumbs/config";
 
 // DATA ========================================================================
 
 
 export const ComponentConfigurator = ({ component, properties, variablesStructure }) => {
+    const { customTheme, setCustomTheme } = useContext(CustomThemeContext);
+
     const [label, setLabel] = useState("Text");
     const [selectedKind, setSelectedKind] = useState("");
     const [selectedPadding, setSelectedPadding] = useState("");
@@ -46,7 +53,6 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
     const [selectedBgColour, setSelectedBgColour] = useState(null);
     const [selectedBorderColour, setSelectedBorderColour] = useState(undefined);
     const [selectedTextColour, setSelectedTextColour] = useState("");
-    const { customTheme, setCustomTheme } = useContext(CustomThemeContext);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // COMPONENT LIST
@@ -56,6 +62,10 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
             case "Badge":
                 return (
                     Badge
+                );
+            case "Breadcrumbs":
+                return (
+                    BreadcrumbsComponent // Don’t ask me why
                 );
             case "Button":
                 return (
@@ -224,6 +234,9 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                 break;
             case "reference":
                 cssValue = `var(--${newValue})`; // For named variables
+                break;
+            case "string":
+                cssValue = `"${newValue}"`; // For simple values
                 break;
             default:
                 cssValue = newValue; // For simple values
@@ -507,59 +520,70 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                 </Text>
                             </Header>
 
-                        {/* CODE BLOCK ============================================================================= */}
-                        <CodeBlock language="css" showCopyButton marginBottom="micro" source={cssVariablesList} />
+                            {/* CODE BLOCK ========================================================================= */}
+                            <CodeBlock language="css" showCopyButton marginBottom="micro" source={cssVariablesList} />
 
-                            {/* CONTROLS =============================================================================== */}
-                            <Row>
-                                {/* BG COLOUR ========================================================================== */}
-                                <Portion desktopSpan="half">
-                                    {Object.entries(componentVariables)
-                                        .filter(([varName, varDetails]) => varName.endsWith("-bg"))
-                                        .map(([varName, varDetails]) => (
-                                            <Portion desktopSpan="half" key={varName}>
-                                                <Select
-                                                    label="Background colour"
-                                                    options={[{
-                                                        label    : "Select a colour",
-                                                        value    : "select-a-colour",
-                                                        disabled : true,
-                                                        selected : true,
-                                                    }, ...colorOptions]}
-                                                    defaultValue={varDetails.value || "select-a-colour"}
-                                                    onChange={(e) => handleVariableChange(varName, e.target.value)}
-                                                    isFullWidth
-                                                />
-                                            </Portion>
-                                        ))
-                                    }
-                                </Portion>
+                            {/* CONTROLS =========================================================================== */}
+                            <Row marginBottom="none">
+                                {/* BG COLOUR ====================================================================== */}
+                                {Object.entries(componentVariables)
+                                    .filter(([varName, varDetails]) => varName.endsWith("-separator"))
+                                    .map(([varName, varDetails]) => (
+                                        <Portion desktopSpan="half" key={varName}>
+                                            <InputField
+                                                label="Separator"
+                                                placeholder="Separator"
+                                                defaultValue={varDetails.value}
+                                                onChange={(e) => handleVariableChange(varName, e.target.value)}
+                                            />
+                                        </Portion>
+                                    ))
+                                }
 
-                                {/* BORDER COLOUR ====================================================================== */}
-                                <Portion desktopSpan="half">
-                                    {Object.entries(componentVariables)
-                                        .filter(([varName, varDetails]) => varName.endsWith("-border"))
-                                        .map(([varName, varDetails]) => (
-                                            <Portion desktopSpan="half" key={varName}>
-                                                <Select
-                                                    label="Border colour"
-                                                    options={[{
-                                                        label    : "Select a colour",
-                                                        value    : "select-a-colour",
-                                                        disabled : true,
-                                                        selected : true,
-                                                    }, ...colorOptions]}
-                                                    defaultValue={varDetails.value || "select-a-colour"}
-                                                    onChange={(e) => handleVariableChange(varName, e.target.value)}
-                                                    isFullWidth
-                                                />
-                                            </Portion>
-                                        ))
-                                    }
-                                </Portion>
+                                {/* BG COLOUR ====================================================================== */}
+                                {Object.entries(componentVariables)
+                                    .filter(([varName, varDetails]) => varName.endsWith("-bg"))
+                                    .map(([varName, varDetails]) => (
+                                        <Portion desktopSpan="half" key={varName}>
+                                            <Select
+                                                label="Background colour"
+                                                options={[{
+                                                    label    : "Select a colour",
+                                                    value    : "select-a-colour",
+                                                    disabled : true,
+                                                    selected : true,
+                                                }, ...colorOptions]}
+                                                defaultValue={varDetails.value || "select-a-colour"}
+                                                onChange={(e) => handleVariableChange(varName, e.target.value)}
+                                                isFullWidth
+                                            />
+                                        </Portion>
+                                    ))
+                                }
+
+                                {/* BORDER COLOUR ================================================================== */}
+                                {Object.entries(componentVariables)
+                                    .filter(([varName, varDetails]) => varName.endsWith("-border"))
+                                    .map(([varName, varDetails]) => (
+                                        <Portion desktopSpan="half" key={varName}>
+                                            <Select
+                                                label="Border colour"
+                                                options={[{
+                                                    label    : "Select a colour",
+                                                    value    : "select-a-colour",
+                                                    disabled : true,
+                                                    selected : true,
+                                                }, ...colorOptions]}
+                                                defaultValue={varDetails.value || "select-a-colour"}
+                                                onChange={(e) => handleVariableChange(varName, e.target.value)}
+                                                isFullWidth
+                                            />
+                                        </Portion>
+                                    ))
+                                }
                             </Row>
 
-                            {/* BORDER RADIUS ========================================================================= */}
+                            {/* BORDER RADIUS ====================================================================== */}
                             {Object.entries(componentVariables)
                                 .filter(([varName, _]) => varName.endsWith("-border-radius"))
                                 .map(([varName, varDetails]) => (
@@ -575,7 +599,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                 ))
                             }
 
-                            {/* BORDER WIDTH =========================================================================== */}
+                            {/* BORDER WIDTH ======================================================================= */}
                             {Object.entries(componentVariables)
                                 .filter(([varName, _]) => varName.endsWith("-border-width"))
                                 .map(([varName, varDetails]) => (
