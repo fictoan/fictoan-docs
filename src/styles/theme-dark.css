@@ -6,8 +6,8 @@
     --callout-border-radius                   : var(--global-border-radius);
     --callout-border-width                    : var(--nano);
 
-    --callout-info-bg                         : var(--blue-dark-60);
-    --callout-info-border                     : var(--blue-dark-20);
+    --callout-info-bg                         : var(--sky-light-60);
+    --callout-info-border                     : var(--sky-dark-30);
 
     --callout-success-bg                      : var(--green-light-40);
     --callout-success-border                  : var(--green-dark-40);
@@ -87,7 +87,7 @@
     --input-icon-valid                        : var(--green-dark-30);
 
     /* RADIO BUTTON ///////////////////////////////////////////////////////// */
-    --radio-tabs-height                      : 32px;
+    --radio-tabs-height                       : 32px;
 
     /* SIDEBAR ////////////////////////////////////////////////////////////// */
     --sidebar-bg                              : var(--grey-dark-90);
@@ -144,42 +144,42 @@
     --switch-slider-bg-disabled               : var(--slate-light-40);
 
     /* TOKENS =============================================================== */
-    --token-atrule              : var(--teal);
-    --token-attrName            : var(--orange);
-    --token-attrValue           : var(--green);
-    --token-boolean             : var(--green);
-    --token-cdata               : var(--grey);
-    --token-className           : var(--red);
-    --token-comment             : var(--grey);
-    --token-constant            : var(--green);
-    --token-deleted             : var(--slate);
-    --token-delimiter           : var(--grey);
-    --token-doctype             : var(--grey);
-    --token-entity              : var(--green);
-    --token-function            : var(--orange);
-    --token-hexcode             : var(--green);
-    --token-inserted            : var(--green);
-    --token-italic              : var(--green);
-    --token-keyword             : var(--orange);
-    --token-namespace           : var(--green);
-    --token-number              : var(--green);
-    --token-operator            : var(--pistachio);
-    --token-plain               : var(--grey);
-    --token-prolog              : var(--grey);
-    --token-property            : var(--red);
-    --token-punctuation         : var(--grey);
-    --token-regex               : var(--green);
-    --token-selector            : var(--violet);
-    --token-string              : var(--crimson);
-    --token-symbol              : var(--green);
-    --token-tag                 : var(--violet-dark-60);
-    --token-url                 : var(--green);
-    --token-variable            : var(--orange);
+    --token-atrule                            : var(--teal);
+    --token-attrName                          : var(--orange);
+    --token-attrValue                         : var(--green);
+    --token-boolean                           : var(--green);
+    --token-cdata                             : var(--grey);
+    --token-className                         : var(--red);
+    --token-comment                           : var(--grey);
+    --token-constant                          : var(--green);
+    --token-deleted                           : var(--slate);
+    --token-delimiter                         : var(--grey);
+    --token-doctype                           : var(--grey);
+    --token-entity                            : var(--green);
+    --token-function                          : var(--orange);
+    --token-hexcode                           : var(--green);
+    --token-inserted                          : var(--green);
+    --token-italic                            : var(--green);
+    --token-keyword                           : var(--orange);
+    --token-namespace                         : var(--green);
+    --token-number                            : var(--green);
+    --token-operator                          : var(--pistachio);
+    --token-plain                             : var(--grey);
+    --token-prolog                            : var(--grey);
+    --token-property                          : var(--red);
+    --token-punctuation                       : var(--grey);
+    --token-regex                             : var(--green);
+    --token-selector                          : var(--violet);
+    --token-string                            : var(--crimson);
+    --token-symbol                            : var(--green);
+    --token-tag                               : var(--violet-dark-60);
+    --token-url                               : var(--green);
+    --token-variable                          : var(--orange);
 
-    --token-css-fallback        : var(--red);
-    --token-html-fallback       : var(--red);
-    --token-js-fallback         : var(--red);
-    --token-json-token-string   : var(--red);
+    --token-css-fallback                      : var(--red);
+    --token-html-fallback                     : var(--red);
+    --token-js-fallback                       : var(--red);
+    --token-json-token-string                 : var(--red);
 
     /* ////////////////////////////////////////////////////////////////////// */
     /* CUSTOM COMPONENTS */

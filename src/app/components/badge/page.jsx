@@ -4,21 +4,17 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Badge, Element, Heading, HRule, Portion, Row, Table, Text, Article, Section } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
+import { Heading, HRule, Portion, Row, Text, Article } from "fictoan-react";
 
 // COMPONENTS ==================================================================
 import { ComponentConfigurator } from "../../../components/Configurator/Configurator";
-import { PropsList } from "../../../components/PropsList/PropsList";
 
 // STYLES ======================================================================
 import "./page-name.css";
 
 // CODE SNIPPETS ===============================================================
-import { sampleBadge, sampleBadgeSibling, sampleBadgeTheming } from "./CodeSamples";
 
 // DATA ========================================================================
-import { listOfBadgeProps } from "./propsList";
 import { badgeProps } from "./config";
 
 
