@@ -23,6 +23,7 @@ import {
     Header,
     BreadcrumbsWrapper,
     BreadcrumbItem,
+    SelectWithSearch
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -34,9 +35,11 @@ import { generateShades, listOfColours } from "../../utils/colours";
 // STYLES ======================================================================
 import "./configurator.css";
 
-// CONTEXTS ===============================================================
+// CONTEXTS ====================================================================
 import { CustomThemeContext } from "../../app/contexts/theme";
 import { BreadcrumbsComponent } from "../../app/components/breadcrumbs/config";
+import { BreadcrumbsThemeConfigurator } from "./components/breadcrumbs";
+import { BadgeThemeConfigurator } from "./components/badge";
 
 // DATA ========================================================================
 
@@ -81,7 +84,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                 );
             default:
                 return (
-                    Badge
+                    Text
                 );
         }
     }, [component]);
@@ -125,7 +128,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // COLOUR DROPDOWNS
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    const colorOptions = listOfColours.flatMap(color =>
+    const colourOptions = listOfColours.flatMap(color =>
         generateShades(color).map(shade => (
             {
                 customLabel : (
@@ -256,6 +259,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
     return (
         <Div id="component-configurator" className="demo-row" marginBottom="micro">
             <Row className="rendered-component">
+                {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion>
                     <Element
                         id="component-wrapper"
@@ -297,7 +301,8 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
             <Row>
                 {/* INDIVIDUAL LOCAL PROPS ///////////////////////////////////////////////////////////////////////// */}
                 <Portion desktopSpan="half">
-                    <Card padding="micro" shape="rounded">
+                    <Form>
+                        <Card padding="micro" shape="rounded">
                         <Text size="large" weight="700" textColour="white" marginBottom="nano">
                             Customise individually
                         </Text>
@@ -448,7 +453,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                     {/* BG COLOUR ========================== */}
                                     {properties.includes("bgColour" || "bgColor") && (
                                         <Portion desktopSpan="half">
-                                            <Select
+                                            <SelectWithSearch
                                                 label="Background colour"
                                                 options={[{
                                                     label    : "Select a colour",
@@ -456,7 +461,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                                     disabled : true,
                                                     selected : true,
                                                 },
-                                                    ...colorOptions,
+                                                    ...colourOptions,
                                                 ]}
                                                 defaultValue="select-a-colour"
                                                 onChange={handleBgColourChange}
@@ -476,7 +481,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                                     disabled : true,
                                                     selected : true,
                                                 },
-                                                    ...colorOptions,
+                                                    ...colourOptions,
                                                 ]}
                                                 defaultValue="select-a-colour"
                                                 onChange={handleBorderColourChange}
@@ -496,7 +501,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                                     disabled : true,
                                                     selected : true,
                                                 },
-                                                    ...colorOptions,
+                                                    ...colourOptions,
                                                 ]}
                                                 defaultValue="select-a-colour"
                                                 onChange={handleTextColourChange}
@@ -507,12 +512,12 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                 </Row>
                             ) : null}
                     </Card>
+                    </Form>
                 </Portion>
 
                 {/* GLOBAL THEME VALUES //////////////////////////////////////////////////////////////////////////// */}
                 <Portion desktopSpan="half">
                     <Card padding="micro" shape="rounded">
-
                         <Form>
                             <Header verticallyCentreItems pushItemsToEnds>
                                 <Text size="large" weight="700" textColour="white" marginBottom="nano">
@@ -523,96 +528,23 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                             {/* CODE BLOCK ========================================================================= */}
                             <CodeBlock language="css" showCopyButton marginBottom="micro" source={cssVariablesList} />
 
-                            {/* CONTROLS =========================================================================== */}
-                            <Row marginBottom="none">
-                                {/* BG COLOUR ====================================================================== */}
-                                {Object.entries(componentVariables)
-                                    .filter(([varName, varDetails]) => varName.endsWith("-separator"))
-                                    .map(([varName, varDetails]) => (
-                                        <Portion desktopSpan="half" key={varName}>
-                                            <InputField
-                                                label="Separator"
-                                                placeholder="Separator"
-                                                defaultValue={varDetails.value}
-                                                onChange={(e) => handleVariableChange(varName, e.target.value)}
-                                            />
-                                        </Portion>
-                                    ))
-                                }
+                            {/* BADGE ============================================================================== */}
+                            {component === "Badge" && (
+                                <BadgeThemeConfigurator
+                                    componentVariables={componentVariables}
+                                    handleVariableChange={handleVariableChange}
+                                    colourOptions={colourOptions}
+                                />
+                            )}
 
-                                {/* BG COLOUR ====================================================================== */}
-                                {Object.entries(componentVariables)
-                                    .filter(([varName, varDetails]) => varName.endsWith("-bg"))
-                                    .map(([varName, varDetails]) => (
-                                        <Portion desktopSpan="half" key={varName}>
-                                            <Select
-                                                label="Background colour"
-                                                options={[{
-                                                    label    : "Select a colour",
-                                                    value    : "select-a-colour",
-                                                    disabled : true,
-                                                    selected : true,
-                                                }, ...colorOptions]}
-                                                defaultValue={varDetails.value || "select-a-colour"}
-                                                onChange={(e) => handleVariableChange(varName, e.target.value)}
-                                                isFullWidth
-                                            />
-                                        </Portion>
-                                    ))
-                                }
-
-                                {/* BORDER COLOUR ================================================================== */}
-                                {Object.entries(componentVariables)
-                                    .filter(([varName, varDetails]) => varName.endsWith("-border"))
-                                    .map(([varName, varDetails]) => (
-                                        <Portion desktopSpan="half" key={varName}>
-                                            <Select
-                                                label="Border colour"
-                                                options={[{
-                                                    label    : "Select a colour",
-                                                    value    : "select-a-colour",
-                                                    disabled : true,
-                                                    selected : true,
-                                                }, ...colorOptions]}
-                                                defaultValue={varDetails.value || "select-a-colour"}
-                                                onChange={(e) => handleVariableChange(varName, e.target.value)}
-                                                isFullWidth
-                                            />
-                                        </Portion>
-                                    ))
-                                }
-                            </Row>
-
-                            {/* BORDER RADIUS ====================================================================== */}
-                            {Object.entries(componentVariables)
-                                .filter(([varName, _]) => varName.endsWith("-border-radius"))
-                                .map(([varName, varDetails]) => (
-                                    <Range
-                                        key={varName}
-                                        label="Border radius"
-                                        value={varDetails.value}
-                                        onChange={(e) => handleVariableChange(varName, e.target.value)}
-                                        min={0} max={50} step={1}
-                                        suffix={varDetails.unit}
-                                        marginBottom="micro"
-                                    />
-                                ))
-                            }
-
-                            {/* BORDER WIDTH ======================================================================= */}
-                            {Object.entries(componentVariables)
-                                .filter(([varName, _]) => varName.endsWith("-border-width"))
-                                .map(([varName, varDetails]) => (
-                                    <Range
-                                        key={varName}
-                                        label="Border width"
-                                        value={varDetails.value}
-                                        onChange={(e) => handleVariableChange(varName, e.target.value)}
-                                        min={0} max={50} step={1}
-                                        suffix={varDetails.unit}
-                                    />
-                                ))
-                            }
+                            {/* BREADCRUMBS ======================================================================== */}
+                            {component === "Breadcrumbs" && (
+                                <BreadcrumbsThemeConfigurator
+                                    componentVariables={componentVariables}
+                                    handleVariableChange={handleVariableChange}
+                                    colourOptions={colourOptions}
+                                />
+                            )}
                         </Form>
                     </Card>
                 </Portion>
