@@ -19,7 +19,9 @@ import {
     Div,
     Form,
     Header,
-    SelectWithSearch, Checkbox, Callout,
+    SelectWithSearch,
+    Checkbox,
+    Callout, Switch, Footer,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -44,6 +46,21 @@ import { CustomThemeContext } from "../../app/contexts/theme";
 
 
 export const ComponentConfigurator = ({ component, properties, variablesStructure }) => {
+    const { customTheme, setCustomTheme } = useContext(CustomThemeContext);
+
+    const [showAllButtons, setShowAllButtons] = useState(true);
+
+    const [label, setLabel] = useState("Text");
+    const [selectedKind, setSelectedKind] = useState("none");
+    const [isLoading, setIsLoading] = useState(false);
+    const [selectedPadding, setSelectedPadding] = useState("");
+    const [selectedSize, setSelectedSize] = useState("");
+    const [selectedShape, setSelectedShape] = useState("");
+    const [selectedShadow, setSelectedShadow] = useState("");
+    const [selectedBgColour, setSelectedBgColour] = useState(null);
+    const [selectedBorderColour, setSelectedBorderColour] = useState(undefined);
+    const [selectedTextColour, setSelectedTextColour] = useState("");
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // COMPONENT LIST
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -59,7 +76,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                 );
             case "Button":
                 return (
-                    Button
+                    showAllButtons ? ButtonSample : Button
                 );
             case "Callout":
                 return (
@@ -78,29 +95,11 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                     Text
                 );
         }
-    }, [component]);
-
-    const { customTheme, setCustomTheme } = useContext(CustomThemeContext);
-
-    const [label, setLabel] = useState("Text");
-    const [selectedKindMain, setSelectedKindMain] = useState("custom");
-    const [selectedKind, setSelectedKind] = useState("none");
-    const [isLoading, setIsLoading] = useState(false);
-    const [selectedPadding, setSelectedPadding] = useState("");
-    const [selectedSize, setSelectedSize] = useState("");
-    const [selectedShape, setSelectedShape] = useState("none");
-    const [selectedShadow, setSelectedShadow] = useState("none");
-    const [selectedBgColour, setSelectedBgColour] = useState(null);
-    const [selectedBorderColour, setSelectedBorderColour] = useState(undefined);
-    const [selectedTextColour, setSelectedTextColour] = useState("");
+    }, [component, showAllButtons]);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // STATE HANDLERS
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    const handleKindMainChange = (event) => {
-        setSelectedKindMain(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
     const handleKindChange = (event) => {
         setSelectedKind(event.target.value !== "none" ? event.target.value : undefined);
     };
@@ -141,7 +140,8 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // COLOUR DROPDOWNS
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    const colourOptions = listOfColours.flatMap(color =>
+    // Generate shades for the colors in listOfColours
+    const colourOptionsWithShades = listOfColours.flatMap(color =>
         generateShades(color).map(shade => (
             {
                 customLabel : (
@@ -159,6 +159,36 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
             }
         )),
     );
+
+    // Separate black, white, and transparent
+    const basicColourOptions = [
+        { label : "black", value : "black" },
+        { label : "white", value : "white" },
+        { label : "transparent", value : "transparent" },
+    ].map(color => (
+        {
+            customLabel : (
+                <Div verticallyCentreItems>
+                    <Div
+                        className="color-option"
+                        bgColour={color.value}
+                        padding="nano"
+                        shape="rounded"
+                        style={{
+                            backgroundColor : color.value === "transparent" ? "rgba(0,0,0,0)" : color.value,
+                            border          : color.value === "transparent" ? "1px dashed rgba(0,0,0,0.3)" : "",
+                        }}
+                    />
+                    <Text marginLeft="nano">{color.label}</Text>
+                </Div>
+            ),
+            label       : color.label,
+            value       : color.value,
+        }
+    ));
+
+// Combine both sets of options
+    const colourOptions = [...colourOptionsWithShades, ...basicColourOptions];
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // GLOBAL THEME MANAGER
@@ -231,28 +261,43 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
     const handleVariableChange = (varName, newValue) => {
         setComponentVariables(prevValues => {
             const currentVar = prevValues[varName];
+            let updatedVar = { ...currentVar };
 
-            // Update the value but keep the original type
+            // Check if the current variable is of type "reference" and the newValue is numeric
+            // Also, ensure it's meant to be converted to "value-unit" by checking the defaultValue
+            if (currentVar.type === "reference" && !isNaN(newValue) && ["global-border-width", "global-border-radius"].includes(currentVar.defaultValue)) {
+                updatedVar = {
+                    ...updatedVar,
+                    type  : "value-unit",
+                    value : newValue,
+                    unit  : "px", // Assuming you want to convert these references to pixel values
+                };
+            } else {
+                // For non-special cases, update the value directly
+                updatedVar.value = newValue;
+            }
+
             return {
                 ...prevValues,
-                [varName] : {
-                    ...currentVar,
-                    value : currentVar.type === "reference" ? `${newValue}` : newValue,
-                },
+                [varName] : updatedVar,
             };
         });
 
-        // Update global CSS variables and the custom theme
+        // Then, update your theme and CSS properties as needed
+        updateThemeAndCSS(varName, newValue);
+    };
+
+    function updateThemeAndCSS(varName, newValue) {
         const varDetails = componentVariables[varName];
         let cssValue;
+
+        // Directly use newValue for reference types to avoid nested var(--var(--value))
         if (varDetails.type === "reference") {
-            cssValue = `var(--${newValue})`; // Keep the reference type format
+            cssValue = `var(--${newValue})`;
         } else if (varDetails.type === "value-unit") {
-            cssValue = `${newValue}${varDetails.unit}`; // For value-unit type
-        } else if (varDetails.type === "string") {
-            cssValue = `"${newValue}"`; // For string type
+            cssValue = `${newValue}${varDetails.unit}`;
         } else {
-            cssValue = newValue; // For other types
+            cssValue = newValue;
         }
 
         setCustomTheme(prevValues => (
@@ -262,10 +307,9 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
             }
         ));
 
-        // If you want to update the style property immediately,
-        // uncomment the following line:
+        // Uncomment if you want to apply the styles directly
         // document.documentElement.style.setProperty(`--${varName}`, cssValue);
-    };
+    }
 
     // STEP 4 — Hope for the best.
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -311,6 +355,19 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                         >
                             {label || "Label"}
                         </Component>
+
+                        <Footer>
+                            {component === "Button" && (
+                                <Switch
+                                    id="show-all-buttons"
+                                    value="show-all-buttons"
+                                    name="show-all-buttons"
+                                    label="Show all buttons"
+                                    checked={showAllButtons}
+                                    onChange={(e) => setShowAllButtons(e.target.checked)}
+                                />
+                            )}
+                        </Footer>
                     </Element>
                 </Portion>
             </Row>
@@ -337,6 +394,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                     selectedBgColour && `    bgColour="${selectedBgColour}"`,
                                     selectedBorderColour && `    borderColour="${selectedBorderColour}"`,
                                     selectedTextColour && `    textColour="${selectedTextColour}"`,
+                                    isLoading && `    isLoading`,
                                     `>`,
                                     `    ${label}`,
                                     `</${component}>`,
@@ -352,10 +410,10 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                                 label="Kind"
                                                 name="kind"
                                                 options={[
-                                                    { id: "kind-opt-0", value: "custom", label: "custom" },
-                                                    { id: "kind-opt-1", value: "primary", label: "primary" },
-                                                    { id: "kind-opt-2", value: "secondary", label: "secondary" },
-                                                    { id: "kind-opt-3", value: "tertiary", label: "tertiary" },
+                                                    { id : "kind-opt-0", value : "custom", label : "custom" },
+                                                    { id : "kind-opt-1", value : "primary", label : "primary" },
+                                                    { id : "kind-opt-2", value : "secondary", label : "secondary" },
+                                                    { id : "kind-opt-3", value : "tertiary", label : "tertiary" },
                                                 ]}
                                                 defaultValue={selectedKind}
                                                 onChange={handleKindChange}
@@ -370,10 +428,10 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                                 label="Kind"
                                                 name="kind"
                                                 options={[
-                                                    { id: "kind-opt-0", value: "info", label: "info" },
-                                                    { id: "kind-opt-1", value: "warning", label: "warning" },
-                                                    { id: "kind-opt-2", value: "error", label: "error" },
-                                                    { id: "kind-opt-3", value: "success", label: "success" },
+                                                    { id : "kind-opt-0", value : "info", label : "info" },
+                                                    { id : "kind-opt-1", value : "warning", label : "warning" },
+                                                    { id : "kind-opt-2", value : "error", label : "error" },
+                                                    { id : "kind-opt-3", value : "success", label : "success" },
                                                 ]}
                                                 defaultValue={selectedKind}
                                                 onChange={handleKindChange}
@@ -509,7 +567,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                         {/* BG COLOUR ========================== */}
                                         {properties.includes("bgColour" || "bgColor") && (
                                             <Portion desktopSpan="half">
-                                                <SelectWithSearch
+                                                <Select
                                                     label="Background colour"
                                                     options={[{
                                                         label    : "Select a colour",

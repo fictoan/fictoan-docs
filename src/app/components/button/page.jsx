@@ -2,19 +2,12 @@
 
 // EXTERNAL DEPS ===============================================================
 import React from "react";
-import Link from "next/link";
 
 // INTERNAL DEPS ===============================================================
 import {
-    Button,
-    Callout,
-    Card,
-    Element,
     Heading,
-    HRule,
     Portion,
     Row,
-    Table,
     Text,
     Article,
     Tabs,
