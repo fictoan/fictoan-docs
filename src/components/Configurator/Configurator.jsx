@@ -19,15 +19,12 @@ import {
     Div,
     Form,
     Header,
-    SelectWithSearch,
     Checkbox,
     Callout, Switch, Footer,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
-import { BreadcrumbsSample, BreadcrumbsThemeConfigurator } from "../../app/components/breadcrumbs/config";
-import { BadgeThemeConfigurator } from "../../app/components/badge/config";
 import { CalloutSample, CalloutThemeConfigurator } from "../../app/components/callout/config";
 import { CardThemeConfigurator } from "../../app/components/card/config";
 import { ButtonSample, ButtonThemeConfigurator } from "../../app/components/button/config";
@@ -69,10 +66,6 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
             case "Badge":
                 return (
                     Badge
-                );
-            case "Breadcrumbs":
-                return (
-                    BreadcrumbsSample // Don’t ask me why
                 );
             case "Button":
                 return (
@@ -287,7 +280,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
         updateThemeAndCSS(varName, newValue);
     };
 
-    function updateThemeAndCSS(varName, newValue) {
+    const updateThemeAndCSS = (varName, newValue) => {
         const varDetails = componentVariables[varName];
         let cssValue;
 
@@ -443,7 +436,6 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                     )}
                                 </>
                             )}
-
 
                             {/* LABEL ============================================================================== */}
                             {properties.includes("label") && (
@@ -645,22 +637,22 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                             <CodeBlock language="css" showCopyButton marginBottom="micro" source={cssVariablesList} />
 
                             {/* BADGE ============================================================================== */}
-                            {component === "Badge" && (
-                                <BadgeThemeConfigurator
-                                    componentVariables={componentVariables}
-                                    handleVariableChange={handleVariableChange}
-                                    colourOptions={colourOptions}
-                                />
-                            )}
+                            {/* {component === "Badge" && ( */}
+                            {/*     <BadgeThemeConfigurator */}
+                            {/*         componentVariables={componentVariables} */}
+                            {/*         handleVariableChange={handleVariableChange} */}
+                            {/*         colourOptions={colourOptions} */}
+                            {/*     /> */}
+                            {/* )} */}
 
                             {/* BREADCRUMBS ======================================================================== */}
-                            {component === "Breadcrumbs" && (
-                                <BreadcrumbsThemeConfigurator
-                                    componentVariables={componentVariables}
-                                    handleVariableChange={handleVariableChange}
-                                    colourOptions={colourOptions}
-                                />
-                            )}
+                            {/* {component === "Breadcrumbs" && ( */}
+                            {/*     <BreadcrumbsThemeConfigurator */}
+                            {/*         componentVariables={componentVariables} */}
+                            {/*         handleVariableChange={handleVariableChange} */}
+                            {/*         colourOptions={colourOptions} */}
+                            {/*     /> */}
+                            {/* )} */}
 
                             {/* BUTTON ============================================================================= */}
                             {component === "Button" && (

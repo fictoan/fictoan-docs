@@ -1,3 +1,5 @@
+import { Div } from "fictoan-react";
+
 export const listOfColours = [
     "red",
     "salmon",
@@ -44,3 +46,53 @@ export const generateShades = (color) => [
     `${color}-light-80`,
     `${color}-light-90`,
 ];
+
+// Generate shades for the colors in listOfColours
+export const colourOptionsWithShades = listOfColours.flatMap(color =>
+    generateShades(color).map(shade => (
+        {
+            customLabel : (
+                <Div verticallyCentreItems>
+                    <Div
+                        className="color-option"
+                        bgColour={shade}
+                        padding="nano" shape="rounded"
+                    />
+                    <Text marginLeft="nano">{shade}</Text>
+                </Div>
+            ),
+            label       : shade,
+            value       : shade,
+        }
+    )),
+);
+
+// Separate black, white, and transparent
+export const basicColourOptions = [
+    { label : "black", value : "black" },
+    { label : "white", value : "white" },
+    { label : "transparent", value : "transparent" },
+].map(color => (
+    {
+        customLabel : (
+            <Div verticallyCentreItems>
+                <Div
+                    className="color-option"
+                    bgColour={color.value}
+                    padding="nano"
+                    shape="rounded"
+                    style={{
+                        backgroundColor : color.value === "transparent" ? "rgba(0,0,0,0)" : color.value,
+                        border          : color.value === "transparent" ? "1px dashed rgba(0,0,0,0.3)" : "",
+                    }}
+                />
+                <Text marginLeft="nano">{color.label}</Text>
+            </Div>
+        ),
+        label       : color.label,
+        value       : color.value,
+    }
+));
+
+// Combine both sets of options
+export const colourOptions = [...colourOptionsWithShades, ...basicColourOptions];

@@ -24,3 +24,13 @@ img { width: auto; }
 .theme-dark .header-logo {
     filter : invert(1);
 }
+
+[data-radio-tab-group] label {
+    padding : 0 12px;
+}
+
+[data-centered-children] {
+    display     : grid;
+    place-items : center;
+    position    : relative;
+}
