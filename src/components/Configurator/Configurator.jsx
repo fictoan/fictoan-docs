@@ -404,9 +404,10 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                             {/* KIND =============================================================================== */}
                             {properties.includes("kind") && (
                                 <>
-                                    {component === "Button" && (
+                                    {component === "Button" || component === "HRule" && (
                                         <>
                                             <RadioTabGroup
+                                                id="kind"
                                                 label="Kind"
                                                 name="kind"
                                                 options={[
@@ -425,6 +426,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                     {component === "Callout" && (
                                         <>
                                             <RadioTabGroup
+                                                id="kind"
                                                 label="Kind"
                                                 name="kind"
                                                 options={[

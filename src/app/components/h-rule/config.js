@@ -5,7 +5,7 @@ import { Row, Portion, Range, Select, Button, HRule } from "fictoan-react";
 export const hRuleProps = {
     component  : "HRule",
     properties : [
-        "kind-main",
+        "kind",
     ],
     variables  : {
         "hr-default-height"   : {
@@ -51,7 +51,9 @@ export const hRuleProps = {
 export const HRuleSample = () => (
     <Row marginBottom="none">
         <Portion>
-            <HRule />
+            <HRule kind="primary" verticalMargin="micro" />
+            <HRule kind="secondary" verticalMargin="micro" />
+            <HRule kind="tertiary" verticalMargin="micro" />
         </Portion>
     </Row>
 );
@@ -85,6 +87,9 @@ export const HRuleThemeConfigurator = ({ componentVariables, handleVariableChang
                     onChange={(e) => handleVariableChange("hr-default-bg", e.target.value)}
                     isFullWidth
                 />
+            </Portion>
+
+            <Portion desktopSpan="half">
             </Portion>
         </Row>
     );

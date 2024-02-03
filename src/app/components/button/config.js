@@ -1,5 +1,5 @@
 // LIST OF PROPS =======================================================================================================
-import { Portion, Row, Range, Button, Select, Text, HRule } from "fictoan-react";
+import { Portion, Row, Range, Button, Select, Text, HRule, Div } from "fictoan-react";
 import React from "react";
 
 export const buttonProps = {
@@ -114,9 +114,9 @@ export const ButtonSample = () => (
 );
 
 // THEME VARIABLES =====================================================================================================
-export const ButtonThemeConfigurator = ({ componentVariables, handleVariableChange, colourOptions }) => {
+export const ButtonThemeConfigurator = ({ buttonKind, componentVariables, handleVariableChange, colourOptions }) => {
     return (
-        <>
+        <Div id="primary-button-configurator">
             {/* DEFAULT //////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row marginBottom="none">
                 <Portion>
@@ -371,7 +371,7 @@ export const ButtonThemeConfigurator = ({ componentVariables, handleVariableChan
                 {/* SPINNER COLOUR ============================================= */}
                 <Portion desktopSpan="half">
                     <Select
-                        label="Background colour"
+                        label="Spinner colour"
                         options={[{
                             label    : "Select a colour",
                             value    : "select-a-colour",
@@ -384,6 +384,6 @@ export const ButtonThemeConfigurator = ({ componentVariables, handleVariableChan
                     />
                 </Portion>
             </Row>
-        </>
+        </Div>
     );
 };

@@ -10,9 +10,9 @@
     }
 
     #component-wrapper {
-        display     : grid;
-        place-items : center;
-        position    : relative;
+        /*display     : grid;*/
+        /*place-items : center;*/
+        /*position    : relative;*/
 
         footer {
             position : absolute;
