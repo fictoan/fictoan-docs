@@ -25,7 +25,6 @@ import {
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
-import { CalloutSample, CalloutThemeConfigurator } from "../../app/components/callout/config";
 import { CardThemeConfigurator } from "../../app/components/card/config";
 import { ButtonSample, ButtonThemeConfigurator } from "../../app/components/button/config";
 import { HRuleSample, HRuleThemeConfigurator } from "../../app/components/h-rule/config";
@@ -664,13 +663,13 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                             )}
 
                             {/* CALLOUT ============================================================================ */}
-                            {component === "Callout" && (
-                                <CalloutThemeConfigurator
-                                    componentVariables={componentVariables}
-                                    handleVariableChange={handleVariableChange}
-                                    colourOptions={colourOptions}
-                                />
-                            )}
+                            {/* {component === "Callout" && ( */}
+                            {/*     <CalloutThemeConfigurator */}
+                            {/*         componentVariables={componentVariables} */}
+                            {/*         handleVariableChange={handleVariableChange} */}
+                            {/*         colourOptions={colourOptions} */}
+                            {/*     /> */}
+                            {/* )} */}
 
                             {/* CARD =============================================================================== */}
                             {component === "Card" && (
