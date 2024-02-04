@@ -14,7 +14,7 @@ import {
     Article,
     Card,
     Form,
-    Header,
+    Header, Button, Drawer, RadioTabGroup, Checkbox, Range, Select,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -30,22 +30,36 @@ import { useThemeVariables } from "../../../utils/useThemeVariables";
 import { colourOptions } from "../../../utils/colours";
 
 // DATA ================================================================================================================
-import { breadcrumbsProps } from "./config";
+import { drawerProps } from "./config";
 
 const DrawerDocs = () => {
-    const [isSampleInfoPanelOpen, setIsSampleInfoPanelOpen] = useState(false);
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(drawerProps.variables);
 
-    const [isTinyInfoPanelOpen, setIsTinyInfoPanelOpen] = useState(false);
-    const [isSmallInfoPanelOpen, setIsSmallInfoPanelOpen] = useState(false);
-    const [isMediumInfoPanelOpen, setIsMediumInfoPanelOpen] = useState(false);
-    const [isLargeInfoPanelOpen, setIsLargeInfoPanelOpen] = useState(false);
-    const [isHugeInfoPanelOpen, setIsHugeInfoPanelOpen] = useState(false);
+    // CUSTOMISE
+    const [selectedPosition, setSelectedPosition] = useState("right");
+    const [selectedSize, setSelectedSize] = useState("");
+    const [selectedPadding, setSelectedPadding] = useState("");
+    const [showOverlay, setShowOverlay] = useState(false);
+    const [isDismissible, setIsDismissible] = useState(false);
+    const [closeOnClickOutside, setCloseOnClickOutside] = useState(false);
+    const [openWhen, setOpenWhen] = useState("");
+    const [closeWhen, setCloseWhen] = useState("");
+
+    // THEME
+    const [selectedBgColour, setSelectedBgColour] = useState("");
+    const [selectedBorderColour, setSelectedBorderColour] = useState("");
+
+    const [isSampleDrawerOpen, setIsSampleDrawerOpen] = useState(false);
+
+    const handlePaddingChange = (event) => {
+        setSelectedPadding(event.target.value !== "none" ? event.target.value : undefined);
+    };
 
     return (
         <Article id="page-component">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1">Component</Heading>
+                    <Heading as="h1">Drawer</Heading>
                     <Text size="large" marginBottom="small">
                         The component is
                     </Text>
@@ -70,7 +84,12 @@ const DrawerDocs = () => {
                         as="div" padding="small" shape="rounded" bgColour="slate-light-80"
                         data-centered-children
                     >
-
+                        <Button
+                            onClick={() => setIsSampleDrawerOpen(true)}
+                            kind="primary"
+                        >
+                            Open the drawer
+                        </Button>
                     </Element>
                 </Portion>
 
@@ -89,17 +108,115 @@ const DrawerDocs = () => {
                                     <CodeBlock language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
-                                            `<Card`,
-                                            selectedShape ? `    shape="${selectedShape}"` : null,
-                                            selectedBgColour ? `    bgColour="${selectedBgColour}"` : null,
-                                            selectedBorderColour ? `    borderColour="${selectedBorderColour}"` : null,
-                                            `>${label ? `\n    ${label}\n` : ""}</Card>`,
+                                            `<Drawer`,
+                                            selectedPosition ? `    position="${selectedPosition}"` : null,
+                                            selectedPadding ? `    padding="${selectedPadding}"` : null,
+                                            selectedSize ? `    size="${selectedSize}"` : null,
+                                            openWhen ? `    openWhen="${openWhen}"` : null,
+                                            closeWhen ? `    closeWhen="${closeWhen}"` : null,
+                                            closeOnClickOutside ? `    closeOnClickOutside` : null,
+                                            isDismissible ? `    isDismissible` : null,
+                                            showOverlay ? `    showOverlay` : null,
+                                            `>Content goes here</Drawer>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
                                 </Portion>
 
+                                {/* POSITION ======================================================================= */}
                                 <Portion>
+                                    <RadioTabGroup
+                                        id="position" label="Position" name="position"
+                                        options={[
+                                            { id : "position-opt-0", value : "left", label : "left" },
+                                            { id : "position-opt-1", value : "top", label : "top" },
+                                            { id : "position-opt-2", value : "right", label : "right" },
+                                            { id : "position-opt-3", value : "bottom", label : "bottom" },
+                                        ]}
+                                        defaultValue={selectedPosition || "right"}
+                                        onChange={() => setSelectedPosition(event.target.value)}
+                                    />
 
+                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                </Portion>
+
+                                {/* SIZE =========================================================================== */}
+                                <Portion>
+                                    <RadioTabGroup
+                                        id="size" label="Size" name="size"
+                                        options={[
+                                            { id : "size-opt-0", value : "none", label : "none" },
+                                            { id : "size-opt-3", value : "tiny", label : "tiny" },
+                                            { id : "size-opt-4", value : "small", label : "small" },
+                                            { id : "size-opt-5", value : "medium", label : "medium" },
+                                            { id : "size-opt-6", value : "large", label : "large" },
+                                            { id : "size-opt-7", value : "huge", label : "huge" },
+                                        ]}
+                                        defaultValue={selectedSize}
+                                        onChange={() => setSelectedSize(event.target.value !== "none" ? event.target.value : undefined)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                </Portion>
+
+                                {/* PADDING ======================================================================== */}
+                                <Portion>
+                                    <RadioTabGroup
+                                        id="padding" name="padding" label="Padding"
+                                        options={[
+                                            { id : "padding-opt-0", value : "none", label : "none" },
+                                            { id : "padding-opt-1", value : "nano", label : "nano" },
+                                            { id : "padding-opt-2", value : "micro", label : "micro" },
+                                            { id : "padding-opt-3", value : "tiny", label : "tiny" },
+                                            { id : "padding-opt-4", value : "small", label : "small" },
+                                            { id : "padding-opt-5", value : "medium", label : "medium" },
+                                            { id : "padding-opt-6", value : "large", label : "large" },
+                                            { id : "padding-opt-7", value : "huge", label : "huge" },
+                                        ]}
+                                        defaultValue={selectedPadding}
+                                        onChange={() => setSelectedPadding(event.target.value !== "none" ? event.target.value : undefined)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                </Portion>
+
+                                {/* OVERLAY ======================================================================== */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-overlay"
+                                        value="checkbox-overlay"
+                                        name="checkbox-overlay"
+                                        label="Show overlay"
+                                        checked={showOverlay}
+                                        onChange={() => setShowOverlay(event.target.checked)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                </Portion>
+
+                                {/* DISMISSIBLE ==================================================================== */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-dismissible"
+                                        value="checkbox-dismissible"
+                                        name="checkbox-dismissible"
+                                        label="Is dismissible"
+                                        checked={isDismissible}
+                                        onChange={() => setIsDismissible(event.target.checked)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                </Portion>
+
+                                {/* OVERLAY ======================================================================== */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-close-on-click-outside"
+                                        value="checkbox-close-on-click-outside"
+                                        name="checkbox-close-on-click-outside"
+                                        label="Close on clicking outside"
+                                        checked={closeOnClickOutside}
+                                        onChange={() => setCloseOnClickOutside(event.target.checked)}
+                                    />
                                 </Portion>
                             </Row>
                         </Card>
@@ -111,7 +228,7 @@ const DrawerDocs = () => {
                     <Card padding="micro" shape="rounded">
                         <Form>
                             <Header verticallyCentreItems pushItemsToEnds>
-                                <Text size="large" weight="700" textColour="white" marginBottom="micro">
+                                <Text size="large" weight="700" textColour="white" marginBottom="nano">
                                     Set values globally
                                 </Text>
                             </Header>
@@ -126,11 +243,105 @@ const DrawerDocs = () => {
                                     />
                                 </Portion>
 
+                                {/* BG COLOUR ====================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Background colour"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        },
+                                            ...colourOptions,]}
+                                        defaultValue={componentVariables["drawer-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("drawer-bg", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BORDER COLOUR ================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Border colour"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        },
+                                            ...colourOptions,
+                                        ]}
+                                        defaultValue={componentVariables["drawer-border"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("drawer-border", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* DISMISS BUTTON COLOUR ========================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Dismiss button colour"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        },
+                                            ...colourOptions,
+                                        ]}
+                                        defaultValue={componentVariables["drawer-dismiss-button"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("drawer-dismiss-button", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                <Portion desktopSpan="half" />
+
+                                {/* BORDER RADIUS ================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Border radius"
+                                        value={componentVariables["drawer-border-radius"].value}
+                                        onChange={(e) => handleVariableChange("drawer-border-radius", e.target.value)}
+                                        min={0} max={50} step={1}
+                                        suffix={componentVariables["drawer-border-radius"].unit}
+                                    />
+                                </Portion>
+
+                                {/* OVERLAY COLOUR ================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Overlay blur"
+                                        value={componentVariables["drawer-overlay-blur"].value}
+                                        onChange={(e) => handleVariableChange("drawer-overlay-blur", e.target.value)}
+                                        min={0} max={50} step={1}
+                                        suffix={componentVariables["drawer-overlay-blur"].unit}
+                                    />
+                                </Portion>
                             </Row>
                         </Form>
                     </Card>
                 </Portion>
             </Row>
+
+            <Drawer
+                position={selectedPosition}
+                padding={selectedPadding}
+                openWhen={isSampleDrawerOpen}
+                closeWhen={() => setIsSampleDrawerOpen(false)}
+                showOverlay={showOverlay}
+                isDismissable={isDismissible}
+                closeOnClickOutside={closeOnClickOutside}
+                size={selectedSize}
+                {...(
+                    selectedBgColour !== undefined ? { bgColour : selectedBgColour } : {}
+                )}
+            >
+                <Heading as="h2" textColour="black" marginBottom="nano">Hello</Heading>
+                <Text>You can add all sorts of content here inside the info panel.</Text>
+                <Button onClick={() => setIsSampleDrawerOpen(false)}>Close</Button>
+            </Drawer>
         </Article>
     );
 };

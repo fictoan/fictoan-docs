@@ -1,34 +1,40 @@
-export const breadcrumbsProps = {
+export const drawerProps = {
     component  : "Drawer",
     properties : [
         "position",
         "width",
         "openWhen",
         "closeWhen",
-        "closeOnClickOutside",
-        "isDismissible",
         "showOverlay",
+        "isDismissible",
+        "closeOnClickOutside",
     ],
     variables  : {
-        "breadcrumbs-wrapper-bg"            : {
+        "drawer-bg"              : {
             type         : "reference",
-            defaultValue : "transparent",
+            defaultValue : "white",
         },
-        "breadcrumb-item-separator"        : {
-            type         : "string",
-            defaultValue : "/",
-        },
-        "breadcrumb-item-separator-colour"  : {
+        "drawer-border"          : {
             type         : "reference",
-            defaultValue : "slate-light-10",
+            defaultValue : "slate-light-20",
         },
-        "breadcrumb-item-text-colour"  : {
+        "drawer-border-radius"   : {
             type         : "reference",
-            defaultValue : "paragraph-text-colour",
+            defaultValue : "global-border-radius",
         },
-        "breadcrumb-item-text-colour-active"  : {
+        "drawer-overlay-opacity" : {
+            type         : "value-unit",
+            defaultValue : 0.4,
+            unit         : "",
+        },
+        "drawer-overlay-blur"    : {
+            type         : "value-unit",
+            defaultValue : 4,
+            unit         : "px",
+        },
+        "drawer-dismiss-button"  : {
             type         : "reference",
-            defaultValue : "paragraph-text-colour",
+            defaultValue : "slate-light-40",
         },
-    }
+    },
 };

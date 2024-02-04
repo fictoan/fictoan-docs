@@ -2,6 +2,7 @@
 
 // EXTERNAL DEPS =======================================================================================================
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 // INTERNAL DEPS =======================================================================================================
 import {
@@ -36,7 +37,6 @@ import { colourOptions } from "../../../utils/colours";
 
 // DATA ================================================================================================================
 import { breadcrumbsProps } from "./config";
-import Link from "next/link";
 
 
 const BreadcrumbsDocs = () => {
@@ -191,7 +191,7 @@ const BreadcrumbsDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={componentVariables["breadcrumbs-wrapper-bg"] || "select-a-colour"}
+                                        defaultValue={componentVariables["breadcrumbs-wrapper-bg"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("breadcrumbs-wrapper-bg", e.target.value)}
                                         isFullWidth
                                     />
