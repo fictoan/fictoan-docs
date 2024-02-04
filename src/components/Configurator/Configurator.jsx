@@ -25,7 +25,6 @@ import {
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
-import { CardThemeConfigurator } from "../../app/components/card/config";
 import { ButtonSample, ButtonThemeConfigurator } from "../../app/components/button/config";
 import { HRuleSample, HRuleThemeConfigurator } from "../../app/components/h-rule/config";
 
@@ -672,13 +671,13 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                             {/* )} */}
 
                             {/* CARD =============================================================================== */}
-                            {component === "Card" && (
-                                <CardThemeConfigurator
-                                    componentVariables={componentVariables}
-                                    handleVariableChange={handleVariableChange}
-                                    colourOptions={colourOptions}
-                                />
-                            )}
+                            {/* {component === "Card" && ( */}
+                            {/*     <CardThemeConfigurator */}
+                            {/*         componentVariables={componentVariables} */}
+                            {/*         handleVariableChange={handleVariableChange} */}
+                            {/*         colourOptions={colourOptions} */}
+                            {/*     /> */}
+                            {/* )} */}
 
                             {/* H-RULE ============================================================================= */}
                             {component === "HRule" && (

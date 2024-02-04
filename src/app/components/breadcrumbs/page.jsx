@@ -17,9 +17,9 @@ import {
     Form,
     Header,
     InputField,
-    RadioTabGroup,
     Select,
-    Range, BreadcrumbsWrapper, BreadcrumbItem,
+    BreadcrumbsWrapper,
+    BreadcrumbItem,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -40,10 +40,7 @@ import Link from "next/link";
 
 
 const BreadcrumbsDocs = () => {
-    const [label, setLabel] = useState("Text");
     const [selectedBgColour, setSelectedBgColour] = useState("");
-    const [selectedBorderColour, setSelectedBorderColour] = useState("");
-    const [selectedTextColour, setSelectedTextColour] = useState("");
     const [showCurrentPageMessage, setShowCurrentPageMessage] = useState(false);
 
     useEffect(() => {
@@ -66,15 +63,6 @@ const BreadcrumbsDocs = () => {
     const handleBgColourChange = (event) => {
         setSelectedBgColour(event.target.value !== "none" ? event.target.value : undefined);
     };
-
-    const handleBorderColourChange = (event) => {
-        setSelectedBorderColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
-    const handleTextColourChange = (event) => {
-        setSelectedTextColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
     return (
         <Article id="page-breadcrumbs">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
@@ -93,6 +81,7 @@ const BreadcrumbsDocs = () => {
             </Row>
 
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}

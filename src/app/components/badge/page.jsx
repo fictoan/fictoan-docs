@@ -39,6 +39,8 @@ import { badgeProps } from "./config";
 
 
 const BadgeDocs = () => {
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(badgeProps.variables);
+
     const [label, setLabel] = useState("Text");
     const [selectedSize, setSelectedSize] = useState("");
     const [selectedShape, setSelectedShape] = useState("");
@@ -46,7 +48,6 @@ const BadgeDocs = () => {
     const [selectedBorderColour, setSelectedBorderColour] = useState("");
     const [selectedTextColour, setSelectedTextColour] = useState("");
 
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(badgeProps.variables);
 
     const handleSizeChange = (event) => {
         setSelectedSize(event.target.value !== "none" ? event.target.value : undefined);
@@ -86,6 +87,7 @@ const BadgeDocs = () => {
             </Row>
 
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
