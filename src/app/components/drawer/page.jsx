@@ -1,18 +1,36 @@
 "use client";
 
-import React, { useState } from "react";
+// EXTERNAL DEPS =======================================================================================================
+import React, { useEffect, useState } from "react";
 
-import { Button, Element, Heading, HRule, Drawer, Portion, Row, Table, Text, Article } from "fictoan-react";
+// INTERNAL DEPS =======================================================================================================
+import {
+    Element,
+    Heading,
+    HRule,
+    Portion,
+    Row,
+    Text,
+    Article,
+    Card,
+    Form,
+    Header,
+} from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
+// COMPONENTS ==========================================================================================================
+
+// STYLES ==============================================================================================================
 import "./page-drawer.css";
-import {
-    sampleInfoPanelCallback,
-    sampleInfoPanelIsOpen,
-    sampleInfoPanelSetup,
-    sampleInfoPanelTheme,
-    sampleInfoPanelWidth,
-} from "./CodeSamples";
+
+// HOOKS ===============================================================================================================
+import { useThemeVariables } from "../../../utils/useThemeVariables";
+
+// UTILS ===============================================================================================================
+import { colourOptions } from "../../../utils/colours";
+
+// DATA ================================================================================================================
+import { breadcrumbsProps } from "./config";
 
 const DrawerDocs = () => {
     const [isSampleInfoPanelOpen, setIsSampleInfoPanelOpen] = useState(false);
@@ -24,309 +42,96 @@ const DrawerDocs = () => {
     const [isHugeInfoPanelOpen, setIsHugeInfoPanelOpen] = useState(false);
 
     return (
-        <>
-            <head>
-                <title>Drawer — Fictoan documentation</title>
-            </head>
+        <Article id="page-component">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
+                <Portion>
+                    <Heading as="h1">Component</Heading>
+                    <Text size="large" marginBottom="small">
+                        The component is
+                    </Text>
+                </Portion>
 
-            <article id="page-drawer">
-                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
-                    <Portion>
-                        <Heading as="h2" className="text-hue">Info panel</Heading>
-                    </Portion>
-                </Row>
+                <Portion>
+                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Text>&bull; </Text>
+                </Portion>
+            </Row>
 
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h3" marginBottom="micro">Props</Heading>
+            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-                        <Heading as="h5" marginBottom="nano">Custom props</Heading>
-                        <Table bordersFor="both" padding="tiny">
-                            <thead className="bg-slate-10">
-                                <tr>
-                                    <td className="weight-600">Prop</td>
-                                    <td className="weight-600">Description</td>
-                                    <td className="weight-600">Values</td>
-                                    <td className="weight-600">Default</td>
-                                </tr>
-                            </thead>
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/*  CONFIGURATOR */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Row horizontalPadding="small" className="rendered-component">
+                {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
+                <Portion>
+                    <Element
+                        id="component-wrapper"
+                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                        data-centered-children
+                    >
 
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <code>width</code>
-                                    </td>
-
-                                    <td>
-                                        What portion of the screen it should cover
-                                    </td>
-
-                                    <td>
-                                        <code>tiny</code><br />
-                                        <code>small</code><br />
-                                        <code>medium</code><br />
-                                        <code>large</code><br />
-                                        <code>huge</code>
-                                    </td>
-
-                                    <td>
-                                        <code>medium</code>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>isOpen</code>
-                                    </td>
-
-                                    <td>
-                                        Toggle the open state
-                                    </td>
-
-                                    <td><Text>boolean</Text></td>
-
-                                    <td>&mdash;</td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>onCloseCallback</code>
-                                    </td>
-
-                                    <td>
-                                        Callback for closing the info panel
-                                    </td>
-
-                                    <td>
-                                        <code>rounded</code><br />
-                                        <code>curved</code><br />
-                                        <code>circular</code><br />
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
-
-                        <HRule kind="tertiary" marginTop="tiny" marginBottom="tiny" />
-
-                        <Heading as="h5" marginBottom="nano">Shared props</Heading>
-                        <Text>None</Text>
-                    </Portion>
-                </Row>
-
-                <HRule horizontalMargin="huge" />
-
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  DEFAULT  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Element as="section" id="default">
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h3" marginBottom="tiny">Default info panel</Heading>
-
-                            <Text marginBottom="micro">
-                                The <code>InfoPanel</code> needs a state to initialise and an trigger to open.
-                            </Text>
-
-                            <Button
-                                kind="primary" shadow="hard" marginBottom="micro"
-                                onClick={() => setIsSampleInfoPanelOpen(true)}
-                            >
-                                Open Drawer
-                            </Button>
-
-                            <CodeBlock source={sampleInfoPanelSetup} language="jsx" />
-
-                            <Text marginTop="micro" marginBottom="micro">
-                                To close, you can pass the <code>false</code> set state to
-                                the <code>onCloseCallback</code> and this will cause the info panel to slide out on clicking
-                                that cross mark inside.
-                            </Text>
-
-                            <Drawer
-                                position="left"
-                                padding="tiny"
-                                isOpen={isSampleInfoPanelOpen}
-                                onCloseCallback={() => setIsSampleInfoPanelOpen(false)}
-                                closeOnClickOutside
-                            >
-                                <Heading as="h5" marginBottom="nano">Hello</Heading>
-                                <Text>You can add all sorts of content here inside the info panel.</Text>
-                            </Drawer>
-                        </Portion>
-                    </Row>
-                </Element>
-
-
-                <HRule horizontalMargin="huge" />
-
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  PROPS  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Element as="section" id="props">
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h3">Props</Heading>
-                        </Portion>
-                    </Row>
-
-                    {/*  =============================================================================================  */}
-                    {/*  KIND  */}
-                    {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h5" marginBottom="nano">Width</Heading>
-
-                            <Text marginBottom="micro">
-                                The <code>width</code> prop lets you cap the max-width of the info panel with the usual five
-                                different sizing values, from <code>tiny</code> to <code>huge</code>.
-                            </Text>
-
-                            <CodeBlock source={sampleInfoPanelWidth} language="markup" marginBottom="micro" />
-
-                            <Button
-                                kind="secondary" shadow="hard" marginBottom="nano" marginRight="nano"
-                                onClick={() => setIsTinyInfoPanelOpen(true)}
-                            >
-                                Tiny info panel
-                            </Button>
-
-                            <Button
-                                kind="secondary" shadow="hard" marginBottom="nano" marginRight="nano"
-                                onClick={() => setIsSmallInfoPanelOpen(true)}
-                            >
-                                Small info panel
-                            </Button>
-
-                            <Button
-                                kind="secondary" shadow="hard" marginBottom="nano" marginRight="nano"
-                                onClick={() => setIsMediumInfoPanelOpen(true)}
-                            >
-                                Medium info panel
-                            </Button>
-
-                            <Button
-                                kind="secondary" shadow="hard" marginBottom="nano" marginRight="nano"
-                                onClick={() => setIsLargeInfoPanelOpen(true)}
-                            >
-                                Large info panel
-                            </Button>
-
-                            <Button
-                                kind="secondary" shadow="hard" marginBottom="nano" marginRight="nano"
-                                onClick={() => setIsHugeInfoPanelOpen(true)}
-                            >
-                                Huge info panel
-                            </Button>
-
-
-                            <Drawer
-                                width="tiny"
-                                isOpen={isTinyInfoPanelOpen}
-                                onCloseCallback={() => setIsTinyInfoPanelOpen(false)}
-                            >
-                                <Heading as="h5" marginBottom="nano">Tiny info panel</Heading>
-                            </Drawer>
-
-                            <Drawer
-                                width="small"
-                                isOpen={isSmallInfoPanelOpen}
-                                onCloseCallback={() => setIsSmallInfoPanelOpen(false)}
-                            >
-                                <Heading as="h5" marginBottom="nano">Small info panel</Heading>
-                            </Drawer>
-
-                            <Drawer
-                                width="medium"
-                                isOpen={isMediumInfoPanelOpen}
-                                onCloseCallback={() => setIsMediumInfoPanelOpen(false)}
-                            >
-                                <Heading as="h5" marginBottom="nano">Medium info panel</Heading>
-                            </Drawer>
-
-                            <Drawer
-                                width="large"
-                                isOpen={isLargeInfoPanelOpen}
-                                onCloseCallback={() => setIsLargeInfoPanelOpen(false)}
-                            >
-                                <Heading as="h5" marginBottom="nano">Large info panel</Heading>
-                            </Drawer>
-
-                            <Drawer
-                                width="huge"
-                                isOpen={isHugeInfoPanelOpen}
-                                onCloseCallback={() => setIsHugeInfoPanelOpen(false)}
-                            >
-                                <Heading as="h5" marginBottom="nano">Huge info panel</Heading>
-                            </Drawer>
-
-                            <Text marginTop="micro">
-                                All of these values come from the theme file, where you can set once for your entire project
-                                globally.
-                            </Text>
-                        </Portion>
-                    </Row>
-
-
-                    <HRule kind="secondary" horizontalMargin="huge" />
-
-
-                    {/*  =============================================================================================  */}
-                    {/*  IS OPEN  */}
-                    {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h5" marginBottom="nano">Open and close</Heading>
-
-                            <Text marginBottom="micro">
-                                Use the <code>isOpen</code> prop to switch between the open state. This is a boolean prop.
-                            </Text>
-
-                            <CodeBlock source={sampleInfoPanelIsOpen} language="markup" marginBottom="micro" />
-                        </Portion>
-                    </Row>
-
-
-                    <HRule kind="secondary" horizontalMargin="huge" />
-
-
-                    {/*  =============================================================================================  */}
-                    {/*  CALLBACK  */}
-                    {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h5" marginBottom="nano">Callback for closing</Heading>
-
-                            <Text marginBottom="micro">
-                                There’s also the <code>onCloseCallback</code> prop to close the panel using
-                                the <code>useState</code> hook.
-                            </Text>
-
-                            <CodeBlock source={sampleInfoPanelCallback} language="jsx" marginBottom="micro" />
-                        </Portion>
-                    </Row>
-
-
-                    <HRule kind="secondary" horizontalMargin="huge" />
-
-                    {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
-                    {/*  THEMING  */}
-                    {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
-                    <Element as="section" id="theming">
-                        <Row horizontalPadding="huge" marginBottom="small">
-                            <Portion>
-                                <Heading as="h3" marginBottom="tiny">Theming</Heading>
-
-                                <CodeBlock source={sampleInfoPanelTheme} language="css" />
-                            </Portion>
-                        </Row>
                     </Element>
-                </Element>
-            </article>
-        </>
+                </Portion>
+
+                {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Form>
+                        <Card padding="micro" shape="rounded">
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="micro">
+                                    Customise individually
+                                </Text>
+                            </Header>
+
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                        {[
+                                            `// Paste this in your content file`,
+                                            `<Card`,
+                                            selectedShape ? `    shape="${selectedShape}"` : null,
+                                            selectedBgColour ? `    bgColour="${selectedBgColour}"` : null,
+                                            selectedBorderColour ? `    borderColour="${selectedBorderColour}"` : null,
+                                            `>${label ? `\n    ${label}\n` : ""}</Card>`,
+                                        ].filter(Boolean).join("\n")}
+                                    </CodeBlock>
+                                </Portion>
+
+                                <Portion>
+
+                                </Portion>
+                            </Row>
+                        </Card>
+                    </Form>
+                </Portion>
+
+                {/* GLOBAL THEME /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Card padding="micro" shape="rounded">
+                        <Form>
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="micro">
+                                    Set values globally
+                                </Text>
+                            </Header>
+
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock
+                                        source={cssVariablesList}
+                                        language="css"
+                                        showCopyButton
+                                        marginBottom="micro"
+                                    />
+                                </Portion>
+
+                            </Row>
+                        </Form>
+                    </Card>
+                </Portion>
+            </Row>
+        </Article>
     );
 };
 

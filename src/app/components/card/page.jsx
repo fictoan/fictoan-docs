@@ -10,7 +10,14 @@ import {
     Portion,
     Row,
     Text,
-    Article, Element, Badge, Form, Card, Header, InputField, RadioTabGroup, Select, Range,
+    Article,
+    Element,
+    Form,
+    Card,
+    Header,
+    RadioTabGroup,
+    Select,
+    Range,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
