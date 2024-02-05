@@ -181,89 +181,6 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             <HRule bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
 
             {/* //////////////////////////////////////////////////////////// */}
-            {/* FORM */}
-            {/* //////////////////////////////////////////////////////////// */}
-            <SidebarItem>
-                <SidebarItemIcon iconType="stroked" />
-                <SidebarItemText
-                    linkText="FORM"
-                    weight="600" textColour="slate-60" size="small"
-                />
-            </SidebarItem>
-
-            <Link href="/components/form/form-wrapper">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <FormWrapperIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Form wrapper" />
-                </SidebarItem>
-            </Link>
-
-            <Link href="/components/form/input-field">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <InputFieldIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Input field" />
-                </SidebarItem>
-            </Link>
-
-            <Link href="/components/form/pin-input-field">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <InputFieldIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Pin Input" />
-                </SidebarItem>
-            </Link>
-
-            <Link href="/components/form/checkbox">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <CheckboxIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Checkbox / Switch" />
-                </SidebarItem>
-            </Link>
-
-            <Link href="/components/form/radio-button">
-                <SidebarItem onClick={closeMobileSidebar}> 
-                    <SidebarItemIcon iconType="stroked">
-                        <RadioButtonIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Radio button" />
-                </SidebarItem>
-            </Link>
-
-            <Link href="/components/form/progress-bar">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ProgressBarIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Progress bar" />
-                </SidebarItem>
-            </Link>
-
-            <Link href="/components/form/select">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <SelectIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Select" />
-                </SidebarItem>
-            </Link>
-
-            <HRule bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
-
-            {/* //////////////////////////////////////////////////////////// */}
             {/* COMPONENTS */}
             {/* //////////////////////////////////////////////////////////// */}
             <SidebarItem>
@@ -280,7 +197,6 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                     <SidebarItemIcon iconType="stroked">
                         <BadgeIcon />
                     </SidebarItemIcon>
-
                     <SidebarItemText weight="400" linkText="Badge" />
                 </SidebarItem>
             </Link>
@@ -291,7 +207,6 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                     <SidebarItemIcon iconType="stroked">
                         <BreadcrumbsIcon />
                     </SidebarItemIcon>
-
                     <SidebarItemText weight="400" linkText="Breadcrumbs" />
                 </SidebarItem>
             </Link>
@@ -326,6 +241,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* CHECKBOX / SWITCH ========================================== */}
+            <Link href="/components/checkbox">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <CheckboxIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Checkbox / Switch" />
+                </SidebarItem>
+            </Link>
+
             {/* CODE BLOCK ================================================= */}
             <Link href="/components/code-block">
                 <SidebarItem onClick={closeMobileSidebar}>
@@ -346,6 +271,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* FORM WRAPPER =============================================== */}
+            <Link href="/components/form-wrapper">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <FormWrapperIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Form wrapper" />
+                </SidebarItem>
+            </Link>
+
             {/* H-RULE ===================================================== */}
             <Link href="/components/h-rule">
                 <SidebarItem onClick={closeMobileSidebar}>
@@ -353,6 +288,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                         <HRuleIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="H-Rule" />
+                </SidebarItem>
+            </Link>
+
+            {/* INPUT FIELD ================================================ */}
+            <Link href="/components/input-field">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <InputFieldIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Input field" />
                 </SidebarItem>
             </Link>
 
@@ -366,6 +311,46 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* PIN INPUT FIELD ============================================ */}
+            <Link href="/components/pin-input-field">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <InputFieldIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Pin Input" />
+                </SidebarItem>
+            </Link>
+
+            {/* PROGRESS BAR ============================================== */}
+            <Link href="/components/progress-bar">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <ProgressBarIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Progress bar" />
+                </SidebarItem>
+            </Link>
+
+            {/* RADIO BUTTON ============================================== */}
+            <Link href="/components/radio-button">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <RadioButtonIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Radio button" />
+                </SidebarItem>
+            </Link>
+
+            {/* SELECT ===================================================== */}
+            <Link href="/components/select">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <SelectIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Select" />
+                </SidebarItem>
+            </Link>
+
             {/* SIDEBAR ==================================================== */}
             <ExpandableContent summary={(
                 <SidebarItem>
@@ -375,7 +360,6 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                     <SidebarItemText weight="400" linkText="Sidebar" />
                 </SidebarItem>
             )}>
-
                 <Link href="/components/sidebar-wrapper">
                     <SidebarItem onClick={closeMobileSidebar}>
                         <SidebarItemIcon iconType="stroked">
@@ -430,6 +414,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                     <SidebarItemText weight="400" linkText="Toast" />
                 </SidebarItem>
             </Link>
+
 
             {/* //////////////////////////////////////////////////////////// */}
             {/* FOOTER */}

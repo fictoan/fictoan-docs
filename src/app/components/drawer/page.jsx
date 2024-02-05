@@ -1,7 +1,7 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
@@ -35,7 +35,7 @@ import { drawerProps } from "./config";
 const DrawerDocs = () => {
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(drawerProps.variables);
 
-    // CUSTOMISE
+    // CUSTOMISE =======================================================================================================
     const [selectedPosition, setSelectedPosition] = useState("right");
     const [selectedSize, setSelectedSize] = useState("");
     const [selectedPadding, setSelectedPadding] = useState("");
@@ -45,15 +45,11 @@ const DrawerDocs = () => {
     const [openWhen, setOpenWhen] = useState("");
     const [closeWhen, setCloseWhen] = useState("");
 
-    // THEME
+    // THEME ===========================================================================================================
     const [selectedBgColour, setSelectedBgColour] = useState("");
     const [selectedBorderColour, setSelectedBorderColour] = useState("");
 
     const [isSampleDrawerOpen, setIsSampleDrawerOpen] = useState(false);
-
-    const handlePaddingChange = (event) => {
-        setSelectedPadding(event.target.value !== "none" ? event.target.value : undefined);
-    };
 
     return (
         <Article id="page-component">
@@ -78,9 +74,8 @@ const DrawerDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="small" className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
-                <Portion>
+                <Portion id="component-wrapper">
                     <Element
-                        id="component-wrapper"
                         as="div" padding="small" shape="rounded" bgColour="slate-light-80"
                         data-centered-children
                     >

@@ -19,7 +19,7 @@ import {
     InputField,
     RadioTabGroup,
     Select,
-    Range,
+    Range, SelectWithSearch,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -93,9 +93,8 @@ const BadgeDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="small" className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
-                <Portion>
+                <Portion id="component-wrapper">
                     <Element
-                        id="component-wrapper"
                         as="div" padding="small" shape="rounded" bgColour="slate-light-80"
                         data-centered-children
                     >
@@ -201,7 +200,7 @@ const BadgeDocs = () => {
 
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
-                                    <Select
+                                    <SelectWithSearch
                                         label="Background colour"
                                         options={[{
                                             label    : "Select a colour",

@@ -34,3 +34,13 @@ img { width: auto; }
     place-items : center;
     position    : relative;
 }
+
+.demo-row pre {
+    height : 300px;
+}
+
+#component-wrapper {
+    position : sticky;
+    top      : 72px;
+    z-index  : 10;
+}

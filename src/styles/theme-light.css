@@ -34,7 +34,7 @@
     --breadcrumb-item-text-colour-active      : var(--paragraph-text-colour);
 
     /* H-RULE /////////////////////////////////////////////////////////////// */
-    --hr-default-height                       : 1px;
+    --hr-height                               : 1px;
 
     --hr-primary-height                       : 2px;
     --hr-primary-bg                           : var(--grey-light-20);

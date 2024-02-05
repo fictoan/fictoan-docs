@@ -26,7 +26,6 @@ import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
 import { ButtonSample, ButtonThemeConfigurator } from "../../app/components/button/config";
-import { HRuleSample, HRuleThemeConfigurator } from "../../app/components/h-rule/config";
 
 // UTILS =======================================================================
 import { generateShades, listOfColours } from "../../utils/colours";
@@ -79,7 +78,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                 );
             case "HRule":
                 return (
-                    HRuleSample
+                    HRule
                 );
             default:
                 return (
@@ -309,9 +308,8 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
         <Div id="component-configurator" className="demo-row" marginBottom="micro">
             <Row className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
-                <Portion>
+                <Portion id="component-wrapper">
                     <Element
-                        id="component-wrapper"
                         as="div" padding="small" shape="rounded" bgColour="slate-light-80"
                     >
                         <Component
@@ -680,13 +678,13 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                             {/* )} */}
 
                             {/* H-RULE ============================================================================= */}
-                            {component === "HRule" && (
-                                <HRuleThemeConfigurator
-                                    componentVariables={componentVariables}
-                                    handleVariableChange={handleVariableChange}
-                                    colourOptions={colourOptions}
-                                />
-                            )}
+                            {/* {component === "HRule" && ( */}
+                            {/*     <HRuleThemeConfigurator */}
+                            {/*         componentVariables={componentVariables} */}
+                            {/*         handleVariableChange={handleVariableChange} */}
+                            {/*         colourOptions={colourOptions} */}
+                            {/*     /> */}
+                            {/* )} */}
                         </Form>
                     </Card>
                 </Portion>

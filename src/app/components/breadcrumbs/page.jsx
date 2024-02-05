@@ -87,9 +87,8 @@ const BreadcrumbsDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="small" className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
-                <Portion>
+                <Portion id="component-wrapper">
                     <Element
-                        id="component-wrapper"
                         as="div" padding="small" shape="rounded" bgColour="slate-light-80"
                         data-centered-children
                     >

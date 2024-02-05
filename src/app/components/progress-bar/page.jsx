@@ -5,26 +5,24 @@ import React, { useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
+    Element,
     Heading,
     HRule,
     Portion,
     Row,
     Text,
     Article,
-    Element,
     Form,
     Card,
     Header,
-    RadioTabGroup,
-    Select,
-    Range,
+    RadioTabGroup, Range, Select, ProgressBar, InputField,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==========================================================================================================
 
 // STYLES ==============================================================================================================
-import "./page-card.css";
+import "./page-progress-bar.css";
 
 // HOOKS ===============================================================================================================
 import { useThemeVariables } from "../../../utils/useThemeVariables";
@@ -33,41 +31,25 @@ import { useThemeVariables } from "../../../utils/useThemeVariables";
 import { colourOptions } from "../../../utils/colours";
 
 // DATA ================================================================================================================
-import { cardProps } from "./config";
+import { progressProps } from "./config";
 
+const ProgressBarDocs = () => {
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(progressProps.variables);
 
-const CardDocs = () => {
-    const { componentVariables, cssVariablesList, handleVariableChange } = useThemeVariables(cardProps.variables);
+    const [max, setMax] = useState("");
+    const [value, setValue] = useState("");
+    const [label, setLabel] = useState("");
+    const [suffix, setSuffix] = useState("");
 
-    const [selectedPadding, setSelectedPadding] = useState("");
     const [selectedShape, setSelectedShape] = useState("");
-    const [selectedBgColour, setSelectedBgColour] = useState("");
-    const [selectedBorderColour, setSelectedBorderColour] = useState("");
-
-    const handlePaddingChange = (event) => {
-        setSelectedPadding(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
-    const handleShapeChange = (event) => {
-        setSelectedShape(event.target.value !== "none" ? event.target.value : undefined);
-    }
-
-    const handleBgColourChange = (event) => {
-        setSelectedBgColour(event.target.value !== "none" ? event.target.value : undefined);
-    }
-
-    const handleBorderColourChange = (event) => {
-        setSelectedBorderColour(event.target.value !== "none" ? event.target.value : undefined);
-    }
 
     return (
-        <Article id="page-card">
-            <Row horizontalPadding="huge" marginTop="medium" marginBottom="tiny">
+        <Article id="page-progress">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1" marginBottom="micro">Card</Heading>
+                    <Heading as="h1">Progress bar</Heading>
                     <Text size="large" marginBottom="small">
-                        The card is a simple box that encloses content within, and is one of the oft-used components
-                        in modern UI.
+                        The line
                     </Text>
                 </Portion>
 
@@ -81,7 +63,6 @@ const CardDocs = () => {
 
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-            {/*  CONFIGURATOR ////////////////////////////////////////////////////////////////////////////////////// */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -90,25 +71,25 @@ const CardDocs = () => {
                 <Portion id="component-wrapper">
                     <Element
                         as="div" padding="small" shape="rounded" bgColour="slate-light-80"
-                        data-centered-children
                     >
-                        <Card
+                        <ProgressBar
                             id="interactive-component"
-                            {...(
-                                selectedPadding !== undefined ? { padding : selectedPadding } : {}
-                            )}
                             {...(
                                 selectedShape !== undefined ? { shape : selectedShape } : {}
                             )}
                             {...(
-                                selectedBgColour !== undefined ? { bgColour : selectedBgColour } : {}
+                                max !== undefined ? { max : max } : {}
                             )}
                             {...(
-                                selectedBorderColour !== undefined ? { borderColor : selectedBorderColour } : {}
+                                value !== undefined ? { value : value } : {}
                             )}
-                        >
-                            Content goes here
-                        </Card>
+                            {...(
+                                label !== undefined ? { label : label } : {}
+                            )}
+                            {...(
+                                suffix !== undefined ? { suffix : suffix } : {}
+                            )}
+                        />
                     </Element>
                 </Portion>
 
@@ -127,35 +108,14 @@ const CardDocs = () => {
                                     <CodeBlock language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
-                                            `<Card`,
-                                            selectedPadding ? `    padding="${selectedPadding}"` : null,
-                                            selectedShape ? `    shape="${selectedShape}"` : null,
-                                            selectedBgColour ? `    bgColour="${selectedBgColour}"` : null,
-                                            selectedBorderColour ? `    borderColour="${selectedBorderColour}"` : null,
-                                            `>Content goes here</Card>`,
+                                            `<ProgressBar`,
+                                            max ? `    max="${max}"` : null,
+                                            value ? `    value="${value}"` : null,
+                                            label ? `    label="${label}"` : null,
+                                            suffix ? `    unit="${suffix}"` : null,
+                                            `/>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
-                                </Portion>
-
-                                {/* SIZE =========================================================================== */}
-                                <Portion>
-                                    <RadioTabGroup
-                                        id="padding" label="Padding" name="padding"
-                                        options={[
-                                            { id : "padding-opt-0", value : "none", label : "none" },
-                                            { id : "padding-opt-1", value : "nano", label : "nano" },
-                                            { id : "padding-opt-2", value : "micro", label : "micro" },
-                                            { id : "padding-opt-3", value : "tiny", label : "tiny" },
-                                            { id : "padding-opt-4", value : "small", label : "small" },
-                                            { id : "padding-opt-5", value : "medium", label : "medium" },
-                                            { id : "padding-opt-6", value : "large", label : "large" },
-                                            { id : "padding-opt-7", value : "huge", label : "huge" },
-                                        ]}
-                                        defaultValue={selectedPadding}
-                                        onChange={handlePaddingChange}
-                                    />
-
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* SHAPE ========================================================================== */}
@@ -168,45 +128,46 @@ const CardDocs = () => {
                                             { id : "shape-opt-2", value : "curved", label : "curved" },
                                         ]}
                                         defaultValue={selectedShape}
-                                        onChange={handleShapeChange}
+                                        onChange={() => setSelectedShape(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
                                     <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
-                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
-                                    <Select
-                                        label="Background colour"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        },
-                                            ...colourOptions,
-                                        ]}
-                                        defaultValue={selectedBgColour || "select-a-colour"}
-                                        onChange={handleBgColourChange}
-                                        isFullWidth
+                                    <InputField
+                                        type="number"
+                                        label="Max possible value"
+                                        placeholder="Enter a number"
+                                        onChange={(e) => setMax(e.target.value)}
                                     />
                                 </Portion>
 
-                                {/* BORDER COLOUR ================================================================== */}
                                 <Portion desktopSpan="half">
-                                    <Select
-                                        label="Border colour"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        },
-                                            ...colourOptions,
-                                        ]}
-                                        defaultValue="select-a-colour"
-                                        onChange={handleBorderColourChange}
-                                        isFullWidth
+                                    <Range
+                                        label="Current value"
+                                        value={value}
+                                        onChange={(e) => setValue(e.target.value)}
+                                        suffix={suffix}
+                                        min={0} max={max} step={1}
+                                    />
+                                </Portion>
+
+                                <Portion desktopSpan="half">
+                                    <InputField
+                                        type="text"
+                                        label="Label"
+                                        placeholder="Enter text"
+                                        onChange={(e) => setLabel(e.target.value)}
+                                    />
+                                </Portion>
+
+                                <Portion desktopSpan="half">
+                                    <InputField
+                                        type="text"
+                                        label="Suffix"
+                                        placeholder="Enter text"
+                                        onChange={(e) => setSuffix(e.target.value)}
                                     />
                                 </Portion>
                             </Row>
@@ -234,6 +195,29 @@ const CardDocs = () => {
                                     />
                                 </Portion>
 
+                                {/* HEIGHT ========================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Height"
+                                        value={componentVariables["progress-bar-height"].value}
+                                        onChange={(e) => handleVariableChange("progress-bar-height", e.target.value)}
+                                        suffix={componentVariables["progress-bar-height"].unit}
+                                        min={0} max={200} step={1}
+                                    />
+                                </Portion>
+
+                                {/* HEIGHT ========================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Border radius"
+                                        value={componentVariables["progress-bar-border-radius"].value}
+                                        onChange={(e) => handleVariableChange("progress-bar-border-radius", e.target.value)}
+                                        suffix={componentVariables["progress-bar-border-radius"].unit}
+                                        min={0} max={50} step={1}
+                                    />
+                                </Portion>
+
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Background colour"
@@ -243,47 +227,57 @@ const CardDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={componentVariables["card-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("card-bg", e.target.value)}
+                                        defaultValue={componentVariables["progress-bar-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("progress-bar-bg", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>
 
-                                {/* BORDER COLOUR ================================================================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
-                                        label="Border colour"
+                                        label="Fill colour"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={componentVariables["card-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("card-border", e.target.value)}
+                                        defaultValue={componentVariables["progress-bar-fill"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("progress-bar-fill", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>
 
-                                {/* BORDER RADIUS ================================================================== */}
+                                {/* LABEL ========================================================================== */}
                                 <Portion desktopSpan="half">
-                                    <Range
-                                        label="Border radius"
-                                        value={componentVariables["card-border-radius"].value}
-                                        onChange={(e) => handleVariableChange("card-border-radius", e.target.value)}
-                                        min={0} max={50} step={1}
-                                        suffix={componentVariables["card-border-radius"].unit}
+                                    <Select
+                                        label="Label colour"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["progress-bar-label"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("progress-bar-label", e.target.value)}
+                                        isFullWidth
                                     />
                                 </Portion>
 
-                                {/* BORDER WIDTH =================================================================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
-                                    <Range
-                                        label="Border width"
-                                        value={componentVariables["card-border-width"].value}
-                                        onChange={(e) => handleVariableChange("card-border-width", e.target.value)}
-                                        min={0} max={50} step={1}
-                                        suffix={componentVariables["card-border-width"].unit}
+                                    <Select
+                                        label="Value colour"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["progress-bar-value"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("progress-bar-value", e.target.value)}
+                                        isFullWidth
                                     />
                                 </Portion>
                             </Row>
@@ -295,4 +289,4 @@ const CardDocs = () => {
     );
 };
 
-export default CardDocs;
+export default ProgressBarDocs;

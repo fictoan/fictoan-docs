@@ -1,19 +1,15 @@
-import React from "react";
-import { Row, Portion, Range, Select, Button, HRule } from "fictoan-react";
-
-// LIST OF PROPS =======================================================================================================
 export const hRuleProps = {
     component  : "HRule",
     properties : [
         "kind",
     ],
     variables  : {
-        "hr-default-height"   : {
+        "hr-height"   : {
             type         : "value-unit",
             defaultValue : 1,
             unit         : "px",
         },
-        "hr-default-bg"       : {
+        "hr-bg"       : {
             type         : "reference",
             defaultValue : "slate",
         },
@@ -45,52 +41,4 @@ export const hRuleProps = {
             defaultValue : "slate-light-20",
         },
     },
-};
-
-// RENDER SAMPLE =======================================================================================================
-export const HRuleSample = () => (
-    <Row marginBottom="none">
-        <Portion>
-            <HRule kind="primary" verticalMargin="micro" />
-            <HRule kind="secondary" verticalMargin="micro" />
-            <HRule kind="tertiary" verticalMargin="micro" />
-        </Portion>
-    </Row>
-);
-
-// THEME VARIABLES =====================================================================================================
-export const HRuleThemeConfigurator = ({ componentVariables, handleVariableChange, colourOptions }) => {
-    return (
-        <Row marginBottom="none">
-            {/* BORDER RADIUS ============================================== */}
-            <Portion desktopSpan="half">
-                <Range
-                    label="Height"
-                    value={componentVariables["hr-default-height"].value}
-                    onChange={(e) => handleVariableChange("hr-default-height", e.target.value)}
-                    min={0} max={10} step={1}
-                    suffix={componentVariables["hr-default-height"].unit}
-                />
-            </Portion>
-
-            {/* BORDER WIDTH =============================================== */}
-            <Portion desktopSpan="half">
-                <Select
-                    label="Default background colour"
-                    options={[{
-                        label    : "Select a colour",
-                        value    : "select-a-colour",
-                        disabled : true,
-                        selected : true,
-                    }, ...colourOptions]}
-                    defaultValue={componentVariables["hr-default-bg"] || "select-a-colour"}
-                    onChange={(e) => handleVariableChange("hr-default-bg", e.target.value)}
-                    isFullWidth
-                />
-            </Portion>
-
-            <Portion desktopSpan="half">
-            </Portion>
-        </Row>
-    );
 };

@@ -74,9 +74,8 @@ const CalloutDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="small" className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
-                <Portion>
+                <Portion id="component-wrapper">
                     <Element
-                        id="component-wrapper"
                         as="div" padding="small" shape="rounded" bgColour="slate-light-80"
                     >
                         <Row marginBottom="none">
@@ -143,12 +142,12 @@ const CalloutDocs = () => {
 
                                 <Portion>
                                     <RadioTabGroup
-                                        id="shape" label="Shape" name="shape"
+                                        id="kind" label="Kind" name="kind"
                                         options={[
-                                            { id : "shape-opt-0", value : "info", label : "info" },
-                                            { id : "shape-opt-1", value : "success", label : "success" },
-                                            { id : "shape-opt-2", value : "warning", label : "warning" },
-                                            { id : "shape-opt-3", value : "error", label : "error" },
+                                            { id : "kind-opt-0", value : "info", label : "info" },
+                                            { id : "kind-opt-1", value : "success", label : "success" },
+                                            { id : "kind-opt-2", value : "warning", label : "warning" },
+                                            { id : "kind-opt-3", value : "error", label : "error" },
                                         ]}
                                         defaultValue={selectedKind}
                                         onChange={handleKindChange}
@@ -179,10 +178,9 @@ const CalloutDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BG COLOUR ====================================================================== */}
+                                {/* BORDER RADIUS ================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Range
-                                        key="callout-border-radius"
                                         label="Border radius"
                                         value={componentVariables["callout-border-radius"].value}
                                         onChange={(e) => handleVariableChange("callout-border-radius", e.target.value)}
@@ -194,7 +192,6 @@ const CalloutDocs = () => {
                                 {/* BORDER WIDTH =================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Range
-                                        key="callout-border-width"
                                         label="Border width"
                                         value={componentVariables["callout-border-width"].value}
                                         onChange={(e) => handleVariableChange("callout-border-width", e.target.value)}

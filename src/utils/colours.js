@@ -1,4 +1,4 @@
-import { Div } from "fictoan-react";
+import { Div, Text } from "fictoan-react";
 
 export const listOfColours = [
     "red",

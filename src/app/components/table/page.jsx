@@ -1,490 +1,393 @@
 "use client";
 
-import React from "react";
+// EXTERNAL DEPS =======================================================================================================
+import React, { useState } from "react";
 
-import { Element, Heading, HRule, Portion, Row, Table, Text, Article } from "fictoan-react";
+// INTERNAL DEPS =======================================================================================================
+import {
+    Element,
+    Heading,
+    HRule,
+    Portion,
+    Row,
+    Text,
+    Article,
+    Card,
+    Form,
+    Header, Button, Drawer, RadioTabGroup, Checkbox, Range, Select, Table,
+} from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
+// COMPONENTS ==========================================================================================================
+
+// STYLES ==============================================================================================================
 import "./page-table.css";
-import {
-    sampleTable, sampleTableAlignText,
-    sampleTableBordersFor, sampleTableFullWidth,
-    sampleTablePadding, sampleTableStripes, sampleTableTheme,
-} from "./CodeSamples";
+
+// HOOKS ===============================================================================================================
+import { useThemeVariables } from "../../../utils/useThemeVariables";
+
+// UTILS ===============================================================================================================
+import { colourOptions } from "../../../utils/colours";
+
+// DATA ================================================================================================================
+import { tableProps } from "./config";
 
 const TableDocs = () => {
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(tableProps.variables);
+
+    // CUSTOMISE =======================================================================================================
+    const [bordersFor, setBordersFor] = useState("none");
+    const [isStriped, setIsStriped] = useState(false);
+    const [highlightRowOnHover, setHighlightRowOnHover] = useState(false);
+    const [selectedPadding, setSelectedPadding] = useState("");
+    const [isFullWidth, setIsFullWidth] = useState(false);
+
+    const [closeOnClickOutside, setCloseOnClickOutside] = useState(false);
+    const [openWhen, setOpenWhen] = useState("");
+    const [closeWhen, setCloseWhen] = useState("");
+
+    // THEME ===========================================================================================================
+    const [selectedBgColour, setSelectedBgColour] = useState("");
+    const [selectedBorderColour, setSelectedBorderColour] = useState("");
+
+    const [isSampleDrawerOpen, setIsSampleDrawerOpen] = useState(false);
+
     return (
-        <>
-            <head>
-                <title>Table — Fictoan documentation</title>
-            </head>
+        <Article id="page-component">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
+                <Portion>
+                    <Heading as="h1">Table</Heading>
+                    <Text size="large" marginBottom="small">
+                        The component is
+                    </Text>
+                </Portion>
 
-            <article id="page-table">
-                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
-                    <Portion>
-                        <Heading as="h2" className="text-hue">Table</Heading>
-                    </Portion>
-                </Row>
+                <Portion>
+                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Text>&bull; </Text>
+                </Portion>
+            </Row>
 
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h3" marginBottom="micro">Props</Heading>
+            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-                        <Table bordersFor="both" padding="tiny">
-                            <thead className="bg-slate-10">
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/*  CONFIGURATOR */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Row horizontalPadding="small" className="rendered-component">
+                {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
+                <Portion id="component-wrapper">
+                    <Element
+                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                        data-centered-children
+                    >
+                        <Table
+                            {...(
+                                bordersFor !== undefined ? { bordersFor : bordersFor } : {}
+                            )}
+                            isStriped={isStriped}
+                            padding={selectedPadding}
+                            highlightRowOnHover={highlightRowOnHover}
+                            isFullWidth={isFullWidth}
+                        >
+                            <thead>
                                 <tr>
-                                    <td className="weight-600">Prop</td>
-                                    <td className="weight-600">Description</td>
-                                    <td className="weight-600">Value</td>
-                                    <td className="weight-600">Default</td>
+                                    <td>Header 1</td>
+                                    <td>Header 2</td>
+                                    <td>Header 3</td>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 <tr>
-                                    <td><code>bordersFor</code></td>
-                                    <td>Denotes which part of the cells to draw the borders for</td>
-                                    <td>
-                                        <code>rows</code><br />
-                                        <code>columns</code><br />
-                                        <code>both</code>
-                                    </td>
-                                    <td>—</td>
+                                    <td>Cell 1</td>
+                                    <td>Cell 2</td>
+                                    <td>Cell 3</td>
                                 </tr>
 
                                 <tr>
-                                    <td><code>isStriped</code></td>
-                                    <td>Adds a background colour for alternate rows</td>
-                                    <td>boolean</td>
-                                    <td><code>false</code></td>
+                                    <td>Cell 4</td>
+                                    <td>Cell 5</td>
+                                    <td>Cell 6</td>
                                 </tr>
 
                                 <tr>
-                                    <td><code>isHoverable</code></td>
-                                    <td>Adds an extra background colour for rows on hover</td>
-                                    <td>boolean</td>
-                                    <td><code>false</code></td>
+                                    <td>Cell 7</td>
+                                    <td>Cell 8</td>
+                                    <td>Cell 9</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Cell 10</td>
+                                    <td>Cell 11</td>
+                                    <td>Cell 12</td>
                                 </tr>
                             </tbody>
                         </Table>
-                    </Portion>
-                </Row>
-
-                <HRule horizontalMargin="huge" />
-
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  DEFAULT  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Element as="section" id="default">
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h3" marginBottom="tiny">Default</Heading>
-
-                            <Text marginBottom="micro">
-                                The <code>Table</code> element is used to separate sections of content on your page. It’s a
-                                self-closing element, and doesn’t accept any children.
-                            </Text>
-
-                            <CodeBlock source={sampleTable} language="markup" />
-
-                            <Text marginTop="micro" marginBottom="micro">
-                                The above code will display the default <code>Table</code>, which looks like this&mdash;
-                            </Text>
-
-                            <Table>
-                                <thead>
-                                    <tr>
-                                        <td>Header 1</td>
-                                        <td>Header 2</td>
-                                        <td>Header 3</td>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 3</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 4</td>
-                                        <td>Cell 5</td>
-                                        <td>Cell 6</td>
-                                    </tr>
-                                </tbody>
-                            </Table>
-
-                            <Text marginTop="micro">
-                                The default table looks nothing like an actual table—we need to add props to dress it up.
-                            </Text>
-                        </Portion>
-                    </Row>
-                </Element>
-
-
-                <HRule horizontalMargin="huge" />
-
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  Props  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Element as="section" id="props">
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h3">Props</Heading>
-                        </Portion>
-                    </Row>
-
-                    {/*  =============================================================================================  */}
-                    {/*  BORDERS FOR  */}
-                    {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h5" marginBottom="nano">Cell borders</Heading>
-
-                            <Text marginBottom="micro">
-                                You can add borders to the cells by adding the <code>bordersFor</code> prop. You can
-                                have <code>rows</code>, <code>columns</code> or <code>both</code>.
-                            </Text>
-
-                            <CodeBlock source={sampleTableBordersFor} language="jsx" marginBottom="micro" />
-
-                            <Table bordersFor="both">
-                                <thead>
-                                    <tr>
-                                        <td>Header 1</td>
-                                        <td>Header 2</td>
-                                        <td>Header 3</td>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 3</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 4</td>
-                                        <td>Cell 5</td>
-                                        <td>Cell 6</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 7</td>
-                                        <td>Cell 8</td>
-                                        <td>Cell 9</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 10</td>
-                                        <td>Cell 11</td>
-                                        <td>Cell 12</td>
-                                    </tr>
-                                </tbody>
-                            </Table>
-                        </Portion>
-                    </Row>
-
-
-                    <HRule kind="secondary" horizontalMargin="huge" />
-
-
-                    {/*  =============================================================================================  */}
-                    {/*  PADDING  */}
-                    {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h5" marginBottom="nano">Cell padding</Heading>
-
-                            <Text marginBottom="micro">
-                                Padding adds some spacing to the cells, and accepts
-                                the <code>tiny</code> to <code>huge</code> spacing values.
-                            </Text>
-
-                            <CodeBlock source={sampleTablePadding} language="jsx" marginBottom="micro" />
-
-                            <Table bordersFor="both" padding="tiny">
-                                <thead>
-                                    <tr>
-                                        <td>Header 1</td>
-                                        <td>Header 2</td>
-                                        <td>Header 3</td>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 3</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 4</td>
-                                        <td>Cell 5</td>
-                                        <td>Cell 6</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 7</td>
-                                        <td>Cell 8</td>
-                                        <td>Cell 9</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 10</td>
-                                        <td>Cell 11</td>
-                                        <td>Cell 12</td>
-                                    </tr>
-                                </tbody>
-                            </Table>
-                        </Portion>
-                    </Row>
-
-
-                    <HRule kind="secondary" horizontalMargin="huge" />
-
-
-                    {/*  =============================================================================================  */}
-                    {/*  STRIPES  */}
-                    {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h5" marginBottom="nano">Striped rows</Heading>
-
-                            <Text marginBottom="micro">
-                                The <code>isStriped</code> prop adds a different background colour to alternate rows, aiding
-                                readability. It also adds a coloured header row. Both these values can be set in the theme.
-                            </Text>
-
-                            <CodeBlock source={sampleTableStripes} language="jsx" marginBottom="micro" />
-
-                            <Table bordersFor="both" padding="tiny" isStriped>
-                                <thead>
-                                    <tr>
-                                        <td>Header 1</td>
-                                        <td>Header 2</td>
-                                        <td>Header 3</td>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 3</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 4</td>
-                                        <td>Cell 5</td>
-                                        <td>Cell 6</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 7</td>
-                                        <td>Cell 8</td>
-                                        <td>Cell 9</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 10</td>
-                                        <td>Cell 11</td>
-                                        <td>Cell 12</td>
-                                    </tr>
-                                </tbody>
-                            </Table>
-                        </Portion>
-                    </Row>
-
-
-                    <HRule kind="secondary" horizontalMargin="huge" />
-
-
-                    {/*  =============================================================================================  */}
-                    {/*  STRIPES  */}
-                    {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h5" marginBottom="nano">Change row BG on hover</Heading>
-
-                            <Text marginBottom="micro">
-                                The <code>isHoverable</code> prop adds a different background colour to a row on hover. You
-                                can change the colour again in the theme.
-                            </Text>
-
-                            <CodeBlock source={sampleTableStripes} language="jsx" marginBottom="micro" />
-
-                            <Table bordersFor="both" padding="tiny" isStriped isHoverable>
-                                <thead>
-                                    <tr>
-                                        <td>Header 1</td>
-                                        <td>Header 2</td>
-                                        <td>Header 3</td>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 3</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 4</td>
-                                        <td>Cell 5</td>
-                                        <td>Cell 6</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 7</td>
-                                        <td>Cell 8</td>
-                                        <td>Cell 9</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 10</td>
-                                        <td>Cell 11</td>
-                                        <td>Cell 12</td>
-                                    </tr>
-                                </tbody>
-                            </Table>
-                        </Portion>
-                    </Row>
-
-
-                    <HRule kind="secondary" horizontalMargin="huge" />
-
-
-                    {/*  =============================================================================================  */}
-                    {/*  FULL WIDTH  */}
-                    {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h5" marginBottom="nano">Full-width</Heading>
-
-                            <Text marginBottom="micro">
-                                You can add the <code>isFullWidth</code> prop to make the table take up the width of its
-                                parent. This is a common prop and now unique to the <code>Table</code> element.
-                            </Text>
-
-                            <CodeBlock source={sampleTableFullWidth} language="jsx" marginBottom="micro" />
-
-                            <Table bordersFor="both" padding="tiny" isStriped isHoverable isFullWidth>
-                                <thead>
-                                    <tr>
-                                        <td>Header 1</td>
-                                        <td>Header 2</td>
-                                        <td>Header 3</td>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 3</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 4</td>
-                                        <td>Cell 5</td>
-                                        <td>Cell 6</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 7</td>
-                                        <td>Cell 8</td>
-                                        <td>Cell 9</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 10</td>
-                                        <td>Cell 11</td>
-                                        <td>Cell 12</td>
-                                    </tr>
-                                </tbody>
-                            </Table>
-                        </Portion>
-                    </Row>
-
-
-                    <HRule kind="secondary" horizontalMargin="huge" />
-
-
-                    {/*  =============================================================================================  */}
-                    {/*  ALIGN TEXT  */}
-                    {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h5" marginBottom="nano">Text alignment</Heading>
-
-                            <Text marginBottom="micro">
-                                There’s a <code>alignText</code> prop to align the text to the <code>left</code>, <code>right</code>, and <code>centre</code>/<code>center</code>.
-                            </Text>
-
-                            <CodeBlock source={sampleTableAlignText} language="jsx" marginBottom="micro" />
-
-                            <Table bordersFor="both" padding="tiny" isStriped isHoverable isFullWidth alignText="centre">
-                                <thead>
-                                    <tr>
-                                        <td>Header 1</td>
-                                        <td>Header 2</td>
-                                        <td>Header 3</td>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 3</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 4</td>
-                                        <td>Cell 5</td>
-                                        <td>Cell 6</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 7</td>
-                                        <td>Cell 8</td>
-                                        <td>Cell 9</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Cell 10</td>
-                                        <td>Cell 11</td>
-                                        <td>Cell 12</td>
-                                    </tr>
-                                </tbody>
-                            </Table>
-                        </Portion>
-                    </Row>
-
-
-                    <HRule horizontalMargin="huge" />
-
-
-                    {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                    {/*  THEMING  */}
-                    {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                    <Element as="section" id="theming">
-                        <Row horizontalPadding="huge" marginBottom="small">
-                            <Portion>
-                                <Heading as="h3" marginBottom="tiny">Theming</Heading>
-
-                                <CodeBlock source={sampleTableTheme} language="css" />
-                            </Portion>
-                        </Row>
                     </Element>
-                </Element>
-            </article>
-        </>
+                </Portion>
+
+                {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Form>
+                        <Card padding="micro" shape="rounded">
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="micro">
+                                    Customise individually
+                                </Text>
+                            </Header>
+
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                        {[
+                                            `// Paste this in your content file`,
+                                            `<Table`,
+                                            bordersFor ? `    bordersFor="${bordersFor}"` : null,
+                                            selectedPadding ? `    padding="${selectedPadding}"` : null,
+                                            isStriped ? `    isStriped` : null,
+                                            highlightRowOnHover ? `    highlightRowOnHover` : null,
+                                            isFullWidth ? `    isFullWidth` : null,
+                                            `>`,
+                                            `    <thead>`,
+                                            `        <tr>`,
+                                            `            <td>Header 1</td>`,
+                                            `            <td>Header 2</td>`,
+                                            `            <td>Header 3</td>`,
+                                            `        </tr>`,
+                                            `    </thead>`,
+
+                                            `    <tbody>`,
+                                            `        <tr>`,
+                                            `            <td>Cell 1</td>`,
+                                            `            <td>Cell 2</td>`,
+                                            `            <td>Cell 3</td>`,
+                                            `        </tr>`,
+                                            `    <tbody>`,
+                                            `</Table>`,
+                                        ].filter(Boolean).join("\n")}
+                                    </CodeBlock>
+                                </Portion>
+
+                                {/* POSITION ======================================================================= */}
+                                <Portion>
+                                    <RadioTabGroup
+                                        id="borders-for" label="Borders for" name="borders-for"
+                                        options={[
+                                            { id : "borders-for-opt-0", value : "none", label : "none" },
+                                            { id : "borders-for-opt-1", value : "rows", label : "rows" },
+                                            { id : "borders-for-opt-2", value : "columns", label : "columns" },
+                                            { id : "borders-for-opt-3", value : "both", label : "both" },
+                                        ]}
+                                        defaultValue={bordersFor}
+                                        onChange={() => setBordersFor(event.target.value !== "none" ? event.target.value : undefined)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                </Portion>
+
+                                {/* PADDING ======================================================================== */}
+                                <Portion>
+                                    <RadioTabGroup
+                                        id="padding" name="padding" label="Padding"
+                                        options={[
+                                            { id : "padding-opt-0", value : "none", label : "none" },
+                                            { id : "padding-opt-3", value : "tiny", label : "tiny" },
+                                            { id : "padding-opt-4", value : "small", label : "small" },
+                                            { id : "padding-opt-5", value : "medium", label : "medium" },
+                                            { id : "padding-opt-6", value : "large", label : "large" },
+                                            { id : "padding-opt-7", value : "huge", label : "huge" },
+                                        ]}
+                                        defaultValue={selectedPadding}
+                                        onChange={() => setSelectedPadding(event.target.value !== "none" ? event.target.value : undefined)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                </Portion>
+
+                                {/* OVERLAY ======================================================================== */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-overlay"
+                                        value="checkbox-overlay"
+                                        name="checkbox-overlay"
+                                        label="Striped rows"
+                                        checked={isStriped}
+                                        onChange={() => setIsStriped(event.target.checked)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                </Portion>
+
+                                {/* DISMISSIBLE ==================================================================== */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-dismissible"
+                                        value="checkbox-dismissible"
+                                        name="checkbox-dismissible"
+                                        label="Highlight row on hover"
+                                        checked={highlightRowOnHover}
+                                        onChange={() => setHighlightRowOnHover(event.target.checked)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                </Portion>
+
+                                {/* OVERLAY ======================================================================== */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-full-width"
+                                        value="checkbox-full-width"
+                                        name="checkbox-full-width"
+                                        label="Make table full width"
+                                        checked={isFullWidth}
+                                        onChange={() => setIsFullWidth(event.target.checked)}
+                                    />
+                                </Portion>
+                            </Row>
+                        </Card>
+                    </Form>
+                </Portion>
+
+                {/* GLOBAL THEME /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Card padding="micro" shape="rounded">
+                        <Form>
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="nano">
+                                    Set values globally
+                                </Text>
+                            </Header>
+
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock
+                                        source={cssVariablesList}
+                                        language="css"
+                                        showCopyButton
+                                        marginBottom="micro"
+                                    />
+                                </Portion>
+
+                                {/* BG ============================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Background"
+                                        options={[{
+                                            label: "Select a colour",
+                                            value: "select-a-colour",
+                                            disabled: true,
+                                            selected: true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["table-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("table-bg", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BORDER ========================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Border"
+                                        options={[{
+                                            label: "Select a colour",
+                                            value: "select-a-colour",
+                                            disabled: true,
+                                            selected: true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["table-border"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("table-border", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* TEXT =========================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Text"
+                                        options={[{
+                                            label: "Select a colour",
+                                            value: "select-a-colour",
+                                            disabled: true,
+                                            selected: true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["table-text"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("table-text", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                <Portion desktopSpan="half" />
+
+                                {/* HEADER BG ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Header BG when striped"
+                                        options={[{
+                                            label: "Select a colour",
+                                            value: "select-a-colour",
+                                            disabled: true,
+                                            selected: true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["table-striped-header-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("table-striped-header-bg", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* CELL BG ======================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Striped cell BG"
+                                        options={[{
+                                            label: "Select a colour",
+                                            value: "select-a-colour",
+                                            disabled: true,
+                                            selected: true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["table-striped-cell-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("table-striped-cell-bg", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* HIGHLIGHT BG =================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Row BG on hover"
+                                        options={[{
+                                            label: "Select a colour",
+                                            value: "select-a-colour",
+                                            disabled: true,
+                                            selected: true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["table-highlight-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("table-highlight-bg", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* HIGHLIGHT TEXT ================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Text hover colour"
+                                        options={[{
+                                            label: "Select a colour",
+                                            value: "select-a-colour",
+                                            disabled: true,
+                                            selected: true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["table-highlight-text"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("table-highlight-text", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                            </Row>
+                        </Form>
+                    </Card>
+                </Portion>
+            </Row>
+        </Article>
     );
 };
 
