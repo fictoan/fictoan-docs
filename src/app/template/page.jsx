@@ -21,20 +21,20 @@ import { CodeBlock } from "fictoan-react/components";
 // COMPONENTS ==========================================================================================================
 
 // STYLES ==============================================================================================================
-import "./page-breadcrumbs.css";
+// import "./page-breadcrumbs.css";
 
 // HOOKS ===============================================================================================================
-import { useThemeVariables } from "../../../utils/useThemeVariables";
+// import { useThemeVariables } from "../../../utils/useThemeVariables";
 
 // UTILS ===============================================================================================================
-import { colourOptions } from "../../../utils/colours";
+// import { colourOptions } from "../../../utils/colours";
 
 // DATA ================================================================================================================
-import { breadcrumbsProps } from "./config";
+// import { breadcrumbsProps } from "./config";
 
 
 const ComponentDocs = () => {
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(badgeProps.variables);
+    // const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(badgeProps.variables);
 
     const [label, setLabel] = useState("Text");
     const [selectedSize, setSelectedSize] = useState("");

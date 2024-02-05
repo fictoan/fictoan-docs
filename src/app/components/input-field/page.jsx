@@ -18,7 +18,6 @@ import {
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
-import { PropsList } from "../../../../components/PropsList/PropsList";
 
 // STYLES ======================================================================
 import "./input-field.css";
@@ -67,8 +66,6 @@ const InputFieldDocs = () => {
                         <Heading as="h1" className="text-hue">Input field</Heading>
                     </Portion>
                 </Row>
-
-                <PropsList propData={listOfInputFieldProps} />
             </Element>
 
             <HRule horizontalMargin="huge" verticalMargin="small" />

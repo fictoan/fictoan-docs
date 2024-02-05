@@ -17,7 +17,6 @@ import {
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
-import { PropsList } from "../../../../components/PropsList/PropsList";
 
 // STYLES ======================================================================
 import "./pin-input-field.css";
@@ -67,8 +66,6 @@ const InputFieldDocs = () => {
                         <Heading as="h1" className="text-hue">Pin Input field</Heading>
                     </Portion>
                 </Row>
-
-                <PropsList propData={listOfPinInputFieldProps} />
             </Element>
 
             <HRule horizontalMargin="huge" verticalMargin="small" />

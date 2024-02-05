@@ -7,7 +7,6 @@ import React from "react";
 import { Callout, Element, Heading, HRule, Portion, Row, Select, Text, Article } from "fictoan-react";
 
 // COMPONENTS ==================================================================
-import { PropsList } from "../../../../components/PropsList/PropsList";
 
 // STYLES ======================================================================
 import "./page-select.css";
@@ -37,8 +36,6 @@ const SelectDocs = () => {
                     <Heading as="h1" marginBottom="micro">Select dropdown</Heading>
                 </Portion>
             </Row>
-
-            <PropsList propData={listOfSelectProps} />
 
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
