@@ -18,7 +18,7 @@ import {
     RadioTabGroup,
     Checkbox,
     Select,
-    Table, Tabs,
+    Tabs,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 

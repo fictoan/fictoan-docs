@@ -138,15 +138,15 @@ const BreadcrumbsDocs = () => {
                                         {[
                                             `// Paste this in your content file`,
                                             `<BreadcrumbsWrapper>`,
-                                            `    <BreadcrumbsItem>`,
+                                            `    <BreadcrumbItem>`,
                                             `        <Link href="/">Home</Link>`,
-                                            `    </BreadcrumbsItem>`,
-                                            `    <BreadcrumbsItem>`,
+                                            `    </BreadcrumbItem>`,
+                                            `    <BreadcrumbItem>`,
                                             `        <Link href="/components">Components</Link>`,
-                                            `    </BreadcrumbsItem>`,
-                                            `    <BreadcrumbsItem>`,
+                                            `    </BreadcrumbItem>`,
+                                            `    <BreadcrumbItem>`,
                                             `        <Link href="/components/breadcrumbs">Breadcrumbs</Link>`,
-                                            `    </BreadcrumbsItem>`,
+                                            `    </BreadcrumbItem>`,
                                             `</BreadcrumbsWrapper>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>

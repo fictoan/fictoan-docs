@@ -1,381 +1,232 @@
 "use client";
 
+// EXTERNAL DEPS =======================================================================================================
 import React, { useState } from "react";
 
+// INTERNAL DEPS =======================================================================================================
 import {
-    Button,
     Element,
     Heading,
     HRule,
     Portion,
     Row,
-    Table,
     Text,
-    ToastItem,
-    ToastsWrapper, Article
+    Article,
+    Card,
+    Form,
+    Header,
+    RadioTabGroup,
+    Checkbox,
+    Select,
+    Tabs, ToastItem, ToastsWrapper, Button, Range,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
-import "./page-toast.css";
-import {
-    sampleToast,
-    sampleToastShow,
-    sampleToastsPosition,
-    sampleToastTheme,
-    sampleToastTimeout,
-} from "./CodeSamples";
+// COMPONENTS ==========================================================================================================
 
-const ToastDocs = () => {
-    const [showTopToast, setShowTopToast] = useState(false);
-    const [showBottomToast, setShowBottomToast] = useState(false);
+// STYLES ==============================================================================================================
+import "./page-toast.css";
+
+// HOOKS ===============================================================================================================
+import { useThemeVariables } from "../../../utils/useThemeVariables";
+
+// UTILS ===============================================================================================================
+import { colourOptions } from "../../../utils/colours";
+
+// DATA ================================================================================================================
+import { toastProps } from "./config";
+
+const TableDocs = () => {
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(toastProps.variables);
+
+    const [showSampleToast, setShowSampleToast] = useState(false);
+
+    // CUSTOMISE =======================================================================================================
+    const [selectedPosition, setSelectedPosition] = useState("top");
+    const [secondsToShowFor, setSecondsToShowFor] = useState(100);
+    const [isFullWidth, setIsFullWidth] = useState(false);
+
+    // THEME ===========================================================================================================
 
     return (
-        <>
-            <head>
-                <title>Toast — Fictoan documentation</title>
-            </head>
+        <Article id="page-component">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
+                <Portion>
+                    <Heading as="h1">Toast</Heading>
+                    <Text size="large" marginBottom="small">
+                        The component is
+                    </Text>
+                </Portion>
 
-            <article id="page-toast">
-                <ToastsWrapper position="top">
-                    <ToastItem
-                        show={showTopToast}
-                        onCloseCallback={() => setShowTopToast(false)}
-                        shadow="soft"
-                        showFor="2000"
+                <Portion>
+                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Text>&bull; </Text>
+                </Portion>
+            </Row>
+
+            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/*  CONFIGURATOR */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Row horizontalPadding="small" className="rendered-component">
+                {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
+                <Portion id="component-wrapper">
+                    <Element
+                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                        data-centered-children
                     >
-                        <Text>Hello there, folks!</Text>
-                    </ToastItem>
-                </ToastsWrapper>
-
-                <Row horizontalPadding="huge" marginTop="small" marginBottom="small">
-                    <Portion>
-                        <Heading as="h2" className="text-hue">Toast</Heading>
-                    </Portion>
-                </Row>
-
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h3" marginBottom="micro">Props</Heading>
-
-                        <Heading as="h5" marginBottom="nano">Custom props — ToastsWrapper</Heading>
-                        <Table bordersFor="both" padding="tiny" isFullWidth marginBottom="micro">
-                            <thead className="bg-slate-10">
-                                <tr>
-                                    <td className="weight-600">Prop</td>
-                                    <td className="weight-600">Description</td>
-                                    <td className="weight-600">Values</td>
-                                    <td className="weight-600">Default</td>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <code>position</code>
-                                    </td>
-
-                                    <td>
-                                        Horizontal alignment of the wrapper.
-                                    </td>
-
-                                    <td>
-                                        <code>top</code><br />
-                                        <code>bottom</code>
-                                    </td>
-
-                                    <td>
-                                        <code>&mdash;</code>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
-
-                        <Heading as="h5" marginBottom="nano">Custom props — ToastItem</Heading>
-                        <Table bordersFor="both" padding="tiny" isFullWidth>
-                            <thead className="bg-slate-10">
-                                <tr>
-                                    <td className="weight-600">Prop</td>
-                                    <td className="weight-600">Description</td>
-                                    <td className="weight-600">Values</td>
-                                    <td className="weight-600">Default</td>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <code>show</code>
-                                    </td>
-
-                                    <td>
-                                        Trigger the toast
-                                    </td>
-
-                                    <td>
-                                        boolean
-                                    </td>
-
-                                    <td>
-                                        <Text>&mdash;</Text>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>showFor</code>
-                                    </td>
-
-                                    <td>
-                                        Milliseconds after which to remove the toast
-                                    </td>
-
-                                    <td>
-                                        integer
-                                    </td>
-
-                                    <td>
-                                        <code>4000</code>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
-
-                        <HRule kind="tertiary" marginTop="tiny" marginBottom="tiny" />
-
-                        <Heading as="h5" marginBottom="nano">Shared props</Heading>
-                        <Table bordersFor="both" padding="tiny">
-                            <thead className="bg-slate-10">
-                                <tr>
-                                    <td className="weight-600">Prop</td>
-                                    <td className="weight-600">Description</td>
-                                    <td className="weight-600">Values</td>
-                                    <td className="weight-600">Default</td>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <code>bgColour</code> / <code>bgColor</code>
-                                    </td>
-
-                                    <td>
-                                        Background colour
-                                    </td>
-
-                                    <td>
-                                        Any colour from <code>defaultColours</code>.
-                                    </td>
-
-                                    <td>
-                                        <code>slate10</code>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>borderColour</code> / <code>borderColor</code>
-                                    </td>
-
-                                    <td>
-                                        Border colour
-                                    </td>
-
-                                    <td>
-                                        Any colour from <code>defaultColours</code>.
-                                    </td>
-
-                                    <td>
-                                        <code>slate</code>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>shadow</code>
-                                    </td>
-
-                                    <td>
-                                        Box shadow
-                                    </td>
-
-                                    <td>
-                                        <code>mild</code><br />
-                                        <code>hard</code><br />
-                                        <code>soft</code>
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>shape</code>
-                                    </td>
-
-                                    <td>
-                                        Corner radius
-                                    </td>
-
-                                    <td>
-                                        <code>rounded</code><br />
-                                        <code>curved</code>
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
-                    </Portion>
-                </Row>
-
-                <HRule horizontalMargin="huge" />
-
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  DEFAULT  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Element as="section" id="default">
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h3" marginBottom="tiny">Default toast</Heading>
-
-                            <Text marginBottom="micro">
-                                The <code>ToastsWrapper</code> acts as a container for all
-                                your <code>Toast</code> elements to appear inside of.
-                            </Text>
-
-                            <CodeBlock source={sampleToast} language="jsx" />
-
-                            <Text marginTop="micro" marginBottom="micro">
-                                The above code will display a toast that appears on the top centre of the page, which
-                                you can test using this button&mdash;
-                            </Text>
-
-                            <Button
-                                kind="primary"
-                                shape="rounded" shadow="mild" size="small"
-                                marginBottom="nano" marginRight="nano"
-                                onClick={() => setShowTopToast(true)}
-                            >
-                                Show hello toast
-                            </Button>
-
-                            <Text marginTop="micro" marginBottom="micro">
-                                Of course, this is just a sample implementation, feel free to use your own logic for
-                                displaying toasts. The entire markup is wrapped in the <code>ToastsWrapper</code>,
-                                with individual <code>ToastItem</code> children inside it.
-                            </Text>
-                        </Portion>
-                    </Row>
-                </Element>
-
-                <HRule horizontalMargin="huge" />
-
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  PROPS  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Element as="section" id="wrapper-props">
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h3">Props — ToastsWrapper</Heading>
-                        </Portion>
-                    </Row>
-
-                    {/*  =============================================================================================  */}
-                    {/*  POSITION  */}
-                    {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h5" marginBottom="nano">Position</Heading>
-
-                            <Text marginBottom="micro">
-                                The <code>position</code> prop determines if you want the toasts on the <code>top</code> or
-                                the <code>bottom</code> of the page.
-                            </Text>
-
-                            <CodeBlock source={sampleToastsPosition} language="jsx" marginBottom="micro" />
-                        </Portion>
-                    </Row>
-
-
-                    <HRule kind="secondary" horizontalMargin="huge" />
-                </Element>
-
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  PROPS  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Element as="section" id="item-props">
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h3">Props — Toast</Heading>
-                        </Portion>
-                    </Row>
-
-                    {/*  =============================================================================================  */}
-                    {/*  POSITION  */}
-                    {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h5" marginBottom="nano">Show</Heading>
-
-                            <Text marginBottom="micro">
-                                The <code>show</code> props is what triggers the toast to be displayed. You can use it with
-                                a <code>useState</code> hook.
-                            </Text>
-
-                            <CodeBlock source={sampleToastShow} language="jsx" marginBottom="micro" />
-
-                            <Text marginTop="micro">
-                                The <code>onCloseCallback</code> takes care of dismissing the toast after the default period
-                                of four seconds.
-                            </Text>
-                        </Portion>
-                    </Row>
-
-
-                    <HRule kind="secondary" horizontalMargin="huge" />
-
-
-                    {/*  =============================================================================================  */}
-                    {/*  TIMEOUT  */}
-                    {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h5" marginBottom="nano">Show for</Heading>
-
-                            <Text marginBottom="micro">
-                                You can also add a <code>showFor</code> prop with a millisecond duration value to keep the
-                                toast on-screen for that long.
-                            </Text>
-
-                            <CodeBlock source={sampleToastTimeout} language="jsx" marginBottom="micro" />
-                        </Portion>
-                    </Row>
-
-
-                    <HRule horizontalMargin="huge" />
-
-
-                    {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
-                    {/*  THEMING  */}
-                    {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
-                    <Element as="section" id="theming">
-                        <Row horizontalPadding="huge" marginBottom="small">
-                            <Portion>
-                                <Heading as="h3" marginBottom="tiny">Theming</Heading>
-
-                                <CodeBlock source={sampleToastTheme} language="css" />
-                            </Portion>
-                        </Row>
+                        <Button
+                            onClick={() => setShowSampleToast(true)}
+                            kind="primary"
+                        >
+                            Show a toast
+                        </Button>
                     </Element>
-                </Element>
-            </article>
-        </>
+                </Portion>
+
+                {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Form spacing="none">
+                        <Card padding="micro" shape="rounded">
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="micro">
+                                    Customise individually
+                                </Text>
+                            </Header>
+
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                        {[
+                                            `// Paste this in your content file`,
+                                            `const [showSampleToast, setShowSampleToast] = useState(false); \n`,
+                                            `<ToastsWrapper`,
+                                            selectedPosition ? `    position="${selectedPosition}"` : null,
+                                            `>`,
+                                            `    <ToastItem`,
+                                            `        showWhen={showSampleToast}`,
+                                            `        secondsToShowFor={${secondsToShowFor}}`,
+                                            `        closeWhen={() => setShowSampleToast(false)}`,
+                                            `    >`,
+                                            `        <Text>Hello there, folks!</Text>`,
+                                            `    </ToastItem>`,
+                                            `</ToastsWrapper>`,
+                                        ].filter(Boolean).join("\n")}
+                                    </CodeBlock>
+                                </Portion>
+
+                                {/* ALIGN ========================================================================== */}
+                                <Portion>
+                                    <RadioTabGroup
+                                        id="position" label="Position" name="position"
+                                        options={[
+                                            { id : "position-opt-0", value : "top", label : "top" },
+                                            { id : "position-opt-1", value : "bottom", label : "bottom" },
+                                        ]}
+                                        defaultValue={selectedPosition || "right"}
+                                        onChange={() => setSelectedPosition(event.target.value)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
+
+                                {/* OVERLAY COLOUR ================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Show toast for"
+                                        value={secondsToShowFor}
+                                        onChange={(e) => setSecondsToShowFor(e.target.value)}
+                                        min={1} max={50} step={1}
+                                        suffix={secondsToShowFor > 1 ? " seconds" : " second"}
+                                    />
+                                </Portion>
+                            </Row>
+                        </Card>
+                    </Form>
+                </Portion>
+
+                {/* GLOBAL THEME /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Card padding="micro" shape="rounded">
+                        <Form>
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="nano">
+                                    Set values globally
+                                </Text>
+                            </Header>
+
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock
+                                        source={cssVariablesList}
+                                        language="css"
+                                        showCopyButton
+                                        marginBottom="micro"
+                                    />
+                                </Portion>
+
+                                {/* BG COLOUR ====================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Background"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["toast-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("toast-bg", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* TEXT COLOUR ==================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Text colour"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["toast-text"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("toast-text", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BORDER RADIUS ================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Border radius"
+                                        value={componentVariables["toast-border-radius"].value}
+                                        onChange={(e) => handleVariableChange("toast-border-radius", e.target.value)}
+                                        min={0} max={50} step={1}
+                                        suffix={componentVariables["toast-border-radius"].unit}
+                                    />
+                                </Portion>
+                            </Row>
+                        </Form>
+                    </Card>
+                </Portion>
+            </Row>
+
+            <ToastsWrapper
+                position={selectedPosition}
+            >
+                <ToastItem
+                    showWhen={showSampleToast}
+                    secondsToShowFor={secondsToShowFor}
+                    closeWhen={() => setShowSampleToast(false)}
+                >
+                    <Text>Hello there, folks!</Text>
+                </ToastItem>
+            </ToastsWrapper>
+        </Article>
     );
 };
 
-export default ToastDocs;
+export default TableDocs;
