@@ -201,9 +201,9 @@ const CalloutDocs = () => {
                                 </Portion>
                             </Row>
 
-                            {/* INFO /////////////////////////////////////////////////////// */}
+                            {/* INFO /////////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="micro">
-                                {/* BG COLOUR ============================================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Info - BG colour"
@@ -219,7 +219,7 @@ const CalloutDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BORDER COLOUR ========================================== */}
+                                {/* BORDER COLOUR ================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Info - border colour"
@@ -236,9 +236,9 @@ const CalloutDocs = () => {
                                 </Portion>
                             </Row>
 
-                            {/* SUCCESS //////////////////////////////////////////////////// */}
+                            {/* SUCCESS //////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="micro">
-                                {/* BG COLOUR ============================================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Success - BG colour"
@@ -254,7 +254,7 @@ const CalloutDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BG COLOUR ============================================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Success - border colour"
@@ -271,9 +271,9 @@ const CalloutDocs = () => {
                                 </Portion>
                             </Row>
 
-                            {/* WARNING //////////////////////////////////////////////////// */}
+                            {/* WARNING //////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="micro">
-                                {/* BG COLOUR ============================================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Warning - BG colour"
@@ -289,7 +289,7 @@ const CalloutDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BG COLOUR ============================================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Warning - border colour"
@@ -306,9 +306,9 @@ const CalloutDocs = () => {
                                 </Portion>
                             </Row>
 
-                            {/* ERROR ////////////////////////////////////////////////////// */}
+                            {/* ERROR ////////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
-                                {/* BG COLOUR ============================================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Error - BG colour"
@@ -324,7 +324,7 @@ const CalloutDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BG COLOUR ============================================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Error - border colour"

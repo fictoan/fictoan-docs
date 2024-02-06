@@ -14,7 +14,11 @@ import {
     Article,
     Card,
     Form,
-    Header, Button, Drawer, RadioTabGroup, Checkbox, Range, Select, Table,
+    Header,
+    RadioTabGroup,
+    Checkbox,
+    Select,
+    Table,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -42,15 +46,7 @@ const TableDocs = () => {
     const [selectedPadding, setSelectedPadding] = useState("");
     const [isFullWidth, setIsFullWidth] = useState(false);
 
-    const [closeOnClickOutside, setCloseOnClickOutside] = useState(false);
-    const [openWhen, setOpenWhen] = useState("");
-    const [closeWhen, setCloseWhen] = useState("");
-
     // THEME ===========================================================================================================
-    const [selectedBgColour, setSelectedBgColour] = useState("");
-    const [selectedBorderColour, setSelectedBorderColour] = useState("");
-
-    const [isSampleDrawerOpen, setIsSampleDrawerOpen] = useState(false);
 
     return (
         <Article id="page-component">
@@ -162,6 +158,7 @@ const TableDocs = () => {
                                             `            <td>Cell 2</td>`,
                                             `            <td>Cell 3</td>`,
                                             `        </tr>`,
+                                            `        ...add similar rows here`,
                                             `    <tbody>`,
                                             `</Table>`,
                                         ].filter(Boolean).join("\n")}
@@ -273,10 +270,10 @@ const TableDocs = () => {
                                     <Select
                                         label="Background"
                                         options={[{
-                                            label: "Select a colour",
-                                            value: "select-a-colour",
-                                            disabled: true,
-                                            selected: true,
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-bg"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("table-bg", e.target.value)}
@@ -289,10 +286,10 @@ const TableDocs = () => {
                                     <Select
                                         label="Border"
                                         options={[{
-                                            label: "Select a colour",
-                                            value: "select-a-colour",
-                                            disabled: true,
-                                            selected: true,
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-border"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("table-border", e.target.value)}
@@ -305,10 +302,10 @@ const TableDocs = () => {
                                     <Select
                                         label="Text"
                                         options={[{
-                                            label: "Select a colour",
-                                            value: "select-a-colour",
-                                            disabled: true,
-                                            selected: true,
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-text"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("table-text", e.target.value)}
@@ -323,10 +320,10 @@ const TableDocs = () => {
                                     <Select
                                         label="Header BG when striped"
                                         options={[{
-                                            label: "Select a colour",
-                                            value: "select-a-colour",
-                                            disabled: true,
-                                            selected: true,
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-striped-header-bg"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("table-striped-header-bg", e.target.value)}
@@ -339,10 +336,10 @@ const TableDocs = () => {
                                     <Select
                                         label="Striped cell BG"
                                         options={[{
-                                            label: "Select a colour",
-                                            value: "select-a-colour",
-                                            disabled: true,
-                                            selected: true,
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-striped-cell-bg"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("table-striped-cell-bg", e.target.value)}
@@ -355,10 +352,10 @@ const TableDocs = () => {
                                     <Select
                                         label="Row BG on hover"
                                         options={[{
-                                            label: "Select a colour",
-                                            value: "select-a-colour",
-                                            disabled: true,
-                                            selected: true,
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-highlight-bg"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("table-highlight-bg", e.target.value)}
@@ -371,17 +368,16 @@ const TableDocs = () => {
                                     <Select
                                         label="Text hover colour"
                                         options={[{
-                                            label: "Select a colour",
-                                            value: "select-a-colour",
-                                            disabled: true,
-                                            selected: true,
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-highlight-text"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("table-highlight-text", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>
-
                             </Row>
                         </Form>
                     </Card>

@@ -1,252 +1,351 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+// EXTERNAL DEPS =======================================================================================================
+import React, { useState } from "react";
 
-import { Element, Heading, HRule, Portion, Row, Table, Tabs, Text, Article } from "fictoan-react";
+// INTERNAL DEPS =======================================================================================================
+import {
+    Element,
+    Heading,
+    HRule,
+    Portion,
+    Row,
+    Text,
+    Article,
+    Card,
+    Form,
+    Header,
+    RadioTabGroup,
+    Checkbox,
+    Select,
+    Table, Tabs,
+} from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
+// COMPONENTS ==========================================================================================================
+
+// STYLES ==============================================================================================================
 import "./page-tabs.css";
 
-import { sampleTabs, sampleTabsTabs, sampleTabsTheme } from "./CodeSamples";
+// HOOKS ===============================================================================================================
+import { useThemeVariables } from "../../../utils/useThemeVariables";
 
-const TabsDocs = () => {
-    const tabOneContent = () => (
-        <Text>Content for tab 1</Text>
-    )
+// UTILS ===============================================================================================================
+import { colourOptions } from "../../../utils/colours";
 
-    const tabTwoContent = () => (
-        <Text>Some other content for the next tab</Text>
-    )
+// DATA ================================================================================================================
+import { tabsProps } from "./config";
 
-    const tabThreeContent = () => (
-        <Image
-            src="/spanish-inquisition.jpeg"
-            alt="Nobody expects the Spanish Inquisition!"
-            id="fictoan-logo"
-            width={600}
-            height={300}
-            priority
-        />
-    )
+const TableDocs = () => {
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(tabsProps.variables);
+
+
+    // CUSTOMISE =======================================================================================================
+    const [selectedAlign, setSelectedAlign] = useState("left");
+    const [isFullWidth, setIsFullWidth] = useState(false);
+    const [hasAlert, setHasAlert] = useState(false);
+    const [alertTabKey, setAlertTabKey] = useState(null);
+
+    const toggleRandomTabAlert = () => {
+        setHasAlert(prev => {
+            if (!prev) {
+                // Hard coded for 3 tabs
+                const randomTabKey = `tab${Math.floor(Math.random() * 3) + 1}`;
+                setAlertTabKey(randomTabKey);
+            } else {
+                setAlertTabKey(null);
+            }
+            return !prev;
+        });
+    };
+
+    // THEME ===========================================================================================================
 
     return (
-        <>
-            <head>
-                <title>Tabs — Fictoan documentation</title>
-            </head>
+        <Article id="page-component">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
+                <Portion>
+                    <Heading as="h1">Tabs</Heading>
+                    <Text size="large" marginBottom="small">
+                        The component is
+                    </Text>
+                </Portion>
 
-            <article id="page-tabs">
-                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
-                    <Portion>
-                        <Heading as="h2" className="text-hue">Tabs</Heading>
-                    </Portion>
-                </Row>
+                <Portion>
+                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Text>&bull; </Text>
+                </Portion>
+            </Row>
 
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h3" marginBottom="micro">Props</Heading>
+            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-                        <Heading as="h5" marginBottom="nano">Custom props</Heading>
-                        <Table bordersFor="both" padding="tiny">
-                            <thead className="bg-slate-10">
-                                <tr>
-                                    <td className="weight-600">Prop</td>
-                                    <td className="weight-600">Description</td>
-                                    <td className="weight-600">Values</td>
-                                    <td className="weight-600">Default</td>
-                                </tr>
-                            </thead>
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/*  CONFIGURATOR */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Row horizontalPadding="small" className="rendered-component">
+                {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
+                <Portion id="component-wrapper">
+                    <Element
+                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                        data-centered-children
+                    >
+                        <Tabs
+                            isFullWidth={isFullWidth}
+                            {...(
+                                selectedAlign !== undefined ? { align : selectedAlign } : {}
+                            )}
+                            tabs={[
+                                {
+                                    key      : "tab1",
+                                    label    : "Tab 1",
+                                    hasAlert : alertTabKey === "tab1",
+                                    content  : <Text>Content for tab 1</Text>
+                                    ,
+                                },
+                                {
+                                    key      : "tab2",
+                                    label    : "Tab 2",
+                                    hasAlert : alertTabKey === "tab2",
+                                    content  : <Text>Content for tab 2</Text>,
+                                },
+                                {
+                                    key      : "tab3",
+                                    label    : "Tab 3",
+                                    hasAlert : alertTabKey === "tab3",
+                                    content  : <Text>Content for tab 3</Text>,
+                                },
+                            ]}
+                        />
+                    </Element>
+                </Portion>
 
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <code>tabs</code>
-                                    </td>
+                {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Form spacing="none">
+                        <Card padding="micro" shape="rounded">
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="micro">
+                                    Customise individually
+                                </Text>
+                            </Header>
 
-                                    <td>
-                                        An array of the individual tab objects
-                                    </td>
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                        {[
+                                            `// Paste this in your content file`,
+                                            `<Tabs`,
+                                            isFullWidth ? `    isFullWidth` : null,
+                                            `    align="${selectedAlign}"`,
+                                            `    tabs={[`,
+                                            `        {`,
+                                            `            key     : "tab1",`,
+                                            `            label   : "Tab 1",`,
+                                            `            content : <Text>Content for tab 1</Text>`,
+                                            `        },`,
+                                            `        {`,
+                                            `            key     : "tab2",`,
+                                            `            label   : "Tab 2",`,
+                                            `            content : <Text>Content for tab 2</Text>`,
+                                            `        },`,
+                                            `        {`,
+                                            `            key     : "tab3",`,
+                                            `            label   : "Tab 3",`,
+                                            `            content : <Text>Content for tab 3</Text>`,
+                                            `        }`,
+                                            `    ]}`,
+                                            `/>`,
+                                        ].filter(Boolean).join("\n")}
+                                    </CodeBlock>
+                                </Portion>
 
-                                    <td>
-                                        object
-                                    </td>
+                                {/* ALIGN ========================================================================== */}
+                                <Portion>
+                                    <RadioTabGroup
+                                        id="align" label="Kind" name="align"
+                                        options={[
+                                            { id : "align-opt-0", value : "left", label : "left" },
+                                            { id : "align-opt-1", value : "right", label : "right" },
+                                            { id : "align-opt-2", value : "centre", label : "centre" },
+                                            { id : "align-opt-3", value : "center", label : "center" },
+                                        ]}
+                                        defaultValue={selectedAlign}
+                                        onChange={() => setSelectedAlign(event.target.value !== "none" ? event.target.value : undefined)}
+                                    />
 
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
+                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
 
-                                <tr>
-                                    <td>
-                                        <code>tabs.key</code>
-                                    </td>
+                                {/* DISMISSIBLE ==================================================================== */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-full-width"
+                                        value="checkbox-full-width"
+                                        name="checkbox-full-width"
+                                        label="Make full width"
+                                        checked={isFullWidth}
+                                        onChange={(event) => setIsFullWidth(event.target.checked)}
+                                    />
 
-                                    <td>
-                                        Unique identifier of a tab
-                                    </td>
+                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
 
-                                    <td>
-                                        string
-                                    </td>
+                                {/* DISMISSIBLE ==================================================================== */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-has-alert"
+                                        value="checkbox-has-alert"
+                                        name="checkbox-has-alert"
+                                        label="Show alert badge on random tab"
+                                        checked={hasAlert}
+                                        onChange={toggleRandomTabAlert}
+                                    />
+                                </Portion>
+                            </Row>
+                        </Card>
+                    </Form>
+                </Portion>
 
-                                    <td>
+                {/* GLOBAL THEME /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Card padding="micro" shape="rounded">
+                        <Form>
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="nano">
+                                    Set values globally
+                                </Text>
+                            </Header>
 
-                                    </td>
-                                </tr>
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock
+                                        source={cssVariablesList}
+                                        language="css"
+                                        showCopyButton
+                                        marginBottom="micro"
+                                    />
+                                </Portion>
 
-                                <tr>
-                                    <td>
-                                        <code>tabs.label</code>
-                                    </td>
+                                {/* BG COLOUR ====================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Background"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["tabs-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("tabs-bg", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                                    <td>
-                                        Text that’s displayed on the tab label
-                                    </td>
+                                <Portion desktopSpan="half" />
 
-                                    <td />
+                                {/* LABEL - DEFAULT ================================================================ */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Label - default"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["tab-label-default"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("tab-label-default", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
+                                {/* LABEL - HOVER ================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Label - hover"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["tab-label-hover"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("tab-label-hover", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                                <tr>
-                                    <td>
-                                        <code>tabs.content</code>
-                                    </td>
+                                {/* LABEL - ACTIVE ================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Label - active"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["tab-label-active"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("tab-label-active", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                                    <td>
-                                        Content to be displayed when its corresponding tab is active
-                                    </td>
+                                {/* LABEL - DISABLED =============================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Label - disabled"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["tab-label-disabled"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("tab-label-disabled", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                                    <td>
+                                {/* ALERT - BG ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Alert background"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["tab-alert-badge-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("tab-alert-badge-bg", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <code>hasAlert</code>
-                                    </td>
-
-                                    <td>
-                                        Adds a small red dot to the label
-                                    </td>
-
-                                    <td>
-                                        boolean
-                                    </td>
-
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
-
-                        <HRule kind="tertiary" marginTop="tiny" marginBottom="tiny" />
-
-                        <Heading as="h5" marginBottom="nano">Shared props</Heading>
-                        <Text>None</Text>
-                    </Portion>
-                </Row>
-
-                <HRule horizontalMargin="huge" />
-
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  DEFAULT  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Element as="section" id="default">
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h3" marginBottom="tiny">Default tabs</Heading>
-
-                            <CodeBlock source={sampleTabs} language="jsx" />
-
-                            <Text marginTop="micro" marginBottom="micro">
-                                The above code will display the default <code>Tab</code>, which looks like this&mdash;
-                            </Text>
-
-                            <Tabs
-                                tabs={[
-                                    {
-                                        key     : "tab1",
-                                        label   : "Tab 1",
-                                        content : tabOneContent()
-                                    },
-                                    {
-                                        key     : "tab2",
-                                        label   : "Tab 2",
-                                        content : tabTwoContent()
-                                    },
-                                    {
-                                        key     : "tab3",
-                                        label   : "Tab 3",
-                                        content : tabThreeContent()
-                                    }
-                                ]}
-                            />
-                        </Portion>
-                    </Row>
-                </Element>
-
-                <HRule horizontalMargin="huge" />
-
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  PROPS  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Element as="section" id="props">
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h3">Props</Heading>
-                        </Portion>
-                    </Row>
-
-                    {/*  =============================================================================================  */}
-                    {/*  KIND  */}
-                    {/*  =============================================================================================  */}
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading as="h5" marginBottom="nano">Tabs</Heading>
-
-                            <Text marginBottom="micro">
-                                The Tabs component accepts basically one custom prop—<code>tabs</code>.
-                            </Text>
-
-                            <CodeBlock source={sampleTabsTabs} language="jsx" marginBottom="micro" />
-
-                            <Text marginTop="micro">
-                                The prop accepts an array of individual elements with <code>key</code>, <code>label</code>,
-                                and <code>content</code> values. The first two are strings, the last one should point to a
-                                React component.
-                            </Text>
-                        </Portion>
-                    </Row>
-
-
-                    <HRule kind="secondary" horizontalMargin="huge" />
-                </Element>
-
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  THEMING  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Element as="section" id="theming">
-                    <Row horizontalPadding="huge" marginBottom="small">
-                        <Portion>
-                            <Heading as="h3" marginBottom="tiny">Theming</Heading>
-
-                            <CodeBlock source={sampleTabsTheme} language="css" />
-                        </Portion>
-                    </Row>
-                </Element>
-            </article>
-        </>
+                                {/* ALERT - BORDER ================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Alert border"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["tab-alert-badge-border"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("tab-alert-badge-border", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+                            </Row>
+                        </Form>
+                    </Card>
+                </Portion>
+            </Row>
+        </Article>
     );
 };
 
-export default TabsDocs;
+export default TableDocs;
