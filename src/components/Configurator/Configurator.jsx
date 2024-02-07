@@ -651,13 +651,13 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                             {/* )} */}
 
                             {/* BUTTON ============================================================================= */}
-                            {component === "Button" && (
-                                <ButtonThemeConfigurator
-                                    componentVariables={componentVariables}
-                                    handleVariableChange={handleVariableChange}
-                                    colourOptions={colourOptions}
-                                />
-                            )}
+                            {/* {component === "Button" && ( */}
+                            {/*     <ButtonThemeConfigurator */}
+                            {/*         componentVariables={componentVariables} */}
+                            {/*         handleVariableChange={handleVariableChange} */}
+                            {/*         colourOptions={colourOptions} */}
+                            {/*     /> */}
+                            {/* )} */}
 
                             {/* CALLOUT ============================================================================ */}
                             {/* {component === "Callout" && ( */}

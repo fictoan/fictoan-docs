@@ -76,7 +76,10 @@ export const useThemeVariables = (variablesStructure) => {
 
             // Check if the current variable is of type "reference" and the newValue is numeric
             // Also, ensure it's meant to be converted to "value-unit" by checking the defaultValue
-            if (currentVar.type === "reference" && !isNaN(newValue) && ["global-border-width", "global-border-radius"].includes(currentVar.defaultValue)) {
+            if (currentVar.type === "reference" && !isNaN(newValue) && [
+                "global-border-width",
+                "global-border-radius",
+            ].includes(currentVar.defaultValue)) {
                 updatedVar = {
                     ...updatedVar,
                     type  : "value-unit",

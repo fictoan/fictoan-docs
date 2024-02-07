@@ -16,9 +16,11 @@ import {
     Form,
     Header,
     RadioTabGroup,
-    Checkbox,
     Select,
-    Tabs, ToastItem, ToastsWrapper, Button, Range,
+    ToastItem,
+    ToastsWrapper,
+    Button,
+    Range,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -36,17 +38,18 @@ import { colourOptions } from "../../../utils/colours";
 // DATA ================================================================================================================
 import { toastProps } from "./config";
 
-const TableDocs = () => {
+const ToastDocs = () => {
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(toastProps.variables);
 
+    // SAMPLE ==========================================================================================================
     const [showSampleToast, setShowSampleToast] = useState(false);
 
     // CUSTOMISE =======================================================================================================
     const [selectedPosition, setSelectedPosition] = useState("top");
     const [secondsToShowFor, setSecondsToShowFor] = useState(100);
-    const [isFullWidth, setIsFullWidth] = useState(false);
 
     // THEME ===========================================================================================================
+
 
     return (
         <Article id="page-component">
@@ -116,7 +119,7 @@ const TableDocs = () => {
                                     </CodeBlock>
                                 </Portion>
 
-                                {/* ALIGN ========================================================================== */}
+                                {/* POSITION ======================================================================= */}
                                 <Portion>
                                     <RadioTabGroup
                                         id="position" label="Position" name="position"
@@ -131,7 +134,7 @@ const TableDocs = () => {
                                     <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
-                                {/* OVERLAY COLOUR ================================================================= */}
+                                {/* SHOW FOR ======================================================================= */}
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Show toast for"
@@ -229,4 +232,4 @@ const TableDocs = () => {
     );
 };
 
-export default TableDocs;
+export default ToastDocs;
