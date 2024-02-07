@@ -79,8 +79,7 @@ const LayoutDocs = () => {
 
                             <Text marginBottom="micro">
                                 Content is added with the <code>Portion</code> component within the <code>Row</code>.
-                                You
-                                need to specify the number of columns you want the <code>Portion</code> to occupy.
+                                You need to specify the number of columns you want the <code>Portion</code> to occupy.
                             </Text>
 
                             <Text marginBottom="micro">
@@ -107,7 +106,7 @@ const LayoutDocs = () => {
                                 <Text textColour="green">●</Text>
                             </Element>
 
-                            <Row className="demo-row" marginBottom="none">
+                            <Row className="demo-row" marginBottom="none" retainLayoutAlways>
                                 <Portion desktopSpan="half" bgColour="sky-light-20">
                                     <Text size="small" fontStyle="monospace">
                                         &nbsp;&nbsp;&nbsp;&nbsp;&lt;Portion desktopSpan="12"&gt;
@@ -117,7 +116,7 @@ const LayoutDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <Row bgColour="slate-10" marginBottom="none" isFullHeight>
+                            <Row bgColour="slate-10" marginBottom="none" isFullHeight retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                     <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">1</Text>
                                 </Portion>
@@ -203,8 +202,7 @@ const LayoutDocs = () => {
                             <Heading as="h6" marginBottom="nano">Multiple Portions</Heading>
                             <Text>In the same way, you can add as many <code>Portion</code> elements inside
                                 the <code>Row</code>. If the sum of columns values exceeds <code>24</code>, they will
-                                wrap
-                                to the next line.</Text>
+                                wrap to the next line.</Text>
                         </Portion>
                     </Row>
 
@@ -223,7 +221,7 @@ const LayoutDocs = () => {
                                 <Text textColour="green">●</Text>
                             </Element>
 
-                            <Row className="demo-row" marginBottom="none">
+                            <Row className="demo-row" marginBottom="none" retainLayoutAlways>
                                 <Portion desktopSpan="12" bgColour="sky-light-20">
                                     <Text size="small" fontStyle="monospace" showOnlyOnDesktop
                                           showOnlyOnTabletLandscape>
@@ -335,7 +333,7 @@ const LayoutDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <Row bgColour="slate-10" marginBottom="none" isFullHeight>
+                            <Row bgColour="slate-10" marginBottom="none" isFullHeight retainLayoutAlways>
                                 <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
                                 <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />

@@ -38,7 +38,7 @@ const RowGridDocs = () => {
                             <Text textColour="green">●</Text>
                         </Element>
 
-                        <Row bgColour="slate-10" marginBottom="none" isFullHeight>
+                        <Row bgColour="slate-10" marginBottom="none" isFullHeight retainLayoutAlways>
                             <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">1</Text>
                             </Portion>
