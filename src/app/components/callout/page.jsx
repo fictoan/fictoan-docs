@@ -121,21 +121,21 @@ const CalloutDocs = () => {
                                     <CodeBlock language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
-                                            `<Callout kind="info">
-    <Text weight="700">This is an info callout</Text>
-</Callout>
+                                            `<Callout kind="info">`,
+                                            `    <Text weight="700">This is an info callout</Text>`,
+                                            `</Callout> \n`,
 
-<Callout kind="success">
-    <Text weight="700">This is a success callout</Text>
-</Callout>
+                                            `<Callout kind="success">`,
+                                            `    <Text weight="700">This is a success callout</Text>`,
+                                            `</Callout> \n`,
 
-<Callout kind="warning">
-    <Text weight="700">This is a warning callout</Text>
-</Callout>
+                                            `<Callout kind="warning">`,
+                                                `<Text weight="700">This is a warning callout</Text>`,
+                                            `</Callout> \n`,
 
-<Callout kind="error">
-    <Text weight="700">This is an error callout</Text>
-</Callout>`,
+                                            `<Callout kind="error">`,
+                                            `    <Text weight="700">This is an error callout</Text>`,
+                                            `</Callout>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
                                 </Portion>

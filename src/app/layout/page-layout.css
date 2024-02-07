@@ -39,6 +39,7 @@
     }
 
     .demo-row {
+        width: 100%;
         position : absolute;
         top      : 120px;
     }

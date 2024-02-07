@@ -44,13 +44,6 @@ const ToastDocs = () => {
     // SAMPLE ==========================================================================================================
     const [notifications, setNotifications] = useState([]);
 
-
-    const [showGenericNotification, setShowGenericNotification] = useState(false);
-    const [showInfoNotification, setShowInfoNotification] = useState(false);
-    const [showWarningNotification, setShowWarningNotification] = useState(false);
-    const [showErrorNotification, setShowErrorNotification] = useState(false);
-    const [showSuccessNotification, setShowSuccessNotification] = useState(false);
-
     // CUSTOMISE =======================================================================================================
     const [selectedPosition, setSelectedPosition] = useState("right");
     const [selectedAnchor, setSelectedAnchor] = useState("top");

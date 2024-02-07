@@ -1,249 +1,419 @@
 "use client";
 
-// EXTERNAL DEPS ===============================================================
+// EXTERNAL DEPS =======================================================================================================
 import React, { useState } from "react";
 
-// INTERNAL DEPS ===============================================================
+// INTERNAL DEPS =======================================================================================================
 import {
-    Checkbox,
     Element,
     Heading,
     HRule,
     Portion,
     Row,
-    Switch,
     Text,
-    Article
+    Article,
+    Card,
+    Form,
+    Header,
+    RadioTabGroup,
+    Select,
+    ToastItem,
+    ToastsWrapper,
+    Button,
+    Range, Checkbox, Switch,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
-// COMPONENTS ==================================================================
+// COMPONENTS ==========================================================================================================
 
-// STYLES ======================================================================
-import "./page-home.css";
+// STYLES ==============================================================================================================
+import "./page-checkbox.css";
 
-// CODE SNIPPETS ===============================================================
-import {
-    sampleCheckbox,
-    sampleCheckboxChecked,
-    sampleCheckboxDisabled,
-    sampleCheckboxTheming,
-    sampleSwitch,
-    sampleSwitchedChecked,
-    sampleSwitchedDisabled,
-} from "./CodeSamples";
+// HOOKS ===============================================================================================================
+import { useThemeVariables } from "../../../utils/useThemeVariables";
 
-// DATA ========================================================================
+// UTILS ===============================================================================================================
+import { colourOptions } from "../../../utils/colours";
 
-const CheckboxDocs = () => {
+// DATA ================================================================================================================
+import { checkboxProps } from "./config";
+
+const ToastDocs = () => {
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(checkboxProps.variables);
+
+    // SAMPLE ==========================================================================================================
+    const [isSwitch, setIsSwitch] = useState(false);
+
+
+    // CUSTOMISE =======================================================================================================
+    const [selectedPosition, setSelectedPosition] = useState("top");
+    const [secondsToShowFor, setSecondsToShowFor] = useState(100);
+
+    // THEME ===========================================================================================================
+
+
     return (
-        <Article id="page-checkbox">
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* INTRO */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+        <Article id="page-component">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1" marginBottom="micro">Checkbox and Switch</Heading>
-
-                    <Text size="large">
-                        The same component, but styled differently for different behaviour.
+                    <Heading as="h1">Checkbox / Switch</Heading>
+                    <Text size="large" marginBottom="small">
+                        The component is
                     </Text>
+                </Portion>
+
+                <Portion>
+                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Text>&bull; </Text>
                 </Portion>
             </Row>
 
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/*  CHECKBOX */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Element as="section" id="cehckbox">
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h4" marginBottom="micro">Checkbox</Heading>
-
-                        <Text marginBottom="micro">
-                            The <code>Checkbox</code> is a modified default <code>input type="checkbox"</code> element
-                            to allow for
-                            better usability and styling.
-                        </Text>
-
-                        <CodeBlock source={sampleCheckbox} language="jsx" marginBottom="micro" />
-
-                        <Checkbox
-                            id="checkbox-1"
-                            value="checkbox-1"
-                            name="checkbox-1"
-                            label="Check me"
-                        />
-
-                        <Checkbox
-                            id="checkbox-2"
-                            value="checkbox-2"
-                            name="checkbox-2"
-                            label="No, check me"
-                        />
-
-                        <Text marginTop="micro">
-                            It needs all of the above attributes to work, so make sure you add them all.
-                        </Text>
-                    </Portion>
-                </Row>
-            </Element>
-
-
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
-
-
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* SWITCH */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Element as="section" id="switch">
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h4" marginBottom="micro">Switching to a switch</Heading>
-
-                        <Text marginBottom="micro">
-                            The <code>Switch</code> is a modified default <code>Checkbox</code> to act as a toggle
-                            switch. It works in the exact same way as the checkbox, but just looks different.
-                        </Text>
-
-                        <CodeBlock source={sampleSwitch} language="jsx" />
-
-                        <Text marginTop="micro" marginBottom="micro">
-                            It needs all of the above attributes to work, so make sure you add them all.
-                        </Text>
-
-                        <Switch
-                            id="switch-1"
-                            value="switch-1"
-                            name="switch-1"
-                            label="Toggle me"
-                        />
-
-                        <Switch
-                            id="switch-2"
-                            value="switch-2"
-                            name="switch-2"
-                            label="No, toggle me"
-                        />
-
-                        <Switch
-                            id="switch-3"
-                            value="switch-3"
-                            name="switch-3"
-                            label="Toggle me, too!"
-                        />
-                    </Portion>
-                </Row>
-            </Element>
-
-
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/*  STATES */}
+            {/*  CONFIGURATOR */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Element as="section" id="states">
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h4" marginBottom="micro">States</Heading>
+            <Row horizontalPadding="small" className="rendered-component">
+                {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
+                <Portion id="component-wrapper">
+                    <Element
+                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                        data-centered-children
+                    >
+                        {isSwitch ? (
+                            <Switch
+                                id="switch-1"
+                                value="switch-1"
+                                name="switch-1"
+                                label="Check me"
+                            />
+                        ) : (
+                            <Checkbox
+                                id="checkbox-1"
+                                value="checkbox-1"
+                                name="checkbox-1"
+                                label="Check me"
+                            />
+                        )}
+                    </Element>
+                </Portion>
 
-                        <Text marginBottom="micro">
-                            Both these elements can exist in a <code>defaultChecked</code> or a <code>disabled</code> state, or
-                            even both.
-                        </Text>
-                    </Portion>
+                {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Form spacing="none">
+                        <Card padding="micro" shape="rounded">
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="micro">
+                                    Customise individually
+                                </Text>
+                            </Header>
 
-                    {/* CHECKED ============================================ */}
-                    <Portion>
-                        <Heading as="h6">Checked</Heading>
-                    </Portion>
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                        {[
+                                            `// Paste this in your content file`,
+                                            isSwitch ? `<Switch` : `<Checkbox`,
+                                            `    id="${isSwitch ? "switch-1" : "checkbox-1"}"`,
+                                            `    value="${isSwitch ? "switch-1" : "checkbox-1"}"`,
+                                            `    name="${isSwitch ? "switch-1" : "checkbox-1"}"`,
+                                            `    label="Check me"`,
+                                            `/>`,
+                                        ].join("\n")}
+                                    </CodeBlock>
+                                </Portion>
 
-                    <Portion desktopSpan="half">
-                        <CodeBlock source={sampleCheckboxChecked} language="jsx" marginBottom="micro" />
-                    </Portion>
+                                {/* POSITION ======================================================================= */}
+                                <Portion>
+                                    {isSwitch ?
+                                        <Switch
+                                            id="checkbox-switch-switcher"
+                                            value="checkbox-switch-switcher"
+                                            name="checkbox-switch-switcher"
+                                            label="Make me a switch"
+                                            checked={isSwitch}
+                                            onChange={() => setIsSwitch(!isSwitch)}
+                                        />
+                                        :
+                                        <Checkbox
+                                            id="checkbox-switch-switcher"
+                                            value="checkbox-switch-switcher"
+                                            name="checkbox-switch-switcher"
+                                            label="Make me a switch"
+                                            onChange={() => setIsSwitch(!isSwitch)}
+                                        />
+                                    }
 
-                    <Portion desktopSpan="half">
-                        <Checkbox
-                            id="checkbox-3"
-                            value="checkbox-3"
-                            name="checkbox-3"
-                            label="I’m checked"
-                            defaultChecked
-                        />
-                    </Portion>
+                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
+                            </Row>
+                        </Card>
+                    </Form>
+                </Portion>
 
-                    <Portion desktopSpan="half">
-                        <CodeBlock source={sampleSwitchedChecked} language="jsx" marginBottom="micro" />
-                    </Portion>
+                {/* GLOBAL THEME /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Card padding="micro" shape="rounded">
+                        <Form>
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="nano">
+                                    Set values globally
+                                </Text>
+                            </Header>
 
-                    <Portion desktopSpan="half">
-                        <Switch
-                            id="switch-4"
-                            value="switch-4"
-                            name="switch-4"
-                            label="I’m also checked"
-                            defaultChecked
-                        />
-                    </Portion>
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock
+                                        source={cssVariablesList}
+                                        language="css"
+                                        showCopyButton
+                                        marginBottom="micro"
+                                    />
+                                </Portion>
+                            </Row>
 
-                    <Portion>
-                        <HRule kind="tertiary" />
-                    </Portion>
+                            {/* CHECKBOX /////////////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700">Checkbox</Text>
+                                </Portion>
 
-                    {/* DISABLED =========================================== */}
-                    <Portion>
-                        <Heading as="h6">Disabled</Heading>
-                    </Portion>
+                                {/* BORDER RADIUS ================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Border radius"
+                                        value={componentVariables["checkbox-square-border-radius"].value}
+                                        onChange={(e) => handleVariableChange("checkbox-square-border-radius", e.target.value)}
+                                        suffix={componentVariables["checkbox-square-border-radius"].unit}
+                                        min={0} max={10} step={1}
+                                    />
+                                </Portion>
 
-                    <Portion desktopSpan="half">
-                        <CodeBlock source={sampleCheckboxDisabled} language="jsx" marginBottom="micro" />
-                    </Portion>
+                                {/* BG DEFAULT ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Tick"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["checkbox-tick"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("checkbox-tick", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                    <Portion desktopSpan="half">
-                        <Checkbox
-                            id="checkbox-4"
-                            value="checkbox-4"
-                            name="checkbox-4"
-                            label="I’m checked"
-                            disabled
-                        />
-                    </Portion>
+                                {/* BG DEFAULT ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Square — default"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["checkbox-square-bg-default"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("checkbox-square-bg-default", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                    <Portion desktopSpan="half">
-                        <CodeBlock source={sampleSwitchedDisabled} language="jsx" marginBottom="micro" />
-                    </Portion>
+                                {/* BG HOVER ======================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Square — hover"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["checkbox-square-bg-hover"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("checkbox-square-bg-hover", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                    <Portion desktopSpan="half">
-                        <Switch
-                            id="switch-5"
-                            value="switch-5"
-                            name="switch-5"
-                            label="I’m also checked"
-                            disabled
-                        />
-                    </Portion>
+                                {/* BG CHECKED ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Square — checked"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["checkbox-square-bg-checked"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("checkbox-square-bg-checked", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                    <Portion>
-                        <Text>You can apply the attributes together too.</Text>
-                    </Portion>
-                </Row>
-            </Element>
+                                {/* BG DISABLED ==================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Square — disabled"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["checkbox-square-bg-disabled"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("checkbox-square-bg-disabled", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+                            </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+                            <HRule kind="secondary" verticalMargin="micro" />
 
-            {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
-            {/*  THEMING  */}
-            {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
-            <Element as="section" id="theming">
-                <Row horizontalPadding="huge" marginBottom="small">
-                    <Portion>
-                        <Heading as="h3" marginBottom="tiny">Theming</Heading>
+                            {/* SWITCH ///////////////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700">Switch</Text>
+                                </Portion>
 
-                        <CodeBlock source={sampleCheckboxTheming} language="css" />
-                    </Portion>
-                </Row>
-            </Element>
+                                {/* BG DEFAULT ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Switch — default"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["switch-bg-default"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("switch-bg-default", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BG DEFAULT ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Slider — default"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["switch-slider-bg-default"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("switch-slider-bg-default", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BG HOVER ======================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Switch — hover"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["switch-bg-hover"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("switch-bg-hover", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BG HOVER ======================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Slider — hover"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["switch-slider-bg-hover"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("switch-slider-bg-hover", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BG CHECKED ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Switch — checked"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["switch-bg-checked"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("switch-bg-checked", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BG CHECKED ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Slider — checked"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["switch-slider-bg-checked"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("switch-slider-bg-checked", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BG DISABLED ==================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Switch — disabled"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["switch-bg-disabled"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("switch-bg-disabled", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BG DISABLED ==================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Slider — disabled"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["switch-slider-bg-disabled"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("switch-slider-bg-disabled", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+                            </Row>
+
+                            <HRule kind="secondary" verticalMargin="micro" />
+                        </Form>
+                    </Card>
+                </Portion>
+            </Row>
         </Article>
     );
 };
 
-export default CheckboxDocs;
+export default ToastDocs;

@@ -31,7 +31,6 @@ const RowGridDocs = () => {
                     as="div"
                     marginBottom="micro" paddingLeft="tiny" paddingRight="tiny"
                 >
-
                     <Card className="screen-desktop" shape="rounded" shadow="hard">
                         <Element as="div" className="title-bar" bgColour="slate-light-80">
                             <Text textColour="red">●</Text>
@@ -40,76 +39,76 @@ const RowGridDocs = () => {
                         </Element>
 
                         <Row bgColour="slate-10" marginBottom="none" isFullHeight>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">1</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">2</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">3</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">4</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">5</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">6</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">7</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">8</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">9</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">10</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">11</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">12</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">13</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">14</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">15</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">16</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">17</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">18</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">19</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">20</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">21</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">22</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">23</Text>
                             </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-80" paddingTop="micro">
+                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
                                 <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">24</Text>
                             </Portion>
                         </Row>
