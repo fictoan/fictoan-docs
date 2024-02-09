@@ -43,7 +43,7 @@ export const checkboxProps = {
         },
         "switch-bg-disabled"            : {
             type         : "reference",
-            defaultValue : "slate-light-90",
+            defaultValue : "slate-light-40",
         },
         "switch-slider-bg-default"      : {
             type         : "reference",

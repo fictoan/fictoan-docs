@@ -1,189 +1,334 @@
 "use client";
 
-// EXTERNAL DEPS ===============================================================
-import React from "react";
+// EXTERNAL DEPS =======================================================================================================
+import React, { useState } from "react";
 
-// INTERNAL DEPS ===============================================================
+// INTERNAL DEPS =======================================================================================================
 import {
     Element,
     Heading,
     HRule,
     Portion,
-    RadioButton,
     Row,
-    Text, Article
+    Text,
+    Article,
+    Card,
+    Form,
+    Header,
+    Select,
+    Range, Checkbox, Switch, RadioButton,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
-// COMPONENTS ==================================================================
+// COMPONENTS ==========================================================================================================
 
-// STYLES ======================================================================
-import "./page-home.css";
+// STYLES ==============================================================================================================
+import "./page-radio-button.css";
 
-// CODE SNIPPETS ===============================================================
-import { sampleRadioButton, sampleRadioButtonTheming, sampleRadioChecked, sampleRadioDisabled } from "./CodeSamples";
+// HOOKS ===============================================================================================================
+import { useThemeVariables } from "../../../utils/useThemeVariables";
 
-// DATA ========================================================================
+// UTILS ===============================================================================================================
+import { colourOptions } from "../../../utils/colours";
 
-const HomePage = () => {
+// DATA ================================================================================================================
+import { radioButtonProps } from "./config";
+
+const ToastDocs = () => {
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(radioButtonProps.variables);
+
+    // SAMPLE ==========================================================================================================
+
+    // CUSTOMISE =======================================================================================================
+    const [defaultChecked, setDefaultChecked] = useState("");
+    const [isDisabled, setIsDisabled] = useState({ first: false, second: false, third: false });
+
+    const handleDefaultCheckedChange = (event) => {
+        setDefaultChecked(event.target.value);
+    };
+
+    const handleDisableChange = (radioId) => {
+        setIsDisabled((prev) => ({ ...prev, [radioId]: !prev[radioId] }));
+    };
+
+    // THEME ===========================================================================================================
+
+
     return (
-        <Article id="page-radio-button">
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* INTRO */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+        <Article id="page-component">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1">Radio button</Heading>
+                    <Text size="large" marginBottom="small">
+                        The component is
+                    </Text>
+                </Portion>
+
+                <Portion>
+                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Text>&bull; </Text>
                 </Portion>
             </Row>
 
+            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/*  USAGE */}
+            {/*  CONFIGURATOR */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Element as="section" id="cehckbox">
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h4" marginBottom="micro">Usage</Heading>
-
-                        <Text marginBottom="micro">
-                            The <code>RadioButton</code> is a modified default <code>input type="radio"</code> element
-                            to allow for better usability and styling.
-                        </Text>
-
-                        <CodeBlock source={sampleRadioButton} language="jsx" />
-
-                        <Text marginTop="micro" marginBottom="micro">
-                            Of the above attributes, the <code>name</code> needs to match all the radio buttons you want
-                            as a group.
-                        </Text>
-
+            <Row horizontalPadding="small" className="rendered-component">
+                {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
+                <Portion id="component-wrapper">
+                    <Element
+                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                        data-centered-children
+                    >
                         <RadioButton
                             id="radio-1"
-                            name="choices-1"
+                            name="checkbox-group"
                             value="yes"
                             label="Yes"
+                            checked={defaultChecked === "yes"}
+                            disabled={isDisabled.first}
                         />
 
                         <RadioButton
                             id="radio-2"
-                            name="choices-1"
+                            name="checkbox-group"
                             value="no"
                             label="No"
-                            defaultChecked
+                            checked={defaultChecked === "no"}
+                            disabled={isDisabled.second}
                         />
 
                         <RadioButton
                             id="radio-3"
-                            name="choices-1"
+                            name="checkbox-group"
                             value="maybe"
                             label="Maybe"
+                            checked={defaultChecked === "maybe"}
+                            disabled={isDisabled.third}
                         />
-                    </Portion>
-                </Row>
-            </Element>
+                    </Element>
+                </Portion>
 
+                {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Form spacing="none">
+                        <Card padding="micro" shape="rounded">
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="micro">
+                                    Customise individually
+                                </Text>
+                            </Header>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                        {[
+                                            `// Paste this in your content file`,
+                                            `<RadioButton`,
+                                            `    id="checkbox-1"`,
+                                            `    value="checkbox-1"`,
+                                            `    name="checkbox-group"`,
+                                            `    label="Yes"`,
+                                            defaultChecked === "yes" ? `   defaultChecked` : null,
+                                            isDisabled.first ? `   disabled` : null,
+                                            `/> \n`,
+                                            `<RadioButton`,
+                                            `    id="checkbox-2"`,
+                                            `    value="checkbox-2"`,
+                                            `    name="checkbox-group"`,
+                                            `    label="No"`,
+                                            defaultChecked === "no" ? `   defaultChecked` : null,
+                                            isDisabled.second ? `   disabled` : null,
+                                            `/> \n`,
+                                            `<RadioButton`,
+                                            `    id="checkbox-3"`,
+                                            `    value="checkbox-3"`,
+                                            `    name="checkbox-group"`,
+                                            `    label="Maybe"`,
+                                            defaultChecked === "maybe" ? `   defaultChecked` : null,
+                                            isDisabled.third ? `   disabled` : null,
+                                            `/> \n`,
+                                        ].filter(Boolean).join("\n")}
+                                    </CodeBlock>
+                                </Portion>
 
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/*  STATES */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Element as="section" id="states">
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h4" marginBottom="micro">States</Heading>
-                    </Portion>
+                                {/* CHECKED ======================================================================== */}
+                                <Portion>
+                                    <RadioButton
+                                        id="control-radio-yes"
+                                        name="control-group"
+                                        value="yes"
+                                        label="Check 'Yes' by default"
+                                        checked={defaultChecked === "yes"}
+                                        onChange={handleDefaultCheckedChange}
+                                    />
+                                    <RadioButton
+                                        id="control-radio-no"
+                                        name="control-group"
+                                        value="no"
+                                        label="Check 'No' by default"
+                                        checked={defaultChecked === "no"}
+                                        onChange={handleDefaultCheckedChange}
+                                    />
+                                    <RadioButton
+                                        id="control-radio-maybe"
+                                        name="control-group"
+                                        value="maybe"
+                                        label="Check 'Maybe' by default"
+                                        checked={defaultChecked === "maybe"}
+                                        onChange={handleDefaultCheckedChange}
+                                    />
 
-                    {/* CHECKED ============================================ */}
-                    <Portion>
-                        <Heading as="h6">Checked</Heading>
+                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
 
-                        <Text marginBottom="micro">
-                            The <code>defaultChecked</code> decides which button in the group is checked by default.
-                        </Text>
-                    </Portion>
+                                {/* DISABLED ======================================================================= */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-disable-first"
+                                        value="checkbox-disable-first"
+                                        name="checkbox-disable-first"
+                                        label="Disable 'Yes'"
+                                        checked={isDisabled.first}
+                                        onChange={() => handleDisableChange("first")}
+                                    />
 
-                    <Portion desktopSpan="half">
-                        <CodeBlock source={sampleRadioChecked} language="jsx" marginBottom="micro" />
-                    </Portion>
+                                    <Checkbox
+                                        id="checkbox-disable-second"
+                                        value="checkbox-disable-second"
+                                        name="checkbox-disable-second"
+                                        label="Disable 'No'"
+                                        checked={isDisabled.second}
+                                        onChange={() => handleDisableChange("second")}
+                                    />
 
-                    <Portion desktopSpan="half">
-                        <RadioButton
-                            id="radio-a"
-                            name="choices-2"
-                            value="yes"
-                            label="Yes"
-                            defaultChecked
-                        />
+                                    <Checkbox
+                                        id="checkbox-disable-third"
+                                        value="checkbox-disable-third"
+                                        name="checkbox-disable-third"
+                                        label="Disable 'Maybe'"
+                                        checked={isDisabled.third}
+                                        onChange={() => handleDisableChange("third")}
+                                    />
 
-                        <RadioButton
-                            id="radio-b"
-                            name="choices-2"
-                            value="no"
-                            label="No"
-                        />
-                    </Portion>
+                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
+                            </Row>
+                        </Card>
+                    </Form>
+                </Portion>
 
-                    <Portion>
-                        <HRule kind="tertiary" />
-                    </Portion>
+                {/* GLOBAL THEME /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Card padding="micro" shape="rounded">
+                        <Form>
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="nano">
+                                    Set values globally
+                                </Text>
+                            </Header>
 
-                    {/* DISABLED =========================================== */}
-                    <Portion>
-                        <Heading as="h6">Disabled</Heading>
-                    </Portion>
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock
+                                        source={cssVariablesList}
+                                        language="css"
+                                        showCopyButton
+                                        marginBottom="micro"
+                                    />
+                                </Portion>
+                            </Row>
 
-                    <Portion desktopSpan="half">
-                        <CodeBlock source={sampleRadioDisabled} language="jsx" marginBottom="micro" />
-                    </Portion>
+                            {/* CHECKBOX /////////////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                {/* BG DEFAULT ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Circle — default"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["radio-circle-bg-default"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("radio-circle-bg-default", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                    <Portion desktopSpan="half">
-                        <RadioButton
-                            id="radio-i"
-                            name="choices-3"
-                            value="yes"
-                            label="Yes"
-                        />
+                                {/* BG HOVER ======================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Circle — hover"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["radio-circle-bg-hover"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("radio-circle-bg-hover", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                        <RadioButton
-                            id="radio-j"
-                            name="choices-3"
-                            value="no"
-                            label="No"
-                        />
+                                {/* BG CHECKED ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Circle — checked"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["radio-circle-bg-checked"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("radio-circle-bg-checked", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                        <RadioButton
-                            id="radio-k"
-                            name="choices-3"
-                            value="maybe"
-                            label="Maybe"
-                            defaultChecked
-                            disabled
-                        />
-                    </Portion>
+                                {/* BG DISABLED ==================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Circle — disabled"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["radio-circle-bg-disabled"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("radio-circle-bg-disabled", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                    <Portion>
-                        <Text>You can apply the attributes together too.</Text>
-                    </Portion>
-                </Row>
-            </Element>
-
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
-
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/*  THEMING  */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Element as="section" id="theming">
-                <Row horizontalPadding="huge" marginBottom="small">
-                    <Portion>
-                        <Heading as="h4" marginBottom="tiny">Theme</Heading>
-
-                        <CodeBlock source={sampleRadioButtonTheming} language="css" />
-                    </Portion>
-                </Row>
-            </Element>
+                                {/* BG DISABLED ==================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Dot"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["radio-button-dot"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("radio-button-dot", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+                            </Row>
+                        </Form>
+                    </Card>
+                </Portion>
+            </Row>
         </Article>
     );
 };
 
-export default HomePage;
+export default ToastDocs;

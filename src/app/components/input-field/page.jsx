@@ -1,9 +1,9 @@
 "use client";
 
-// EXTERNAL DEPS ===============================================================
+// EXTERNAL DEPS =======================================================================================================
 import React, { useEffect, useState } from "react";
 
-// INTERNAL DEPS ===============================================================
+// INTERNAL DEPS =======================================================================================================
 import {
     Element,
     Row,
@@ -13,16 +13,16 @@ import {
     HRule,
     InputField,
     Callout,
-    Article,
+    Article, Switch, Checkbox, Header, Card, Form, Button, Range, Select,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
-// COMPONENTS ==================================================================
+// COMPONENTS ==========================================================================================================
 
-// STYLES ======================================================================
+// STYLES ==============================================================================================================
 import "./input-field.css";
 
-// CODE SNIPPETS ===============================================================
+// CODE SNIPPETS =======================================================================================================
 import {
     sampleInput,
     sampleInputBasicProps,
@@ -31,8 +31,10 @@ import {
     sampleInputTheme,
 } from "./CodeSamples";
 
-// DATA ========================================================================
-import { listOfInputFieldProps } from "./propsList";
+// DATA ================================================================================================================
+import { useThemeVariables } from "../../../utils/useThemeVariables";
+import { inputProps } from "./config";
+import { colourOptions } from "../../../utils/colours";
 
 
 const InputFieldDocs = () => {
@@ -40,244 +42,741 @@ const InputFieldDocs = () => {
         document.title = "Input field — Fictoan";
     }, []);
 
-    const [pattern, setPattern] = useState("[a-zA-Z0-9_.+\\-]+@[a-zA-Z0-9\\-]+\\.[a-zA-Z0-9\\-.]+$");
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(inputProps.variables);
 
-    const handleInputChange = (event) => {
-        setPattern(event.target.value);
-    };
+    // SAMPLE ==========================================================================================================
 
-    const sampleInputValidation = `<InputField
-    label="Email"
-    placeholder="Work email preferred"
-    helpText="Confirmation will be sent here"
-    validateThis
-    pattern="${pattern}"
-    errorText="Um, that isn’t a valid email"
-/>`;
+    // CUSTOMISE =======================================================================================================
+    const [label, setLabel] = useState("");
+    const [placeholder, setPlaceholder] = useState("");
+    const [isRequired, setIsRequired] = useState(false);
+    const [helpText, setHelpText] = useState("");
+    const [validateThis, setValidateThis] = useState(false);
+    const [pattern, setPattern] = useState("");
+    const [emailPattern, setEmailPattern] = useState("[a-zA-Z0-9_.+\\-]+@[a-zA-Z0-9\\-]+\\.[a-zA-Z0-9\\-.]+$");
+    const [errorText, setErrorText] = useState("");
+
+    // THEME ===========================================================================================================
 
     return (
         <Article id="page-input-field">
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
-            {/* //////////////////////////////////////////////////////////// */}
-            <Element as="section" id="intro" marginTop="medium" marginBottom="small">
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h1" className="text-hue">Input field</Heading>
-                    </Portion>
-                </Row>
-            </Element>
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
+                <Portion>
+                    <Heading as="h1">Input field</Heading>
+                    <Text size="large" marginBottom="small">
+                        The component is
+                    </Text>
+                </Portion>
 
-            <HRule horizontalMargin="huge" verticalMargin="small" />
+                <Portion>
+                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Text>&bull; </Text>
+                </Portion>
+            </Row>
 
-            {/* //////////////////////////////////////////////////////////// */}
-            {/*  BASICS  */}
-            {/* //////////////////////////////////////////////////////////// */}
-            <Element as="section" id="default">
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h4" marginBottom="nano">Default</Heading>
+            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-                        <Text marginBottom="micro">
-                            The <code>InputField</code> component is a simple, straightforward native element with some
-                            added features.
-                        </Text>
-
-                        <CodeBlock source={sampleInput} language="jsx" />
-
-                        <Text marginTop="micro" marginBottom="micro">
-                            The above code will display the default <code>InputField</code>, which looks like
-                            this&mdash;
-                        </Text>
-
-                        <InputField />
-
-                        <Text marginTop="micro">
-                            It defaults to a text input, with a border that changes colour when active. The input always
-                            takes the full-width of the parent container.
-                        </Text>
-                    </Portion>
-                </Row>
-            </Element>
-
-
-            <HRule horizontalMargin="huge" verticalMargin="small" />
-
-
-            {/* //////////////////////////////////////////////////////////// */}
-            {/* PROPS */}
-            {/* //////////////////////////////////////////////////////////// */}
-            <Element as="section" id="props">
-                {/* LABEL and PLACEHOLDER ================================== */}
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h5" marginBottom="nano">Label and placeholder</Heading>
-
-                        <Text marginBottom="micro">
-                            For an input field to be useful, there are two main props: the <code>label</code>, and
-                            the <code>placeholder</code>.
-                        </Text>
-
-                        <CodeBlock source={sampleInputBasicProps} language="jsx" marginBottom="micro" />
-
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/*  CONFIGURATOR */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Row horizontalPadding="small" className="rendered-component">
+                {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
+                <Portion id="component-wrapper">
+                    <Element
+                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                        data-centered-children
+                    >
                         <InputField
-                            label="This is a label"
-                            placeholder="This is a placeholder"
+                            {...(
+                                label !== undefined ? { label : label } : {}
+                            )}
+                            {...(
+                                placeholder !== undefined ? { placeholder : placeholder } : {}
+                            )}
+                            {...(
+                                isRequired !== undefined ? { required : isRequired } : {}
+                            )}
+                            {...(
+                                helpText !== undefined ? { helpText : helpText } : {}
+                            )}
+                            {...(
+                                validateThis !== undefined ? { validateThis : validateThis } : {}
+                            )}
+                            {...(
+                                pattern !== undefined ? { pattern : pattern } : {}
+                            )}
+                            {...(
+                                errorText !== undefined ? { errorText : errorText } : {}
+                            )}
                         />
+                    </Element>
+                </Portion>
 
-                        <Text marginTop="micro">
-                            The <code>label</code> sits above the box, and the <code>placeholder</code>, inside. On
-                            focus, the <code>label</code> increases in weight, and the placeholder is hidden during
-                            typing.
-                        </Text>
-                    </Portion>
-                </Row>
+                {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Form spacing="none">
+                        <Card padding="micro" shape="rounded">
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="micro">
+                                    Customise individually
+                                </Text>
+                            </Header>
+
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                        {[
+                                            `// Paste this in your content file`,
+                                            `InputField`,
+                                            label ? `    label="${label}"` : null,
+                                            placeholder ? `    placeholder="${placeholder}"` : null,
+                                            isRequired ? `    required` : null,
+                                            helpText ? `    helpText="${helpText}"` : null,
+                                            validateThis ? `    validateThis` : null,
+                                            pattern ? `    pattern="${pattern}"` : null,
+                                            errorText ? `    errorText="${errorText}"` : null,
+                                            `/>`,
+                                        ].filter(Boolean).join("\n")}
+                                    </CodeBlock>
+                                </Portion>
+
+                                {/* LABEL ========================================================================== */}
+                                <Portion>
+                                    <InputField
+                                        type="text"
+                                        label="Label"
+                                        onChange={(e) => setLabel(e.target.value)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
+
+                                {/* PLACEHOLDER ==================================================================== */}
+                                <Portion>
+                                    <InputField
+                                        type="text"
+                                        label="Placeholder"
+                                        onChange={(e) => setPlaceholder(e.target.value)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
+
+                                {/* REQUIRED ======================================================================= */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-required"
+                                        value="checkbox-required"
+                                        name="checkbox-required"
+                                        label="Make it a required field"
+                                        checked={isRequired}
+                                        onChange={() => setIsRequired(event.target.checked)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
+
+                                {/* HELP TEXT ====================================================================== */}
+                                <Portion>
+                                    <InputField
+                                        type="text"
+                                        label="Help text"
+                                        onChange={(e) => setHelpText(e.target.value)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
+
+                                {/* REQUIRED ======================================================================= */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-validate-this"
+                                        value="checkbox-validate-this"
+                                        name="checkbox-validate-this"
+                                        label="I want to validate this input"
+                                        checked={validateThis}
+                                        onChange={() => setValidateThis(event.target.checked)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
+
+                                {/* PATTERN ======================================================================== */}
+                                {validateThis && (
+                                    <Portion>
+                                        <InputField
+                                            type="text"
+                                            label="Validation regex pattern"
+                                            value={pattern}
+                                            onChange={(e) => setPattern(e.target.value)}
+                                        />
+
+                                        <Button
+                                            type="button"
+                                            size="small"
+                                            kind="tertiary"
+                                            onClick={() => setPattern(emailPattern)}
+                                            marginTop="micro"
+                                        >
+                                            Use email pattern
+                                        </Button>
+
+                                        <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    </Portion>
+                                )}
+
+                                {/* HELP TEXT ====================================================================== */}
+                                {validateThis && (
+                                    <Portion>
+                                        <InputField
+                                            type="text"
+                                            label="Error text"
+                                            onChange={(e) => setErrorText(e.target.value)}
+                                        />
+
+                                        <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    </Portion>
+                                )}
+                            </Row>
+                        </Card>
+                    </Form>
+                </Portion>
+
+                {/* GLOBAL THEME /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Card padding="micro" shape="rounded">
+                        <Form>
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="nano">
+                                    Set values globally
+                                </Text>
+                            </Header>
+
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock
+                                        source={cssVariablesList}
+                                        language="css"
+                                        showCopyButton
+                                        marginBottom="micro"
+                                    />
+                                </Portion>
+                            </Row>
+
+                            {/* COMMON ///////////////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700" size="large">Common</Text>
+                                </Portion>
+
+                                {/* BORDER RADIUS ================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Border radius"
+                                        value={componentVariables["input-border-radius-default"].value}
+                                        onChange={(e) => handleVariableChange("input-border-radius-default", e.target.value)}
+                                        min={0} max={50} step={1}
+                                        suffix="px"
+                                    />
+                                </Portion>
+
+                                {/* BORDER WIDTH =================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Border width"
+                                        value={componentVariables["input-border-width-default"].value}
+                                        onChange={(e) => handleVariableChange("input-border-width-default", e.target.value)}
+                                        min={0} max={50} step={1}
+                                        suffix="px"
+                                    />
+                                </Portion>
+                            </Row>
+
+                            <HRule kind="secondary" verticalMargin="micro" />
+
+                            {/* DEFAULT STATE ////////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700" size="large">Default state</Text>
+                                </Portion>
+
+                                {/* BACKGROUND ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Background"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-bg-default"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-bg-default", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BORDER ====================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Border"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-border-default"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-border-default", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* LABEL ========================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Label"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-label-default"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-label-default", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* LABEL ========================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Placeholder"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-placeholder-default"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-placeholder-default", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* TEXT =========================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Text"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-text-default"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-text-default", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                <Portion desktopSpan="half" />
+
+                                {/* HELP TEXT ====================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Help text"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-helptext"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-helptext", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* HELP TEXT SCALE ================================================================ */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Help text scale"
+                                        value={componentVariables["input-helptext-scale"].value}
+                                        onChange={(e) => handleVariableChange("input-helptext-scale", e.target.value)}
+                                        min={80} max={100} step={1}
+                                        suffix="%"
+                                    />
+                                </Portion>
+                            </Row>
+
+                            <HRule kind="secondary" verticalMargin="micro" />
+
+                            {/* FOCUS STATE //////////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700" size="large">Focus state</Text>
+                                </Portion>
+
+                                {/* INPUT FOCUS BACKGROUND ==========================================================*/}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Input focus background"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-bg-focus"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-bg-focus", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* INPUT FOCUS BORDER ============================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Input focus border"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-border-focus"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-border-focus", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BORDER WIDTH =================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Border width"
+                                        value={componentVariables["input-border-width-focus"].value}
+                                        onChange={(e) => handleVariableChange("input-border-width-focus", e.target.value)}
+                                        min={0} max={50} step={1}
+                                        suffix="px"
+                                    />
+                                </Portion>
+
+                                {/* INPUT FOCUS TEXT  ============================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Input focus text"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-text-focus"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-text-focus", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+                            </Row>
+
+                            <HRule kind="secondary" verticalMargin="micro" />
+
+                            {/* VALID STATE //////////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700" size="large">Valid state</Text>
+                                </Portion>
+
+                                {/* BACKGROUND VALID =============================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Background valid"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-bg-valid"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-bg-valid", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BORDER VALID =================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Border valid"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-border-valid"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-border-valid", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* LABEL VALID ==================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Label valid"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-label-valid"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-label-valid", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+                            </Row>
+
+                            <HRule kind="secondary" verticalMargin="micro" />
+
+                            {/* INVALID STATE ////////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700" size="large">Invalid state</Text>
+                                </Portion>
+
+                                {/* BACKGROUND INVALID ============================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Background invalid"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-bg-invalid"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-bg-invalid", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* BORDER INVALID ================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Border invalid"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-border-invalid"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-border-invalid", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* LABEL INVALID ================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Label invalid"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-label-invalid"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-label-invalid", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* TEXT INVALID =================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Text invalid"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-text-invalid"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-text-invalid", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* ERROR TEXT INVALID ============================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Error text invalid"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-error-text-invalid"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-error-text-invalid", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+                            </Row>
+
+                            <HRule kind="secondary" verticalMargin="micro" />
 
 
-                <HRule kind="secondary" horizontalMargin="huge" verticalMargin="small" />
+                            {/* DISABLED STATE ///////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700" size="large">Disabled state</Text>
+                                </Portion>
 
+                                {/* BACKGROUND DISABLED ============================================================ */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Background disabled"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-bg-disabled"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-bg-disabled", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                {/* HELP TEXT ============================================== */}
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h5" marginBottom="nano">Help text</Heading>
+                                {/* BORDER DISABLED ================================================================ */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Border disabled"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-border-disabled"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-border-disabled", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                        <Text marginBottom="micro">
-                            The <code>helpText</code> prop allows you to add a description of what is a valid entry for
-                            the input.
-                        </Text>
+                                {/* LABEL DISABLED ================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Label disabled"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-label-disabled"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-label-disabled", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                        <CodeBlock source={sampleInputHelpText} language="jsx" marginBottom="micro" />
+                                {/* TEXT DISABLED ================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Text disabled"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-text-disabled"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-text-disabled", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+                            </Row>
 
-                        <InputField
-                            label="Email"
-                            placeholder="Work email preferred"
-                            helpText="Confirmation will be sent to this id"
-                        />
-                    </Portion>
-                </Row>
+                            <HRule kind="secondary" verticalMargin="micro" />
 
+                            {/* READ ONLY STATE //////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700" size="large">Read-only state</Text>
+                                </Portion>
 
-                <HRule kind="secondary" horizontalMargin="huge" verticalMargin="small" />
+                                {/* BACKGROUND READ-ONLY =========================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Background read only"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-bg-read-only"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-bg-read-only", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
+                                {/* BORDER READ-ONLY =============================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Border read only"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-border-read-only"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-border-read-only", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                {/* REQUIRED =============================================== */}
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h5" marginBottom="nano">Required</Heading>
+                                {/* LABEL READ-ONLY ================================================================ */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Label read only"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-label-read-only"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-label-read-only", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                        <Text marginBottom="micro">
-                            The <code>required</code> flag adds a red asterisk to the left of the label.
-                        </Text>
-                    </Portion>
-
-                    <Portion>
-                        <CodeBlock source={sampleInputRequired} language="jsx" marginBottom="micro" />
-                    </Portion>
-
-                    <Portion>
-                        <InputField
-                            label="Email"
-                            placeholder="Work email preferred"
-                            helpText="Confirmation will be sent here"
-                            required
-                        />
-                    </Portion>
-                </Row>
-
-
-                <HRule kind="secondary" horizontalMargin="huge" verticalMargin="small" />
-
-
-                {/* VALIDATION ============================================= */}
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading as="h5" marginBottom="nano">Validation</Heading>
-
-                        <Text marginBottom="micro">
-                            Input validation is done by adding a chain of props to the component—
-                        </Text>
-
-                        <Text marginBottom="nano">
-                            <code>validateThis</code> to enable UI states for validation indication.
-                        </Text>
-
-                        <Text marginBottom="nano">
-                            <code>pattern</code> to validate against a provided regex.
-                        </Text>
-
-                        <Text marginBottom="micro">
-                            <code>errorText</code> to display mistakes in the input
-                        </Text>
-
-                        <Text marginTop="micro" marginBottom="micro">
-                            Adding the <code>validateThis</code> flag enables a grey check mark at the right end of the
-                            input field, which either turns green on valid entry, or into a red cross mark on invalid
-                            entry.
-                        </Text>
-
-                        <Text marginBottom="micro">
-                            You can use <code>type</code> to enable basic in-browser validation&mdash;but just this
-                            prop along is not recommended as you’ll have no control over the underlying validation
-                            expression.
-                        </Text>
-
-                        <Callout kind="info">
-                            <Text textColour="white">
-                                The error state is displayed when the input loses focus, so that it doesn’t start
-                                screaming
-                                bloody murder from the get go.
-                            </Text>
-                        </Callout>
-                    </Portion>
-
-                    <Portion>
-                        <CodeBlock source={sampleInputValidation} language="jsx" />
-
-                        <Element as="div" id="test-regex" verticallyCentreItems marginTop="nano" marginBottom="micro">
-                            <Text>Wanna test it?</Text>
-                            <InputField
-                                placeholder="Paste a regex here"
-                                onChange={handleInputChange}
-                            />
-                        </Element>
-                    </Portion>
-
-                    <Portion>
-                        <InputField
-                            id="email"
-                            label="Email"
-                            placeholder="Work email preferred"
-                            validateThis
-                            helpText="Confirmation will be sent here"
-                            errorText="Um, that isn’t a valid email"
-                            autoComplete="off"
-                            pattern={pattern}
-                            required
-                        />
-
-                        <Text marginTop="micro">
-                            Keep the <code>helpText</code> and the <code>errorText</code> short for best results.
-                        </Text>
-                    </Portion>
-                </Row>
-
-                <HRule horizontalMargin="huge" verticalMargin="small" />
-
-
-                {/* //////////////////////////////////////////////////////////// */}
-                {/* THEMING */}
-                {/* //////////////////////////////////////////////////////////// */}
-                <Element as="section" id="theming">
-                    <Row horizontalPadding="huge" marginBottom="small">
-                        <Portion>
-                            <Heading as="h4" marginBottom="tiny">Theme</Heading>
-
-                            <CodeBlock source={sampleInputTheme} language="css" />
-                        </Portion>
-                    </Row>
-                </Element>
-            </Element>
+                                {/* TEXT READ-ONLY ================================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Text read only"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["input-text-read-only"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("input-text-read-only", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+                            </Row>
+                        </Form>
+                    </Card>
+                </Portion>
+            </Row>
         </Article>
     );
 };

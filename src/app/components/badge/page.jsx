@@ -158,7 +158,6 @@ const BadgeDocs = () => {
                                     />
 
                                     <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
-
                                 </Portion>
 
                                 {/* SIZE =========================================================================== */}
@@ -280,6 +279,7 @@ const BadgeDocs = () => {
                                     <Text marginBottom="micro">The font for the badge is set to take the <code>--paragraph-font</code> by default. You can change it in the theme file.</Text>
                                 </Portion>
 
+                                {/* BORDER RADIUS ================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Border radius"
@@ -290,7 +290,7 @@ const BadgeDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BORDER WIDTH */}
+                                {/* BORDER WIDTH =================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Border radius"

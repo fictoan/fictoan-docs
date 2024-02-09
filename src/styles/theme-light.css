@@ -144,7 +144,6 @@
     --switch-bg-default                       : var(--slate-dark-40);
     --switch-bg-hover                         : var(--slate-dark-20);
     --switch-bg-checked                       : var(--hue);
-    --switch-bg-disabled                      : var(--slate-light-90);
 
     --switch-slider-bg-default                : var(--white);
     --switch-slider-bg-hover                  : var(--white);

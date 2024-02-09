@@ -42,12 +42,11 @@ const ToastDocs = () => {
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(checkboxProps.variables);
 
     // SAMPLE ==========================================================================================================
-    const [isSwitch, setIsSwitch] = useState(false);
-
 
     // CUSTOMISE =======================================================================================================
-    const [selectedPosition, setSelectedPosition] = useState("top");
-    const [secondsToShowFor, setSecondsToShowFor] = useState(100);
+    const [isSwitch, setIsSwitch] = useState(false);
+    const [defaultChecked, setDefaultChecked] = useState(false);
+    const [defaultDisabled, setDefaultDisabled] = useState(false);
 
     // THEME ===========================================================================================================
 
@@ -82,17 +81,23 @@ const ToastDocs = () => {
                     >
                         {isSwitch ? (
                             <Switch
+                                key={`switch-${defaultChecked}`}
                                 id="switch-1"
                                 value="switch-1"
                                 name="switch-1"
                                 label="Check me"
+                                defaultChecked={defaultChecked}
+                                disabled={defaultDisabled}
                             />
                         ) : (
                             <Checkbox
+                                key={`checkbox-${defaultChecked}`}
                                 id="checkbox-1"
                                 value="checkbox-1"
                                 name="checkbox-1"
                                 label="Check me"
+                                defaultChecked={defaultChecked}
+                                disabled={defaultDisabled}
                             />
                         )}
                     </Element>
@@ -118,8 +123,10 @@ const ToastDocs = () => {
                                             `    value="${isSwitch ? "switch-1" : "checkbox-1"}"`,
                                             `    name="${isSwitch ? "switch-1" : "checkbox-1"}"`,
                                             `    label="Check me"`,
+                                            defaultChecked ? `   defaultChecked` : null,
+                                            defaultDisabled ? `   disabled` : null,
                                             `/>`,
-                                        ].join("\n")}
+                                        ].filter(Boolean).join("\n")}
                                     </CodeBlock>
                                 </Portion>
 
@@ -130,7 +137,7 @@ const ToastDocs = () => {
                                             id="checkbox-switch-switcher"
                                             value="checkbox-switch-switcher"
                                             name="checkbox-switch-switcher"
-                                            label="Make me a switch"
+                                            label="Make it a switch"
                                             checked={isSwitch}
                                             onChange={() => setIsSwitch(!isSwitch)}
                                         />
@@ -139,12 +146,36 @@ const ToastDocs = () => {
                                             id="checkbox-switch-switcher"
                                             value="checkbox-switch-switcher"
                                             name="checkbox-switch-switcher"
-                                            label="Make me a switch"
+                                            label="Make it a switch"
                                             onChange={() => setIsSwitch(!isSwitch)}
                                         />
                                     }
 
                                     <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
+
+                                {/* CHECKED ======================================================================== */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-default-checked"
+                                        value="checkbox-default-checked"
+                                        name="checkbox-default-checked"
+                                        label="Checked by default"
+                                        onChange={() => setDefaultChecked(!defaultChecked)}
+                                    />
+
+                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
+
+                                {/* DISABLED ======================================================================= */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-default-disabled"
+                                        value="checkbox-default-disabled"
+                                        name="checkbox-default-disabled"
+                                        label="Disabled"
+                                        onChange={() => setDefaultDisabled(!defaultDisabled)}
+                                    />
                                 </Portion>
                             </Row>
                         </Card>

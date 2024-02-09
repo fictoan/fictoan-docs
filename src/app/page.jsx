@@ -96,24 +96,20 @@ const Home = () => {
             {/* HERO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="medium" marginTop="tiny" marginBottom="small">
-                <Portion>
-
-                </Portion>
-
                 <Portion desktopSpan="two-third">
                     <Heading
                         id="intro-headline"
-                        as="h2" textColour="indigo-light-20"
+                        as="h1" textColour="indigo-light-20"
                         marginBottom="nano"
                     >
                         Ship in half the time.
                     </Heading>
 
-                    <Heading as="h4" weight="400" marginBottom="micro">
+                    <Heading as="h5" weight="400" marginBottom="micro">
                         Build UI with code, using plain English syntax. Create ready-to-integrate UI in minutes.
                     </Heading>
 
-                    <Heading as="h4" weight="400">
+                    <Heading as="h5" weight="400">
                         It’s time to take the next step.
                     </Heading>
                 </Portion>
@@ -182,7 +178,7 @@ const Home = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* MANIFESTO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row horizontalPadding="medium" verticalMargin="large">
+            <Row horizontalPadding="medium" verticalMargin="small">
                 <Portion>
                     <Div className="manifesto-card" shadow="soft">
                         <Div className="manifesto-card-content">
