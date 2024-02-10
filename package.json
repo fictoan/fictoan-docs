@@ -11,7 +11,7 @@
     "dependencies": {
         "@svgr/webpack": "^8.1.0",
         "color": "^4.2.3",
-        "fictoan-react": "1.0.0-alpha.12",
+        "fictoan-react": "file:.yalc/fictoan-react",
         "gsap": "^3.12.4",
         "next": "14.0.4",
         "prism-react-renderer": "2.3.1",

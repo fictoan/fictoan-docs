@@ -1,218 +1,272 @@
 "use client";
 
-// EXTERNAL DEPS ===============================================================
-import React from "react";
+// EXTERNAL DEPS =======================================================================================================
+import React, { useState } from "react";
 
-// INTERNAL DEPS ===============================================================
-import { Callout, Element, Heading, HRule, Portion, Row, Select, Text, Article } from "fictoan-react";
-
-// COMPONENTS ==================================================================
-
-// STYLES ======================================================================
-import "./page-select.css";
+// INTERNAL DEPS =======================================================================================================
+import {
+    Callout,
+    Element,
+    Heading,
+    HRule,
+    Portion,
+    Row,
+    Select,
+    Text,
+    Article,
+    Button,
+    Form,
+    Card, Header, RadioTabGroup, Range, InputField, Checkbox, RadioButton, Div,
+} from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
-// CODE SNIPPETS ===============================================================
+// COMPONENTS ==========================================================================================================
+
+// STYLES ==============================================================================================================
+import "./page-select.css";
+
+// CODE SNIPPETS =======================================================================================================
 import {
-    sampleSelect, sampleSelectGroupOptions,
+    sampleSelect,
+    sampleSelectGroupOptions,
     sampleSelectLabel,
     sampleSelectOption,
     sampleSelectOptionSelected,
     sampleSelectTheming,
 } from "./CodeSamples";
 
-// DATA ========================================================================
-import { listOfSelectProps } from "./propsList";
+// DATA ================================================================================================================
+import { useThemeVariables } from "../../../utils/useThemeVariables";
+import { selectProps } from "./config";
+import { colourOptions } from "../../../utils/colours";
 
 
 const SelectDocs = () => {
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(selectProps.variables);
+
+    // SAMPLE ==========================================================================================================
+    const [label, setLabel] = useState("Select an option");
+    const [options, setOptions] = useState([
+        { label: "Option 1", value: "1" },
+    ]);
+    const [selectedDefaultValue, setSelectedDefaultValue] = useState("");
+    const [isFullWidth, setIsFullWidth] = useState(false);
+
+    // Function to handle adding a new option
+    const addOption = () => {
+        setOptions([...options, { label: "", value: "" }]);
+    };
+
+    // Function to handle updating an option
+    const updateOption = (index, newLabel, newValue) => {
+        const newOptions = [...options];
+        newOptions[index] = { label: newLabel, value: newValue };
+        setOptions(newOptions);
+    };
+
+
+
+
+    // CUSTOMISE =======================================================================================================
+
+    // THEME ===========================================================================================================
+
     return (
         <Article id="page-select">
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* INTRO */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1" marginBottom="micro">Select dropdown</Heading>
+                    <Heading as="h1">Select dropdown</Heading>
+                    <Text size="large" marginBottom="small">
+                        The component is
+                    </Text>
+                </Portion>
+
+                <Portion>
+                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Text>&bull; </Text>
                 </Portion>
             </Row>
 
             <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* USAGE */}
+            {/*  CONFIGURATOR */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* DEFAULT ==================================================== */}
-            <Row horizontalPadding="huge">
-                <Portion>
-                    <Heading as="h4" marginBottom="nano">Default</Heading>
-
-                    <Text marginBottom="micro">
-                        The <code>Select</code> is a modified default <code>select</code> element. Add
-                        an <code>options</code> array with a <code>label</code> and <code>value</code> keys, and you’re
-                        good to go.
-                    </Text>
-
-                    <CodeBlock source={sampleSelect} language="jsx" marginBottom="micro" />
-
-                    <Select
-                        name="list-of-options"
-                        options={[
-                            { label : "Option 1", value : "1" },
-                            { label : "Option 2", value : "2" },
-                        ]}
-                        marginBottom="micro"
-                    />
-
-                    <Callout kind="info">
-                        <Text textColour="white">
-                            It’s necessary to add the <code>name</code> attribute to be able to reference the submitted
-                            data in a form.
-                        </Text>
-                    </Callout>
-                </Portion>
-            </Row>
-
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
-
-            {/* LABEL ====================================================== */}
-            <Row horizontalPadding="huge">
-                <Portion>
-                    <Heading as="h4" marginBottom="nano">Label</Heading>
-
-                    <Text marginBottom="micro">
-                        You can pass an optional <code>label</code> prop to have a simple, um, label accompany
-                        the <code>Select</code> component, just like the input field.
-                    </Text>
-
-                    <CodeBlock source={sampleSelectLabel} language="jsx" marginBottom="micro" />
-
-                    <Select
-                        label="Your options"
-                        name="list-of-options"
-                        options={[
-                            { label : "Option 1", value : "1" },
-                            { label : "Option 2", value : "2" },
-                        ]}
-                    />
-                </Portion>
-            </Row>
-
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
-
-            {/* OPTIONS ==================================================== */}
-            <Row horizontalPadding="huge">
-                <Portion>
-                    <Heading as="h4" marginBottom="nano">Options</Heading>
-
-                    <Text marginBottom="micro">
-                        The <code>options</code> prop accepts an array of individual option objects that show up as
-                        items in the dropdown. In the <code>options</code>, the <code>label</code> is what is displayed
-                        in the dropdown, and the <code>value</code> is what is returned when the option is selected.
-                    </Text>
-
-                    <CodeBlock source={sampleSelectOption} language="jsx" marginBottom="micro" />
-
-                    <Select
-                        label="Your options"
-                        name="list-of-options"
-                        options={[
-                            { label : "Option 1", value : "1" },
-                            { label : "Option 2", value : "2" },
-                        ]}
-                        marginBottom="micro"
-                    />
+            <Row horizontalPadding="small" className="rendered-component">
+                {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
+                <Portion id="component-wrapper">
+                    <Element
+                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                        data-centered-children
+                    >
+                        <Select
+                            label={label}
+                            options={options}
+                            defaultValue={selectedDefaultValue}
+                            isFullWidth={isFullWidth}
+                        />
+                    </Element>
                 </Portion>
 
-                <Portion>
-                    <HRule kind="tertiary" verticalMargin="micro" />
+                {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Form spacing="none">
+                        <Card padding="micro" shape="rounded">
+                            <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
+                                <Text size="large" weight="700" textColour="white">
+                                    Customise individually
+                                </Text>
+                            </Header>
+
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                        {[
+                                            `// Paste this in your content file`,
+                                            `<Select`,
+                                            `    label="${label}"`,
+                                            `    options={[`,
+                                            ...options.map((option) => `        { label: "${option.label}", value: "${option.value}" },`),
+                                            `    ]}`,
+                                            selectedDefaultValue ? `    defaultValue="${selectedDefaultValue}"` : null,
+                                            isFullWidth ? `    isFullWidth` : null,
+                                            `/>`,
+                                        ].filter(Boolean).join("\n")}
+                                    </CodeBlock>
+                                </Portion>
+
+                                {/* LABEL ========================================================================== */}
+                                <Portion>
+                                    <InputField
+                                        label="Label"
+                                        onChange={(e) => setLabel(e.target.value)}
+                                    />
+                                </Portion>
+                            </Row>
+
+                            <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+
+                            {/* OPTION ============================================================================= */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Div verticallyCentreItems pushItemsToEnds>
+                                        <Text weight="700" size="large">List of options</Text>
+
+                                        <Button
+                                            kind="tertiary" size="small" type="button"
+                                            onClick={addOption}
+                                        >
+                                            Add another option
+                                        </Button>
+                                    </Div>
+                                </Portion>
+
+                                {options.map((option, index) => (
+                                    <React.Fragment key={index}>
+                                        <Portion desktopSpan="half">
+                                            <InputField
+                                                placeholder="Label"
+                                                value={option.label}
+                                                onChange={(e) => updateOption(index, e.target.value, option.value)}
+                                            />
+                                        </Portion>
+                                        <Portion desktopSpan="half">
+                                            <InputField
+                                                placeholder="Value"
+                                                value={option.value}
+                                                onChange={(e) => updateOption(index, option.label, e.target.value)}
+                                            />
+                                        </Portion>
+                                    </React.Fragment>
+                                ))}
+                            </Row>
+
+                            <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+
+                            <Row marginBottom="none">
+                                <Portion>
+                                    {options.map((option, index) => (
+                                        <RadioButton
+                                            key={index}
+                                            id={`default-option-${index}`}
+                                            name="set-default-option"
+                                            label={`Set ${option.label} as default`}
+                                            value={option.value}
+                                            checked={selectedDefaultValue === option.value}
+                                            onChange={(e) => setSelectedDefaultValue(e.target.value)}
+                                        />
+                                    ))}
+                                </Portion>
+
+                                <Portion>
+                                    <Button
+                                        kind="tertiary" size="small" type="button"
+                                        onClick={() => setSelectedDefaultValue("")}
+                                    >
+                                        Clear default option
+                                    </Button>
+                                </Portion>
+                            </Row>
+
+                            <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Checkbox
+                                        id="is-full-width"
+                                        name="is-full-width"
+                                        label="Full width"
+                                        checked={isFullWidth}
+                                        onChange={() => setIsFullWidth(!isFullWidth)}
+                                    />
+                                </Portion>
+                            </Row>
+                        </Card>
+                    </Form>
                 </Portion>
 
-                {/* DEFAULT OPTION ========================================= */}
-                <Portion>
-                    <Heading as="h6" marginBottom="nano">Default option</Heading>
-                    <Text marginBottom="micro">
-                        You can pass the <code>defaultValue</code> to have an option pre-selected when the component is
-                        rendered.
-                    </Text>
+                {/* GLOBAL THEME /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Card padding="micro" shape="rounded">
+                        <Form>
+                            <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
+                                <Text size="large" weight="700" textColour="white">
+                                    Set values globally
+                                </Text>
+                            </Header>
 
-                    <CodeBlock source={sampleSelectOptionSelected} language="jsx" marginBottom="micro" />
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock
+                                        source={cssVariablesList}
+                                        language="css"
+                                        showCopyButton
+                                        marginBottom="micro"
+                                    />
+                                </Portion>
 
-                    <Select
-                        label="Your options"
-                        name="list-of-options"
-                        defaultValue="3"
-                        options={[
-                            { label : "Option 1", value : "1" },
-                            { label : "Option 2", value : "2" },
-                            { label : "Option 3", value : "3" },
-                        ]}
-                    />
-                </Portion>
+                                {/* CHEVRON ======================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Dropdown chevron"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["dropdown-chevron"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("dropdown-chevron", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                <Portion>
-                    <HRule kind="tertiary" verticalMargin="micro" />
-                </Portion>
-
-                {/* GROUP OPTIONS ========================================== */}
-                <Portion>
-                    <Heading as="h6" marginBottom="nano">Grouped options</Heading>
-
-                    <Text marginBottom="micro">
-                        You can also add groups within the <code>options</code> array. Add another object containing
-                        a <code>label</code>, and another <code>options</code> array with the
-                        same <code>label</code> and <code>value</code> keys.
-                    </Text>
-
-                    <CodeBlock source={sampleSelectGroupOptions} language="jsx" marginBottom="micro" />
-
-                    <Select
-                        label="Your options"
-                        name="list-of-options"
-                        defaultValue="g2-2"
-                        options={[
-                            { label : "Option 1", value : "1" },
-                            { label : "Option 2", value : "2" },
-                            {
-                                label   : "Group 1",
-                                options : [
-                                    { label : "Group 1 Option 1", value : "g1-1" },
-                                    { label : "Group 1 Option 2", value : "g1-2" },
-                                ],
-                            },
-                            {
-                                label   : "Group 2",
-                                options : [
-                                    { label : "Group 2 Option 1", value : "g2-1" },
-                                    { label : "Group 2 Option 2", value : "g2-2" },
-                                ],
-                            },
-                        ]}
-                        marginBottom="micro"
-                    />
-
-                    <Text>
-                        The option object takes <code>name</code>, <code>value</code> as standard keys. You can also
-                        use <code>disabled</code> and <code>selected</code> with boolean values for some extra
-                        functionality.
-                    </Text>
-                </Portion>
-            </Row>
-
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
-
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* THEME */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row horizontalPadding="huge">
-                <Portion>
-                    <Heading as="h4" marginBottom="micro">Theme</Heading>
-                    <Text marginBottom="micro">
-                        Most of the styling for the <code>Select</code> component is done via
-                        the <code>InputField</code> variables.
-                    </Text>
-
-                    <CodeBlock source={sampleSelectTheming} language="css" />
+                                <Portion>
+                                    <Text>All other theming options are inherited from the InputField.</Text>
+                                </Portion>
+                            </Row>
+                        </Form>
+                    </Card>
                 </Portion>
             </Row>
         </Article>

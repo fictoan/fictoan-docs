@@ -14,6 +14,12 @@ export const listOfSelectProps = {
             defaultValue : "",
         },
     ],
+    variables   : {
+        "dropdown-chevron" : {
+            type         : "reference",
+            defaultValue : "slate-light-40",
+        },
+    },
 };
 
 export const listOfOptionsProps = {

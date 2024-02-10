@@ -52,7 +52,7 @@ const ToastDocs = () => {
 
 
     return (
-        <Article id="page-component">
+        <Article id="page-toast">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1">Toast</Heading>
@@ -92,8 +92,8 @@ const ToastDocs = () => {
                 <Portion desktopSpan="half">
                     <Form spacing="none">
                         <Card padding="micro" shape="rounded">
-                            <Header verticallyCentreItems pushItemsToEnds>
-                                <Text size="large" weight="700" textColour="white" marginBottom="micro">
+                            <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
+                                <Text size="large" weight="700" textColour="white">
                                     Customise individually
                                 </Text>
                             </Header>

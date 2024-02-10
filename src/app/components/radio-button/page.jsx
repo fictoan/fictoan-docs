@@ -40,15 +40,27 @@ const ToastDocs = () => {
     // SAMPLE ==========================================================================================================
 
     // CUSTOMISE =======================================================================================================
-    const [defaultChecked, setDefaultChecked] = useState("");
-    const [isDisabled, setIsDisabled] = useState({ first: false, second: false, third: false });
+    const [defaultChecked, setDefaultChecked] = useState("yes");
+    const [userSelectedRadio, setUserSelectedRadio] = useState("");
+    const [isDisabled, setIsDisabled] = useState({ yes: false, no: false, maybe: false });
 
     const handleDefaultCheckedChange = (event) => {
         setDefaultChecked(event.target.value);
     };
 
+    const handleRadioChange = (event) => {
+        setUserSelectedRadio(event.target.value); // Update the user-selected radio button
+    };
+
     const handleDisableChange = (radioId) => {
         setIsDisabled((prev) => ({ ...prev, [radioId]: !prev[radioId] }));
+    };
+
+    const isChecked = (value) => {
+        if (userSelectedRadio) {
+            return userSelectedRadio === value;
+        }
+        return defaultChecked === value;
     };
 
     // THEME ===========================================================================================================
@@ -84,29 +96,30 @@ const ToastDocs = () => {
                     >
                         <RadioButton
                             id="radio-1"
-                            name="checkbox-group"
+                            name="demo-group"
                             value="yes"
                             label="Yes"
-                            checked={defaultChecked === "yes"}
-                            disabled={isDisabled.first}
+                            checked={isChecked("yes")}
+                            onChange={handleRadioChange}
+                            disabled={isDisabled.yes}
                         />
-
                         <RadioButton
                             id="radio-2"
-                            name="checkbox-group"
+                            name="demo-group"
                             value="no"
                             label="No"
-                            checked={defaultChecked === "no"}
-                            disabled={isDisabled.second}
+                            checked={isChecked("no")}
+                            onChange={handleRadioChange}
+                            disabled={isDisabled.no}
                         />
-
                         <RadioButton
                             id="radio-3"
-                            name="checkbox-group"
+                            name="demo-group"
                             value="maybe"
                             label="Maybe"
-                            checked={defaultChecked === "maybe"}
-                            disabled={isDisabled.third}
+                            checked={isChecked("maybe")}
+                            onChange={handleRadioChange}
+                            disabled={isDisabled.maybe}
                         />
                     </Element>
                 </Portion>
@@ -115,8 +128,8 @@ const ToastDocs = () => {
                 <Portion desktopSpan="half">
                     <Form spacing="none">
                         <Card padding="micro" shape="rounded">
-                            <Header verticallyCentreItems pushItemsToEnds>
-                                <Text size="large" weight="700" textColour="white" marginBottom="micro">
+                            <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
+                                <Text size="large" weight="700" textColour="white">
                                     Customise individually
                                 </Text>
                             </Header>
@@ -132,7 +145,7 @@ const ToastDocs = () => {
                                             `    name="checkbox-group"`,
                                             `    label="Yes"`,
                                             defaultChecked === "yes" ? `   defaultChecked` : null,
-                                            isDisabled.first ? `   disabled` : null,
+                                            isDisabled.yes ? `   disabled` : null,
                                             `/> \n`,
                                             `<RadioButton`,
                                             `    id="checkbox-2"`,
@@ -140,7 +153,7 @@ const ToastDocs = () => {
                                             `    name="checkbox-group"`,
                                             `    label="No"`,
                                             defaultChecked === "no" ? `   defaultChecked` : null,
-                                            isDisabled.second ? `   disabled` : null,
+                                            isDisabled.no ? `   disabled` : null,
                                             `/> \n`,
                                             `<RadioButton`,
                                             `    id="checkbox-3"`,
@@ -148,7 +161,7 @@ const ToastDocs = () => {
                                             `    name="checkbox-group"`,
                                             `    label="Maybe"`,
                                             defaultChecked === "maybe" ? `   defaultChecked` : null,
-                                            isDisabled.third ? `   disabled` : null,
+                                            isDisabled.maybe ? `   disabled` : null,
                                             `/> \n`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
@@ -180,6 +193,14 @@ const ToastDocs = () => {
                                         checked={defaultChecked === "maybe"}
                                         onChange={handleDefaultCheckedChange}
                                     />
+                                    <RadioButton
+                                        id="control-radio-none"
+                                        name="control-group"
+                                        value="none"
+                                        label="Check none"
+                                        checked={defaultChecked === "none"}
+                                        onChange={handleDefaultCheckedChange}
+                                    />
 
                                     <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
@@ -191,8 +212,8 @@ const ToastDocs = () => {
                                         value="checkbox-disable-first"
                                         name="checkbox-disable-first"
                                         label="Disable 'Yes'"
-                                        checked={isDisabled.first}
-                                        onChange={() => handleDisableChange("first")}
+                                        checked={isDisabled.yes}
+                                        onChange={() => handleDisableChange("yes")}
                                     />
 
                                     <Checkbox
@@ -200,8 +221,8 @@ const ToastDocs = () => {
                                         value="checkbox-disable-second"
                                         name="checkbox-disable-second"
                                         label="Disable 'No'"
-                                        checked={isDisabled.second}
-                                        onChange={() => handleDisableChange("second")}
+                                        checked={isDisabled.no}
+                                        onChange={() => handleDisableChange("no")}
                                     />
 
                                     <Checkbox
@@ -209,8 +230,8 @@ const ToastDocs = () => {
                                         value="checkbox-disable-third"
                                         name="checkbox-disable-third"
                                         label="Disable 'Maybe'"
-                                        checked={isDisabled.third}
-                                        onChange={() => handleDisableChange("third")}
+                                        checked={isDisabled.maybe}
+                                        onChange={() => handleDisableChange("maybe")}
                                     />
 
                                     <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />

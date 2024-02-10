@@ -82,8 +82,8 @@ const ComponentDocs = () => {
                 <Portion desktopSpan="half">
                     <Form>
                         <Card padding="micro" shape="rounded">
-                            <Header verticallyCentreItems pushItemsToEnds>
-                                <Text size="large" weight="700" textColour="white" marginBottom="micro">
+                            <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
+                                <Text size="large" weight="700" textColour="white">
                                     Customise individually
                                 </Text>
                             </Header>
@@ -114,8 +114,8 @@ const ComponentDocs = () => {
                 <Portion desktopSpan="half">
                     <Card padding="micro" shape="rounded">
                         <Form>
-                            <Header verticallyCentreItems pushItemsToEnds>
-                                <Text size="large" weight="700" textColour="white" marginBottom="micro">
+                            <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
+                                <Text size="large" weight="700" textColour="white">
                                     Set values globally
                                 </Text>
                             </Header>
