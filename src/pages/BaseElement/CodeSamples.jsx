@@ -1,2 +1,0 @@
-//  Code sample 01 ////////////////////////////////////////////////////////////
-export const sampleElement = `<Element as="article"></Element>`;

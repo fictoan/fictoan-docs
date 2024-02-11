@@ -1,5 +1,0 @@
-crucible:
-    container_name: crucible
-    build: .
-    ports:
-     - "3000:80"

@@ -1,69 +1,85 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+// EXTERNAL DEPS ///////////////////////////////////////////////////////////////
+import React, { useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
+// INTERNAL DEPS ///////////////////////////////////////////////////////////////
 import {
-    ExpandableContent,
-    HRule,
-    SidebarFooter,
+    SidebarWrapper,
     SidebarHeader,
     SidebarItem,
     SidebarItemIcon,
     SidebarItemText,
-    SidebarWrapper,
-    Text
+    SidebarFooter,
+    HRule,
+    ExpandableContent,
+    Div,
 } from "fictoan-react";
 
+// COMPONENTS //////////////////////////////////////////////////////////////////
 
-import { ReactComponent as FictoanLogo } from "../../assets/images/logo.svg";
-import { ReactComponent as FictoanIcon } from "../../assets/images/logomark.svg";
+// STYLES //////////////////////////////////////////////////////////////////////
 
-import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
-import { ReactComponent as ManifestoIcon } from "../../assets/icons/manifesto.svg";
-
-import { ReactComponent as BaseElementIcon } from "../../assets/icons/building-block.svg";
-import { ReactComponent as ThemeIcon } from "../../assets/icons/paintbrush.svg";
-import { ReactComponent as ToolboxIcon } from "../../assets/icons/toolbox.svg";
-import { ReactComponent as LayoutIcon } from "../../assets/icons/layout.svg";
-import { ReactComponent as TypographyIcon } from "../../assets/icons/typography.svg";
-import { ReactComponent as ColourIcon } from "../../assets/icons/water.svg";
-
-import { ReactComponent as FormWrapperIcon } from "../../assets/icons/writing.svg";
-
-import { ReactComponent as ThemeSwitchIcon } from "../../assets/icons/theme.svg";
-import { ReactComponent as CheckboxIcon } from "../../assets/icons/checkbox.svg";
-import { ReactComponent as RadioButtonIcon } from "../../assets/icons/radio-button.svg";
-import { ReactComponent as InputFieldIcon } from "../../assets/icons/input.svg";
-import { ReactComponent as ProgressBarIcon } from "../../assets/icons/progress-bar.svg";
-import { ReactComponent as SelectIcon } from "../../assets/icons/dropdown.svg";
-
-import { ReactComponent as BadgeIcon } from "../../assets/icons/badge.svg";
-import { ReactComponent as CalloutIcon } from "../../assets/icons/callout.svg";
-import { ReactComponent as BreadcrumbsIcon } from "../../assets/icons/breadcrumbs.svg";
-import { ReactComponent as ButtonIcon } from "../../assets/icons/button.svg";
-import { ReactComponent as CardIcon } from "../../assets/icons/card.svg";
-import { ReactComponent as HRuleIcon } from "../../assets/icons/hrule.svg";
-import { ReactComponent as CodeIcon } from "../../assets/icons/braces.svg";
-import { ReactComponent as InfoPanelIcon } from "../../assets/icons/info-panel.svg";
-import { ReactComponent as NotificationIcon } from "../../assets/icons/notification.svg";
-import { ReactComponent as SidebarIcon } from "../../assets/icons/sidebar.svg";
-import { ReactComponent as TableIcon } from "../../assets/icons/table.svg";
-import { ReactComponent as TabsIcon } from "../../assets/icons/tabs.svg";
-import { ReactComponent as ToastIcon } from "../../assets/icons/toast.svg";
+// ASSETS //////////////////////////////////////////////////////////////////////
+import FictoanLogo from "@/assets/images/fictoan-logo.svg";
+import FictoanIcon from "@/assets/images/fictoan-icon.svg";
+import HomeIcon from "@/assets/icons/home.svg";
+import ManifestoIcon from "@/assets/icons/manifesto.svg";
+import BaseElementIcon from "@/assets/icons/building-block.svg";
+import ThemeIcon from "@/assets/icons/paintbrush.svg";
+import ToolboxIcon from "@/assets/icons/toolbox.svg";
+import LayoutIcon from "@/assets/icons/layout.svg";
+import TypographyIcon from "@/assets/icons/typography.svg";
+import ColourIcon from "@/assets/icons/water.svg";
+import ThemeSwitchIcon from "@/assets/icons/theme.svg";
+import FormWrapperIcon from "@/assets/icons/writing.svg";
+import InputFieldIcon from "@/assets/icons/input.svg";
+import CheckboxIcon from "@/assets/icons/checkbox.svg";
+import RadioButtonIcon from "@/assets/icons/radio-button.svg";
+import ProgressBarIcon from "@/assets/icons/progress-bar.svg";
+import SelectIcon from "@/assets/icons/dropdown.svg";
+import BadgeIcon from "@/assets/icons/badge.svg";
+import BreadcrumbsIcon from "@/assets/icons/breadcrumbs.svg";
+import ButtonIcon from "@/assets/icons/button.svg";
+import CalloutIcon from "@/assets/icons/callout.svg";
+import CardIcon from "@/assets/icons/card.svg";
+import CodeIcon from "@/assets/icons/braces.svg";
+import HRuleIcon from "@/assets/icons/hrule.svg";
+import InfoPanelIcon from "@/assets/icons/info-panel.svg";
+import NotificationIcon from "@/assets/icons/notification.svg";
+import SidebarIcon from "@/assets/icons/sidebar.svg";
+import TableIcon from "@/assets/icons/table.svg";
+import TabsIcon from "@/assets/icons/tabs.svg";
+import ToastIcon from "@/assets/icons/toast.svg";
 
 
-export const Sidebar = ({toggleTheme, isVisible, setIsSidebarVisible}) => {
-    const [sidebarState, setSidebarState] = useState("");
-    // const themeContext = React.useContext(ThemeContext);
+export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSidebarOnMobile, setShowSidebarOnMobile }) => {
+    const ref = useRef(null);
+
+    const openMobileSidebar = () => {
+        setShowSidebarOnMobile(true);
+    };
+
+    const closeMobileSidebar = () => {
+        setShowSidebarOnMobile(false);
+    }
+
+    const pathname = usePathname();
 
     const headerOnClick = () => {
         setSidebarState(sidebarState === "collapsed" ? "" : "collapsed");
-    }
+    };
 
     return (
         <SidebarWrapper
-            id="docs-sidebar"
-            className={`${sidebarState === "collapsed" ? "collapsed" : ""} ${isVisible ? "visible" : ""}`}
+            ref={ref}
+            showMobileSidebar={showSidebarOnMobile}
+            closeOnClickOutside={closeMobileSidebar}
+            className={`${sidebarState === "collapsed" ? "collapsed" : ""}`}
         >
+            {/* //////////////////////////////////////////////////////////// */}
+            {/* HEADER */}
+            {/* //////////////////////////////////////////////////////////// */}
             <SidebarHeader isSticky onClick={headerOnClick}>
                 <div className="header-logo">
                     <FictoanLogo />
@@ -74,33 +90,30 @@ export const Sidebar = ({toggleTheme, isVisible, setIsSidebarVisible}) => {
                 </div>
             </SidebarHeader>
 
-            {/*  COMPONENTS  =============================================  */}
-            <NavLink exact to="/">
-                <SidebarItem>
+            <Link href="/" className={`${pathname === "/" ? "active" : ""}`}>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <HomeIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Home" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            <NavLink exact to="/manifesto">
-                <SidebarItem>
+            <Link href="/manifesto" className={`${pathname === "/manifesto" ? "active" : ""}`}>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <ManifestoIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Manifesto" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            <HRule kind="tertiary" marginTop="micro" marginBottom="micro" />
+            <HRule bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
 
 
-            {/*  BASICS  =================================================  */}
-
-            {/*  /////////////////////////////////////////////////////////  */}
-            {/*  COMPONENTS  */}
-            {/*  /////////////////////////////////////////////////////////  */}
+            {/* //////////////////////////////////////////////////////////// */}
+            {/* OVERVIEW */}
+            {/* //////////////////////////////////////////////////////////// */}
             <SidebarItem>
                 <SidebarItemIcon iconType="stroked" />
                 <SidebarItemText
@@ -109,150 +122,67 @@ export const Sidebar = ({toggleTheme, isVisible, setIsSidebarVisible}) => {
                 />
             </SidebarItem>
 
-            <NavLink exact to="/getting-started">
-                <SidebarItem>
+            <Link href="/getting-started">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <HomeIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Getting started" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            <NavLink exact to="/base-element">
-                <SidebarItem>
+            <Link href="/base-element">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <BaseElementIcon />
                     </SidebarItemIcon>
 
                     <SidebarItemText weight="400" linkText="Base element" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            <NavLink exact to="/theme">
-                <SidebarItem>
+            <Link href="/theme" className={`${pathname === "/theme" ? "active" : ""}`}>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <ThemeIcon />
                     </SidebarItemIcon>
 
                     <SidebarItemText weight="400" linkText="Theme" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            <NavLink exact to="/utilities">
-                <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <ToolboxIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Utilities" />
-                </SidebarItem>
-            </NavLink>
-
-            <NavLink exact to="/layout">
-                <SidebarItem>
+            <Link href="/layout">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <LayoutIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Layout" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            <NavLink exact to="/typography">
-                <SidebarItem>
+            <Link href="/typography">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <TypographyIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Typography" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            <NavLink exact to="/colour">
-                <SidebarItem>
+            <Link href="/colour" className={`${pathname === "/colour" ? "active" : ""}`}>
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <ColourIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Colour" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            <HRule kind="tertiary" marginTop="micro" marginBottom="micro" />
+            <HRule bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
 
-            {/*  /////////////////////////////////////////////////////////  */}
-            {/*  FORM  */}
-            {/*  /////////////////////////////////////////////////////////  */}
-            <SidebarItem>
-                <SidebarItemIcon iconType="stroked" />
-                <SidebarItemText
-                    linkText="FORM"
-                    weight="600" textColour="slate-60" size="small"
-                />
-            </SidebarItem>
-
-            <NavLink exact to="/components/form">
-                <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <FormWrapperIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Form wrapper" />
-                </SidebarItem>
-            </NavLink>
-
-            <NavLink exact to="/components/input-field">
-                <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <InputFieldIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Input field" />
-                </SidebarItem>
-            </NavLink>
-
-            <NavLink exact to="/components/checkbox">
-                <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <CheckboxIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="CheckBox / Switch" />
-                </SidebarItem>
-            </NavLink>
-
-            <NavLink exact to="/components/radio-button">
-                <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <RadioButtonIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Radio button" />
-                </SidebarItem>
-            </NavLink>
-
-            <NavLink exact to="/components/progress-bar">
-                <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <ProgressBarIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Progress bar" />
-                </SidebarItem>
-            </NavLink>
-
-            <NavLink exact to="/components/select">
-                <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <SelectIcon />
-                    </SidebarItemIcon>
-
-                    <SidebarItemText weight="400" linkText="Select" />
-                </SidebarItem>
-            </NavLink>
-
-            <HRule kind="tertiary" marginTop="micro" marginBottom="micro" />
-
-            {/*  /////////////////////////////////////////////////////////  */}
-            {/*  COMPONENTS  */}
-            {/*  /////////////////////////////////////////////////////////  */}
+            {/* //////////////////////////////////////////////////////////// */}
+            {/* COMPONENTS */}
+            {/* //////////////////////////////////////////////////////////// */}
             <SidebarItem>
                 <SidebarItemIcon iconType="stroked" />
                 <SidebarItemText
@@ -261,99 +191,177 @@ export const Sidebar = ({toggleTheme, isVisible, setIsSidebarVisible}) => {
                 />
             </SidebarItem>
 
-            {/*  BADGE  ==================================================  */}
-            <NavLink exact to="/components/badge">
-                <SidebarItem>
+            {/* BADGE ====================================================== */}
+            <Link href="/components/badge">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <BadgeIcon />
                     </SidebarItemIcon>
-
                     <SidebarItemText weight="400" linkText="Badge" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            {/*  BREADCRUMBS  ============================================  */}
-            <NavLink exact to="/components/breadcrumbs">
-                <SidebarItem>
+            {/* BREADCRUMBS ================================================ */}
+            <Link href="/components/breadcrumbs">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <BreadcrumbsIcon />
                     </SidebarItemIcon>
-
                     <SidebarItemText weight="400" linkText="Breadcrumbs" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            {/*  BUTTON  =================================================  */}
-            <NavLink exact to="/components/button">
-                <SidebarItem>
+            {/* BUTTON ===================================================== */}
+            <Link href="/components/button">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <ButtonIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Button" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            {/*  CARD  ===================================================  */}
-            <NavLink exact to="/components/card">
-                <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <CardIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Card" />
-                </SidebarItem>
-            </NavLink>
-
-            {/*  CALLOUT  ==========================================  */}
-            <NavLink exact to="/components/callout">
-                <SidebarItem>
+            {/* CALLOUT ==================================================== */}
+            <Link href="/components/callout">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <CalloutIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Callout" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            {/*  CODE BLOCK  =============================================  */}
-            <NavLink exact to="/components/code-block">
-                <SidebarItem>
+            {/* CARD ======================================================= */}
+            <Link href="/components/card">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <CardIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Card" />
+                </SidebarItem>
+            </Link>
+
+            {/* CHECKBOX / SWITCH ========================================== */}
+            <Link href="/components/checkbox">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <CheckboxIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Checkbox / Switch" />
+                </SidebarItem>
+            </Link>
+
+            {/* CODE BLOCK ================================================= */}
+            <Link href="/components/code-block">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <CodeIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Code block" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            {/*  H-RULE  =================================================  */}
-            <NavLink exact to="/components/hrule">
-                <SidebarItem>
+            {/* DRAWER ===================================================== */}
+            <Link href="/components/drawer">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <InfoPanelIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Drawer" />
+                </SidebarItem>
+            </Link>
+
+            {/* FORM WRAPPER =============================================== */}
+            <Link href="/components/form-wrapper">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <FormWrapperIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Form wrapper" />
+                </SidebarItem>
+            </Link>
+
+            {/* H-RULE ===================================================== */}
+            <Link href="/components/h-rule">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <HRuleIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="H-Rule" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            {/*  INFO PANEL  =============================================  */}
-            <NavLink exact to="/components/info-panel">
-                <SidebarItem>
+            {/* INPUT FIELD ================================================ */}
+            <Link href="/components/input-field">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
-                        <InfoPanelIcon />
+                        <InputFieldIcon />
                     </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Info panel" />
+                    <SidebarItemText weight="400" linkText="Input field" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            {/*  NOTIFICATIONS  ==========================================  */}
-            <NavLink exact to="/components/notification">
-                <SidebarItem>
+            {/* NOTIFICATIONS ============================================== */}
+            <Link href="/components/notifications">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <NotificationIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Notifications" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            {/*  SIDEBAR  ================================================  */}
+            {/* PIN INPUT FIELD ============================================ */}
+            <Link href="/components/pin-input-field">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <InputFieldIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Pin Input" />
+                </SidebarItem>
+            </Link>
+
+            {/* PROGRESS BAR ============================================== */}
+            <Link href="/components/progress-bar">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <ProgressBarIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Progress bar" />
+                </SidebarItem>
+            </Link>
+
+            {/* RADIO BUTTON ============================================== */}
+            <Link href="/components/radio-button">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <RadioButtonIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Radio button" />
+                </SidebarItem>
+            </Link>
+
+            {/* SELECT ===================================================== */}
+            <Link href="/components/select">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <SelectIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Select" />
+                </SidebarItem>
+            </Link>
+
+            {/* SELECT ===================================================== */}
+            <Link href="/components/sidebar">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <SidebarIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Sidebar" />
+                </SidebarItem>
+            </Link>
+
+            {/* SIDEBAR ==================================================== */}
             <ExpandableContent summary={(
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
@@ -362,67 +370,67 @@ export const Sidebar = ({toggleTheme, isVisible, setIsSidebarVisible}) => {
                     <SidebarItemText weight="400" linkText="Sidebar" />
                 </SidebarItem>
             )}>
-
-                <NavLink exact to="/components/sidebar-wrapper">
-                    <SidebarItem>
+                <Link href="/components/sidebar-wrapper">
+                    <SidebarItem onClick={closeMobileSidebar}>
                         <SidebarItemIcon iconType="stroked">
                         </SidebarItemIcon>
                         <SidebarItemText weight="400" linkText="Wrapper" />
                     </SidebarItem>
-                </NavLink>
+                </Link>
 
-                <NavLink exact to="/components/sidebar-item">
-                    <SidebarItem>
+                <Link href="/components/sidebar-item">
+                    <SidebarItem onClick={closeMobileSidebar}>
                         <SidebarItemIcon iconType="stroked">
                         </SidebarItemIcon>
                         <SidebarItemText weight="400" linkText="Item" />
                     </SidebarItem>
-                </NavLink>
+                </Link>
 
-                <NavLink exact to="/components/expandable-group">
-                    <SidebarItem>
+                <Link href="/components/expandable-group">
+                    <SidebarItem onClick={closeMobileSidebar}>
                         <SidebarItemIcon iconType="stroked">
                         </SidebarItemIcon>
                         <SidebarItemText weight="400" linkText="Expandable group" />
                     </SidebarItem>
-                </NavLink>
+                </Link>
             </ExpandableContent>
 
-            {/*  TABLE  ==================================================  */}
-            <NavLink exact to="/components/table">
-                <SidebarItem>
+            {/* TABLE ====================================================== */}
+            <Link href="/components/table">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <TableIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Table" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            {/*  TABS  ===================================================  */}
-            <NavLink exact to="/components/tabs">
-                <SidebarItem>
+            {/* TABS ======================================================= */}
+            <Link href="/components/tabs">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <TabsIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Tabs" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            {/*  TOAST  ==================================================  */}
-            <NavLink exact to="/components/toast">
-                <SidebarItem>
+            {/* TOAST ====================================================== */}
+            <Link href="/components/toast">
+                <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <ToastIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Toast" />
                 </SidebarItem>
-            </NavLink>
+            </Link>
 
-            {/*  FOOTER  =================================================  */}
+
+            {/* //////////////////////////////////////////////////////////// */}
+            {/* FOOTER */}
+            {/* //////////////////////////////////////////////////////////// */}
             <SidebarFooter>
-                <SidebarItem
-                    onClick={toggleTheme}
-                >
+                <SidebarItem onClick={toggleTheme}>
                     <SidebarItemIcon iconType="stroked">
                         <ThemeSwitchIcon />
                     </SidebarItemIcon>
@@ -430,5 +438,5 @@ export const Sidebar = ({toggleTheme, isVisible, setIsSidebarVisible}) => {
                 </SidebarItem>
             </SidebarFooter>
         </SidebarWrapper>
-    )
-}
+    );
+};

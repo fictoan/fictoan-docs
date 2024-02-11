@@ -1,45 +1,61 @@
-export const snippetInstall = `yarn add fictoan-react
-# or
-npm install fictoan-react`;
+// INSTALLATION ================================================================
+export const snippetInstallation = `@import "fictoan-react/dist/index.css";`;
 
-export const snippetCardSample = `
-<Card
-    padding="medium"
-    bgColour="amber-10"
-    shape="rounded"
-    shadow="soft"
-    borderColor="blue"
-    marginBottom="tiny"
->
-    <Heading
-        as="h4"
-        textColor="hue"
-    >
-        Hello.
-    </Heading>
-    <Text
-        marginTop="none"
-        marginBottom="tiny"
-    >
-        I’m a Card component, and can be customised
-        in about 4 million different ways. Nice to meet you.
-    </Text>
+// FOLDER STRUCTURE ============================================================
+export const snippetStructure = `fictoan-boilerplate
+  ├── public
+  └── src
+      ├── app
+      │   ├── layout.tsx
+      │   ├── page.tsx
+      │   │
+      │   └── about
+      │       ├── page.tsx
+      │       └── page-about.css
+      │
+      ├── components
+      │   ├── RootClientSideLayout
+      │   │   └── RootClientSideLayout.tsx
+      │   │
+      │   └── Header
+      │       ├── Header.tsx
+      │       └── component-header.css
+      │
+      ├── styles
+      │   ├── fonts.css
+      │   ├── globals.css
+      │   └── theme.css
+      │
+      └── assets`;
 
-    <Button
-        kind="primary"
-        size="small"
-        shadow="mild"
-        marginRight="nano"
-    >
-        Main action
-    </Button>
 
-    <Button
-        kind="secondary"
-        size="small"
-        shadow="mild"
-    >
-        Other action
-    </Button>
-</Card>
-`;
+// USAGE ======================================================================
+export const snippetPageSetupJSX = `import "./page-about.css";
+
+export const AboutPage = () => {
+    return (
+        <Article id="page-about">
+            {/* Your page content here */>}
+        </Element>
+    );
+}`;
+
+export const snippetPageSetupCSS = `#page-about {
+    /* Your page styles here */ 
+}`;
+
+// USAGE ======================================================================
+export const snippetUsage = `import { Element, Text, Button } from "fictoan-react";
+
+export const HomePage = () => {
+    return (
+        <Article id="page-home">
+            <Text>Hello, world!</Text>
+            
+            <Button kind="primary">Click me!</Button>
+        </Element>
+    );
+}`;
+
+
+// CUSTOM THEME ================================================================

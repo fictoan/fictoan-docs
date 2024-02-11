@@ -1,0 +1,85 @@
+#home-page {
+    scroll-behavior : smooth;
+
+    #intro-headline {
+        background              : -webkit-linear-gradient(270deg, #adb2ff 0%, #264be1 100%);
+        -webkit-background-clip : text;
+        -webkit-text-fill-color : transparent;
+        font-size               : 3.2rem;
+    }
+
+    #code-block-wrapper {
+        position : relative;
+    }
+
+    #code-block-wrapper::after {
+        filter     : blur(8px);
+        background : rgb(131, 58, 180);
+        background : linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+        position   : absolute;
+        top        : -4px;
+        left       : -4px;
+        width      : calc(100% + 8px);
+        height     : calc(100% + 8px);
+        content    : "";
+        z-index    : -1;
+    }
+
+    #fictoan-bg {
+        position  : fixed;
+        top       : -10vh;
+        left      : 8%;
+        width     : 100%;
+        height    : auto;
+        z-index   : -1;
+        transform : rotate(-40deg);
+        opacity   : 0.16;
+        filter    : saturate(150%);
+    }
+
+    /* MANIFESTO-CARD ======================================================= */
+    .manifesto-card {
+        position      : relative;
+        min-width     : 100%;
+        padding       : 2px;
+        overflow      : hidden;
+        background    : linear-gradient(90deg, var(--indigo), var(--indigo-dark-40));
+        border-radius : 16px;
+        transform     : translateZ(0);
+
+        svg {
+            position : absolute;
+            bottom   : -32px;
+            right    : 40px;
+            height   : 120%;
+            stroke   : var(--blue);
+            fill     : none;
+            opacity  : 0.32;
+            z-index  : -1;
+        }
+    }
+
+    .manifesto-card-content {
+        position      : relative;
+        z-index       : 1;
+        padding       : 32px;
+        background    : linear-gradient(0deg, rgba(4, 7, 22, 0.96), rgba(4, 10, 22, 0.96));
+        border        : 1px solid hsla(0, 0%, 100%, .1);
+        border-radius : 12px
+    }
+
+    /* THE GLOWING BORDER */
+    #manifesto-card-bg {
+        position         : absolute;
+        inset            : 0;
+        top              : 24%;
+        left             : 0;
+        height           : 100%;
+        background       : conic-gradient(transparent 1%, var(--blue) 80deg, transparent 100deg);
+        filter           : blur(8px);
+        transform-origin : center;
+        /* Keyframes are defined in globals.css, doesn't work if kept here */
+        animation        : border-glow -.64s linear 4s infinite;
+        will-change      : transform
+    }
+}

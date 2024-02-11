@@ -1,0 +1,39 @@
+#site-header {
+    display         : flex;
+    border-bottom   : 1px solid var(--site-header-border);
+    position        : sticky;
+    top             : 0;
+    z-index         : 1000;
+    background      : rgba(var(--site-header-bg), 0.9);
+    backdrop-filter : blur(12px);
+    height          : 56px;
+    align-items     : center;
+    justify-content : space-between;
+
+    #menu-toggle * {
+        line-height  : 9px;
+        justify-self : center;
+        cursor       : pointer;
+    }
+
+    .links-wrapper {
+        display        : flex;
+        flex-direction : column;
+        gap            : 2px;
+    }
+
+    a {
+        font-size   : 90%;
+        font-weight : normal;
+        color       : var(--paragraph-text-colour);
+    }
+
+    input {
+        padding   : 6px 12px;
+        font-size : 14px;
+    }
+
+    #wip-badge {
+        margin-left : auto;
+    }
+}

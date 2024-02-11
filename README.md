@@ -1,49 +1,36 @@
-# Crucible/React — Boilerplate for Setu React projects
-### v0.1.0
-#### A nice little starter project in React to hit the ground running.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
----
+## Getting Started
 
-#### What you need
-1. **NodeJS**<br/>
-    This is a Javascript “runtime”. React is a JS framework, so needs something like Node to run inside of. Download from [here](https://nodejs.org/en/download/).
-    
-2. **Yarn**<br/>
-    A package manager. This helps manage dependencies required by this project. Download from [here](https://classic.yarnpkg.com/en/docs/install).
-    
-3. **A code editor**<br/>
-    Someplace for you to type code. [VS Code](https://code.visualstudio.com/) is a high-quality free and open-source editor.
-    
-4. **A terminal**<br/>
-    The opposite of UI. We recommend [Hyper](https://hyper.is/). This is to run and manage your project with git. MacOS come with a built-in terminal called, um, Terminal. Windows has Command Prompt.
+First, run the development server:
 
----
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-#### Getting started
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. Clone or download this repo to your system.
-2. In your terminal, navigate to the folder where you have this repo.
-3. Type `yarn`. This will install all the dependencies required to run this project.
-4. Once that’s done, now type `yarn start`. This should open up the website in your browser, likely at [http://localhost:3000](http://localhost:3000).
-5. Open up the repo with your code editor, and make changes. You should see the page updating with each save.
-6. Go forth and create!
+You can start editing the page by modifying `app/PropsList.jsx`. The page auto-updates as you edit the file.
 
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
----
+## Learn More
 
-#### Docker Setup
+To learn more about Next.js, take a look at the following resources:
 
-We've got your back if you don't like installing versioned dependencies on your local development environment. 🐳 FTW.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-1. Clone or download this repo to your system.
-2. In your terminal, navigate to the folder where you have this repo.
-3. Run `cd boilerplate-react` to get inside the project directory.
-4. Now run this command to start the application `docker-compose up -d`.
-5. Upon running the above command successfully, you'll be able to access your fictoan app in the browser at [http://localhost:3000](http://localhost:3000).
-6. If you want to make changes to the application while running the it in the browser, simply make all the changes you want and run `docker-compose up -d` again.
-7. To shut-down the application, you can just run `docker-compose down`, and docker-compose takes care of the rest.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-Note:
+## Deploy on Vercel
 
-1. By default, the container runs on port `3000`. If you want to change the port on which your application runs, change it in the `docker-compose.yml` file at Line 5.
-2. You can also extend the `docker-compose.yml` file to include more services, like backend and database.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

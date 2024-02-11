@@ -1,0 +1,28 @@
+#component-configurator {
+    .demo-row pre {
+        height : 300px;
+    }
+
+    .rendered-component {
+        position : sticky;
+        top      : 72px;
+        z-index  : 10;
+    }
+
+    #component-wrapper {
+        /*display     : grid;*/
+        /*place-items : center;*/
+        /*position    : relative;*/
+
+        footer {
+            position : absolute;
+            bottom   : 16px;
+            left     : 24px;
+            width    : 100%;
+        }
+    }
+
+    [data-radio-tab-group] label {
+        padding : 0 16px;
+    }
+}

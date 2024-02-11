@@ -1,0 +1,6 @@
+#page-input-field {
+    #test-regex {
+        display               : grid;
+        grid-template-columns : 24% 1fr;
+    }
+}
