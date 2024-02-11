@@ -351,6 +351,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* SELECT ===================================================== */}
+            <Link href="/components/sidebar">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <SidebarIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Sidebar" />
+                </SidebarItem>
+            </Link>
+
             {/* SIDEBAR ==================================================== */}
             <ExpandableContent summary={(
                 <SidebarItem>
