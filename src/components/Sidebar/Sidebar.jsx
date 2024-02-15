@@ -11,9 +11,8 @@ import {
     SidebarItemIcon,
     SidebarItemText,
     SidebarFooter,
-    HRule,
-    ExpandableContent,
-    Div,
+    Divider,
+    Accordion,
 } from "fictoan-react";
 
 // COMPONENTS //////////////////////////////////////////////////////////////////
@@ -23,34 +22,36 @@ import {
 // ASSETS //////////////////////////////////////////////////////////////////////
 import FictoanLogo from "@/assets/images/fictoan-logo.svg";
 import FictoanIcon from "@/assets/images/fictoan-icon.svg";
-import HomeIcon from "@/assets/icons/home.svg";
-import ManifestoIcon from "@/assets/icons/manifesto.svg";
-import BaseElementIcon from "@/assets/icons/building-block.svg";
-import ThemeIcon from "@/assets/icons/paintbrush.svg";
-import ToolboxIcon from "@/assets/icons/toolbox.svg";
-import LayoutIcon from "@/assets/icons/layout.svg";
-import TypographyIcon from "@/assets/icons/typography.svg";
-import ColourIcon from "@/assets/icons/water.svg";
-import ThemeSwitchIcon from "@/assets/icons/theme.svg";
-import FormWrapperIcon from "@/assets/icons/writing.svg";
-import InputFieldIcon from "@/assets/icons/input.svg";
-import CheckboxIcon from "@/assets/icons/checkbox.svg";
-import RadioButtonIcon from "@/assets/icons/radio-button.svg";
-import ProgressBarIcon from "@/assets/icons/progress-bar.svg";
-import SelectIcon from "@/assets/icons/dropdown.svg";
+
+import AccordionIcon from "@/assets/icons/accordion.svg";
 import BadgeIcon from "@/assets/icons/badge.svg";
+import BaseElementIcon from "@/assets/icons/building-block.svg";
 import BreadcrumbsIcon from "@/assets/icons/breadcrumbs.svg";
 import ButtonIcon from "@/assets/icons/button.svg";
 import CalloutIcon from "@/assets/icons/callout.svg";
 import CardIcon from "@/assets/icons/card.svg";
+import CheckboxIcon from "@/assets/icons/checkbox.svg";
 import CodeIcon from "@/assets/icons/braces.svg";
+import ColourIcon from "@/assets/icons/water.svg";
+import FormWrapperIcon from "@/assets/icons/writing.svg";
+import HomeIcon from "@/assets/icons/home.svg";
 import HRuleIcon from "@/assets/icons/hrule.svg";
 import InfoPanelIcon from "@/assets/icons/info-panel.svg";
+import InputFieldIcon from "@/assets/icons/input.svg";
+import LayoutIcon from "@/assets/icons/layout.svg";
+import ManifestoIcon from "@/assets/icons/manifesto.svg";
 import NotificationIcon from "@/assets/icons/notification.svg";
+import ProgressBarIcon from "@/assets/icons/progress-bar.svg";
+import RadioButtonIcon from "@/assets/icons/radio-button.svg";
+import SelectIcon from "@/assets/icons/select.svg";
 import SidebarIcon from "@/assets/icons/sidebar.svg";
 import TableIcon from "@/assets/icons/table.svg";
 import TabsIcon from "@/assets/icons/tabs.svg";
+import ThemeIcon from "@/assets/icons/paintbrush.svg";
+import ThemeSwitchIcon from "@/assets/icons/theme.svg";
 import ToastIcon from "@/assets/icons/toast.svg";
+import ToolboxIcon from "@/assets/icons/toolbox.svg";
+import TypographyIcon from "@/assets/icons/typography.svg";
 
 
 export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSidebarOnMobile, setShowSidebarOnMobile }) => {
@@ -108,7 +109,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            <HRule bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
+            <Divider bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
 
 
             {/* //////////////////////////////////////////////////////////// */}
@@ -178,7 +179,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            <HRule bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
+            <Divider bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
 
             {/* //////////////////////////////////////////////////////////// */}
             {/* COMPONENTS */}
@@ -190,6 +191,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                     weight="600" textColour="slate-60" size="small"
                 />
             </SidebarItem>
+
+            {/* ACCORDION ================================================= */}
+            <Link href="/components/accordion">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <AccordionIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Accordion" />
+                </SidebarItem>
+            </Link>
 
             {/* BADGE ====================================================== */}
             <Link href="/components/badge">
@@ -352,6 +363,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             {/* SELECT ===================================================== */}
+            <Link href="/components/selectable-card">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <SelectIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Selectable card" />
+                </SidebarItem>
+            </Link>
+
+            {/* SELECT ===================================================== */}
             <Link href="/components/sidebar">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -362,7 +383,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             {/* SIDEBAR ==================================================== */}
-            <ExpandableContent summary={(
+            <Accordion summary={(
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
                         <SidebarIcon />
@@ -393,7 +414,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                         <SidebarItemText weight="400" linkText="Expandable group" />
                     </SidebarItem>
                 </Link>
-            </ExpandableContent>
+            </Accordion>
 
             {/* TABLE ====================================================== */}
             <Link href="/components/table">

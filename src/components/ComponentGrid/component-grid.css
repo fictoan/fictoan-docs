@@ -6,12 +6,12 @@
         grid-template-rows    : repeat(6, 300px);
         grid-gap              : 12px;
         grid-template-areas   :
-            "button      type        notification notification"
-            "input       table       table        progress    "
-            "select      table       table        colour      "
-            "breadcrumbs breadcrumbs radio        colour      "
-            "callout     callout     callout      badge       "
-            "checkbox    code        code         badge       ";
+            "button      type        accordion accordion"
+            "input       table       table     progress    "
+            "select      table       table     colour      "
+            "breadcrumbs breadcrumbs radio     colour      "
+            "callout     callout     callout   badge       "
+            "checkbox    code        code      badge       ";
 
         .grid-item {
             p,
@@ -34,7 +34,7 @@
     }
 
     /* GRID ITEMS =========================================================== */
-    #notification-card { grid-area : notification; }
+    #accordion-card { grid-area : accordion; }
 
     #input-card {
         grid-area : input;

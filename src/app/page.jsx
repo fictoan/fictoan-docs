@@ -9,7 +9,7 @@ import {
     Div,
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -144,7 +144,7 @@ const Home = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="tertiary" horizontalMargin="medium" verticalMargin="tiny" />
+            <Divider kind="tertiary" horizontalMargin="medium" verticalMargin="tiny" />
 
             <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
                 <Portion desktopSpan="one-third">

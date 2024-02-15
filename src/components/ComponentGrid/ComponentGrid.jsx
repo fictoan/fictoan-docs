@@ -26,6 +26,8 @@ import {
     Switch,
     Table,
     Text,
+    Accordion,
+    Divider,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -35,8 +37,6 @@ import { CodeBlock } from "fictoan-react/components";
 import "./component-grid.css";
 
 export const ComponentGrid = () => {
-    const [showNotification1, setShowNotification1] = useState(false);
-
     const cardComponentSample = `const clickHere = () => {
     window.load("/components/card");
 }`;
@@ -50,6 +50,7 @@ export const ComponentGrid = () => {
 
                 <Portion>
                     <Div id="grid-wrapper">
+                        {/* BUTTON ================================================================================= */}
                         <Div id="button-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -79,6 +80,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* TYPOGRAPHY ============================================================================= */}
                         <Div id="type-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -94,25 +96,26 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
-                        <Div id="notification-card" className="grid-item">
+                        {/* ACCORDION ============================================================================== */}
+                        <Div id="accordion-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
-                                    <NotificationItem
-                                        show kind="info"
-                                        onCloseCallback={() => setShowNotification1(false)}
-                                    >
-                                        I am here to notify you that...um, wait, I forgot.
-                                    </NotificationItem>
+                                    <Accordion summary="But wait!" padding="nano" borderColour="slate-dark-40"
+                                               shape="rounded">
+                                        <Divider kind="tertiary" verticalMargin="nano" />
+                                        <Text>There’s more!</Text>
+                                    </Accordion>
 
                                     <Element as="footer" className="footer-bottom">
-                                        <Link href="/components/notifications">
-                                            Notifications &rarr;
+                                        <Link href="/components/accordion">
+                                            Accordion &rarr;
                                         </Link>
                                     </Element>
                                 </Div>
                             </Card>
                         </Div>
 
+                        {/* PROGRESS BAR =========================================================================== */}
                         <Div id="progress-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -124,7 +127,7 @@ export const ComponentGrid = () => {
                                     />
 
                                     <Element as="footer" className="footer-bottom">
-                                        <Link href="/components/button">
+                                        <Link href="/components/progress-bar">
                                             Progress bar &rarr;
                                         </Link>
                                     </Element>
@@ -132,6 +135,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* INPUT FIELD ============================================================================ */}
                         <Div id="input-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -141,7 +145,7 @@ export const ComponentGrid = () => {
                                     />
 
                                     <Element as="footer" className="footer-bottom">
-                                        <Link href="/components/button">
+                                        <Link href="/components/input-field">
                                             Input field &rarr;
                                         </Link>
                                     </Element>
@@ -149,10 +153,12 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* SELECT ================================================================================= */}
                         <Div id="select-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
                                     <Select
+                                        label="Pick one"
                                         options={[
                                             {
                                                 label    : "What’s your pick?",
@@ -172,7 +178,7 @@ export const ComponentGrid = () => {
                                     />
 
                                     <Element as="footer" className="footer-bottom">
-                                        <Link href="/components/button">
+                                        <Link href="/components/select">
                                             Select &rarr;
                                         </Link>
                                     </Element>
@@ -180,6 +186,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* TABLE ================================================================================== */}
                         <Div id="table-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -220,7 +227,7 @@ export const ComponentGrid = () => {
                                     </Table>
 
                                     <Element as="footer" className="footer-bottom">
-                                        <Link href="/components/button">
+                                        <Link href="/components/table">
                                             Table &rarr;
                                         </Link>
                                     </Element>
@@ -228,6 +235,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* BREADCRUMBS ============================================================================ */}
                         <Div id="breadcrumbs-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -264,7 +272,7 @@ export const ComponentGrid = () => {
                                     </BreadcrumbsWrapper>
 
                                     <Element as="footer" className="footer-bottom">
-                                        <Link href="/components/button">
+                                        <Link href="/components/breadcrumbs">
                                             Breadcrumbs &rarr;
                                         </Link>
                                     </Element>
@@ -272,6 +280,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* RADIO BUTTONS ========================================================================== */}
                         <Div id="radio-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -292,7 +301,7 @@ export const ComponentGrid = () => {
                                     />
 
                                     <Element as="footer" className="footer-bottom">
-                                        <Link href="/components/button">
+                                        <Link href="/components/radio-button">
                                             Radio buttons &rarr;
                                         </Link>
                                     </Element>
@@ -300,6 +309,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* CHECKBOX =============================================================================== */}
                         <Div id="checkbox-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -320,14 +330,15 @@ export const ComponentGrid = () => {
                                     />
 
                                     <Element as="footer" className="footer-bottom">
-                                        <Link href="/components/button">
-                                            Switch &rarr;
+                                        <Link href="/components/checkbox">
+                                            Checkbox / switch &rarr;
                                         </Link>
                                     </Element>
                                 </Div>
                             </Card>
                         </Div>
 
+                        {/* CODE BLOCK ============================================================================= */}
                         <Div id="code-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -337,7 +348,7 @@ export const ComponentGrid = () => {
                                     />
 
                                     <Element as="footer" className="footer-bottom">
-                                        <Link href="/components/button">
+                                        <Link href="/components/codeblock">
                                             CodeBlock &rarr;
                                         </Link>
                                     </Element>
@@ -345,16 +356,17 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* COLOURS ================================================================================ */}
                         <Div id="colour-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
-                                    <Element as="div"
-                                             id="gradient-card"
-                                             shape="rounded" borderColour="transparent"
+                                    <Div
+                                        id="gradient-card"
+                                        shape="rounded" borderColour="transparent"
                                     />
 
                                     <Element as="footer" className="footer-bottom">
-                                        <Link href="/colour/">
+                                        <Link href="/colour">
                                             Colour &rarr;
                                         </Link>
                                     </Element>
@@ -362,6 +374,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* BADGE ================================================================================== */}
                         <Div id="badge-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -400,7 +413,7 @@ export const ComponentGrid = () => {
                                     </Div>
 
                                     <Element as="footer" className="footer-bottom">
-                                        <Link href="/components/button">
+                                        <Link href="/components/badge">
                                             Badge &rarr;
                                         </Link>
                                     </Element>
@@ -408,17 +421,18 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* CALLOUT ================================================================================ */}
                         <Div id="callout-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
                                     <Callout kind="success">
-                                        <Text textColour="green-dark-60">I’d also just like to call out that FICTOAN
-                                            is
-                                            awesome.</Text>
+                                        <Text textColour="green-dark-60">
+                                            I’d also just like to call out that FICTOAN is awesome.
+                                        </Text>
                                     </Callout>
 
                                     <Element as="footer" className="footer-bottom">
-                                        <Link href="/components/button">
+                                        <Link href="/components/callout">
                                             Callout &rarr;
                                         </Link>
                                     </Element>

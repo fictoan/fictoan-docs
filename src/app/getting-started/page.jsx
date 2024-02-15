@@ -22,7 +22,7 @@ import { InteractiveCardExample } from "./InteractiveCardExample";
 // STYLES ======================================================================
 import "./getting-started.css";
 
-// STYLES ======================================================================
+// ASSETS ======================================================================
 import PNPMIcon from "../../assets/icons/pnpm.svg";
 import YarnIcon from "../../assets/icons/yarn.svg";
 import NPMIcon from "../../assets/icons/npm.svg";
@@ -85,7 +85,7 @@ const GettingStarted = () => {
 
                         <Text marginBottom="micro">
                             If you’re starting a new project from scratch, consider using the <a
-                            href="https://fictoan.io/boilerplate" target="_blank" rel="noreferrer">Fictoan
+                            href="https://github.com/fictoan/react-boilerplate" target="_blank" rel="noreferrer">Fictoan
                             boilerplate &#8599;</a>. It’s a simple, bare-bones NextJS app with Fictoan already
                             installed, and a few basics already setup.
                         </Text>

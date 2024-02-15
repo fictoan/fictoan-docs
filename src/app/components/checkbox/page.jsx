@@ -38,7 +38,7 @@ import { colourOptions } from "../../../utils/colours";
 // DATA ================================================================================================================
 import { checkboxProps } from "./config";
 
-const ToastDocs = () => {
+const CheckboxDocs = () => {
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(checkboxProps.variables);
 
     // SAMPLE ==========================================================================================================
@@ -447,4 +447,4 @@ const ToastDocs = () => {
     );
 };
 
-export default ToastDocs;
+export default CheckboxDocs;

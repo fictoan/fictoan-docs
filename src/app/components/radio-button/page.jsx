@@ -34,7 +34,7 @@ import { colourOptions } from "../../../utils/colours";
 // DATA ================================================================================================================
 import { radioButtonProps } from "./config";
 
-const ToastDocs = () => {
+const RadioButtonDocs = () => {
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(radioButtonProps.variables);
 
     // SAMPLE ==========================================================================================================
@@ -352,4 +352,4 @@ const ToastDocs = () => {
     );
 };
 
-export default ToastDocs;
+export default RadioButtonDocs;

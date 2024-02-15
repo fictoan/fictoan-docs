@@ -38,7 +38,7 @@ import { colourOptions } from "../../../utils/colours";
 // DATA ================================================================================================================
 import { toastProps } from "./config";
 
-const ToastDocs = () => {
+const NotificationDocs = () => {
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(toastProps.variables);
 
     // SAMPLE ==========================================================================================================
@@ -471,4 +471,4 @@ const ToastDocs = () => {
     );
 };
 
-export default ToastDocs;
+export default NotificationDocs;

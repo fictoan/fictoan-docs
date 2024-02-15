@@ -2,22 +2,21 @@
 
 import React from "react";
 
-import { Badge, Callout, Div, Element, Header, Heading, InputField, Portion, Row, Text } from "fictoan-react";
+import { Badge, Div, Header, Heading } from "fictoan-react";
 
 import "./header.css";
 
 export const SiteHeader = ({ toggleSidebarOnMobile }) => {
-    const handleMenuToggleClick = (e) => {
-        e.stopPropagation(); // Prevent event from propagating
-        toggleSidebarOnMobile();
-    };
 
     return (
         <Header id="site-header" horizontalPadding="micro" verticalPadding="nano">
             <Div
                 id="menu-toggle"
                 showOnlyOnMobile showOnlyOnTabletPortrait
-                onClick={handleMenuToggleClick}
+                onClick={(e) => {
+                    e.stopPropagation();
+                    toggleSidebarOnMobile();
+                }}
             >
                 <Heading as="h5">&mdash;</Heading>
                 <Heading as="h5">&ndash;</Heading>
@@ -25,7 +24,7 @@ export const SiteHeader = ({ toggleSidebarOnMobile }) => {
 
             <Badge
                 id="wip-badge"
-                bgColour="red-light-60" textColour="red" shape="rounded"
+                bgColour="red-light-70" textColour="red" shape="rounded"
             >
                 These Docs are WIP
             </Badge>

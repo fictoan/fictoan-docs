@@ -272,8 +272,8 @@ const CardDocs = () => {
                                         label="Border radius"
                                         value={componentVariables["card-border-radius"].value}
                                         onChange={(e) => handleVariableChange("card-border-radius", e.target.value)}
-                                        min={0} max={50} step={1}
                                         suffix={componentVariables["card-border-radius"].unit}
+                                        min={0} max={50} step={1}
                                     />
                                 </Portion>
 
@@ -283,8 +283,8 @@ const CardDocs = () => {
                                         label="Border width"
                                         value={componentVariables["card-border-width"].value}
                                         onChange={(e) => handleVariableChange("card-border-width", e.target.value)}
-                                        min={0} max={50} step={1}
                                         suffix={componentVariables["card-border-width"].unit}
+                                        min={0} max={50} step={1}
                                     />
                                 </Portion>
                             </Row>

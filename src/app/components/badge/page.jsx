@@ -293,7 +293,7 @@ const BadgeDocs = () => {
                                 {/* BORDER WIDTH =================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Range
-                                        label="Border radius"
+                                        label="Border width"
                                         value={componentVariables["badge-border-width"].value}
                                         onChange={(e) => handleVariableChange("badge-border-width", e.target.value)}
                                         min={0} max={50} step={1}

@@ -1,0 +1,7 @@
+#site-footer {
+    border-top : 1px solid var(--slate-dark-60);
+    #fictoan-logo {
+        fill          : var(--slate-dark-80);
+        margin-bottom : -300px;
+    }
+}

@@ -18,10 +18,13 @@ import {
     Header,
     RadioTabGroup,
     Select,
-    ToastItem,
-    ToastsWrapper,
-    Button,
-    Range, SidebarHeader, SidebarWrapper, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarFooter,
+    Range,
+    SidebarHeader,
+    SidebarWrapper,
+    SidebarItem,
+    SidebarItemIcon,
+    SidebarItemText,
+    SidebarFooter,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -43,11 +46,10 @@ import FictoanIcon from "@/assets/images/fictoan-icon.svg";
 import ThemeSwitchIcon from "@/assets/icons/theme.svg";
 import HomeIcon from "@/assets/icons/home.svg";
 
-const ToastDocs = () => {
+const SidebarDocs = () => {
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(toastProps.variables);
 
     // SAMPLE ==========================================================================================================
-    const [showSampleToast, setShowSampleToast] = useState(false);
 
     // CUSTOMISE =======================================================================================================
     const [selectedPosition, setSelectedPosition] = useState("top");
@@ -85,7 +87,7 @@ const ToastDocs = () => {
                         data-centered-children isFullHeight
                     >
                         <SidebarWrapper>
-                            {/* HEADER */}
+                            {/* HEADER ==================================== */}
                             <SidebarHeader>
                                 <div className="header-logo">
                                     <FictoanLogo />
@@ -96,6 +98,7 @@ const ToastDocs = () => {
                                 </div>
                             </SidebarHeader>
 
+                            {/* MAIN BODY ================================= */}
                             <Link href="/getting-started">
                                 <SidebarItem>
                                     <SidebarItemIcon iconType="stroked">
@@ -105,6 +108,7 @@ const ToastDocs = () => {
                                 </SidebarItem>
                             </Link>
 
+                            {/* FOOTER ==================================== */}
                             <SidebarFooter>
                                 <SidebarItem>
                                     <SidebarItemIcon iconType="stroked">
@@ -132,18 +136,36 @@ const ToastDocs = () => {
                                     <CodeBlock language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
-                                            `const [showSampleToast, setShowSampleToast] = useState(false); \n`,
-                                            `<ToastsWrapper`,
-                                            selectedPosition ? `    position="${selectedPosition}"` : null,
-                                            `>`,
-                                            `    <ToastItem`,
-                                            `        showWhen={showSampleToast}`,
-                                            `        secondsToShowFor={${secondsToShowFor}}`,
-                                            `        closeWhen={() => setShowSampleToast(false)}`,
-                                            `    >`,
-                                            `        <Text>Hello there, folks!</Text>`,
-                                            `    </ToastItem>`,
-                                            `</ToastsWrapper>`,
+                                            `<SidebarWrapper>`,
+                                            `    {/* HEADER ==================================== */}`,
+                                            `    <SidebarHeader>`,
+                                            `        <div className="header-logo">`,
+                                            `            <FictoanLogo />`,
+                                            `        </div>`,
+                                            ``,
+                                            `        <div className="header-icon">`,
+                                            `            <FictoanIcon />`,
+                                            `        </div>`,
+                                            `    </SidebarHeader>\n`,
+                                            `    {/* MAIN BODY ================================= */}`,
+                                            `    <Link href="/getting-started">`,
+                                            `        <SidebarItem>`,
+                                            `            <SidebarItemIcon iconType="stroked">`,
+                                            `                <HomeIcon />`,
+                                            `            </SidebarItemIcon>`,
+                                            `            <SidebarItemText weight="400" linkText="Home" />`,
+                                            `        </SidebarItem>`,
+                                            `    </Link>\n`,
+                                            `    {/* FOOTER ==================================== */}`,
+                                            `    <SidebarFooter>`,
+                                            `        <SidebarItem>`,
+                                            `            <SidebarItemIcon iconType="stroked">`,
+                                            `                <ThemeSwitchIcon />`,
+                                            `            </SidebarItemIcon>`,
+                                            `            <SidebarItemText weight="400" linkText="Theme" />`,
+                                            `        </SidebarItem>`,
+                                            `    </SidebarFooter>`,
+                                            `</SidebarWrapper>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
                                 </Portion>
@@ -199,7 +221,12 @@ const ToastDocs = () => {
                             </Portion>
 
                             <Portion desktopSpan="half">
+                                {/* COMMON ///////////////////////////////////////////////////////////////////////// */}
                                 <Row marginBottom="none">
+                                    <Portion>
+                                        <Text weight="700">Common</Text>
+                                    </Portion>
+
                                     {/* BG COLOUR ================================================================== */}
                                     <Portion desktopSpan="half">
                                         <Select
@@ -212,7 +239,7 @@ const ToastDocs = () => {
                                             }, ...colourOptions]}
                                             defaultValue={componentVariables["sidebar-bg"].defaultValue || "select-a-colour"}
                                             onChange={(e) => handleVariableChange("sidebar-bg", e.target.value)}
-                                            isFullWidth
+                                            isFullWidth marginBottom="micro"
                                         />
                                     </Portion>
 
@@ -233,13 +260,78 @@ const ToastDocs = () => {
                                     <Portion desktopSpan="half">
                                         <Range
                                             label="Width — collapsed"
-                                            value={componentVariables["sidebar-width-default"].value}
-                                            onChange={(e) => handleVariableChange("sidebar-width-default", e.target.value)}
-                                            min={0} max={50} step={1}
+                                            value={componentVariables["sidebar-width-collapsed"].value}
+                                            onChange={(e) => handleVariableChange("sidebar-width-collapsed", e.target.value)}
+                                            min={32} max={80} step={1}
                                             suffix={componentVariables["sidebar-width-default"].unit}
                                         />
                                     </Portion>
                                 </Row>
+
+                                <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+
+                                {/* HEADER ///////////////////////////////////////////////////////////////////////// */}
+                                <Row marginBottom="none">
+                                    <Portion>
+                                        <Text weight="700">Header</Text>
+                                    </Portion>
+
+                                    {/* BG COLOUR ================================================================== */}
+                                    <Portion desktopSpan="half">
+                                        <Select
+                                            label="Background"
+                                            options={[{
+                                                label    : "Select a colour",
+                                                value    : "select-a-colour",
+                                                disabled : true,
+                                                selected : true,
+                                            }, ...colourOptions]}
+                                            defaultValue={componentVariables["sidebar-header-bg"].defaultValue || "select-a-colour"}
+                                            onChange={(e) => handleVariableChange("sidebar-header-bg", e.target.value)}
+                                            isFullWidth marginBottom="micro"
+                                        />
+                                    </Portion>
+
+                                    {/* WIDTH ====================================================================== */}
+                                    <Portion desktopSpan="half">
+                                        <Select
+                                            label="Border bottom"
+                                            options={[{
+                                                label    : "Select a colour",
+                                                value    : "select-a-colour",
+                                                disabled : true,
+                                                selected : true,
+                                            }, ...colourOptions]}
+                                            defaultValue={componentVariables["sidebar-header-border-bottom"].defaultValue || "select-a-colour"}
+                                            onChange={(e) => handleVariableChange("sidebar-header-border-bottom", e.target.value)}
+                                            isFullWidth marginBottom="micro"
+                                        />
+                                    </Portion>
+
+                                    {/* FULL LOGO ================================================================== */}
+                                    <Portion desktopSpan="half">
+                                        <Range
+                                            label="Default logo width"
+                                            value={componentVariables["sidebar-header-logo-width"].value}
+                                            onChange={(e) => handleVariableChange("sidebar-header-logo-width", e.target.value)}
+                                            suffix={componentVariables["sidebar-header-logo-width"].unit}
+                                            min={32} max={80} step={1}
+                                        />
+                                    </Portion>
+
+                                    {/* COLLAPSED ICON ============================================================= */}
+                                    <Portion desktopSpan="half">
+                                        <Range
+                                            label="Collapsed icon width"
+                                            value={componentVariables["sidebar-header-icon-width"].value}
+                                            onChange={(e) => handleVariableChange("sidebar-header-icon-width", e.target.value)}
+                                            suffix={componentVariables["sidebar-header-icon-width"].unit}
+                                            min={32} max={80} step={1}
+                                        />
+                                    </Portion>
+                                </Row>
+
+                                <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                             </Portion>
                         </Row>
                     </Card>
@@ -249,4 +341,4 @@ const ToastDocs = () => {
     );
 };
 
-export default ToastDocs;
+export default SidebarDocs;

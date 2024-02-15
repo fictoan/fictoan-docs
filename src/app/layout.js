@@ -19,6 +19,7 @@ import { CustomThemeContext } from "./contexts/theme";
 
 // STYLES //////////////////////////////////////////////////////////////////////
 import "../styles/globals.css";
+import { SiteFooter } from "../components/Footer/Footer";
 
 // ASSETS //////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,8 @@ export default function RootLayout({ children }) {
                     <ContentWrapper>
                         <SiteHeader toggleSidebarOnMobile={toggleSidebarOnMobile} />
                         {children}
+
+                        <SiteFooter />
                     </ContentWrapper>
                 </ThemeProvider>
             </CustomThemeContext.Provider>
