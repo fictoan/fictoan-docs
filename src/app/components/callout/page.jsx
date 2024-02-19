@@ -5,9 +5,8 @@ import React, { useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
-    Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -19,6 +18,7 @@ import {
     Select,
     Range,
     Callout,
+    Div,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -38,17 +38,15 @@ import { calloutProps } from "./config";
 
 
 const CalloutDocs = () => {
+    // CUSTOMISE =======================================================================================================
+    const [selectedKind, setSelectedKind] = useState("info");
+
+    // THEME ===========================================================================================================
     const {
         componentVariables,
         handleVariableChange,
         cssVariablesList,
     } = useThemeVariables(calloutProps.variables);
-
-    const [selectedKind, setSelectedKind] = useState("");
-
-    const handleKindChange = (event) => {
-        setSelectedKind(event.target.value !== "none" ? event.target.value : undefined);
-    };
 
     return (
         <Article id="page-callout">
@@ -56,54 +54,58 @@ const CalloutDocs = () => {
                 <Portion>
                     <Heading as="h1">Callout</Heading>
                     <Text size="large" marginBottom="small">
-                        The call out is a box that can be used to highlight important information. It comes in four
-                        variants.
+                        The call out is a box that can be used to highlight important information.
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Characteristics</Heading>
-                    <Text>&bull; The badge is a simple, styled <code>mark</code> element</Text>
-                    <Text>&bull; You have to manually align it with its sibling</Text>
+                    <Text>&bull;  It comes in four variants.</Text>
+                    <Text>&bull;  Accepts all sorts of children elements.</Text>
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="small" className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
-                    <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
-                    >
-                        <Row marginBottom="none">
-                            <Portion desktopSpan="half">
-                                <Callout kind="info">
-                                    <Text weight="700">This is an info callout</Text>
-                                </Callout>
-                            </Portion>
+                    <Div padding="small" shape="rounded" bgColour="slate-light-80">
+                        <Callout
+                            {...(
+                                selectedKind !== undefined ? { kind : selectedKind } : {}
+                            )}
+                        >
+                            <Text weight="700">This is a{selectedKind === "info" || selectedKind === "error" ? "n" : ""} {selectedKind} callout</Text>
+                        </Callout>
+                        {/* <Row marginBottom="none"> */}
+                        {/*     <Portion desktopSpan="half"> */}
+                        {/*         <Callout kind="info"> */}
+                        {/*             <Text weight="700">This is an info callout</Text> */}
+                        {/*         </Callout> */}
+                        {/*     </Portion> */}
 
-                            <Portion desktopSpan="half">
-                                <Callout kind="success">
-                                    <Text weight="700">This is a success callout</Text>
-                                </Callout>
-                            </Portion>
+                        {/*     <Portion desktopSpan="half"> */}
+                        {/*         <Callout kind="success"> */}
+                        {/*             <Text weight="700">This is a success callout</Text> */}
+                        {/*         </Callout> */}
+                        {/*     </Portion> */}
 
-                            <Portion desktopSpan="half">
-                                <Callout kind="warning">
-                                    <Text weight="700">This is a warning callout</Text>
-                                </Callout>
-                            </Portion>
+                        {/*     <Portion desktopSpan="half"> */}
+                        {/*         <Callout kind="warning"> */}
+                        {/*             <Text weight="700">This is a warning callout</Text> */}
+                        {/*         </Callout> */}
+                        {/*     </Portion> */}
 
-                            <Portion desktopSpan="half">
-                                <Callout kind="error">
-                                    <Text weight="700">This is an error callout</Text>
-                                </Callout>
-                            </Portion>
-                        </Row>
-                    </Element>
+                        {/*     <Portion desktopSpan="half"> */}
+                        {/*         <Callout kind="error"> */}
+                        {/*             <Text weight="700">This is an error callout</Text> */}
+                        {/*         </Callout> */}
+                        {/*     </Portion> */}
+                        {/* </Row> */}
+                    </Div>
                 </Portion>
 
                 {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
@@ -121,20 +123,12 @@ const CalloutDocs = () => {
                                     <CodeBlock language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
-                                            `<Callout kind="info">`,
-                                            `    <Text weight="700">This is an info callout</Text>`,
-                                            `</Callout> \n`,
-
-                                            `<Callout kind="success">`,
-                                            `    <Text weight="700">This is a success callout</Text>`,
-                                            `</Callout> \n`,
-
-                                            `<Callout kind="warning">`,
-                                                `<Text weight="700">This is a warning callout</Text>`,
-                                            `</Callout> \n`,
-
-                                            `<Callout kind="error">`,
-                                            `    <Text weight="700">This is an error callout</Text>`,
+                                            `<Callout`,
+                                            selectedKind ? `   kind=${selectedKind}` : null,
+                                            `>`,
+                                            `    <Text weight="700">`,
+                                            `        This is a${selectedKind === "info" || selectedKind === "error" ? "n" : ""} ${selectedKind} callout`,
+                                            `    </Text>`,
                                             `</Callout>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
@@ -150,7 +144,7 @@ const CalloutDocs = () => {
                                             { id : "kind-opt-3", value : "error", label : "error" },
                                         ]}
                                         defaultValue={selectedKind}
-                                        onChange={handleKindChange}
+                                        onChange={() => setSelectedKind(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
                                 </Portion>
                             </Row>
@@ -168,7 +162,7 @@ const CalloutDocs = () => {
                                 </Text>
                             </Header>
 
-                            <Row marginBottom="none">
+                            <Row marginBottom="micro">
                                 <Portion>
                                     <CodeBlock
                                         source={cssVariablesList}
@@ -195,18 +189,24 @@ const CalloutDocs = () => {
                                         label="Border width"
                                         value={componentVariables["callout-border-width"].value}
                                         onChange={(e) => handleVariableChange("callout-border-width", e.target.value)}
-                                        min={0} max={50} step={1}
                                         suffix={componentVariables["callout-border-width"].unit}
+                                        min={0} max={50} step={1}
                                     />
                                 </Portion>
                             </Row>
 
+                            <Divider kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+
                             {/* INFO /////////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="micro">
+                                <Portion>
+                                    <Text size="large" weight="700">Info</Text>
+                                </Portion>
+
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
-                                        label="Info - BG colour"
+                                        label="Background colour"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",
@@ -222,7 +222,7 @@ const CalloutDocs = () => {
                                 {/* BORDER COLOUR ================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
-                                        label="Info - border colour"
+                                        label="Border colour"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",
@@ -236,12 +236,18 @@ const CalloutDocs = () => {
                                 </Portion>
                             </Row>
 
+                            <Divider kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+
                             {/* SUCCESS //////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="micro">
+                                <Portion>
+                                    <Text size="large" weight="700">Success</Text>
+                                </Portion>
+
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
-                                        label="Success - BG colour"
+                                        label="Background colour"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",
@@ -257,7 +263,7 @@ const CalloutDocs = () => {
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
-                                        label="Success - border colour"
+                                        label="Border colour"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",
@@ -271,12 +277,17 @@ const CalloutDocs = () => {
                                 </Portion>
                             </Row>
 
+                            <Divider kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+
                             {/* WARNING //////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="micro">
+                                <Portion>
+                                    <Text size="large" weight="700">Warning</Text>
+                                </Portion>
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
-                                        label="Warning - BG colour"
+                                        label="Background colour"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",
@@ -292,7 +303,7 @@ const CalloutDocs = () => {
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
-                                        label="Warning - border colour"
+                                        label="Border colour"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",
@@ -306,12 +317,17 @@ const CalloutDocs = () => {
                                 </Portion>
                             </Row>
 
+                            <Divider kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+
                             {/* ERROR ////////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
+                                <Portion>
+                                    <Text size="large" weight="700">Error</Text>
+                                </Portion>
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
-                                        label="Error - BG colour"
+                                        label="Background colour"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",
@@ -327,7 +343,7 @@ const CalloutDocs = () => {
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
-                                        label="Error - border colour"
+                                        label="Border colour"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",

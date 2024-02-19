@@ -2,21 +2,9 @@
 import { Portion, Row, Button } from "fictoan-react";
 import React from "react";
 
-export const buttonProps = {
-    component  : "Button",
-    properties : [
-        "label",
-        "kind",
-        "size",
-        "shape",
-        "shadow",
-        "bgColour",
-        "textColour",
-        "borderColour",
-        "is-loading",
-    ],
-    variables  : {
-        // PRIMARY BUTTON ======================================================
+export const buttonPrimaryProps = {
+    component : "Button",
+    variables : {
         "button-primary-bg-default"             : {
             type         : "reference",
             defaultValue : "blue",
@@ -69,7 +57,7 @@ export const buttonProps = {
             type         : "reference",
             defaultValue : "white",
         },
-        "button-primary-border-disabled" : {
+        "button-primary-border-disabled"        : {
             type         : "reference",
             defaultValue : "blue-light-10",
         },
@@ -80,6 +68,146 @@ export const buttonProps = {
         "button-primary-border-radius-disabled" : {
             type         : "reference",
             defaultValue : "global-border-radius",
+        },
+    },
+};
+
+export const buttonSecondaryProps = {
+    component : "Button",
+    variables : {
+        "button-secondary-bg-default"             : {
+            "type"         : "reference",
+            "defaultValue" : "blue-light-50",
+        },
+        "button-secondary-text-default"           : {
+            "type"         : "reference",
+            "defaultValue" : "blue",
+        },
+        "button-secondary-border-default"         : {
+            "type"         : "reference",
+            "defaultValue" : "blue-light-50",
+        },
+        "button-secondary-border-width-default"   : {
+            "type"         : "reference",
+            "defaultValue" : "global-border-width",
+        },
+        "button-secondary-border-radius-default"  : {
+            "type"         : "reference",
+            "defaultValue" : "global-border-radius",
+        },
+        "button-secondary-bg-hover"               : {
+            "type"         : "reference",
+            "defaultValue" : "blue-light-40",
+        },
+        "button-secondary-text-hover"             : {
+            "type"         : "reference",
+            "defaultValue" : "blue",
+        },
+        "button-secondary-border-hover"           : {
+            "type"         : "reference",
+            "defaultValue" : "blue-light-40",
+        },
+        "button-secondary-border-width-hover"     : {
+            "type"         : "reference",
+            "defaultValue" : "global-border-width",
+        },
+        "button-secondary-border-radius-hover"    : {
+            "type"         : "reference",
+            "defaultValue" : "global-border-radius",
+        },
+        "button-secondary-spinner-loading"        : {
+            "type"         : "reference",
+            "defaultValue" : "blue",
+        },
+        "button-secondary-bg-disabled"            : {
+            "type"         : "reference",
+            "defaultValue" : "blue-light-10",
+        },
+        "button-secondary-text-disabled"          : {
+            "type"         : "reference",
+            "defaultValue" : "white",
+        },
+        "button-secondary-border-disabled"        : {
+            "type"         : "reference",
+            "defaultValue" : "blue-light-10",
+        },
+        "button-secondary-border-width-disabled"  : {
+            "type"         : "reference",
+            "defaultValue" : "global-border-width",
+        },
+        "button-secondary-border-radius-disabled" : {
+            "type"         : "reference",
+            "defaultValue" : "global-border-radius",
+        },
+    },
+};
+
+export const buttonTertiaryProps = {
+    component : "Button",
+    variables : {
+        "button-tertiary-bg-default"             : {
+            "type"         : "reference",
+            "defaultValue" : "transparent",
+        },
+        "button-tertiary-text-default"           : {
+            "type"         : "reference",
+            "defaultValue" : "blue",
+        },
+        "button-tertiary-border-default"         : {
+            "type"         : "reference",
+            "defaultValue" : "blue",
+        },
+        "button-tertiary-border-width-default"   : {
+            "type"         : "reference",
+            "defaultValue" : "global-border-width",
+        },
+        "button-tertiary-border-radius-default"  : {
+            "type"         : "reference",
+            "defaultValue" : "global-border-radius",
+        },
+        "button-tertiary-bg-hover"               : {
+            "type"         : "reference",
+            "defaultValue" : "blue-light-80",
+        },
+        "button-tertiary-text-hover"             : {
+            "type"         : "reference",
+            "defaultValue" : "blue",
+        },
+        "button-tertiary-border-hover"           : {
+            "type"         : "reference",
+            "defaultValue" : "blue-light-20",
+        },
+        "button-tertiary-border-width-hover"     : {
+            "type"         : "reference",
+            "defaultValue" : "global-border-width",
+        },
+        "button-tertiary-border-radius-hover"    : {
+            "type"         : "reference",
+            "defaultValue" : "global-border-radius",
+        },
+        "button-tertiary-spinner-loading"        : {
+            "type"         : "reference",
+            "defaultValue" : "blue",
+        },
+        "button-tertiary-bg-disabled"            : {
+            "type"         : "reference",
+            "defaultValue" : "blue-light-10",
+        },
+        "button-tertiary-text-disabled"          : {
+            "type"         : "reference",
+            "defaultValue" : "white",
+        },
+        "button-tertiary-border-disabled"        : {
+            "type"         : "reference",
+            "defaultValue" : "blue-light-10",
+        },
+        "button-tertiary-border-width-disabled"  : {
+            "type"         : "reference",
+            "defaultValue" : "global-border-width",
+        },
+        "button-tertiary-border-radius-disabled" : {
+            "type"         : "reference",
+            "defaultValue" : "global-border-radius",
         },
     },
 };

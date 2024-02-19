@@ -8,7 +8,7 @@ import {
     Callout,
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Select,
@@ -87,7 +87,7 @@ const SelectDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -144,7 +144,7 @@ const SelectDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                            <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
 
                             {/* OPTION ============================================================================= */}
                             <Row marginBottom="none">
@@ -181,7 +181,7 @@ const SelectDocs = () => {
                                 ))}
                             </Row>
 
-                            <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                            <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
 
                             <Row marginBottom="none">
                                 <Portion>
@@ -208,7 +208,7 @@ const SelectDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                            <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
 
                             <Row marginBottom="none">
                                 <Portion>

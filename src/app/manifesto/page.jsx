@@ -9,7 +9,7 @@ import {
     Row,
     Portion,
     Heading,
-    Text, HRule, Article,
+    Text, Divider, Article,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -89,7 +89,7 @@ const Manifesto = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="secondary" horizontalMargin="large" marginTop="medium" marginBottom="medium" />
+            <Divider kind="secondary" horizontalMargin="large" marginTop="medium" marginBottom="medium" />
 
             {/* APPROACH /////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="small">

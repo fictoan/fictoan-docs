@@ -7,7 +7,7 @@ import Link from "next/link";
 // INTERNAL DEPS ===============================================================
 import {
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,

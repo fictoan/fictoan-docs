@@ -10,14 +10,26 @@ import {
     Portion,
     Heading,
     Text,
-    HRule,
+    Divider,
     InputField,
-    Callout,
-    Article, Switch, Checkbox, Header, Card, Form, Button, Range, Select,
+    Article,
+    Checkbox,
+    Header,
+    Card,
+    Form,
+    Button,
+    Range,
+    Select
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==========================================================================================================
+
+// HOOKS ===============================================================================================================
+import { useThemeVariables } from "../../../utils/useThemeVariables";
+
+// UTILS ===============================================================================================================
+import { colourOptions } from "../../../utils/colours";
 
 // STYLES ==============================================================================================================
 import "./input-field.css";
@@ -25,17 +37,14 @@ import "./input-field.css";
 // CODE SNIPPETS =======================================================================================================
 
 // DATA ================================================================================================================
-import { useThemeVariables } from "../../../utils/useThemeVariables";
 import { inputProps } from "./config";
-import { colourOptions } from "../../../utils/colours";
+
 
 
 const InputFieldDocs = () => {
     useEffect(() => {
         document.title = "Input field — Fictoan";
     }, []);
-
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(inputProps.variables);
 
     // SAMPLE ==========================================================================================================
 
@@ -50,6 +59,7 @@ const InputFieldDocs = () => {
     const [errorText, setErrorText] = useState("");
 
     // THEME ===========================================================================================================
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(inputProps.variables);
 
     return (
         <Article id="page-input-field">
@@ -60,17 +70,18 @@ const InputFieldDocs = () => {
                 <Portion>
                     <Heading as="h1">Input field</Heading>
                     <Text size="large" marginBottom="small">
-                        The component is
+                        The component is a native input field with customisable styling
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Characteristics</Heading>
-                    <Text>&bull; </Text>
+                    <Text>&bull; Takes full width of its parent</Text>
+                    <Text>&bull; Many of its styling variables is inherited by other form elements</Text>
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -144,7 +155,7 @@ const InputFieldDocs = () => {
                                         onChange={(e) => setLabel(e.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* PLACEHOLDER ==================================================================== */}
@@ -155,7 +166,7 @@ const InputFieldDocs = () => {
                                         onChange={(e) => setPlaceholder(e.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* REQUIRED ======================================================================= */}
@@ -169,7 +180,7 @@ const InputFieldDocs = () => {
                                         onChange={() => setIsRequired(event.target.checked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* HELP TEXT ====================================================================== */}
@@ -180,7 +191,7 @@ const InputFieldDocs = () => {
                                         onChange={(e) => setHelpText(e.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* REQUIRED ======================================================================= */}
@@ -194,7 +205,7 @@ const InputFieldDocs = () => {
                                         onChange={() => setValidateThis(event.target.checked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* PATTERN ======================================================================== */}
@@ -217,7 +228,7 @@ const InputFieldDocs = () => {
                                             Use email pattern
                                         </Button>
 
-                                        <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                        <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                     </Portion>
                                 )}
 
@@ -230,7 +241,7 @@ const InputFieldDocs = () => {
                                             onChange={(e) => setErrorText(e.target.value)}
                                         />
 
-                                        <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                        <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                     </Portion>
                                 )}
                             </Row>
@@ -288,7 +299,7 @@ const InputFieldDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* DEFAULT STATE ////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -406,7 +417,7 @@ const InputFieldDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* FOCUS STATE //////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -474,7 +485,7 @@ const InputFieldDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* VALID STATE //////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -531,7 +542,7 @@ const InputFieldDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* INVALID STATE ////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -620,7 +631,7 @@ const InputFieldDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
 
                             {/* DISABLED STATE ///////////////////////////////////////////////////////////////////// */}
@@ -694,7 +705,7 @@ const InputFieldDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* READ ONLY STATE //////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">

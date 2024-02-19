@@ -10,7 +10,7 @@ import {
     Portion,
     Heading,
     Text,
-    HRule,
+    Divider,
     PinInputField,
     Article
 } from "fictoan-react";
@@ -68,7 +68,7 @@ const InputFieldDocs = () => {
                 </Row>
             </Element>
 
-            <HRule horizontalMargin="huge" verticalMargin="small" />
+            <Divider horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  BASICS  */}
@@ -93,7 +93,7 @@ const InputFieldDocs = () => {
             </Element>
 
 
-            <HRule horizontalMargin="huge" verticalMargin="small" />
+            <Divider horizontalMargin="huge" verticalMargin="small" />
 
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -117,7 +117,7 @@ const InputFieldDocs = () => {
                 </Row>
 
 
-                <HRule kind="secondary" horizontalMargin="huge" verticalMargin="small" />
+                <Divider kind="secondary" horizontalMargin="huge" verticalMargin="small" />
 
 
                 {/* TYPE =================================================== */}
@@ -150,7 +150,7 @@ const InputFieldDocs = () => {
                 </Row>
 
 
-                <HRule kind="secondary" horizontalMargin="huge" verticalMargin="small" />
+                <Divider kind="secondary" horizontalMargin="huge" verticalMargin="small" />
 
 
                 {/* MASK =================================================== */}
@@ -169,7 +169,7 @@ const InputFieldDocs = () => {
                 </Row>
 
 
-                <HRule kind="secondary" horizontalMargin="huge" verticalMargin="small" />
+                <Divider kind="secondary" horizontalMargin="huge" verticalMargin="small" />
 
 
                 {/* OTP ==================================================== */}
@@ -189,7 +189,7 @@ const InputFieldDocs = () => {
                 </Row>
 
 
-                <HRule horizontalMargin="huge" verticalMargin="small" />
+                <Divider horizontalMargin="huge" verticalMargin="small" />
 
 
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}

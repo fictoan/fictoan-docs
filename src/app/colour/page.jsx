@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Element, Card, Heading, Text, HRule, Portion, Row, Callout, Article } from "fictoan-react";
+import { Element, Card, Heading, Text, Divider, Portion, Row, Callout, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
@@ -72,14 +72,14 @@ const ColourDocs = () => {
                                 <Card padding="small" bgColour="crimson-light-10" borderColour="pistachio-light-30" />
                             </Element>
 
-                            <HRule kind="tertiary" verticalMargin="micro" />
+                            <Divider kind="tertiary" verticalMargin="micro" />
 
                             <Element as="div" marginBottom="micro">
                                 <CodeBlock source={sampleUsage2} language="jsx" marginBottom="nano" />
                                 <Element as="section" bgColour="amber-light-30" padding="small" />
                             </Element>
 
-                            <HRule kind="tertiary" verticalMargin="micro" />
+                            <Divider kind="tertiary" verticalMargin="micro" />
 
                             <Element as="div" marginBottom="micro">
                                 <CodeBlock source={sampleUsage3} language="jsx" marginBottom="nano" />
@@ -102,7 +102,7 @@ const ColourDocs = () => {
                 </Row>
             </Element>
 
-            <HRule horizontalMargin="huge" kind="primary" verticalMargin="small" />
+            <Divider horizontalMargin="huge" kind="primary" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////// */}
             {/* LIST OF COLOURS */}

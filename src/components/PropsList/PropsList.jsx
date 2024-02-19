@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Heading, HRule, Portion, Row, Text } from "fictoan-react";
+import { Heading, Divider, Portion, Row, Text } from "fictoan-react";
 
 import "./props-list.css";
 
@@ -31,7 +31,7 @@ export const PropsList = ({ propData }) => {
                 </Portion>
             </Row>
 
-            <HRule kind="secondary" horizontalMargin="large" verticalMargin="nano" />
+            <Divider kind="secondary" horizontalMargin="large" verticalMargin="nano" />
 
             {propData.props.map((props, index) => (
                 <React.Fragment key={`props.name - ${index}`}>
@@ -71,7 +71,7 @@ export const PropsList = ({ propData }) => {
                         </Portion>
                     </Row>
 
-                    <HRule kind="tertiary" horizontalMargin="large" verticalMargin="nano" />
+                    <Divider kind="tertiary" horizontalMargin="large" verticalMargin="nano" />
                 </React.Fragment>
             ))}
         </>

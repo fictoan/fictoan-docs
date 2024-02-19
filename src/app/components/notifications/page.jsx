@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -83,7 +83,7 @@ const NotificationDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -185,7 +185,7 @@ const NotificationDocs = () => {
                                         onChange={() => setSelectedPosition(event.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* ANCHOR ========================================================================= */}
@@ -200,7 +200,7 @@ const NotificationDocs = () => {
                                         onChange={() => setSelectedAnchor(event.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* ANCHOR ========================================================================= */}
@@ -215,7 +215,7 @@ const NotificationDocs = () => {
                                         onChange={() => setSelectedOrder(event.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* SHOW FOR ======================================================================= */}
@@ -319,7 +319,7 @@ const NotificationDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* INFO NOTIFICATION ////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -360,7 +360,7 @@ const NotificationDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* ERROR NOTIFICATION ///////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -401,7 +401,7 @@ const NotificationDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* SUCCESS NOTIFICATION /////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">

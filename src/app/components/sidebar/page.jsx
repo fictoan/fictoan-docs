@@ -8,7 +8,7 @@ import Link from "next/link";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -74,7 +74,7 @@ const SidebarDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -182,7 +182,7 @@ const SidebarDocs = () => {
                                         onChange={() => setSelectedPosition(event.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* SHOW FOR ======================================================================= */}
@@ -268,7 +268,7 @@ const SidebarDocs = () => {
                                     </Portion>
                                 </Row>
 
-                                <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
 
                                 {/* HEADER ///////////////////////////////////////////////////////////////////////// */}
                                 <Row marginBottom="none">
@@ -331,7 +331,7 @@ const SidebarDocs = () => {
                                     </Portion>
                                 </Row>
 
-                                <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                             </Portion>
                         </Row>
                     </Card>

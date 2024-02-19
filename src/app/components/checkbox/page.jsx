@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -15,12 +15,8 @@ import {
     Card,
     Form,
     Header,
-    RadioTabGroup,
     Select,
-    ToastItem,
-    ToastsWrapper,
-    Button,
-    Range, Checkbox, Switch,
+    Range, Checkbox, Switch, Div,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -57,17 +53,18 @@ const CheckboxDocs = () => {
                 <Portion>
                     <Heading as="h1">Checkbox / Switch</Heading>
                     <Text size="large" marginBottom="small">
-                        The component is
+                        The component is a modified versions of the native checkbox
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Characteristics</Heading>
-                    <Text>&bull; </Text>
+                    <Text>&bull; Both components need <code>id</code>, <code>label</code> and <code>name</code> to work properly</Text>
+                    <Text>&bull; The Switch is just a cosmetically altered version of the checkbox</Text>
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -75,8 +72,8 @@ const CheckboxDocs = () => {
             <Row horizontalPadding="small" className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
-                    <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                    <Div
+                        padding="small" shape="rounded" bgColour="slate-light-80"
                         data-centered-children
                     >
                         {isSwitch ? (
@@ -100,7 +97,7 @@ const CheckboxDocs = () => {
                                 disabled={defaultDisabled}
                             />
                         )}
-                    </Element>
+                    </Div>
                 </Portion>
 
                 {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
@@ -151,7 +148,7 @@ const CheckboxDocs = () => {
                                         />
                                     }
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* CHECKED ======================================================================== */}
@@ -164,7 +161,7 @@ const CheckboxDocs = () => {
                                         onChange={() => setDefaultChecked(!defaultChecked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* DISABLED ======================================================================= */}
@@ -301,7 +298,7 @@ const CheckboxDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* SWITCH ///////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -438,7 +435,7 @@ const CheckboxDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
                         </Form>
                     </Card>
                 </Portion>

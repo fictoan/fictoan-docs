@@ -1,13 +1,13 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -18,7 +18,9 @@ import {
     RadioTabGroup,
     Select,
     Button,
-    Range, InputField, Checkbox,
+    Range,
+    InputField,
+    Checkbox,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -34,11 +36,9 @@ import { useThemeVariables } from "../../../utils/useThemeVariables";
 import { colourOptions } from "../../../utils/colours";
 
 // DATA ================================================================================================================
-import { buttonProps } from "./config";
+import { buttonPrimaryProps, buttonSecondaryProps, buttonTertiaryProps } from "./config";
 
-const TableDocs = () => {
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(buttonProps.variables);
-
+const ButtonDocs = () => {
     // CUSTOMISE =======================================================================================================
     const [label, setLabel] = useState("Text");
     const [selectedKind, setSelectedKind] = useState("none");
@@ -51,26 +51,31 @@ const TableDocs = () => {
     const [selectedTextColour, setSelectedTextColour] = useState("");
 
     // THEME ===========================================================================================================
+    const [selectedKindProps, setSelectedKindProps] = useState(buttonPrimaryProps);
+
+    useEffect(() => {
+        switch (selectedKind) {
+            case "primary":
+                setSelectedKindProps(buttonPrimaryProps);
+                break;
+            case "secondary":
+                setSelectedKindProps(buttonSecondaryProps);
+                break;
+            case "tertiary":
+                setSelectedKindProps(buttonTertiaryProps);
+                break;
+            default:
+                setSelectedKindProps(buttonPrimaryProps);
+                break;
+        }
+    }, [selectedKind]);
 
 
-    const handleIsLoadingChange = (event) => {
-        setIsLoading(event.target.checked);
-    };
-
-    const handleBgColourChange = (event) => {
-        setSelectedBgColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
-    const handleBorderColourChange = (event) => {
-        setSelectedBorderColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
-    const handleTextColourChange = (event) => {
-        setSelectedTextColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
+    // THEME ===========================================================================================================
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(selectedKindProps.variables);
 
     return (
-        <Article id="page-component">
+        <Article id="page-button">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1">Button</Heading>
@@ -85,7 +90,7 @@ const TableDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -169,21 +174,7 @@ const TableDocs = () => {
                                         onChange={(e) => setLabel(e.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
-                                </Portion>
-
-                                {/* SHOW FOR ======================================================================= */}
-                                <Portion>
-                                    <Checkbox
-                                        id="checkbox-loading"
-                                        value="checkbox-loading"
-                                        name="checkbox-loading"
-                                        label="Is loading"
-                                        checked={isLoading}
-                                        onChange={handleIsLoadingChange}
-                                    />
-
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="tertiary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* SHOW FOR ======================================================================= */}
@@ -199,10 +190,17 @@ const TableDocs = () => {
                                             { id : "kind-opt-3", value : "tertiary", label : "tertiary" },
                                         ]}
                                         defaultValue={selectedKind}
-                                        onChange={() => setSelectedKind(event.target.value !== "none" ? event.target.value : undefined)}
+                                        onChange={() => {
+                                            setSelectedKind(event.target.value !== "none" ? event.target.value : undefined);
+                                            setSelectedKindProps(
+                                                event.target.value === "primary"
+                                                    ? buttonPrimaryProps : event.target.value === "secondary"
+                                                        ? buttonSecondaryProps : event.target.value === "tertiary"
+                                                            ? buttonTertiaryProps : {});
+                                        }}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="tertiary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* SHOW FOR ======================================================================= */}
@@ -225,7 +223,7 @@ const TableDocs = () => {
                                         onChange={() => setSelectedSize(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="tertiary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* SHOW FOR ======================================================================= */}
@@ -243,7 +241,7 @@ const TableDocs = () => {
                                         onChange={() => setSelectedShape(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="tertiary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* SHOW FOR ======================================================================= */}
@@ -260,10 +258,24 @@ const TableDocs = () => {
                                         onChange={() => setSelectedShadow(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="tertiary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
-                                {/* BG COLOUR ========================== */}
+                                {/* LOADING ======================================================================== */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-loading"
+                                        value="checkbox-loading"
+                                        name="checkbox-loading"
+                                        label="Is loading"
+                                        checked={isLoading}
+                                        onChange={() => setIsLoading(event.target.checked)}
+                                    />
+
+                                    <Divider kind="tertiary" horizontalMargin="none" marginTop="micro" />
+                                </Portion>
+
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Background colour"
@@ -276,12 +288,12 @@ const TableDocs = () => {
                                             ...colourOptions,
                                         ]}
                                         defaultValue="select-a-colour"
-                                        onChange={handleBgColourChange}
+                                        onChange={() => setSelectedBgColour(event.target.value !== "none" ? event.target.value : undefined)}
                                         isFullWidth
                                     />
                                 </Portion>
 
-                                {/* BG COLOUR ========================== */}
+                                {/* BORDER COLOUR ================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Border colour"
@@ -294,12 +306,12 @@ const TableDocs = () => {
                                             ...colourOptions,
                                         ]}
                                         defaultValue="select-a-colour"
-                                        onChange={handleBorderColourChange}
+                                        onChange={() => setSelectedBorderColour(event.target.value !== "none" ? event.target.value : undefined)}
                                         isFullWidth
                                     />
                                 </Portion>
 
-                                {/* BG COLOUR ========================== */}
+                                {/* TEXT COLOUR ==================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Text colour"
@@ -312,7 +324,7 @@ const TableDocs = () => {
                                             ...colourOptions,
                                         ]}
                                         defaultValue="select-a-colour"
-                                        onChange={handleTextColourChange}
+                                        onChange={() => setSelectedTextColour(event.target.value !== "none" ? event.target.value : undefined)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -327,7 +339,7 @@ const TableDocs = () => {
                         <Form>
                             <Header verticallyCentreItems pushItemsToEnds>
                                 <Text size="large" weight="700" textColour="white" marginBottom="nano">
-                                    Set values globally
+                                    Set values globally for {selectedKind} button
                                 </Text>
                             </Header>
 
@@ -381,7 +393,7 @@ const TableDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={buttonProps.variables["button-primary-bg-default"].defaultValue || "select-a-colour"}
+                                        defaultValue={buttonPrimaryProps.variables["button-primary-bg-default"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("button-primary-bg-default", e.target.value)}
                                         isFullWidth
                                     />
@@ -397,7 +409,7 @@ const TableDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={buttonProps.variables["button-primary-border-default"].defaultValue || "select-a-colour"}
+                                        defaultValue={buttonPrimaryProps.variables["button-primary-border-default"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("button-primary-border-default", e.target.value)}
                                         isFullWidth
                                     />
@@ -413,14 +425,14 @@ const TableDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={buttonProps.variables["button-primary-text-default"].defaultValue || "select-a-colour"}
+                                        defaultValue={buttonPrimaryProps.variables["button-primary-text-default"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("button-primary-text-default", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="tertiary" verticalMargin="micro" />
 
                             {/* HOVER ////////////////////////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -434,7 +446,7 @@ const TableDocs = () => {
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Border radius"
-                                        value={buttonProps.variables["button-primary-border-radius-hover"].value}
+                                        value={buttonPrimaryProps.variables["button-primary-border-radius-hover"].value}
                                         onChange={(e) => handleVariableChange("button-primary-border-radius-hover", e.target.value)}
                                         min={0} max={50} step={1}
                                         suffix={componentVariables["button-primary-border-radius-hover"].unit}
@@ -462,7 +474,7 @@ const TableDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={buttonProps.variables["button-primary-bg-hover"].defaultValue || "select-a-colour"}
+                                        defaultValue={buttonPrimaryProps.variables["button-primary-bg-hover"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("button-primary-bg-hover", e.target.value)}
                                         isFullWidth
                                     />
@@ -478,7 +490,7 @@ const TableDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={buttonProps.variables["button-primary-border-hover"].defaultValue || "select-a-colour"}
+                                        defaultValue={buttonPrimaryProps.variables["button-primary-border-hover"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("button-primary-border-hover", e.target.value)}
                                         isFullWidth
                                     />
@@ -494,14 +506,14 @@ const TableDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={buttonProps.variables["button-primary-text-hover"].defaultValue || "select-a-colour"}
+                                        defaultValue={buttonPrimaryProps.variables["button-primary-text-hover"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("button-primary-text-hover", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="tertiary" verticalMargin="micro" />
 
                             {/* HOVER ////////////////////////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -515,7 +527,7 @@ const TableDocs = () => {
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Border radius"
-                                        value={buttonProps.variables["button-primary-border-radius-disabled"].value}
+                                        value={buttonPrimaryProps.variables["button-primary-border-radius-disabled"].value}
                                         onChange={(e) => handleVariableChange("button-primary-border-radius-disabled", e.target.value)}
                                         min={0} max={50} step={1}
                                         suffix={componentVariables["button-primary-border-radius-disabled"].unit}
@@ -543,7 +555,7 @@ const TableDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={buttonProps.variables["button-primary-bg-disabled"].defaultValue || "select-a-colour"}
+                                        defaultValue={buttonPrimaryProps.variables["button-primary-bg-disabled"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("button-primary-bg-disabled", e.target.value)}
                                         isFullWidth
                                     />
@@ -559,7 +571,7 @@ const TableDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={buttonProps.variables["button-primary-border-disabled"].defaultValue || "select-a-colour"}
+                                        defaultValue={buttonPrimaryProps.variables["button-primary-border-disabled"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("button-primary-border-disabled", e.target.value)}
                                         isFullWidth
                                     />
@@ -575,14 +587,14 @@ const TableDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={buttonProps.variables["button-primary-text-disabled"].defaultValue || "select-a-colour"}
+                                        defaultValue={buttonPrimaryProps.variables["button-primary-text-disabled"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("button-primary-text-disabled", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="tertiary" verticalMargin="micro" />
 
                             {/* SPINNER //////////////////////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -602,7 +614,7 @@ const TableDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={buttonProps.variables["button-primary-spinner-loading"].defaultValue || "select-a-colour"}
+                                        defaultValue={buttonPrimaryProps.variables["button-primary-spinner-loading"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("button-primary-spinner-loading", e.target.value)}
                                         isFullWidth
                                     />
@@ -616,4 +628,4 @@ const TableDocs = () => {
     );
 };
 
-export default TableDocs;
+export default ButtonDocs;

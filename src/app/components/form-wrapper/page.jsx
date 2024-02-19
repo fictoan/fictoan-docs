@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -17,10 +17,8 @@ import {
     Header,
     RadioTabGroup,
     InputField,
-    ToastItem,
-    ToastsWrapper,
     Button,
-    Range, FormItemGroup, Checkbox,
+    FormItemGroup, Checkbox,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -52,17 +50,17 @@ const FormDocs = () => {
                 <Portion>
                     <Heading as="h1">Form</Heading>
                     <Text size="large" marginBottom="small">
-                        The component is
+                        The component is just a wrapper for form elements. It doesn't have any styles of its own.
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Characteristics</Heading>
-                    <Text>&bull; </Text>
+                    <Text>&bull; Takes full width of its parent</Text>
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -133,7 +131,7 @@ const FormDocs = () => {
                                 {/* POSITION ======================================================================= */}
                                 <Portion>
                                     <RadioTabGroup
-                                        id="spacing" label="Size" name="spacing"
+                                        id="spacing" label="Spacing" name="spacing"
                                         options={[
                                             { id : "spacing-opt-0", value : "none", label : "none" },
                                             { id : "spacing-opt-1", value : "nano", label : "nano" },
@@ -148,7 +146,7 @@ const FormDocs = () => {
                                         onChange={() => setSelectedSpacing(event.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* IS JOINT ======================================================================= */}
@@ -162,7 +160,7 @@ const FormDocs = () => {
                                         onChange={() => setIsJoint(event.target.checked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* IS JOINT ======================================================================= */}
@@ -194,7 +192,7 @@ const FormDocs = () => {
                             <Row marginBottom="none">
                                 <Portion>
                                     <CodeBlock language="css">
-                                        // Nothing for the Form
+                                        // Bupkis
                                     </CodeBlock>
                                 </Portion>
                             </Row>

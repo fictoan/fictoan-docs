@@ -8,7 +8,7 @@ import Link from "next/link";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -40,9 +40,8 @@ import { breadcrumbsProps } from "./config";
 
 
 const BreadcrumbsDocs = () => {
-    const [selectedBgColour, setSelectedBgColour] = useState("");
+    // SAMPLE ==========================================================================================================
     const [showCurrentPageMessage, setShowCurrentPageMessage] = useState(false);
-
     useEffect(() => {
         let timer;
         if (showCurrentPageMessage) {
@@ -54,33 +53,33 @@ const BreadcrumbsDocs = () => {
         return () => clearTimeout(timer);
     }, [showCurrentPageMessage]);
 
+    // CUSTOMISE =======================================================================================================
+    const [selectedBgColour, setSelectedBgColour] = useState("");
+
+    // THEME ===========================================================================================================
     const {
         componentVariables,
         handleVariableChange,
         cssVariablesList,
     } = useThemeVariables(breadcrumbsProps.variables);
 
-    const handleBgColourChange = (event) => {
-        setSelectedBgColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
     return (
         <Article id="page-breadcrumbs">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading as="h1">Breadcrumbs</Heading>
                     <Text size="large" marginBottom="small">
-                        The badge is a small inline element that can be used to highlight a piece of information.
+                        A set of links that show the user’s location within a website or application.
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Characteristics</Heading>
-                    <Text>&bull; The badge is a simple, styled <code>mark</code> element</Text>
-                    <Text>&bull; You have to manually align it with its sibling</Text>
+                    <Text>&bull; The <code>BreadcrumbsWrapper</code> is a <code>ul</code> element, and the <code>BreadcrumbItem</code> is a <code>li</code> element</Text>
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -218,7 +217,7 @@ const BreadcrumbsDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={componentVariables["breadcrumb-item-separator-colour"] || "select-a-colour"}
+                                        defaultValue={componentVariables["breadcrumb-item-separator-colour"].defaultValue || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("breadcrumb-item-separator-colour", e.target.value)}
                                         isFullWidth
                                     />
@@ -234,8 +233,8 @@ const BreadcrumbsDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={componentVariables["breadcrumb-item-text-colour"] || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("breadcrumb-item-text-colour", e.target.value)}
+                                        defaultValue={componentVariables["breadcrumb-item-text"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("breadcrumb-item-text", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -250,8 +249,8 @@ const BreadcrumbsDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={componentVariables["breadcrumb-item-text-colour-active"] || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("breadcrumb-item-text-colour-active", e.target.value)}
+                                        defaultValue={componentVariables["breadcrumb-item-text-active"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("breadcrumb-item-text-active", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>

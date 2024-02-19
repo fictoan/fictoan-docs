@@ -7,16 +7,17 @@ import React, { useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
-    Table,
     Text,
     Article,
     Form,
     Card,
     Header,
-    RadioTabGroup, Range, Select,
+    RadioTabGroup,
+    Range,
+    Select, Div,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -32,10 +33,10 @@ import { useThemeVariables } from "../../../utils/useThemeVariables";
 import { colourOptions } from "../../../utils/colours";
 
 // DATA ================================================================================================================
-import { hRuleProps } from "./config";
+import { dividerProps } from "./config";
 
-const HRuleDocs = () => {
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(hRuleProps.variables);
+const DividerDocs = () => {
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(dividerProps.variables);
 
     const [selectedKind, setSelectedKind] = useState("");
 
@@ -43,21 +44,21 @@ const HRuleDocs = () => {
         <Article id="page-h-rule">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1">H-Rule</Heading>
+                    <Heading as="h1">Divider</Heading>
                     <Text size="large" marginBottom="small">
-                        The line
+                        It’s a horizontal lines that can be used to separate content.
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Characteristics</Heading>
-                    <Text>&bull; The card always takes up 100% width of its parent</Text>
-                    <Text>&bull; It grows to take the height of its content</Text>
-                    <Text>&bull; Border-radius values work only when <code>shape="rounded"</code> is present</Text>
+                    <Text>&bull; The Divider always takes up 100% width of its parent</Text>
+                    <Text>&bull; Comes with a default styling, but can be of three
+                        kinds: <code>primary</code>, <code>secondary</code>, and <code>tertiary</code></Text>
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -65,12 +66,12 @@ const HRuleDocs = () => {
             <Row horizontalPadding="small" className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
-                    <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                    <Div
+                        padding="small" shape="rounded" bgColour="slate-light-80"
                         data-centered-children
                     >
                         <Text marginBottom="nano">Default</Text>
-                        <HRule
+                        <Divider
                             id="interactive-component"
                             {...(
                                 selectedKind !== undefined ? { kind : selectedKind } : {}
@@ -79,14 +80,14 @@ const HRuleDocs = () => {
                         />
 
                         <Text marginBottom="nano">Primary</Text>
-                        <HRule kind="primary" marginBottom="micro" />
+                        <Divider kind="primary" marginBottom="micro" />
 
                         <Text marginBottom="nano">Secondary</Text>
-                        <HRule kind="secondary" marginBottom="micro" />
+                        <Divider kind="secondary" marginBottom="micro" />
 
                         <Text marginBottom="nano">Tertiary</Text>
-                        <HRule kind="tertiary" marginBottom="micro" />
-                    </Element>
+                        <Divider kind="tertiary" marginBottom="micro" />
+                    </Div>
                 </Portion>
 
                 {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
@@ -104,7 +105,7 @@ const HRuleDocs = () => {
                                     <CodeBlock language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
-                                            `<HRule`,
+                                            `<Divider`,
                                             selectedKind ? `    kind="${selectedKind}"` : null,
                                             `/>`,
                                         ].filter(Boolean).join("\n")}
@@ -158,9 +159,9 @@ const HRuleDocs = () => {
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Height"
-                                        value={componentVariables["hr-height"].value}
-                                        onChange={(e) => handleVariableChange("hr-height", e.target.value)}
-                                        suffix={componentVariables["hr-height"].unit}
+                                        value={componentVariables["divider-height"].value}
+                                        onChange={(e) => handleVariableChange("divider-height", e.target.value)}
+                                        suffix={componentVariables["divider-height"].unit}
                                         min={0} max={50} step={1}
                                     />
                                 </Portion>
@@ -175,14 +176,14 @@ const HRuleDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={componentVariables["hr-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("hr-bg", e.target.value)}
+                                        defaultValue={componentVariables["divider-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("divider-bg", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>
 
                                 <Portion>
-                                    <HRule kind="tertiary" />
+                                    <Divider kind="tertiary" />
                                 </Portion>
 
                                 {/* PRIMARY //////////////////////////////////////////////////////////////////////// */}
@@ -194,9 +195,9 @@ const HRuleDocs = () => {
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Height"
-                                        value={componentVariables["hr-primary-height"].value}
-                                        onChange={(e) => handleVariableChange("hr-primary-height", e.target.value)}
-                                        suffix={componentVariables["hr-primary-height"].unit}
+                                        value={componentVariables["divider-primary-height"].value}
+                                        onChange={(e) => handleVariableChange("divider-primary-height", e.target.value)}
+                                        suffix={componentVariables["divider-primary-height"].unit}
                                         min={0} max={50} step={1}
                                     />
                                 </Portion>
@@ -211,14 +212,14 @@ const HRuleDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={componentVariables["hr-primary-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("hr-primary-bg", e.target.value)}
+                                        defaultValue={componentVariables["divider-primary-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("divider-primary-bg", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>
 
                                 <Portion>
-                                    <HRule kind="tertiary" />
+                                    <Divider kind="tertiary" />
                                 </Portion>
 
                                 {/* SECONDARY ////////////////////////////////////////////////////////////////////// */}
@@ -230,9 +231,9 @@ const HRuleDocs = () => {
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Height"
-                                        value={componentVariables["hr-secondary-height"].value}
-                                        onChange={(e) => handleVariableChange("hr-secondary-height", e.target.value)}
-                                        suffix={componentVariables["hr-secondary-height"].unit}
+                                        value={componentVariables["divider-secondary-height"].value}
+                                        onChange={(e) => handleVariableChange("divider-secondary-height", e.target.value)}
+                                        suffix={componentVariables["divider-secondary-height"].unit}
                                         min={0} max={50} step={1}
                                     />
                                 </Portion>
@@ -247,14 +248,14 @@ const HRuleDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={componentVariables["hr-secondary-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("hr-secondary-bg", e.target.value)}
+                                        defaultValue={componentVariables["divider-secondary-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("divider-secondary-bg", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>
 
                                 <Portion>
-                                    <HRule kind="tertiary" />
+                                    <Divider kind="tertiary" />
                                 </Portion>
 
                                 {/* TERTIARY /////////////////////////////////////////////////////////////////////// */}
@@ -266,9 +267,9 @@ const HRuleDocs = () => {
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Height"
-                                        value={componentVariables["hr-tertiary-height"].value}
-                                        onChange={(e) => handleVariableChange("hr-tertiary-height", e.target.value)}
-                                        suffix={componentVariables["hr-tertiary-height"].unit}
+                                        value={componentVariables["divider-tertiary-height"].value}
+                                        onChange={(e) => handleVariableChange("divider-tertiary-height", e.target.value)}
+                                        suffix={componentVariables["divider-tertiary-height"].unit}
                                         min={0} max={50} step={1}
                                     />
                                 </Portion>
@@ -283,8 +284,8 @@ const HRuleDocs = () => {
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={componentVariables["hr-tertiary-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("hr-tertiary-bg", e.target.value)}
+                                        defaultValue={componentVariables["divider-tertiary-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("divider-tertiary-bg", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -297,4 +298,4 @@ const HRuleDocs = () => {
     );
 };
 
-export default HRuleDocs;
+export default DividerDocs;

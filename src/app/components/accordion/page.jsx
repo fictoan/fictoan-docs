@@ -36,14 +36,11 @@ import { colourOptions } from "../../../utils/colours";
 import { toastProps } from "./config";
 
 const AccordionDocs = () => {
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(toastProps.variables);
-
-    // SAMPLE ==========================================================================================================
+    // CUSTOMISE =======================================================================================================
     const [openAccordion, setOpenAccordion] = useState(false);
 
-    // CUSTOMISE =======================================================================================================
-
     // THEME ===========================================================================================================
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(toastProps.variables);
 
 
     return (

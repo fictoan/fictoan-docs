@@ -1,42 +1,38 @@
-export const hRuleProps = {
-    component  : "HRule",
-    properties : [
-        "kind",
-    ],
+export const dividerProps = {
     variables  : {
-        "hr-height"   : {
+        "divider-height"   : {
             type         : "value-unit",
             defaultValue : 1,
             unit         : "px",
         },
-        "hr-bg"       : {
+        "divider-bg"       : {
             type         : "reference",
             defaultValue : "slate",
         },
-        "hr-primary-height"   : {
+        "divider-primary-height"   : {
             type         : "value-unit",
             defaultValue : 4,
             unit         : "px",
         },
-        "hr-primary-bg"       : {
+        "divider-primary-bg"       : {
             type         : "reference",
             defaultValue : "slate",
         },
-        "hr-secondary-height" : {
+        "divider-secondary-height" : {
             type         : "value-unit",
             defaultValue : 2,
             unit         : "px",
         },
-        "hr-secondary-bg"     : {
+        "divider-secondary-bg"     : {
             type         : "reference",
             defaultValue : "slate-light-60",
         },
-        "hr-tertiary-height"  : {
+        "divider-tertiary-height"  : {
             type         : "value-unit",
             defaultValue : 1,
             unit         : "px",
         },
-        "hr-tertiary-bg"      : {
+        "divider-tertiary-bg"      : {
             type         : "reference",
             defaultValue : "slate-light-20",
         },

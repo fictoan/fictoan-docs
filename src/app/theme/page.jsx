@@ -4,7 +4,7 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Heading, HRule, Portion, Row, Text, Article } from "fictoan-react";
+import { Heading, Divider, Portion, Row, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
@@ -61,7 +61,7 @@ const ThemingDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* GLOBALS ==================================================== */}
             <Row horizontalPadding="huge">
@@ -74,7 +74,7 @@ const ThemingDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="secondary" horizontalMargin="huge" verticalMargin="micro" />
+            <Divider kind="secondary" horizontalMargin="huge" verticalMargin="micro" />
 
 
 

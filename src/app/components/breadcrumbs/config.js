@@ -18,11 +18,11 @@ export const breadcrumbsProps = {
             type         : "reference",
             defaultValue : "slate-light-10",
         },
-        "breadcrumb-item-text-colour"  : {
+        "breadcrumb-item-text"  : {
             type         : "reference",
             defaultValue : "paragraph-text-colour",
         },
-        "breadcrumb-item-text-colour-active"  : {
+        "breadcrumb-item-text-active"  : {
             type         : "reference",
             defaultValue : "paragraph-text-colour",
         },

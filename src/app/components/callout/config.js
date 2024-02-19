@@ -10,8 +10,9 @@ export const calloutProps = {
             defaultValue : "global-border-radius",
         },
         "callout-border-width"   : {
-            type         : "reference",
-            defaultValue : "global-border-width",
+            type         : "value-unit",
+            defaultValue : "8",
+            unit         : "px",
         },
         "callout-info-bg"        : {
             type         : "reference",

@@ -4,7 +4,7 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Element, Heading, HRule, Portion, Row, Table, Text, Article } from "fictoan-react";
+import { Element, Heading, Divider, Portion, Row, Table, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
@@ -81,7 +81,7 @@ const TypographyDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+                <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
             </Element>
 
 
@@ -101,7 +101,7 @@ const TypographyDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+                <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
             </Element>
 
             {/* //////////////////////////////////////////////////////////// */}
@@ -119,7 +119,7 @@ const TypographyDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+                <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
             </Element>
 
             {/* //////////////////////////////////////////////////////////// */}
@@ -155,7 +155,7 @@ const TypographyDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+                <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
             </Element>
 
 
@@ -175,7 +175,7 @@ const TypographyDocs = () => {
 
                         <CodeBlock source={sampleTextTheme} language="jsx" marginBottom="micro" />
 
-                        <HRule kind="secondary" verticalMargin="micro" />
+                        <Divider kind="secondary" verticalMargin="micro" />
                     </Portion>
 
                     <Portion>
@@ -201,7 +201,7 @@ const TypographyDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+                <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
             </Element>
 
 
@@ -232,7 +232,7 @@ const TypographyDocs = () => {
                     </Portion>
                 </Row>
 
-                <HRule horizontalMargin="huge" kind="secondary" marginTop="micro" marginBottom="micro" />
+                <Divider horizontalMargin="huge" kind="secondary" marginTop="micro" marginBottom="micro" />
 
                 <Row horizontalPadding="huge" marginBottom-micro>
                     <Portion>

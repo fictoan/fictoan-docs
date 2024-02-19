@@ -20,7 +20,7 @@ import {
     Range,
     OptionCardsGroup,
     OptionCard,
-    Checkbox, Div, HRule,
+    Checkbox, Div,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 

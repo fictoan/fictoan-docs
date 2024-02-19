@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -19,7 +19,8 @@ import {
     InputField,
     RadioTabGroup,
     Select,
-    Range, SelectWithSearch,
+    Range,
+    SelectWithSearch, Div,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -39,8 +40,7 @@ import { badgeProps } from "./config";
 
 
 const BadgeDocs = () => {
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(badgeProps.variables);
-
+    // CUSTOMISE =======================================================================================================
     const [label, setLabel] = useState("Text");
     const [selectedSize, setSelectedSize] = useState("");
     const [selectedShape, setSelectedShape] = useState("");
@@ -48,6 +48,8 @@ const BadgeDocs = () => {
     const [selectedBorderColour, setSelectedBorderColour] = useState("");
     const [selectedTextColour, setSelectedTextColour] = useState("");
 
+    // THEME ===========================================================================================================
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(badgeProps.variables);
 
     const handleSizeChange = (event) => {
         setSelectedSize(event.target.value !== "none" ? event.target.value : undefined);
@@ -82,11 +84,21 @@ const BadgeDocs = () => {
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Characteristics</Heading>
                     <Text>&bull; The badge is a simple, styled <code>mark</code> element</Text>
-                    <Text>&bull; You have to manually align it with its sibling</Text>
+                    <Text marginBottom="nano">&bull; You have to manually align it with its sibling, usually like so—</Text>
+                    <CodeBlock language="jsx" showCopyButton marginBottom="nano">
+                        {`<Div verticallyCentreItems>\n`}
+                        {`    <Heading as="h4">Some text</Heading>\n`}
+                        {`    <Badge>Hello</Badge>\n`}
+                        {`</Div>`}
+                    </CodeBlock>
+                    <Div verticallyCentreItems>
+                        <Heading as="h4">Some text</Heading>
+                        <Badge marginLeft="nano">Hello</Badge>
+                    </Div>
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -94,8 +106,8 @@ const BadgeDocs = () => {
             <Row horizontalPadding="small" className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
-                    <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                    <Div
+                        padding="small" shape="rounded" bgColour="slate-light-80"
                         data-centered-children
                     >
                         <Badge
@@ -118,7 +130,7 @@ const BadgeDocs = () => {
                         >
                             {label}
                         </Badge>
-                    </Element>
+                    </Div>
                 </Portion>
 
                 {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
@@ -157,7 +169,7 @@ const BadgeDocs = () => {
                                         onChange={(e) => setLabel(e.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* SIZE =========================================================================== */}
@@ -178,7 +190,7 @@ const BadgeDocs = () => {
                                         onChange={handleSizeChange}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* SHAPE ========================================================================== */}
@@ -194,7 +206,7 @@ const BadgeDocs = () => {
                                         onChange={handleShapeChange}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* BG COLOUR ====================================================================== */}

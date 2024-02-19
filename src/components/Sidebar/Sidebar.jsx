@@ -35,7 +35,7 @@ import CodeIcon from "@/assets/icons/braces.svg";
 import ColourIcon from "@/assets/icons/water.svg";
 import FormWrapperIcon from "@/assets/icons/writing.svg";
 import HomeIcon from "@/assets/icons/home.svg";
-import HRuleIcon from "@/assets/icons/hrule.svg";
+import DividerIcon from "@/assets/icons/hrule.svg";
 import InfoPanelIcon from "@/assets/icons/info-panel.svg";
 import InputFieldIcon from "@/assets/icons/input.svg";
 import LayoutIcon from "@/assets/icons/layout.svg";
@@ -272,6 +272,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* DIVIDER ===================================================== */}
+            <Link href="/components/divider">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <DividerIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Divider" />
+                </SidebarItem>
+            </Link>
+
             {/* DRAWER ===================================================== */}
             <Link href="/components/drawer">
                 <SidebarItem onClick={closeMobileSidebar}>
@@ -282,23 +292,13 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* FORM WRAPPER =============================================== */}
+            {/* FORM ======================================================= */}
             <Link href="/components/form-wrapper">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <FormWrapperIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Form wrapper" />
-                </SidebarItem>
-            </Link>
-
-            {/* H-RULE ===================================================== */}
-            <Link href="/components/h-rule">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <HRuleIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="H-Rule" />
                 </SidebarItem>
             </Link>
 

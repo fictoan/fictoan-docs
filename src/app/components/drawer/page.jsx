@@ -7,14 +7,14 @@ import React, { useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
     Article,
     Card,
     Form,
-    Header, Button, Drawer, RadioTabGroup, Checkbox, Range, Select,
+    Header, Button, Drawer, RadioTabGroup, Checkbox, Range, Select, Div,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -47,7 +47,6 @@ const DrawerDocs = () => {
 
     // THEME ===========================================================================================================
     const [selectedBgColour, setSelectedBgColour] = useState("");
-    const [selectedBorderColour, setSelectedBorderColour] = useState("");
 
     const [isSampleDrawerOpen, setIsSampleDrawerOpen] = useState(false);
 
@@ -57,17 +56,18 @@ const DrawerDocs = () => {
                 <Portion>
                     <Heading as="h1">Drawer</Heading>
                     <Text size="large" marginBottom="small">
-                        The component is
+                        The component is used to display a panel that slides in from the edge of the screen.
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Characteristics</Heading>
-                    <Text>&bull; </Text>
+                    <Text>&bull; Use the <code>useState</code> hook to control the opening and closing of the Drawer</Text>
+                    <Text>&bull; Accepts a <code>openWhen</code> and a <code>closeWhen</code> callback in conjunction with the hook</Text>
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -75,8 +75,8 @@ const DrawerDocs = () => {
             <Row horizontalPadding="small" className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
-                    <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                    <Div
+                        padding="small" shape="rounded" bgColour="slate-light-80"
                         data-centered-children
                     >
                         <Button
@@ -85,7 +85,7 @@ const DrawerDocs = () => {
                         >
                             Open the drawer
                         </Button>
-                    </Element>
+                    </Div>
                 </Portion>
 
                 {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
@@ -102,8 +102,17 @@ const DrawerDocs = () => {
                                 <Portion>
                                     <CodeBlock language="jsx" showCopyButton marginBottom="micro">
                                         {[
-                                            `// Paste this in your content file`,
+                                            `// Paste this in your content file\n`,
+                                            `// Initialise state`,
+                                            `const [isDrawerOpen, setIsDrawerOpen] = useState(false);\n`,
+                                            `// Open/close trigger`,
+                                            `<Button onClick={() => setIsDrawerOpen(true)}>`,
+                                            `    Open the drawer`,
+                                            `</Button>\n`,
+                                            `// Drawer component`,
                                             `<Drawer`,
+                                            `    openWhen={isSampleDrawerOpen}`,
+                                            `    closeWhen={() => setIsSampleDrawerOpen(false)}`,
                                             selectedPosition ? `    position="${selectedPosition}"` : null,
                                             selectedPadding ? `    padding="${selectedPadding}"` : null,
                                             selectedSize ? `    size="${selectedSize}"` : null,
@@ -112,7 +121,9 @@ const DrawerDocs = () => {
                                             closeOnClickOutside ? `    closeOnClickOutside` : null,
                                             isDismissible ? `    isDismissible` : null,
                                             showOverlay ? `    showOverlay` : null,
-                                            `>Content goes here</Drawer>`,
+                                            `>`,
+                                            `    Content goes here`,
+                                            `</Drawer>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
                                 </Portion>
@@ -131,7 +142,7 @@ const DrawerDocs = () => {
                                         onChange={() => setSelectedPosition(event.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* SIZE =========================================================================== */}
@@ -150,7 +161,7 @@ const DrawerDocs = () => {
                                         onChange={() => setSelectedSize(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                                 </Portion>
 
                                 {/* PADDING ======================================================================== */}
@@ -171,7 +182,7 @@ const DrawerDocs = () => {
                                         onChange={() => setSelectedPadding(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* OVERLAY ======================================================================== */}
@@ -185,7 +196,7 @@ const DrawerDocs = () => {
                                         onChange={() => setShowOverlay(event.target.checked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* DISMISSIBLE ==================================================================== */}
@@ -199,7 +210,7 @@ const DrawerDocs = () => {
                                         onChange={() => setIsDismissible(event.target.checked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* OVERLAY ======================================================================== */}
@@ -299,8 +310,8 @@ const DrawerDocs = () => {
                                         label="Border radius"
                                         value={componentVariables["drawer-border-radius"].value}
                                         onChange={(e) => handleVariableChange("drawer-border-radius", e.target.value)}
-                                        min={0} max={50} step={1}
                                         suffix={componentVariables["drawer-border-radius"].unit}
+                                        min={0} max={50} step={1}
                                     />
                                 </Portion>
 
@@ -310,8 +321,8 @@ const DrawerDocs = () => {
                                         label="Overlay blur"
                                         value={componentVariables["drawer-overlay-blur"].value}
                                         onChange={(e) => handleVariableChange("drawer-overlay-blur", e.target.value)}
-                                        min={0} max={50} step={1}
                                         suffix={componentVariables["drawer-overlay-blur"].unit}
+                                        min={0} max={50} step={1}
                                     />
                                 </Portion>
                             </Row>
