@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -62,7 +62,7 @@ const ComponentDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}

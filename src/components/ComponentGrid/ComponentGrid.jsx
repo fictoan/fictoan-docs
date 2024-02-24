@@ -9,7 +9,7 @@ import {
     Element,
     Badge,
     BreadcrumbItem,
-    BreadcrumbsWrapper,
+    Breadcrumbs,
     Button,
     Callout,
     Card,
@@ -231,7 +231,7 @@ export const ComponentGrid = () => {
                         <Div id="breadcrumbs-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
-                                    <BreadcrumbsWrapper>
+                                    <Breadcrumbs>
                                         <BreadcrumbItem>
                                             <Link href="/components/breadcrumbs">
                                                 A
@@ -261,7 +261,7 @@ export const ComponentGrid = () => {
                                                 crumbs
                                             </Link>
                                         </BreadcrumbItem>
-                                    </BreadcrumbsWrapper>
+                                    </Breadcrumbs>
 
                                     <Element as="footer" className="footer-bottom">
                                         <Link href="/components/button">

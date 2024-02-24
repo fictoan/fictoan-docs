@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Card, Element, Heading, HRule, Portion, Row, Table, Tabs, Text, Article } from "fictoan-react";
+import { Card, Element, Heading, Divider, Portion, Row, Table, Tabs, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 import "./page-layout.css";
@@ -65,7 +65,7 @@ const LayoutDocs = () => {
                         align="center"
                     />
 
-                    <HRule horizontalMargin="huge" kind="primary" />
+                    <Divider horizontalMargin="huge" kind="primary" />
                 </Element>
 
 
@@ -193,7 +193,7 @@ const LayoutDocs = () => {
                         </Card>
                     </Element>
 
-                    <HRule horizontalMargin="huge" kind="secondary" />
+                    <Divider horizontalMargin="huge" kind="secondary" />
 
 
                     {/* MULTIPLE PORTIONS ////////////////////////////////////////////////////////////////////////////// */}
@@ -362,7 +362,7 @@ const LayoutDocs = () => {
                         </Card>
                     </Element>
 
-                    <HRule horizontalMargin="huge" kind="secondary" />
+                    <Divider horizontalMargin="huge" kind="secondary" />
 
 
                     {/* MULTIPLE ROWS ////////////////////////////////////////////////////////////////////////////////// */}
@@ -576,7 +576,7 @@ const LayoutDocs = () => {
                         </Card>
                     </Element>
 
-                    <HRule horizontalMargin="huge" kind="secondary" />
+                    <Divider horizontalMargin="huge" kind="secondary" />
 
 
                     {/* NAMING PORTIONS //////////////////////////////////////////////////////////////////////////////// */}
@@ -733,7 +733,7 @@ const LayoutDocs = () => {
                         </Portion>
                     </Row>
 
-                    <HRule horizontalMargin="huge" kind="primary" />
+                    <Divider horizontalMargin="huge" kind="primary" />
                 </Element>
 
 
@@ -835,7 +835,7 @@ const LayoutDocs = () => {
                         </Card>
                     </Element>
 
-                    <HRule horizontalMargin="huge" kind="secondary" />
+                    <Divider horizontalMargin="huge" kind="secondary" />
 
                     <Row horizontalPadding="huge">
                         <Portion>
@@ -850,7 +850,7 @@ const LayoutDocs = () => {
                         </Portion>
                     </Row>
 
-                    <HRule horizontalMargin="huge" kind="primary" />
+                    <Divider horizontalMargin="huge" kind="primary" />
                 </Element>
 
 
@@ -1115,7 +1115,7 @@ const LayoutDocs = () => {
                     </Element>
 
 
-                    <HRule horizontalMargin="huge" kind="primary" />
+                    <Divider horizontalMargin="huge" kind="primary" />
                 </Element>
 
 

@@ -8,7 +8,7 @@ import {
     Portion,
     Heading,
     Text,
-    HRule, Card, RadioGroup, Select,
+    Divider, Card, RadioGroup, Select,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 import { listOfColours, generateShades } from "../../utils/colours";
@@ -80,7 +80,7 @@ export const InteractiveCardExample = () => {
                         </Portion>
                     </Row>
 
-                    <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+                    <Divider kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
 
                     <Row marginBottom="none">
                         <Portion desktopSpan="one-fourth">
@@ -100,7 +100,7 @@ export const InteractiveCardExample = () => {
                         </Portion>
                     </Row>
 
-                    <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+                    <Divider kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
 
                     <Row marginBottom="none">
                         <Portion desktopSpan="one-fourth">
@@ -121,7 +121,7 @@ export const InteractiveCardExample = () => {
                         </Portion>
                     </Row>
 
-                    <HRule kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
+                    <Divider kind="tertiary" horizontalMargin="none" verticalMargin="micro" />
 
                     <Row marginBottom="none">
                         <Portion desktopSpan="one-fourth">

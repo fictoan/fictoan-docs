@@ -11,7 +11,7 @@ import {
     Portion,
     Heading,
     Text,
-    HRule,
+    Divider,
     Drawer, Tabs, Article
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
@@ -127,7 +127,7 @@ const GettingStarted = () => {
                             marginBottom="micro"
                         />
 
-                        <HRule kind="tertiary" verticalMargin="micro" />
+                        <Divider kind="tertiary" verticalMargin="micro" />
                     </Portion>
 
                     <Portion>
@@ -153,7 +153,7 @@ const GettingStarted = () => {
                             and <code>assets</code>.
                         </Text>
 
-                        <HRule kind="tertiary" verticalMargin="nano" />
+                        <Divider kind="tertiary" verticalMargin="nano" />
 
                         {/* /app =========================================== */}
                         <Text weight="700" marginBottom="nano">/app</Text>
@@ -187,7 +187,7 @@ const GettingStarted = () => {
                             <Text>NextJS sucks</Text>
                         </Drawer>
 
-                        <HRule kind="tertiary" verticalMargin="nano" />
+                        <Divider kind="tertiary" verticalMargin="nano" />
 
                         {/* /app/About =========================================== */}
                         <Text weight="700" marginBottom="nano">/app/about</Text>
@@ -220,7 +220,7 @@ const GettingStarted = () => {
                 </Row>
             </Element>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////// */}
             {/* USAGE */}
@@ -302,7 +302,7 @@ const GettingStarted = () => {
                     </Portion>
                 </Row>
 
-                <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+                <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
                 {/*   ATTRIBUTE VALUES  //////////////////////////////////////////////////////////////////////////  */}
                 <Row id="attributes" horizontalPadding="huge">
@@ -331,7 +331,7 @@ const GettingStarted = () => {
                             <Portion desktopSpan="half">
                                 <Text weight="700" size="large" marginBottom="none">Prop</Text>
 
-                                <HRule kind="tertiary" verticalMargin="nano" />
+                                <Divider kind="tertiary" verticalMargin="nano" />
 
                                 <Element as="div" marginBottom="micro">
                                     <Text marginBottom="nano"><code>margin</code></Text>
@@ -362,7 +362,7 @@ const GettingStarted = () => {
                             <Portion desktopSpan="half">
                                 <Text weight="700" size="large">Possible value</Text>
 
-                                <HRule kind="tertiary" verticalMargin="nano" />
+                                <Divider kind="tertiary" verticalMargin="nano" />
 
                                 <Text marginBottom="nano"><code>none</code> — 0</Text>
                                 <Text marginBottom="nano"><code>nano</code> — 8px</Text>
@@ -381,7 +381,7 @@ const GettingStarted = () => {
                             Each of these values can be again changed in the theme file.
                         </Text>
 
-                        <HRule kind="secondary" verticalMargin="micro" />
+                        <Divider kind="secondary" verticalMargin="micro" />
 
                         <Text weight="700" size="large" marginBotto textColour="white" m="nano">Contextual values</Text>
 

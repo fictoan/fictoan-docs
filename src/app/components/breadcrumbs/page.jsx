@@ -19,7 +19,7 @@ import {
     Header,
     InputField,
     Select,
-    BreadcrumbsWrapper,
+    Breadcrumbs,
     BreadcrumbItem,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
@@ -96,7 +96,7 @@ const BreadcrumbsDocs = () => {
                             <Badge shape="rounded" id="current-page-message">That’s this page 🙂</Badge>
                         )}
 
-                        <BreadcrumbsWrapper
+                        <Breadcrumbs
                             id="interactive-component"
                             {...(
                                 selectedBgColour !== undefined ? { bgColour : selectedBgColour } : {}
@@ -118,7 +118,7 @@ const BreadcrumbsDocs = () => {
                                     Breadcrumbs
                                 </Link>
                             </BreadcrumbItem>
-                        </BreadcrumbsWrapper>
+                        </Breadcrumbs>
                     </Element>
                 </Portion>
 
@@ -137,7 +137,7 @@ const BreadcrumbsDocs = () => {
                                     <CodeBlock language="jsx" showCopyButton>
                                         {[
                                             `// Paste this in your content file`,
-                                            `<BreadcrumbsWrapper>`,
+                                            `<Breadcrumbs>`,
                                             `    <BreadcrumbItem>`,
                                             `        <Link href="/">Home</Link>`,
                                             `    </BreadcrumbItem>`,
@@ -147,7 +147,7 @@ const BreadcrumbsDocs = () => {
                                             `    <BreadcrumbItem>`,
                                             `        <Link href="/components/breadcrumbs">Breadcrumbs</Link>`,
                                             `    </BreadcrumbItem>`,
-                                            `</BreadcrumbsWrapper>`,
+                                            `</Breadcrumbs>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
                                 </Portion>

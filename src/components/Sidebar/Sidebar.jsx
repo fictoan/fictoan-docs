@@ -44,7 +44,7 @@ import ButtonIcon from "@/assets/icons/button.svg";
 import CalloutIcon from "@/assets/icons/callout.svg";
 import CardIcon from "@/assets/icons/card.svg";
 import CodeIcon from "@/assets/icons/braces.svg";
-import HRuleIcon from "@/assets/icons/hrule.svg";
+import DividerIcon from "@/assets/icons/hrule.svg";
 import InfoPanelIcon from "@/assets/icons/info-panel.svg";
 import NotificationIcon from "@/assets/icons/notification.svg";
 import SidebarIcon from "@/assets/icons/sidebar.svg";
@@ -285,7 +285,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             <Link href="/components/h-rule">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
-                        <HRuleIcon />
+                        <DividerIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="H-Rule" />
                 </SidebarItem>

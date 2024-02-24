@@ -7,7 +7,7 @@ import React, { useEffect, useMemo, useContext, useState } from "react";
 import {
     Element,
     Card,
-    HRule,
+    Divider,
     InputField,
     Portion,
     Row,
@@ -76,9 +76,9 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                 return (
                     Card
                 );
-            case "HRule":
+            case "Divider":
                 return (
-                    HRule
+                    Divider
                 );
             default:
                 return (
@@ -393,7 +393,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                             {/* KIND =============================================================================== */}
                             {properties.includes("kind") && (
                                 <>
-                                    {component === "Button" || component === "HRule" && (
+                                    {component === "Button" || component === "Divider" && (
                                         <>
                                             <RadioTabGroup
                                                 id="kind"
@@ -408,7 +408,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                                 defaultValue={selectedKind}
                                                 onChange={handleKindChange}
                                             />
-                                            <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                            <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                                         </>
                                     )}
 
@@ -427,7 +427,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                                 defaultValue={selectedKind}
                                                 onChange={handleKindChange}
                                             />
-                                            <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                            <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                                         </>
                                     )}
                                 </>
@@ -443,7 +443,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                         onChange={(e) => setLabel(e.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                                 </>
                             )}
 
@@ -459,7 +459,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                         onChange={handleIsLoadingChange}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                                 </>
                             )}
 
@@ -483,7 +483,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                         onChange={handlePaddingChange}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                                 </>
                             )}
 
@@ -507,7 +507,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                         onChange={handleSizeChange}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                                 </>
                             )}
 
@@ -526,7 +526,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                         onChange={handleShapeChange}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                                 </>
                             )}
 
@@ -546,7 +546,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                         onChange={handleShadowChange}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                                 </>
                             )}
 
@@ -678,8 +678,8 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                             {/* )} */}
 
                             {/* H-RULE ============================================================================= */}
-                            {/* {component === "HRule" && ( */}
-                            {/*     <HRuleThemeConfigurator */}
+                            {/* {component === "Divider" && ( */}
+                            {/*     <DividerThemeConfigurator */}
                             {/*         componentVariables={componentVariables} */}
                             {/*         handleVariableChange={handleVariableChange} */}
                             {/*         colourOptions={colourOptions} */}

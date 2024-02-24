@@ -4,7 +4,7 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Element, Heading, HRule, Portion, Row, Text, Article } from "fictoan-react";
+import { Element, Heading, Divider, Portion, Row, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
@@ -37,7 +37,7 @@ const BaseElementDocs = () => {
 
             <PropsList propData={listOfBaseElementProps} />
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="tiny" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="tiny" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* USAGE */}
