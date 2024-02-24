@@ -10,7 +10,7 @@ import {
     Portion,
     Heading,
     Text,
-    HRule,
+    Divider,
     InputField,
     Callout,
     Article, Switch, Checkbox, Header, Card, Form, Button, Range, Select,
@@ -69,7 +69,7 @@ const InputFieldDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -143,7 +143,7 @@ const InputFieldDocs = () => {
                                         onChange={(e) => setLabel(e.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* PLACEHOLDER ==================================================================== */}
@@ -154,7 +154,7 @@ const InputFieldDocs = () => {
                                         onChange={(e) => setPlaceholder(e.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* REQUIRED ======================================================================= */}
@@ -168,7 +168,7 @@ const InputFieldDocs = () => {
                                         onChange={() => setIsRequired(event.target.checked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* HELP TEXT ====================================================================== */}
@@ -179,7 +179,7 @@ const InputFieldDocs = () => {
                                         onChange={(e) => setHelpText(e.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* REQUIRED ======================================================================= */}
@@ -193,7 +193,7 @@ const InputFieldDocs = () => {
                                         onChange={() => setValidateThis(event.target.checked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* PATTERN ======================================================================== */}
@@ -216,7 +216,7 @@ const InputFieldDocs = () => {
                                             Use email pattern
                                         </Button>
 
-                                        <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                        <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                     </Portion>
                                 )}
 
@@ -229,7 +229,7 @@ const InputFieldDocs = () => {
                                             onChange={(e) => setErrorText(e.target.value)}
                                         />
 
-                                        <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                        <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                     </Portion>
                                 )}
                             </Row>
@@ -287,7 +287,7 @@ const InputFieldDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* DEFAULT STATE ////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -405,7 +405,7 @@ const InputFieldDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* FOCUS STATE //////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -473,7 +473,7 @@ const InputFieldDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* VALID STATE //////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -530,7 +530,7 @@ const InputFieldDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* INVALID STATE ////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -619,7 +619,7 @@ const InputFieldDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
 
                             {/* DISABLED STATE ///////////////////////////////////////////////////////////////////// */}
@@ -693,7 +693,7 @@ const InputFieldDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* READ ONLY STATE //////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">

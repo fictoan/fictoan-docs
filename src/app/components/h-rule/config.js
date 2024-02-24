@@ -1,5 +1,5 @@
 export const hRuleProps = {
-    component  : "HRule",
+    component  : "Divider",
     properties : [
         "kind",
     ],

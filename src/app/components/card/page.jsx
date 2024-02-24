@@ -6,7 +6,7 @@ import React, { useState } from "react";
 // INTERNAL DEPS =======================================================================================================
 import {
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -79,7 +79,7 @@ const CardDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/*  CONFIGURATOR ////////////////////////////////////////////////////////////////////////////////////// */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -155,7 +155,7 @@ const CardDocs = () => {
                                         onChange={handlePaddingChange}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* SHAPE ========================================================================== */}
@@ -171,7 +171,7 @@ const CardDocs = () => {
                                         onChange={handleShapeChange}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* BG COLOUR ====================================================================== */}

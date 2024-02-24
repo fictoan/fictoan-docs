@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -67,7 +67,7 @@ const ToastDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -151,7 +151,7 @@ const ToastDocs = () => {
                                         />
                                     }
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* CHECKED ======================================================================== */}
@@ -164,7 +164,7 @@ const ToastDocs = () => {
                                         onChange={() => setDefaultChecked(!defaultChecked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* DISABLED ======================================================================= */}
@@ -301,7 +301,7 @@ const ToastDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* SWITCH ///////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -438,7 +438,7 @@ const ToastDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
                         </Form>
                     </Card>
                 </Portion>

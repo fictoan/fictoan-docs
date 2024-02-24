@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -67,7 +67,7 @@ const DrawerDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -131,7 +131,7 @@ const DrawerDocs = () => {
                                         onChange={() => setSelectedPosition(event.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* SIZE =========================================================================== */}
@@ -150,7 +150,7 @@ const DrawerDocs = () => {
                                         onChange={() => setSelectedSize(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                                 </Portion>
 
                                 {/* PADDING ======================================================================== */}
@@ -171,7 +171,7 @@ const DrawerDocs = () => {
                                         onChange={() => setSelectedPadding(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* OVERLAY ======================================================================== */}
@@ -185,7 +185,7 @@ const DrawerDocs = () => {
                                         onChange={() => setShowOverlay(event.target.checked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* DISMISSIBLE ==================================================================== */}
@@ -199,7 +199,7 @@ const DrawerDocs = () => {
                                         onChange={() => setIsDismissible(event.target.checked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* OVERLAY ======================================================================== */}

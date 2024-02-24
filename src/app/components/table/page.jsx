@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -64,7 +64,7 @@ const TableDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -179,7 +179,7 @@ const TableDocs = () => {
                                         onChange={() => setBordersFor(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* PADDING ======================================================================== */}
@@ -198,7 +198,7 @@ const TableDocs = () => {
                                         onChange={() => setSelectedPadding(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* OVERLAY ======================================================================== */}
@@ -212,7 +212,7 @@ const TableDocs = () => {
                                         onChange={() => setIsStriped(event.target.checked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* DISMISSIBLE ==================================================================== */}
@@ -226,7 +226,7 @@ const TableDocs = () => {
                                         onChange={() => setHighlightRowOnHover(event.target.checked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 {/* OVERLAY ======================================================================== */}

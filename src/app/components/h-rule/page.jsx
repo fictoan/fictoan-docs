@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Table,
@@ -34,7 +34,7 @@ import { colourOptions } from "../../../utils/colours";
 // DATA ================================================================================================================
 import { hRuleProps } from "./config";
 
-const HRuleDocs = () => {
+const DividerDocs = () => {
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(hRuleProps.variables);
 
     const [selectedKind, setSelectedKind] = useState("");
@@ -57,7 +57,7 @@ const HRuleDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -70,7 +70,7 @@ const HRuleDocs = () => {
                         data-centered-children
                     >
                         <Text marginBottom="nano">Default</Text>
-                        <HRule
+                        <Divider
                             id="interactive-component"
                             {...(
                                 selectedKind !== undefined ? { kind : selectedKind } : {}
@@ -79,13 +79,13 @@ const HRuleDocs = () => {
                         />
 
                         <Text marginBottom="nano">Primary</Text>
-                        <HRule kind="primary" marginBottom="micro" />
+                        <Divider kind="primary" marginBottom="micro" />
 
                         <Text marginBottom="nano">Secondary</Text>
-                        <HRule kind="secondary" marginBottom="micro" />
+                        <Divider kind="secondary" marginBottom="micro" />
 
                         <Text marginBottom="nano">Tertiary</Text>
-                        <HRule kind="tertiary" marginBottom="micro" />
+                        <Divider kind="tertiary" marginBottom="micro" />
                     </Element>
                 </Portion>
 
@@ -104,7 +104,7 @@ const HRuleDocs = () => {
                                     <CodeBlock language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
-                                            `<HRule`,
+                                            `<Divider`,
                                             selectedKind ? `    kind="${selectedKind}"` : null,
                                             `/>`,
                                         ].filter(Boolean).join("\n")}
@@ -182,7 +182,7 @@ const HRuleDocs = () => {
                                 </Portion>
 
                                 <Portion>
-                                    <HRule kind="tertiary" />
+                                    <Divider kind="tertiary" />
                                 </Portion>
 
                                 {/* PRIMARY //////////////////////////////////////////////////////////////////////// */}
@@ -218,7 +218,7 @@ const HRuleDocs = () => {
                                 </Portion>
 
                                 <Portion>
-                                    <HRule kind="tertiary" />
+                                    <Divider kind="tertiary" />
                                 </Portion>
 
                                 {/* SECONDARY ////////////////////////////////////////////////////////////////////// */}
@@ -254,7 +254,7 @@ const HRuleDocs = () => {
                                 </Portion>
 
                                 <Portion>
-                                    <HRule kind="tertiary" />
+                                    <Divider kind="tertiary" />
                                 </Portion>
 
                                 {/* TERTIARY /////////////////////////////////////////////////////////////////////// */}
@@ -297,4 +297,4 @@ const HRuleDocs = () => {
     );
 };
 
-export default HRuleDocs;
+export default DividerDocs;

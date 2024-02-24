@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -85,7 +85,7 @@ const TableDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -169,7 +169,7 @@ const TableDocs = () => {
                                         onChange={(e) => setLabel(e.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* SHOW FOR ======================================================================= */}
@@ -183,7 +183,7 @@ const TableDocs = () => {
                                         onChange={handleIsLoadingChange}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* SHOW FOR ======================================================================= */}
@@ -202,7 +202,7 @@ const TableDocs = () => {
                                         onChange={() => setSelectedKind(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* SHOW FOR ======================================================================= */}
@@ -225,7 +225,7 @@ const TableDocs = () => {
                                         onChange={() => setSelectedSize(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* SHOW FOR ======================================================================= */}
@@ -243,7 +243,7 @@ const TableDocs = () => {
                                         onChange={() => setSelectedShape(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* SHOW FOR ======================================================================= */}
@@ -260,7 +260,7 @@ const TableDocs = () => {
                                         onChange={() => setSelectedShadow(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* BG COLOUR ========================== */}
@@ -420,7 +420,7 @@ const TableDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* HOVER ////////////////////////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -501,7 +501,7 @@ const TableDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* HOVER ////////////////////////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -582,7 +582,7 @@ const TableDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* SPINNER //////////////////////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">

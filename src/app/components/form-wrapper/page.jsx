@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -62,7 +62,7 @@ const FormDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -148,7 +148,7 @@ const FormDocs = () => {
                                         onChange={() => setSelectedSpacing(event.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* IS JOINT ======================================================================= */}
@@ -162,7 +162,7 @@ const FormDocs = () => {
                                         onChange={() => setIsJoint(event.target.checked)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* IS JOINT ======================================================================= */}

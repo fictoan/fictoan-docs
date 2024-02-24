@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Element, Heading, HRule, Portion, Row, Table, Text, Article } from "fictoan-react";
+import { Element, Heading, Divider, Portion, Row, Table, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components"
 
 import "./page-code-block.css";
@@ -94,14 +94,14 @@ const CodeBlockDocs = () => {
                             </tbody>
                         </Table>
 
-                        <HRule kind="tertiary" marginTop="tiny" marginBottom="tiny" />
+                        <Divider kind="tertiary" marginTop="tiny" marginBottom="tiny" />
 
                         <Heading as="h5" marginBottom="nano">Shared props</Heading>
                         <Text>None</Text>
                     </Portion>
                 </Row>
 
-                <HRule horizontalMargin="huge" />
+                <Divider horizontalMargin="huge" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  BASICS  */}
@@ -133,7 +133,7 @@ const CodeBlockDocs = () => {
                 </Element>
 
 
-                <HRule horizontalMargin="huge" />
+                <Divider horizontalMargin="huge" />
 
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}

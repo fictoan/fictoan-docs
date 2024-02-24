@@ -8,7 +8,7 @@ import Link from "next/link";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -72,7 +72,7 @@ const ToastDocs = () => {
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -160,7 +160,7 @@ const ToastDocs = () => {
                                         onChange={() => setSelectedPosition(event.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* SHOW FOR ======================================================================= */}
