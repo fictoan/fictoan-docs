@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Button, Card, Element, Form, Heading, InputField, Portion, Row, Text, Article } from "fictoan-react";
+import { Button, Card, Form, Heading, InputField, Portion, Row, Article } from "fictoan-react";
 
 import "./page-home.css";
 

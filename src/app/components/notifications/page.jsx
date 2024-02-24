@@ -1,13 +1,13 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -38,8 +38,10 @@ import { colourOptions } from "../../../utils/colours";
 // DATA ================================================================================================================
 import { toastProps } from "./config";
 
-const ToastDocs = () => {
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(toastProps.variables);
+const NotificationsDocs = () => {
+    useEffect(() => {
+        document.title = "Notifications — Fictoan";
+    }, []);
 
     // SAMPLE ==========================================================================================================
     const [notifications, setNotifications] = useState([]);
@@ -52,6 +54,7 @@ const ToastDocs = () => {
     const [secondsToShowFor, setSecondsToShowFor] = useState(1000);
 
     // THEME ===========================================================================================================
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(toastProps.variables);
 
     const handleShowNotification = (type) => {
         const id = Date.now();
@@ -71,19 +74,29 @@ const ToastDocs = () => {
         <Article id="page-component">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1">Toast</Heading>
+                    <Heading as="h1">Notifications</Heading>
                     <Text size="large" marginBottom="small">
-                        The component is
+                        Simple popups to show transient messages to the user.
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Characteristics</Heading>
-                    <Text>&bull; </Text>
+                    <Text>
+                        &bull; The <code>NotificationsWrapper</code> is a single parent, with any number
+                        of <code>NotificationsItem</code> children inside it.
+                    </Text>
+
+                    <Text>
+                        &bull; Some props such as <code>position</code> and <code>anchor</code> are
+                        applied to the <code>NotificationsWrapper</code>, while others such as
+                        <code>secondsToShowFor</code> can be applied to individual <code>NotificationsItem</code>
+                        elements
+                    </Text>
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -160,6 +173,8 @@ const ToastDocs = () => {
                                             `const [showSampleNotification, setShowSampleNotification] = useState(false); \n`,
                                             `<NotificationsWrapper`,
                                             selectedPosition ? `    position="${selectedPosition}"` : null,
+                                            selectedAnchor ? `    anchor="${selectedAnchor}"` : null,
+                                            selectedOrder ? `    order="${selectedOrder}"` : null,
                                             `>`,
                                             `    <NotificationItem`,
                                             `        showWhen={showSampleNotification}`,
@@ -171,6 +186,10 @@ const ToastDocs = () => {
                                             `</NotificationsWrapper>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
+                                </Portion>
+
+                                <Portion>
+                                    <Text size="large" weight="700">For NotificationWrapper</Text>
                                 </Portion>
 
                                 {/* POSITION ======================================================================= */}
@@ -185,7 +204,7 @@ const ToastDocs = () => {
                                         onChange={() => setSelectedPosition(event.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* ANCHOR ========================================================================= */}
@@ -200,7 +219,7 @@ const ToastDocs = () => {
                                         onChange={() => setSelectedAnchor(event.target.value)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* ANCHOR ========================================================================= */}
@@ -214,18 +233,21 @@ const ToastDocs = () => {
                                         defaultValue={selectedOrder || "right"}
                                         onChange={() => setSelectedOrder(event.target.value)}
                                     />
+                                </Portion>
 
-                                    <HRule kind="secondary" horizontalMargin="none" marginTop="micro" />
+
+                                <Portion>
+                                    <Text size="large" weight="700" marginTop="tiny">For NotificationItem</Text>
                                 </Portion>
 
                                 {/* SHOW FOR ======================================================================= */}
-                                <Portion desktopSpan="half">
+                                <Portion>
                                     <Range
                                         label="Show toast for"
                                         value={secondsToShowFor}
                                         onChange={(e) => setSecondsToShowFor(e.target.value)}
-                                        min={1} max={50} step={1}
                                         suffix={secondsToShowFor > 1 ? " seconds" : " second"}
+                                        min={1} max={50} step={1}
                                     />
                                 </Portion>
                             </Row>
@@ -313,13 +335,13 @@ const ToastDocs = () => {
                                         label="Border radius"
                                         value={componentVariables["notification-item-border-radius"].value}
                                         onChange={(e) => handleVariableChange("notification-item-border-radius", e.target.value)}
-                                        min={0} max={50} step={1}
                                         suffix={componentVariables["notification-item-border-radius"].unit}
+                                        min={0} max={50} step={1}
                                     />
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* INFO NOTIFICATION ////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -360,7 +382,7 @@ const ToastDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* ERROR NOTIFICATION ///////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -401,7 +423,7 @@ const ToastDocs = () => {
                                 </Portion>
                             </Row>
 
-                            <HRule kind="secondary" verticalMargin="micro" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
                             {/* SUCCESS NOTIFICATION /////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
@@ -471,4 +493,4 @@ const ToastDocs = () => {
     );
 };
 
-export default ToastDocs;
+export default NotificationsDocs;

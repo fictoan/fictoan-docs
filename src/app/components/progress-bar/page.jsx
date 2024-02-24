@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import {
     Element,
     Heading,
-    HRule,
+    Divider,
     Portion,
     Row,
     Text,
@@ -15,7 +15,11 @@ import {
     Form,
     Card,
     Header,
-    RadioTabGroup, Range, Select, ProgressBar, InputField,
+    RadioTabGroup,
+    Range,
+    Select,
+    ProgressBar,
+    InputField,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -49,19 +53,17 @@ const ProgressBarDocs = () => {
                 <Portion>
                     <Heading as="h1">Progress bar</Heading>
                     <Text size="large" marginBottom="small">
-                        The line
+                        A progress bar is a visual representation of the completion of a task.
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading as="h4" marginBottom="micro">Characteristics</Heading>
-                    <Text>&bull; The card always takes up 100% width of its parent</Text>
-                    <Text>&bull; It grows to take the height of its content</Text>
-                    <Text>&bull; Border-radius values work only when <code>shape="rounded"</code> is present</Text>
+                    <Text>&bull; Always takes up 100% width of its parent</Text>
                 </Portion>
             </Row>
 
-            <HRule kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
@@ -131,7 +133,7 @@ const ProgressBarDocs = () => {
                                         onChange={() => setSelectedShape(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <HRule kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
                                 </Portion>
 
                                 <Portion desktopSpan="half">

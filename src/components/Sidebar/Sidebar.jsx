@@ -11,8 +11,8 @@ import {
     SidebarItemIcon,
     SidebarItemText,
     SidebarFooter,
-    HRule,
-    ExpandableContent,
+    Divider,
+    Accordion,
     Div,
 } from "fictoan-react";
 
@@ -108,7 +108,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            <HRule bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
+            <Divider bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
 
 
             {/* //////////////////////////////////////////////////////////// */}
@@ -178,7 +178,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            <HRule bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
+            <Divider bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
 
             {/* //////////////////////////////////////////////////////////// */}
             {/* COMPONENTS */}
@@ -301,6 +301,17 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+
+            {/* PROGRESS BAR ============================================== */}
+            <Link href="/components/meter">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <ProgressBarIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Meter" />
+                </SidebarItem>
+            </Link>
+
             {/* NOTIFICATIONS ============================================== */}
             <Link href="/components/notifications">
                 <SidebarItem onClick={closeMobileSidebar}>
@@ -362,7 +373,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             {/* SIDEBAR ==================================================== */}
-            <ExpandableContent summary={(
+            <Accordion summary={(
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
                         <SidebarIcon />
@@ -393,7 +404,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                         <SidebarItemText weight="400" linkText="Expandable group" />
                     </SidebarItem>
                 </Link>
-            </ExpandableContent>
+            </Accordion>
 
             {/* TABLE ====================================================== */}
             <Link href="/components/table">

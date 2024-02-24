@@ -35,8 +35,6 @@ const InputFieldDocs = () => {
         document.title = "Input field — Fictoan";
     }, []);
 
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(inputProps.variables);
-
     // SAMPLE ==========================================================================================================
 
     // CUSTOMISE =======================================================================================================
@@ -50,6 +48,7 @@ const InputFieldDocs = () => {
     const [errorText, setErrorText] = useState("");
 
     // THEME ===========================================================================================================
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(inputProps.variables);
 
     return (
         <Article id="page-input-field">

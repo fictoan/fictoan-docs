@@ -33,17 +33,17 @@
     --breadcrumb-item-text-colour             : var(--paragraph-text-colour);
     --breadcrumb-item-text-colour-active      : var(--paragraph-text-colour);
 
-    /* H-RULE /////////////////////////////////////////////////////////////// */
-    --hr-height                               : 1px;
+    /* DIVIDER ////////////////////////////////////////////////////////////// */
+    --divider-height                               : 1px;
 
-    --hr-primary-height                       : 2px;
-    --hr-primary-bg                           : var(--grey-light-20);
+    --divider-primary-height                       : 2px;
+    --divider-primary-bg                           : var(--grey-light-20);
 
-    --hr-secondary-height                     : 2px;
-    --hr-secondary-bg                         : var(--grey-light-60);
+    --divider-secondary-height                     : 2px;
+    --divider-secondary-bg                         : var(--grey-light-60);
 
-    --hr-tertiary-height                      : 1px;
-    --hr-tertiary-bg                          : var(--grey-light-80);
+    --divider-tertiary-height                      : 1px;
+    --divider-tertiary-bg                          : var(--grey-light-80);
 
     /* INPUT FIELD ////////////////////////////////////////////////////////// */
     --input-bg-default                        : var(--grey-light-90);

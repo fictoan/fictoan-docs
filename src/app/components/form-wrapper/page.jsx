@@ -35,7 +35,7 @@ import "./page-form.css";
 
 // DATA ================================================================================================================
 
-const ToastDocs = () => {
+const FormDocs = () => {
     // SAMPLE ==========================================================================================================
     const [selectedSpacing, setSelectedSpacing] = useState("");
     const [isJoint, setIsJoint] = useState(false);
@@ -206,4 +206,4 @@ const ToastDocs = () => {
     );
 };
 
-export default ToastDocs;
+export default FormDocs;
