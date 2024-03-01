@@ -2,7 +2,12 @@
 
 import React from "react";
 
-import { Button, Card, Form, Heading, InputField, Portion, Row, Article } from "fictoan-react";
+import { Button, Card, Form, Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6, InputField, Portion, Row, Article } from "fictoan-react";
 
 import "./page-home.css";
 
@@ -11,13 +16,13 @@ const HomePage = () => {
         <Article id="page-home">
             <Row marginTop="medium" horizontalPadding="medium">
                 <Portion desktopSpan="two-third">
-                    <Heading as="h1">Hello!</Heading>
-                    <Heading as="h6" weight="400">Please login to continue</Heading>
+                    <Heading1>Hello!</Heading1>
+                    <Heading6 weight="400">Please login to continue</Heading6>
                 </Portion>
 
                 <Portion desktopSpan="one-third">
                     <Card padding="micro" shape="rounded">
-                        <Heading as="h6" marginBottom="micro">Login</Heading>
+                        <Heading6 marginBottom="micro">Login</Heading6>
 
                         <Form>
                             <InputField label="Email" type="email" />

@@ -2,7 +2,12 @@
 
 import React from "react";
 
-import { Card, Element, Heading, Divider, Portion, Row, Table, Tabs, Text, Article } from "fictoan-react";
+import { Card, Element, Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6, Divider, Portion, Row, Table, Tabs, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 import "./page-layout.css";
@@ -35,7 +40,7 @@ const LayoutDocs = () => {
             <article id="page-layout">
                 <Row horizontalPadding="huge" marginTop="small" marginBottom="medium">
                     <Portion>
-                        <Heading as="h2" textColour="hue">Layout</Heading>
+                        <Heading2 textColour="hue">Layout</Heading2>
                     </Portion>
                 </Row>
 
@@ -45,7 +50,7 @@ const LayoutDocs = () => {
                 <Element as="section" id="basics">
                     <Row horizontalPadding="huge">
                         <Portion>
-                            <Heading as="h4" marginBottom="nano">The Row element</Heading>
+                            <Heading4 marginBottom="nano">The Row element</Heading4>
 
                             <Text marginBottom="micro">
                                 The Row is your basic building block for layouts. It supports both grid and flexbox,
@@ -75,7 +80,7 @@ const LayoutDocs = () => {
                 <Element as="section" id="add-content">
                     <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
-                            <Heading as="h6" marginBottom="nano">Adding content</Heading>
+                            <Heading6 marginBottom="nano">Adding content</Heading6>
 
                             <Text marginBottom="micro">
                                 Content is added with the <code>Portion</code> component within the <code>Row</code>.
@@ -199,7 +204,7 @@ const LayoutDocs = () => {
                     {/* MULTIPLE PORTIONS ////////////////////////////////////////////////////////////////////////////// */}
                     <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
-                            <Heading as="h6" marginBottom="nano">Multiple Portions</Heading>
+                            <Heading6 marginBottom="nano">Multiple Portions</Heading6>
                             <Text>In the same way, you can add as many <code>Portion</code> elements inside
                                 the <code>Row</code>. If the sum of columns values exceeds <code>24</code>, they will
                                 wrap to the next line.</Text>
@@ -368,7 +373,7 @@ const LayoutDocs = () => {
                     {/* MULTIPLE ROWS ////////////////////////////////////////////////////////////////////////////////// */}
                     <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
-                            <Heading as="h6" marginBottom="nano">Multiple Rows</Heading>
+                            <Heading6 marginBottom="nano">Multiple Rows</Heading6>
                             <Text>While you can put infinite <code>Portion</code> elements inside a <code>Row</code>,
                                 it’s
                                 better to logically break it up according to your content.</Text>
@@ -582,7 +587,7 @@ const LayoutDocs = () => {
                     {/* NAMING PORTIONS //////////////////////////////////////////////////////////////////////////////// */}
                     <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
-                            <Heading as="h6" marginBottom="nano">Naming Portions</Heading>
+                            <Heading6 marginBottom="nano">Naming Portions</Heading6>
                             <Text>The <code>desktopSpan</code> attribute takes any whole number
                                 from <code>1</code> to <code>24</code>. You can also use the names of the fractions to
                                 set
@@ -743,7 +748,7 @@ const LayoutDocs = () => {
                 <Element as="section" id="responsiveness">
                     <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
-                            <Heading as="h6" marginBottom="nano">Responsive behaviour</Heading>
+                            <Heading6 marginBottom="nano">Responsive behaviour</Heading6>
                             <Text marginBottom="micro">
                                 There are four breakpoints as listed below. Using these, you can control the behaviour
                                 of a <code>Portion</code> element across devices. The default prop is{" "}
@@ -839,7 +844,7 @@ const LayoutDocs = () => {
 
                     <Row horizontalPadding="huge">
                         <Portion>
-                            <Heading as="h6">Turn off responsiveness</Heading>
+                            <Heading6>Turn off responsiveness</Heading6>
                             <Text>You can also turn off the responsiveness across these breakpoints by using the
                                 following
                                 props.</Text>
@@ -860,7 +865,7 @@ const LayoutDocs = () => {
                 <Element as="section" id="content-padding">
                     <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
-                            <Heading as="h6">Padding your content</Heading>
+                            <Heading6>Padding your content</Heading6>
                             <Text>Control the width of your content using the <code>horizontalPadding</code> prop for
                                 the <code>Row</code>.</Text>
                         </Portion>
@@ -1125,7 +1130,7 @@ const LayoutDocs = () => {
                 <Element as="section" id="gutter-sizing">
                     <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
-                            <Heading as="h6">Gutters for the Row</Heading>
+                            <Heading6>Gutters for the Row</Heading6>
                             <Text>You can also change the gaps between the columns using the <code>gutters</code> props
                                 for
                                 the <code>Row</code>.</Text>

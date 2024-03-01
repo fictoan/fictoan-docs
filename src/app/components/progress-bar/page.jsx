@@ -6,7 +6,12 @@ import React, { useState } from "react";
 // INTERNAL DEPS =======================================================================================================
 import {
     Element,
-    Heading,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
     Divider,
     Portion,
     Row,
@@ -51,14 +56,14 @@ const ProgressBarDocs = () => {
         <Article id="page-progress">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1">Progress bar</Heading>
+                    <Heading1>Progress bar</Heading1>
                     <Text size="large" marginBottom="small">
                         A progress bar is a visual representation of the completion of a task.
                     </Text>
                 </Portion>
 
                 <Portion>
-                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Heading4 marginBottom="micro">Characteristics</Heading4>
                     <Text>&bull; Always takes up 100% width of its parent</Text>
                 </Portion>
             </Row>

@@ -4,7 +4,12 @@
 import React, { useState } from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Element, Card, Heading, Text, Divider, Portion, Row, Callout, Article } from "fictoan-react";
+import { Element, Card, Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6, Text, Divider, Portion, Row, Callout, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
@@ -40,7 +45,7 @@ const ColourDocs = () => {
             <Element as="section" id="basics" marginTop="medium" marginBottom="small">
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h1" className="text-hue">Colour</Heading>
+                        <Heading1 className="text-hue">Colour</Heading1>
                     </Portion>
                 </Row>
 
@@ -110,7 +115,7 @@ const ColourDocs = () => {
             <Element as="section" id="colour-list">
                 <Row horizontalPadding="huge" marginBottom="micro">
                     <Portion>
-                        <Heading as="h6" marginBottom="nano">List of colours</Heading>
+                        <Heading6 marginBottom="nano">List of colours</Heading6>
                         <Text>Use any of these below values as variables with the above props.</Text>
                     </Portion>
                 </Row>

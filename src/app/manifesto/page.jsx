@@ -8,7 +8,9 @@ import {
     Row,
     Portion,
     Heading1,
-    Text, Divider, Article,
+    Text,
+    Divider,
+    Article,
 } from "fictoan-react";
 
 // COMPONENTS //////////////////////////////////////////////////////////////////

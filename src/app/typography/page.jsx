@@ -4,7 +4,12 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Element, Heading, Divider, Portion, Row, Table, Text, Article } from "fictoan-react";
+import { Element, Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6, Divider, Portion, Row, Table, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
@@ -39,7 +44,7 @@ const TypographyDocs = () => {
             {/* //////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1" className="text-hue">Typography</Heading>
+                    <Heading1 className="text-hue">Typography</Heading1>
                 </Portion>
             </Row>
 
@@ -55,7 +60,7 @@ const TypographyDocs = () => {
             <Element as="section" id="basics">
                 <Row horizontalPadding="huge" className="margin-top-medium">
                     <Portion>
-                        <Heading as="h4" marginBottom="nano">Basics</Heading>
+                        <Heading4 marginBottom="nano">Basics</Heading4>
                         <Text>
                             There are three main kinds of type elements—the<code>Heading</code>, <code>Text</code> and
                             links.
@@ -63,17 +68,17 @@ const TypographyDocs = () => {
                     </Portion>
 
                     <Portion>
-                        <Heading as="h1" marginBottom="nano">Heading 1</Heading>
+                        <Heading1 marginBottom="nano">Heading 1</Heading1>
 
-                        <Heading as="h2" marginBottom="nano">Heading 2</Heading>
+                        <Heading2 marginBottom="nano">Heading 2</Heading2>
 
-                        <Heading as="h3" marginBottom="nano">Heading 3</Heading>
+                        <Heading3 marginBottom="nano">Heading 3</Heading3>
 
-                        <Heading as="h4" marginBottom="nano">Heading 4</Heading>
+                        <Heading4 marginBottom="nano">Heading 4</Heading4>
 
-                        <Heading as="h5" marginBottom="nano">Heading 5</Heading>
+                        <Heading5 marginBottom="nano">Heading 5</Heading5>
 
-                        <Heading as="h6" marginBottom="nano">Heading 6</Heading>
+                        <Heading6 marginBottom="nano">Heading 6</Heading6>
 
                         <Text marginTop="none" marginBottom="nano">Paragraph</Text>
 
@@ -91,7 +96,7 @@ const TypographyDocs = () => {
             <Element as="section" id="headings">
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h4" marginBottom="nano">Heading</Heading>
+                        <Heading4 marginBottom="nano">Heading</Heading4>
                         <Text>The <code>Heading</code> element is common across all six sizes, and is invoked with
                             the <code>as</code> prop, like so&mdash;</Text>
                     </Portion>
@@ -110,7 +115,7 @@ const TypographyDocs = () => {
             <Element as="section" id="text">
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h4" marginBottom="nano">Text</Heading>
+                        <Heading4 marginBottom="nano">Text</Heading4>
                         <Text>The <code>Text</code> element pretty straight-forward&mdash;</Text>
                     </Portion>
 
@@ -128,7 +133,7 @@ const TypographyDocs = () => {
             <Element as="section" id="text">
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h4" marginBottom="nano">Colouring</Heading>
+                        <Heading4 marginBottom="nano">Colouring</Heading4>
                         <Text marginBottom="micro">
                             The <code>textColour</code> / <code>textColor</code> prop let’s you add, well, colour to the
                             text. You can check out the full list of colours in the <a href="/colour">Colour</a> page.
@@ -136,7 +141,7 @@ const TypographyDocs = () => {
                     </Portion>
 
                     <Portion>
-                        <Heading as="h6" textColour="red-light-30">I’m red-light-30</Heading>
+                        <Heading6 textColour="red-light-30">I’m red-light-30</Heading6>
                         <CodeBlock source={sampleColouring1} language="jsx" marginTop="nano" marginBottom="micro" />
                     </Portion>
 
@@ -146,7 +151,7 @@ const TypographyDocs = () => {
                     </Portion>
 
                     <Portion>
-                        <Heading as="h4" textColour="pistachio">I’m pistachio</Heading>
+                        <Heading4 textColour="pistachio">I’m pistachio</Heading4>
                         <CodeBlock source={sampleColouring3} language="jsx" marginTop="nano" marginBottom="micro" />
                     </Portion>
 
@@ -165,7 +170,7 @@ const TypographyDocs = () => {
             <Element as="section" id="global-styling">
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h4" marginBottom="nano">Global variables</Heading>
+                        <Heading4 marginBottom="nano">Global variables</Heading4>
                     </Portion>
 
                     <Portion>
@@ -179,7 +184,7 @@ const TypographyDocs = () => {
                     </Portion>
 
                     <Portion>
-                        <Heading as="h6" marginBottom="nano">Loading custom fonts</Heading>
+                        <Heading6 marginBottom="nano">Loading custom fonts</Heading6>
                     </Portion>
 
                     <Portion>
@@ -211,11 +216,11 @@ const TypographyDocs = () => {
             <Element as="section" id="sizing">
                 <Row horizontalPadding="huge" marginBottom="micro">
                     <Portion>
-                        <Heading as="h4" marginBottom="micro">Sizing</Heading>
+                        <Heading4 marginBottom="micro">Sizing</Heading4>
                     </Portion>
 
                     <Portion>
-                        <Heading as="h6" marginBottom="nano">Heading sizing</Heading>
+                        <Heading6 marginBottom="nano">Heading sizing</Heading6>
                         <Text marginBottom="micro">
                             The paragraph font size and the heading font sizes are set manually in the theme. The rest
                             of the sizes are calculated based on the <code>multiplier</code> value.
@@ -236,7 +241,7 @@ const TypographyDocs = () => {
 
                 <Row horizontalPadding="huge" marginBottom-micro>
                     <Portion>
-                        <Heading as="h6" marginBottom="nano">Text sizing</Heading>
+                        <Heading6 marginBottom="nano">Text sizing</Heading6>
                     </Portion>
 
                     <Portion>

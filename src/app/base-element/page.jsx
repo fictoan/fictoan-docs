@@ -4,7 +4,7 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Element, Heading, Divider, Portion, Row, Text, Article } from "fictoan-react";
+import { Element, Heading1, Divider, Portion, Row, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
@@ -27,7 +27,7 @@ const BaseElementDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="huge" marginTop="medium">
                 <Portion>
-                    <Heading as="h1" marginBottom="micro">Base element</Heading>
+                    <Heading1 marginBottom="micro">Base element</Heading1>
                     <Text size="large">
                         This is a common element that lets you use the Fictoan props to any native HTML element. This
                         makes it easier to play with the rest of the components on page without having to write CSS.
@@ -44,7 +44,7 @@ const BaseElementDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="huge">
                 <Portion>
-                    <Heading as="h4" marginBottom="nano">Usage</Heading>
+                    <Heading4 marginBottom="nano">Usage</Heading4>
 
                     <Text marginBottom="micro">
                         The <code>Element</code> component is just a replacement for using the HTML element directly

@@ -5,7 +5,12 @@ import React, { useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
-    Heading,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
     Divider,
     Portion,
     Row,
@@ -64,7 +69,7 @@ const CardDocs = () => {
         <Article id="page-card">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="tiny">
                 <Portion>
-                    <Heading as="h1" marginBottom="micro">Card</Heading>
+                    <Heading1 marginBottom="micro">Card</Heading1>
                     <Text size="large" marginBottom="small">
                         The card is a simple box that encloses content within, and is one of the oft-used components
                         in modern UI.
@@ -72,7 +77,7 @@ const CardDocs = () => {
                 </Portion>
 
                 <Portion>
-                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Heading4 marginBottom="micro">Characteristics</Heading4>
                     <Text>&bull; The card always takes up 100% width of its parent</Text>
                     <Text>&bull; It grows to take the height of its content</Text>
                     <Text>&bull; Border-radius values work only when <code>shape="rounded"</code> is present</Text>

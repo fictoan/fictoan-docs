@@ -2,7 +2,12 @@
 
 import React from "react";
 
-import { Heading, Divider, Portion, Row, Text } from "fictoan-react";
+import { Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6, Divider, Portion, Row, Text } from "fictoan-react";
 
 import "./props-list.css";
 
@@ -11,7 +16,7 @@ export const PropsList = ({ propData }) => {
         <>
             <Row gutters="huge" horizontalPadding="large" marginBottom="none">
                 <Portion>
-                    <Heading as="h6">{propData.elementName}</Heading>
+                    <Heading6>{propData.elementName}</Heading6>
                 </Portion>
 
                 <Portion desktopSpan="5">

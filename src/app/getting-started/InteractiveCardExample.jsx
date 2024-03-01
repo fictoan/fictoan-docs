@@ -6,7 +6,12 @@ import {
     Element,
     Row,
     Portion,
-    Heading,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
     Text,
     Divider, Card, RadioGroup, Select,
 } from "fictoan-react";

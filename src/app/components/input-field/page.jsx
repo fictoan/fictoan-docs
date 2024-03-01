@@ -8,7 +8,12 @@ import {
     Element,
     Row,
     Portion,
-    Heading,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
     Text,
     Divider,
     InputField,
@@ -57,14 +62,14 @@ const InputFieldDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1">Input field</Heading>
+                    <Heading1>Input field</Heading1>
                     <Text size="large" marginBottom="small">
                         The component is
                     </Text>
                 </Portion>
 
                 <Portion>
-                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Heading4 marginBottom="micro">Characteristics</Heading4>
                     <Text>&bull; </Text>
                 </Portion>
             </Row>

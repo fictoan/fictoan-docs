@@ -6,7 +6,12 @@ import React, { useEffect, useState } from "react";
 // INTERNAL DEPS =======================================================================================================
 import {
     Element,
-    Heading,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
     Divider,
     Portion,
     Row,
@@ -75,14 +80,14 @@ const MeterDocs = () => {
         <Article id="page-meter">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1">Meter</Heading>
+                    <Heading1>Meter</Heading1>
                     <Text size="large" marginBottom="small">
                         A meter can be used to show values that can be represented as a percentage.
                     </Text>
                 </Portion>
 
                 <Portion>
-                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Heading4 marginBottom="micro">Characteristics</Heading4>
                     <Text>&bull; Always takes up 100% width of its parent</Text>
                     <Text>
                         &bull; The range of values containing the <code>optimum</code> value gets

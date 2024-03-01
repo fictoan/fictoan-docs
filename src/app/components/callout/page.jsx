@@ -6,7 +6,12 @@ import React, { useState } from "react";
 // INTERNAL DEPS =======================================================================================================
 import {
     Element,
-    Heading,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
     Divider,
     Portion,
     Row,
@@ -54,7 +59,7 @@ const CalloutDocs = () => {
         <Article id="page-callout">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1">Callout</Heading>
+                    <Heading1>Callout</Heading1>
                     <Text size="large" marginBottom="small">
                         The call out is a box that can be used to highlight important information. It comes in four
                         variants.
@@ -62,7 +67,7 @@ const CalloutDocs = () => {
                 </Portion>
 
                 <Portion>
-                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Heading4 marginBottom="micro">Characteristics</Heading4>
                     <Text>&bull; The badge is a simple, styled <code>mark</code> element</Text>
                     <Text>&bull; You have to manually align it with its sibling</Text>
                 </Portion>

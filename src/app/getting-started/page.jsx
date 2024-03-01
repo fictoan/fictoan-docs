@@ -9,7 +9,12 @@ import {
     Element,
     Row,
     Portion,
-    Heading,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
     Text,
     Divider,
     Drawer, Tabs, Article
@@ -65,7 +70,7 @@ const GettingStarted = () => {
         <article id="page-getting-started">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1" className="text-hue">Getting started</Heading>
+                    <Heading1 className="text-hue">Getting started</Heading1>
                 </Portion>
             </Row>
 
@@ -75,7 +80,7 @@ const GettingStarted = () => {
             <Element as="section" id="first-steps">
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h4">First steps</Heading>
+                        <Heading4>First steps</Heading4>
                     </Portion>
 
                     <Portion>
@@ -228,7 +233,7 @@ const GettingStarted = () => {
             <Element as="section" id="patterns">
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h4">Using components</Heading>
+                        <Heading4>Using components</Heading4>
                     </Portion>
                 </Row>
 

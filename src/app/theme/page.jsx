@@ -4,7 +4,12 @@
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Heading, Divider, Portion, Row, Text, Article } from "fictoan-react";
+import { Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6, Divider, Portion, Row, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
@@ -31,7 +36,7 @@ const ThemingDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1" marginBottom="micro">Theming</Heading>
+                    <Heading1 marginBottom="micro">Theming</Heading1>
                     <Text size="large">
                         A comprehensive list of variables to change the look and feel of your app from a single
                         place.
@@ -42,7 +47,7 @@ const ThemingDocs = () => {
             {/* GLOBALS ==================================================== */}
             <Row horizontalPadding="huge">
                 <Portion>
-                    <Heading as="h4" marginBottom="nano">Usage</Heading>
+                    <Heading4 marginBottom="nano">Usage</Heading4>
                     <Text marginBottom="micro">
                         Here’s a typical setup for the <code>ThemeProvider</code> and a child component that controls
                         the toggle.
@@ -66,7 +71,7 @@ const ThemingDocs = () => {
             {/* GLOBALS ==================================================== */}
             <Row horizontalPadding="huge">
                 <Portion>
-                    <Heading as="h4" marginBottom="micro">Variables</Heading>
+                    <Heading4 marginBottom="micro">Variables</Heading4>
 
                     <Text size="large" weight="700" textColour="white" marginBottom="nano">Globals</Text>
 

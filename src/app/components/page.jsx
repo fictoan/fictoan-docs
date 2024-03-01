@@ -3,7 +3,12 @@
 import React from "react";
 import Link from "next/link";
 
-import { Heading, Portion, Row, Text, Article } from "fictoan-react";
+import { Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6, Portion, Row, Text, Article } from "fictoan-react";
 
 const BreadcrumbsDemoDocs = () => {
     return (
@@ -15,13 +20,13 @@ const BreadcrumbsDemoDocs = () => {
             <article id="page-breadcrumbs-demo">
                 <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
-                        <Heading as="h6" weight="400" marginBottom="micro">
+                        <Heading6 weight="400" marginBottom="micro">
                             This page only exists so that the demo link on the Breadcrumbs components doesn’t return a 404 error.
-                        </Heading>
+                        </Heading6>
 
-                        <Heading as="h6" weight="400" marginBottom="micro">
+                        <Heading6 weight="400" marginBottom="micro">
                             You’re welcome.
-                        </Heading>
+                        </Heading6>
 
                         <Link href="/components/breadcrumbs">
                             &larr; Back to breadcrumbs docs

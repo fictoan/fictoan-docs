@@ -6,7 +6,12 @@ import Link from "next/link";
 
 // INTERNAL DEPS ===============================================================
 import {
-    Heading,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
     Divider,
     Portion,
     Row,
@@ -83,7 +88,7 @@ const ThemingDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1" marginBottom="micro">Configure theme</Heading>
+                    <Heading1 marginBottom="micro">Configure theme</Heading1>
                     <Text size="large">
                         A comprehensive list of variables to change the look and feel of your app from a single
                         place.
@@ -215,12 +220,12 @@ const ThemingDocs = () => {
                         <Card padding="micro" shape="rounded">
                             <Row marginBottom="none">
                                 <Portion>
-                                    <Heading as="h1" marginBottom="nano">Heading 1</Heading>
-                                    <Heading as="h2" marginBottom="nano">Heading 2</Heading>
-                                    <Heading as="h3" marginBottom="nano">Heading 3</Heading>
-                                    <Heading as="h4" marginBottom="nano">Heading 4</Heading>
-                                    <Heading as="h5" marginBottom="nano">Heading 5</Heading>
-                                    <Heading as="h6" marginBottom="nano">Heading 6</Heading>
+                                    <Heading1 marginBottom="nano">Heading 1</Heading1>
+                                    <Heading2 marginBottom="nano">Heading 2</Heading2>
+                                    <Heading3 marginBottom="nano">Heading 3</Heading3>
+                                    <Heading4 marginBottom="nano">Heading 4</Heading4>
+                                    <Heading5 marginBottom="nano">Heading 5</Heading5>
+                                    <Heading6 marginBottom="nano">Heading 6</Heading6>
                                     <Text>Text</Text>
                                     <Link href="/">Link</Link>
                                 </Portion>

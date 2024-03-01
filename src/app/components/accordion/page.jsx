@@ -6,7 +6,7 @@ import React, { useState } from "react";
 // INTERNAL DEPS =======================================================================================================
 import {
     Element,
-    Heading,
+    Heading1,
     Divider,
     Portion,
     Row,
@@ -51,14 +51,14 @@ const AccordionDocs = () => {
         <Article id="page-toast">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1">Accordion</Heading>
+                    <Heading1>Accordion</Heading1>
                     <Text size="large" marginBottom="small">
                         The component is
                     </Text>
                 </Portion>
 
                 <Portion>
-                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Heading4 marginBottom="micro">Characteristics</Heading4>
                     <Text>&bull; </Text>
                 </Portion>
             </Row>

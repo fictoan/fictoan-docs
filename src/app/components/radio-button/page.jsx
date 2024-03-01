@@ -6,7 +6,12 @@ import React, { useState } from "react";
 // INTERNAL DEPS =======================================================================================================
 import {
     Element,
-    Heading,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
     Divider,
     Portion,
     Row,
@@ -70,14 +75,14 @@ const ToastDocs = () => {
         <Article id="page-component">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1">Radio button</Heading>
+                    <Heading1>Radio button</Heading1>
                     <Text size="large" marginBottom="small">
                         The component is
                     </Text>
                 </Portion>
 
                 <Portion>
-                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Heading4 marginBottom="micro">Characteristics</Heading4>
                     <Text>&bull; </Text>
                 </Portion>
             </Row>

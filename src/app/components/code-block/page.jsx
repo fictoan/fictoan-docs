@@ -2,7 +2,12 @@
 
 import React from "react";
 
-import { Element, Heading, Divider, Portion, Row, Table, Text, Article } from "fictoan-react";
+import { Element, Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6, Divider, Portion, Row, Table, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components"
 
 import "./page-code-block.css";
@@ -18,15 +23,15 @@ const CodeBlockDocs = () => {
             <article id="page-code-block">
                 <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
-                        <Heading as="h2" className="text-hue">CodeBlock</Heading>
+                        <Heading2 className="text-hue">CodeBlock</Heading2>
                     </Portion>
                 </Row>
 
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h3" marginBottom="micro">Props</Heading>
+                        <Heading3 marginBottom="micro">Props</Heading3>
 
-                        <Heading as="h5" marginBottom="nano">Custom props</Heading>
+                        <Heading5 marginBottom="nano">Custom props</Heading5>
                         <Table bordersFor="both" padding="tiny">
                             <thead className="bg-slate-10">
                                 <tr>
@@ -96,7 +101,7 @@ const CodeBlockDocs = () => {
 
                         <Divider kind="tertiary" marginTop="tiny" marginBottom="tiny" />
 
-                        <Heading as="h5" marginBottom="nano">Shared props</Heading>
+                        <Heading5 marginBottom="nano">Shared props</Heading5>
                         <Text>None</Text>
                     </Portion>
                 </Row>
@@ -109,7 +114,7 @@ const CodeBlockDocs = () => {
                 <Element as="section" id="default">
                     <Row horizontalPadding="huge">
                         <Portion>
-                            <Heading as="h3" marginBottom="nano">Default</Heading>
+                            <Heading3 marginBottom="nano">Default</Heading3>
 
                             <Text marginBottom="micro">
                                 The <code>CodeBlock</code> component uses a <code>pre</code> tag for the display, and
@@ -146,7 +151,7 @@ const CodeBlockDocs = () => {
                     <Element as="section" id="theming">
                         <Row horizontalPadding="huge" marginBottom="small">
                             <Portion>
-                                <Heading as="h3" marginBottom="tiny">Theming</Heading>
+                                <Heading3 marginBottom="tiny">Theming</Heading3>
 
                                 <CodeBlock source={sampleCodeBlock} language="css" />
                             </Portion>

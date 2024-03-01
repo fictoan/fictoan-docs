@@ -6,7 +6,12 @@ import React, { useEffect, useState } from "react";
 // INTERNAL DEPS =======================================================================================================
 import {
     Element,
-    Heading,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
     Divider,
     Portion,
     Row,
@@ -74,14 +79,14 @@ const NotificationsDocs = () => {
         <Article id="page-component">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1">Notifications</Heading>
+                    <Heading1>Notifications</Heading1>
                     <Text size="large" marginBottom="small">
                         Simple popups to show transient messages to the user.
                     </Text>
                 </Portion>
 
                 <Portion>
-                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Heading4 marginBottom="micro">Characteristics</Heading4>
                     <Text>
                         &bull; The <code>NotificationsWrapper</code> is a single parent, with any number
                         of <code>NotificationsItem</code> children inside it.

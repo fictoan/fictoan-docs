@@ -2,7 +2,12 @@
 
 import React from "react";
 
-import { Card, Element, Heading, Portion, Row, Text, Article } from "fictoan-react";
+import { Card, Element, Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6, Portion, Row, Text, Article } from "fictoan-react";
 
 import { CodeBlock } from "fictoan-react/components";
 import { sampleFlexboxRow, sampleGridRow } from "../CodeSamples";
@@ -13,7 +18,7 @@ const RowFlexboxDocs = () => {
             <div>
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h6" weight="700">Flexbox</Heading>
+                        <Heading6 weight="700">Flexbox</Heading6>
                         <Text marginBottom="nano">
                             The flexbox-based grid is a simpler version of the grid layout.
                         </Text>

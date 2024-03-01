@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import {
     Callout,
     Element,
-    Heading,
+    Heading1,
     Divider,
     Portion,
     Row,
@@ -75,14 +75,14 @@ const SelectDocs = () => {
         <Article id="page-select">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading as="h1">Select dropdown</Heading>
+                    <Heading1>Select dropdown</Heading1>
                     <Text size="large" marginBottom="small">
                         The component is
                     </Text>
                 </Portion>
 
                 <Portion>
-                    <Heading as="h4" marginBottom="micro">Characteristics</Heading>
+                    <Heading4 marginBottom="micro">Characteristics</Heading4>
                     <Text>&bull; </Text>
                 </Portion>
             </Row>

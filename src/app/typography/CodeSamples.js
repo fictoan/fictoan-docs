@@ -1,10 +1,10 @@
 // Code sample 01 ==============================================================
-export const sampleHeadings = `<Heading as="h1">Heading 1</Heading>
-<Heading as="h2">Heading 2</Heading>
-<Heading as="h3">Heading 3</Heading>
-<Heading as="h4">Heading 4</Heading>
-<Heading as="h5">Heading 5</Heading>
-<Heading as="h6">Heading 6</Heading>`;
+export const sampleHeadings = `<Heading1>Heading 1</Heading1>
+<Heading2>Heading 2</Heading2>
+<Heading3>Heading 3</Heading3>
+<Heading4>Heading 4</Heading4>
+<Heading5>Heading 5</Heading5>
+<Heading6>Heading 6</Heading6>`;
 
 
 // Code sample 02 ==============================================================
@@ -46,9 +46,9 @@ export const sampleTextTheme = `/* GENERICS ====================================
 
 
 // Code sample 03 ==============================================================
-export const sampleColouring1 = `<Heading as="h6" textColour="red-light-30">I’m red-light-30</Heading>`;
+export const sampleColouring1 = `<Heading6 textColour="red-light-30">I’m red-light-30</Heading6>`;
 export const sampleColouring2 = `<Text textColor="violet-dark-10">I’m violet-dark-10</Text>`;
-export const sampleColouring3 = `<Heading as="h4" textColour="pistachio">I’m pistachio</Heading>`;
+export const sampleColouring3 = `<Heading4 textColour="pistachio">I’m pistachio</Heading4>`;
 
 
 // Code sample 03 ==============================================================

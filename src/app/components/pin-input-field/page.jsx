@@ -8,7 +8,12 @@ import {
     Element,
     Row,
     Portion,
-    Heading,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
     Text,
     Divider,
     PinInputField,
@@ -63,7 +68,7 @@ const InputFieldDocs = () => {
             <Element as="section" id="intro" marginTop="medium" marginBottom="small">
                 <Row layout="flexbox" horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h1" className="text-hue">Pin Input field</Heading>
+                        <Heading1 className="text-hue">Pin Input field</Heading1>
                     </Portion>
                 </Row>
             </Element>
@@ -76,7 +81,7 @@ const InputFieldDocs = () => {
             <Element as="section" id="default">
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h4" marginBottom="nano">Default</Heading>
+                        <Heading4 marginBottom="nano">Default</Heading4>
 
                         <Text marginBottom="micro">
                             The <code>PinInputField</code> uses an array of <code>InputField</code> component, but added
@@ -103,7 +108,7 @@ const InputFieldDocs = () => {
                 {/* NUMBER OF FIELDS ======================================= */}
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h5" marginBottom="nano">Number of fields</Heading>
+                        <Heading5 marginBottom="nano">Number of fields</Heading5>
 
                         <Text marginBottom="micro">
                             This decides the length of PIN you want to accept.
@@ -123,7 +128,7 @@ const InputFieldDocs = () => {
                 {/* TYPE =================================================== */}
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h5" marginBottom="nano">Type</Heading>
+                        <Heading5 marginBottom="nano">Type</Heading5>
 
                         <Text marginBottom="micro">
                             <code>numeric</code>, <code>alphanumeric</code>
@@ -156,7 +161,7 @@ const InputFieldDocs = () => {
                 {/* MASK =================================================== */}
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h5" marginBottom="nano">Mask</Heading>
+                        <Heading5 marginBottom="nano">Mask</Heading5>
 
                         <Text marginBottom="micro">
                             This hides the entered character and shows a dot instead.
@@ -175,7 +180,7 @@ const InputFieldDocs = () => {
                 {/* OTP ==================================================== */}
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading as="h5" marginBottom="nano">OTP</Heading>
+                        <Heading5 marginBottom="nano">OTP</Heading5>
 
                         <Text marginBottom="micro">
                             Add the <code>isOTP</code> prop, and on supported OSes, the incoming SMS will suggested as a
@@ -198,7 +203,7 @@ const InputFieldDocs = () => {
                 <Element as="section" id="theming">
                     <Row horizontalPadding="huge" marginBottom="small">
                         <Portion>
-                            <Heading as="h4" marginBottom="tiny">Theme</Heading>
+                            <Heading4 marginBottom="tiny">Theme</Heading4>
 
                             <Text>Same as <Link href="/components/form/input-field">InputField</Link>.</Text>
                         </Portion>
