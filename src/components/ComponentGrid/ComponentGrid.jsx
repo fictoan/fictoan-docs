@@ -15,7 +15,6 @@ import {
     Card,
     Checkbox,
     Div,
-    Heading,
     InputField,
     NotificationItem,
     Portion,
@@ -25,7 +24,7 @@ import {
     Select,
     Switch,
     Table,
-    Text,
+    Text, Heading1, Heading4,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -45,7 +44,9 @@ export const ComponentGrid = () => {
         <Div id="component-grid">
             <Row horizontalPadding="medium">
                 <Portion>
-                    <Heading as="h6">Some components</Heading>
+                    <Heading4 weight="400" marginBottom="nano">
+                        Some components
+                    </Heading4>
                 </Portion>
 
                 <Portion>
@@ -82,7 +83,7 @@ export const ComponentGrid = () => {
                         <Div id="type-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
-                                    <Heading as="h1" textColour="pistachio">Hi.</Heading>
+                                    <Heading1 textColour="pistachio">Hi.</Heading1>
                                     <Text weight="600">I’m just your type.</Text>
 
                                     <Element as="footer" className="footer-bottom">

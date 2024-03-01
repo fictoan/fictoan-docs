@@ -25,7 +25,7 @@ import {
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
-import { ButtonSample, ButtonThemeConfigurator } from "../../app/components/button/config";
+import { ButtonSample } from "../../app/components/button/config";
 
 // UTILS =======================================================================
 import { generateShades, listOfColours } from "../../utils/colours";

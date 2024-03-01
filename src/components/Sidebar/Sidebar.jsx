@@ -191,6 +191,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 />
             </SidebarItem>
 
+            {/* ACCORDION ====================================================== */}
+            <Link href="/components/accordion">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <BadgeIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Accordion" />
+                </SidebarItem>
+            </Link>
+
             {/* BADGE ====================================================== */}
             <Link href="/components/badge">
                 <SidebarItem onClick={closeMobileSidebar}>

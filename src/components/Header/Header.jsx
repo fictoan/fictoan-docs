@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Badge, Callout, Div, Element, Header, Heading, InputField, Portion, Row, Text } from "fictoan-react";
+import { Badge, Callout, Div, Element, Header, Heading5, InputField, Portion, Row, Text } from "fictoan-react";
 
 import "./header.css";
 
@@ -19,13 +19,15 @@ export const SiteHeader = ({ toggleSidebarOnMobile }) => {
                 showOnlyOnMobile showOnlyOnTabletPortrait
                 onClick={handleMenuToggleClick}
             >
-                <Heading as="h5">&mdash;</Heading>
-                <Heading as="h5">&ndash;</Heading>
+                <Heading5>&mdash;</Heading5>
+                <Heading5>&ndash;</Heading5>
             </Div>
+
+            <Text weight="700" textColour="white">A designer-focused React/CSS UI library</Text>
 
             <Badge
                 id="wip-badge"
-                bgColour="red-light-60" textColour="red" shape="rounded"
+                bgColour="red-light-70" textColour="red-dark-40" shape="rounded"
             >
                 These Docs are WIP
             </Badge>

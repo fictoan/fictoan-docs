@@ -2,10 +2,10 @@
     scroll-behavior : smooth;
 
     #intro-headline {
-        background              : -webkit-linear-gradient(270deg, #adb2ff 0%, #264be1 100%);
-        -webkit-background-clip : text;
-        -webkit-text-fill-color : transparent;
-        font-size               : 3.2rem;
+        /*background              : -webkit-linear-gradient(270deg, #adb2ff 0%, #264be1 100%);*/
+        /*-webkit-background-clip : text;*/
+        /*-webkit-text-fill-color : transparent;*/
+        /*font-size               : 3.2rem;*/
     }
 
     #code-block-wrapper {
@@ -63,7 +63,8 @@
         position      : relative;
         z-index       : 1;
         padding       : 32px;
-        background    : linear-gradient(0deg, rgba(4, 7, 22, 0.96), rgba(4, 10, 22, 0.96));
+        /*background    : linear-gradient(0deg, rgba(4, 7, 22, 1), rgba(4, 10, 22, 1));*/
+        background    : var(--indigo-dark-60);
         border        : 1px solid hsla(0, 0%, 100%, .1);
         border-radius : 12px
     }

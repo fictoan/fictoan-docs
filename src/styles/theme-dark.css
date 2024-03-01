@@ -121,7 +121,7 @@
 
     --paragraph-font-size                     : 1rem;
     --paragraph-line-height                   : 1.6;
-    --paragraph-text-colour                   : var(--slate-dark-20);
+    --paragraph-text-colour                   : var(--slate);
 
     --heading-text-colour                     : var(--white);
     --heading-size-multiplier                 : 1.2;

@@ -7,7 +7,7 @@ import {
     Element,
     Row,
     Portion,
-    Heading,
+    Heading1,
     Text, Divider, Article,
 } from "fictoan-react";
 
@@ -34,9 +34,9 @@ const Manifesto = () => {
                 </Portion>
 
                 <Portion desktopSpan="half">
-                    <Heading as="h1" weight="400" marginBottom="micro">
+                    <Heading1 weight="400" marginBottom="micro">
                         The hand-off process is broken
-                    </Heading>
+                    </Heading1>
 
                     <Text size="large" marginBottom="micro">
                         Hand-offs are treated akin to passing baton, and a its-your-problem-now attitude.
@@ -68,9 +68,9 @@ const Manifesto = () => {
             {/* IDEOLOGY /////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="large" marginTop="medium" marginBottom="medium">
                 <Portion desktopSpan="half">
-                    <Heading as="h1" weight="400" marginBottom="micro">
+                    <Heading1 weight="400" marginBottom="micro">
                         Pixel perfection is a designer’s job
-                    </Heading>
+                    </Heading1>
                 </Portion>
 
                 <Portion desktopSpan="half">
@@ -93,24 +93,24 @@ const Manifesto = () => {
                 <Portion desktopSpan="one-sixth" />
 
                 <Portion desktopSpan="two-third">
-                    <Heading as="h1" weight="400" marginBottom="small">
+                    <Heading1 weight="400" marginBottom="small">
                         The margin’s off? The hover state is the wrong tint? The font weight feels wrong?
-                    </Heading>
+                    </Heading1>
 
-                    <Heading as="h1" weight="400" marginBottom="small">
+                    <Heading1 weight="400" marginBottom="small">
                         Sacrilege, yes. But wait—why not just fix it instead of raising a ticket?
-                    </Heading>
+                    </Heading1>
 
-                    <Heading as="h1" weight="400" marginBottom="small">
+                    <Heading1 weight="400" marginBottom="small">
                         It’s not that scary.
-                    </Heading>
+                    </Heading1>
 
-                    <Heading
+                    <Heading1
                         id="down-arrow"
                         as="h1" weight="400" align="centre"
                     >
                         🡐
-                    </Heading>
+                    </Heading1>
                 </Portion>
             </Row>
 
@@ -118,9 +118,9 @@ const Manifesto = () => {
                 <Portion desktopSpan="one-sixth" />
 
                 <Portion desktopSpan="two-third">
-                    <Heading as="h1" weight="400" marginBottom="micro">
+                    <Heading1 weight="400" marginBottom="micro">
                         Enter FICTOAN
-                    </Heading>
+                    </Heading1>
 
                     <Text size="huge" marginBottom="micro">
                         Fictoan stems from the idea that true hand-off between the designer and developer must be in

@@ -44,3 +44,18 @@ img { width : auto; }
     top      : 72px;
     z-index  : 5000;
 }
+
+@keyframes blink {
+    50% {
+        opacity : 0;
+    }
+}
+
+#codeAnimation::after {
+    content   : "|";
+    animation : blink 1s step-end infinite;
+}
+
+*:focus {
+    outline : 2px solid var(--blue);
+}

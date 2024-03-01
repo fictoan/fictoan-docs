@@ -20,7 +20,7 @@ import {
     InputField,
     Select,
     Breadcrumbs,
-    BreadcrumbItem,
+    BreadcrumbItem, Div,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -28,6 +28,9 @@ import { CodeBlock } from "fictoan-react/components";
 
 // STYLES ==============================================================================================================
 import "./page-breadcrumbs.css";
+
+// ASSETS ==============================================================================================================
+import RadioButtonIcon from "@/assets/icons/radio-button.svg";
 
 // HOOKS ===============================================================================================================
 import { useThemeVariables } from "../../../utils/useThemeVariables";
@@ -60,9 +63,6 @@ const BreadcrumbsDocs = () => {
         cssVariablesList,
     } = useThemeVariables(breadcrumbsProps.variables);
 
-    const handleBgColourChange = (event) => {
-        setSelectedBgColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
     return (
         <Article id="page-breadcrumbs">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
@@ -88,10 +88,7 @@ const BreadcrumbsDocs = () => {
             <Row horizontalPadding="small" className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
-                    <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
-                        data-centered-children
-                    >
+                    <Div padding="small" shape="rounded" bgColour="slate-light-80">
                         {showCurrentPageMessage && (
                             <Badge shape="rounded" id="current-page-message">That’s this page 🙂</Badge>
                         )}
@@ -110,7 +107,7 @@ const BreadcrumbsDocs = () => {
                                 <Link href="/components">Components</Link>
                             </BreadcrumbItem>
 
-                            <BreadcrumbItem>
+                            <BreadcrumbItem current>
                                 <Link
                                     href="/components/breadcrumbs"
                                     onClick={() => setShowCurrentPageMessage(true)}
@@ -119,7 +116,7 @@ const BreadcrumbsDocs = () => {
                                 </Link>
                             </BreadcrumbItem>
                         </Breadcrumbs>
-                    </Element>
+                    </Div>
                 </Portion>
 
                 {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
@@ -183,6 +180,7 @@ const BreadcrumbsDocs = () => {
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
+                                        id="bg-colour"
                                         label="Wrapper BG colour"
                                         options={[{
                                             label    : "Select a colour",
@@ -211,6 +209,7 @@ const BreadcrumbsDocs = () => {
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
+                                        id="separator-colour"
                                         label="Separator colour"
                                         options={[{
                                             label    : "Select a colour",
@@ -227,6 +226,7 @@ const BreadcrumbsDocs = () => {
                                 {/* ITEM COLOUR ==================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
+                                        id="item-colour"
                                         label="Item colour"
                                         options={[{
                                             label    : "Select a colour",
@@ -243,6 +243,7 @@ const BreadcrumbsDocs = () => {
                                 {/* ITEM ACTIVE COLOUR ============================================================= */}
                                 <Portion desktopSpan="half">
                                     <Select
+                                        id="item-active-colour"
                                         label="Active item colour"
                                         options={[{
                                             label    : "Select a colour",
