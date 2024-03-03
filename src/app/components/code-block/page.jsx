@@ -2,16 +2,35 @@
 
 import React from "react";
 
-import { Element, Heading1,
+import {
+    Element,
+    Heading1,
     Heading2,
     Heading3,
     Heading4,
     Heading5,
-    Heading6, Divider, Portion, Row, Table, Text, Article } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components"
+    Heading6,
+    Divider,
+    Portion,
+    Row,
+    Table,
+    Text,
+    Article,
+    Section,
+    Div,
+} from "fictoan-react";
+import { CodeBlock } from "fictoan-react/components";
 
 import "./page-code-block.css";
-import { sampleCodeBlock } from "./CodeSamples";
+import {
+    sampleBashCode,
+    sampleCodeBlock,
+    sampleCSharpCode,
+    sampleCSSCode, sampleHTMLCode,
+    sampleRustCode,
+    sampleSwiftCode,
+} from "./CodeSamples";
+
 
 const CodeBlockDocs = () => {
     return (
@@ -106,12 +125,12 @@ const CodeBlockDocs = () => {
                     </Portion>
                 </Row>
 
-                <Divider horizontalMargin="huge" />
+                <Divider horizontalMargin="huge" verticalMargin="small" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
                 {/*  BASICS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Element as="section" id="default">
+                <Section id="default">
                     <Row horizontalPadding="huge">
                         <Portion>
                             <Heading3 marginBottom="nano">Default</Heading3>
@@ -131,33 +150,73 @@ const CodeBlockDocs = () => {
                             <CodeBlock source={sampleCodeBlock} language="jsx" />
 
                             <Text marginTop="micro">
-                                Meta, no?  (¬‿¬ )
+                                Meta, no? (¬‿¬ )
                             </Text>
                         </Portion>
                     </Row>
-                </Element>
+                </Section>
 
 
-                <Divider horizontalMargin="huge" />
-
+                <Divider horizontalMargin="huge" verticalMargin="small" />
 
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  PROPS  */}
+                {/*  BASICS  */}
                 {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Element as="section" id="props">
-                    {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
-                    {/*  THEMING  */}
-                    {/*  /////////////////////////////////////////////////////////////////////////////////////////////  */}
-                    <Element as="section" id="theming">
-                        <Row horizontalPadding="huge" marginBottom="small">
-                            <Portion>
-                                <Heading3 marginBottom="tiny">Theming</Heading3>
+                <Section id="languages">
+                    <Row horizontalPadding="huge">
+                        <Portion>
+                            <Heading3 marginBottom="micro">Languages</Heading3>
+                        </Portion>
+                    </Row>
 
-                                <CodeBlock source={sampleCodeBlock} language="css" />
-                            </Portion>
-                        </Row>
-                    </Element>
-                </Element>
+                    <Row horizontalPadding="huge" marginBottom="tiny">
+                        <Portion>
+                            <Text weight="700" marginBottom="nano">Bash</Text>
+
+                            <CodeBlock source={sampleBashCode} language="bash" />
+                        </Portion>
+                    </Row>
+
+                    <Row horizontalPadding="huge" marginBottom="tiny">
+                        <Portion>
+                            <Text weight="700" marginBottom="nano">C#</Text>
+
+                            <CodeBlock source={sampleCSharpCode} language="csharp" />
+                        </Portion>
+                    </Row>
+
+                    <Row horizontalPadding="huge" marginBottom="tiny">
+                        <Portion>
+                            <Text weight="700" marginBottom="nano">CSS</Text>
+
+                            <CodeBlock source={sampleCSSCode} language="css" showLineNumbers />
+                        </Portion>
+                    </Row>
+
+                    <Row horizontalPadding="huge" marginBottom="tiny">
+                        <Portion>
+                            <Text weight="700" marginBottom="nano">Swift</Text>
+
+                            <CodeBlock source={sampleSwiftCode} language="swift" />
+                        </Portion>
+                    </Row>
+
+                    <Row horizontalPadding="huge" marginBottom="tiny">
+                        <Portion>
+                            <Text weight="700" marginBottom="nano">Rust</Text>
+
+                            <CodeBlock source={sampleRustCode} language="rust" />
+                        </Portion>
+                    </Row>
+
+                    <Row horizontalPadding="huge" marginBottom="tiny">
+                        <Portion>
+                            <Text weight="700" marginBottom="nano">Rust</Text>
+
+                            <CodeBlock source={sampleHTMLCode} language="html" />
+                        </Portion>
+                    </Row>
+                </Section>
             </article>
         </>
     );

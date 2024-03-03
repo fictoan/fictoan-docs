@@ -2,35 +2,30 @@
 
 // EXTERNAL DEPS =======================================================================================================
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 // INTERNAL DEPS =======================================================================================================
 import {
-    Badge, Button,
-    Callout,
+    Button,
     Div,
-    Element,
-    Header,
     Heading1,
-    Heading2,
-    Heading3,
-    Heading4,
     Heading5,
-    Heading6,
-    InputField,
     Portion,
-    RadioTabGroup,
     Row,
+    Section, Switch,
     Text,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==========================================================================================================
-import "./header.css";
-import Link from "next/link";
 
 // STYLES ==============================================================================================================
+import "./intro-code.css";
+
 // HOOKS ===============================================================================================================
+
 // UTILS ===============================================================================================================
+
 // DATA ================================================================================================================
 
 export const IntroCode = () => {
@@ -40,14 +35,18 @@ export const IntroCode = () => {
         marginBottom      : "tiny",
     });
 
-    const [portionProps, setPortionProps] = useState({
-        desktopSpan : "two-third",
+    const [portion1Props, setPortion1Props] = useState({
+        desktopSpan : "half",
+    });
+
+    const [portion2Props, setPortion2Props] = useState({
+        desktopSpan : "half",
     });
 
     const [mainHeadingProps, setMainHeadingProps] = useState({
         as           : "h1",
         textColour   : "blue",
-        marginBottom : "nano",
+        marginBottom : "micro",
         weight       : "700",
     });
 
@@ -73,28 +72,32 @@ export const IntroCode = () => {
         const propRegex = /<(Heading1|Heading5|Row|Portion|Button)\s+(.*?)>/gs;
         const propertiesRegex = /(\w+)="([^"]+)"/g;
         const newProps = {
-            Row: {},
-            Portion: {},
-            Heading1: {},
-            Heading5: [], // Assuming there might be more than one Heading5
-            Button: {},
+            Row      : {},
+            Portion  : [],
+            Heading1 : {},
+            Heading5 : [],
+            Button   : {},
         };
 
         let tagMatch;
-        while ((tagMatch = propRegex.exec(codeContent)) !== null) {
+        while ((
+            tagMatch = propRegex.exec(codeContent)
+        ) !== null) {
             const tagName = tagMatch[1];
             const tagProperties = tagMatch[2];
             let tagProps = {};
 
             let propsMatch;
-            while ((propsMatch = propertiesRegex.exec(tagProperties)) !== null) {
+            while ((
+                propsMatch = propertiesRegex.exec(tagProperties)
+            ) !== null) {
                 const propName = propsMatch[1];
                 const propValue = propsMatch[2];
                 tagProps[propName] = propValue;
             }
 
-            if (tagName === 'Heading5') {
-                newProps[tagName].push(tagProps); // Support multiple Heading5s
+            if (tagName === "Portion" || tagName === "Heading5") {
+                newProps[tagName].push(tagProps);
             } else {
                 newProps[tagName] = tagProps;
             }
@@ -111,79 +114,145 @@ export const IntroCode = () => {
             const handleInput = () => {
                 const codeContent = codeBlockElement.textContent;
                 const newProps = parseCodeToProperties(codeContent);
+                console.log(newProps);
 
-                // Directly updating state based on tag names
-                setRowProps(prevProps => ({ ...prevProps, ...newProps.Row }));
-                setPortionProps(prevProps => ({ ...prevProps, ...newProps.Portion }));
-                setMainHeadingProps(prevProps => ({ ...prevProps, ...newProps.Heading1 }));
-                // For Heading5, assuming you want to apply the first Heading5 props for simplicity
+                // Row
+                setRowProps(prevProps => (
+                    { ...prevProps, ...newProps.Row }
+                ));
+
+                newProps.Portion.forEach((props, index) => {
+                    if (index === 0) setPortion1Props(props);
+                    else if (index === 1) setPortion2Props(props);
+                });
+
+                // Heading1
+                setMainHeadingProps(prevProps => (
+                    { ...prevProps, ...newProps.Heading1 }
+                ));
+
+                // Heading5
                 if (newProps.Heading5.length > 0) {
-                    setSubHeading1Props(prevProps => ({ ...prevProps, ...newProps.Heading5[0] }));
+                    setSubHeading1Props(prevProps => (
+                        { ...prevProps, ...newProps.Heading5[0] }
+                    ));
                     if (newProps.Heading5.length > 1) {
-                        setSubHeading2Props(prevProps => ({ ...prevProps, ...newProps.Heading5[1] }));
+                        setSubHeading2Props(prevProps => (
+                            { ...prevProps, ...newProps.Heading5[1] }
+                        ));
                     }
                 }
-                setButtonProps(prevProps => ({ ...prevProps, ...newProps.Button }));
+
+                // Button
+                setButtonProps(prevProps => (
+                    { ...prevProps, ...newProps.Button }
+                ));
             };
 
             codeBlockElement.addEventListener("input", handleInput);
+
             return () => {
                 codeBlockElement.removeEventListener("input", handleInput);
             };
         }
     }, []);
 
+    // FOR VIZ ROW =====================================================================================================
+    const [vizMode, setVizMode] = useState(false);
+    const numberOfPortions = 24;
+
     return (
-        <>
-            <Row {...rowProps}>
-                <Portion {...portionProps}>
-                    <Heading1 {...mainHeadingProps}>
-                        Ship UI in half the time.
-                    </Heading1>
+        <Section id="intro-code">
+            <Div id="intro-section">
+                {vizMode && (
+                    <Row id="viz-row" horizontalPadding="medium" retainLayoutAlways>
+                        {Array.from({ length : numberOfPortions }, (_, index) => (
+                            <Portion key={index} desktopSpan="1">
+                                <Text align="centre">{index + 1}</Text>
+                            </Portion>
+                        ))}
+                    </Row>
+                )}
 
-                    <Heading5 {...subHeading1Props}>
-                        Create ready-to-integrate UI in minutes with designer-friendly, plain-English syntax.
-                    </Heading5>
+                <Row {...rowProps}>
+                    <Portion {...portion1Props} className={`demo-portion ${vizMode ? "border-red" : ""}`}>
+                        <Heading1 {...mainHeadingProps}>
+                            Ship UI in half the time.
+                        </Heading1>
 
-                    <Heading5 {...subHeading2Props}>
-                        Hand-off responsive, performant React code to your dev team.
-                    </Heading5>
+                        <Link href="/getting-started">
+                            <Button {...buttonProps}>
+                                Get started &rarr;
+                            </Button>
+                        </Link>
 
-                    <Link href="/getting-started">
-                        <Button {...buttonProps}>
-                            Get started &rarr;
-                        </Button>
-                    </Link>
-                </Portion>
-            </Row>
+                        {vizMode && (
+                            <Text className="portion-width-indicator">
+                                {portion1Props.desktopSpan}
+                            </Text>
+                        )}
+                    </Portion>
+
+                    <Portion {...portion2Props} className={`demo-portion ${vizMode ? "border-red" : ""}`}>
+                        <Heading5 {...subHeading1Props}>
+                            Create ready-to-integrate UI in minutes with designer-friendly, plain-English syntax.
+                        </Heading5>
+
+                        <Heading5 {...subHeading2Props}>
+                            Hand-off responsive, performant React code to your dev team.
+                        </Heading5>
+
+                        {vizMode && (
+                            <Text className="portion-width-indicator">
+                                {portion2Props.desktopSpan}
+                            </Text>
+                        )}
+                    </Portion>
+                </Row>
+            </Div>
 
             <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
                 <Portion>
-                    <Div id="intro-code" ref={codeBlockRef}>
+                    <Div verticallyCentreItems pushItemsToEnds>
+                        <Text marginBottom="nano">Try editing some of the props and values here—</Text>
+
+                        <Switch
+                            id="viz-switch"
+                            name="viz-switch"
+                            label="Visualise the Row"
+                            checked={vizMode}
+                            onChange={() => setVizMode(!vizMode)}
+                        />
+                    </Div>
+
+                    <Div id="intro-code-block" ref={codeBlockRef}>
                         <CodeBlock
                             language="jsx"
                             showCopyButton
-                            marginBottom="micro"
                             contentEditable
                             suppressContentEditableWarning={true}
+                            marginBottom="micro"
+                            theme="custom"
                         >
                             {[
                                 `<Row horizontalPadding="medium" marginTop="tiny" marginBottom="small">`,
-                                `    <Portion desktopSpan="two-third">`,
-                                `        <Heading1 textColour="blue-light-20" marginBottom="nano" weight="700">`,
+                                `    <Portion desktopSpan="half">`,
+                                `        <Heading1 textColour="blue-light-20" marginBottom="micro" weight="700">`,
                                 `            Ship UI in half the time.`,
                                 `        </Heading1> \n`,
+                                `        <Link href="/getting-started">`,
+                                `            <Button kind="primary">`,
+                                `                Get started &rarr;`,
+                                `            </Button>`,
+                                `        </Link>`,
+                                `    </Portion> \n`,
+                                `    <Portion desktopSpan="half">`,
                                 `        <Heading5 weight="400" marginBottom="micro">`,
                                 `            Create ready-to-integrate UI in minutes with designer-friendly, plain-English syntax.`,
                                 `        </Heading5>\n`,
                                 `        <Heading5 weight="400" marginBottom="micro">`,
                                 `            Hand-off responsive, performant React code to your dev team.`,
                                 `        </Heading5>`,
-                                `        <Link href="/getting-started">`,
-                                `            <Button kind="primary">`,
-                                `                Get started &rarr;`,
-                                `            </Button>`,
-                                `        </Link>`,
                                 `    </Portion>`,
                                 `</Row>`,
                             ].filter(Boolean).join("\n")}
@@ -191,6 +260,6 @@ export const IntroCode = () => {
                     </Div>
                 </Portion>
             </Row>
-        </>
+        </Section>
     );
 };
