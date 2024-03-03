@@ -114,7 +114,6 @@ export const IntroCode = () => {
             const handleInput = () => {
                 const codeContent = codeBlockElement.textContent;
                 const newProps = parseCodeToProperties(codeContent);
-                console.log(newProps);
 
                 // Row
                 setRowProps(prevProps => (
@@ -165,7 +164,7 @@ export const IntroCode = () => {
         <Section id="intro-code">
             <Div id="intro-section">
                 {vizMode && (
-                    <Row id="viz-row" horizontalPadding="medium" retainLayoutAlways>
+                    <Row id="viz-row" horizontalPadding={rowProps.horizontalPadding} retainLayoutAlways>
                         {Array.from({ length : numberOfPortions }, (_, index) => (
                             <Portion key={index} desktopSpan="1">
                                 <Text align="centre">{index + 1}</Text>
