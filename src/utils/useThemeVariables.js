@@ -58,7 +58,7 @@ export const useThemeVariables = (variablesStructure) => {
             return `--${paddedVarName} : ${cssValue};`;
         }).join("\n");
 
-        return "// Paste this in your theme file\n" + variablesString;
+        return "/* Paste this in your theme file */\n" + variablesString;
     };
 
     const [componentVariables, setComponentVariables] = useState(getDefaultVariableValues());

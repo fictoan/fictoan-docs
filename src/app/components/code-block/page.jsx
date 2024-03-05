@@ -1,224 +1,579 @@
 "use client";
 
-import React from "react";
+// EXTERNAL DEPS =======================================================================================================
+import React, { useState } from "react";
 
+// INTERNAL DEPS =======================================================================================================
 import {
-    Element,
+    Div,
     Heading1,
-    Heading2,
-    Heading3,
     Heading4,
-    Heading5,
-    Heading6,
     Divider,
     Portion,
     Row,
-    Table,
     Text,
     Article,
-    Section,
-    Div,
+    Card,
+    Form,
+    Header,
+    Select,
+    InputField,
+    Range,
+    Checkbox,
+    RadioTabGroup
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
+// COMPONENTS ==========================================================================================================
+
+// STYLES ==============================================================================================================
 import "./page-code-block.css";
+
+// HOOKS ===============================================================================================================
+import { useThemeVariables } from "../../../utils/useThemeVariables";
+
+// UTILS ===============================================================================================================
+import { colourOptions } from "../../../utils/colours";
+
+// DATA ================================================================================================================
+import { toastProps } from "./config";
 import {
-    sampleBashCode,
     sampleCodeBlock,
-    sampleCSharpCode,
-    sampleCSSCode, sampleHTMLCode,
+    sampleBashCode,
     sampleRustCode,
+    sampleCSSCode,
+    sampleCSharpCode,
+    sampleHTMLCode,
+    sampleJSXCode,
+    sampleKotlinCode,
+    sampleMarkdownCode,
+    sampleObjectiveCCode,
+    samplePythonCode,
     sampleSwiftCode,
 } from "./CodeSamples";
 
-
 const CodeBlockDocs = () => {
+
+    // SAMPLE ==========================================================================================================
+    const [selectedApproach, setSelectedApproach] = useState("import");
+    const [enableCopyButton, setEnableCopyButton] = useState(false);
+    const [enableLineNumbers, setEnableLineNumbers] = useState(false);
+    const [selectedLanguage, setSelectedLanguage] = useState("bash");
+    const [selectedSampleCode, setSelectedSampleCode] = useState(sampleBashCode);
+
+    const showSelectedLanguageCode = (language) => {
+        switch (language) {
+            case "bash":
+                setSelectedSampleCode(sampleBashCode);
+                break;
+            case "csharp":
+                setSelectedSampleCode(sampleCSharpCode);
+                break;
+            case "html":
+                setSelectedSampleCode(sampleHTMLCode);
+                break;
+            case "css":
+                setSelectedSampleCode(sampleCSSCode);
+                break;
+            case "swift":
+                setSelectedSampleCode(sampleSwiftCode);
+                break;
+            case "rust":
+                setSelectedSampleCode(sampleRustCode);
+                break;
+            case "python":
+                setSelectedSampleCode(samplePythonCode);
+                break;
+            case "kotlin":
+                setSelectedSampleCode(sampleKotlinCode);
+                break;
+            case "jsx":
+                setSelectedSampleCode(sampleJSXCode);
+                break;
+            case "objective-c":
+                setSelectedSampleCode(sampleObjectiveCCode);
+                break;
+                case "markdown":
+                setSelectedSampleCode(sampleMarkdownCode);
+                break;
+            default:
+                setSelectedSampleCode(sampleBashCode);
+        }
+    };
+
+    // CUSTOMISE =======================================================================================================
+
+    // THEME ===========================================================================================================
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(toastProps.variables);
+
+
     return (
-        <>
-            <head>
-                <title>Code block — Fictoan documentation</title>
-            </head>
+        <Article id="page-code-block">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
+                <Portion>
+                    <Heading1>Code block</Heading1>
+                    <Text size="large" marginBottom="small">
+                        The component is
+                    </Text>
+                </Portion>
 
-            <article id="page-code-block">
-                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
-                    <Portion>
-                        <Heading2 className="text-hue">CodeBlock</Heading2>
-                    </Portion>
-                </Row>
+                <Portion>
+                    <Heading4 marginBottom="micro">Characteristics</Heading4>
+                    <Text>&bull; </Text>
+                </Portion>
+            </Row>
 
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading3 marginBottom="micro">Props</Heading3>
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-                        <Heading5 marginBottom="nano">Custom props</Heading5>
-                        <Table bordersFor="both" padding="tiny">
-                            <thead className="bg-slate-10">
-                                <tr>
-                                    <td className="weight-600">Prop</td>
-                                    <td className="weight-600">Description</td>
-                                    <td className="weight-600">Values</td>
-                                    <td className="weight-600">Default</td>
-                                </tr>
-                            </thead>
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/*  CONFIGURATOR */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Row horizontalPadding="small" className="rendered-component">
+                {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
+                <Portion id="component-wrapper">
+                    <Div padding="micro" shape="rounded" bgColour="slate-light-80"
+                        data-centered-children
+                    >
+                        <CodeBlock
+                            source={selectedSampleCode}
+                            language={selectedLanguage}
+                            showCopyButton={enableCopyButton}
+                            showLineNumbers={enableLineNumbers}
+                        />
+                    </Div>
+                </Portion>
 
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <code>source</code>
-                                    </td>
+                {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Form spacing="none">
+                        <Card padding="micro" shape="rounded">
+                            <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
+                                <Text size="large" weight="700" textColour="white">
+                                    Customise individually
+                                </Text>
+                            </Header>
 
-                                    <td>
-                                        The content for the code inside the block
-                                    </td>
+                            <Row marginBottom="none">
+                                <Portion>
+                                    {selectedApproach === "inline" ? (
+                                        <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                            {[
+                                                `// Paste this in your content file`,
+                                                selectedApproach === "import" ? `import { sampleCode } from "./codeSamples.js"; \n` : null,
+                                                `<CodeBlock`,
+                                                `    language="${selectedLanguage}"`,
+                                                enableCopyButton ? `    showCopyButton` : null,
+                                                enableLineNumbers ? `    showLineNumbers` : null,
+                                                `>`,
+                                                `    ${selectedSampleCode}`,
+                                                `</CodeBlock>`,
+                                            ].filter(Boolean).join("\n")}
+                                        </CodeBlock>)
+                                        : (
+                                        <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                            {[
+                                                `// Paste this in your content file`,
+                                                selectedApproach === "import" ? `import { sampleCode } from "./codeSamples.js"; \n` : null,
+                                                `<CodeBlock`,
+                                                `    source={sampleCode}`,
+                                                `    language="${selectedLanguage}"`,
+                                                enableCopyButton ? `    showCopyButton` : null,
+                                                enableLineNumbers ? `    showLineNumbers` : null,
+                                                `>`,
+                                            ].filter(Boolean).join("\n")}
+                                        </CodeBlock>
+                                        )
+                                    }
+                                </Portion>
 
-                                    <td>
-                                        Object / string
-                                    </td>
+                                {/* COPY BUTTON ==================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        id="languages"
+                                        label="Languages"
+                                        name="list-of-languages"
+                                        options={[
+                                            { label : "Bash", value : "bash" },
+                                            { label : "CSharp", value : "csharp" },
+                                            { label : "CSS", value : "css" },
+                                            { label : "HTML", value : "html" },
+                                            { label : "JSX", value : "jsx" },
+                                            { label : "Kotlin", value : "kotlin" },
+                                            { label : "Markdown", value : "markdown" },
+                                            { label : "Objective-C", value : "objective-c" },
+                                            { label : "Python", value : "python" },
+                                            { label : "Rust", value : "rust" },
+                                            { label : "Swift", value : "swift" },
+                                        ]}
+                                        onChange={(e) => {
+                                            setSelectedLanguage(e.target.value);
+                                            showSelectedLanguageCode(e.target.value);
+                                        }}
+                                        isFullWidth
+                                    />
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                </Portion>
 
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
+                                {/* SHAPE ========================================================================== */}
+                                <Portion>
+                                    <RadioTabGroup
+                                        id="shape" label="Shape" name="shape"
+                                        options={[
+                                            { id : "approach-opt-0", value : "import", label : "import" },
+                                            { id : "approach-opt-1", value : "inline", label : "inline" },
+                                        ]}
+                                        defaultValue={selectedApproach}
+                                        onChange={() => setSelectedApproach(event.target.value !== "none" ? event.target.value : undefined)}
+                                    />
 
-                                <tr>
-                                    <td>
-                                        <code>language</code>
-                                    </td>
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                </Portion>
 
-                                    <td>
-                                        Language for tokenisation
-                                    </td>
+                                <Portion>
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                </Portion>
 
-                                    <td>
-                                        <code>bash</code><br />
-                                        <code>csharp</code><br />
-                                        <code>css</code><br />
-                                        <code>diff</code><br />
-                                        <code>django</code><br />
-                                        <code>go</code><br />
-                                        <code>http</code><br />
-                                        <code>java</code><br />
-                                        <code>javascript</code><br />
-                                        <code>json</code><br />
-                                        <code>jsx</code><br />
-                                        <code>makefile</code><br />
-                                        <code>markup</code><br />
-                                        <code>php</code><br />
-                                        <code>python</code><br />
-                                        <code>ruby</code><br />
-                                        <code>scala</code><br />
-                                        <code>typescript</code><br />
-                                        <code>tsx</code>
-                                    </td>
+                                {/* COPY BUTTON ==================================================================== */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-copy-button"
+                                        value="checkbox-copy-button"
+                                        name="checkbox-copy-button"
+                                        label="Show Copy button"
+                                        checked={enableCopyButton}
+                                        onChange={() => setEnableCopyButton(event.target.checked)}
+                                    />
 
-                                    <td>
-                                        &mdash;
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </Table>
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+                                </Portion>
 
-                        <Divider kind="tertiary" marginTop="tiny" marginBottom="tiny" />
+                                {/* LINE NUMBERS =================================================================== */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-line-numbers"
+                                        value="checkbox-line-numbers"
+                                        name="checkbox-line-numbers"
+                                        label="Show line numbers"
+                                        checked={enableLineNumbers}
+                                        onChange={() => setEnableLineNumbers(event.target.checked)}
+                                    />
+                                </Portion>
+                            </Row>
+                        </Card>
+                    </Form>
+                </Portion>
 
-                        <Heading5 marginBottom="nano">Shared props</Heading5>
-                        <Text>None</Text>
-                    </Portion>
-                </Row>
+                {/* GLOBAL THEME /////////////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    <Card padding="micro" shape="rounded">
+                        <Form>
+                            <Header verticallyCentreItems pushItemsToEnds>
+                                <Text size="large" weight="700" textColour="white" marginBottom="nano">
+                                    Set values globally
+                                </Text>
+                            </Header>
 
-                <Divider horizontalMargin="huge" verticalMargin="small" />
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <CodeBlock
+                                        source={cssVariablesList}
+                                        language="css"
+                                        showCopyButton
+                                        marginBottom="micro"
+                                    />
+                                </Portion>
+                            </Row>
 
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  BASICS  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Section id="default">
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading3 marginBottom="nano">Default</Heading3>
+                            {/* COMMON ///////////////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700" size="large">Common</Text>
+                                </Portion>
 
-                            <Text marginBottom="micro">
-                                The <code>CodeBlock</code> component uses a <code>pre</code> tag for the display, and
-                                PrismJS for the tokenisation.
-                            </Text>
+                                {/* BG COLOUR ====================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <InputField
+                                        label="Font"
+                                        defaultValue={componentVariables["code-font"].defaultValue}
+                                        onChange={(e) => handleVariableChange("code-font", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+                            </Row>
 
-                            <CodeBlock source={sampleCodeBlock} language="jsx" />
+                            <Divider kind="secondary" verticalMargin="micro" />
 
-                            <Text marginTop="micro" marginBottom="micro">
-                                The above code will display a simple <code>CodeBlock</code>, which
-                                looks like...um, this&mdash;
-                            </Text>
+                            {/* INLINE ///////////////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700" size="large">Inline</Text>
+                                </Portion>
 
-                            <CodeBlock source={sampleCodeBlock} language="jsx" />
+                                {/* BACKGROUND ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Background"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["code-inline-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("code-inline-bg", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                            <Text marginTop="micro">
-                                Meta, no? (¬‿¬ )
-                            </Text>
-                        </Portion>
-                    </Row>
-                </Section>
+                                {/* TEXT =========================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Text"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["code-inline-text"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("code-inline-text", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
+                                {/* FONT SIZE ====================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Font size"
+                                        value={componentVariables["code-inline-font-size"].value}
+                                        onChange={(e) => handleVariableChange("code-inline-font-size", e.target.value)}
+                                        suffix={componentVariables["code-inline-font-size"].unit}
+                                        min={0} max={20} step={0.1}
+                                    />
+                                </Portion>
 
-                <Divider horizontalMargin="huge" verticalMargin="small" />
+                                {/* BORDER RADIUS ================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Border radius"
+                                        value={componentVariables["code-inline-border-radius"].value}
+                                        onChange={(e) => handleVariableChange("code-inline-border-radius", e.target.value)}
+                                        suffix={componentVariables["code-inline-border-radius"].unit}
+                                        min={0} max={20} step={0.1}
+                                    />
+                                </Portion>
+                            </Row>
 
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                {/*  BASICS  */}
-                {/*  /////////////////////////////////////////////////////////////////////////////////////////////////  */}
-                <Section id="languages">
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading3 marginBottom="micro">Languages</Heading3>
-                        </Portion>
-                    </Row>
+                            <Divider kind="secondary" verticalMargin="micro" />
 
-                    <Row horizontalPadding="huge" marginBottom="tiny">
-                        <Portion>
-                            <Text weight="700" marginBottom="nano">Bash</Text>
+                            {/* BLOCK ////////////////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700" size="large">Block</Text>
+                                </Portion>
 
-                            <CodeBlock source={sampleBashCode} language="bash" />
-                        </Portion>
-                    </Row>
+                                {/* BACKGROUND ===================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Background"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["code-block-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("code-block-bg", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                    <Row horizontalPadding="huge" marginBottom="tiny">
-                        <Portion>
-                            <Text weight="700" marginBottom="nano">C#</Text>
+                                {/* TEXT =========================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Text"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["code-block-text"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("code-block-text", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                            <CodeBlock source={sampleCSharpCode} language="csharp" />
-                        </Portion>
-                    </Row>
+                                {/* FONT SIZE ====================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Font size"
+                                        value={componentVariables["code-block-font-size"].value}
+                                        onChange={(e) => handleVariableChange("code-block-font-size", e.target.value)}
+                                        suffix={componentVariables["code-block-font-size"].unit}
+                                        min={0} max={20} step={0.1}
+                                    />
+                                </Portion>
 
-                    <Row horizontalPadding="huge" marginBottom="tiny">
-                        <Portion>
-                            <Text weight="700" marginBottom="nano">CSS</Text>
+                                {/* LINE HEIGHT ==================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Line height"
+                                        value={componentVariables["code-block-line-height"].value}
+                                        onChange={(e) => handleVariableChange("code-block-line-height", e.target.value)}
+                                        min={1} max={3} step={0.1}
+                                    />
+                                </Portion>
 
-                            <CodeBlock source={sampleCSSCode} language="css" showLineNumbers />
-                        </Portion>
-                    </Row>
+                                {/* BORDER RADIUS ================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Range
+                                        label="Border radius"
+                                        value={componentVariables["code-block-border-radius"].value}
+                                        onChange={(e) => handleVariableChange("code-block-border-radius", e.target.value)}
+                                        suffix={componentVariables["code-block-border-radius"].unit}
+                                        min={0} max={20} step={0.1}
+                                    />
+                                </Portion>
 
-                    <Row horizontalPadding="huge" marginBottom="tiny">
-                        <Portion>
-                            <Text weight="700" marginBottom="nano">Swift</Text>
+                                {/* LINE NUMBERS =================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Line numbers"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["code-block-line-numbers"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("code-block-line-numbers", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+                            </Row>
 
-                            <CodeBlock source={sampleSwiftCode} language="swift" />
-                        </Portion>
-                    </Row>
+                            <Divider kind="secondary" verticalMargin="micro" />
 
-                    <Row horizontalPadding="huge" marginBottom="tiny">
-                        <Portion>
-                            <Text weight="700" marginBottom="nano">Rust</Text>
+                            {/* COPY BUTTON //////////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700" size="large">Copy button</Text>
+                                </Portion>
 
-                            <CodeBlock source={sampleRustCode} language="rust" />
-                        </Portion>
-                    </Row>
+                                {/* COPY BUTTON BACKGROUND ======================================================= */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Copy button background"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["code-block-copy-button-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("code-block-copy-button-bg", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                    <Row horizontalPadding="huge" marginBottom="tiny">
-                        <Portion>
-                            <Text weight="700" marginBottom="nano">Rust</Text>
+                                {/* COPY BUTTON TEXT ============================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Copy button text"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["code-block-copy-button-text"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("code-block-copy-button-text", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
 
-                            <CodeBlock source={sampleHTMLCode} language="html" />
-                        </Portion>
-                    </Row>
-                </Section>
-            </article>
-        </>
+                                {/* COPY BUTTON BORDER ============================================================ */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Copy button border"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["code-block-copy-button-border"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("code-block-copy-button-border", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                <Portion desktopSpan="half" />
+
+                                {/* COPIED BADGE BACKGROUND ====================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Copied badge background"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["code-block-copied-badge-bg"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("code-block-copied-badge-bg", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* COPIED BADGE TEXT ============================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Copied badge text"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["code-block-copied-badge-text"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("code-block-copied-badge-text", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* COPIED BADGE BORDER =========================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        label="Copied badge border"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["code-block-copied-badge-border"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("code-block-copied-badge-border", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+                            </Row>
+
+                            <Divider kind="secondary" verticalMargin="micro" />
+
+                            {/* COPY BUTTON //////////////////////////////////////////////////////////////////////// */}
+                            <Row marginBottom="none">
+                                <Portion>
+                                    <Text weight="700" size="large">Tokens</Text>
+                                    <Text>Did you really expect 45 dropdowns here?</Text>
+                                </Portion>
+                            </Row>
+                        </Form>
+                    </Card>
+                </Portion>
+            </Row>
+        </Article>
     );
 };
 

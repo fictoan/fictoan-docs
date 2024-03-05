@@ -43,7 +43,7 @@ import { colourOptions } from "../../../utils/colours";
 // DATA ================================================================================================================
 import { checkboxProps } from "./config";
 
-const ToastDocs = () => {
+const CheckboxDocs = () => {
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(checkboxProps.variables);
 
     // SAMPLE ==========================================================================================================
@@ -211,7 +211,7 @@ const ToastDocs = () => {
                             {/* CHECKBOX /////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
                                 <Portion>
-                                    <Text weight="700">Checkbox</Text>
+                                    <Text weight="700" size="large">Checkbox</Text>
                                 </Portion>
 
                                 {/* BORDER RADIUS ================================================================== */}
@@ -311,7 +311,7 @@ const ToastDocs = () => {
                             {/* SWITCH ///////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
                                 <Portion>
-                                    <Text weight="700">Switch</Text>
+                                    <Text weight="700" size="large">Switch</Text>
                                 </Portion>
 
                                 {/* BG DEFAULT ===================================================================== */}
@@ -452,4 +452,4 @@ const ToastDocs = () => {
     );
 };
 
-export default ToastDocs;
+export default CheckboxDocs;

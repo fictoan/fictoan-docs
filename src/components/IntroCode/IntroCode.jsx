@@ -29,6 +29,8 @@ import "./intro-code.css";
 // DATA ================================================================================================================
 
 export const IntroCode = () => {
+    const flipACoin = () => Math.random() >= 0.5;
+
     const [rowProps, setRowProps] = useState({
         horizontalPadding : "medium",
         marginTop         : "tiny",
@@ -176,7 +178,7 @@ export const IntroCode = () => {
                 <Row {...rowProps}>
                     <Portion {...portion1Props} className={`demo-portion ${vizMode ? "border-red" : ""}`}>
                         <Heading1 {...mainHeadingProps}>
-                            Ship UI in half the time.
+                            Ship UI {flipACoin() ? "in half the time" : "twice as fast"}
                         </Heading1>
 
                         <Link href="/getting-started">

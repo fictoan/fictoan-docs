@@ -1,8 +1,5 @@
 export const checkboxProps = {
-    component  : "Table",
-    properties : [
-        "tabs",
-    ],
+    component  : "Checkbox",
     variables  : {
         "checkbox-square-border-radius" : {
             type         : "value-unit",

@@ -1,5 +1,5 @@
 export const toastProps = {
-    component  : "Table",
+    component  : "Toast",
     properties : [
         "tabs",
     ],

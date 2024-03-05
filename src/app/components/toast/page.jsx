@@ -212,8 +212,8 @@ const ToastDocs = () => {
                                         label="Border radius"
                                         value={componentVariables["toast-border-radius"].value}
                                         onChange={(e) => handleVariableChange("toast-border-radius", e.target.value)}
-                                        min={0} max={50} step={1}
                                         suffix={componentVariables["toast-border-radius"].unit}
+                                        min={0} max={50} step={1}
                                     />
                                 </Portion>
                             </Row>

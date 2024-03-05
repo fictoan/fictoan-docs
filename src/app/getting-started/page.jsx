@@ -48,7 +48,7 @@ const GettingStarted = () => {
 
     const tabOneContent = () => (
         <CodeBlock language="bash">
-            pnpm install fictoan-react
+            pnpm add fictoan-react
         </CodeBlock>
     );
 
