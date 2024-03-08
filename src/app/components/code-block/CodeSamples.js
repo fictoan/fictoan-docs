@@ -78,8 +78,7 @@ fun main() {
     val phrase = "The $randomAdjective $randomNoun"
 
     println(phrase)
-}
-`;
+}`;
 
 //  Code sample 08 ////////////////////////////////////////////////////////////
 export const samplePythonCode = `num1 = float(input("Enter the first number: "))
@@ -153,8 +152,7 @@ int main(int argc, const char * argv[]) {
         [person displayInfo];
     }
     return 0;
-}
-`;
+}`;
 
 // Code sample 11 ////////////////////////////////////////////////////////////
 export const sampleMarkdownCode = `# Sample Markdown Document

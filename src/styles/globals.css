@@ -56,6 +56,6 @@ img { width : auto; }
     animation : blink 1s step-end infinite;
 }
 
-*:focus {
-    outline : 2px solid var(--blue);
-}
+/**:focus {*/
+/*    outline : 2px solid var(--blue);*/
+/*}*/

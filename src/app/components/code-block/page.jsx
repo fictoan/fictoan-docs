@@ -20,7 +20,7 @@ import {
     InputField,
     Range,
     Checkbox,
-    RadioTabGroup
+    RadioTabGroup,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -93,7 +93,7 @@ const CodeBlockDocs = () => {
             case "objective-c":
                 setSelectedSampleCode(sampleObjectiveCCode);
                 break;
-                case "markdown":
+            case "markdown":
                 setSelectedSampleCode(sampleMarkdownCode);
                 break;
             default:
@@ -113,13 +113,29 @@ const CodeBlockDocs = () => {
                 <Portion>
                     <Heading1>Code block</Heading1>
                     <Text size="large" marginBottom="small">
-                        The component is
+                        The component is used to display code snippets, either inline or in a block.
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; </Text>
+                    <Text>
+                        &bull; For embedded code block usage, wrap your code in <code>{"{[]}"}</code> for it to work
+                    </Text>
+                    <Text>
+                        &bull; For some languages such as JSX, you might need to wrap the lines
+                        with <code>``</code> backticks as well
+                    </Text>
+
+                    <ul>
+                        <li>
+                            For embedded code block usage, wrap your code in <code>{"{[]}"}</code> for it to work
+                        </li>
+                        <li>
+                            For some languages such as JSX, you might need to wrap the lines
+                            with <code>``</code> backticks as well
+                        </li>
+                    </ul>
                 </Portion>
             </Row>
 
@@ -132,7 +148,7 @@ const CodeBlockDocs = () => {
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
                     <Div padding="micro" shape="rounded" bgColour="slate-light-80"
-                        data-centered-children
+                         data-centered-children
                     >
                         <CodeBlock
                             source={selectedSampleCode}
@@ -155,33 +171,36 @@ const CodeBlockDocs = () => {
 
                             <Row marginBottom="none">
                                 <Portion>
-                                    {selectedApproach === "inline" ? (
-                                        <CodeBlock language="jsx" showCopyButton marginBottom="micro">
-                                            {[
-                                                `// Paste this in your content file`,
-                                                selectedApproach === "import" ? `import { sampleCode } from "./codeSamples.js"; \n` : null,
-                                                `<CodeBlock`,
-                                                `    language="${selectedLanguage}"`,
-                                                enableCopyButton ? `    showCopyButton` : null,
-                                                enableLineNumbers ? `    showLineNumbers` : null,
-                                                `>`,
-                                                `    ${selectedSampleCode}`,
-                                                `</CodeBlock>`,
-                                            ].filter(Boolean).join("\n")}
-                                        </CodeBlock>)
+                                    {selectedApproach === "embed" ? (
+                                            <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                                {[
+                                                    `// Paste this in your content file`,
+                                                    selectedApproach === "import" ? `import { sampleCode } from "./codeSamples.js"; \n` : null,
+                                                    `<CodeBlock`,
+                                                    `    language="${selectedLanguage}"`,
+                                                    enableCopyButton ? `    showCopyButton` : null,
+                                                    enableLineNumbers ? `    showLineNumbers` : null,
+                                                    `>`,
+                                                    `{[`,
+                                                    ...selectedSampleCode.split("\n").map(line => `    \`${line.replace(/`/g, "\\`")}\``),
+                                                    `]}`,
+                                                    `</CodeBlock>`,
+                                                ].filter(Boolean).join("\n")}
+                                            </CodeBlock>
+                                        )
                                         : (
-                                        <CodeBlock language="jsx" showCopyButton marginBottom="micro">
-                                            {[
-                                                `// Paste this in your content file`,
-                                                selectedApproach === "import" ? `import { sampleCode } from "./codeSamples.js"; \n` : null,
-                                                `<CodeBlock`,
-                                                `    source={sampleCode}`,
-                                                `    language="${selectedLanguage}"`,
-                                                enableCopyButton ? `    showCopyButton` : null,
-                                                enableLineNumbers ? `    showLineNumbers` : null,
-                                                `>`,
-                                            ].filter(Boolean).join("\n")}
-                                        </CodeBlock>
+                                            <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                                {[
+                                                    `// Paste this in your content file`,
+                                                    selectedApproach === "import" ? `import { sampleCode } from "./codeSamples.js"; \n` : null,
+                                                    `<CodeBlock`,
+                                                    `    source={sampleCode}`,
+                                                    `    language="${selectedLanguage}"`,
+                                                    enableCopyButton ? `    showCopyButton` : null,
+                                                    enableLineNumbers ? `    showLineNumbers` : null,
+                                                    `>`,
+                                                ].filter(Boolean).join("\n")}
+                                            </CodeBlock>
                                         )
                                     }
                                 </Portion>
@@ -189,8 +208,8 @@ const CodeBlockDocs = () => {
                                 {/* COPY BUTTON ==================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
-                                        id="languages"
-                                        label="Languages"
+                                        id="language"
+                                        label="Language"
                                         name="list-of-languages"
                                         options={[
                                             { label : "Bash", value : "bash" },
@@ -211,25 +230,24 @@ const CodeBlockDocs = () => {
                                         }}
                                         isFullWidth
                                     />
-                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
+                                </Portion>
+
+                                <Portion>
+                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                                 </Portion>
 
                                 {/* SHAPE ========================================================================== */}
                                 <Portion>
                                     <RadioTabGroup
-                                        id="shape" label="Shape" name="shape"
+                                        id="usage" label="Usage" name="usage"
                                         options={[
                                             { id : "approach-opt-0", value : "import", label : "import" },
-                                            { id : "approach-opt-1", value : "inline", label : "inline" },
+                                            { id : "approach-opt-1", value : "embed", label : "embed" },
                                         ]}
                                         defaultValue={selectedApproach}
                                         onChange={() => setSelectedApproach(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
-                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
-                                </Portion>
-
-                                <Portion>
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
                                 </Portion>
 

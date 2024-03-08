@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import {
     Element,
     Heading1,
+    Heading4,
     Divider,
     Portion,
     Row,
@@ -59,7 +60,9 @@ const AccordionDocs = () => {
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; </Text>
+                    <ul>
+                        <li>The <code>summary</code> accepts any React node as a child</li>
+                    </ul>
                 </Portion>
             </Row>
 
@@ -101,16 +104,14 @@ const AccordionDocs = () => {
                                     <CodeBlock language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
-                                            `const [showSampleToast, setShowSampleToast] = useState(false); \n`,
-                                            `<ToastsWrapper`,
+                                            `<Accordion`,
+                                            `    isFullWidth`,
+                                            `    summary={(`,
+                                            `        <Text>Click me</Text>`,
+                                            `    )}`,
                                             `>`,
-                                            `    <ToastItem`,
-                                            `        showWhen={showSampleToast}`,
-                                            `        closeWhen={() => setShowSampleToast(false)}`,
-                                            `    >`,
-                                            `        <Text>Hello there, folks!</Text>`,
-                                            `    </ToastItem>`,
-                                            `</ToastsWrapper>`,
+                                            `    <Text>Accordion content</Text>`,
+                                            `</Accordion>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
                                 </Portion>
