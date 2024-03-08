@@ -16,7 +16,7 @@ import {
     Card,
     Form,
     Header,
-    RadioTabGroup,
+    Checkbox,
     Select,
     ToastItem,
     ToastsWrapper,
@@ -28,7 +28,7 @@ import { CodeBlock } from "fictoan-react/components";
 // COMPONENTS ==========================================================================================================
 
 // STYLES ==============================================================================================================
-import "./page-toast.css";
+import "./page-accordion.css";
 
 // HOOKS ===============================================================================================================
 import { useThemeVariables } from "../../../utils/useThemeVariables";
@@ -37,15 +37,16 @@ import { useThemeVariables } from "../../../utils/useThemeVariables";
 import { colourOptions } from "../../../utils/colours";
 
 // DATA ================================================================================================================
-import { toastProps } from "./config";
+import { accordionProps } from "./config";
 
 const AccordionDocs = () => {
     // SAMPLE ==========================================================================================================
+    const [makeFullWidth, setMakeFullWidth] = useState(false);
 
     // CUSTOMISE =======================================================================================================
 
     // THEME ===========================================================================================================
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(toastProps.variables);
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(accordionProps.variables);
 
 
     return (
@@ -62,6 +63,7 @@ const AccordionDocs = () => {
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
                     <ul>
                         <li>The <code>summary</code> accepts any React node as a child</li>
+                        <li>The component is typically used with the <code>isFullWidth</code> prop</li>
                     </ul>
                 </Portion>
             </Row>
@@ -79,7 +81,7 @@ const AccordionDocs = () => {
                         data-centered-children
                     >
                         <Accordion
-                            isFullWidth
+                            isFullWidth={makeFullWidth}
                             summary={(
                                 <Text>Click me</Text>
                             )}
@@ -105,7 +107,7 @@ const AccordionDocs = () => {
                                         {[
                                             `// Paste this in your content file`,
                                             `<Accordion`,
-                                            `    isFullWidth`,
+                                            makeFullWidth ? `    isFullWidth` : null,
                                             `    summary={(`,
                                             `        <Text>Click me</Text>`,
                                             `    )}`,
@@ -114,6 +116,18 @@ const AccordionDocs = () => {
                                             `</Accordion>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
+                                </Portion>
+
+                                {/* COPY BUTTON ==================================================================== */}
+                                <Portion>
+                                    <Checkbox
+                                        id="checkbox-full-width"
+                                        value="checkbox-full-width"
+                                        name="checkbox-full-width"
+                                        label="Make full width"
+                                        checked={makeFullWidth}
+                                        onChange={() => setMakeFullWidth(event.target.checked)}
+                                    />
                                 </Portion>
                             </Row>
                         </Card>
@@ -143,46 +157,17 @@ const AccordionDocs = () => {
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
-                                        id="toast-bg"
-                                        label="Background"
+                                        id="accordion-chevron"
+                                        label="Chevron"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={componentVariables["toast-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("toast-bg", e.target.value)}
+                                        defaultValue={componentVariables["accordion-chevron"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("accordion-chevron", e.target.value)}
                                         isFullWidth
-                                    />
-                                </Portion>
-
-                                {/* TEXT COLOUR ==================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Select
-                                        id="toast-text"
-                                        label="Text colour"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        }, ...colourOptions]}
-                                        defaultValue={componentVariables["toast-text"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("toast-text", e.target.value)}
-                                        isFullWidth
-                                    />
-                                </Portion>
-
-                                {/* BORDER RADIUS ================================================================== */}
-                                <Portion>
-                                    <Range
-                                        id="toast-border-radius"
-                                        label="Border radius"
-                                        value={componentVariables["toast-border-radius"].value}
-                                        onChange={(e) => handleVariableChange("toast-border-radius", e.target.value)}
-                                        suffix={componentVariables["toast-border-radius"].unit}
-                                        min={0} max={50} step={1}
                                     />
                                 </Portion>
                             </Row>

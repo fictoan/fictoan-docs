@@ -1,20 +1,9 @@
-export const toastProps = {
-    component  : "Table",
-    properties : [
-        "tabs",
-    ],
+export const accordionProps = {
+    component  : "Accordion",
     variables  : {
-        "toast-bg"            : {
+        "accordion-chevron"            : {
             type         : "reference",
-            defaultValue : "slate-light-10",
-        },
-        "toast-text"          : {
-            type         : "reference",
-            defaultValue : "black",
-        },
-        "toast-border-radius" : {
-            type         : "reference",
-            defaultValue : "global-border-radius",
+            defaultValue : "slate",
         },
     },
 };
