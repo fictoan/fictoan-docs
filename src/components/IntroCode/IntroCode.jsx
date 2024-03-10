@@ -215,7 +215,9 @@ export const IntroCode = () => {
             <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
                 <Portion>
                     <Div verticallyCentreItems pushItemsToEnds>
-                        <Text marginBottom="nano">Try editing some of the props and values here—</Text>
+                        <Text size="large" textColour="amber" weight="700" marginBottom="nano">
+                            TRY EDITING SOME PROPS AND VALUES HERE—
+                        </Text>
 
                         <Switch
                             id="viz-switch"
@@ -236,18 +238,18 @@ export const IntroCode = () => {
                             theme="custom"
                         >
                             {[
-                                `<Row horizontalPadding="medium" marginTop="tiny" marginBottom="small">`,
-                                `    <Portion desktopSpan="half">`,
+                                `<Row horizontalPadding="medium" marginTop="tiny" marginBottom="small"> // Try "none", "small", "medium", "large" or "huge"`,
+                                `    <Portion desktopSpan="half"> // Try values like "one-third", or whole numbers between 1 and 24`,
                                 `        <Heading1 textColour="blue-light-20" marginBottom="micro" weight="700">`,
                                 `            Ship UI in half the time.`,
                                 `        </Heading1> \n`,
                                 `        <Link href="/getting-started">`,
-                                `            <Button kind="primary">`,
+                                `            <Button kind="primary"> // "secondary", or "custom" with bgColour="amber" textColour="black"`,
                                 `                Get started &rarr;`,
                                 `            </Button>`,
                                 `        </Link>`,
                                 `    </Portion> \n`,
-                                `    <Portion desktopSpan="half">`,
+                                `    <Portion desktopSpan="half"> // Try adding mobileSpan="half"`,
                                 `        <Heading5 weight="400" marginBottom="micro">`,
                                 `            Create ready-to-integrate UI in minutes with designer-friendly, plain-English syntax.`,
                                 `        </Heading5>\n`,

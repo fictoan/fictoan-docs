@@ -23,11 +23,11 @@ export const SiteHeader = ({ toggleSidebarOnMobile }) => {
                 <Heading5>&ndash;</Heading5>
             </Div>
 
-            <Text weight="700" textColour="white">A designer-focused React/CSS UI library</Text>
+            {/* <Text weight="700" textColour="white">A designer-focused React/CSS UI library</Text> */}
 
             <Badge
                 id="wip-badge"
-                bgColour="red-light-70" textColour="red-dark-40" shape="rounded"
+                bgColour="red" textColour="white" shape="rounded"
             >
                 These Docs are WIP
             </Badge>
