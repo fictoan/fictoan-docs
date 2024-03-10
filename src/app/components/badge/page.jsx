@@ -86,8 +86,10 @@ const BadgeDocs = () => {
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; The badge is a simple, styled <code>mark</code> element</Text>
-                    <Text>&bull; You have to manually align it with its sibling</Text>
+                    <ul>
+                        <li>The badge is a simple, styled <code>mark</code> element</li>
+                        <li>You have to manually align it with its sibling</li>
+                    </ul>
                 </Portion>
             </Row>
 

@@ -80,8 +80,10 @@ const BreadcrumbsDocs = () => {
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; The badge is a simple, styled <code>mark</code> element</Text>
-                    <Text>&bull; You have to manually align it with its sibling</Text>
+                    <ul>
+                        <li>The BreadcrumbItem accepts React nodes</li>
+                        <li>Use <code>current</code> prop to indicate active page</li>
+                    </ul>
                 </Portion>
             </Row>
 

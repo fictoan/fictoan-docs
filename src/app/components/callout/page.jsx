@@ -68,8 +68,9 @@ const CalloutDocs = () => {
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; The badge is a simple, styled <code>mark</code> element</Text>
-                    <Text>&bull; You have to manually align it with its sibling</Text>
+                    <ul>
+                        <li>Accepts any React node as a child</li>
+                    </ul>
                 </Portion>
             </Row>
 
@@ -135,7 +136,7 @@ const CalloutDocs = () => {
                                             `</Callout> \n`,
 
                                             `<Callout kind="warning">`,
-                                                `<Text weight="700">This is a warning callout</Text>`,
+                                            `    <Text weight="700">This is a warning callout</Text>`,
                                             `</Callout> \n`,
 
                                             `<Callout kind="error">`,

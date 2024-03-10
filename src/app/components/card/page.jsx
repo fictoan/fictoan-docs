@@ -78,9 +78,12 @@ const CardDocs = () => {
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; The card always takes up 100% width of its parent</Text>
-                    <Text>&bull; It grows to take the height of its content</Text>
-                    <Text>&bull; Border-radius values work only when <code>shape="rounded"</code> is present</Text>
+                    <ul>
+                        <li>Accepts any React node as a child</li>
+                        <li>The card always takes up 100% width of its parent</li>
+                        <li>It grows to take the height of its content</li>
+                        <li>Border-radius values work only when <code>shape="rounded"</code> is present</li>
+                    </ul>
                 </Portion>
             </Row>
 

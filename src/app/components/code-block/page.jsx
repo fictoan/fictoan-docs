@@ -119,21 +119,19 @@ const CodeBlockDocs = () => {
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>
-                        &bull; For embedded code block usage, wrap your code in <code>{"{[]}"}</code> for it to work
-                    </Text>
-                    <Text>
-                        &bull; For some languages such as JSX, you might need to wrap the lines
-                        with <code>``</code> backticks as well
-                    </Text>
-
                     <ul>
                         <li>
                             For embedded code block usage, wrap your code in <code>{"{[]}"}</code> for it to work
                         </li>
                         <li>
-                            For some languages such as JSX, you might need to wrap the lines
-                            with <code>``</code> backticks as well
+                            For some languages such as JSX, you might need to wrap the lines with <code>``</code> backticks
+                            as well
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>
+                            For inline code block usage, wrap with tags <code>{"<code> </code>"}</code> for it to work
                         </li>
                     </ul>
                 </Portion>

@@ -68,7 +68,11 @@ const CheckboxDocs = () => {
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; </Text>
+                    <ul>
+                        <li>
+                            The Checkbox and the Switch are the exact same underneath, the only difference is how they look
+                        </li>
+                    </ul>
                 </Portion>
             </Row>
 

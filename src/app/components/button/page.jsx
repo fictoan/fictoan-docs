@@ -79,14 +79,21 @@ const TableDocs = () => {
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading1>Button</Heading1>
-                    <Text size="large" marginBottom="small">
-                        The component is
-                    </Text>
                 </Portion>
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; </Text>
+                    <ul>
+                        <li>
+                            The <code>kind</code> prop accepts <code>primary / secondary / tertiary</code> and
+                            also <code>custom</code>
+                        </li>
+                        <li>
+                            For the first three &ldquo;named&rdquo; types, the background, text and border colours are
+                            defined in the theme, to ensure consistency. The <code>custom</code> value lets you add them
+                            manually.
+                        </li>
+                    </ul>
                 </Portion>
             </Row>
 
