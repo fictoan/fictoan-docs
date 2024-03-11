@@ -1,14 +1,12 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
     Element,
     Heading1,
-    Heading2,
-    Heading3,
     Heading4,
     Heading5,
     Heading6,
@@ -40,6 +38,10 @@ import { colourOptions } from "../../../utils/colours";
 import { hRuleProps } from "./config";
 
 const DividerDocs = () => {
+    useEffect(() => {
+        document.title = "Divider — Fictoan";
+    }, []);
+
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(hRuleProps.variables);
 
     const [selectedKind, setSelectedKind] = useState("");
@@ -48,17 +50,17 @@ const DividerDocs = () => {
         <Article id="page-h-rule">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading1>H-Rule</Heading1>
+                    <Heading1>Divider</Heading1>
                     <Text size="large" marginBottom="small">
-                        The line
+                        A line to separate content on the page
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; The card always takes up 100% width of its parent</Text>
-                    <Text>&bull; It grows to take the height of its content</Text>
-                    <Text>&bull; Border-radius values work only when <code>shape="rounded"</code> is present</Text>
+                    <ul>
+                        <li>Having no <code>kind</code> prop means you can </li>
+                    </ul>
                 </Portion>
             </Row>
 

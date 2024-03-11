@@ -62,15 +62,14 @@ const InputFieldDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading1>Input field</Heading1>
-                    <Text size="large" marginBottom="small">
-                        The component is
-                    </Text>
+                    <Heading1 marginBottom="tiny">Input field</Heading1>
                 </Portion>
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; </Text>
+                    <ul>
+                        <li>The input field also forms the styling base for Select, Textarea etc.</li>
+                    </ul>
                 </Portion>
             </Row>
 

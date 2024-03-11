@@ -271,6 +271,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* DIVIDER ===================================================== */}
+            <Link href="/components/divider">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <DividerIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Divider" />
+                </SidebarItem>
+            </Link>
+
             {/* DRAWER ===================================================== */}
             <Link href="/components/drawer">
                 <SidebarItem onClick={closeMobileSidebar}>
@@ -288,16 +298,6 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                         <FormWrapperIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Form wrapper" />
-                </SidebarItem>
-            </Link>
-
-            {/* H-RULE ===================================================== */}
-            <Link href="/components/h-rule">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <DividerIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="H-Rule" />
                 </SidebarItem>
             </Link>
 

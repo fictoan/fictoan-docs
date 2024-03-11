@@ -59,13 +59,15 @@ const TableDocs = () => {
                 <Portion>
                     <Heading1>Table</Heading1>
                     <Text size="large" marginBottom="small">
-                        The component is
+                        The table, is, well, a table
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; </Text>
+                    <ul>
+                        <li>The table takes the width of the longest row</li>
+                    </ul>
                 </Portion>
             </Row>
 

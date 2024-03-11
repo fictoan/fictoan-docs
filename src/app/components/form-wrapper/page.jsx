@@ -57,13 +57,15 @@ const FormDocs = () => {
                 <Portion>
                     <Heading1>Form</Heading1>
                     <Text size="large" marginBottom="small">
-                        The component is
+                        A wrapper for all form elements.
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; </Text>
+                    <ul>
+                        <li></li>
+                    </ul>
                 </Portion>
             </Row>
 
@@ -138,7 +140,7 @@ const FormDocs = () => {
                                 {/* POSITION ======================================================================= */}
                                 <Portion>
                                     <RadioTabGroup
-                                        id="spacing" label="Size" name="spacing"
+                                        id="spacing" label="Spacing" name="spacing"
                                         options={[
                                             { id : "spacing-opt-0", value : "none", label : "none" },
                                             { id : "spacing-opt-1", value : "nano", label : "nano" },
@@ -199,7 +201,7 @@ const FormDocs = () => {
                             <Row marginBottom="none">
                                 <Portion>
                                     <CodeBlock language="css">
-                                        // Nothing for the Form
+                                        /* Nothing for the Form */
                                     </CodeBlock>
                                 </Portion>
                             </Row>

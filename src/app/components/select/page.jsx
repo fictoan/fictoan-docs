@@ -1,13 +1,14 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
     Callout,
     Element,
     Heading1,
+    Heading4,
     Divider,
     Portion,
     Row,
@@ -42,34 +43,34 @@ import { colourOptions } from "../../../utils/colours";
 
 
 const SelectDocs = () => {
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(selectProps.variables);
+    useEffect(() => {
+        document.title = "Select dropdown — Fictoan";
+    }, []);
 
     // SAMPLE ==========================================================================================================
     const [label, setLabel] = useState("Select an option");
     const [options, setOptions] = useState([
-        { label: "Option 1", value: "1" },
+        { label : "Option 1", value : "1" },
     ]);
     const [selectedDefaultValue, setSelectedDefaultValue] = useState("");
     const [isFullWidth, setIsFullWidth] = useState(false);
 
     // Function to handle adding a new option
     const addOption = () => {
-        setOptions([...options, { label: "", value: "" }]);
+        setOptions([...options, { label : "", value : "" }]);
     };
 
     // Function to handle updating an option
     const updateOption = (index, newLabel, newValue) => {
         const newOptions = [...options];
-        newOptions[index] = { label: newLabel, value: newValue };
+        newOptions[index] = { label : newLabel, value : newValue };
         setOptions(newOptions);
     };
-
-
-
 
     // CUSTOMISE =======================================================================================================
 
     // THEME ===========================================================================================================
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(selectProps.variables);
 
     return (
         <Article id="page-select">
@@ -77,13 +78,18 @@ const SelectDocs = () => {
                 <Portion>
                     <Heading1>Select dropdown</Heading1>
                     <Text size="large" marginBottom="small">
-                        The component is
+                        A native select dropdown for picking a choice from a long list
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; </Text>
+                    <ul>
+                        <li>
+                            It takes the width of the longest option, use <code>isFullWidth</code> to make it take the
+                            width of the parent container
+                        </li>
+                    </ul>
                 </Portion>
             </Row>
 

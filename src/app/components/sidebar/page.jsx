@@ -8,6 +8,7 @@ import Link from "next/link";
 import {
     Element,
     Heading1,
+    Heading4,
     Divider,
     Portion,
     Row,

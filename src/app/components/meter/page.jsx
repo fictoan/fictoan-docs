@@ -160,7 +160,7 @@ const MeterDocs = () => {
 
                             <Row marginBottom="none">
                                 <Portion>
-                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                    <CodeBlock language="jsx" showCopyButton>
                                         {[
                                             `// Paste this in your content file`,
                                             `<Meter`,
@@ -172,6 +172,7 @@ const MeterDocs = () => {
                                             value ? `    value="${value}"` : null,
                                             label ? `    label="${label}"` : null,
                                             suffix ? `    unit="${suffix}"` : null,
+                                            showOptimumMarker ? `    showOptimumMarker` : null,
                                             `/>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>

@@ -87,17 +87,19 @@ const NotificationsDocs = () => {
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>
-                        &bull; The <code>NotificationsWrapper</code> is a single parent, with any number
-                        of <code>NotificationsItem</code> children inside it.
-                    </Text>
+                    <ul>
+                        <li>
+                            The <code>NotificationsWrapper</code> is a single parent, with any number
+                            of <code>NotificationsItem</code> children inside it.
+                        </li>
 
-                    <Text>
-                        &bull; Some props such as <code>position</code> and <code>anchor</code> are
-                        applied to the <code>NotificationsWrapper</code>, while others such as
-                        <code>secondsToShowFor</code> can be applied to individual <code>NotificationsItem</code>
-                        elements
-                    </Text>
+                        <li>
+                            Some props such as <code>position</code> and <code>anchor</code> are
+                            applied to the <code>NotificationsWrapper</code>, while others such as
+                            <code>secondsToShowFor</code> can be applied to individual <code>NotificationsItem</code>
+                            elements
+                        </li>
+                    </ul>
                 </Portion>
             </Row>
 

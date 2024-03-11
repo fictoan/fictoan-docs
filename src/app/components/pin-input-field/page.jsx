@@ -1,9 +1,11 @@
 "use client";
 
-// EXTERNAL DEPS ===============================================================
-import React, { useEffect, useState } from "react";
 
-// INTERNAL DEPS ===============================================================
+// EXTERNAL DEPS =======================================================================================================
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+
+// INTERNAL DEPS =======================================================================================================
 import {
     Element,
     Row,
@@ -21,44 +23,27 @@ import {
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
-// COMPONENTS ==================================================================
+// COMPONENTS ==========================================================================================================
 
-// STYLES ======================================================================
+// STYLES ==============================================================================================================
 import "./pin-input-field.css";
 
-// CODE SNIPPETS ===============================================================
+// HOOKS ===============================================================================================================
+
+// UTILS ===============================================================================================================
+
+// DATA ================================================================================================================
 import {
     samplePinInput,
     sampleInputNumberOfFields,
-    sampleInputHelpText,
-    sampleInputRequired,
-    sampleInputTheme, samplePinInputType, samplePinInputMask, samplePinInputOTP,
+    samplePinInputType, samplePinInputMask, samplePinInputOTP,
 } from "./CodeSamples";
-
-// DATA ========================================================================
-import { listOfPinInputFieldProps } from "./propsList";
-import Link from "next/link";
 
 
 const InputFieldDocs = () => {
     useEffect(() => {
-        document.title = "Input field — Fictoan";
+        document.title = "PIN input field — Fictoan";
     }, []);
-
-    const [pattern, setPattern] = useState("[a-zA-Z0-9_.+\\-]+@[a-zA-Z0-9\\-]+\\.[a-zA-Z0-9\\-.]+$");
-
-    const handleInputChange = (event) => {
-        setPattern(event.target.value);
-    };
-
-    const sampleInputValidation = `<InputField
-    label="Email"
-    placeholder="Work email preferred"
-    helpText="Confirmation will be sent here"
-    validateThis
-    pattern="${pattern}"
-    errorText="Um, that isn’t a valid email"
-/>`;
 
     return (
         <Article id="page-input-field">

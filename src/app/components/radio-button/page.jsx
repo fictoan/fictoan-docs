@@ -1,7 +1,7 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
@@ -40,7 +40,9 @@ import { colourOptions } from "../../../utils/colours";
 import { radioButtonProps } from "./config";
 
 const ToastDocs = () => {
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(radioButtonProps.variables);
+    useEffect(() => {
+        document.title = "Radio button — Fictoan";
+    }, []);
 
     // SAMPLE ==========================================================================================================
 
@@ -48,6 +50,9 @@ const ToastDocs = () => {
     const [defaultChecked, setDefaultChecked] = useState("yes");
     const [userSelectedRadio, setUserSelectedRadio] = useState("");
     const [isDisabled, setIsDisabled] = useState({ yes: false, no: false, maybe: false });
+
+    // THEME ===========================================================================================================
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(radioButtonProps.variables);
 
     const handleDefaultCheckedChange = (event) => {
         setDefaultChecked(event.target.value);

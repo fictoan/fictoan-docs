@@ -1,7 +1,7 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
@@ -43,14 +43,22 @@ import { colourOptions } from "../../../utils/colours";
 import { progressProps } from "./config";
 
 const ProgressBarDocs = () => {
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(progressProps.variables);
+    useEffect(() => {
+        document.title = "Progress bar — Fictoan";
+    }, []);
 
+    // SAMPLE ==========================================================================================================
     const [max, setMax] = useState("");
     const [value, setValue] = useState("");
     const [label, setLabel] = useState("");
     const [suffix, setSuffix] = useState("");
 
     const [selectedShape, setSelectedShape] = useState("");
+
+    // CUSTOMISE =======================================================================================================
+
+    // THEME ===========================================================================================================
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(progressProps.variables);
 
     return (
         <Article id="page-progress">
@@ -64,7 +72,9 @@ const ProgressBarDocs = () => {
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; Always takes up 100% width of its parent</Text>
+                    <ul>
+                        <li>Always takes up 100% width of its parent</li>
+                    </ul>
                 </Portion>
             </Row>
 

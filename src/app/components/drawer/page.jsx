@@ -62,13 +62,15 @@ const DrawerDocs = () => {
                 <Portion>
                     <Heading1>Drawer</Heading1>
                     <Text size="large" marginBottom="small">
-                        The component is
+                        The component is a panel that opens from any designated side of the screen.
                     </Text>
                 </Portion>
 
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <Text>&bull; </Text>
+                    <ul>
+                        <li>Accept any React node as children</li>
+                    </ul>
                 </Portion>
             </Row>
 
