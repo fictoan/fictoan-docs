@@ -36,7 +36,7 @@ const ThemingDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading1 marginBottom="micro">Theming</Heading1>
+                    <Heading1 marginBottom="micro">Theme</Heading1>
                     <Text size="large">
                         A comprehensive list of variables to change the look and feel of your app from a single
                         place.

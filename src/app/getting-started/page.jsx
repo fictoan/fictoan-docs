@@ -219,7 +219,7 @@ const GettingStarted = () => {
                         </Text>
 
                         <Text>
-                            THe components also follow a similar structure.
+                            The components also follow a similar structure.
                         </Text>
                     </Portion>
                 </Row>
@@ -301,7 +301,7 @@ const GettingStarted = () => {
                         <Text>
                             The global default values for the background colour, border colour and width, and the
                             border-radius value are set via the theme file. You can change them by creating your own
-                            theme file and over-riding the values. <Link href="/theming">Read more about theming
+                            theme file and over-riding the values. <Link href="/theme">Read more about theming
                             here</Link>.
                         </Text>
                     </Portion>
