@@ -100,13 +100,13 @@
     --sidebar-footer-border-top               : var(--grey-dark-60);
 
     /* TABLE //////////////////////////////////////////////////////////////// */
-    --table-bg                                : var(--slate-dark-80);
+    --table-bg                                : var(--slate-dark);
     --table-border                            : var(--slate-dark-60);
     --table-font-family                       : var(--paragraph-font);
     --table-text                              : var(--paragraph-text-colour);
 
-    --table-striped-header-bg                 : var(--slate-dark-40);
-    --table-striped-cell-bg                   : var(--slate-light-20);
+    --table-striped-header-bg                 : var(--slate-dark-70);
+    --table-striped-cell-bg                   : var(--slate-dark-50);
 
     --table-bg-hover                          : var(--amber-light-20);
     --table-text-hover                        : var(--paragraph-text-colour);
@@ -127,10 +127,8 @@
     --heading-size-multiplier                 : 1.2;
     --heading-line-height                     : 1.2;
 
-    --code-inline-bg                          : var(--slate-dark-60);
-    --code-inline-text                        : var(--slate-light-40);
-
     --code-block-font-size                    : 0.8rem;
+    --code-block-bg                           : var(--slate-dark-70);
 
     /* SWITCH /////////////////////////////////////////////////////////////// */
     --switch-bg-default                       : var(--slate-dark-40);
@@ -149,6 +147,7 @@
     /* CUSTOM COMPONENTS */
     /* ////////////////////////////////////////////////////////////////////// */
     --component-card-bg                       : rgba(0, 0, 0, 0.4);
+    --component-card-footer-border            : var(--slate-dark-60);
 
     --site-header-bg                          : var(--grey-light-90);
     --site-header-border                      : var(--grey-dark-60);

@@ -164,7 +164,7 @@ export const IntroCode = () => {
 
     return (
         <Section id="intro-code">
-            <Div id="intro-section">
+            <Div id="intro-section" marginTop="micro">
                 {vizMode && (
                     <Row id="viz-row" horizontalPadding={rowProps.horizontalPadding} retainLayoutAlways>
                         {Array.from({ length : numberOfPortions }, (_, index) => (

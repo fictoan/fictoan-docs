@@ -25,6 +25,7 @@ import {
     Switch,
     Table,
     Text, Heading1, Heading4,
+    NotificationsWrapper
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -42,6 +43,20 @@ export const ComponentGrid = () => {
 
     return (
         <Div id="component-grid">
+            <NotificationsWrapper position="right" anchor="top">
+                <NotificationItem
+                    kind="info"
+                    showWhen={showNotification1}
+                    closeWhen={() => setShowNotification1(false)}
+                    secondsToShowFor={5}
+                    isDismissible
+                >
+                    <Text>
+                        I am here to notify you that...um, wait, I forgot.
+                    </Text>
+                </NotificationItem>
+            </NotificationsWrapper>;
+
             <Row horizontalPadding="medium">
                 <Portion>
                     <Heading4 weight="400" marginBottom="nano">
@@ -98,12 +113,14 @@ export const ComponentGrid = () => {
                         <Div id="notification-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
-                                    <NotificationItem
-                                        show kind="info"
-                                        onCloseCallback={() => setShowNotification1(false)}
+                                <Button
+                                        kind="custom" bgColour="blue-20" textColour="blue"
+                                        shape="rounded" shadow="mild"
+                                        marginBottom="nano" marginRight="nano"
+                                        onClick={() => setShowNotification1(true)}
                                     >
-                                        I am here to notify you that...um, wait, I forgot.
-                                    </NotificationItem>
+                                        Wanna know something?
+                                    </Button>
 
                                     <Element as="footer" className="footer-bottom">
                                         <Link href="/components/notifications">
@@ -335,6 +352,8 @@ export const ComponentGrid = () => {
                                     <CodeBlock
                                         source={cardComponentSample} language="jsx"
                                         marginTop="micro" marginBottom="micro"
+                                        showCopyButton
+                                        showLineNumbers
                                     />
 
                                     <Element as="footer" className="footer-bottom">
