@@ -51,11 +51,11 @@
     --input-border-radius-default             : var(--global-border-radius);
     --input-label-default                     : var(--paragraph-text-colour);
     --input-placeholder-default               : var(--red-light-60);
-    --input-text-default                      : var(--slate-light-60);
+    --input-text-default                      : var(--slate-dark-60);
 
     --input-bg-focus                          : var(--grey-light-70);
     --input-border-focus                      : var(--grey-light-20);
-    --input-text-focus                        : var(--grey-light-80);
+    --input-text-focus                        : var(--slate-dark-60);
 
     --input-bg-valid                          : var(--white);
     --input-border-valid                      : var(--green-dark-30);
@@ -107,13 +107,13 @@
     --sidebar-footer-border-top               : var(--grey-light-70);
 
     /* TABLE //////////////////////////////////////////////////////////////// */
-    --table-bg                                : var(--slate-dark-80);
+    --table-bg                                : var(--slate-light);
     --table-border                            : var(--slate-dark-60);
     --table-font-family                       : var(--paragraph-font);
     --table-text                              : var(--paragraph-text-colour);
 
-    --table-striped-header-bg                 : var(--slate-dark-40);
-    --table-striped-cell-bg                   : var(--slate-light-20);
+    --table-striped-header-bg                 : var(--blue-light-10);
+    --table-striped-cell-bg                   : var(--slate-light-50);
 
     --table-bg-hover                          : var(--amber-light-20);
     --table-text-hover                        : var(--paragraph-text-colour);
@@ -134,11 +134,8 @@
     --heading-size-multiplier                 : 1.2;
     --heading-line-height                     : 1.2;
 
-    --code-inline-bg                          : var(--slate-light-70);
-    --code-inline-text                        : var(--slate-dark-50);
-
     --code-block-font-size                    : 0.8rem;
-    --code-block-bg                           : var(--slate-light-90);
+    --code-block-bg                           : var(--slate-dark-70);
 
     /* SWITCH /////////////////////////////////////////////////////////////// */
     --switch-bg-default                       : var(--slate-dark-40);
@@ -154,6 +151,7 @@
     /* CUSTOM COMPONENTS */
     /* ////////////////////////////////////////////////////////////////////// */
     --component-card-bg                       : rgba(236, 236, 236, 0.4);
+    --component-card-footer-border            : var(--slate-light-60);
 
     --site-header-bg                          : var(--grey-light-90);
     --site-header-border                      : var(--grey-light-60);
