@@ -6,16 +6,17 @@ import Link from "next/link";
 
 // INTERNAL DEPS =======================================================================================================
 import {
-    Button,
-    Div,
-    Heading1,
-    Heading5,
-    Portion,
-    Row,
-    Section, Switch,
-    Text,
+  Button,
+  Div,
+  Heading1,
+  Heading5,
+  Portion,
+  Row,
+  Section,
+  Switch,
+  Text,
+  CodeBlock,
 } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==========================================================================================================
 
@@ -29,240 +30,250 @@ import "./intro-code.css";
 // DATA ================================================================================================================
 
 export const IntroCode = () => {
-    const flipACoin = () => Math.random() >= 0.5;
+  const flipACoin = () => Math.random() >= 0.5;
 
-    const [rowProps, setRowProps] = useState({
-        horizontalPadding : "medium",
-        marginTop         : "tiny",
-        marginBottom      : "tiny",
-    });
+  const [rowProps, setRowProps] = useState({
+    horizontalPadding: "medium",
+    marginTop: "tiny",
+    marginBottom: "tiny",
+  });
 
-    const [portion1Props, setPortion1Props] = useState({
-        desktopSpan : "half",
-    });
+  const [portion1Props, setPortion1Props] = useState({
+    desktopSpan: "half",
+  });
 
-    const [portion2Props, setPortion2Props] = useState({
-        desktopSpan : "half",
-    });
+  const [portion2Props, setPortion2Props] = useState({
+    desktopSpan: "half",
+  });
 
-    const [mainHeadingProps, setMainHeadingProps] = useState({
-        as           : "h1",
-        textColour   : "blue",
-        marginBottom : "micro",
-        weight       : "700",
-    });
+  const [mainHeadingProps, setMainHeadingProps] = useState({
+    as: "h1",
+    textColour: "blue",
+    marginBottom: "micro",
+    weight: "700",
+  });
 
-    const [subHeading1Props, setSubHeading1Props] = useState({
-        as           : "h5",
-        weight       : "400",
-        marginBottom : "micro",
-    });
+  const [subHeading1Props, setSubHeading1Props] = useState({
+    as: "h5",
+    weight: "400",
+    marginBottom: "micro",
+  });
 
-    const [subHeading2Props, setSubHeading2Props] = useState({
-        as           : "h5",
-        weight       : "400",
-        marginBottom : "micro",
-    });
+  const [subHeading2Props, setSubHeading2Props] = useState({
+    as: "h5",
+    weight: "400",
+    marginBottom: "micro",
+  });
 
-    const [buttonProps, setButtonProps] = useState({
-        kind : "primary",
-    });
+  const [buttonProps, setButtonProps] = useState({
+    kind: "primary",
+  });
 
-    const codeBlockRef = useRef(null);
+  const codeBlockRef = useRef(null);
 
-    const parseCodeToProperties = (codeContent) => {
-        const propRegex = /<(Heading1|Heading5|Row|Portion|Button)\s+(.*?)>/gs;
-        const propertiesRegex = /(\w+)="([^"]+)"/g;
-        const newProps = {
-            Row      : {},
-            Portion  : [],
-            Heading1 : {},
-            Heading5 : [],
-            Button   : {},
-        };
-
-        let tagMatch;
-        while ((
-            tagMatch = propRegex.exec(codeContent)
-        ) !== null) {
-            const tagName = tagMatch[1];
-            const tagProperties = tagMatch[2];
-            let tagProps = {};
-
-            let propsMatch;
-            while ((
-                propsMatch = propertiesRegex.exec(tagProperties)
-            ) !== null) {
-                const propName = propsMatch[1];
-                const propValue = propsMatch[2];
-                tagProps[propName] = propValue;
-            }
-
-            if (tagName === "Portion" || tagName === "Heading5") {
-                newProps[tagName].push(tagProps);
-            } else {
-                newProps[tagName] = tagProps;
-            }
-        }
-
-        return newProps;
+  const parseCodeToProperties = (codeContent) => {
+    const propRegex = /<(Heading1|Heading5|Row|Portion|Button)\s+(.*?)>/gs;
+    const propertiesRegex = /(\w+)="([^"]+)"/g;
+    const newProps = {
+      Row: {},
+      Portion: [],
+      Heading1: {},
+      Heading5: [],
+      Button: {},
     };
 
+    let tagMatch;
+    while ((tagMatch = propRegex.exec(codeContent)) !== null) {
+      const tagName = tagMatch[1];
+      const tagProperties = tagMatch[2];
+      let tagProps = {};
 
-    useEffect(() => {
-        const codeBlockElement = codeBlockRef.current;
+      let propsMatch;
+      while ((propsMatch = propertiesRegex.exec(tagProperties)) !== null) {
+        const propName = propsMatch[1];
+        const propValue = propsMatch[2];
+        tagProps[propName] = propValue;
+      }
 
-        if (codeBlockElement) {
-            const handleInput = () => {
-                const codeContent = codeBlockElement.textContent;
-                const newProps = parseCodeToProperties(codeContent);
+      if (tagName === "Portion" || tagName === "Heading5") {
+        newProps[tagName].push(tagProps);
+      } else {
+        newProps[tagName] = tagProps;
+      }
+    }
 
-                // Row
-                setRowProps(prevProps => (
-                    { ...prevProps, ...newProps.Row }
-                ));
+    return newProps;
+  };
 
-                newProps.Portion.forEach((props, index) => {
-                    if (index === 0) setPortion1Props(props);
-                    else if (index === 1) setPortion2Props(props);
-                });
+  useEffect(() => {
+    const codeBlockElement = codeBlockRef.current;
 
-                // Heading1
-                setMainHeadingProps(prevProps => (
-                    { ...prevProps, ...newProps.Heading1 }
-                ));
+    if (codeBlockElement) {
+      const handleInput = () => {
+        const codeContent = codeBlockElement.textContent;
+        const newProps = parseCodeToProperties(codeContent);
 
-                // Heading5
-                if (newProps.Heading5.length > 0) {
-                    setSubHeading1Props(prevProps => (
-                        { ...prevProps, ...newProps.Heading5[0] }
-                    ));
-                    if (newProps.Heading5.length > 1) {
-                        setSubHeading2Props(prevProps => (
-                            { ...prevProps, ...newProps.Heading5[1] }
-                        ));
-                    }
-                }
+        // Row
+        setRowProps((prevProps) => ({ ...prevProps, ...newProps.Row }));
 
-                // Button
-                setButtonProps(prevProps => (
-                    { ...prevProps, ...newProps.Button }
-                ));
-            };
+        newProps.Portion.forEach((props, index) => {
+          if (index === 0) setPortion1Props(props);
+          else if (index === 1) setPortion2Props(props);
+        });
 
-            codeBlockElement.addEventListener("input", handleInput);
+        // Heading1
+        setMainHeadingProps((prevProps) => ({
+          ...prevProps,
+          ...newProps.Heading1,
+        }));
 
-            return () => {
-                codeBlockElement.removeEventListener("input", handleInput);
-            };
+        // Heading5
+        if (newProps.Heading5.length > 0) {
+          setSubHeading1Props((prevProps) => ({
+            ...prevProps,
+            ...newProps.Heading5[0],
+          }));
+          if (newProps.Heading5.length > 1) {
+            setSubHeading2Props((prevProps) => ({
+              ...prevProps,
+              ...newProps.Heading5[1],
+            }));
+          }
         }
-    }, []);
 
-    // FOR VIZ ROW =====================================================================================================
-    const [vizMode, setVizMode] = useState(false);
-    const numberOfPortions = 24;
+        // Button
+        setButtonProps((prevProps) => ({ ...prevProps, ...newProps.Button }));
+      };
 
-    return (
-        <Section id="intro-code">
-            <Div id="intro-section" marginTop="micro">
-                {vizMode && (
-                    <Row id="viz-row" horizontalPadding={rowProps.horizontalPadding} retainLayoutAlways>
-                        {Array.from({ length : numberOfPortions }, (_, index) => (
-                            <Portion key={index} desktopSpan="1">
-                                <Text align="centre">{index + 1}</Text>
-                            </Portion>
-                        ))}
-                    </Row>
-                )}
+      codeBlockElement.addEventListener("input", handleInput);
 
-                <Row {...rowProps}>
-                    <Portion {...portion1Props} className={`demo-portion ${vizMode ? "border-red" : ""}`}>
-                        <Heading1 {...mainHeadingProps}>
-                            Ship UI {flipACoin() ? "in half the time" : "twice as fast"}
-                        </Heading1>
+      return () => {
+        codeBlockElement.removeEventListener("input", handleInput);
+      };
+    }
+  }, []);
 
-                        <Link href="/getting-started">
-                            <Button {...buttonProps}>
-                                Get started &rarr;
-                            </Button>
-                        </Link>
+  // FOR VIZ ROW =====================================================================================================
+  const [vizMode, setVizMode] = useState(false);
+  const numberOfPortions = 24;
 
-                        {vizMode && (
-                            <Text className="portion-width-indicator">
-                                {portion1Props.desktopSpan}
-                            </Text>
-                        )}
-                    </Portion>
+  let code = [
+    `<Row horizontalPadding="medium" marginTop="tiny" marginBottom="small"> {/* Try "none", "small", "medium", "large" or "huge" */}`,
+    `    <Portion desktopSpan="half"> {/* Try values like "one-third", or whole numbers between 1 and 24 */}`,
+    `        <Heading1 textColour="blue-light-20" marginBottom="micro" weight="700">`,
+    `            Ship UI in half the time.`,
+    `        </Heading1> \n`,
+    `        <Link href="/getting-started">`,
+    `            <Button kind="primary"> {/* "secondary", or "custom" with bgColour="amber" textColour="black" */}`,
+    `                Get started &rarr;`,
+    `            </Button>`,
+    `        </Link>`,
+    `    </Portion> \n`,
+    `    <Portion desktopSpan="half"> {/* Try adding mobileSpan="half" */}`,
+    `        <Heading5 weight="400" marginBottom="micro">`,
+    `            Create ready-to-integrate UI in minutes with designer-friendly, plain-English syntax.`,
+    `        </Heading5>\n`,
+    `        <Heading5 weight="400" marginBottom="micro">`,
+    `            Hand-off responsive, performant React code to your dev team.`,
+    `        </Heading5>`,
+    `    </Portion>`,
+    `</Row>`,
+  ]
+    .filter(Boolean)
+    .join("\n");
 
-                    <Portion {...portion2Props} className={`demo-portion ${vizMode ? "border-red" : ""}`}>
-                        <Heading5 {...subHeading1Props}>
-                            Create ready-to-integrate UI in minutes with designer-friendly, plain-English syntax.
-                        </Heading5>
+  return (
+    <Section id="intro-code">
+      <Div id="intro-section" marginTop="micro">
+        {vizMode && (
+          <Row
+            id="viz-row"
+            horizontalPadding={rowProps.horizontalPadding}
+            retainLayoutAlways
+          >
+            {Array.from({ length: numberOfPortions }, (_, index) => (
+              <Portion key={index} desktopSpan="1">
+                <Text align="centre">{index + 1}</Text>
+              </Portion>
+            ))}
+          </Row>
+        )}
 
-                        <Heading5 {...subHeading2Props}>
-                            Hand-off responsive, performant React code to your dev team.
-                        </Heading5>
+        <Row {...rowProps}>
+          <Portion
+            {...portion1Props}
+            className={`demo-portion ${vizMode ? "border-red" : ""}`}
+          >
+            <Heading1 {...mainHeadingProps}>
+              Ship UI {flipACoin() ? "in half the time" : "twice as fast"}
+            </Heading1>
 
-                        {vizMode && (
-                            <Text className="portion-width-indicator">
-                                {portion2Props.desktopSpan}
-                            </Text>
-                        )}
-                    </Portion>
-                </Row>
-            </Div>
+            <Link href="/getting-started">
+              <Button {...buttonProps}>Get started &rarr;</Button>
+            </Link>
 
-            <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
-                <Portion>
-                    <Div verticallyCentreItems pushItemsToEnds>
-                        <Text size="large" textColour="amber" weight="700" marginBottom="nano">
-                            TRY EDITING SOME PROPS AND VALUES HERE—
-                        </Text>
+            {vizMode && (
+              <Text className="portion-width-indicator">
+                {portion1Props.desktopSpan}
+              </Text>
+            )}
+          </Portion>
 
-                        <Switch
-                            id="viz-switch"
-                            name="viz-switch"
-                            label="Visualise the Row"
-                            checked={vizMode}
-                            onChange={() => setVizMode(!vizMode)}
-                        />
-                    </Div>
+          <Portion
+            {...portion2Props}
+            className={`demo-portion ${vizMode ? "border-red" : ""}`}
+          >
+            <Heading5 {...subHeading1Props}>
+              Create ready-to-integrate UI in minutes with designer-friendly,
+              plain-English syntax.
+            </Heading5>
 
-                    <Div id="intro-code-block" ref={codeBlockRef}>
-                        <CodeBlock
-                            language="jsx"
-                            showCopyButton
-                            contentEditable
-                            suppressContentEditableWarning={true}
-                            marginBottom="micro"
-                            theme="custom"
-                        >
-                            {[
-                                `<Row horizontalPadding="medium" marginTop="tiny" marginBottom="small"> // Try "none", "small", "medium", "large" or "huge"`,
-                                `    <Portion desktopSpan="half"> // Try values like "one-third", or whole numbers between 1 and 24`,
-                                `        <Heading1 textColour="blue-light-20" marginBottom="micro" weight="700">`,
-                                `            Ship UI in half the time.`,
-                                `        </Heading1> \n`,
-                                `        <Link href="/getting-started">`,
-                                `            <Button kind="primary"> // "secondary", or "custom" with bgColour="amber" textColour="black"`,
-                                `                Get started &rarr;`,
-                                `            </Button>`,
-                                `        </Link>`,
-                                `    </Portion> \n`,
-                                `    <Portion desktopSpan="half"> // Try adding mobileSpan="half"`,
-                                `        <Heading5 weight="400" marginBottom="micro">`,
-                                `            Create ready-to-integrate UI in minutes with designer-friendly, plain-English syntax.`,
-                                `        </Heading5>\n`,
-                                `        <Heading5 weight="400" marginBottom="micro">`,
-                                `            Hand-off responsive, performant React code to your dev team.`,
-                                `        </Heading5>`,
-                                `    </Portion>`,
-                                `</Row>`,
-                            ].filter(Boolean).join("\n")}
-                        </CodeBlock>
-                    </Div>
-                </Portion>
-            </Row>
-        </Section>
-    );
+            <Heading5 {...subHeading2Props}>
+              Hand-off responsive, performant React code to your dev team.
+            </Heading5>
+
+            {vizMode && (
+              <Text className="portion-width-indicator">
+                {portion2Props.desktopSpan}
+              </Text>
+            )}
+          </Portion>
+        </Row>
+      </Div>
+
+      <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
+        <Portion>
+          <Div verticallyCentreItems pushItemsToEnds>
+            <Text
+              size="large"
+              textColour="amber"
+              weight="700"
+              marginBottom="nano"
+            >
+              TRY EDITING SOME PROPS AND VALUES HERE—
+            </Text>
+
+            <Switch
+              id="viz-switch"
+              name="viz-switch"
+              label="Visualise the Row"
+              checked={vizMode}
+              onChange={() => setVizMode(!vizMode)}
+            />
+          </Div>
+
+          <Div id="intro-code-block" ref={codeBlockRef}>
+            <CodeBlock
+              language="jsx"
+              showCopyButton
+              contentEditable
+              suppressContentEditableWarning={true}
+              marginBottom="micro"
+              source={code}
+            />
+          </Div>
+        </Portion>
+      </Row>
+    </Section>
+  );
 };

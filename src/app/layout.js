@@ -26,17 +26,6 @@ import "../styles/globals.css";
 export default function RootLayout({ children }) {
     const [sidebarState, setSidebarState] = useState("");
     const [showSidebarOnMobile, setShowSidebarOnMobile] = useState(false)
-    const [customTheme, setCustomTheme] = useState({});
-
-    const [currentTheme, setCurrentTheme] = useState(typeof window !== "undefined" ? localStorage.getItem("theme") || "light" : "light");
-
-    useEffect(() => {
-        localStorage.setItem("theme", currentTheme);
-    }, [currentTheme]);
-
-    const toggleTheme = () => {
-        setCurrentTheme(currentTheme === "theme-light" ? "theme-dark" : "theme-light");
-    };
 
     const toggleSidebarOnMobile = () => {
         setShowSidebarOnMobile(isShowing => !isShowing);
@@ -49,12 +38,10 @@ export default function RootLayout({ children }) {
         </head>
 
         <body>
-            <CustomThemeContext.Provider value={{ customTheme, setCustomTheme }}>
-                <ThemeProvider theme={customTheme} currentTheme={currentTheme === "theme-light" ? "theme-light" : "theme-dark"}>
+                <ThemeProvider currentTheme="theme-light">
                     <Sidebar
                         sidebarState={sidebarState}
                         setSidebarState={setSidebarState}
-                        toggleTheme={toggleTheme}
                         showSidebarOnMobile={showSidebarOnMobile}
                         setShowSidebarOnMobile={setShowSidebarOnMobile}
                     />
@@ -64,7 +51,6 @@ export default function RootLayout({ children }) {
                         {children}
                     </ContentWrapper>
                 </ThemeProvider>
-            </CustomThemeContext.Provider>
         </body>
         </html>
     );

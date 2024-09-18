@@ -146,6 +146,7 @@ export const InteractiveCardExample = () => {
                                 ]}
                                 onChange={handleBgColourChange}
                                 isFullWidth
+                                name="background"
                             />
                         </Portion>
 
@@ -153,15 +154,16 @@ export const InteractiveCardExample = () => {
                             <Select
                                 label="Border colour"
                                 options={[{
-                                    name     : "Select an option",
-                                    value    : "select-an-option",
-                                    disabled : true,
-                                    selected : true,
+                                    label     : "Select an option",
+                                    value     : "select-an-option",
+                                    disabled  : true,
+                                    selected  : true,
                                 },
                                     ...colorOptions,
                                 ]}
                                 onChange={handleBorderColourChange}
                                 isFullWidth
+                                name="border"
                             />
                         </Portion>
                     </Row>

@@ -78,7 +78,7 @@ const LayoutDocs = () => {
                 {/*   ADDING CONTENT  */}
                 {/* //////////////////////////////////////////////////////////// */}
                 <Element as="section" id="add-content">
-                    <Row horizontalPadding="huge" marginBottom="nano">
+                    <Row horizontalPadding="huge" marginBottom="nano" marginTop="nano">
                         <Portion>
                             <Heading6 marginBottom="nano">Adding content</Heading6>
 
