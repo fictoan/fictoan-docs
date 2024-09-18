@@ -1,158 +1,141 @@
 .theme-light {
-    /* BODY ///////////////////////////////////////////////////////////////// */
-    --body-bg                                 : var(--white);
+  /* BODY ///////////////////////////////////////////////////////////////// */
+  --body-bg: var(--white);
 
-    /* BODY ///////////////////////////////////////////////////////////////// */
-    --callout-border-radius                   : var(--global-border-radius);
-    --callout-border-width                    : var(--nano);
+  /* CARD ///////////////////////////////////////////////////////////////// */
+  --card-bg: var(--white);
+  --card-border: var(--slate-light-60);
+  --card-border-width: var(--global-border-width);
+  --card-border-radius: 16px;
 
-    --callout-info-bg                         : var(--blue-dark-60);
-    --callout-info-border                     : var(--blue-dark-20);
+  /* BREADCRUMBS ////////////////////////////////////////////////////////// */
+  --breadcrumbs-wrapper-bg: var(--transparent);
 
-    --callout-success-bg                      : var(--green-light-40);
-    --callout-success-border                  : var(--green-dark-40);
+  --breadcrumb-item-separator: "/";
+  --breadcrumb-item-separator-colour: var(--slate-light-10);
 
-    --callout-warning-bg                      : var(--amber-light-40);
-    --callout-warning-border                  : var(--amber-dark-40);
+  --breadcrumb-item-text-colour: var(--paragraph-text-colour);
+  --breadcrumb-item-text-colour-active: var(--paragraph-text-colour);
 
-    --callout-error-bg                        : var(--red-light-40);
-    --callout-error-border                    : var(--red-dark-40);
+  /* DIVIDER ////////////////////////////////////////////////////////////// */
+  --divider-height: 1px;
 
-    /* CARD ///////////////////////////////////////////////////////////////// */
-    --card-bg                                 : var(--white);
-    --card-border                             : var(--slate-light-60);
-    --card-border-width                       : var(--global-border-width);
-    --card-border-radius                      : 16px;
+  --divider-primary-height: 2px;
+  --divider-primary-bg: var(--grey-light-20);
 
-    /* BREADCRUMBS ////////////////////////////////////////////////////////// */
-    --breadcrumbs-wrapper-bg                  : var(--transparent);
+  --divider-secondary-height: 2px;
+  --divider-secondary-bg: var(--grey-light-60);
 
-    --breadcrumb-item-separator               : "/";
-    --breadcrumb-item-separator-colour        : var(--slate-light-10);
+  --divider-tertiary-height: 1px;
+  --divider-tertiary-bg: var(--grey-light-80);
 
-    --breadcrumb-item-text-colour             : var(--paragraph-text-colour);
-    --breadcrumb-item-text-colour-active      : var(--paragraph-text-colour);
+  /* INPUT FIELD ////////////////////////////////////////////////////////// */
+  --input-bg-default: var(--grey-light-90);
+  --input-border-default: var(--grey-light-40);
+  --input-border-radius-default: var(--global-border-radius);
+  --input-label-default: var(--paragraph-text-colour);
+  --input-placeholder-default: var(--red-light-60);
+  --input-text-default: var(--slate-dark-60);
 
-    /* DIVIDER ////////////////////////////////////////////////////////////// */
-    --divider-height                               : 1px;
+  --input-bg-focus: var(--grey-light-70);
+  --input-border-focus: var(--grey-light-20);
+  --input-text-focus: var(--slate-dark-60);
 
-    --divider-primary-height                       : 2px;
-    --divider-primary-bg                           : var(--grey-light-20);
+  --input-bg-valid: var(--white);
+  --input-border-valid: var(--green-dark-30);
+  --input-label-valid: var(--shade);
 
-    --divider-secondary-height                     : 2px;
-    --divider-secondary-bg                         : var(--grey-light-60);
+  --input-bg-invalid: var(--red-light-60);
+  --input-border-invalid: var(--red-dark-30);
+  --input-label-invalid: var(--red);
+  --input-text-invalid: var(--red);
+  --input-error-text-invalid: var(--red);
 
-    --divider-tertiary-height                      : 1px;
-    --divider-tertiary-bg                          : var(--grey-light-80);
+  --input-bg-disabled: var(--slate-light-40);
+  --input-border-disabled: var(--slate-light-40);
+  --input-label-disabled: var(--slate-dark-40);
+  --input-text-disabled: var(--slate-dark-60);
 
-    /* INPUT FIELD ////////////////////////////////////////////////////////// */
-    --input-bg-default                        : var(--grey-light-90);
-    --input-border-default                    : var(--grey-light-40);
-    --input-border-radius-default             : var(--global-border-radius);
-    --input-label-default                     : var(--paragraph-text-colour);
-    --input-placeholder-default               : var(--red-light-60);
-    --input-text-default                      : var(--slate-dark-60);
+  --input-bg-read-only: var(--slate-light-40);
+  --input-border-read-only: var(--slate-light-40);
+  --input-label-read-only: var(--slate-dark-40);
+  --input-text-read-only: var(--slate-dark-60);
 
-    --input-bg-focus                          : var(--grey-light-70);
-    --input-border-focus                      : var(--grey-light-20);
-    --input-text-focus                        : var(--slate-dark-60);
+  --input-required-indicator: var(--red);
 
-    --input-bg-valid                          : var(--white);
-    --input-border-valid                      : var(--green-dark-30);
-    --input-label-valid                       : var(--shade);
+  --input-helptext: var(--slate-dark-40);
+  --input-helptext-scale: 92%;
 
-    --input-bg-invalid                        : var(--red-light-60);
-    --input-border-invalid                    : var(--red-dark-30);
-    --input-label-invalid                     : var(--red);
-    --input-text-invalid                      : var(--red);
-    --input-error-text-invalid                : var(--red);
+  --input-icon-default: var(--slate-light-40);
+  --input-icon-focus: var(--hue);
+  --input-icon-valid: var(--green-dark-30);
 
-    --input-bg-disabled                       : var(--slate-light-40);
-    --input-border-disabled                   : var(--slate-light-40);
-    --input-label-disabled                    : var(--slate-dark-40);
-    --input-text-disabled                     : var(--slate-dark-60);
+  /* SIDEBAR ////////////////////////////////////////////////////////////// */
+  --sidebar-bg: var(--grey-light-90);
+  --sidebar-header-bg: var(--grey-light-90);
+  --sidebar-header-border-bottom: var(--grey-light-70);
 
-    --input-bg-read-only                      : var(--slate-light-40);
-    --input-border-read-only                  : var(--slate-light-40);
-    --input-label-read-only                   : var(--slate-dark-40);
-    --input-text-read-only                    : var(--slate-dark-60);
+  --sidebar-item-text-colour-default: var(--grey-dark-20);
+  --sidebar-item-icon-stroke-default: var(--grey-light-40);
 
-    --input-required-indicator                : var(--red);
+  --sidebar-item-bg-hover: var(--blue-light-70);
+  --sidebar-item-icon-stroke-hover: var(--blue-light-30);
 
-    --input-helptext                          : var(--slate-dark-40);
-    --input-helptext-scale                    : 92%;
+  --sidebar-item-bg-active: var(--blue-light-80);
+  --sidebar-item-text-active: var(--blue);
+  --sidebar-item-icon-stroke-active: var(--blue);
 
-    --input-icon-default                      : var(--slate-light-40);
-    --input-icon-focus                        : var(--hue);
-    --input-icon-valid                        : var(--green-dark-30);
+  --sidebar-item-icon-default-stroke-colour: var(--slate-dark-40);
 
-    /* SIDEBAR ////////////////////////////////////////////////////////////// */
-    --sidebar-bg                              : var(--grey-light-90);
-    --sidebar-header-bg                       : var(--grey-light-90);
-    --sidebar-header-border-bottom            : var(--grey-light-70);
+  --sidebar-footer-bg: var(--grey-light-90);
+  --sidebar-footer-border-top: var(--grey-light-70);
 
-    --sidebar-item-text-colour-default        : var(--grey-dark-20);
-    --sidebar-item-icon-stroke-default        : var(--grey-light-40);
+  /* TABLE //////////////////////////////////////////////////////////////// */
+  --table-bg: var(--slate-light);
+  --table-border: var(--slate-dark-60);
+  --table-font-family: var(--paragraph-font);
+  --table-text: var(--paragraph-text-colour);
 
-    --sidebar-item-bg-hover                   : var(--blue-light-70);
-    --sidebar-item-icon-stroke-hover          : var(--blue-light-30);
+  --table-striped-header-bg: var(--blue-light-10);
+  --table-striped-cell-bg: var(--slate-light-50);
 
-    --sidebar-item-bg-active                  : var(--blue-light-80);
-    --sidebar-item-text-active                : var(--blue);
-    --sidebar-item-icon-stroke-active         : var(--blue);
+  --table-bg-hover: var(--amber-light-20);
+  --table-text-hover: var(--paragraph-text-colour);
 
-    --sidebar-item-icon-default-stroke-colour : var(--slate-dark-40);
+  --table-pagination-bg: var(--white);
+  --table-pagination-border-radius: var(--global-border-radius);
+  --table-pagination-text: var(--paragraph-text-colour);
+  --table-pagination-nav-icon-bg-hover: var(--slate-dark-60);
 
-    --sidebar-footer-bg                       : var(--grey-light-90);
-    --sidebar-footer-border-top               : var(--grey-light-70);
+  /* TEXT ///////////////////////////////////////////////////////////////// */
+  --font-sans-serif: "Inter", sans-serif;
 
-    /* TABLE //////////////////////////////////////////////////////////////// */
-    --table-bg                                : var(--slate-light);
-    --table-border                            : var(--slate-dark-60);
-    --table-font-family                       : var(--paragraph-font);
-    --table-text                              : var(--paragraph-text-colour);
+  --paragraph-font-size: 1rem;
+  --paragraph-line-height: 1.6;
+  --paragraph-text-colour: var(--slate-dark-90);
 
-    --table-striped-header-bg                 : var(--blue-light-10);
-    --table-striped-cell-bg                   : var(--slate-light-50);
+  --heading-text-colour: var(--slate-dark-60);
+  --heading-size-multiplier: 1.2;
+  --heading-line-height: 1.2;
 
-    --table-bg-hover                          : var(--amber-light-20);
-    --table-text-hover                        : var(--paragraph-text-colour);
+  /* SWITCH /////////////////////////////////////////////////////////////// */
+  --switch-bg-default: var(--slate-dark-40);
+  --switch-bg-hover: var(--slate-dark-20);
+  --switch-bg-checked: var(--hue);
 
-    --table-pagination-bg                     : var(--white);
-    --table-pagination-border-radius          : var(--global-border-radius);
-    --table-pagination-text                   : var(--paragraph-text-colour);
-    --table-pagination-nav-icon-bg-hover      : var(--slate-dark-60);
+  --switch-slider-bg-default: var(--white);
+  --switch-slider-bg-hover: var(--white);
+  --switch-slider-bg-checked: var(--white);
+  --switch-slider-bg-disabled: var(--slate-light-40);
 
-    /* TEXT ///////////////////////////////////////////////////////////////// */
-    --font-sans-serif                         : "Inter", sans-serif;
+  /* ////////////////////////////////////////////////////////////////////// */
+  /* CUSTOM COMPONENTS */
+  /* ////////////////////////////////////////////////////////////////////// */
+  --component-card-bg: rgba(236, 236, 236, 0.4);
+  --component-card-footer-border: var(--slate-light-60);
 
-    --paragraph-font-size                     : 1rem;
-    --paragraph-line-height                   : 1.6;
-    --paragraph-text-colour                   : var(--slate-dark-90);
+  --site-header-bg: var(--grey-light-90);
+  --site-header-border: var(--grey-light-60);
 
-    --heading-text-colour                     : var(--slate-dark-60);
-    --heading-size-multiplier                 : 1.2;
-    --heading-line-height                     : 1.2;
-
-    --code-block-font-size                    : 0.8rem;
-    --code-block-bg                           : var(--slate-dark-70);
-
-    /* SWITCH /////////////////////////////////////////////////////////////// */
-    --switch-bg-default                       : var(--slate-dark-40);
-    --switch-bg-hover                         : var(--slate-dark-20);
-    --switch-bg-checked                       : var(--hue);
-
-    --switch-slider-bg-default                : var(--white);
-    --switch-slider-bg-hover                  : var(--white);
-    --switch-slider-bg-checked                : var(--white);
-    --switch-slider-bg-disabled               : var(--slate-light-40);
-
-    /* ////////////////////////////////////////////////////////////////////// */
-    /* CUSTOM COMPONENTS */
-    /* ////////////////////////////////////////////////////////////////////// */
-    --component-card-bg                       : rgba(236, 236, 236, 0.4);
-    --component-card-footer-border            : var(--slate-light-60);
-
-    --site-header-bg                          : var(--grey-light-90);
-    --site-header-border                      : var(--grey-light-60);
+  --callout-border-width   : var(--nano);
 }

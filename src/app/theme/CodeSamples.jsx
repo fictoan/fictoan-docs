@@ -48,10 +48,6 @@ export const sampleCSSSetup = `.theme-dark {
     --body-bg : var(--black)
 };`;
 
-
-
-
-
 // Code sample 01 //////////////////////////////////////////////////////////////
 export const sampleThemeGlobals = `--global-border-radius : 8px;
 --global-border-width  : 1px;
@@ -63,7 +59,6 @@ export const sampleThemeGlobals = `--global-border-radius : 8px;
 --medium : 8vmax;
 --large  : 16vmax;
 --huge   : 24vmax;`;
-
 
 // Code sample 01 //////////////////////////////////////////////////////////////
 export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////////////////////////// */
@@ -467,7 +462,7 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
 
     --code-block-font-size      : 0.92rem;
     --code-block-bg             : var(--slate-dark-80);
-    --code-block-text           : var(--blue-dark-40);
+    --code-block-text           : var(--sky-blue-60);
     --code-block-line-height    : 1.8;
     --code-block-border-radius  : var(--global-border-radius);
 

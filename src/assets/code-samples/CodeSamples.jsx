@@ -28,7 +28,6 @@ export const snippetStructure = `fictoan-boilerplate
       │
       └── assets`;
 
-
 // USAGE ======================================================================
 export const snippetPageSetupJSX = `import "./page-about.css";
 
@@ -49,13 +48,12 @@ export const snippetUsage = `import { Element, Text, Button } from "fictoan-reac
 
 export const HomePage = () => {
     return (
-        <Article id="page-home">
+        <Element as="article" id="page-home">
             <Text>Hello, world!</Text>
             
             <Button kind="primary">Click me!</Button>
         </Element>
     );
 }`;
-
 
 // CUSTOM THEME ================================================================
