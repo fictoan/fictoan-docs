@@ -1,31 +1,26 @@
 "use client";
 
-// EXTERNAL DEPS ===============================================================
-import React, { useState, useEffect, useRef } from "react";
+// EXTERNAL DEPS =======================================================================================================
+import React from "react";
 import Link from "next/link";
 
-// INTERNAL DEPS ===============================================================
+// INTERNAL DEPS =======================================================================================================
 import {
-    Button,
     Div,
-    Element,
-    Heading1,
-    Heading2,
-    Heading3,
     Divider,
     Portion,
     Row,
     Text, Heading6, Heading4, Heading5,
 } from "fictoan-react";
 
-// COMPONENTS ==================================================================
+// COMPONENTS ==========================================================================================================
 import { IntroCode } from "../components/IntroCode/IntroCode";
 import { ComponentGrid } from "../components/ComponentGrid/ComponentGrid";
 
-// STYLES ======================================================================
+// STYLES ==============================================================================================================
 import "../styles/home.css";
 
-// ASSETS ======================================================================
+// ASSETS ==============================================================================================================
 import ManifestoIcon from "@/assets/icons/manifesto.svg";
 
 const Home = () => {

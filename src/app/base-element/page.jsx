@@ -1,22 +1,22 @@
 "use client";
 
-// EXTERNAL DEPS ===============================================================
+// EXTERNAL DEPS =======================================================================================================
 import React from "react";
 
-// INTERNAL DEPS ===============================================================
+// INTERNAL DEPS =======================================================================================================
 import { Heading1, Heading4, Divider, Portion, Row, Text, Article } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
-// COMPONENTS ==================================================================
+// COMPONENTS ==========================================================================================================
 import { PropsList } from "../../components/PropsList/PropsList";
 
-// STYLES ======================================================================
+// STYLES ==============================================================================================================
 import "./base-element.css";
 
-// CODE SNIPPETS ===============================================================
+// CODE SNIPPETS =======================================================================================================
 import { sampleElement } from "./CodeSamples";
 
-// DATA ========================================================================
+// DATA ================================================================================================================
 import { listOfBaseElementProps } from "./propsList";
 
 const BaseElementDocs = () => {
@@ -28,9 +28,23 @@ const BaseElementDocs = () => {
             <Row horizontalPadding="huge" marginTop="medium">
                 <Portion>
                     <Heading1 marginBottom="micro">Base element</Heading1>
-                    <Text size="large">
-                        This is a common element that lets you use the Fictoan props to any native HTML element. This
-                        makes it easier to play with the rest of the components on page without having to write CSS.
+                    <Text size="large" marginBottom="micro">
+                        This is a common wrapper tag that lets you use the Fictoan props, such as <code>marginTop</code>,
+                        or <code>horizontallyCentreThis</code> etc.
+                    </Text>
+
+                    <Text size="large" marginBottom="micro">
+                        While <code>Element</code> supports all HTML entities, you can explicitly use some tags
+                        natively:
+                        <code>Article</code>,
+                        <code>Aside</code>,
+                        <code>Body</code>,
+                        <code>Div</code>,
+                        <code>Footer</code>,
+                        <code>Header</code>,
+                        <code>Main</code>,
+                        <code>Nav</code>,
+                        <code>Section</code>, and <code>Span</code>.
                     </Text>
                 </Portion>
             </Row>
@@ -44,12 +58,7 @@ const BaseElementDocs = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="huge">
                 <Portion>
-                    <Heading4 marginBottom="nano">Usage</Heading4>
-
-                    <Text marginBottom="micro">
-                        The <code>Element</code> component is just a replacement for using the HTML element directly
-                        to get access to Fictoan props.
-                    </Text>
+                    <Heading4 marginBottom="micro">Usage</Heading4>
 
                     <CodeBlock source={sampleElement} language="jsx" />
 

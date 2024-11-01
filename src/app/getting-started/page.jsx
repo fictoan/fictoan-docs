@@ -38,7 +38,7 @@ import {
     snippetPageSetupJSX,
     snippetPageSetupCSS,
     snippetStructure,
-    snippetUsage,
+    snippetUsage, snippetInstallation,
 } from "../../assets/code-samples/CodeSamples";
 
 const GettingStarted = () => {
@@ -115,34 +115,34 @@ const GettingStarted = () => {
                         <Tabs
                             tabs={[
                                 {
-                                    key: "tab1",
-                                    label: (
+                                    key     : "tab1",
+                                    label   : (
                                         <Element verticallyCentreItems>
                                             <PNPMIcon />
                                             <Text marginLeft="nano">pnpm</Text>
                                         </Element>
                                     ),
-                                    content: tabOneContent(),
+                                    content : tabOneContent(),
                                 },
                                 {
-                                    key: "tab2",
-                                    label: (
+                                    key     : "tab2",
+                                    label   : (
                                         <Element verticallyCentreItems>
                                             <YarnIcon />
                                             <Text marginLeft="nano">yarn</Text>
                                         </Element>
                                     ),
-                                    content: tabTwoContent(),
+                                    content : tabTwoContent(),
                                 },
                                 {
-                                    key: "tab3",
-                                    label: (
+                                    key     : "tab3",
+                                    label   : (
                                         <Element verticallyCentreItems>
                                             <NPMIcon />
                                             <Text marginLeft="nano">npm</Text>
                                         </Element>
                                     ),
-                                    content: tabThreeContent(),
+                                    content : tabThreeContent(),
                                 },
                             ]}
                             marginBottom="micro"
@@ -232,12 +232,12 @@ const GettingStarted = () => {
                             position="right"
                             openWhen={isComplexSetupDrawerOpen}
                             closeWhen={() => setIsComplexSetupDrawerOpen(false)}
-                            width="large"
+                            size="medium"
                             showOverlay
                             closeOnClickOutside
                             padding="micro"
                         >
-                            <Text>NextJS sucks</Text>
+                            <Heading4>NextJS sucks</Heading4>
                         </Drawer>
 
                         <Divider kind="tertiary" verticalMargin="nano" />
@@ -322,9 +322,11 @@ const GettingStarted = () => {
                             available to all components.
                         </Text>
 
-                        <CodeBlock language="JavaScript" marginBottom="micro">
-                            import "fictoan-react/dist/index.css";
-                        </CodeBlock>
+                        <CodeBlock
+                            source={snippetInstallation}
+                            language="javascript"
+                            marginBottom="micro"
+                        />
 
                         <Text marginBottom="micro">
                             In your content files, just import the components

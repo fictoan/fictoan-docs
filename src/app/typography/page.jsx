@@ -141,18 +141,33 @@ const TypographyDocs = () => {
                     </Portion>
 
                     <Portion>
-                        <Heading6 textColour="red-light-30">I’m red-light-30</Heading6>
-                        <CodeBlock source={sampleColouring1} language="jsx" marginTop="nano" marginBottom="micro" />
+                        <CodeBlock source={sampleColouring1} language="jsx" marginTop="nano" />
+                        <Heading6
+                            marginBottom="micro" marginTop="nano"
+                            textColour="red-light-30"
+                        >
+                            I’m red-light-30
+                        </Heading6>
                     </Portion>
 
                     <Portion>
-                        <Text textColor="violet-dark-10">I’m violet-dark-10</Text>
-                        <CodeBlock source={sampleColouring2} language="jsx" marginTop="nano" marginBottom="micro" />
+                        <CodeBlock source={sampleColouring2} language="jsx" marginTop="nano" />
+                        <Text
+                            marginBottom="micro" marginTop="nano"
+                            textColor="violet-dark-10"
+                        >
+                            I’m violet-dark-10
+                        </Text>
                     </Portion>
 
                     <Portion>
-                        <Heading4 textColour="pistachio">I’m pistachio</Heading4>
-                        <CodeBlock source={sampleColouring3} language="jsx" marginTop="nano" marginBottom="micro" />
+                        <CodeBlock source={sampleColouring3} language="jsx" marginTop="nano" />
+                        <Heading4
+                            marginBottom="micro" marginTop="nano"
+                            textColour="pistachio"
+                        >
+                            I’m pistachio
+                        </Heading4>
                     </Portion>
 
                     <Portion>

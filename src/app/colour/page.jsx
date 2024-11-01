@@ -1,26 +1,24 @@
 "use client";
 
-// EXTERNAL DEPS ===============================================================
+// EXTERNAL DEPS =======================================================================================================
 import React, { useState } from "react";
 
-// INTERNAL DEPS ===============================================================
-import { Element, Card, Heading1,
-    Heading2,
-    Heading3,
-    Heading4,
-    Heading5,
-    Heading6, Text, Divider, Portion, Row, Callout, Article } from "fictoan-react";
+// INTERNAL DEPS =======================================================================================================
+import {
+    Element, Card, Heading1,
+    Heading6, Text, Divider, Portion, Row, Callout, Article,
+} from "fictoan-react";
+
+// COMPONENTS ==========================================================================================================
 import { CodeBlock } from "fictoan-react/components";
 
-// COMPONENTS ==================================================================
-
-// STYLES ======================================================================
+// STYLES ==============================================================================================================
 import "./page-colour.css";
 
-// CODE SNIPPETS ===============================================================
+// CODE SNIPPETS =======================================================================================================
 import { sampleUsage1, sampleUsage2, sampleUsage3 } from "./CodeSamples";
 
-// DATA ========================================================================
+// DATA ================================================================================================================
 import { listOfColours, generateShades } from "../../utils/colours";
 
 const ColourDocs = () => {
@@ -39,9 +37,9 @@ const ColourDocs = () => {
 
     return (
         <Article id="page-colour">
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* INTRO */}
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="basics" marginTop="medium" marginBottom="small">
                 <Row horizontalPadding="huge">
                     <Portion>
@@ -66,7 +64,7 @@ const ColourDocs = () => {
                         </Text>
 
                         <Callout kind="info" marginBottom="small">
-                            <Text textColour="white">
+                            <Text textColour="black">
                                 And oh, you can use either spelling colour/color in the props above.
                             </Text>
                         </Callout>
@@ -109,9 +107,9 @@ const ColourDocs = () => {
 
             <Divider horizontalMargin="huge" kind="primary" verticalMargin="small" />
 
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* LIST OF COLOURS */}
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="colour-list">
                 <Row horizontalPadding="huge" marginBottom="micro">
                     <Portion>
@@ -119,7 +117,6 @@ const ColourDocs = () => {
                         <Text>Use any of these below values as variables with the above props.</Text>
                     </Portion>
                 </Row>
-
 
                 <Row horizontalPadding="small" gutters="small" marginBottom="tiny">
                     {listOfColours.map((color) => (
@@ -129,7 +126,7 @@ const ColourDocs = () => {
                                 {generateShades(color).map((shade) => (
                                     <Card
                                         key={shade}
-                                        className="colour-card"
+                                        className="colour-card is-clickable"
                                         bgColour={shade}
                                         borderColour="transparent"
                                         padding="tiny"
@@ -160,10 +157,6 @@ const ColourDocs = () => {
                             <Card id="transparent-card" padding="tiny" borderColour="grey" />
                         </Element>
                     </Portion>
-                </Row>
-
-                {/* BLACK WHITE TRANSPARENT ================================ */}
-                <Row horizontalPadding="tiny" gutters="none" marginBottom="tiny">
                 </Row>
             </Element>
         </Article>

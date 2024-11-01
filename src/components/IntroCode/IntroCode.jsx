@@ -12,21 +12,14 @@ import {
     Heading5,
     Portion,
     Row,
-    Section, Switch,
+    Section,
+    Switch,
     Text,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
-// COMPONENTS ==========================================================================================================
-
 // STYLES ==============================================================================================================
 import "./intro-code.css";
-
-// HOOKS ===============================================================================================================
-
-// UTILS ===============================================================================================================
-
-// DATA ================================================================================================================
 
 export const IntroCode = () => {
     const flipACoin = () => Math.random() >= 0.5;
@@ -108,7 +101,6 @@ export const IntroCode = () => {
         return newProps;
     };
 
-
     useEffect(() => {
         const codeBlockElement = codeBlockRef.current;
 
@@ -159,12 +151,12 @@ export const IntroCode = () => {
     }, []);
 
     // FOR VIZ ROW =====================================================================================================
-    const [vizMode, setVizMode] = useState(false);
+    const [vizMode, setVizMode] = useState(true);
     const numberOfPortions = 24;
 
     return (
         <Section id="intro-code">
-            <Div id="intro-section" marginTop="micro">
+            <Div id="intro-section" marginTop="small">
                 {vizMode && (
                     <Row id="viz-row" horizontalPadding={rowProps.horizontalPadding} retainLayoutAlways>
                         {Array.from({ length : numberOfPortions }, (_, index) => (
@@ -212,7 +204,7 @@ export const IntroCode = () => {
                 </Row>
             </Div>
 
-            <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
+            <Row horizontalPadding="medium" gutters="large" marginTop="small" marginBottom="tiny">
                 <Portion>
                     <Div verticallyCentreItems pushItemsToEnds>
                         <Text size="large" textColour="amber" weight="700" marginBottom="nano">

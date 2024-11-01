@@ -2,6 +2,15 @@
     /* BODY ///////////////////////////////////////////////////////////////// */
     --body-bg                                 : var(--black);
 
+    /* BREADCRUMBS ////////////////////////////////////////////////////////// */
+    --breadcrumbs-wrapper-bg                  : var(--transparent);
+
+    --breadcrumb-item-separator               : "/";
+    --breadcrumb-item-separator-colour        : var(--slate-light-10);
+
+    --breadcrumb-item-text-colour             : var(--paragraph-text-colour);
+    --breadcrumb-item-text-colour-active      : var(--paragraph-text-colour);
+
     /* BODY ///////////////////////////////////////////////////////////////// */
     --callout-border-radius                   : var(--global-border-radius);
     --callout-border-width                    : var(--nano);
@@ -24,14 +33,9 @@
     --card-border-width                       : var(--global-border-width);
     --card-border-radius                      : 16px;
 
-    /* BREADCRUMBS ////////////////////////////////////////////////////////// */
-    --breadcrumbs-wrapper-bg                  : var(--transparent);
-
-    --breadcrumb-item-separator               : "/";
-    --breadcrumb-item-separator-colour        : var(--slate-light-10);
-
-    --breadcrumb-item-text-colour             : var(--paragraph-text-colour);
-    --breadcrumb-item-text-colour-active      : var(--paragraph-text-colour);
+    /* CODE ///////////////////////////////////////////////////////////////// */
+    --code-inline-bg                          : var(--slate-dark-70);
+    --code-inline-text                        : var(--slate-light-40);
 
     /* DIVIDER ////////////////////////////////////////////////////////////// */
     --divider-height                          : 1px;
@@ -44,6 +48,10 @@
 
     --divider-tertiary-height                 : 1px;
     --divider-tertiary-bg                     : var(--grey-dark-80);
+
+    /* INPUT FIELD ////////////////////////////////////////////////////////// */
+    --drawer-bg                               : var(--grey-dark-70);
+    --drawer-border                           : var(--grey-dark-40);
 
     /* INPUT FIELD ////////////////////////////////////////////////////////// */
     --input-bg-default                        : var(--grey-dark-70);

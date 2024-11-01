@@ -1,6 +1,11 @@
 //  Code sample 01 ////////////////////////////////////////////////////////////
-export const sampleElement = `<Element as="div"></Element> // Renders a div
+export const sampleElement = `import { Element, Aside, Text, Span } from "fictoan-react";
 
-<Element as="article"></Element> // Renders an article
+<Element></Element> // Renders a div
+<Element as="div"></Element> // Also renders a div
 
-<Element as="section"></Element> // Renders an section`;
+<Aside></Aside> // Renders an aside
+
+<Element as="section"></Element> // Renders an section
+
+<Text>Some <Span>text</Span></Text> // Renders span inside a p tag`;
