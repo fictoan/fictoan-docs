@@ -19,7 +19,13 @@ import {
     Article,
     Card,
     Form,
-    Header, Button, Drawer, RadioTabGroup, Checkbox, Range, Select,
+    Header,
+    Button,
+    Drawer,
+    RadioTabGroup,
+    Checkbox,
+    Range,
+    Select,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
@@ -32,7 +38,7 @@ import "./page-drawer.css";
 import { useThemeVariables } from "../../../utils/useThemeVariables";
 
 // UTILS ===============================================================================================================
-import { colourOptions } from "../../../utils/colours";
+import { colourOptions } from "../../colour/colours";
 
 // DATA ================================================================================================================
 import { drawerProps } from "./config";

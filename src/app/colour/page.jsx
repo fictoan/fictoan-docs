@@ -19,7 +19,7 @@ import "./page-colour.css";
 import { sampleUsage1, sampleUsage2, sampleUsage3 } from "./CodeSamples";
 
 // DATA ================================================================================================================
-import { listOfColours, generateShades } from "../../utils/colours";
+import { listOfColours, generateShades } from "./colours";
 
 const ColourDocs = () => {
     const [copiedShade, setCopiedShade] = useState(null);

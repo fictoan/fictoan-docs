@@ -36,7 +36,7 @@ import "./page-table.css";
 import { useThemeVariables } from "../../../utils/useThemeVariables";
 
 // UTILS ===============================================================================================================
-import { colourOptions } from "../../../utils/colours";
+import { colourOptions } from "../../colour/colours";
 
 // DATA ================================================================================================================
 import { tableProps } from "./config";

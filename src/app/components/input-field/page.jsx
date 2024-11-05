@@ -32,7 +32,7 @@ import "./input-field.css";
 // DATA ================================================================================================================
 import { useThemeVariables } from "../../../utils/useThemeVariables";
 import { inputProps } from "./config";
-import { colourOptions } from "../../../utils/colours";
+import { colourOptions } from "../../colour/colours";
 
 
 const InputFieldDocs = () => {

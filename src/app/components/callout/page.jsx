@@ -36,7 +36,7 @@ import "./page-callout.css";
 import { useThemeVariables } from "../../../utils/useThemeVariables";
 
 // UTILS ===============================================================================================================
-import { colourOptions } from "../../../utils/colours";
+import { colourOptions } from "../../colour/colours";
 
 // DATA ================================================================================================================
 import { calloutProps } from "./config";

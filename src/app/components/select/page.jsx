@@ -39,7 +39,7 @@ import {
 // DATA ================================================================================================================
 import { useThemeVariables } from "../../../utils/useThemeVariables";
 import { selectProps } from "./config";
-import { colourOptions } from "../../../utils/colours";
+import { colourOptions } from "../../colour/colours";
 
 
 const SelectDocs = () => {

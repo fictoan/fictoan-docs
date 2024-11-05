@@ -34,7 +34,7 @@ import "./page-accordion.css";
 import { useThemeVariables } from "../../../utils/useThemeVariables";
 
 // UTILS ===============================================================================================================
-import { colourOptions } from "../../../utils/colours";
+import { colourOptions } from "../../colour/colours";
 
 // DATA ================================================================================================================
 import { accordionProps } from "./config";
@@ -55,7 +55,7 @@ const AccordionDocs = () => {
                 <Portion>
                     <Heading1>Accordion</Heading1>
                     <Text size="large" marginBottom="small">
-                        The component is
+                        A simple click to expand/collapse block element.
                     </Text>
                 </Portion>
 

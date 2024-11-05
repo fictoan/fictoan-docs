@@ -21,36 +21,37 @@ import {
 // STYLES //////////////////////////////////////////////////////////////////////
 
 // ASSETS //////////////////////////////////////////////////////////////////////
-import FictoanLogo from "@/assets/images/fictoan-logo.svg";
-import FictoanIcon from "@/assets/images/fictoan-icon.svg";
-import HomeIcon from "@/assets/icons/home.svg";
-import ManifestoIcon from "@/assets/icons/manifesto.svg";
-import BaseElementIcon from "@/assets/icons/building-block.svg";
-import ThemeIcon from "@/assets/icons/paintbrush.svg";
-import ToolboxIcon from "@/assets/icons/toolbox.svg";
-import LayoutIcon from "@/assets/icons/layout.svg";
-import TypographyIcon from "@/assets/icons/typography.svg";
-import ColourIcon from "@/assets/icons/water.svg";
-import ThemeSwitchIcon from "@/assets/icons/theme.svg";
-import FormWrapperIcon from "@/assets/icons/writing.svg";
-import InputFieldIcon from "@/assets/icons/input.svg";
-import CheckboxIcon from "@/assets/icons/checkbox.svg";
-import RadioButtonIcon from "@/assets/icons/radio-button.svg";
-import ProgressBarIcon from "@/assets/icons/progress-bar.svg";
-import SelectIcon from "@/assets/icons/dropdown.svg";
+import AccordionIcon from "@/assets/icons/accordion.svg";
 import BadgeIcon from "@/assets/icons/badge.svg";
+import BaseElementIcon from "@/assets/icons/building-block.svg";
 import BreadcrumbsIcon from "@/assets/icons/breadcrumbs.svg";
 import ButtonIcon from "@/assets/icons/button.svg";
 import CalloutIcon from "@/assets/icons/callout.svg";
 import CardIcon from "@/assets/icons/card.svg";
+import CheckboxIcon from "@/assets/icons/checkbox.svg";
 import CodeIcon from "@/assets/icons/braces.svg";
+import ColourIcon from "@/assets/icons/water.svg";
 import DividerIcon from "@/assets/icons/hrule.svg";
+import FictoanIcon from "@/assets/images/fictoan-icon.svg";
+import FictoanLogo from "@/assets/images/fictoan-logo.svg";
+import FormWrapperIcon from "@/assets/icons/writing.svg";
+import HomeIcon from "@/assets/icons/home.svg";
 import InfoPanelIcon from "@/assets/icons/info-panel.svg";
+import InputFieldIcon from "@/assets/icons/input.svg";
+import LayoutIcon from "@/assets/icons/layout.svg";
+import ManifestoIcon from "@/assets/icons/manifesto.svg";
 import NotificationIcon from "@/assets/icons/notification.svg";
+import ProgressBarIcon from "@/assets/icons/progress-bar.svg";
+import RadioButtonIcon from "@/assets/icons/radio-button.svg";
+import SelectIcon from "@/assets/icons/dropdown.svg";
 import SidebarIcon from "@/assets/icons/sidebar.svg";
 import TableIcon from "@/assets/icons/table.svg";
 import TabsIcon from "@/assets/icons/tabs.svg";
+import ThemeIcon from "@/assets/icons/paintbrush.svg";
+import ThemeSwitchIcon from "@/assets/icons/theme.svg";
 import ToastIcon from "@/assets/icons/toast.svg";
+import ToolboxIcon from "@/assets/icons/toolbox.svg";
+import TypographyIcon from "@/assets/icons/typography.svg";
 
 
 export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSidebarOnMobile, setShowSidebarOnMobile }) => {
@@ -77,9 +78,9 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             closeOnClickOutside={closeMobileSidebar}
             className={`${sidebarState === "collapsed" ? "collapsed" : ""}`}
         >
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* HEADER */}
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <SidebarHeader isSticky onClick={headerOnClick}>
                 <div className="header-logo">
                     <FictoanLogo />
@@ -111,9 +112,9 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             <Divider bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
 
 
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* OVERVIEW */}
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <SidebarItem>
                 <SidebarItemIcon iconType="stroked" />
                 <SidebarItemText
@@ -122,6 +123,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 />
             </SidebarItem>
 
+            {/* GETTING STARTED ==================================================================================== */}
             <Link href="/getting-started">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -131,6 +133,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* BASE ELEMENT ======================================================================================= */}
             <Link href="/base-element">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -141,6 +144,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* THEME ============================================================================================== */}
             <Link href="/theme" className={`${pathname === "/theme" ? "active" : ""}`}>
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -151,6 +155,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* LAYOUT ============================================================================================= */}
             <Link href="/layout">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -160,6 +165,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* TYPOGRAPHY ========================================================================================= */}
             <Link href="/typography">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -169,6 +175,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* COLOUR ============================================================================================= */}
             <Link href="/colour" className={`${pathname === "/colour" ? "active" : ""}`}>
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -180,28 +187,28 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
 
             <Divider bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
 
-            {/* //////////////////////////////////////////////////////////// */}
-            {/* COMPONENTS */}
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* ELEMENTS */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <SidebarItem>
                 <SidebarItemIcon iconType="stroked" />
                 <SidebarItemText
-                    linkText="COMPONENTS"
+                    linkText="ELEMENTS"
                     weight="600" textColour="slate-60" size="small"
                 />
             </SidebarItem>
 
-            {/* ACCORDION ====================================================== */}
+            {/* ACCORDION ========================================================================================== */}
             <Link href="/components/accordion">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
-                        <BadgeIcon />
+                        <AccordionIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Accordion" />
                 </SidebarItem>
             </Link>
 
-            {/* BADGE ====================================================== */}
+            {/* BADGE ============================================================================================== */}
             <Link href="/components/badge">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -211,7 +218,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* BREADCRUMBS ================================================ */}
+            {/* BREADCRUMBS ======================================================================================== */}
             <Link href="/components/breadcrumbs">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -221,7 +228,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* BUTTON ===================================================== */}
+            {/* BUTTON ============================================================================================= */}
             <Link href="/components/button">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -231,7 +238,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* CALLOUT ==================================================== */}
+            {/* CALLOUT ============================================================================================ */}
             <Link href="/components/callout">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -241,7 +248,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* CARD ======================================================= */}
+            {/* CARD =============================================================================================== */}
             <Link href="/components/card">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -251,7 +258,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* CHECKBOX / SWITCH ========================================== */}
+            {/* CHECKBOX / SWITCH ================================================================================== */}
             <Link href="/components/checkbox">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -261,7 +268,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* CODE BLOCK ================================================= */}
+            {/* CODE BLOCK ========================================================================================= */}
             <Link href="/components/code-block">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -271,7 +278,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* DIVIDER ===================================================== */}
+            {/* DIVIDER ============================================================================================ */}
             <Link href="/components/divider">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -281,7 +288,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* DRAWER ===================================================== */}
+            {/* DRAWER ============================================================================================= */}
             <Link href="/components/drawer">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -291,7 +298,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* FORM WRAPPER =============================================== */}
+            {/* FORM WRAPPER ======================================================================================= */}
             <Link href="/components/form-wrapper">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -301,7 +308,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* INPUT FIELD ================================================ */}
+            {/* INPUT FIELD ======================================================================================== */}
             <Link href="/components/input-field">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -312,7 +319,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
 
-            {/* PROGRESS BAR ============================================== */}
+            {/* PROGRESS BAR ======================================================================================= */}
             <Link href="/components/meter">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -322,27 +329,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* NOTIFICATIONS ============================================== */}
-            <Link href="/components/notifications">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <NotificationIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Notifications" />
-                </SidebarItem>
-            </Link>
-
-            {/* PIN INPUT FIELD ============================================ */}
-            <Link href="/components/pin-input-field">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <InputFieldIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Pin Input" />
-                </SidebarItem>
-            </Link>
-
-            {/* PROGRESS BAR ============================================== */}
+            {/* PROGRESS BAR ======================================================================================= */}
             <Link href="/components/progress-bar">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -352,7 +339,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* RADIO BUTTON ============================================== */}
+            {/* RADIO BUTTON ======================================================================================= */}
             <Link href="/components/radio-button">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -362,7 +349,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* SELECT ===================================================== */}
+            {/* SELECT ============================================================================================= */}
             <Link href="/components/select">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -372,17 +359,72 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* SELECT ===================================================== */}
-            <Link href="/components/sidebar">
+            {/* TABLE ============================================================================================== */}
+            <Link href="/components/table">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
-                        <SidebarIcon />
+                        <TableIcon />
                     </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Sidebar" />
+                    <SidebarItemText weight="400" linkText="Table" />
                 </SidebarItem>
             </Link>
 
-            {/* SIDEBAR ==================================================== */}
+            {/* TOAST ============================================================================================== */}
+            <Link href="/components/toast">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <ToastIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Toast" />
+                </SidebarItem>
+            </Link>
+
+            <Divider bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
+
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* COMPONENTS */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <SidebarItem>
+                <SidebarItemIcon iconType="stroked" />
+                <SidebarItemText
+                    linkText="COMPONENTS"
+                    weight="600" textColour="slate-60" size="small"
+                />
+            </SidebarItem>
+
+            {/* NOTIFICATIONS ====================================================================================== */}
+            <Link href="/components/notifications">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <NotificationIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Notifications" />
+                </SidebarItem>
+            </Link>
+
+
+            {/* PIN INPUT FIELD ==================================================================================== */}
+            <Link href="/components/pin-input-field">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <InputFieldIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Pin Input" />
+                </SidebarItem>
+            </Link>
+
+
+            {/* TABS =============================================================================================== */}
+            <Link href="/components/radio-tab-group">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <TabsIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Radio tab group" />
+                </SidebarItem>
+            </Link>
+
+            {/* SIDEBAR ============================================================================================ */}
             <Accordion summary={(
                 <SidebarItem>
                     <SidebarItemIcon iconType="stroked">
@@ -391,6 +433,15 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                     <SidebarItemText weight="400" linkText="Sidebar" />
                 </SidebarItem>
             )}>
+                <Link href="/components/sidebar">
+                    <SidebarItem onClick={closeMobileSidebar}>
+                        <SidebarItemIcon iconType="stroked">
+                            <SidebarIcon />
+                        </SidebarItemIcon>
+                        <SidebarItemText weight="400" linkText="Sidebar" />
+                    </SidebarItem>
+                </Link>
+
                 <Link href="/components/sidebar-wrapper">
                     <SidebarItem onClick={closeMobileSidebar}>
                         <SidebarItemIcon iconType="stroked">
@@ -416,17 +467,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </Link>
             </Accordion>
 
-            {/* TABLE ====================================================== */}
-            <Link href="/components/table">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <TableIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Table" />
-                </SidebarItem>
-            </Link>
-
-            {/* TABS ======================================================= */}
+            {/* TABS =============================================================================================== */}
             <Link href="/components/tabs">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
@@ -436,20 +477,9 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            {/* TOAST ====================================================== */}
-            <Link href="/components/toast">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ToastIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Toast" />
-                </SidebarItem>
-            </Link>
-
-
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* FOOTER */}
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <SidebarFooter>
                 <SidebarItem onClick={toggleTheme}>
                     <SidebarItemIcon iconType="stroked">

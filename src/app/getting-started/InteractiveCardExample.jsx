@@ -16,7 +16,7 @@ import {
     Divider, Card, RadioGroup, Select,
 } from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
-import { listOfColours, generateShades } from "../../utils/colours";
+import { listOfColours, generateShades } from "../colour/colours";
 
 // COMPONENTS ==================================================================
 
