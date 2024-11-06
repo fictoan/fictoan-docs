@@ -1,135 +1,71 @@
-"use client";
-
-import React from "react";
-
-import { Card, Element, Heading1,
-    Heading2,
-    Heading3,
+import React, { useState } from "react";
+import {
+    Element,
+    Divider,
+    Portion,
+    Row,
+    Heading1,
     Heading4,
-    Heading5,
-    Heading6, Portion, Row, Text, Article } from "fictoan-react";
-
+    Text,
+    Article,
+    Card,
+    Header,
+    Button,
+    RadioTabGroup,
+    Checkbox,
+    Select,
+    Div,
+} from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
-import { sampleGridRow } from "../CodeSamples";
 
-const RowGridDocs = () => {
+const RowPortionConfigurator = () => {
+    // Row state
+    const [gutters, setGutters] = useState("small");
+    const [horizontalPadding, setHorizontalPadding] = useState("medium");
+    const [retainLayout, setRetainLayout] = useState(false);
+    const [layout, setLayout] = useState("grid");
+
+    // Portion states
+    const [portions, setPortions] = useState([{
+        desktopSpan         : "half",
+        tabletLandscapeSpan : "half",
+        tabletPortraitSpan  : "whole",
+        mobileSpan          : "whole",
+    }]);
+
+    const spanOptions = [
+        { label: "Select width", value: "0", disabled: true },
+        { label: "1 column", value: "1" },
+        { label: "2 — one-twelfth", value: "one-twelfth" },
+        { label: "3 — one-eighth", value: "one-eighth" },
+        { label: "4 — one-sixth", value: "one-sixth" },
+        { label: "5 columns", value: "5" },
+        { label: "6 — one-fourth", value: "one-fourth" },
+        { label: "7 columns", value: "7" },
+        { label: "8 — one-third", value: "one-third" },
+        { label: "9 columns", value: "9" },
+        { label: "10 — five-twelfth", value: "five-twelfth" },
+        { label: "11 columns", value: "11" },
+        { label: "12 — half", value: "half" },
+        { label: "13 columns", value: "13" },
+        { label: "14 — seven-twelfth", value: "seven-twelfth" },
+        { label: "15 columns", value: "15" },
+        { label: "16 — two-third", value: "two-third" },
+        { label: "17 columns", value: "17" },
+        { label: "18 — three-fourth", value: "three-fourth" },
+        { label: "19 columns", value: "19" },
+        { label: "20 — five-sixth", value: "five-sixth" },
+        { label: "21 — seven-eighth", value: "seven-eighth" },
+        { label: "22 — eleven-twelfth", value: "eleven-twelfth" },
+        { label: "23 columns", value: "23" },
+        { label: "24 — whole", value: "whole" }
+    ];
+
     return (
-        <>
-            <div>
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Heading6 weight="700">Grid</Heading6>
-                        <Text marginBottom="nano">
-                            This is the default behaviour, and has a hard-coded 24-column setup.
-                        </Text>
+        <Article id="page-component">
 
-                        <CodeBlock source={sampleGridRow} language="jsx" marginBottom="micro" />
-
-                        <Text marginBottom="nano">
-                            This creates a row with 24 columns.
-                        </Text>
-                    </Portion>
-                </Row>
-
-                {/* DEMONSTRATION ====================================== */}
-                <Element
-                    as="div"
-                    marginBottom="micro" paddingLeft="tiny" paddingRight="tiny"
-                >
-                    <Card className="screen-desktop" shape="rounded" shadow="hard">
-                        <Element as="div" className="title-bar" bgColour="slate-light-80">
-                            <Text textColour="red">●</Text>
-                            <Text textColour="amber">●</Text>
-                            <Text textColour="green">●</Text>
-                        </Element>
-
-                        <Row bgColour="slate-10" marginBottom="none" isFullHeight retainLayoutAlways>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">1</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">2</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">3</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">4</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">5</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">6</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">7</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">8</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">9</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">10</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">11</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">12</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">13</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">14</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">15</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">16</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">17</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">18</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">19</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">20</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">21</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">22</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">23</Text>
-                            </Portion>
-                            <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">24</Text>
-                            </Portion>
-                        </Row>
-                    </Card>
-                </Element>
-
-                <Row horizontalPadding="huge">
-                    <Portion>
-                        <Text marginBottom="nano">
-                            Now you can add content to it using the <code>Portion</code> component.
-                        </Text>
-                    </Portion>
-                </Row>
-            </div>
-        </>
+        </Article>
     );
 };
 
-export default RowGridDocs;
+export default RowPortionConfigurator;

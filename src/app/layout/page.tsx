@@ -1,36 +1,89 @@
 "use client";
 
-import React from "react";
+// FRAMEWORK ===========================================================================================================
+import React, { useState } from "react";
 
-import { Card, Element, Heading1,
+// INTERFACE ===========================================================================================================
+import {
+    Card,
+    Element,
+    Heading1,
     Heading2,
     Heading3,
     Heading4,
     Heading5,
-    Heading6, Divider, Portion, Row, Table, Tabs, Text, Article } from "fictoan-react";
+    Heading6,
+    Divider,
+    Portion,
+    Row,
+    Table,
+    Tabs,
+    Text,
+    Article,
+    Div,
+    Header,
+    RadioTabGroup,
+    Checkbox,
+    Button,
+    Select,
+} from "fictoan-react";
 import { CodeBlock } from "fictoan-react/components";
 
+// COMPONENTS ==========================================================================================================
+// STYLES ==============================================================================================================
 import "./page-layout.css";
 
 import {
-    sampleContentPadding,
-    sampleGutters,
     sampleNamedPortions,
     sampleResonsiveness,
-    sampleGridRow,
     sampleRowAndPortion1,
     sampleRowAndPortion3,
     sampleRowAndPortion4,
     sampleTurnOffResponsiveness,
 } from "./CodeSamples";
 
-import RowGridDocs from "./content/RowGridDocs";
-import RowFlexboxDocs from "@/app/layout/content/RowFlexboxDocs";
 
-        const tabTwoContent = () => (
-            <Text>Content for tab 2</Text>
-        )
 const LayoutDocs = () => {
+    const [ gutters, setGutters ]                     = useState("small");
+    const [ horizontalPadding, setHorizontalPadding ] = useState("medium");
+    const [ retainLayout, setRetainLayout ]           = useState(false);
+
+    // Portion states
+    const [ portions, setPortions ] = useState([ {
+        desktopSpan         : "half",
+        tabletLandscapeSpan : "half",
+        tabletPortraitSpan  : "whole",
+        mobileSpan          : "whole",
+    } ]);
+
+    const spanOptions = [
+        { label : "Select width", value : "0", disabled : true },
+        { label : "1 column", value : "1" },
+        { label : "2 — one-twelfth", value : "one-twelfth" },
+        { label : "3 — one-eighth", value : "one-eighth" },
+        { label : "4 — one-sixth", value : "one-sixth" },
+        { label : "5 columns", value : "5" },
+        { label : "6 — one-fourth", value : "one-fourth" },
+        { label : "7 columns", value : "7" },
+        { label : "8 — one-third", value : "one-third" },
+        { label : "9 columns", value : "9" },
+        { label : "10 — five-twelfth", value : "five-twelfth" },
+        { label : "11 columns", value : "11" },
+        { label : "12 — half", value : "half" },
+        { label : "13 columns", value : "13" },
+        { label : "14 — seven-twelfth", value : "seven-twelfth" },
+        { label : "15 columns", value : "15" },
+        { label : "16 — two-third", value : "two-third" },
+        { label : "17 columns", value : "17" },
+        { label : "18 — three-fourth", value : "three-fourth" },
+        { label : "19 columns", value : "19" },
+        { label : "20 — five-sixth", value : "five-sixth" },
+        { label : "21 — seven-eighth", value : "seven-eighth" },
+        { label : "22 — eleven-twelfth", value : "eleven-twelfth" },
+        { label : "23 columns", value : "23" },
+        { label : "24 — whole", value : "whole" },
+    ];
+
     return (
         <>
             <head>
@@ -38,713 +91,385 @@ const LayoutDocs = () => {
             </head>
 
             <article id="page-layout">
-                <Row horizontalPadding="huge" marginTop="small" marginBottom="medium">
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                     <Portion>
-                        <Heading2 textColour="hue">Layout</Heading2>
+                        <Heading1>Row and Portion</Heading1>
+                        <Text size="large" marginBottom="small">
+                            These two components form the layout scaffolding for all your UI needs
+                        </Text>
+                    </Portion>
+
+                    <Portion>
+                        <Heading4 marginBottom="micro">Characteristics</Heading4>
+                        <ul>
+                            <li>The Row is a logical block-level element to separate content on your page</li>
+                            <li>A page can have unlimited Rows and each Row can have unlimited Portions as children</li>
+                            <li>Portion widths have to be explicitly set, or they will take the entire width</li>
+                            <li>Portions move to the next line if no space is available</li>
+                        </ul>
                     </Portion>
                 </Row>
 
-                {/* //////////////////////////////////////////////////////////// */}
+                <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
+
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/*   BASICS  */}
-                {/* //////////////////////////////////////////////////////////// */}
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 <Element as="section" id="basics">
-                    <Row horizontalPadding="huge">
-                        <Portion>
-                            <Heading4 marginBottom="nano">The Row element</Heading4>
+                    {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////////// */}
+                    <Row horizontalPadding="small" className="rendered-component">
+                        {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
+                        <Portion id="component-wrapper" marginBottom="small">
+                            <Div
+                                padding="micro" shape="rounded" bgColour="slate-light-80"
+                                data-centered-children
+                            >
+                                <Card className="screen-desktop" shape="rounded" shadow="hard"
+                                      borderColour="slate-light-40">
+                                    <Element as="div" className="title-bar" bgColour="slate-light-40">
+                                        <Text textColour="red">●</Text>
+                                        <Text textColour="amber">●</Text>
+                                        <Text textColour="green">●</Text>
+                                    </Element>
 
-                            <Text marginBottom="micro">
-                                The Row is your basic building block for layouts. It supports both grid and flexbox,
-                                using the <code>layout</code> prop.
-                            </Text>
+                                    <Row
+                                        className="demo-row"
+                                        // @ts-ignore
+                                        horizontalPadding={horizontalPadding}
+                                        // @ts-ignore
+                                        gutters={gutters}
+                                        retainLayoutAlways={retainLayout}
+                                    >
+                                        {portions.map((portion, index) => (
+                                            <Portion
+                                                key={index}
+                                                // @ts-ignore
+                                                desktopSpan={portion.desktopSpan}
+                                                // @ts-ignore
+                                                tabletLandscapeSpan={portion.tabletLandscapeSpan}
+                                                // @ts-ignore
+                                                tabletPortraitSpan={portion.tabletPortraitSpan}
+                                                // @ts-ignore
+                                                mobileSpan={portion.mobileSpan}
+                                                bgColour="sky-light-20"
+                                                padding="nano"
+                                            >
+                                                <Text size="small" align="center">
+                                                    P. {index + 1}
+                                                </Text>
+                                            </Portion>
+                                        ))}
+                                    </Row>
+
+                                    <Row
+                                        // @ts-ignore
+                                        horizontalPadding={horizontalPadding}
+                                        // @ts-ignore
+                                        gutters={gutters}
+                                        retainLayoutAlways={retainLayout}
+                                        bgColour="slate-10"
+                                        // @ts-ignore
+                                        marginBottom="none" isFullHeight retainLayoutAlways
+                                    >
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">1</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">2</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">3</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">4</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">5</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">6</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">7</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">8</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">9</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">10</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">11</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">12</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">13</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">14</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">15</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">16</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">17</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">18</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">19</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">20</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">21</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">22</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">23</Text>
+                                        </Portion>
+                                        <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
+                                            <Text hideOnTabletPortrait hideOnMobile size="small"
+                                                  align="centre">24</Text>
+                                        </Portion>
+                                    </Row>
+                                </Card>
+                            </Div>
+                        </Portion>
+
+                        {/* CONFIGURATOR */}
+                        <Portion desktopSpan="two-third">
+                            <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                {[
+                                    `// Paste this in your content file`,
+                                    `<Row`,
+                                    `    gutters="${gutters}"`,
+                                    `    horizontalPadding="${horizontalPadding}"`,
+                                    retainLayout ? `    retainLayoutAlways` : null,
+                                    `>`,
+                                    ...portions.map((p, index) => [
+                                        `    <Portion`,
+                                        `        desktopSpan="${p.desktopSpan}"`,
+                                        `        tabletLandscapeSpan="${p.tabletLandscapeSpan}"`,
+                                        `        tabletPortraitSpan="${p.tabletPortraitSpan}"`,
+                                        `        mobileSpan="${p.mobileSpan}"`,
+                                        `    >`,
+                                        `        P. ${index + 1}`,
+                                        `    </Portion>`,
+                                    ]).flat(),
+                                    `</Row>`,
+                                ].filter(Boolean).join("\n")}
+                            </CodeBlock>
+
+                            <Card padding="micro" shape="rounded">
+                                <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
+                                    <Text size="large" weight="700" textColour="white">
+                                        Row configuration
+                                    </Text>
+                                </Header>
+
+                                <Row marginBottom="micro">
+                                    <Portion>
+                                        <RadioTabGroup
+                                            id="horizontal-padding"
+                                            label="Horizontal padding"
+                                            name="horizontal-padding"
+                                            options={[
+                                                { id : "hp-none", label : "none", value : "none" },
+                                                { id : "hp-nano", label : "nano", value : "nano" },
+                                                { id : "hp-micro", label : "micro", value : "micro" },
+                                                { id : "hp-tiny", label : "tiny", value : "tiny" },
+                                                { id : "hp-small", label : "small", value : "small" },
+                                                { id : "hp-medium", label : "medium", value : "medium" },
+                                                { id : "hp-large", label : "large", value : "large" },
+                                                { id : "hp-huge", label : "huge", value : "huge" },
+                                            ]}
+                                            defaultValue={horizontalPadding}
+                                            // @ts-ignore
+                                            onChange={(e) => setHorizontalPadding(e.target.value)}
+                                        />
+                                    </Portion>
+
+                                    <Portion>
+                                        <RadioTabGroup
+                                            id="gutters"
+                                            label="Gutters"
+                                            name="gutters"
+                                            options={[
+                                                { id : "gutters-none", label : "none", value : "none" },
+                                                { id : "gutters-nano", label : "nano", value : "nano" },
+                                                { id : "gutters-micro", label : "micro", value : "micro" },
+                                                { id : "gutters-tiny", label : "tiny", value : "tiny" },
+                                                { id : "gutters-small", label : "small", value : "small" },
+                                                { id : "gutters-medium", label : "medium", value : "medium" },
+                                                { id : "gutters-large", label : "large", value : "large" },
+                                                { id : "gutters-huge", label : "huge", value : "huge" },
+                                            ]}
+                                            defaultValue={gutters}
+                                            // @ts-ignore
+                                            onChange={(e) => setGutters(e.target.value)}
+                                        />
+                                    </Portion>
+
+                                    <Portion>
+                                        <Checkbox
+                                            id="retain-layout"
+                                            name="retain-layout"
+                                            label="Retain layout always"
+                                            checked={retainLayout}
+                                            // @ts-ignore
+                                            onChange={(e) => setRetainLayout(e.target.checked)}
+                                        />
+                                    </Portion>
+                                </Row>
+
+                                <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
+
+                                <Header
+                                    verticallyCentreItems pushItemsToEnds
+                                    verticalMargin="micro"
+                                >
+                                    <Text size="large" weight="700" textColour="white">
+                                        Portions
+                                    </Text>
+
+                                    <Button
+                                        kind="primary"
+                                        size="small"
+                                        onClick={() => setPortions([ ...portions, {
+                                            desktopSpan         : "half",
+                                            tabletLandscapeSpan : "half",
+                                            tabletPortraitSpan  : "whole",
+                                            mobileSpan          : "whole",
+                                        } ])}
+                                        disabled={portions.length >= 4}
+                                    >
+                                        Add Portion
+                                    </Button>
+                                </Header>
+
+                                {portions.map((portion, index) => (
+                                    <Card key={index} padding="micro" shape="rounded" marginBottom="nano">
+                                        <Row marginBottom="none">
+                                            <Portion>
+                                                <Header verticallyCentreItems pushItemsToEnds marginBottom="nano">
+                                                    <Text weight="600">Portion {index + 1}</Text>
+
+                                                    {portions.length > 1 && (
+                                                        <Button
+                                                            kind="custom"
+                                                            size="small" shape="rounded"
+                                                            bgColour="transparent" borderColour="red" textColour="red"
+                                                            onClick={() => {
+                                                                const newPortions = portions.filter((_, i) => i !== index);
+                                                                setPortions(newPortions);
+                                                            }}
+                                                        >
+                                                            Remove
+                                                        </Button>
+                                                    )}
+                                                </Header>
+                                            </Portion>
+
+                                            <Portion desktopSpan="half">
+                                                <Select
+                                                    label="Desktop span"
+                                                    options={spanOptions}
+                                                    defaultValue={portion.desktopSpan}
+                                                    onChange={(e) => {
+                                                        const newPortions              = [ ...portions ];
+                                                        // @ts-ignore
+                                                        newPortions[index].desktopSpan = e.target.value;
+                                                        setPortions(newPortions);
+                                                    }}
+                                                    isFullWidth
+                                                />
+                                            </Portion>
+
+                                            <Portion desktopSpan="half">
+                                                <Select
+                                                    label="Tablet landscape"
+                                                    options={spanOptions}
+                                                    defaultValue={portion.tabletLandscapeSpan}
+                                                    onChange={(e) => {
+                                                        const newPortions                      = [ ...portions ];
+                                                        // @ts-ignore
+                                                        newPortions[index].tabletLandscapeSpan = e.target.value;
+                                                        setPortions(newPortions);
+                                                    }}
+                                                    isFullWidth
+                                                />
+                                            </Portion>
+
+                                            <Portion desktopSpan="half">
+                                                <Select
+                                                    label="Tablet portrait"
+                                                    options={spanOptions}
+                                                    defaultValue={portion.tabletPortraitSpan}
+                                                    onChange={(e) => {
+                                                        const newPortions                     = [ ...portions ];
+                                                        // @ts-ignore
+                                                        newPortions[index].tabletPortraitSpan = e.target.value;
+                                                        setPortions(newPortions);
+                                                    }}
+                                                    isFullWidth
+                                                />
+                                            </Portion>
+
+                                            <Portion desktopSpan="half">
+                                                <Select
+                                                    label="Mobile"
+                                                    options={spanOptions}
+                                                    defaultValue={portion.mobileSpan}
+                                                    onChange={(e) => {
+                                                        const newPortions             = [ ...portions ];
+                                                        // @ts-ignore
+                                                        newPortions[index].mobileSpan = e.target.value;
+                                                        setPortions(newPortions);
+                                                    }}
+                                                    isFullWidth
+                                                />
+                                            </Portion>
+                                        </Row>
+                                    </Card>
+                                ))}
+                            </Card>
                         </Portion>
                     </Row>
 
-                    <Tabs
-                        tabs={[
-                            {
-                                key     : "tab1",
-                                label   : "Grid",
-                                content : <RowGridDocs />
-                            },
-                        ]}
-                        align="center"
-                    />
-
-                    <Divider horizontalMargin="huge" kind="primary" />
+                    <Divider kind="primary" horizontalMargin="huge" verticalMargin="tiny" />
                 </Element>
 
 
-                {/* //////////////////////////////////////////////////////////// */}
-                {/*   ADDING CONTENT  */}
-                {/* //////////////////////////////////////////////////////////// */}
-                <Element as="section" id="add-content">
-                    <Row horizontalPadding="huge" marginBottom="nano">
-                        <Portion>
-                            <Heading6 marginBottom="nano">Adding content</Heading6>
-
-                            <Text marginBottom="micro">
-                                Content is added with the <code>Portion</code> component within the <code>Row</code>.
-                                You need to specify the number of columns you want the <code>Portion</code> to occupy.
-                            </Text>
-
-                            <Text marginBottom="micro">
-                                You can do this by adding a <code>desktopSpan</code> prop, and the number of columns as
-                                its value. So, if you say <code>desktopSpan="12"</code>, it means that
-                                the <code>Portion</code> will occupy twelve columns, or half the <code>Row</code>, like
-                                so—.
-                            </Text>
-                        </Portion>
-                    </Row>
-
-                    <Row horizontalPadding="huge" marginBottom="nano">
-                        <Portion>
-                            <CodeBlock source={sampleRowAndPortion1} language="jsx" />
-                        </Portion>
-                    </Row>
-
-                    {/*  DEMONSTRATION  ======================================  */}
-                    <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="small">
-                        <Card className="screen-desktop" shape="rounded" shadow="hard">
-                            <Element as="div" className="title-bar" bgColour="slate-light-40">
-                                <Text textColour="red">●</Text>
-                                <Text textColour="amber">●</Text>
-                                <Text textColour="green">●</Text>
-                            </Element>
-
-                            <Row className="demo-row" marginBottom="none" retainLayoutAlways>
-                                <Portion desktopSpan="half" bgColour="sky-light-20">
-                                    <Text size="small" fontStyle="monospace">
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;Portion desktopSpan="12"&gt;
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add content here
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/Portion&gt;
-                                    </Text>
-                                </Portion>
-                            </Row>
-
-                            <Row bgColour="slate-10" marginBottom="none" isFullHeight retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">1</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">2</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">3</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">4</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">5</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">6</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">7</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">8</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">9</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">10</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">11</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">12</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">13</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">14</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">15</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">16</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">17</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">18</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">19</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">20</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">21</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">22</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">23</Text>
-                                </Portion>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
-                                    <Text hideOnTabletPortrait hideOnMobile size="small" align="centre">24</Text>
-                                </Portion>
-                            </Row>
-                        </Card>
-                    </Element>
-
-                    <Divider horizontalMargin="huge" kind="secondary" />
-
-
-                    {/* MULTIPLE PORTIONS ////////////////////////////////////////////////////////////////////////////// */}
-                    <Row horizontalPadding="huge" marginBottom="nano">
-                        <Portion>
-                            <Heading6 marginBottom="nano">Multiple Portions</Heading6>
-                            <Text>In the same way, you can add as many <code>Portion</code> elements inside
-                                the <code>Row</code>. If the sum of columns values exceeds <code>24</code>, they will
-                                wrap to the next line.</Text>
-                        </Portion>
-                    </Row>
-
-                    <Row horizontalPadding="huge" marginBottom="nano">
-                        <Portion>
-                            <CodeBlock source={sampleRowAndPortion3} language="jsx" />
-                        </Portion>
-                    </Row>
-
-                    {/*  DEMONSTRATION  ======================================  */}
-                    <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="small">
-                        <Card className="screen-desktop screen-tall" shape="rounded" shadow="hard">
-                            <Element as="div" className="title-bar" bgColour="slate-light-40">
-                                <Text textColour="red">●</Text>
-                                <Text textColour="amber">●</Text>
-                                <Text textColour="green">●</Text>
-                            </Element>
-
-                            <Row className="demo-row" marginBottom="none" retainLayoutAlways>
-                                <Portion desktopSpan="12" bgColour="sky-light-20">
-                                    <Text size="small" fontStyle="monospace" showOnlyOnDesktop
-                                          showOnlyOnTabletLandscape>
-                                        &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="12"&gt;
-                                    </Text>
-                                    <Text size="small" fontStyle="monospace" showOnlyOnTabletPortrait showOnlyOnMobile>
-                                        &nbsp;&nbsp;desktopSpan="12"&gt;
-                                    </Text>
-                                </Portion>
-
-                                <Portion desktopSpan="12" bgColour="sky-light-20">
-                                    <Text size="small" fontStyle="monospace" showOnlyOnDesktop
-                                          showOnlyOnTabletLandscape>
-                                        &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="12"&gt;
-                                    </Text>
-                                    <Text size="small" fontStyle="monospace" showOnlyOnTabletPortrait showOnlyOnMobile>
-                                        &nbsp;&nbsp;desktopSpan="12"&gt;
-                                    </Text>
-                                </Portion>
-
-                                <Portion desktopSpan="8" bgColour="sky-light-20">
-                                    <Text size="small" fontStyle="monospace" showOnlyOnDesktop
-                                          showOnlyOnTabletLandscape>
-                                        &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="8"&gt;
-                                    </Text>
-                                    <Text size="small" fontStyle="monospace" showOnlyOnTabletPortrait showOnlyOnMobile>
-                                        &nbsp;&nbsp;desktopSpan="8"&gt;
-                                    </Text>
-                                </Portion>
-
-                                <Portion desktopSpan="8" bgColour="sky-light-20">
-                                    <Text size="small" fontStyle="monospace" showOnlyOnDesktop
-                                          showOnlyOnTabletLandscape>
-                                        &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="8"&gt;
-                                    </Text>
-                                    <Text size="small" fontStyle="monospace" showOnlyOnTabletPortrait showOnlyOnMobile>
-                                        &nbsp;&nbsp;desktopSpan="8"&gt;
-                                    </Text>
-                                </Portion>
-
-                                <Portion desktopSpan="8" bgColour="sky-light-20">
-                                    <Text size="small" fontStyle="monospace" showOnlyOnDesktop
-                                          showOnlyOnTabletLandscape>
-                                        &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="8"&gt;
-                                    </Text>
-                                    <Text size="small" fontStyle="monospace" showOnlyOnTabletPortrait showOnlyOnMobile>
-                                        &nbsp;&nbsp;desktopSpan="8"&gt;
-                                    </Text>
-                                </Portion>
-
-                                <Portion desktopSpan="4" bgColour="sky-light-20">
-                                    <Text size="small" fontStyle="monospace" showOnlyOnDesktop
-                                          showOnlyOnTabletLandscape>
-                                        &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="4"&gt;
-                                    </Text>
-                                    <Text size="small" fontStyle="monospace" showOnlyOnTabletPortrait showOnlyOnMobile>
-                                        &nbsp;&nbsp;desktopSpan="4"&gt;
-                                    </Text>
-                                </Portion>
-
-                                <Portion desktopSpan="6" bgColour="sky-light-20">
-                                    <Text size="small" fontStyle="monospace" showOnlyOnDesktop
-                                          showOnlyOnTabletLandscape>
-                                        &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="6"&gt;
-                                    </Text>
-                                    <Text size="small" fontStyle="monospace" showOnlyOnTabletPortrait showOnlyOnMobile>
-                                        &nbsp;&nbsp;desktopSpan="6"&gt;
-                                    </Text>
-                                </Portion>
-
-                                <Portion desktopSpan="14" bgColour="sky-light-20">
-                                    <Text size="small" fontStyle="monospace" showOnlyOnDesktop
-                                          showOnlyOnTabletLandscape>
-                                        &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="14"&gt;
-                                    </Text>
-                                    <Text size="small" fontStyle="monospace" showOnlyOnTabletPortrait showOnlyOnMobile>
-                                        &nbsp;&nbsp;desktopSpan="14"&gt;
-                                    </Text>
-                                </Portion>
-
-                                <Portion desktopSpan="13" bgColour="sky-light-20">
-                                    <Text size="small" fontStyle="monospace" showOnlyOnDesktop
-                                          showOnlyOnTabletLandscape>
-                                        &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="13"&gt;
-                                    </Text>
-                                    <Text size="small" fontStyle="monospace" showOnlyOnTabletPortrait showOnlyOnMobile>
-                                        &nbsp;&nbsp;desktopSpan="13"&gt;
-                                    </Text>
-                                </Portion>
-
-                                <Portion desktopSpan="7" bgColour="sky-light-20">
-                                    <Text size="small" fontStyle="monospace" showOnlyOnDesktop
-                                          showOnlyOnTabletLandscape>
-                                        &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="7"&gt;
-                                    </Text>
-                                    <Text size="small" fontStyle="monospace" showOnlyOnTabletPortrait showOnlyOnMobile>
-                                        &nbsp;&nbsp;desktopSpan="7"&gt;
-                                    </Text>
-                                </Portion>
-
-                                <Portion desktopSpan="6" bgColour="sky-light-20">
-                                    <Text size="small" fontStyle="monospace" showOnlyOnDesktop
-                                          showOnlyOnTabletLandscape>
-                                        &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="6"&gt;
-                                    </Text>
-                                    <Text size="small" fontStyle="monospace" showOnlyOnTabletPortrait showOnlyOnMobile>
-                                        &nbsp;&nbsp;desktopSpan="6"&gt;
-                                    </Text>
-                                </Portion>
-                            </Row>
-
-                            <Row bgColour="slate-10" marginBottom="none" isFullHeight retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-                        </Card>
-                    </Element>
-
-                    <Divider horizontalMargin="huge" kind="secondary" />
-
-
-                    {/* MULTIPLE ROWS ////////////////////////////////////////////////////////////////////////////////// */}
-                    <Row horizontalPadding="huge" marginBottom="nano">
-                        <Portion>
-                            <Heading6 marginBottom="nano">Multiple Rows</Heading6>
-                            <Text>While you can put infinite <code>Portion</code> elements inside a <code>Row</code>,
-                                it’s
-                                better to logically break it up according to your content.</Text>
-                        </Portion>
-                    </Row>
-
-                    <Row horizontalPadding="huge" marginBottom="nano">
-                        <Portion>
-                            <CodeBlock source={sampleRowAndPortion4} language="jsx" />
-                        </Portion>
-                    </Row>
-
-                    {/*  DEMONSTRATION  ======================================  */}
-                    <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="small">
-                        <Card className="screen-desktop free-size" shape="rounded" shadow="hard">
-                            <Element as="div" className="title-bar" bgColour="slate-light-40">
-                                <Text textColour="red">●</Text>
-                                <Text textColour="amber">●</Text>
-                                <Text textColour="green">●</Text>
-                            </Element>
-
-
-                            <Row className="demo-parent-row" bgColour="slate-10"
-                                 style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Row className="demo-row" style={{ "top" : "12px" }} retainLayoutAlways>
-                                    <Portion desktopSpan="12" bgColour="sky-light-20">
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnDesktop
-                                              showOnlyOnTabletLandscape>
-                                            &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="12"&gt;
-                                        </Text>
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnTabletPortrait
-                                              showOnlyOnMobile>
-                                            &nbsp;&nbsp;desktopSpan="12"&gt;
-                                        </Text>
-                                    </Portion>
-
-                                    <Portion desktopSpan="12" bgColour="sky-light-20">
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnDesktop
-                                              showOnlyOnTabletLandscape>
-                                            &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="12"&gt;
-                                        </Text>
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnTabletPortrait
-                                              showOnlyOnMobile>
-                                            &nbsp;&nbsp;desktopSpan="12"&gt;
-                                        </Text>
-                                    </Portion>
-                                </Row>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                            </Row>
-
-
-                            <Row className="demo-parent-row" bgColour="slate-10"
-                                 style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Row className="demo-row" style={{ "top" : "12px" }} retainLayoutAlways>
-                                    <Portion desktopSpan="8" bgColour="sky-light-20">
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnDesktop
-                                              showOnlyOnTabletLandscape>
-                                            &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="8"&gt;
-                                        </Text>
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnTabletPortrait
-                                              showOnlyOnMobile>
-                                            &nbsp;&nbsp;desktopSpan="8"&gt;
-                                        </Text>
-                                    </Portion>
-
-                                    <Portion desktopSpan="8" bgColour="sky-light-20">
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnDesktop
-                                              showOnlyOnTabletLandscape>
-                                            &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="8"&gt;
-                                        </Text>
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnTabletPortrait
-                                              showOnlyOnMobile>
-                                            &nbsp;&nbsp;desktopSpan="8"&gt;
-                                        </Text>
-                                    </Portion>
-
-                                    <Portion desktopSpan="8" bgColour="sky-light-20">
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnDesktop
-                                              showOnlyOnTabletLandscape>
-                                            &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="8"&gt;
-                                        </Text>
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnTabletPortrait
-                                              showOnlyOnMobile>
-                                            &nbsp;&nbsp;desktopSpan="8"&gt;
-                                        </Text>
-                                    </Portion>
-                                </Row>
-
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                            </Row>
-
-
-                            <Row className="demo-parent-row" bgColour="slate-10"
-                                 style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Row className="demo-row" style={{ "top" : "12px" }} retainLayoutAlways>
-                                    <Portion desktopSpan="5" bgColour="sky-light-20">
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnDesktop
-                                              showOnlyOnTabletLandscape>
-                                            &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="5"&gt;
-                                        </Text>
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnTabletPortrait
-                                              showOnlyOnMobile>
-                                            &nbsp;&nbsp;desktopSpan="5"&gt;
-                                        </Text>
-                                    </Portion>
-
-                                    <Portion desktopSpan="13" bgColour="sky-light-20">
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnDesktop
-                                              showOnlyOnTabletLandscape>
-                                            &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="13"&gt;
-                                        </Text>
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnTabletPortrait
-                                              showOnlyOnMobile>
-                                            &nbsp;&nbsp;desktopSpan="13"&gt;
-                                        </Text>
-                                    </Portion>
-
-                                    <Portion desktopSpan="6" bgColour="sky-light-20">
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnDesktop
-                                              showOnlyOnTabletLandscape>
-                                            &nbsp;&nbsp;&lt;Portion<br />&nbsp;&nbsp;desktopSpan="6"&gt;
-                                        </Text>
-                                        <Text size="tiny" fontStyle="monospace" showOnlyOnTabletPortrait
-                                              showOnlyOnMobile>
-                                            &nbsp;&nbsp;desktopSpan="6"&gt;
-                                        </Text>
-                                    </Portion>
-                                </Row>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" />
-                            </Row>
-
-
-                        </Card>
-                    </Element>
-
-                    <Divider horizontalMargin="huge" kind="secondary" />
-
-
-                    {/* NAMING PORTIONS //////////////////////////////////////////////////////////////////////////////// */}
-                    <Row horizontalPadding="huge" marginBottom="nano">
-                        <Portion>
-                            <Heading6 marginBottom="nano">Naming Portions</Heading6>
-                            <Text>The <code>desktopSpan</code> attribute takes any whole number
-                                from <code>1</code> to <code>24</code>. You can also use the names of the fractions to
-                                set
-                                this value, like so&mdash;</Text>
-                        </Portion>
-                    </Row>
-
-                    <Row horizontalPadding="huge" marginBottom="nano">
-                        <Portion desktopSpan="half">
-                            <CodeBlock source={sampleNamedPortions} language="jsx" />
-                        </Portion>
-
-                        <Portion desktopSpan="half">
-                            <Table isFullWidth bordersFor="both" padding="tiny">
-                                <thead>
-                                    <tr>
-                                        <td>
-                                            <strong>Columns</strong>
-                                        </td>
-                                        <td>
-                                            <strong>Name</strong>
-                                        </td>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>&mdash;</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td>one-twelfth</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td>one-eighth</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td>one-sixth</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>5</td>
-                                        <td>&mdash;</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>6</td>
-                                        <td>one-fourth</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>7</td>
-                                        <td>&mdash;</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>8</td>
-                                        <td>one-third</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>9</td>
-                                        <td>&mdash;</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>10</td>
-                                        <td>five-twelfth</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>11</td>
-                                        <td>&mdash;</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>12</td>
-                                        <td>half</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>13</td>
-                                        <td>&mdash;</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>14</td>
-                                        <td>seven-twelfth</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>15</td>
-                                        <td>&mdash;</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>16</td>
-                                        <td>two-third</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>17</td>
-                                        <td>&mdash;</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>18</td>
-                                        <td>three-fourth</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>19</td>
-                                        <td>&mdash;</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>20</td>
-                                        <td>five-sixth</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>21</td>
-                                        <td>seven-eighth</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>22</td>
-                                        <td>eleven-twelfth</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>23</td>
-                                        <td>&mdash;</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>24</td>
-                                        <td>whole</td>
-                                    </tr>
-                                </tbody>
-                            </Table>
-                        </Portion>
-                    </Row>
-
-                    <Divider horizontalMargin="huge" kind="primary" />
-                </Element>
-
-
-                {/* //////////////////////////////////////////////////////////// */}
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/*  RESPONSIVENESS */}
-                {/* //////////////////////////////////////////////////////////// */}
+                {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 <Element as="section" id="responsiveness">
                     <Row horizontalPadding="huge" marginBottom="nano">
                         <Portion>
@@ -840,7 +565,7 @@ const LayoutDocs = () => {
                         </Card>
                     </Element>
 
-                    <Divider horizontalMargin="huge" kind="secondary" />
+                    <Divider horizontalMargin="huge" kind="secondary" verticalMargin="tiny" />
 
                     <Row horizontalPadding="huge">
                         <Portion>
@@ -854,545 +579,6 @@ const LayoutDocs = () => {
                             <CodeBlock source={sampleTurnOffResponsiveness} language="jsx" />
                         </Portion>
                     </Row>
-
-                    <Divider horizontalMargin="huge" kind="primary" />
-                </Element>
-
-
-                {/* //////////////////////////////////////////////////////////// */}
-                {/*   CONTENT PADDING  */}
-                {/* //////////////////////////////////////////////////////////// */}
-                <Element as="section" id="content-padding">
-                    <Row horizontalPadding="huge" marginBottom="nano">
-                        <Portion>
-                            <Heading6>Padding your content</Heading6>
-                            <Text>Control the width of your content using the <code>horizontalPadding</code> prop for
-                                the <code>Row</code>.</Text>
-                        </Portion>
-                    </Row>
-
-                    <Row horizontalPadding="huge" marginBottom="nano">
-                        <Portion>
-                            <CodeBlock source={sampleContentPadding} language="jsx" />
-                        </Portion>
-                    </Row>
-
-                    {/*  DEMONSTRATION  ======================================  */}
-                    <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="small">
-                        <Card className="screen-desktop screen-extra-tall" shape="rounded" shadow="hard">
-                            <Element as="div" className="title-bar" bgColour="slate-light-40">
-                                <Text textColour="red">●</Text>
-                                <Text textColour="amber">●</Text>
-                                <Text textColour="green">●</Text>
-                            </Element>
-
-                            <Text>&nbsp;&nbsp;&nbsp;&nbsp;No padding</Text>
-                            <Row bgColour="slate-10" style={{ "height" : "80px" }} retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="nano"</Element>
-                            <Row horizontalPadding="nano" bgColour="slate-10" style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="micro"</Element>
-                            <Row horizontalPadding="micro" bgColour="slate-10" style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="tiny"</Element>
-                            <Row horizontalPadding="tiny" bgColour="slate-10" style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="small"</Element>
-                            <Row horizontalPadding="small" bgColour="slate-10" style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="medium"</Element>
-                            <Row horizontalPadding="medium" bgColour="slate-10" style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="large"</Element>
-                            <Row horizontalPadding="huge" bgColour="slate-10" style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginLeft="tiny" marginBottom="nano">horizontalPadding="huge"</Element>
-                            <Row horizontalPadding="huge" bgColour="slate-10" style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-                        </Card>
-                    </Element>
-
-
-                    <Divider horizontalMargin="huge" kind="primary" />
-                </Element>
-
-
-                {/* //////////////////////////////////////////////////////////// */}
-                {/*   CONTENT PADDING  */}
-                {/* //////////////////////////////////////////////////////////// */}
-                <Element as="section" id="gutter-sizing">
-                    <Row horizontalPadding="huge" marginBottom="nano">
-                        <Portion>
-                            <Heading6>Gutters for the Row</Heading6>
-                            <Text>You can also change the gaps between the columns using the <code>gutters</code> props
-                                for
-                                the <code>Row</code>.</Text>
-                        </Portion>
-                    </Row>
-
-                    <Row horizontalPadding="huge" marginBottom="nano">
-                        <Portion>
-                            <CodeBlock source={sampleGutters} language="jsx" />
-                        </Portion>
-                    </Row>
-
-                    {/*  DEMONSTRATION  ======================================  */}
-                    <Element as="div" paddingLeft="tiny" paddingRight="tiny" marginBottom="small">
-                        <Card className="screen-desktop screen-extra-tall" shape="rounded" shadow="hard">
-                            <Element as="div" className="title-bar" bgColour="slate-light-40">
-                                <Text textColour="red">●</Text>
-                                <Text textColour="amber">●</Text>
-                                <Text textColour="green">●</Text>
-                            </Element>
-
-                            <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="none"</Element>
-                            <Row horizontalPadding="medium" gutters="none" bgColour="slate-10"
-                                 style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="nano"</Element>
-                            <Row horizontalPadding="medium" gutters="nano" bgColour="slate-10"
-                                 style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="micro"</Element>
-                            <Row horizontalPadding="medium" gutters="micro" bgColour="slate-10"
-                                 style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="tiny"</Element>
-                            <Row horizontalPadding="medium" gutters="tiny" bgColour="slate-10"
-                                 style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="small"</Element>
-                            <Row horizontalPadding="medium" gutters="small" bgColour="slate-10"
-                                 style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="medium"</Element>
-                            <Row horizontalPadding="medium" gutters="medium" bgColour="slate-10"
-                                 style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="large"</Element>
-                            <Row horizontalPadding="medium" gutters="large" bgColour="slate-10"
-                                 style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-
-                            <Element as="code" marginBottom="nano" horizontallyCentreThis>gutters="huge"</Element>
-                            <Row horizontalPadding="medium" gutters="huge" bgColour="slate-10"
-                                 style={{ "height" : "80px" }}
-                                 retainLayoutAlways>
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                                <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro" />
-                            </Row>
-                        </Card>
-                    </Element>
                 </Element>
             </article>
         </>

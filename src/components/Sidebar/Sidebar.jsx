@@ -156,7 +156,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             {/* LAYOUT ============================================================================================= */}
-            <Link href="/layout">
+            <Link href="/src/app/layout.client">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
                         <LayoutIcon />
