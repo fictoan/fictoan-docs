@@ -25,8 +25,8 @@ import {
     Switch,
     Table,
     Text, Heading1, Heading4,
-    NotificationsWrapper
-CodeBlock
+    NotificationsWrapper,
+    CodeBlock,
 } from "fictoan-react";
 
 // COMPONENTS ==================================================================
@@ -102,7 +102,7 @@ export const ComponentGrid = () => {
                         <Div id="notification-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
-                                <Button
+                                    <Button
                                         kind="custom" bgColour="blue-20" textColour="blue"
                                         shape="rounded" shadow="mild"
                                         marginBottom="nano" marginRight="nano"

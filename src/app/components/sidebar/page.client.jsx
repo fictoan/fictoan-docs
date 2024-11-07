@@ -23,7 +23,7 @@ import {
     ToastsWrapper,
     Button,
     Range, SidebarHeader, SidebarWrapper, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarFooter,
-CodeBlock
+    CodeBlock
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
