@@ -155,4 +155,17 @@
 
     --site-header-bg                          : var(--grey-light-90);
     --site-header-border                      : var(--grey-light-60);
+
+    /* USP CARDS //////////////////////////////////////////////////////////// */
+    --usp-section-bg                           : var(--amber);
+    --usp-card-1-bg                           : var(--blue-light-70);
+    --usp-card-1-border                       : var(--blue-light-30);
+    --usp-card-2-bg                           : var(--green-light-70);
+    --usp-card-2-border                       : var(--green-light-50);
+    --usp-card-3-bg                           : var(--salmon-light-70);
+    --usp-card-3-border                       : var(--salmon-light-50);
+    --usp-card-4-bg                           : var(--violet-light-70);
+    --usp-card-4-border                       : var(--violet-light-50);
+    --usp-card-5-bg                           : var(--teal-light-70);
+    --usp-card-5-border                       : var(--teal-light-50);
 }

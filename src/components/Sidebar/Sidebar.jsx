@@ -193,7 +193,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             <SidebarItem>
                 <SidebarItemIcon iconType="stroked" />
                 <SidebarItemText
-                    linkText="ELEMENTS"
+                    linkText="COMPONENTS"
                     weight="600" textColour="slate-60" size="small"
                 />
             </SidebarItem>
@@ -318,6 +318,35 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* NOTIFICATIONS ====================================================================================== */}
+            <Link href="/components/notifications">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <NotificationIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Notifications" />
+                </SidebarItem>
+            </Link>
+
+            {/* OPTION CARDS ======================================================================================= */}
+            <Link href="/components/option-cards">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <NotificationIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Option cards" />
+                </SidebarItem>
+            </Link>
+
+            {/* PIN INPUT FIELD ==================================================================================== */}
+            <Link href="/components/pin-input-field">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <InputFieldIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Pin Input" />
+                </SidebarItem>
+            </Link>
 
             {/* PROGRESS BAR ======================================================================================= */}
             <Link href="/components/meter">
@@ -349,6 +378,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* RADIO TABS ========================================================================================= */}
+            <Link href="/components/radio-tab-group">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <TabsIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Radio tab group" />
+                </SidebarItem>
+            </Link>
+
             {/* SELECT ============================================================================================= */}
             <Link href="/components/select">
                 <SidebarItem onClick={closeMobileSidebar}>
@@ -356,71 +395,6 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                         <SelectIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Select" />
-                </SidebarItem>
-            </Link>
-
-            {/* TABLE ============================================================================================== */}
-            <Link href="/components/table">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <TableIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Table" />
-                </SidebarItem>
-            </Link>
-
-            {/* TOAST ============================================================================================== */}
-            <Link href="/components/toast">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ToastIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Toast" />
-                </SidebarItem>
-            </Link>
-
-            <Divider bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
-
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* COMPONENTS */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <SidebarItem>
-                <SidebarItemIcon iconType="stroked" />
-                <SidebarItemText
-                    linkText="COMPONENTS"
-                    weight="600" textColour="slate-60" size="small"
-                />
-            </SidebarItem>
-
-            {/* NOTIFICATIONS ====================================================================================== */}
-            <Link href="/components/notifications">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <NotificationIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Notifications" />
-                </SidebarItem>
-            </Link>
-
-
-            {/* PIN INPUT FIELD ==================================================================================== */}
-            <Link href="/components/pin-input-field">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <InputFieldIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Pin Input" />
-                </SidebarItem>
-            </Link>
-
-
-            {/* TABS =============================================================================================== */}
-            <Link href="/components/radio-tab-group">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <TabsIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Radio tab group" />
                 </SidebarItem>
             </Link>
 
@@ -467,6 +441,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </Link>
             </Accordion>
 
+            {/* TABLE ============================================================================================== */}
+            <Link href="/components/table">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <TableIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Table" />
+                </SidebarItem>
+            </Link>
+
             {/* TABS =============================================================================================== */}
             <Link href="/components/tabs">
                 <SidebarItem onClick={closeMobileSidebar}>
@@ -474,6 +458,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                         <TabsIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Tabs" />
+                </SidebarItem>
+            </Link>
+
+            {/* TOAST ============================================================================================== */}
+            <Link href="/components/toast">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <ToastIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Toast" />
                 </SidebarItem>
             </Link>
 

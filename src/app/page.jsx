@@ -10,7 +10,7 @@ import {
     Divider,
     Portion,
     Row,
-    Text, Heading6, Heading4, Heading5,
+    Text, Heading6, Heading4, Heading5, Card, Section,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -21,7 +21,7 @@ import { ComponentGrid } from "../components/ComponentGrid/ComponentGrid";
 import "../styles/home.css";
 
 // ASSETS ==============================================================================================================
-import ManifestoIcon from "@/assets/icons/manifesto.svg";
+import ManifestoIcon from "../assets/icons/manifesto.svg";
 
 const Home = () => {
     return (
@@ -34,74 +34,113 @@ const Home = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* BULLET POINTS */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
-                <Portion desktopSpan="half">
-                    <Heading6 weight="400" opacity="80" marginBottom="nano">
-                        Code the way you design
-                    </Heading6>
+            <Section id="usp-section" verticalPadding="small">
+                {/* GROUP 1 //////////////////////////////////////////////////////////////////////////////////////// */}
+                <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
+                    <Portion desktopSpan="two-third">
+                        <Heading4 marginBottom="nano">
+                            Dead-simple to use.
+                        </Heading4>
+                    </Portion>
 
-                    <Text marginBottom="tiny">
-                        Plain-English props, attributes and values. No complex keywords or convoluted abbreviations to
-                        remember.
-                    </Text>
-                </Portion>
+                    <Portion desktopSpan="one-third" />
 
-                <Portion desktopSpan="half">
-                    <Heading6 weight="400" opacity="80" marginBottom="nano">
-                        0–1 in minutes
-                    </Heading6>
+                    <Portion desktopSpan="half">
+                        <Card
+                            id="usp-card-1" className="usp-card"
+                            padding="micro" shape="rounded" bgColour="blue-dark-70" borderColour="blue-dark-30"
+                        >
+                            <Heading5 weight="400" opacity="80" marginBottom="micro">
+                                Code the way you design
+                            </Heading5>
 
-                    <Text marginBottom="tiny">
-                        Built for rapid iteration, so you can quickly create complex pages and layouts. Modular too, so
-                        you can build on top for specific needs.
-                    </Text>
-                </Portion>
+                            <Text size="large">
+                                Plain-English props, attributes and values. No complex keywords or convoluted abbreviations
+                                to
+                                remember.
+                            </Text>
+                        </Card>
+                    </Portion>
 
-                <Portion desktopSpan="half">
-                    <Heading6 weight="400" opacity="80" marginBottom="nano">
-                        One theme to rule them all
-                    </Heading6>
+                    <Portion desktopSpan="half">
+                        <Card
+                            id="usp-card-2" className="usp-card"
+                            padding="micro" shape="rounded" bgColour="green-dark-70" borderColour="green-dark-50"
+                        >
+                            <Heading5 weight="400" opacity="80" marginBottom="nano">
+                                0 – 1 in minutes
+                            </Heading5>
 
-                    <Text marginBottom="tiny">
-                        Every single configurable aspect of the UI is controlled by a single theme file. Create as many
-                        as you need, and switch.
-                    </Text>
-                </Portion>
-            </Row>
+                            <Text size="large">
+                                Built for rapid iteration, so you can quickly create complex pages and layouts. Modular too,
+                                so you can build on top for specific needs.
+                            </Text>
+                        </Card>
+                    </Portion>
 
-            <Divider kind="tertiary" horizontalMargin="medium" verticalMargin="tiny" />
+                    <Portion desktopSpan="half">
+                        <Card
+                            id="usp-card-3" className="usp-card"
+                            padding="micro" shape="rounded" bgColour="salmon-dark-70" borderColour="salmon-dark-50"
+                        >
+                            <Heading5 weight="400" opacity="80" marginBottom="nano">
+                                One theme to rule them all
+                            </Heading5>
 
-            <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
-                <Portion desktopSpan="two-third">
-                    <Heading4 weight="400" marginBottom="nano">
-                        Devs love it, too
-                    </Heading4>
-                </Portion>
+                            <Text size="large">
+                                Every single configurable aspect of the UI is controlled by a single theme file. Create as
+                                many as you need, and switch.
+                            </Text>
+                        </Card>
+                    </Portion>
+                </Row>
 
-                <Portion desktopSpan="one-third" />
+                <Divider kind="tertiary" horizontalMargin="medium" verticalMargin="tiny" />
 
-                <Portion desktopSpan="half">
-                    <Heading6 weight="400" opacity="80" marginBottom="nano">
-                        Performant
-                    </Heading6>
+                {/* GROUP 2 //////////////////////////////////////////////////////////////////////////////////////// */}
+                <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
+                    <Portion desktopSpan="two-third">
+                        <Heading4 marginBottom="nano">
+                            But wait, there’s more!
+                        </Heading4>
+                    </Portion>
 
-                    <Text marginBottom="tiny">
-                        100 on Lighthouse performance, and Best Practices. No JS, plain CSS styling. No dependency
-                        bloat. As close to the metal as it gets. How apps were meant to be built.
-                    </Text>
-                </Portion>
+                    <Portion desktopSpan="one-third" />
 
-                <Portion desktopSpan="half">
-                    <Heading6 weight="400" opacity="80" marginBottom="nano">
-                        Clear separation of concerns
-                    </Heading6>
+                    <Portion desktopSpan="half">
+                        <Card
+                            id="usp-card-4" className="usp-card"
+                            padding="micro" shape="rounded" bgColour="violet-dark-70" borderColour="violet-dark-50"
+                        >
+                            <Heading5 weight="400" opacity="80" marginBottom="nano">
+                                Performant
+                            </Heading5>
 
-                    <Text marginBottom="tiny">
-                        Leave the pixel-perfection to the designers, so you can focus on logic and functionality. Move
-                        faster, eliminate the dreaded back-and-forth.
-                    </Text>
-                </Portion>
-            </Row>
+                            <Text size="large">
+                                100 on Lighthouse performance, and Best Practices. No JS, plain CSS styling. No dependency
+                                bloat. As close to the metal as it gets. How apps were meant to be built.
+                            </Text>
+                        </Card>
+                    </Portion>
+
+                    <Portion desktopSpan="half">
+                        <Card
+                            id="usp-card-5" className="usp-card"
+                            padding="micro" shape="rounded" bgColour="teal-dark-70" borderColour="teal-dark-50"
+                        >
+                            <Heading5 weight="400" opacity="80" marginBottom="nano">
+                                Clear separation of concerns
+                            </Heading5>
+
+                            <Text size="large">
+                                Leave the pixel-perfection to the designers, so you can focus on logic and functionality.
+                                Move
+                                faster, eliminate the dreaded back-and-forth.
+                            </Text>
+                        </Card>
+                    </Portion>
+                </Row>
+            </Section>
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* MANIFESTO */}
@@ -112,13 +151,15 @@ const Home = () => {
                         <Div className="manifesto-card-content">
                             <Row marginBottom="none">
                                 <Portion desktopSpan="half">
-                                    <Heading5 weight="400" textColour="blue-light-30" marginBottom="micro">
+                                    <Heading4 textColour="blue-light-30" marginBottom="micro">
                                         We want to blur the lines between designers and developers.
-                                    </Heading5>
+                                    </Heading4>
 
-                                    <Link href="/manifesto">
-                                        Read our manifesto&nbsp;&rarr;
-                                    </Link>
+                                    <Text size="large">
+                                        <Link href="/manifesto">
+                                            Read our manifesto&nbsp;&rarr;
+                                        </Link>
+                                    </Text>
                                 </Portion>
                             </Row>
 
@@ -129,8 +170,6 @@ const Home = () => {
                     </Div>
                 </Portion>
             </Row>
-
-            <Divider kind="secondary" horizontalMargin="medium" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* COMPONENT GRID */}

@@ -204,7 +204,7 @@ export const IntroCode = () => {
                 </Row>
             </Div>
 
-            <Row horizontalPadding="medium" gutters="large" marginTop="small" marginBottom="tiny">
+            <Row horizontalPadding="medium" gutters="large" verticalMargin="small">
                 <Portion>
                     <Div verticallyCentreItems pushItemsToEnds>
                         <Text size="large" textColour="amber" weight="700" marginBottom="nano">

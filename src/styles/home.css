@@ -37,25 +37,35 @@
         filter    : saturate(150%);
     }
 
+    .usp-card {
+        height          : 240px;
+        display         : flex;
+        flex-direction  : column;
+        justify-content : space-between;
+    }
+
     /* MANIFESTO-CARD ======================================================= */
     .manifesto-card {
         position      : relative;
         min-width     : 100%;
         padding       : 2px;
         overflow      : hidden;
+        height        : 320px;
         background    : linear-gradient(90deg, var(--indigo), var(--indigo-dark-40));
         border-radius : 16px;
         transform     : translateZ(0);
 
         svg {
-            position : absolute;
-            bottom   : -32px;
-            right    : 40px;
-            height   : 120%;
-            stroke   : var(--blue);
-            fill     : none;
-            opacity  : 0.32;
-            z-index  : -1;
+            position        : absolute;
+            bottom          : -48px;
+            right           : 40px;
+            height          : 120%;
+            stroke          : var(--blue);
+            fill            : none;
+            opacity         : 0.32;
+            z-index         : -1;
+            stroke-linejoin : round;
+            stroke-linecap  : round;
         }
     }
 
@@ -63,10 +73,12 @@
         position      : relative;
         z-index       : 1;
         padding       : 32px;
-        /*background    : linear-gradient(0deg, rgba(4, 7, 22, 1), rgba(4, 10, 22, 1));*/
+        height        : 100%;
         background    : var(--indigo-dark-60);
+        background    : linear-gradient(0deg, rgb(27, 51, 176), rgb(0, 45, 136));
         border        : 1px solid hsla(0, 0%, 100%, .1);
-        border-radius : 12px
+        border-radius : 16px;
+
     }
 
     /* THE GLOWING BORDER */
@@ -82,5 +94,35 @@
         /* Keyframes are defined in globals.css, doesn't work if kept here */
         animation        : border-glow -.64s linear 4s infinite;
         will-change      : transform
+    }
+
+    /* USP SECTION ////////////////////////////////////////////////////////// */
+    #usp-section {
+        background-color: var(--usp-section-bg);
+    }
+
+    #usp-card-1 {
+        background-color : var(--usp-card-1-bg);
+        border           : var(--global-border-width)px solid var(--usp-card-1-bg);
+    }
+
+    #usp-card-2 {
+        background-color : var(--usp-card-2-bg);
+        border           : var(--global-border-width)px solid var(--usp-card-2-bg);
+    }
+
+    #usp-card-3 {
+        background-color : var(--usp-card-3-bg);
+        border           : var(--global-border-width)px solid var(--usp-card-3-bg);
+    }
+
+    #usp-card-4 {
+        background-color : var(--usp-card-4-bg);
+        border           : var(--global-border-width)px solid var(--usp-card-4-bg);
+    }
+
+    #usp-card-5 {
+        background-color : var(--usp-card-5-bg);
+        border           : var(--global-border-width)px solid var(--usp-card-5-bg);
     }
 }

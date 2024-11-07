@@ -37,6 +37,9 @@
     --code-inline-bg                          : var(--slate-dark-70);
     --code-inline-text                        : var(--slate-light-40);
 
+    --code-block-font-size                    : 0.8rem;
+    --code-block-bg                           : var(--slate-dark-80);
+
     /* DIVIDER ////////////////////////////////////////////////////////////// */
     --divider-height                          : 1px;
 
@@ -147,17 +150,28 @@
     --heading-size-multiplier                 : 1.2;
     --heading-line-height                     : 1.2;
 
-    --code-block-font-size                    : 0.8rem;
-    --code-block-bg                           : var(--slate-dark-70);
-
-    /* TOKENS =============================================================== */
-
     /* ////////////////////////////////////////////////////////////////////// */
     /* CUSTOM COMPONENTS */
     /* ////////////////////////////////////////////////////////////////////// */
+    /* COMPONENT GRID /////////////////////////////////////////////////////// */
     --component-card-bg                       : rgba(0, 0, 0, 0.4);
     --component-card-footer-border            : var(--slate-dark-60);
 
+    /* SITE HEADER ////////////////////////////////////////////////////////// */
     --site-header-bg                          : var(--grey-light-90);
     --site-header-border                      : var(--grey-dark-60);
+
+    /* USP CARDS //////////////////////////////////////////////////////////// */
+    --usp-section-bg                           : var(--slate-dark-40);
+
+    --usp-card-1-bg                           : var(--blue-dark-70);
+    --usp-card-1-border                       : var(--blue-dark-30);
+    --usp-card-2-bg                           : var(--green-dark-70);
+    --usp-card-2-border                       : var(--green-dark-50);
+    --usp-card-3-bg                           : var(--salmon-dark-70);
+    --usp-card-3-border                       : var(--salmon-dark-50);
+    --usp-card-4-bg                           : var(--violet-dark-70);
+    --usp-card-4-border                       : var(--violet-dark-50);
+    --usp-card-5-bg                           : var(--teal-dark-70);
+    --usp-card-5-border                       : var(--teal-dark-50);
 }

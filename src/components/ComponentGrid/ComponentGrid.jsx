@@ -43,20 +43,6 @@ export const ComponentGrid = () => {
 
     return (
         <Div id="component-grid">
-            <NotificationsWrapper position="right" anchor="top">
-                <NotificationItem
-                    kind="info"
-                    showWhen={showNotification1}
-                    closeWhen={() => setShowNotification1(false)}
-                    secondsToShowFor={5}
-                    isDismissible
-                >
-                    <Text>
-                        I am here to notify you that...um, wait, I forgot.
-                    </Text>
-                </NotificationItem>
-            </NotificationsWrapper>;
-
             <Row horizontalPadding="medium">
                 <Portion>
                     <Heading4 weight="400" marginBottom="nano">
@@ -66,6 +52,7 @@ export const ComponentGrid = () => {
 
                 <Portion>
                     <Div id="grid-wrapper">
+                        {/* BUTTON ================================================================================= */}
                         <Div id="button-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -95,6 +82,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* TYPOGRAPHY ============================================================================= */}
                         <Div id="type-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -110,6 +98,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* NOTIFICATION =========================================================================== */}
                         <Div id="notification-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -130,7 +119,21 @@ export const ComponentGrid = () => {
                                 </Div>
                             </Card>
                         </Div>
+                        <NotificationsWrapper position="right" anchor="top">
+                            <NotificationItem
+                                kind="info"
+                                showWhen={showNotification1}
+                                closeWhen={() => setShowNotification1(false)}
+                                secondsToShowFor={5}
+                                isDismissible
+                            >
+                                <Text textColour="blue">
+                                    I am here to notify you that...um, wait, I forgot.
+                                </Text>
+                            </NotificationItem>
+                        </NotificationsWrapper>;
 
+                        {/* PROGRESS =============================================================================== */}
                         <Div id="progress-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -150,6 +153,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* INPUT ================================================================================== */}
                         <Div id="input-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -167,6 +171,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* SELECT ================================================================================= */}
                         <Div id="select-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -198,6 +203,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* TABLE ================================================================================== */}
                         <Div id="table-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -246,6 +252,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* BREADCRUMBS ============================================================================ */}
                         <Div id="breadcrumbs-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -290,6 +297,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* RADIO ================================================================================== */}
                         <Div id="radio-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -318,6 +326,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* CHECKBOX =============================================================================== */}
                         <Div id="checkbox-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -346,6 +355,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* CODE BLOCK ============================================================================= */}
                         <Div id="code-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -365,6 +375,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* COLOURS ================================================================================ */}
                         <Div id="colour-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -382,6 +393,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* BADGE ================================================================================== */}
                         <Div id="badge-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
@@ -428,6 +440,7 @@ export const ComponentGrid = () => {
                             </Card>
                         </Div>
 
+                        {/* CALLOUT ================================================================================ */}
                         <Div id="callout-card" className="grid-item">
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
