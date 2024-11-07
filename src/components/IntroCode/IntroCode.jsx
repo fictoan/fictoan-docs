@@ -15,8 +15,8 @@ import {
     Section,
     Switch,
     Text,
+CodeBlock
 } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
 
 // STYLES ==============================================================================================================
 import "./intro-code.css";

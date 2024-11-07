@@ -26,8 +26,8 @@ import {
     ToastsWrapper,
     Button,
     Range,
+CodeBlock
 } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==========================================================================================================
 

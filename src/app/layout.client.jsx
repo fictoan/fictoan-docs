@@ -48,8 +48,10 @@ export const RootLayoutClient = ({ children }) => {
 
         <body>
         <CustomThemeContext.Provider value={{ customTheme, setCustomTheme }}>
-            <ThemeProvider theme={customTheme}
-                           currentTheme={currentTheme === "theme-light" ? "theme-light" : "theme-dark"}>
+            <ThemeProvider
+                theme={customTheme}
+                currentTheme={currentTheme === "theme-light" ? "theme-light" : "theme-dark"}
+            >
                 <Sidebar
                     sidebarState={sidebarState}
                     setSidebarState={setSidebarState}

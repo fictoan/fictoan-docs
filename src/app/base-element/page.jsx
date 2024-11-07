@@ -1,11 +1,10 @@
-"use client";
-
 // EXTERNAL DEPS =======================================================================================================
 import React from "react";
 
 // INTERNAL DEPS =======================================================================================================
-import { Heading1, Heading4, Divider, Portion, Row, Text, Article } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
+import {
+    Heading1, Heading4, Divider, Portion, Row, Text, Article, CodeBlock
+} from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
 import { PropsList } from "../../components/PropsList/PropsList";
@@ -18,6 +17,33 @@ import { sampleElement } from "./CodeSamples";
 
 // DATA ================================================================================================================
 import { listOfBaseElementProps } from "./propsList";
+
+export const metadata = {
+    title       : "Base element — Fictoan UI",
+    description : "A common wrapper tag so you can add Fictoan props to any element",
+    openGraph   : {
+        title       : "Base element — Fictoan UI",
+        description : "A common wrapper tag so you can add Fictoan props to any element",
+        url         : "https://fictoan.io/base-element",
+        siteName    : "Fictoan UI",
+        images      : [
+            {
+                url    : "https://fictoan.io/components/option-card/opengraph-image",
+                width  : 1200,
+                height : 630,
+                alt    : "Base element — Fictoan UI",
+            },
+        ],
+        locale      : "en_US",
+        type        : "website",
+    },
+    twitter     : {
+        card        : "summary_large_image",
+        title       : "Base element — Fictoan UI",
+        description : "A common wrapper tag so you can add Fictoan props to any element",
+        images      : ["https://fictoan.io/components/option-card/opengraph-image"],
+    },
+};
 
 const BaseElementDocs = () => {
     return (

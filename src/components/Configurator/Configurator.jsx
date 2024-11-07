@@ -21,8 +21,8 @@ import {
     Header,
     Checkbox,
     Callout, Switch, Footer,
+CodeBlock
 } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
 import { ButtonSample } from "../../app/components/button/config";

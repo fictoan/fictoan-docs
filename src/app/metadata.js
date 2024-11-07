@@ -8,7 +8,7 @@ export const metadata = {
         siteName    : "Fictoan",
         images      : [
             {
-                url    : "https://fictoan-storybook.s3.eu-central-1.amazonaws.com/fictoan-og.png",
+                url    : "https://fictoan.s3.ap-south-1.amazonaws.com/open-graph/fictoan-og.png",
                 width  : 1200,
                 height : 630,
                 alt    : "Fictoan Framework",
@@ -21,6 +21,6 @@ export const metadata = {
         card        : "summary_large_image",
         title       : "Fictoan UI — A React UI framework for designers looking to code",
         description : "A dead-simple React UI framework for designers looking to code",
-        images      : ["https://fictoan-storybook.s3.eu-central-1.amazonaws.com/fictoan-og.png"],
+        images      : ["https://fictoan.s3.ap-south-1.amazonaws.com/open-graph/fictoan-og.png"],
     },
 };

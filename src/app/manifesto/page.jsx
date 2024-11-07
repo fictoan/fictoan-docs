@@ -1,6 +1,5 @@
-"use client";
 // EXTERNAL DEPS ///////////////////////////////////////////////////////////////
-import React, { useEffect } from "react";
+import React from "react";
 
 // INTERNAL DEPS ///////////////////////////////////////////////////////////////
 import {
@@ -20,12 +19,34 @@ import "./page-manifesto.css";
 
 // ASSETS //////////////////////////////////////////////////////////////////////
 
+export const metadata = {
+    title       : "Manifesto — Fictoan UI",
+    description : "Why learning code is valuable as a designer, and the time is now to be a generalist",
+    openGraph   : {
+        title       : "Manifesto — Fictoan UI",
+        description : "Why learning code is valuable as a designer, and the time is now to be a generalist",
+        url         : "https://fictoan.io/manifesto",
+        siteName    : "Fictoan UI",
+        images      : [
+            {
+                url    : "https://fictoan.io/components/option-card/opengraph-image",
+                width  : 1200,
+                height : 630,
+                alt    : "Manifesto — Fictoan UI",
+            },
+        ],
+        locale      : "en_US",
+        type        : "website",
+    },
+    twitter     : {
+        card        : "summary_large_image",
+        title       : "Manifesto — Fictoan UI",
+        description : "Why learning code is valuable as a designer, and the time is now to be a generalist",
+        images      : ["https://fictoan.io/components/option-card/opengraph-image"],
+    },
+};
 
 const Manifesto = () => {
-    useEffect(() => {
-        document.title = "Manifesto — Fictoan";
-    }, []);
-
     return (
         <Article id="page-manifesto">
             {/* INTRO ////////////////////////////////////////////////////////////////////////////////////////////// */}

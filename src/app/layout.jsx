@@ -1,5 +1,4 @@
 // app/layout.tsx
-import { Metadata } from "next";
 import { RootLayoutClient } from "./layout.client";
 import { metadata as metadataConfig } from "./metadata";
 

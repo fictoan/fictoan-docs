@@ -15,8 +15,8 @@ import {
     Checkbox,
     Select,
     Div,
+CodeBlock
 } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
 
 const RowPortionConfigurator = () => {
     // Row state

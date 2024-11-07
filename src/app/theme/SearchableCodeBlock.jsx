@@ -1,6 +1,12 @@
+"use client";
+
 import React, { useState } from "react";
-import { InputField, Text } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
+
+import {
+    InputField,
+    Text,
+    CodeBlock
+} from "fictoan-react";
 
 export const SearchableCodeBlock = ({ source, language, ...props }) => {
     const [searchString, setSearchString] = useState("");

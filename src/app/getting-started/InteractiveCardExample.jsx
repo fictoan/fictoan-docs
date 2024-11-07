@@ -14,8 +14,8 @@ import {
     Heading6,
     Text,
     Divider, Card, RadioGroup, Select,
+CodeBlock
 } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
 import { listOfColours, generateShades } from "../colour/colours";
 
 // COMPONENTS ==================================================================

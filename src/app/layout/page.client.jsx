@@ -26,8 +26,8 @@ import {
     Checkbox,
     Button,
     Select,
+CodeBlock
 } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==========================================================================================================
 // STYLES ==============================================================================================================
@@ -134,22 +134,16 @@ const LayoutDocs = () => {
 
                                     <Row
                                         className="demo-row"
-                                        // @ts-ignore
                                         horizontalPadding={horizontalPadding}
-                                        // @ts-ignore
                                         gutters={gutters}
                                         retainLayoutAlways={retainLayout}
                                     >
                                         {portions.map((portion, index) => (
                                             <Portion
                                                 key={index}
-                                                // @ts-ignore
                                                 desktopSpan={portion.desktopSpan}
-                                                // @ts-ignore
                                                 tabletLandscapeSpan={portion.tabletLandscapeSpan}
-                                                // @ts-ignore
                                                 tabletPortraitSpan={portion.tabletPortraitSpan}
-                                                // @ts-ignore
                                                 mobileSpan={portion.mobileSpan}
                                                 bgColour="sky-light-20"
                                                 padding="nano"
@@ -162,13 +156,10 @@ const LayoutDocs = () => {
                                     </Row>
 
                                     <Row
-                                        // @ts-ignore
                                         horizontalPadding={horizontalPadding}
-                                        // @ts-ignore
                                         gutters={gutters}
                                         retainLayoutAlways={retainLayout}
                                         bgColour="slate-10"
-                                        // @ts-ignore
                                         marginBottom="none" isFullHeight retainLayoutAlways
                                     >
                                         <Portion desktopSpan="1" bgColour="sky-light-60" paddingTop="micro">
@@ -311,7 +302,6 @@ const LayoutDocs = () => {
                                                 { id : "hp-huge", label : "huge", value : "huge" },
                                             ]}
                                             defaultValue={horizontalPadding}
-                                            // @ts-ignore
                                             onChange={(e) => setHorizontalPadding(e.target.value)}
                                         />
                                     </Portion>
@@ -332,7 +322,6 @@ const LayoutDocs = () => {
                                                 { id : "gutters-huge", label : "huge", value : "huge" },
                                             ]}
                                             defaultValue={gutters}
-                                            // @ts-ignore
                                             onChange={(e) => setGutters(e.target.value)}
                                         />
                                     </Portion>
@@ -343,7 +332,6 @@ const LayoutDocs = () => {
                                             name="retain-layout"
                                             label="Retain layout always"
                                             checked={retainLayout}
-                                            // @ts-ignore
                                             onChange={(e) => setRetainLayout(e.target.checked)}
                                         />
                                     </Portion>
@@ -404,7 +392,6 @@ const LayoutDocs = () => {
                                                     defaultValue={portion.desktopSpan}
                                                     onChange={(e) => {
                                                         const newPortions              = [ ...portions ];
-                                                        // @ts-ignore
                                                         newPortions[index].desktopSpan = e.target.value;
                                                         setPortions(newPortions);
                                                     }}
@@ -419,7 +406,6 @@ const LayoutDocs = () => {
                                                     defaultValue={portion.tabletLandscapeSpan}
                                                     onChange={(e) => {
                                                         const newPortions                      = [ ...portions ];
-                                                        // @ts-ignore
                                                         newPortions[index].tabletLandscapeSpan = e.target.value;
                                                         setPortions(newPortions);
                                                     }}
@@ -434,7 +420,6 @@ const LayoutDocs = () => {
                                                     defaultValue={portion.tabletPortraitSpan}
                                                     onChange={(e) => {
                                                         const newPortions                     = [ ...portions ];
-                                                        // @ts-ignore
                                                         newPortions[index].tabletPortraitSpan = e.target.value;
                                                         setPortions(newPortions);
                                                     }}
@@ -449,7 +434,6 @@ const LayoutDocs = () => {
                                                     defaultValue={portion.mobileSpan}
                                                     onChange={(e) => {
                                                         const newPortions             = [ ...portions ];
-                                                        // @ts-ignore
                                                         newPortions[index].mobileSpan = e.target.value;
                                                         setPortions(newPortions);
                                                     }}

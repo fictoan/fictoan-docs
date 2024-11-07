@@ -26,8 +26,8 @@ import {
     Table,
     Text, Heading1, Heading4,
     NotificationsWrapper
+CodeBlock
 } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==================================================================
 

@@ -1,16 +1,15 @@
-"use client";
-
 // EXTERNAL DEPS ===============================================================
 import React from "react";
 
 // INTERNAL DEPS ===============================================================
-import { Heading1,
+import {
+    Heading1,
     Heading2,
     Heading3,
     Heading4,
     Heading5,
-    Heading6, Divider, Portion, Row, Text, Article } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
+    Heading6, Divider, Portion, Row, Text, Article, CodeBlock,
+} from "fictoan-react";
 
 // COMPONENTS ==================================================================
 import { SearchableCodeBlock } from "./SearchableCodeBlock";
@@ -27,6 +26,32 @@ import {
     sampleFictoanTheme,
 } from "./CodeSamples";
 
+export const metadata = {
+    title       : "Theme-ing — Fictoan UI",
+    description : "How to setup the colour theme for your project",
+    openGraph   : {
+        title       : "Theme-ing — Fictoan UI",
+        description : "How to setup the colour theme for your project",
+        url         : "https://fictoan.io/theme",
+        siteName    : "Fictoan UI",
+        images      : [
+            {
+                url    : "https://fictoan.io/components/option-card/opengraph-image",
+                width  : 1200,
+                height : 630,
+                alt    : "Theme-ing — Fictoan UI",
+            },
+        ],
+        locale      : "en_US",
+        type        : "website",
+    },
+    twitter     : {
+        card        : "summary_large_image",
+        title       : "Theme-ing — Fictoan UI",
+        description : "How to setup the colour theme for your project",
+        images      : ["https://fictoan.io/components/option-card/opengraph-image"],
+    },
+};
 
 const ThemingDocs = () => {
     return (
@@ -58,8 +83,10 @@ const ThemingDocs = () => {
                     <CodeBlock source={sampleCSSSetup} language="css" marginBottom="micro" />
 
                     <Text marginBottom="micro">
-                        Here, the Fictoan theme is first loaded as the default theme. You can also create your own theme,
-                        with a class, and put in all your custom variables there. This will over-ride the default values.
+                        Here, the Fictoan theme is first loaded as the default theme. You can also create your own
+                        theme,
+                        with a class, and put in all your custom variables there. This will over-ride the default
+                        values.
                     </Text>
 
                     <Text>Make sure you import the theme file globally.</Text>
@@ -80,7 +107,6 @@ const ThemingDocs = () => {
             </Row>
 
             <Divider kind="secondary" horizontalMargin="huge" verticalMargin="micro" />
-
 
 
             {/* COMPONENTS ================================================= */}

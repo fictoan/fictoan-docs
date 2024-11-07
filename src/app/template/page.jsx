@@ -20,8 +20,8 @@ import {
     Card,
     Form,
     Header,
+CodeBlock
 } from "fictoan-react";
-import { CodeBlock } from "fictoan-react/components";
 
 // COMPONENTS ==========================================================================================================
 
