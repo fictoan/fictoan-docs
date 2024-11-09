@@ -12,11 +12,11 @@ export const drawerProps = {
     variables  : {
         "drawer-bg"              : {
             type         : "reference",
-            defaultValue : "white",
+            defaultValue : "grey-dark-70",
         },
         "drawer-border"          : {
             type         : "reference",
-            defaultValue : "slate-light-20",
+            defaultValue : "grey-dark-40",
         },
         "drawer-border-radius"   : {
             type         : "reference",

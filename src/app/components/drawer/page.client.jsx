@@ -26,7 +26,7 @@ import {
     Checkbox,
     Range,
     Select,
-CodeBlock
+    CodeBlock, Modal,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -63,7 +63,7 @@ const DrawerDocs = () => {
     const [isSampleDrawerOpen, setIsSampleDrawerOpen] = useState(false);
 
     return (
-        <Article id="page-component">
+        <Article id="page-drawer">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading1>Drawer</Heading1>
@@ -116,6 +116,10 @@ const DrawerDocs = () => {
                                     <CodeBlock language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
+                                            `const [isSampleDrawerOpen, setIsSampleDrawerOpen] = useState(false);`,
+                                            ` `,
+                                            `<Button onClick={() => setIsSampleDrawerOpen(true)}>Open the drawer</Button>`,
+                                            ` `,
                                             `<Drawer`,
                                             selectedPosition ? `    position="${selectedPosition}"` : null,
                                             selectedPadding ? `    padding="${selectedPadding}"` : null,
@@ -346,7 +350,7 @@ const DrawerDocs = () => {
                     selectedBgColour !== undefined ? { bgColour : selectedBgColour } : {}
                 )}
             >
-                <Heading2 textColour="black" marginBottom="nano">Hello</Heading2>
+                <Heading2 marginBottom="nano">Hello</Heading2>
                 <Text>You can add all sorts of content here inside the info panel.</Text>
                 <Button onClick={() => setIsSampleDrawerOpen(false)}>Close</Button>
             </Drawer>

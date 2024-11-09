@@ -21,7 +21,6 @@ import {
     Header,
     InputField,
     RadioTabGroup,
-    Select,
     Range,
     SelectWithSearch,
     CodeBlock
@@ -223,7 +222,7 @@ const BadgeDocs = () => {
 
                                 {/* BORDER COLOUR ================================================================== */}
                                 <Portion desktopSpan="half">
-                                    <Select
+                                    <SelectWithSearch
                                         label="Border colour"
                                         options={[{
                                             label    : "Select a colour",
@@ -241,7 +240,7 @@ const BadgeDocs = () => {
 
                                 {/* TEXT COLOUR ==================================================================== */}
                                 <Portion desktopSpan="half">
-                                    <Select
+                                    <SelectWithSearch
                                         label="Text colour"
                                         options={[{
                                             label    : "Select a colour",

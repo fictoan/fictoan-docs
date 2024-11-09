@@ -359,6 +359,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             </Link>
 
             {/* PROGRESS BAR ======================================================================================= */}
+            <Link href="/components/modal">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <ProgressBarIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Modal" />
+                </SidebarItem>
+            </Link>
+
+            {/* PROGRESS BAR ======================================================================================= */}
             <Link href="/components/progress-bar">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
