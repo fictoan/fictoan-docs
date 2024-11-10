@@ -4,7 +4,7 @@
     position        : sticky;
     top             : 0;
     z-index         : 50000;
-    background      : rgba(var(--site-header-bg), 0.9);
+    background      : hsla(0, 100%, 0%, 0.8);
     backdrop-filter : blur(16px);
     height          : 56px;
     align-items     : center;

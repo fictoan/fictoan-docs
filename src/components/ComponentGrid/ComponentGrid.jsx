@@ -27,6 +27,7 @@ import {
     Text, Heading1, Heading4,
     NotificationsWrapper,
     CodeBlock,
+    OptionCard, OptionCardsGroup, hideModal, Modal, showModal, PinInputField,
 } from "fictoan-react";
 
 // COMPONENTS ==================================================================
@@ -40,6 +41,12 @@ export const ComponentGrid = () => {
     const cardComponentSample = `const clickHere = () => {
     window.load("/components/card");
 }`;
+
+    const sampleOptionCards = [
+        { id : "card-1", content : "Option 1" },
+        { id : "card-2", content : "Option 2" },
+        { id : "card-3", content : "Option 3" },
+    ];
 
     return (
         <Div id="component-grid">
@@ -131,7 +138,7 @@ export const ComponentGrid = () => {
                                     I am here to notify you that...um, wait, I forgot.
                                 </Text>
                             </NotificationItem>
-                        </NotificationsWrapper>;
+                        </NotificationsWrapper>
 
                         {/* PROGRESS =============================================================================== */}
                         <Div id="progress-card" className="grid-item">
@@ -445,9 +452,10 @@ export const ComponentGrid = () => {
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
                                     <Callout kind="success">
-                                        <Text textColour="green-dark-60">I’d also just like to call out that FICTOAN
-                                            is
-                                            awesome.</Text>
+                                        <Text textColour="green-dark-60">
+                                            I’d also just like to call out that FICTOAN
+                                            is awesome.
+                                        </Text>
                                     </Callout>
 
                                     <Element as="footer" className="footer-bottom">
@@ -458,6 +466,88 @@ export const ComponentGrid = () => {
                                 </Div>
                             </Card>
                         </Div>
+
+                        {/* OPTION CARD ============================================================================ */}
+                        <Div id="option-card" className="grid-item">
+                            <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                <Div className="component-card">
+                                    <OptionCardsGroup
+                                        allowMultipleSelections
+                                        showTickIcon
+                                    >
+                                        <Row marginBottom="none">
+                                            {sampleOptionCards.map((card) => (
+                                                <Portion desktopSpan="one-third" key={card.id}>
+                                                    <OptionCard
+                                                        id={card.id}
+                                                        padding="small" shape="rounded"
+                                                    >
+                                                        <Text align="centre">{card.content}</Text>
+                                                    </OptionCard>
+                                                </Portion>
+                                            ))}
+                                        </Row>
+                                    </OptionCardsGroup>
+
+                                    <Element as="footer" className="footer-bottom">
+                                        <Link href="/components/option-cards">
+                                            Option cards &rarr;
+                                        </Link>
+                                    </Element>
+                                </Div>
+                            </Card>
+                        </Div>
+
+                        {/* MODAL ================================================================================== */}
+                        <Div id="modal-card" className="grid-item">
+                            <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                <Div className="component-card">
+                                    <Button
+                                        kind="primary"
+                                        onClick={() => showModal("sample-modal")}
+                                    >
+                                        A wild modal appears!
+                                    </Button>
+
+                                    <Element as="footer" className="footer-bottom">
+                                        <Link href="/components/modal">
+                                            Modal &rarr;
+                                        </Link>
+                                    </Element>
+                                </Div>
+                            </Card>
+                        </Div>
+                        <Modal id="sample-modal" isDismissible showBackdrop blurBackdrop>
+                            <Card padding="micro">
+                                <Heading4 marginBottom="nano">I am a modal</Heading4>
+                                <Text marginBottom="micro">
+                                    Quick, please close me, I have stage fright!
+                                </Text>
+
+                                <Button
+                                    kind="primary" size="small"
+                                    onClick={() => hideModal("sample-modal")}
+                                >
+                                    Close modal
+                                </Button>
+                            </Card>
+                        </Modal>
+
+                        {/* CALLOUT ================================================================================ */}
+                        <Div id="pin-input-card" className="grid-item">
+                            <Card shape="rounded" className="component-wrapper" isFullHeight>
+                                <Div className="component-card">
+                                    <PinInputField numberOfFields={4} />
+
+                                    <Element as="footer" className="footer-bottom">
+                                        <Link href="/components/pin-input-field">
+                                            PIN input &rarr;
+                                        </Link>
+                                    </Element>
+                                </Div>
+                            </Card>
+                        </Div>
+
                     </Div>
                 </Portion>
 

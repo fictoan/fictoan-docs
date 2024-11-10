@@ -10,7 +10,7 @@ import {
     Divider,
     Portion,
     Row,
-    Text, Heading6, Heading4, Heading5, Card, Section,
+    Text, Heading6, Heading4, Heading5, Card, Section, Heading2, Span,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -34,13 +34,13 @@ const Home = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* BULLET POINTS */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Section id="usp-section" verticalPadding="small">
+            <Section id="usp-section" verticalPadding="medium">
                 {/* GROUP 1 //////////////////////////////////////////////////////////////////////////////////////// */}
                 <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
                     <Portion desktopSpan="two-third">
-                        <Heading4 marginBottom="nano">
-                            Dead-simple to use.
-                        </Heading4>
+                        <Heading2 marginBottom="nano" textColour="grey">
+                            <Span textColour="white">As simple as it gets.</Span>
+                        </Heading2>
                     </Portion>
 
                     <Portion desktopSpan="one-third" />
@@ -48,14 +48,16 @@ const Home = () => {
                     <Portion desktopSpan="half">
                         <Card
                             id="usp-card-1" className="usp-card"
-                            padding="micro" shape="rounded" bgColour="blue-dark-70" borderColour="blue-dark-30"
+                            bgColour="blue-dark-70" borderColour="blue-dark-30"
+                            padding="micro" shape="rounded" shadow="soft"
                         >
                             <Heading5 weight="400" opacity="80" marginBottom="micro">
                                 Code the way you design
                             </Heading5>
 
                             <Text size="large">
-                                Plain-English props, attributes and values. No complex keywords or convoluted abbreviations
+                                Plain-English props, attributes and values. No complex keywords or convoluted
+                                abbreviations
                                 to
                                 remember.
                             </Text>
@@ -65,15 +67,16 @@ const Home = () => {
                     <Portion desktopSpan="half">
                         <Card
                             id="usp-card-2" className="usp-card"
-                            padding="micro" shape="rounded" bgColour="green-dark-70" borderColour="green-dark-50"
+                            bgColour="green-dark-70" borderColour="green-dark-50"
+                            padding="micro" shape="rounded" shadow="soft"
                         >
                             <Heading5 weight="400" opacity="80" marginBottom="nano">
                                 0 – 1 in minutes
                             </Heading5>
 
                             <Text size="large">
-                                Built for rapid iteration, so you can quickly create complex pages and layouts. Modular too,
-                                so you can build on top for specific needs.
+                                Built for rapid iteration, so you can quickly create complex pages and layouts. Modular
+                                too, so you can build on top for specific needs.
                             </Text>
                         </Card>
                     </Portion>
@@ -81,14 +84,16 @@ const Home = () => {
                     <Portion desktopSpan="half">
                         <Card
                             id="usp-card-3" className="usp-card"
-                            padding="micro" shape="rounded" bgColour="salmon-dark-70" borderColour="salmon-dark-50"
+                            bgColour="salmon-dark-70" borderColour="salmon-dark-50"
+                            padding="micro" shape="rounded" shadow="soft"
                         >
                             <Heading5 weight="400" opacity="80" marginBottom="nano">
                                 One theme to rule them all
                             </Heading5>
 
                             <Text size="large">
-                                Every single configurable aspect of the UI is controlled by a single theme file. Create as
+                                Every single configurable aspect of the UI is controlled by a single theme file. Create
+                                as
                                 many as you need, and switch.
                             </Text>
                         </Card>
@@ -110,14 +115,16 @@ const Home = () => {
                     <Portion desktopSpan="half">
                         <Card
                             id="usp-card-4" className="usp-card"
-                            padding="micro" shape="rounded" bgColour="violet-dark-70" borderColour="violet-dark-50"
+                            bgColour="violet-dark-70" borderColour="violet-dark-50"
+                            padding="micro" shape="rounded" shadow="soft"
                         >
                             <Heading5 weight="400" opacity="80" marginBottom="nano">
                                 Performant
                             </Heading5>
 
                             <Text size="large">
-                                100 on Lighthouse performance, and Best Practices. No JS, plain CSS styling. No dependency
+                                100 on Lighthouse performance, and Best Practices. No JS, plain CSS styling. No
+                                dependency
                                 bloat. As close to the metal as it gets. How apps were meant to be built.
                             </Text>
                         </Card>
@@ -126,14 +133,16 @@ const Home = () => {
                     <Portion desktopSpan="half">
                         <Card
                             id="usp-card-5" className="usp-card"
-                            padding="micro" shape="rounded" bgColour="teal-dark-70" borderColour="teal-dark-50"
+                            bgColour="teal-dark-70" borderColour="teal-dark-50"
+                            padding="micro" shape="rounded" shadow="soft"
                         >
                             <Heading5 weight="400" opacity="80" marginBottom="nano">
                                 Clear separation of concerns
                             </Heading5>
 
                             <Text size="large">
-                                Leave the pixel-perfection to the designers, so you can focus on logic and functionality.
+                                Leave the pixel-perfection to the designers, so you can focus on logic and
+                                functionality.
                                 Move
                                 faster, eliminate the dreaded back-and-forth.
                             </Text>

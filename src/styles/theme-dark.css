@@ -166,11 +166,11 @@
     --component-card-footer-border            : var(--slate-dark-60);
 
     /* SITE HEADER ////////////////////////////////////////////////////////// */
-    --site-header-bg                          : var(--grey-light-90);
+    --site-header-bg                          : var(--red);
     --site-header-border                      : var(--grey-dark-60);
 
     /* USP CARDS //////////////////////////////////////////////////////////// */
-    --usp-section-bg                           : var(--slate-dark-40);
+    --usp-section-bg                           : var(--grey-dark-90);
 
     --usp-card-1-bg                           : var(--blue-dark-70);
     --usp-card-1-border                       : var(--blue-dark-30);

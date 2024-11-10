@@ -155,8 +155,8 @@ export const IntroCode = () => {
     const numberOfPortions = 24;
 
     return (
-        <Section id="intro-code">
-            <Div id="intro-section" marginTop="small">
+        <Section id="intro-code" verticalPadding="small">
+            <Div id="intro-section">
                 {vizMode && (
                     <Row id="viz-row" horizontalPadding={rowProps.horizontalPadding} retainLayoutAlways>
                         {Array.from({ length : numberOfPortions }, (_, index) => (
@@ -207,8 +207,8 @@ export const IntroCode = () => {
             <Row horizontalPadding="medium" gutters="large" verticalMargin="small">
                 <Portion>
                     <Div verticallyCentreItems pushItemsToEnds>
-                        <Text size="large" textColour="amber" weight="700" marginBottom="nano">
-                            TRY EDITING SOME PROPS AND VALUES HERE—
+                        <Text size="large" textColour="blue" weight="700" marginBottom="nano">
+                            EDIT SOME PROPS AND VALUES HERE—
                         </Text>
 
                         <Switch

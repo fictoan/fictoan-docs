@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
-import { Badge, Callout, Div, Element, Header, Heading5, InputField, Portion, Row, Text } from "fictoan-react";
+import { Badge, Div, Header, Heading5 } from "fictoan-react";
 
 import "./header.css";
 
@@ -23,7 +24,15 @@ export const SiteHeader = ({ toggleSidebarOnMobile }) => {
                 <Heading5>&ndash;</Heading5>
             </Div>
 
-            {/* <Text weight="700" textColour="white">A designer-focused React/CSS UI library</Text> */}
+            <Div verticallyCentreItems>
+                <Badge bgColour="black" textColour="white" shape="rounded" marginRight="micro">
+                    v1.4.0
+                </Badge>
+
+                <Link href="https://github.com/fictoan/fictoan-react" target="_blank" rel="noopener noreferrer">
+                    Github ↗
+                </Link>
+            </Div>
 
             <Badge
                 id="wip-badge"
@@ -31,36 +40,6 @@ export const SiteHeader = ({ toggleSidebarOnMobile }) => {
             >
                 These Docs are WIP
             </Badge>
-
-            {/* <Portion desktopSpan="one-third"> */}
-            {/*     <Element as="div" className="links-wrapper"> */}
-            {/*         <Link href="https://github.com/fictoan/fictoan-react"> */}
-            {/*             Github */}
-            {/*         </Link> */}
-
-            {/*         <Link href="https://github.com/fictoan/fictoan-react"> */}
-            {/*             Storybook */}
-            {/*         </Link> */}
-            {/*     </Element> */}
-            {/* </Portion> */}
-
-            {/* <Portion desktopSpan="one-third"> */}
-            {/*     <Element as="div" className="links-wrapper"> */}
-            {/*         <Link href="https://github.com/fictoan/fictoan-react"> */}
-            {/*             Boilerplate */}
-            {/*         </Link> */}
-            {/*     </Element> */}
-            {/* </Portion> */}
-
-            {/* <Portion desktopSpan="one-third"> */}
-            {/*     <InputField */}
-            {/*         type="search" */}
-            {/*         placeholder="Search" */}
-            {/*         bgColour="black" */}
-            {/*         borderColour="slate-dark-60" */}
-            {/*     /> */}
-            {/* </Portion> */}
-            {/* MOBILE HEADER ////////////////////////////////////////////// */}
         </Header>
     );
 };
