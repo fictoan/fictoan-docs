@@ -217,6 +217,9 @@ const BadgeDocs = () => {
                                         defaultValue={selectedBgColour || "select-a-colour"}
                                         onChange={handleBgColourChange}
                                         isFullWidth
+                                        allowMultiSelect
+                                        badgeBgColour="red-light-70" badgeTextColour="red"
+                                        allowCustomEntries
                                     />
                                 </Portion>
 

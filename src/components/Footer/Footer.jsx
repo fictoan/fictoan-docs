@@ -7,34 +7,28 @@ export const SiteFooter = () => {
     const [isVisible, setIsVisible] = useState(false);
     const footerRef = useRef(null);
 
-    let currentYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear();
 
     useEffect(() => {
-        let lastScrollTop = 0;
         const OVERSCROLL_THRESHOLD = 50; // Amount of overscroll needed to show footer
 
         const handleScroll = () => {
             const scrollTop = window.scrollY;
             const windowHeight = window.innerHeight;
             const documentHeight = document.documentElement.scrollHeight;
-            const isAtBottom = windowHeight + scrollTop >= documentHeight - 1;
+            const maxScrollTop = documentHeight - windowHeight;
 
-            // Only check for overscroll when we're at the bottom
-            if (isAtBottom) {
-                // Calculate how much we're trying to scroll past the bottom
-                const overscrollAmount = scrollTop - lastScrollTop;
+            // Calculate how much we've overscrolled past the bottom
+            const overscrollAmount = scrollTop - maxScrollTop;
 
-                if (overscrollAmount > 0 && !isVisible) {
-                    setIsVisible(true);
-                }
-            } else if (isVisible) {
+            if (overscrollAmount >= OVERSCROLL_THRESHOLD && !isVisible) {
+                setIsVisible(true);
+            } else if (overscrollAmount < OVERSCROLL_THRESHOLD && isVisible) {
                 setIsVisible(false);
             }
-
-            lastScrollTop = scrollTop;
         };
 
-        window.addEventListener("scroll", handleScroll, { passive : true });
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, [isVisible]);
 

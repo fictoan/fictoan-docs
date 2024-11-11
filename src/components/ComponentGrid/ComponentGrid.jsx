@@ -408,7 +408,7 @@ export const ComponentGrid = () => {
                                         <Badge
                                             bgColour="red-light-40" textColour="red-dark-10"
                                             shape="curved"
-                                            margin="nano"
+                                            margin="nano" withDelete
                                         >
                                             A
                                         </Badge>
@@ -416,7 +416,7 @@ export const ComponentGrid = () => {
                                         <Badge
                                             bgColour="green-light-40" textColour="green-dark-20"
                                             shape="curved" size="large"
-                                            margin="nano"
+                                            margin="nano" withDelete
                                         >
                                             BADGE
                                         </Badge>
@@ -424,7 +424,7 @@ export const ComponentGrid = () => {
                                         <Badge
                                             bgColour="amber-light-20" textColour="orange-dark-10"
                                             shape="rounded"
-                                            margin="nano"
+                                            margin="nano" withDelete
                                         >
                                             of
                                         </Badge>
@@ -432,7 +432,7 @@ export const ComponentGrid = () => {
                                         <Badge
                                             bgColour="violet" textColour="white"
                                             shape="rounded" size="medium"
-                                            margin="nano"
+                                            margin="nano" withDelete
                                         >
                                             HONOUR
                                         </Badge>

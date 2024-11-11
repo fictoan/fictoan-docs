@@ -23,8 +23,10 @@ import {
     RadioTabGroup,
     Select,
     Button,
-    Range, InputField, Checkbox,
-CodeBlock
+    Range,
+    InputField,
+    Checkbox,
+    CodeBlock
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
