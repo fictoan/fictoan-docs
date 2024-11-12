@@ -61,7 +61,7 @@
     --input-border-default                    : var(--grey-dark-40);
     --input-border-radius-default             : var(--global-border-radius);
     --input-label-default                     : var(--paragraph-text-colour);
-    --input-placeholder-default               : var(--red-light-60);
+    --input-placeholder-default               : var(--slate);
     --input-text-default                      : var(--slate-light-60);
 
     --input-bg-focus                          : var(--grey-dark-50);
@@ -98,12 +98,16 @@
     --input-icon-valid                        : var(--green-dark-30);
 
     /* RADIO BUTTON ///////////////////////////////////////////////////////// */
-    --kbd-bg                         : var(--slate-light-10);
-    --kbd-text                       : var(--slate-dark-30);
+    --list-box-badge-bg                       : var(--slate-dark-40);
+    --list-box-badge-text                     : var(--slate-light-70);
 
-    --modal-backdrop-bg      : var(--amber);
-    --modal-backdrop-opacity : 0.8;
-    --modal-backdrop-blur    : 25px;
+    /* RADIO BUTTON ///////////////////////////////////////////////////////// */
+    --kbd-bg                                  : var(--slate-light-10);
+    --kbd-text                                : var(--slate-dark-30);
+
+    --modal-backdrop-bg                       : var(--amber);
+    --modal-backdrop-opacity                  : 0.8;
+    --modal-backdrop-blur                     : 25px;
 
     /* RADIO BUTTON ///////////////////////////////////////////////////////// */
     --radio-tabs-height                       : 32px;
@@ -170,7 +174,7 @@
     --site-header-border                      : var(--grey-dark-60);
 
     /* USP CARDS //////////////////////////////////////////////////////////// */
-    --usp-section-bg                           : var(--grey-dark-90);
+    --usp-section-bg                          : var(--grey-dark-90);
 
     --usp-card-1-bg                           : var(--blue-dark-70);
     --usp-card-1-border                       : var(--blue-dark-30);

@@ -280,7 +280,7 @@ const ButtonDocs = () => {
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
-                                {/* BG COLOUR ========================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Background colour"
@@ -298,7 +298,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BG COLOUR ========================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Border colour"
@@ -316,7 +316,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BG COLOUR ========================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Text colour"

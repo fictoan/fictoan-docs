@@ -22,8 +22,8 @@ import {
     InputField,
     RadioTabGroup,
     Range,
-    SelectWithSearch,
-    CodeBlock
+    ListBox,
+    CodeBlock, Select,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -58,18 +58,6 @@ const BadgeDocs = () => {
 
     const handleShapeChange = (event) => {
         setSelectedShape(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
-    const handleBgColourChange = (event) => {
-        setSelectedBgColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
-    const handleBorderColourChange = (event) => {
-        setSelectedBorderColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
-    const handleTextColourChange = (event) => {
-        setSelectedTextColour(event.target.value !== "none" ? event.target.value : undefined);
     };
 
     return (
@@ -204,7 +192,7 @@ const BadgeDocs = () => {
 
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
-                                    <SelectWithSearch
+                                    <ListBox
                                         label="Background colour"
                                         options={[{
                                             label    : "Select a colour",
@@ -215,17 +203,14 @@ const BadgeDocs = () => {
                                             ...colourOptions,
                                         ]}
                                         defaultValue={selectedBgColour || "select-a-colour"}
-                                        onChange={handleBgColourChange}
+                                        onChange={(value) => setSelectedBgColour(value)}
                                         isFullWidth
-                                        allowMultiSelect
-                                        badgeBgColour="red-light-70" badgeTextColour="red"
-                                        allowCustomEntries
                                     />
                                 </Portion>
 
                                 {/* BORDER COLOUR ================================================================== */}
                                 <Portion desktopSpan="half">
-                                    <SelectWithSearch
+                                    <ListBox
                                         label="Border colour"
                                         options={[{
                                             label    : "Select a colour",
@@ -235,15 +220,15 @@ const BadgeDocs = () => {
                                         },
                                             ...colourOptions,
                                         ]}
-                                        defaultValue="select-a-colour"
-                                        onChange={handleBorderColourChange}
+                                        defaultValue={selectedBorderColour || "select-a-colour"}
+                                        onChange={(value) => setSelectedBorderColour(value)}
                                         isFullWidth
                                     />
                                 </Portion>
 
                                 {/* TEXT COLOUR ==================================================================== */}
                                 <Portion desktopSpan="half">
-                                    <SelectWithSearch
+                                    <Select
                                         label="Text colour"
                                         options={[{
                                             label    : "Select a colour",
@@ -254,7 +239,7 @@ const BadgeDocs = () => {
                                             ...colourOptions,
                                         ]}
                                         defaultValue="select-a-colour"
-                                        onChange={handleTextColourChange}
+                                        onChange={(e) => setSelectedTextColour(e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>
