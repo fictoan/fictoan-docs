@@ -97,14 +97,15 @@
     --input-icon-focus                        : var(--hue);
     --input-icon-valid                        : var(--green-dark-30);
 
-    /* RADIO BUTTON ///////////////////////////////////////////////////////// */
-    --list-box-badge-bg                       : var(--slate-dark-40);
-    --list-box-badge-text                     : var(--slate-light-70);
-
-    /* RADIO BUTTON ///////////////////////////////////////////////////////// */
+    /* KEYBOARD ///////////////////////////////////////////////////////////// */
     --kbd-bg                                  : var(--slate-light-10);
     --kbd-text                                : var(--slate-dark-30);
 
+    /* LIST BOX ///////////////////////////////////////////////////////////// */
+    --list-box-badge-bg                       : var(--slate-dark-40);
+    --list-box-badge-text                     : var(--slate-light-70);
+
+    /* MODAL //////////////////////////////////////////////////////////////// */
     --modal-backdrop-bg                       : var(--amber);
     --modal-backdrop-opacity                  : 0.8;
     --modal-backdrop-blur                     : 25px;

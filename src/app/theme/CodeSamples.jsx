@@ -66,19 +66,175 @@ export const sampleThemeGlobals = `--global-border-radius : 8px;
 
 
 // Code sample 01 //////////////////////////////////////////////////////////////
-export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////////////////////////// */
+export const sampleFictoanTheme = `/* ACCORDION //////////////////////////////////////////////////////////////// */
+:root {
+    --accordion-chevron : var(--slate);
+}
+
+/* BADGE //////////////////////////////////////////////////////////////////// */
 :root {
     --badge-font          : var(--paragraph-font);
     --badge-border-radius : var(--global-border-radius);
     --badge-border-width  : var(--global-border-width);
+
+    --badge-bg-default    : var(--blue-light-60);
+    --badge-text-default  : var(--blue-dark-20);
 }
 
-/* BODY /////////////////////////////////////////////////////////// */
+/* BODY ///////////////////////////////////////////////////////////////////// */
 :root {
     --body-bg : var(--white);
 }
 
-/* BOTTOM DRAWER ////////////////////////////////////////////////// */
+/* BREADCRUMBS ////////////////////////////////////////////////////////////// */
+:root {
+    --breadcrumbs-wrapper-bg           : var(--transparent);
+
+    --breadcrumb-item-separator        : "/";
+    --breadcrumb-item-separator-colour : var(--slate-light-10);
+
+    --breadcrumb-item-text             : var(--link-text-default);
+    --breadcrumb-item-text-active      : var(--paragraph-text-colour);
+}
+
+/* BUTTON /////////////////////////////////////////////////////////////////// */
+:root {
+    --button-font                             : var(--font-sans-serif);
+
+    /* PRIMARY BUTTON ======================================================= */
+    --button-primary-font                     : var(--font-sans-serif);
+    --button-primary-bg-default               : var(--blue);
+    --button-primary-text-default             : var(--white);
+    --button-primary-border-default           : var(--blue);
+    --button-primary-border-width-default     : var(--global-border-width);
+    --button-primary-border-radius-default    : var(--global-border-radius);
+
+    --button-primary-bg-hover                 : var(--blue-light-10);
+    --button-primary-text-hover               : var(--white);
+    --button-primary-border-hover             : var(--blue-dark-30);
+    --button-primary-border-width-hover       : var(--global-border-width);
+    --button-primary-border-radius-hover      : var(--global-border-radius);
+
+    --button-primary-bg-active                : var(--blue-light-20);
+    --button-primary-text-active              : var(--white);
+    --button-primary-border-active            : var(--blue-dark-40);
+    --button-primary-border-width-active      : var(--global-border-width);
+    --button-primary-border-radius-active     : var(--global-border-radius);
+
+    --button-primary-spinner-loading          : var(--white);
+
+    --button-primary-bg-disabled              : var(--blue-light-10);
+    --button-primary-text-disabled            : var(--white);
+    --button-primary-border-disabled          : var(--blue-light-10);
+    --button-primary-border-width-disabled    : var(--global-border-width);
+    --button-primary-border-radius-disabled   : var(--global-border-radius);
+
+
+    /* SECONDARY BUTTON ===================================================== */
+    --button-secondary-font                   : var(--font-sans-serif);
+    --button-secondary-bg-default             : var(--blue-light-50);
+    --button-secondary-text-default           : var(--blue);
+    --button-secondary-border-default         : var(--blue-light-50);
+    --button-secondary-border-width-default   : var(--global-border-width);
+    --button-secondary-border-radius-default  : var(--global-border-radius);
+
+    --button-secondary-bg-hover               : var(--blue-light-40);
+    --button-secondary-text-hover             : var(--blue);
+    --button-secondary-border-hover           : var(--blue-light-40);
+    --button-secondary-border-width-hover     : var(--global-border-width);
+    --button-secondary-border-radius-hover    : var(--global-border-radius);
+
+    --button-secondary-bg-active              : var(--blue-light-50);
+    --button-secondary-text-active            : var(--blue);
+    --button-secondary-border-active          : var(--blue-light-50);
+    --button-secondary-border-width-active    : var(--global-border-width);
+    --button-secondary-border-radius-active   : var(--global-border-radius);
+
+    --button-secondary-spinner-loading        : var(--blue);
+
+    --button-secondary-bg-disabled            : var(--blue-light-10);
+    --button-secondary-text-disabled          : var(--white);
+    --button-secondary-border-disabled        : var(--blue-light-10);
+    --button-secondary-border-width-disabled  : var(--global-border-width);
+    --button-secondary-border-radius-disabled : var(--global-border-radius);
+
+
+    /* TERTIARY BUTTON ====================================================== */
+    --button-tertiary-font                    : var(--font-sans-serif);
+    --button-tertiary-bg-default              : var(--transparent);
+    --button-tertiary-text-default            : var(--blue);
+    --button-tertiary-border-default          : var(--blue);
+    --button-tertiary-border-width-default    : var(--global-border-width);
+    --button-tertiary-border-radius-default   : var(--global-border-radius);
+
+    --button-tertiary-bg-hover                : var(--blue-light-80);
+    --button-tertiary-text-hover              : var(--blue);
+    --button-tertiary-border-hover            : var(--blue-light-20);
+    --button-tertiary-border-width-hover      : var(--global-border-width);
+    --button-tertiary-border-radius-hover     : var(--global-border-radius);
+
+    --button-tertiary-bg-active               : var(--blue-light-70);
+    --button-tertiary-text-active             : var(--blue);
+    --button-tertiary-border-active           : var(--blue-light-30);
+    --button-tertiary-border-width-active     : var(--global-border-width);
+    --button-tertiary-border-radius-active    : var(--global-border-radius);
+
+    --button-tertiary-spinner-loading         : var(--blue);
+
+    --button-tertiary-bg-disabled             : var(--blue-light-10);
+    --button-tertiary-text-disabled           : var(--white);
+    --button-tertiary-border-disabled         : var(--blue-light-10);
+    --button-tertiary-border-width-disabled   : var(--global-border-width);
+    --button-tertiary-border-radius-disabled  : var(--global-border-radius);
+
+
+    /* ROUND BUTTON ========================================================= */
+    --button-round-size-tiny                  : 24px;
+    --button-round-size-small                 : 32px;
+    --button-round-size-medium                : 64px;
+    --button-round-size-large                 : 80px;
+    --button-round-size-huge                  : 128px;
+}
+
+/* CALLOUT ////////////////////////////////////////////////////////////////// */
+:root {
+    --callout-border-radius  : var(--global-border-radius);
+    --callout-border-width   : var(--nano);
+
+    --callout-info-bg        : var(--blue-light-60);
+    --callout-info-border    : var(--blue-dark-20);
+
+    --callout-success-bg     : var(--green-light-60);
+    --callout-success-border : var(--green-dark-20);
+
+    --callout-warning-bg     : var(--amber-light-60);
+    --callout-warning-border : var(--amber-dark-10);
+
+    --callout-error-bg       : var(--red-light-60);
+    --callout-error-border   : var(--red-dark-10);
+}
+
+/* CARD ///////////////////////////////////////////////////////////////////// */
+:root {
+    --card-bg            : var(--white);
+    --card-border        : var(--slate);
+    --card-border-radius : var(--global-border-radius);
+    --card-border-width  : var(--global-border-width);
+}
+
+/* CHECKBOX //////////////////////////////////////////////////////////////// */
+:root {
+    --checkbox-square-border-radius : 4px;
+
+    --checkbox-square-bg-default    : var(--slate-light-60);
+    --checkbox-square-bg-hover      : var(--slate-light-40);
+    --checkbox-square-bg-checked    : var(--hue);
+    --checkbox-square-bg-disabled   : var(--slate-light-90);
+
+    --checkbox-tick                 : var(--white);
+}
+
+/* DRAWER /////////////////////////////////////////////////////////////////// */
 :root {
     --drawer-bg              : var(--white);
     --drawer-border          : var(--slate-light-20);
@@ -91,162 +247,36 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --drawer-dismiss-button  : var(--slate-light-40);
 }
 
-/* BREADCRUMBS //////////////////////////////////////////////////// */
+/* DIVIDER ////////////////////////////////////////////////////////////////// */
 :root {
-    --breadcrumbs-wrapper-bg             : var(--transparent);
+    --divider-height           : 1px;
+    --divider-bg               : var(--slate);
 
-    --breadcrumb-item-separator          : "/";
-    --breadcrumb-item-separator-colour   : var(--slate-light-10);
+    --divider-primary-height   : 4px;
+    --divider-primary-bg       : var(--slate);
 
-    --breadcrumb-item-text-colour        : var(--paragraph-text-colour);
-    --breadcrumb-item-text-colour-active : var(--paragraph-text-colour);
+    --divider-secondary-height : 2px;
+    --divider-secondary-bg     : var(--slate-light-60);
+
+    --divider-tertiary-height  : 1px;
+    --divider-tertiary-bg      : var(--slate-light-20);
 }
 
-/* BUTTON ///////////////////////////////////////////////////////// */
-:root {
-    /* PRIMARY BUTTON ============================================= */
-    --button-primary-default-bg               : var(--blue);
-    --button-primary-default-text             : var(--white);
-    --button-primary-default-border-colour    : var(--blue);
-    --button-primary-default-border-width     : var(--global-border-width);
-    --button-primary-default-border-radius    : var(--global-border-radius);
-
-    --button-primary-hover-bg                 : var(--blue-light-10);
-    --button-primary-hover-text               : var(--white);
-    --button-primary-hover-border-colour      : var(--blue-dark-30);
-    --button-primary-hover-border-width       : var(--global-border-width);
-    --button-primary-hover-border-radius      : var(--global-border-radius);
-
-    --button-primary-loading-spinner-colour   : var(--white);
-
-    --button-primary-disabled-bg              : var(--blue-light-10);
-    --button-primary-disabled-text            : var(--white);
-    --button-primary-disabled-border-colour   : var(--blue-light-10);
-    --button-primary-disabled-border-width    : var(--global-border-width);
-    --button-primary-disabled-border-radius   : var(--global-border-radius);
-
-
-    /* SECONDARY BUTTON =========================================== */
-    --button-secondary-default-bg             : var(--blue-light-50);
-    --button-secondary-default-text           : var(--blue);
-    --button-secondary-default-border-colour  : var(--blue-light-50);
-    --button-secondary-default-border-width   : var(--global-border-width);
-    --button-secondary-default-border-radius  : var(--global-border-radius);
-
-    --button-secondary-hover-bg               : var(--blue-light-40);
-    --button-secondary-hover-text             : var(--blue);
-    --button-secondary-hover-border-colour    : var(--blue-light-40);
-    --button-secondary-hover-border-width     : var(--global-border-width);
-    --button-secondary-hover-border-radius    : var(--global-border-radius);
-
-    --button-secondary-loading-spinner-colour : var(--blue);
-
-    --button-secondary-disabled-bg            : var(--blue-light-10);
-    --button-secondary-disabled-text          : var(--white);
-    --button-secondary-disabled-border-colour : var(--blue-light-10);
-    --button-secondary-disabled-border-width  : var(--global-border-width);
-    --button-secondary-disabled-border-radius : var(--global-border-radius);
-
-
-    /* TERTIARY BUTTON ============================================ */
-    --button-tertiary-default-bg              : var(--transparent);
-    --button-tertiary-default-text            : var(--blue);
-    --button-tertiary-default-border-colour   : var(--blue);
-    --button-tertiary-default-border-width    : var(--global-border-width);
-    --button-tertiary-default-border-radius   : var(--global-border-radius);
-
-    --button-tertiary-hover-bg                : var(--blue-light-80);
-    --button-tertiary-hover-text              : var(--blue);
-    --button-tertiary-hover-border-colour     : var(--blue-light-20);
-    --button-tertiary-hover-border-width      : var(--global-border-width);
-    --button-tertiary-hover-border-radius     : var(--global-border-radius);
-
-    --button-tertiary-loading-spinner-colour  : var(--blue);
-
-    --button-tertiary-disabled-bg             : var(--blue-light-10);
-    --button-tertiary-disabled-text           : var(--white);
-    --button-tertiary-disabled-border-colour  : var(--blue-light-10);
-    --button-tertiary-disabled-border-width   : var(--global-border-width);
-    --button-tertiary-disabled-border-radius  : var(--global-border-radius);
-
-
-    /* ROUND BUTTON =============================================== */
-    --button-round-size-tiny                  : 24px;
-    --button-round-size-small                 : 32px;
-    --button-round-size-medium                : 64px;
-    --button-round-size-large                 : 80px;
-    --button-round-size-huge                  : 128px;
-}
-
-/* CALLOUT //////////////////////////////////////////////////////// */
-:root {
-    --callout-border-radius  : var(--global-border-radius);
-    --callout-border-width   : var(--nano);
-
-    --callout-info-bg        : var(--blue-light-40);
-    --callout-info-border    : var(--blue-dark-40);
-
-    --callout-success-bg     : var(--green-light-40);
-    --callout-success-border : var(--green-dark-40);
-
-    --callout-warning-bg     : var(--amber-light-40);
-    --callout-warning-border : var(--amber-dark-40);
-
-    --callout-error-bg       : var(--red-light-40);
-    --callout-error-border   : var(--red-dark-40);
-}
-
-/* CARD /////////////////////////////////////////////////////////// */
-:root {
-    --card-bg            : var(--white);
-    --card-border        : var(--slate);
-    --card-border-radius : var(--global-border-radius);
-    --card-border-width  : var(--global-border-width);
-}
-
-/* CHECKBOX ////////////////////////////////////////////////////// */
-:root {
-    --checkbox-square-border-radius : var(--global-border-radius);
-
-    --checkbox-square-bg-default    : var(--slate-light-60);
-    --checkbox-square-bg-hover      : var(--slate-light-40);
-    --checkbox-square-bg-checked    : var(--hue);
-    --checkbox-square-bg-disabled   : var(--slate-light-90);
-
-    --checkbox-tick                 : var(--white);
-}
-
-/* EXPANDABLE CONTENT ///////////////////////////////////////////// */
-:root {
-    --expandable-content-chevron : var(--slate);
-}
-
-/* H-RULE ///////////////////////////////////////////////////////// */
-:root {
-    --hr-default-height   : 1px;
-    --hr-default-bg       : var(--slate);
-
-    --hr-primary-height   : 4px;
-    --hr-primary-bg       : var(--slate);
-
-    --hr-secondary-height : 2px;
-    --hr-secondary-bg     : var(--slate-light-60);
-
-    --hr-tertiary-height  : 1px;
-    --hr-tertiary-bg      : var(--slate-light-20);
-}
-
-/* INPUT FIELD //////////////////////////////////////////////////// */
+/* INPUT FIELD ////////////////////////////////////////////////////////////// */
 :root {
     --input-bg-default            : var(--white);
+
     --input-border-default        : var(--slate-light-40);
     --input-border-radius-default : var(--global-border-radius);
+    --input-border-width-default  : var(--global-border-width);
+
     --input-label-default         : var(--paragraph-text-colour);
     --input-placeholder-default   : var(--slate-light-40);
-    --input-text-default          : var(--shade);
+    --input-text-default          : var(--paragraph-text-colour);
 
     --input-bg-focus              : var(--white);
     --input-border-focus          : var(--slate-light-40);
+    --input-border-width-focus    : var(--global-border-width);
     --input-text-focus            : var(--shade);
 
     --input-bg-valid              : var(--white);
@@ -279,60 +309,144 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --input-icon-valid            : var(--green-dark-30);
 }
 
-/* NOTIFICATIONS ////////////////////////////////////////////////// */
+/* LIST BOX ///////////////////////////////////////////////////////////////// */
 :root {
-    --notification-item-border-radius           : var(--global-border-radius);
-
-    --notification-item-generic-bg              : var(--white);
-    --notification-item-generic-border          : var(--slate-light-40);
-    --notification-item-generic-text            : var(--shade);
-
-    --notification-item-info-bg                 : var(--blue-light-40);
-    --notification-item-info-border             : var(--blue);
-
-    --notification-item-error-bg                : var(--red-light-40);
-    --notification-item-error-border            : var(--red);
-
-    --notification-item-success-bg              : var(--green-light-40);
-    --notification-item-success-border          : var(--green);
-
-    --notification-item-warning-bg              : var(--amber-light-40);
-    --notification-item-warning-border          : var(--amber);
-
-    --notification-dismiss-button               : var(--slate-dark-90);
-    --notification-dismiss-button-border-radius : var(--slate-dark-90);
+    --list-box-badge-bg   : var(--slate-light-20);
+    --list-box-badge-text : var(--paragraph-text-colour);
 }
 
-/* PROGRESS BAR /////////////////////////////////////////////////// */
+/* METER //////////////////////////////////////////////////////////////////// */
 :root {
-    --progress-bar-bg            : var(--slate-light-20);
+    --meter-bg                   : var(--slate-light-70);
+    --meter-border               : var(--slate-light-40);
+    --meter-border-width         : var(--global-border-width);
+    --meter-border-radius        : var(--global-border-radius);
+    --meter-height               : 8px;
+
+    --meter-label                : var(--paragraph-text-colour);
+    --meter-value                : var(--paragraph-text-colour);
+
+    --meter-danger               : var(--red-light-10);
+    --meter-low                  : var(--amber-light-10);
+    --meter-high                 : var(--green-dark-10);
+
+    --meter-optimum-marker-width : 3px;
+    --meter-optimum-marker-bg    : var(--blue);
+}
+
+/* MODAL //////////////////////////////////////////////////////////////////// */
+:root {
+    --modal-backdrop-bg      : var(--black);
+    --modal-backdrop-opacity : 0.4;
+    --modal-backdrop-blur    : 4px;
+}
+
+/* NOTIFICATIONS //////////////////////////////////////////////////////////// */
+:root {
+    --notification-item-border-radius  : var(--global-border-radius);
+
+    --notification-item-generic-bg     : var(--white);
+    --notification-item-generic-border : var(--slate-light-60);
+    --notification-item-generic-text   : var(--shade);
+
+    --notification-item-info-bg        : var(--blue-light-60);
+    --notification-item-info-border    : var(--blue);
+
+    --notification-item-error-bg       : var(--red-light-60);
+    --notification-item-error-border   : var(--red);
+
+    --notification-item-success-bg     : var(--green-light-60);
+    --notification-item-success-border : var(--green);
+
+    --notification-item-warning-bg     : var(--amber-light-60);
+    --notification-item-warning-border : var(--amber);
+}
+
+/* OPTION CARDS ///////////////////////////////////////////////////////////// */
+:root {
+    --option-card-border-width       : var(--global-border-width);
+
+    --option-card-focus              : var(--global-focus-colour);
+
+    --option-card-bg-hover           : var(--green-light-70);
+    --option-card-border-hover       : var(--green-light-40);
+    --option-card-tick-bg-hover      : var(--green-light-60);
+    --option-card-tick-line-hover    : var(--green);
+
+    --option-card-bg-selected        : var(--green-light-60);
+    --option-card-border-selected    : var(--green);
+    --option-card-tick-bg-selected   : var(--green-dark-10);
+    --option-card-tick-line-selected : var(--white);
+}
+
+/* PROGRESS BAR ///////////////////////////////////////////////////////////// */
+:root {
+    --progress-bar-bg            : var(--slate-light-70);
     --progress-bar-fill          : var(--hue);
-    --progress-bar-label         : var(--shade);
-    --progress-bar-value         : var(--shade);
+    --progress-bar-label         : var(--paragraph-text-colour);
+    --progress-bar-value         : var(--paragraph-text-colour);
     --progress-bar-border-radius : var(--global-border-radius);
     --progress-bar-height        : 8px;
 }
 
-/* RADIO BUTTON /////////////////////////////////////////////////// */
+/* RADIO BUTTON ///////////////////////////////////////////////////////////// */
 :root {
-    --radio-button-circle-bg-default  : var(--slate-light-60);
-    --radio-button-circle-bg-hover    : var(--slate-light-40);
-    --radio-button-circle-bg-checked  : var(--hue);
-    --radio-button-circle-bg-disabled : var(--slate-light-90);
+    /* GENERIC RADIO BUTTON ================================================= */
+    --radio-circle-bg-default       : var(--slate-light-60);
+    --radio-circle-bg-hover         : var(--slate-light-40);
+    --radio-circle-bg-checked       : var(--hue);
+    --radio-circle-bg-disabled      : var(--slate-light-90);
 
-    --radio-button-dot                : var(--white);
+    --radio-button-dot              : var(--white);
+
+    /* RADIO GROUP TABS ===================================================== */
+    --radio-tabs-height             : 48px;
+    --radio-tabs-vertical-gap       : 4px;
+    --radio-tabs-bg                 : var(--slate-light-70);
+    --radio-tabs-border             : var(--slate-light-70);
+
+    --radio-tabs-label-text-default : var(--slate-dark-60);
+
+    --radio-tabs-label-text-hover   : var(--slate-dark-80);
+    --radio-tabs-label-bg-hover     : var(--slate-light-90);
+
+    --radio-tabs-label-bg-active    : var(--white);
+    --radio-tabs-label-text-active  : var(--black);
+
+    --radio-tabs-label-focus-border : var(--blue);
 }
 
-/* RANGE ////////////////////////////////////////////////////// */
+/* RANGE //////////////////////////////////////////////////////////////////// */
 :root {
-    --range-slider-bg            : var(--blue-light-20);
-    --range-slider-border-focus  : var(--blue);
-    --range-slider-outline-focus : var(--blue);
+    --range-label         : var(--input-label-default);
+    --range-value         : var(--input-label-default);
+
+    --range-track-bg      : var(--slate-light-70);
+    --range-thumb-bg      : var(--blue-light-20);
+    --range-thumb-border  : var(--blue-light-20);
+
+    --range-border-focus  : var(--blue);
+    --range-outline-focus : var(--blue);
 }
 
-/* SIDEBAR + CONTENT WRAPPER ////////////////////////////////////// */
+/* SELECT /////////////////////////////////////////////////////////////////// */
+:root {
+    --select-chevron : var(--slate-light-40);
+}
+
+/* SELECT WITH SEARCH /////////////////////////////////////////////////////// */
+:root {
+    --select-bg-default    : var(--input-bg-default);
+    --select-bg-hover      : var(--input-bg-focus);
+    --select-bg-disabled   : var(--input-bg-disabled);
+    --select-text-disabled : var(--input-text-disabled);
+    --select-focus-color   : var(--input-border-focus);
+}
+
+/* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
 :root {
     --sidebar-bg                             : var(--white);
+    --sidebar-border                         : var(--slate-dark-80);
     --sidebar-width-default                  : 240px;
     --sidebar-width-collapsed                : 48px;
 
@@ -342,9 +456,11 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --sidebar-header-icon-width              : 40px;
 
     --sidebar-item-icon-width                : 24px;
+
     --sidebar-item-icon-stroke-default       : var(--slate-dark-40);
     --sidebar-item-icon-stroke-width-default : 2px;
     --sidebar-item-icon-fill-default         : var(--slate-light-40);
+    --sidebar-item-text-colour-default       : var(--slate-light-40);
 
     --sidebar-item-bg-hover                  : var(--grey-dark-70);
     --sidebar-item-text-hover                : var(--hue);
@@ -374,17 +490,25 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --sidebar-collapsed-item-border-radius   : var(--global-border-radius);
 }
 
-/* SELECT DROPDOWN //////////////////////////////////////////////// */
-:root {
-    --dropdown-chevron : var(--slate-light-40);
-}
-
-/* SPINNER //////////////////////////////////////////////////////// */
+/* SPINNER ////////////////////////////////////////////////////////////////// */
 :root {
     --spinner-border : var(--hue);
 }
 
-/* TABLE ////////////////////////////////////////////////////////// */
+/* SWITCH /////////////////////////////////////////////////////////////////// */
+:root {
+    --switch-bg-default         : var(--slate-light-60);
+    --switch-bg-hover           : var(--slate-light-40);
+    --switch-bg-checked         : var(--hue);
+    --switch-bg-disabled        : var(--slate-light-40);
+
+    --switch-slider-bg-default  : var(--white);
+    --switch-slider-bg-hover    : var(--white);
+    --switch-slider-bg-checked  : var(--white);
+    --switch-slider-bg-disabled : var(--slate-light-40);
+}
+
+/* TABLE //////////////////////////////////////////////////////////////////// */
 :root {
     --table-bg                           : var(--white);
     --table-border                       : var(--slate-light-10);
@@ -392,10 +516,10 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --table-text                         : var(--paragraph-text-colour);
 
     --table-striped-header-bg            : var(--blue-light-40);
-    --table-striped-cell-bg              : var(--slate-light-20);
+    --table-striped-cell-bg              : var(--slate-light-70);
 
-    --table-bg-hover                     : var(--amber-light-20);
-    --table-text-hover                   : var(--paragraph-text-colour);
+    --table-highlight-bg                 : var(--amber-light-20);
+    --table-highlight-text               : var(--paragraph-text-colour);
 
     --table-pagination-bg                : var(--white);
     --table-pagination-border-radius     : var(--global-border-radius);
@@ -403,127 +527,136 @@ export const sampleFictoanTheme = `/* BADGE ////////////////////////////////////
     --table-pagination-nav-icon-bg-hover : var(--slate-dark-60);
 }
 
-/* TABS /////////////////////////////////////////////////////////// */
+/* TABS ///////////////////////////////////////////////////////////////////// */
 :root {
-    --tabs-bg                     : var(--transparent);
+    --tabs-bg                : var(--transparent);
 
-    --tab-default-label           : var(--shade);
-    --tab-hover-label             : var(--blue-light-40);
-    --tab-active-label            : var(--blue);
-    --tab-active-border           : var(--blue);
-    --tab-disabled-label          : var(--slate-light-40);
+    --tab-label-default      : var(--paragraph-text-colour);
+    --tab-label-hover        : var(--blue-light-40);
+    --tab-label-active       : var(--blue);
+    --tab-label-disabled     : var(--slate-light-40);
 
-    --tab-with-alert-badge-bg     : var(--red-dark-70);
-    --tab-with-alert-badge-border : var(--red-dark-70);
+    --tab-border-active      : var(--blue);
+
+    --tab-alert-badge-bg     : var(--red);
+    --tab-alert-badge-border : var(--red);
 }
 
-/* TOAST ////////////////////////////////////////////////////////// */
+/* TOAST //////////////////////////////////////////////////////////////////// */
 :root {
     --toast-bg            : var(--slate-light-10);
     --toast-text          : var(--black);
     --toast-border-radius : var(--global-border-radius);
 }
 
-/* TEXT /////////////////////////////////////////////////////////// */
+/* TEXT ///////////////////////////////////////////////////////////////////// */
 :root {
-    /* GENERICS ============================================= */
-    --font-sans-serif           : sans-serif;
-    --font-serif                : serif;
-    --font-mono                 : monospace;
+    /* GENERICS ============================================================= */
+    --font-sans-serif                : sans-serif;
+    --font-serif                     : serif;
+    --font-mono                      : monospace;
 
-    /* PARAGRAPHS =========================================== */
-    --paragraph-font            : var(--font-sans-serif);
-    --paragraph-font-size       : 1rem;
-    --paragraph-line-height     : 1.2;
-    --paragraph-font-weight     : 400;
-    --paragraph-text-colour     : var(--grey);
+    /* PARAGRAPHS =========================================================== */
+    --paragraph-font                 : var(--font-sans-serif);
+    --paragraph-font-size            : 1rem;
+    --paragraph-line-height          : 1.2;
+    --paragraph-font-weight          : 400;
+    --paragraph-text-colour          : var(--grey);
 
-    --paragraph-subtext-colour  : var(--slate-dark-30);
-    --paragraph-subtext-size    : 0.8rem;
+    --paragraph-subtext-colour       : var(--slate-dark-30);
+    --paragraph-subtext-size         : 0.8rem;
 
-    /* HEADINGS ============================================= */
-    --heading-font              : var(--font-sans-serif);
-    --heading-font-size         : 1.5rem;
-    --heading-size-multiplier   : 1.2;
-    --heading-line-height       : 1;
-    --heading-font-weight       : 700;
-    --heading-text-colour       : var(--slate);
+    /* HEADINGS ============================================================= */
+    --heading-font                   : var(--font-sans-serif);
+    --heading-font-size              : 1.5rem;
+    --heading-size-multiplier        : 1.2;
+    --heading-line-height            : 1;
+    --heading-font-weight            : 700;
+    --heading-text-colour            : var(--slate);
 
-    /* LINKS ================================================ */
-    --link-font                 : var(--paragraph-font);
-    --link-text-default         : var(--blue);
-    --link-text-hover           : var(--blue);
+    /* LINKS ================================================================ */
+    --link-font                      : var(--paragraph-font);
+    --link-text-default              : var(--blue);
+    --link-text-hover                : var(--blue);
 
-    /* SELECTION ============================================ */
-    --text-selected             : var(--white);
-    --text-bg-selected          : var(--hue);
+    /* SELECTION ============================================================ */
+    --text-selected                  : var(--white);
+    --text-bg-selected               : var(--hue);
 
-    /* CODE ================================================= */
-    --code-font                 : var(--font-mono);
-    --code-inline-font-size     : 0.8rem;
-    --code-inline-bg            : var(--blue-light-80);
-    --code-inline-text          : var(--blue-dark-40);
-    --code-inline-border-radius : var(--global-border-radius);
+    /* CODE ================================================================= */
+    --code-font                      : var(--font-mono);
+    --code-inline-font-size          : 0.8rem;
+    --code-inline-bg                 : var(--blue-light-80);
+    --code-inline-text               : var(--blue-dark-40);
+    --code-inline-border-radius      : var(--global-border-radius);
 
-    --code-block-font-size      : 0.92rem;
-    --code-block-bg             : var(--slate-dark-80);
-    --code-block-text           : var(--blue-dark-40);
-    --code-block-line-height    : 1.8;
-    --code-block-border-radius  : var(--global-border-radius);
+    --code-block-font-size           : 0.92rem;
+    --code-block-bg                  : var(--slate-dark-80);
+    --code-block-text                : var(--sky-light-60);
+    --code-block-line-height         : 1.8;
+    --code-block-border-radius       : var(--global-border-radius);
 
-    /*  KBD ================================================= */
-    --kbd-font                  : var(--font-mono);
-    --kbd-bg                    : var(--grey-light-10);
-    --kbd-text                  : var(--grey);
-    --kbd-border-radius         : var(--global-border-radius);
+    --code-block-line-numbers        : var(--slate-dark-30);
 
-    /* TOKENS =============================================== */
-    --token-tag                 : var(--violet);
-    --token-atrule              : var(--teal);
-    --token-attrName            : var(--orange);
-    --token-attrValue           : var(--green);
-    --token-boolean             : var(--green);
-    --token-cdata               : var(--grey);
-    --token-className           : var(--red);
-    --token-comment             : var(--grey);
-    --token-constant            : var(--green);
-    --token-deleted             : var(--slate);
-    --token-delimiter           : var(--grey);
-    --token-doctype             : var(--grey);
-    --token-entity              : var(--green);
-    --token-function            : var(--orange);
-    --token-hexcode             : var(--green);
-    --token-inserted            : var(--green);
-    --token-italic              : var(--green);
-    --token-keyword             : var(--orange);
-    --token-namespace           : var(--green);
-    --token-number              : var(--green);
-    --token-operator            : var(--pistachio);
-    --token-plain               : var(--grey);
-    --token-prolog              : var(--grey);
-    --token-property            : var(--red);
-    --token-punctuation         : var(--grey);
-    --token-regex               : var(--green);
-    --token-selector            : var(--violet);
-    --token-string              : var(--crimson);
-    --token-symbol              : var(--green);
-    --token-url                 : var(--green);
-    --token-variable            : var(--orange);
-    --token-css-fallback        : var(--red);
-    --token-html-fallback       : var(--red);
-    --token-js-fallback         : var(--red);
-    --token-json-token-string   : var(--red);
-}
+    --code-block-copy-button-bg      : var(--transparent);
+    --code-block-copy-button-text    : var(--blue);
+    --code-block-copy-button-border  : var(--blue-light-40);
 
-/* SWITCH ///////////////////////////////////////////////////////// */
-:root {
-    --switch-bg-default         : var(--slate-light-60);
-    --switch-bg-hover           : var(--slate-light-40);
-    --switch-bg-checked         : var(--hue);
-    --switch-bg-disabled        : var(--slate-light-90);
+    --code-block-copied-badge-bg     : var(--green-light-80);
+    --code-block-copied-badge-text   : var(--green-dark-20);
+    --code-block-copied-badge-border : var(--green-dark-20);
 
-    --switch-slider-bg-default  : var(--white);
-    --switch-slider-bg-hover    : var(--white);
-    --switch-slider-bg-checked  : var(--white);
-    --switch-slider-bg-disabled : var(--slate-light-40);
+    /* KBD ================================================================== */
+    --kbd-font                       : var(--font-mono);
+    --kbd-bg                         : var(--grey-light-10);
+    --kbd-text                       : var(--grey);
+    --kbd-border-radius              : var(--global-border-radius);
+
+    /* TOKENS =============================================================== */
+    --token-atrule                   : var(--teal);
+    --token-attrName                 : var(--orange);
+    --token-attrValue                : var(--green);
+    --token-boolean                  : var(--green);
+    --token-builtin                  : var(--violet-light-20);
+    --token-cdata                    : var(--grey);
+    --token-className                : var(--red);
+    --token-comment                  : var(--grey);
+    --token-constant                 : var(--green);
+    --token-deleted                  : var(--slate);
+    --token-delimiter                : var(--grey);
+    --token-doctype                  : var(--amber-light-10);
+    --token-entity                   : var(--green);
+    --token-function                 : var(--orange);
+    --token-hexcode                  : var(--white);
+    --token-important                : var(--red);
+    --token-imports                  : var(--sky-light-60);
+    --token-inserted                 : var(--green);
+    --token-italic                   : var(--green);
+    --token-keyword                  : var(--violet-light-20);
+    --token-name                     : var(--green);
+    --token-namespace                : var(--green);
+    --token-number                   : var(--crimson-dark-10);
+    --token-operator                 : var(--amber);
+    --token-plain                    : var(--slate-light-60);
+    --token-plain-html               : var(--slate);
+    --token-plain-css                : var(--salmon-light-30);
+    --token-prolog                   : var(--grey);
+    --token-property                 : var(--pistachio-dark-20);
+    --token-property-css             : var(--slate);
+    --token-punctuation              : var(--grey);
+    --token-regex                    : var(--green);
+    --token-selector-generic         : var(--green-light-20);
+    --token-selector-class           : var(--violet-light-20);
+    --token-selector-id              : var(--violet-light-40);
+    --token-selector-attrName        : var(--blue-dark-20);
+    --token-selector-attrValue       : var(--blue-light-20);
+    --token-selector-operator        : var(--token-operator);
+    --token-selector-punctuation     : var(--grey);
+    --token-string                   : var(--grey-light-50);
+    --token-string-json              : var(--slate);
+    --token-symbol                   : var(--green);
+    --token-tag                      : var(--violet);
+    --token-unit                     : var(--crimson-light-20);
+    --token-url                      : var(--green);
+    --token-variable                 : var(--orange);
 }`;

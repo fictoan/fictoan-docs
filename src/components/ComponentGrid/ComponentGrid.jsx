@@ -97,7 +97,7 @@ export const ComponentGrid = () => {
                                     <Text weight="600">I’m just your type.</Text>
 
                                     <Element as="footer" className="footer-bottom">
-                                        <Link href="/components/typography">
+                                        <Link href="/typography">
                                             Typography &rarr;
                                         </Link>
                                     </Element>
