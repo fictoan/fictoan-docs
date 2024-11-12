@@ -13,7 +13,6 @@ import {
     SidebarFooter,
     Divider,
     Accordion,
-    Div,
 } from "fictoan-react";
 
 // COMPONENTS //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,6 +37,7 @@ import FormWrapperIcon from "../../assets/icons/writing.svg";
 import HomeIcon from "../../assets/icons/home.svg";
 import InfoPanelIcon from "../../assets/icons/info-panel.svg";
 import InputFieldIcon from "../../assets/icons/input.svg";
+import ListBoxIcon from "../../assets/icons/list-box.svg";
 import LayoutIcon from "../../assets/icons/layout.svg";
 import ManifestoIcon from "../../assets/icons/manifesto.svg";
 import NotificationIcon from "../../assets/icons/notification.svg";
@@ -319,6 +319,36 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
+            {/* METER ============================================================================================== */}
+            <Link href="/components/list-box">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <ListBoxIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="List box" />
+                </SidebarItem>
+            </Link>
+
+            {/* METER ============================================================================================== */}
+            <Link href="/components/meter">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <ProgressBarIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Meter" />
+                </SidebarItem>
+            </Link>
+
+            {/* MODAL ============================================================================================== */}
+            <Link href="/components/modal">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <ProgressBarIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Modal" />
+                </SidebarItem>
+            </Link>
+
             {/* NOTIFICATIONS ====================================================================================== */}
             <Link href="/components/notifications">
                 <SidebarItem onClick={closeMobileSidebar}>
@@ -346,26 +376,6 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                         <InputFieldIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Pin Input" />
-                </SidebarItem>
-            </Link>
-
-            {/* METER ============================================================================================== */}
-            <Link href="/components/meter">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ProgressBarIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Meter" />
-                </SidebarItem>
-            </Link>
-
-            {/* MODAL ============================================================================================== */}
-            <Link href="/components/modal">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ProgressBarIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Modal" />
                 </SidebarItem>
             </Link>
 
