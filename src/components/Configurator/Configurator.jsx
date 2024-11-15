@@ -310,7 +310,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
                     <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                        as="div" padding="small" shape="rounded" bgColour="slate-light80"
                     >
                         <Component
                             id="interactive-component"
@@ -367,7 +367,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                     <Form>
                         <Card padding="micro" shape="rounded">
                             <Text size="large" weight="700" textColour="white" marginBottom="nano">
-                                Customise individually
+                                Configure props
                             </Text>
 
                             {/* Lol, hacky max pro */}
@@ -625,7 +625,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                         <Form>
                             <Header verticallyCentreItems pushItemsToEnds>
                                 <Text size="large" weight="700" textColour="white" marginBottom="nano">
-                                    Set values globally
+                                    Set global theme values
                                 </Text>
                             </Header>
 

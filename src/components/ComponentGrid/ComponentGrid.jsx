@@ -406,7 +406,7 @@ export const ComponentGrid = () => {
                                 <Div className="component-card">
                                     <Div id="badge-wrapper">
                                         <Badge
-                                            bgColour="red-light-40" textColour="red-dark-10"
+                                            bgColour="red-light40" textColour="red-dark10"
                                             shape="curved"
                                             margin="nano" withDelete
                                         >
@@ -414,7 +414,7 @@ export const ComponentGrid = () => {
                                         </Badge>
 
                                         <Badge
-                                            bgColour="green-light-40" textColour="green-dark-20"
+                                            bgColour="green-light40" textColour="green-dark20"
                                             shape="curved" size="large"
                                             margin="nano" withDelete
                                         >
@@ -422,7 +422,7 @@ export const ComponentGrid = () => {
                                         </Badge>
 
                                         <Badge
-                                            bgColour="amber-light-20" textColour="orange-dark-10"
+                                            bgColour="amber-light20" textColour="orange-dark10"
                                             shape="rounded"
                                             margin="nano" withDelete
                                         >
@@ -452,7 +452,7 @@ export const ComponentGrid = () => {
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
                                     <Callout kind="success">
-                                        <Text textColour="green-dark-60">
+                                        <Text textColour="green-dark60">
                                             I’d also just like to call out that FICTOAN
                                             is awesome.
                                         </Text>

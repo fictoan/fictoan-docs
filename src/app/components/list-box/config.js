@@ -7,11 +7,11 @@ export const listBoxProps = {
     variables  : {
         "list-box-badge-bg"          : {
             type         : "reference",
-            defaultValue : "slate-dark-40",
+            defaultValue : "slate-dark40",
         },
         "list-box-badge-text"          : {
             type         : "reference",
-            defaultValue : "slate-dark-70",
+            defaultValue : "slate-dark70",
         },
     }
 };

@@ -24,7 +24,7 @@ export const toastProps = {
         },
         "sidebar-header-border-bottom"           : {
             type         : "reference",
-            defaultValue : "slate-dark-80",
+            defaultValue : "slate-dark80",
         },
         "sidebar-header-logo-width"              : {
             type         : "value-unit",
@@ -43,7 +43,7 @@ export const toastProps = {
         },
         "sidebar-item-icon-stroke-default"       : {
             type         : "reference",
-            defaultValue : "slate-dark-40",
+            defaultValue : "slate-dark40",
         },
         "sidebar-item-icon-stroke-width-default" : {
             type         : "value-unit",
@@ -52,15 +52,15 @@ export const toastProps = {
         },
         "sidebar-item-icon-fill-default"         : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "sidebar-item-text-colour-default"       : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "sidebar-item-bg-hover"                  : {
             type         : "reference",
-            defaultValue : "grey-dark-70",
+            defaultValue : "grey-dark70",
         },
         "sidebar-item-text-hover"                : {
             type         : "reference",
@@ -68,19 +68,19 @@ export const toastProps = {
         },
         "sidebar-item-icon-stroke-hover"         : {
             type         : "reference",
-            defaultValue : "slate-dark-30",
+            defaultValue : "slate-dark30",
         },
         "sidebar-item-icon-fill-hover"           : {
             type         : "reference",
-            defaultValue : "slate-dark-30",
+            defaultValue : "slate-dark30",
         },
         "sidebar-item-bg-active"                 : {
             type         : "reference",
-            defaultValue : "grey-dark-60",
+            defaultValue : "grey-dark60",
         },
         "sidebar-item-text-active"               : {
             type         : "reference",
-            defaultValue : "grey-light-40",
+            defaultValue : "grey-light40",
         },
         "sidebar-item-border-active"             : {
             type         : "reference",
@@ -118,7 +118,7 @@ export const toastProps = {
         },
         "sidebar-item-has-alert-bg"              : {
             type         : "reference",
-            defaultValue : "red-dark-70",
+            defaultValue : "red-dark70",
         },
         "sidebar-footer-height"                  : {
             type         : "value-unit",
@@ -131,7 +131,7 @@ export const toastProps = {
         },
         "sidebar-footer-border-top"              : {
             type         : "reference",
-            defaultValue : "slate-light-10",
+            defaultValue : "slate-light10",
         },
         "sidebar-collapsed-item-link-text"       : {
             type         : "reference",

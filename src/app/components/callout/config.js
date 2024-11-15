@@ -15,35 +15,35 @@ export const calloutProps = {
         },
         "callout-info-bg"        : {
             type         : "reference",
-            defaultValue : "blue-light-60",
+            defaultValue : "blue-light60",
         },
         "callout-info-border"    : {
             type         : "reference",
-            defaultValue : "blue-dark-40",
+            defaultValue : "blue-dark40",
         },
         "callout-success-bg"     : {
             type         : "reference",
-            defaultValue : "green-light-60",
+            defaultValue : "green-light60",
         },
         "callout-success-border" : {
             type         : "reference",
-            defaultValue : "green-dark-40",
+            defaultValue : "green-dark40",
         },
         "callout-warning-bg"     : {
             type         : "reference",
-            defaultValue : "amber-light-60",
+            defaultValue : "amber-light60",
         },
         "callout-warning-border" : {
             type         : "reference",
-            defaultValue : "amber-dark-40",
+            defaultValue : "amber-dark40",
         },
         "callout-error-bg"       : {
             type         : "reference",
-            defaultValue : "red-light-60",
+            defaultValue : "red-light60",
         },
         "callout-error-border"   : {
             type         : "reference",
-            defaultValue : "red-dark-40",
+            defaultValue : "red-dark40",
         },
     },
 };

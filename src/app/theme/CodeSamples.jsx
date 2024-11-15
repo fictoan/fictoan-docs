@@ -77,8 +77,8 @@ export const sampleFictoanTheme = `/* ACCORDION ////////////////////////////////
     --badge-border-radius : var(--global-border-radius);
     --badge-border-width  : var(--global-border-width);
 
-    --badge-bg-default    : var(--blue-light-60);
-    --badge-text-default  : var(--blue-dark-20);
+    --badge-bg-default    : var(--blue-light60);
+    --badge-text-default  : var(--blue-dark20);
 }
 
 /* BODY ///////////////////////////////////////////////////////////////////// */
@@ -111,13 +111,13 @@ export const sampleFictoanTheme = `/* ACCORDION ////////////////////////////////
 
     --button-primary-bg-hover                 : var(--blue-light-10);
     --button-primary-text-hover               : var(--white);
-    --button-primary-border-hover             : var(--blue-dark-30);
+    --button-primary-border-hover             : var(--blue-dark30);
     --button-primary-border-width-hover       : var(--global-border-width);
     --button-primary-border-radius-hover      : var(--global-border-radius);
 
     --button-primary-bg-active                : var(--blue-light-20);
     --button-primary-text-active              : var(--white);
-    --button-primary-border-active            : var(--blue-dark-40);
+    --button-primary-border-active            : var(--blue-dark40);
     --button-primary-border-width-active      : var(--global-border-width);
     --button-primary-border-radius-active     : var(--global-border-radius);
 
@@ -202,16 +202,16 @@ export const sampleFictoanTheme = `/* ACCORDION ////////////////////////////////
     --callout-border-width   : var(--nano);
 
     --callout-info-bg        : var(--blue-light-60);
-    --callout-info-border    : var(--blue-dark-20);
+    --callout-info-border    : var(--blue-dark20);
 
     --callout-success-bg     : var(--green-light-60);
-    --callout-success-border : var(--green-dark-20);
+    --callout-success-border : var(--green-dark20);
 
     --callout-warning-bg     : var(--amber-light-60);
-    --callout-warning-border : var(--amber-dark-10);
+    --callout-warning-border : var(--amber-dark10);
 
     --callout-error-bg       : var(--red-light-60);
-    --callout-error-border   : var(--red-dark-10);
+    --callout-error-border   : var(--red-dark10);
 }
 
 /* CARD ///////////////////////////////////////////////////////////////////// */
@@ -280,33 +280,33 @@ export const sampleFictoanTheme = `/* ACCORDION ////////////////////////////////
     --input-text-focus            : var(--shade);
 
     --input-bg-valid              : var(--white);
-    --input-border-valid          : var(--green-dark-30);
+    --input-border-valid          : var(--green-dark30);
     --input-label-valid           : var(--shade);
 
     --input-bg-invalid            : var(--red-light-60);
-    --input-border-invalid        : var(--red-dark-30);
+    --input-border-invalid        : var(--red-dark30);
     --input-label-invalid         : var(--red);
     --input-text-invalid          : var(--red);
     --input-error-text-invalid    : var(--red);
 
     --input-bg-disabled           : var(--slate-light-40);
     --input-border-disabled       : var(--slate-light-40);
-    --input-label-disabled        : var(--slate-dark-40);
-    --input-text-disabled         : var(--slate-dark-60);
+    --input-label-disabled        : var(--slate-dark40);
+    --input-text-disabled         : var(--slate-dark60);
 
     --input-bg-read-only          : var(--slate-light-40);
     --input-border-read-only      : var(--slate-light-40);
-    --input-label-read-only       : var(--slate-dark-40);
-    --input-text-read-only        : var(--slate-dark-60);
+    --input-label-read-only       : var(--slate-dark40);
+    --input-text-read-only        : var(--slate-dark60);
 
     --input-required-indicator    : var(--red);
 
-    --input-helptext              : var(--slate-dark-40);
+    --input-helptext              : var(--slate-dark40);
     --input-helptext-scale        : 92%;
 
     --input-icon-default          : var(--slate-light-40);
     --input-icon-focus            : var(--hue);
-    --input-icon-valid            : var(--green-dark-30);
+    --input-icon-valid            : var(--green-dark30);
 }
 
 /* LIST BOX ///////////////////////////////////////////////////////////////// */
@@ -328,7 +328,7 @@ export const sampleFictoanTheme = `/* ACCORDION ////////////////////////////////
 
     --meter-danger               : var(--red-light-10);
     --meter-low                  : var(--amber-light-10);
-    --meter-high                 : var(--green-dark-10);
+    --meter-high                 : var(--green-dark10);
 
     --meter-optimum-marker-width : 3px;
     --meter-optimum-marker-bg    : var(--blue);
@@ -375,7 +375,7 @@ export const sampleFictoanTheme = `/* ACCORDION ////////////////////////////////
 
     --option-card-bg-selected        : var(--green-light-60);
     --option-card-border-selected    : var(--green);
-    --option-card-tick-bg-selected   : var(--green-dark-10);
+    --option-card-tick-bg-selected   : var(--green-dark10);
     --option-card-tick-line-selected : var(--white);
 }
 
@@ -405,9 +405,9 @@ export const sampleFictoanTheme = `/* ACCORDION ////////////////////////////////
     --radio-tabs-bg                 : var(--slate-light-70);
     --radio-tabs-border             : var(--slate-light-70);
 
-    --radio-tabs-label-text-default : var(--slate-dark-60);
+    --radio-tabs-label-text-default : var(--slate-dark60);
 
-    --radio-tabs-label-text-hover   : var(--slate-dark-80);
+    --radio-tabs-label-text-hover   : var(--slate-dark80);
     --radio-tabs-label-bg-hover     : var(--slate-light-90);
 
     --radio-tabs-label-bg-active    : var(--white);
@@ -446,28 +446,28 @@ export const sampleFictoanTheme = `/* ACCORDION ////////////////////////////////
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
 :root {
     --sidebar-bg                             : var(--white);
-    --sidebar-border                         : var(--slate-dark-80);
+    --sidebar-border                         : var(--slate-dark80);
     --sidebar-width-default                  : 240px;
     --sidebar-width-collapsed                : 48px;
 
     --sidebar-header-bg                      : var(--white);
-    --sidebar-header-border-bottom           : var(--slate-dark-80);
+    --sidebar-header-border-bottom           : var(--slate-dark80);
     --sidebar-header-logo-width              : 50%;
     --sidebar-header-icon-width              : 40px;
 
     --sidebar-item-icon-width                : 24px;
 
-    --sidebar-item-icon-stroke-default       : var(--slate-dark-40);
+    --sidebar-item-icon-stroke-default       : var(--slate-dark40);
     --sidebar-item-icon-stroke-width-default : 2px;
     --sidebar-item-icon-fill-default         : var(--slate-light-40);
     --sidebar-item-text-colour-default       : var(--slate-light-40);
 
-    --sidebar-item-bg-hover                  : var(--grey-dark-70);
+    --sidebar-item-bg-hover                  : var(--grey-dark70);
     --sidebar-item-text-hover                : var(--hue);
-    --sidebar-item-icon-stroke-hover         : var(--slate-dark-30);
-    --sidebar-item-icon-fill-hover           : var(--slate-dark-30);
+    --sidebar-item-icon-stroke-hover         : var(--slate-dark30);
+    --sidebar-item-icon-fill-hover           : var(--slate-dark30);
 
-    --sidebar-item-bg-active                 : var(--grey-dark-60);
+    --sidebar-item-bg-active                 : var(--grey-dark60);
     --sidebar-item-text-active               : var(--grey-light-40);
     --sidebar-item-border-active             : var(--blue);
     --sidebar-item-icon-fill-active          : var(--slate);
@@ -479,7 +479,7 @@ export const sampleFictoanTheme = `/* ACCORDION ////////////////////////////////
     --sidebar-item-text-scale                : 100%;
     --sidebar-item-text-weight               : 600;
 
-    --sidebar-item-has-alert-bg              : var(--red-dark-70);
+    --sidebar-item-has-alert-bg              : var(--red-dark70);
 
     --sidebar-footer-height                  : 32px;
     --sidebar-footer-bg                      : var(--white);
@@ -524,7 +524,7 @@ export const sampleFictoanTheme = `/* ACCORDION ////////////////////////////////
     --table-pagination-bg                : var(--white);
     --table-pagination-border-radius     : var(--global-border-radius);
     --table-pagination-text              : var(--paragraph-text-colour);
-    --table-pagination-nav-icon-bg-hover : var(--slate-dark-60);
+    --table-pagination-nav-icon-bg-hover : var(--slate-dark60);
 }
 
 /* TABS ///////////////////////////////////////////////////////////////////// */
@@ -563,7 +563,7 @@ export const sampleFictoanTheme = `/* ACCORDION ////////////////////////////////
     --paragraph-font-weight          : 400;
     --paragraph-text-colour          : var(--grey);
 
-    --paragraph-subtext-colour       : var(--slate-dark-30);
+    --paragraph-subtext-colour       : var(--slate-dark30);
     --paragraph-subtext-size         : 0.8rem;
 
     /* HEADINGS ============================================================= */
@@ -587,24 +587,24 @@ export const sampleFictoanTheme = `/* ACCORDION ////////////////////////////////
     --code-font                      : var(--font-mono);
     --code-inline-font-size          : 0.8rem;
     --code-inline-bg                 : var(--blue-light-80);
-    --code-inline-text               : var(--blue-dark-40);
+    --code-inline-text               : var(--blue-dark40);
     --code-inline-border-radius      : var(--global-border-radius);
 
     --code-block-font-size           : 0.92rem;
-    --code-block-bg                  : var(--slate-dark-80);
+    --code-block-bg                  : var(--slate-dark80);
     --code-block-text                : var(--sky-light-60);
     --code-block-line-height         : 1.8;
     --code-block-border-radius       : var(--global-border-radius);
 
-    --code-block-line-numbers        : var(--slate-dark-30);
+    --code-block-line-numbers        : var(--slate-dark30);
 
     --code-block-copy-button-bg      : var(--transparent);
     --code-block-copy-button-text    : var(--blue);
     --code-block-copy-button-border  : var(--blue-light-40);
 
     --code-block-copied-badge-bg     : var(--green-light-80);
-    --code-block-copied-badge-text   : var(--green-dark-20);
-    --code-block-copied-badge-border : var(--green-dark-20);
+    --code-block-copied-badge-text   : var(--green-dark20);
+    --code-block-copied-badge-border : var(--green-dark20);
 
     /* KBD ================================================================== */
     --kbd-font                       : var(--font-mono);
@@ -635,20 +635,20 @@ export const sampleFictoanTheme = `/* ACCORDION ////////////////////////////////
     --token-keyword                  : var(--violet-light-20);
     --token-name                     : var(--green);
     --token-namespace                : var(--green);
-    --token-number                   : var(--crimson-dark-10);
+    --token-number                   : var(--crimson-dark10);
     --token-operator                 : var(--amber);
     --token-plain                    : var(--slate-light-60);
     --token-plain-html               : var(--slate);
     --token-plain-css                : var(--salmon-light-30);
     --token-prolog                   : var(--grey);
-    --token-property                 : var(--pistachio-dark-20);
+    --token-property                 : var(--pistachio-dark20);
     --token-property-css             : var(--slate);
     --token-punctuation              : var(--grey);
     --token-regex                    : var(--green);
     --token-selector-generic         : var(--green-light-20);
     --token-selector-class           : var(--violet-light-20);
     --token-selector-id              : var(--violet-light-40);
-    --token-selector-attrName        : var(--blue-dark-20);
+    --token-selector-attrName        : var(--blue-dark20);
     --token-selector-attrValue       : var(--blue-light-20);
     --token-selector-operator        : var(--token-operator);
     --token-selector-punctuation     : var(--grey);

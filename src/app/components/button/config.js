@@ -39,7 +39,7 @@ export const buttonProps = {
         },
         "button-primary-bg-hover"               : {
             type         : "reference",
-            defaultValue : "blue-light-10",
+            defaultValue : "blue-light10",
         },
         "button-primary-text-hover"             : {
             type         : "reference",
@@ -47,7 +47,7 @@ export const buttonProps = {
         },
         "button-primary-border-hover"           : {
             type         : "reference",
-            defaultValue : "blue-dark-30",
+            defaultValue : "blue-dark30",
         },
         "button-primary-border-width-hover"     : {
             type         : "reference",
@@ -63,7 +63,7 @@ export const buttonProps = {
         },
         "button-primary-bg-disabled"            : {
             type         : "reference",
-            defaultValue : "blue-light-10",
+            defaultValue : "blue-light10",
         },
         "button-primary-text-disabled"          : {
             type         : "reference",
@@ -71,7 +71,7 @@ export const buttonProps = {
         },
         "button-primary-border-disabled" : {
             type         : "reference",
-            defaultValue : "blue-light-10",
+            defaultValue : "blue-light10",
         },
         "button-primary-border-width-disabled"  : {
             type         : "reference",

@@ -9,7 +9,7 @@ export const progressProps = {
     variables  : {
         "progress-bar-bg"            : {
             type         : "reference",
-            defaultValue : "slate-light-60",
+            defaultValue : "slate-light60",
         },
         "progress-bar-fill"          : {
             type         : "reference",

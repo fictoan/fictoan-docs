@@ -16,7 +16,7 @@ export const tableProps = {
         },
         "table-border"                       : {
             type         : "reference",
-            defaultValue : "slate-light-10",
+            defaultValue : "slate-light10",
         },
         "table-font"                         : {
             type         : "reference",
@@ -28,15 +28,15 @@ export const tableProps = {
         },
         "table-striped-header-bg"            : {
             type         : "reference",
-            defaultValue : "blue-light-40",
+            defaultValue : "blue-light40",
         },
         "table-striped-cell-bg"              : {
             type         : "reference",
-            defaultValue : "slate-light-20",
+            defaultValue : "slate-light20",
         },
         "table-highlight-bg"                     : {
             type         : "reference",
-            defaultValue : "amber-light-20",
+            defaultValue : "amber-light20",
         },
         "table-highlight-text"                   : {
             type         : "reference",

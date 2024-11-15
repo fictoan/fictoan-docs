@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { Badge, Div, Header, Heading5 } from "fictoan-react";
+import { Badge, Div, Header, Heading5, useTheme } from "fictoan-react";
 
 import "./header.css";
 

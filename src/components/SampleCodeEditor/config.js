@@ -6,7 +6,7 @@ export const toastProps = {
     variables  : {
         "toast-bg"            : {
             type         : "reference",
-            defaultValue : "slate-light-10",
+            defaultValue : "slate-light10",
         },
         "toast-text"          : {
             type         : "reference",

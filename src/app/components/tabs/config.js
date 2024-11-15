@@ -14,7 +14,7 @@ export const tabsProps = {
         },
         "tab-label-hover"        : {
             type         : "reference",
-            defaultValue : "blue-light-40",
+            defaultValue : "blue-light40",
         },
         "tab-label-active"       : {
             type         : "reference",
@@ -22,7 +22,7 @@ export const tabsProps = {
         },
         "tab-label-disabled"     : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "tab-border-active"      : {
             type         : "reference",

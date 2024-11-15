@@ -40,7 +40,7 @@ export const optionCardProps = {
         },
         "option-card-tick-bg-selected": {
             type: "reference",
-            defaultValue: "green-dark-10",
+            defaultValue: "green-dark10",
         },
         "option-card-tick-line-selected": {
             type: "reference",

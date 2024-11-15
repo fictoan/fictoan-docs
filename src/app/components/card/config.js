@@ -14,7 +14,7 @@ export const cardProps = {
         },
         "card-border"        : {
             type         : "reference",
-            defaultValue : "slate-light-60",
+            defaultValue : "slate-light60",
         },
         "card-border-width"  : {
             type         : "value-unit",

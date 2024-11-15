@@ -14,23 +14,23 @@ export const radioTabGroupProps = {
         },
         "radio-tabs-bg"                 : {
             type         : "reference",
-            defaultValue : "slate-light-70",
+            defaultValue : "slate-light70",
         },
         "radio-tabs-border"             : {
             type         : "reference",
-            defaultValue : "slate-light-70",
+            defaultValue : "slate-light70",
         },
         "radio-tabs-label-text-default" : {
             type         : "reference",
-            defaultValue : "slate-dark-60",
+            defaultValue : "slate-dark60",
         },
         "radio-tabs-label-text-hover"   : {
             type         : "reference",
-            defaultValue : "slate-dark-80",
+            defaultValue : "slate-dark80",
         },
         "radio-tabs-label-bg-hover"     : {
             type         : "reference",
-            defaultValue : "slate-light-90",
+            defaultValue : "slate-light90",
         },
         "radio-tabs-label-bg-active"    : {
             type         : "reference",

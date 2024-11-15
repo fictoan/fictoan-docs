@@ -116,7 +116,7 @@ const ListBoxDocs = () => {
                         <Card padding="micro" shape="rounded">
                             <Header verticallyCentreItems pushItemsToEnds marginBottom="nano">
                                 <Text size="large" weight="700" textColor="white">
-                                    Customise individually
+                                    Configure props
                                 </Text>
                             </Header>
 
@@ -254,7 +254,7 @@ const ListBoxDocs = () => {
                         <Form>
                             <Header verticallyCentreItems pushItemsToEnds>
                                 <Text size="large" weight="700" textColour="white" marginBottom="nano">
-                                    Set values globally
+                                    Set global theme values
                                 </Text>
                             </Header>
 

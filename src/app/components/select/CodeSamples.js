@@ -71,4 +71,4 @@ export const sampleSelectGroupOptions = `<Select
 
 
 //  Code sample 02 ////////////////////////////////////////////////////////////
-export const sampleSelectTheming = `--dropdown-chevron : var(--slate-light-40);`;
+export const sampleSelectTheming = `--dropdown-chevron : var(--slate-light40);`;

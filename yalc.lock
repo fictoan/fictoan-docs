@@ -2,9 +2,9 @@
   "version": "v1",
   "packages": {
     "fictoan-react": {
-      "signature": "e6caab01340f849b71040018321d3af0",
+      "signature": "5304a78f76674ee1b382c2345785be3b",
       "file": true,
-      "replaced": "1.4.0"
+      "replaced": "1.5.0"
     }
   }
 }

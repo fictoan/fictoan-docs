@@ -81,7 +81,7 @@ const ToastDocs = () => {
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
                     <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                        as="div" padding="small" shape="rounded" bgColour="slate-light80"
                         data-centered-children
                     >
                         <Button
@@ -99,7 +99,7 @@ const ToastDocs = () => {
                         <Card padding="micro" shape="rounded">
                             <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
                                 <Text size="large" weight="700" textColour="white">
-                                    Customise individually
+                                    Configure props
                                 </Text>
                             </Header>
 
@@ -160,7 +160,7 @@ const ToastDocs = () => {
                         <Form>
                             <Header verticallyCentreItems pushItemsToEnds>
                                 <Text size="large" weight="700" textColour="white" marginBottom="nano">
-                                    Set values globally
+                                    Set global theme values
                                 </Text>
                             </Header>
 

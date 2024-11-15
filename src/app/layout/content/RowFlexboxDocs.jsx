@@ -38,7 +38,7 @@ const RowFlexboxDocs = () => {
                 >
 
                     <Card className="screen-desktop" shape="rounded" shadow="hard">
-                        <Element as="div" className="title-bar" bgColour="slate-light-80">
+                        <Element as="div" className="title-bar" bgColour="slate-light80">
                             <Text textColour="red">●</Text>
                             <Text textColour="amber">●</Text>
                             <Text textColour="green">●</Text>

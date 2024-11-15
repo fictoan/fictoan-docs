@@ -12,11 +12,11 @@ export const drawerProps = {
     variables  : {
         "drawer-bg"              : {
             type         : "reference",
-            defaultValue : "grey-dark-70",
+            defaultValue : "grey-dark70",
         },
         "drawer-border"          : {
             type         : "reference",
-            defaultValue : "grey-dark-40",
+            defaultValue : "grey-dark40",
         },
         "drawer-border-radius"   : {
             type         : "reference",
@@ -34,7 +34,7 @@ export const drawerProps = {
         },
         "drawer-dismiss-button"  : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
     },
 };

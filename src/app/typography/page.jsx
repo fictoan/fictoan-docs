@@ -169,9 +169,9 @@ const TypographyDocs = () => {
                         <CodeBlock source={sampleColouring1} language="jsx" marginTop="nano" />
                         <Heading6
                             marginBottom="micro" marginTop="nano"
-                            textColour="red-light-30"
+                            textColour="red-light30"
                         >
-                            I’m red-light-30
+                            I’m red-light30
                         </Heading6>
                     </Portion>
 
@@ -179,9 +179,9 @@ const TypographyDocs = () => {
                         <CodeBlock source={sampleColouring2} language="jsx" marginTop="nano" />
                         <Text
                             marginBottom="micro" marginTop="nano"
-                            textColor="violet-dark-10"
+                            textColor="violet-dark10"
                         >
-                            I’m violet-dark-10
+                            I’m violet-dark10
                         </Text>
                     </Portion>
 

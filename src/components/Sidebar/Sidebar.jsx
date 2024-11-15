@@ -12,7 +12,7 @@ import {
     SidebarItemText,
     SidebarFooter,
     Divider,
-    Accordion,
+    Accordion, useTheme,
 } from "fictoan-react";
 
 // COMPONENTS //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -20,6 +20,8 @@ import {
 // STYLES //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // ASSETS //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import FictoanIcon from "../../assets/images/fictoan-icon.svg";
+import FictoanLogo from "../../assets/images/fictoan-logo.svg";
 import AccordionIcon from "../../assets/icons/accordion.svg";
 import BadgeIcon from "../../assets/icons/badge.svg";
 import BaseElementIcon from "../../assets/icons/building-block.svg";
@@ -31,8 +33,6 @@ import CheckboxIcon from "../../assets/icons/checkbox.svg";
 import CodeIcon from "../../assets/icons/braces.svg";
 import ColourIcon from "../../assets/icons/water.svg";
 import DividerIcon from "../../assets/icons/hrule.svg";
-import FictoanIcon from "@/assets/images/fictoan-icon.svg";
-import FictoanLogo from "@/assets/images/fictoan-logo.svg";
 import FormWrapperIcon from "../../assets/icons/writing.svg";
 import HomeIcon from "../../assets/icons/home.svg";
 import InfoPanelIcon from "../../assets/icons/info-panel.svg";
@@ -41,11 +41,13 @@ import ListBoxIcon from "../../assets/icons/list-box.svg";
 import LayoutIcon from "../../assets/icons/layout.svg";
 import ManifestoIcon from "../../assets/icons/manifesto.svg";
 import NotificationIcon from "../../assets/icons/notification.svg";
+import PinInputIcon from "../../assets/icons/pin-input.svg";
 import ProgressBarIcon from "../../assets/icons/progress-bar.svg";
 import RadioButtonIcon from "../../assets/icons/radio-button.svg";
 import RangeIcon from "../../assets/icons/range.svg";
 import SelectIcon from "../../assets/icons/dropdown.svg";
 import SidebarIcon from "../../assets/icons/sidebar.svg";
+import SkeletonIcon from "../../assets/icons/skeleton.svg";
 import TableIcon from "../../assets/icons/table.svg";
 import TabsIcon from "../../assets/icons/tabs.svg";
 import ThemeIcon from "../../assets/icons/paintbrush.svg";
@@ -55,8 +57,18 @@ import ToolboxIcon from "../../assets/icons/toolbox.svg";
 import TypographyIcon from "../../assets/icons/typography.svg";
 
 
-export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSidebarOnMobile, setShowSidebarOnMobile }) => {
+export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, setShowSidebarOnMobile }) => {
     const ref = useRef(null);
+
+    const { theme, setTheme } = useTheme();
+
+    const toggleTheme = () => {
+        if (theme === "theme-light") {
+            setTheme("theme-dark");
+        } else {
+            setTheme("theme-light");
+        }
+    };
 
     const openMobileSidebar = () => {
         setShowSidebarOnMobile(true);
@@ -110,7 +122,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            <Divider bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
+            <Divider bgColour="grey-dark70" marginTop="micro" marginBottom="micro" />
 
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -186,7 +198,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                 </SidebarItem>
             </Link>
 
-            <Divider bgColour="grey-dark-70" marginTop="micro" marginBottom="micro" />
+            <Divider bgColour="grey-dark70" marginTop="micro" marginBottom="micro" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* ELEMENTS */}
@@ -373,7 +385,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
             <Link href="/components/pin-input-field">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
-                        <InputFieldIcon />
+                        <PinInputIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Pin Input" />
                 </SidebarItem>
@@ -471,6 +483,16 @@ export const Sidebar = ({ sidebarState, setSidebarState, toggleTheme, showSideba
                     </SidebarItem>
                 </Link>
             </Accordion>
+
+            {/* SKELETON =========================================================================================== */}
+            <Link href="/components/skeleton">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <SkeletonIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Skeleton" />
+                </SidebarItem>
+            </Link>
 
             {/* TABLE ============================================================================================== */}
             <Link href="/components/table">

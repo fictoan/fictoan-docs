@@ -88,7 +88,7 @@ const BadgeDocs = () => {
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
                     <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                        as="div" padding="small" shape="rounded" bgColour="slate-light80"
                         data-centered-children
                     >
                         <Badge
@@ -120,7 +120,7 @@ const BadgeDocs = () => {
                         <Card padding="micro" shape="rounded">
                             <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
                                 <Text size="large" weight="700" textColour="white">
-                                    Customise individually
+                                    Configure props
                                 </Text>
                             </Header>
 
@@ -254,7 +254,7 @@ const BadgeDocs = () => {
                         <Form>
                             <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
                                 <Text size="large" weight="700" textColour="white">
-                                    Set values globally
+                                    Set global theme values
                                 </Text>
                             </Header>
 
@@ -269,7 +269,10 @@ const BadgeDocs = () => {
                                 </Portion>
 
                                 <Portion>
-                                    <Text marginBottom="micro">The font for the badge is set to take the <code>--paragraph-font</code> by default. You can change it in the theme file.</Text>
+                                    <Text marginBottom="micro">
+                                        The font for the badge is set to take the <code>--paragraph-font</code> by
+                                        default. You can change it in the theme file.
+                                    </Text>
                                 </Portion>
 
                                 {/* BORDER RADIUS ================================================================== */}
@@ -286,7 +289,7 @@ const BadgeDocs = () => {
                                 {/* BORDER WIDTH =================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Range
-                                        label="Border radius"
+                                        label="Border width"
                                         value={componentVariables["badge-border-width"].value}
                                         onChange={(e) => handleVariableChange("badge-border-width", e.target.value)}
                                         min={0} max={50} step={1}

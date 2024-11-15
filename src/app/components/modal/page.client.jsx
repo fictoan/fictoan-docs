@@ -137,7 +137,7 @@ const ModalDocs = () => {
                         <Card padding="micro" shape="rounded">
                             <Header verticallyCentreItems pushItemsToEnds marginBottom="nano">
                                 <Text size="large" weight="700" textColour="white">
-                                    Customise individually
+                                    Configure props
                                 </Text>
                             </Header>
 
@@ -238,7 +238,7 @@ const ModalDocs = () => {
                         <Form>
                             <Header verticallyCentreItems pushItemsToEnds>
                                 <Text size="large" weight="700" textColour="white" marginBottom="nano">
-                                    Set values globally
+                                    Set global theme values
                                 </Text>
                             </Header>
 

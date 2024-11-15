@@ -11,7 +11,7 @@ export const inputProps = {
         },
         "input-border-default"        : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "input-border-radius-default" : {
             type         : "reference",
@@ -27,7 +27,7 @@ export const inputProps = {
         },
         "input-placeholder-default"   : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "input-text-default"          : {
             type         : "reference",
@@ -39,7 +39,7 @@ export const inputProps = {
         },
         "input-border-focus"          : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "input-border-width-focus"    : {
             type         : "reference",
@@ -55,7 +55,7 @@ export const inputProps = {
         },
         "input-border-valid"          : {
             type         : "reference",
-            defaultValue : "green-dark-30",
+            defaultValue : "green-dark30",
         },
         "input-label-valid"           : {
             type         : "reference",
@@ -63,11 +63,11 @@ export const inputProps = {
         },
         "input-bg-invalid"            : {
             type         : "reference",
-            defaultValue : "red-light-60",
+            defaultValue : "red-light60",
         },
         "input-border-invalid"        : {
             type         : "reference",
-            defaultValue : "red-dark-30",
+            defaultValue : "red-dark30",
         },
         "input-label-invalid"         : {
             type         : "reference",
@@ -83,35 +83,35 @@ export const inputProps = {
         },
         "input-bg-disabled"           : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "input-border-disabled"       : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "input-label-disabled"        : {
             type         : "reference",
-            defaultValue : "slate-dark-40",
+            defaultValue : "slate-dark40",
         },
         "input-text-disabled"         : {
             type         : "reference",
-            defaultValue : "slate-dark-60",
+            defaultValue : "slate-dark60",
         },
         "input-bg-read-only"          : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "input-border-read-only"      : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "input-label-read-only"       : {
             type         : "reference",
-            defaultValue : "slate-dark-40",
+            defaultValue : "slate-dark40",
         },
         "input-text-read-only"        : {
             type         : "reference",
-            defaultValue : "slate-dark-60",
+            defaultValue : "slate-dark60",
         },
         "input-required-indicator"    : {
             type         : "reference",
@@ -119,7 +119,7 @@ export const inputProps = {
         },
         "input-helptext"              : {
             type         : "reference",
-            defaultValue : "slate-dark-40",
+            defaultValue : "slate-dark40",
         },
         "input-helptext-scale"        : {
             type         : "value-unit",
@@ -128,7 +128,7 @@ export const inputProps = {
         },
         "input-icon-default"          : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "input-icon-focus"            : {
             type         : "reference",
@@ -136,7 +136,7 @@ export const inputProps = {
         },
         "input-icon-valid"            : {
             type         : "reference",
-            defaultValue : "green-dark-30",
+            defaultValue : "green-dark30",
         },
     },
 

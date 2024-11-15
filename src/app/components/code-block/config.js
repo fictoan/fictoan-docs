@@ -12,11 +12,11 @@ export const toastProps = {
         },
         "code-inline-bg"                 : {
             type         : "reference",
-            defaultValue : "blue-light-80",
+            defaultValue : "blue-light80",
         },
         "code-inline-text"               : {
             type         : "reference",
-            defaultValue : "blue-dark-40",
+            defaultValue : "blue-dark40",
         },
         "code-inline-border-radius"      : {
             type         : "reference",
@@ -29,11 +29,11 @@ export const toastProps = {
         },
         "code-block-bg"                  : {
             type         : "reference",
-            defaultValue : "slate-dark-80",
+            defaultValue : "slate-dark80",
         },
         "code-block-text"                : {
             type         : "reference",
-            defaultValue : "blue-dark-40",
+            defaultValue : "blue-dark40",
         },
         "code-block-line-height"         : {
             type         : "value-unit",
@@ -46,7 +46,7 @@ export const toastProps = {
         },
         "code-block-line-numbers"        : {
             type         : "reference",
-            defaultValue : "slate-dark-30",
+            defaultValue : "slate-dark30",
         },
         "code-block-copy-button-bg"      : {
             type         : "reference",
@@ -58,19 +58,19 @@ export const toastProps = {
         },
         "code-block-copy-button-border"  : {
             type         : "reference",
-            defaultValue : "blue-light-40",
+            defaultValue : "blue-light40",
         },
         "code-block-copied-badge-bg"     : {
             type         : "reference",
-            defaultValue : "green-light-80",
+            defaultValue : "green-light80",
         },
         "code-block-copied-badge-text"   : {
             type         : "reference",
-            defaultValue : "green-dark-20",
+            defaultValue : "green-dark20",
         },
         "code-block-copied-badge-border" : {
             type         : "reference",
-            defaultValue : "green-dark-20",
+            defaultValue : "green-dark20",
         },
 
 
@@ -92,7 +92,7 @@ export const toastProps = {
         },
         "token-builtin"              : {
             type         : "reference",
-            defaultValue : "violet-light-20",
+            defaultValue : "violet-light20",
         },
         "token-cdata"                : {
             type         : "reference",
@@ -120,7 +120,7 @@ export const toastProps = {
         },
         "token-doctype"              : {
             type         : "reference",
-            defaultValue : "amber-light-10",
+            defaultValue : "amber-light10",
         },
         "token-entity"               : {
             type         : "reference",
@@ -148,7 +148,7 @@ export const toastProps = {
         },
         "token-keyword"              : {
             type         : "reference",
-            defaultValue : "violet-light-20",
+            defaultValue : "violet-light20",
         },
         "token-name"                 : {
             type         : "reference",
@@ -160,7 +160,7 @@ export const toastProps = {
         },
         "token-number"               : {
             type         : "reference",
-            defaultValue : "crimson-dark-10",
+            defaultValue : "crimson-dark10",
         },
         "token-operator"             : {
             type         : "reference",
@@ -176,7 +176,7 @@ export const toastProps = {
         },
         "token-plain-css"            : {
             type         : "reference",
-            defaultValue : "salmon-light-30",
+            defaultValue : "salmon-light30",
         },
         "token-prolog"               : {
             type         : "reference",
@@ -184,7 +184,7 @@ export const toastProps = {
         },
         "token-property"             : {
             type         : "reference",
-            defaultValue : "pistachio-dark-20",
+            defaultValue : "pistachio-dark20",
         },
         "token-property-css"         : {
             type         : "reference",
@@ -200,23 +200,23 @@ export const toastProps = {
         },
         "token-selector-generic"     : {
             type         : "reference",
-            defaultValue : "green-light-20",
+            defaultValue : "green-light20",
         },
         "token-selector-class"       : {
             type         : "reference",
-            defaultValue : "violet-light-20",
+            defaultValue : "violet-light20",
         },
         "token-selector-id"          : {
             type         : "reference",
-            defaultValue : "violet-light-40",
+            defaultValue : "violet-light40",
         },
         "token-selector-attrName"    : {
             type         : "reference",
-            defaultValue : "blue-dark-20",
+            defaultValue : "blue-dark20",
         },
         "token-selector-attrValue"   : {
             type         : "reference",
-            defaultValue : "blue-light-20",
+            defaultValue : "blue-light20",
         },
         "token-selector-operator"    : {
             type         : "reference",
@@ -228,7 +228,7 @@ export const toastProps = {
         },
         "token-string"               : {
             type         : "reference",
-            defaultValue : "grey-light-50",
+            defaultValue : "grey-light50",
         },
         "token-string-json"          : {
             type         : "reference",
@@ -244,7 +244,7 @@ export const toastProps = {
         },
         "token-unit"                 : {
             type         : "reference",
-            defaultValue : "crimson-light-20",
+            defaultValue : "crimson-light20",
         },
         "token-url"                  : {
             type         : "reference",

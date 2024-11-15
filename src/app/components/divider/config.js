@@ -29,7 +29,7 @@ export const hRuleProps = {
         },
         "hr-secondary-bg"     : {
             type         : "reference",
-            defaultValue : "slate-light-60",
+            defaultValue : "slate-light60",
         },
         "hr-tertiary-height"  : {
             type         : "value-unit",
@@ -38,7 +38,7 @@ export const hRuleProps = {
         },
         "hr-tertiary-bg"      : {
             type         : "reference",
-            defaultValue : "slate-light-20",
+            defaultValue : "slate-light20",
         },
     },
 };

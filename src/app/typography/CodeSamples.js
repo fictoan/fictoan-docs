@@ -24,7 +24,7 @@ export const sampleTextTheme = `/* GENERICS ====================================
 --paragraph-font-weight     : 400;
 --paragraph-text-colour     : var(--grey);
 
---paragraph-subtext-colour  : var(--slate-dark-30);
+--paragraph-subtext-colour  : var(--slate-dark30);
 --paragraph-subtext-size    : 0.8rem;
 
 /* HEADINGS ============================================================= */
@@ -46,8 +46,8 @@ export const sampleTextTheme = `/* GENERICS ====================================
 
 
 // Code sample 03 ==============================================================
-export const sampleColouring1 = `<Heading6 textColour="red-light-30">I’m red-light-30</Heading6>`;
-export const sampleColouring2 = `<Text textColor="violet-dark-10">I’m violet-dark-10</Text>`;
+export const sampleColouring1 = `<Heading6 textColour="red-light30">I’m red-light30</Heading6>`;
+export const sampleColouring2 = `<Text textColor="violet-dark10">I’m violet-dark10</Text>`;
 export const sampleColouring3 = `<Heading4 textColour="pistachio">I’m pistachio</Heading4>`;
 
 

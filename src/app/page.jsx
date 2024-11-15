@@ -48,7 +48,7 @@ const Home = () => {
                     <Portion desktopSpan="half">
                         <Card
                             id="usp-card-1" className="usp-card"
-                            bgColour="blue-dark-70" borderColour="blue-dark-30"
+                            bgColour="blue-dark70" borderColour="blue-dark30"
                             padding="micro" shape="rounded" shadow="soft"
                         >
                             <Heading5 weight="400" opacity="80" marginBottom="micro">
@@ -67,7 +67,7 @@ const Home = () => {
                     <Portion desktopSpan="half">
                         <Card
                             id="usp-card-2" className="usp-card"
-                            bgColour="green-dark-70" borderColour="green-dark-50"
+                            bgColour="green-dark70" borderColour="green-dark50"
                             padding="micro" shape="rounded" shadow="soft"
                         >
                             <Heading5 weight="400" opacity="80" marginBottom="nano">
@@ -84,7 +84,7 @@ const Home = () => {
                     <Portion desktopSpan="half">
                         <Card
                             id="usp-card-3" className="usp-card"
-                            bgColour="salmon-dark-70" borderColour="salmon-dark-50"
+                            bgColour="salmon-dark70" borderColour="salmon-dark50"
                             padding="micro" shape="rounded" shadow="soft"
                         >
                             <Heading5 weight="400" opacity="80" marginBottom="nano">
@@ -115,7 +115,7 @@ const Home = () => {
                     <Portion desktopSpan="half">
                         <Card
                             id="usp-card-4" className="usp-card"
-                            bgColour="violet-dark-70" borderColour="violet-dark-50"
+                            bgColour="violet-dark70" borderColour="violet-dark50"
                             padding="micro" shape="rounded" shadow="soft"
                         >
                             <Heading5 weight="400" opacity="80" marginBottom="nano">
@@ -133,7 +133,7 @@ const Home = () => {
                     <Portion desktopSpan="half">
                         <Card
                             id="usp-card-5" className="usp-card"
-                            bgColour="teal-dark-70" borderColour="teal-dark-50"
+                            bgColour="teal-dark70" borderColour="teal-dark50"
                             padding="micro" shape="rounded" shadow="soft"
                         >
                             <Heading5 weight="400" opacity="80" marginBottom="nano">
@@ -160,7 +160,7 @@ const Home = () => {
                         <Div className="manifesto-card-content">
                             <Row marginBottom="none">
                                 <Portion desktopSpan="half">
-                                    <Heading4 textColour="blue-light-30" marginBottom="micro">
+                                    <Heading4 textColour="blue-light30" marginBottom="micro">
                                         We want to blur the lines between designers and developers.
                                     </Heading4>
 

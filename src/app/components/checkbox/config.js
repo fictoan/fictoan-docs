@@ -8,11 +8,11 @@ export const checkboxProps = {
         },
         "checkbox-square-bg-default"    : {
             type         : "reference",
-            defaultValue : "slate-light-60",
+            defaultValue : "slate-light60",
         },
         "checkbox-square-bg-hover"      : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "checkbox-square-bg-checked"    : {
             type         : "reference",
@@ -20,7 +20,7 @@ export const checkboxProps = {
         },
         "checkbox-square-bg-disabled"   : {
             type         : "reference",
-            defaultValue : "slate-light-90",
+            defaultValue : "slate-light90",
         },
         "checkbox-tick"                 : {
             type         : "reference",
@@ -28,11 +28,11 @@ export const checkboxProps = {
         },
         "switch-bg-default"             : {
             type         : "reference",
-            defaultValue : "slate-light-60",
+            defaultValue : "slate-light60",
         },
         "switch-bg-hover"               : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "switch-bg-checked"             : {
             type         : "reference",
@@ -40,7 +40,7 @@ export const checkboxProps = {
         },
         "switch-bg-disabled"            : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "switch-slider-bg-default"      : {
             type         : "reference",
@@ -56,7 +56,7 @@ export const checkboxProps = {
         },
         "switch-slider-bg-disabled"     : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
     },
 

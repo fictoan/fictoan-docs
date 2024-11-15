@@ -2,7 +2,7 @@ export const selectProps = {
     variables  : {
         "dropdown-chevron"            : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
     },
 };

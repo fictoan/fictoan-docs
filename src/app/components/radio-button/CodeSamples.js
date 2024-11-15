@@ -63,9 +63,9 @@ export const sampleRadioDisabled = `<RadioButton
 
 
 //  Code sample 02 ////////////////////////////////////////////////////////////
-export const sampleRadioButtonTheming = `--radio-button-circle-bg-default  : var(--slate-light-60);
---radio-button-circle-bg-hover    : var(--slate-light-40);
+export const sampleRadioButtonTheming = `--radio-button-circle-bg-default  : var(--slate-light60);
+--radio-button-circle-bg-hover    : var(--slate-light40);
 --radio-button-circle-bg-checked  : var(--hue);
---radio-button-circle-bg-disabled : var(--slate-light-90);
+--radio-button-circle-bg-disabled : var(--slate-light90);
 
 --radio-button-dot                : var(--white);`;

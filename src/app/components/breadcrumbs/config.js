@@ -16,7 +16,7 @@ export const breadcrumbsProps = {
         },
         "breadcrumb-item-separator-colour"  : {
             type         : "reference",
-            defaultValue : "slate-light-10",
+            defaultValue : "slate-light10",
         },
         "breadcrumb-item-text-colour"  : {
             type         : "reference",

@@ -94,7 +94,7 @@ const BreadcrumbsDocs = () => {
             <Row horizontalPadding="small" className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
-                    <Div padding="small" shape="rounded" bgColour="slate-light-80">
+                    <Div padding="small" shape="rounded" bgColour="slate-light80">
                         {showCurrentPageMessage && (
                             <Badge shape="rounded" id="current-page-message">That’s this page 🙂</Badge>
                         )}
@@ -131,7 +131,7 @@ const BreadcrumbsDocs = () => {
                         <Card padding="micro" shape="rounded">
                             <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
                                 <Text size="large" weight="700" textColour="white">
-                                    Customise individually
+                                    Configure props
                                 </Text>
                             </Header>
 
@@ -169,7 +169,7 @@ const BreadcrumbsDocs = () => {
                         <Form>
                             <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
                                 <Text size="large" weight="700" textColour="white">
-                                    Set values globally
+                                    Set global theme values
                                 </Text>
                             </Header>
 

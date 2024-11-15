@@ -6,36 +6,24 @@ import { useEffect, useState } from "react";
 // INTERNAL DEPS ///////////////////////////////////////////////////////////////
 import {
     ContentWrapper,
-    ThemeProvider,
+    ThemeProvider, useTheme,
 } from "fictoan-react";
 
 // COMPONENTS //////////////////////////////////////////////////////////////////
 import { Sidebar } from "../components/Sidebar/Sidebar";
 import { SiteHeader } from "../components/Header/Header";
+import { SiteFooter } from "../components/Footer/Footer";
 
 // CONTEXTS ////////////////////////////////////////////////////////////////////
-import { CustomThemeContext } from "./contexts/theme";
 
 // STYLES //////////////////////////////////////////////////////////////////////
 import "../styles/globals.css";
-import { SiteFooter } from "../components/Footer/Footer";
 
 // ASSETS //////////////////////////////////////////////////////////////////////
 
 export const RootLayoutClient = ({ children }) => {
     const [sidebarState, setSidebarState] = useState("");
     const [showSidebarOnMobile, setShowSidebarOnMobile] = useState(false);
-    const [customTheme, setCustomTheme] = useState({});
-
-    const [currentTheme, setCurrentTheme] = useState(typeof window !== "undefined" ? localStorage.getItem("theme") || "light" : "light");
-
-    useEffect(() => {
-        localStorage.setItem("theme", currentTheme);
-    }, [currentTheme]);
-
-    const toggleTheme = () => {
-        setCurrentTheme(currentTheme === "theme-light" ? "theme-dark" : "theme-light");
-    };
 
     const toggleSidebarOnMobile = () => {
         setShowSidebarOnMobile(isShowing => !isShowing);
@@ -48,15 +36,10 @@ export const RootLayoutClient = ({ children }) => {
         </head>
 
         <body>
-        <CustomThemeContext.Provider value={{ customTheme, setCustomTheme }}>
-            <ThemeProvider
-                theme={customTheme}
-                currentTheme={currentTheme === "theme-light" ? "theme-light" : "theme-dark"}
-            >
+            <ThemeProvider currentTheme="theme-dark">
                 <Sidebar
                     sidebarState={sidebarState}
                     setSidebarState={setSidebarState}
-                    toggleTheme={toggleTheme}
                     showSidebarOnMobile={showSidebarOnMobile}
                     setShowSidebarOnMobile={setShowSidebarOnMobile}
                 />
@@ -67,7 +50,6 @@ export const RootLayoutClient = ({ children }) => {
                     <SiteFooter />
                 </ContentWrapper>
             </ThemeProvider>
-        </CustomThemeContext.Provider>
         </body>
         </html>
     );

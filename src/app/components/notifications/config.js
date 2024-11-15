@@ -14,7 +14,7 @@ export const toastProps = {
         },
         "notification-item-generic-border" : {
             type         : "reference",
-            defaultValue : "slate-light-60",
+            defaultValue : "slate-light60",
         },
         "notification-item-generic-text"   : {
             type         : "reference",
@@ -22,7 +22,7 @@ export const toastProps = {
         },
         "notification-item-info-bg"        : {
             type         : "reference",
-            defaultValue : "blue-light-60",
+            defaultValue : "blue-light60",
         },
         "notification-item-info-border"    : {
             type         : "reference",
@@ -30,7 +30,7 @@ export const toastProps = {
         },
         "notification-item-error-bg"       : {
             type         : "reference",
-            defaultValue : "red-light-60",
+            defaultValue : "red-light60",
         },
         "notification-item-error-border"   : {
             type         : "reference",
@@ -38,7 +38,7 @@ export const toastProps = {
         },
         "notification-item-success-bg"     : {
             type         : "reference",
-            defaultValue : "green-light-60",
+            defaultValue : "green-light60",
         },
         "notification-item-success-border" : {
             type         : "reference",
@@ -46,7 +46,7 @@ export const toastProps = {
         },
         "notification-item-warning-bg"     : {
             type         : "reference",
-            defaultValue : "amber-light-60",
+            defaultValue : "amber-light60",
         },
         "notification-item-warning-border" : {
             type         : "reference",

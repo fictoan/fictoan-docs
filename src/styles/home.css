@@ -51,7 +51,7 @@
         padding       : 2px;
         overflow      : hidden;
         height        : 320px;
-        background    : linear-gradient(90deg, var(--indigo), var(--indigo-dark-40));
+        background    : linear-gradient(90deg, var(--indigo), var(--indigo-dark40));
         border-radius : 16px;
         transform     : translateZ(0);
 
@@ -74,7 +74,7 @@
         z-index       : 1;
         padding       : 32px;
         height        : 100%;
-        background    : var(--indigo-dark-60);
+        background    : var(--indigo-dark60);
         background    : linear-gradient(0deg, rgb(27, 51, 176), rgb(0, 45, 136));
         border        : 1px solid hsla(0, 0%, 100%, .1);
         border-radius : 16px;

@@ -185,7 +185,7 @@ export const InteractiveCardExample = () => {
             </Portion>
 
             <Portion desktopSpan="half">
-                <Element as="div" padding="tiny" shape="rounded" bgColour="slate-light-80">
+                <Element as="div" padding="tiny" shape="rounded" bgColour="slate-light80">
                     <Card
                         id="interactive-card"
                         {...(

@@ -4,7 +4,7 @@
         border-radius : 8px;
         height        : 300px;
         overflow      : hidden;
-        background-color: var(--grey-light-60);
+        background-color: var(--grey-light60);
 
         @media all and (max-width : 900px) {
             overflow-y : scroll;

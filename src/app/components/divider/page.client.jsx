@@ -69,7 +69,7 @@ const DividerDocs = () => {
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
                     <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                        as="div" padding="small" shape="rounded" bgColour="slate-light80"
                         data-centered-children
                     >
                         <Text marginBottom="nano">Default</Text>
@@ -98,7 +98,7 @@ const DividerDocs = () => {
                         <Card padding="micro" shape="rounded">
                             <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
                                 <Text size="large" weight="700" textColour="white">
-                                    Customise individually
+                                    Configure props
                                 </Text>
                             </Header>
 
@@ -138,7 +138,7 @@ const DividerDocs = () => {
                         <Form>
                             <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
                                 <Text size="large" weight="700" textColour="white">
-                                    Set values globally
+                                    Set global theme values
                                 </Text>
                             </Header>
 

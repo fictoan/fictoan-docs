@@ -6,11 +6,11 @@ export const radioButtonProps = {
     variables  : {
         "radio-circle-bg-default"  : {
             type         : "reference",
-            defaultValue : "slate-light-60",
+            defaultValue : "slate-light60",
         },
         "radio-circle-bg-hover"    : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "radio-circle-bg-checked"  : {
             type         : "reference",
@@ -18,7 +18,7 @@ export const radioButtonProps = {
         },
         "radio-circle-bg-disabled" : {
             type         : "reference",
-            defaultValue : "slate-light-90",
+            defaultValue : "slate-light90",
         },
         "radio-button-dot"         : {
             type         : "reference",

@@ -2,11 +2,11 @@ export const meterProps = {
     variables  : {
         "meter-bg"            : {
             type         : "reference",
-            defaultValue : "slate-light-70",
+            defaultValue : "slate-light70",
         },
         "meter-border"        : {
             type         : "reference",
-            defaultValue : "slate-light-40",
+            defaultValue : "slate-light40",
         },
         "meter-border-width"  : {
             type         : "reference",
@@ -31,15 +31,15 @@ export const meterProps = {
         },
         "meter-danger"        : {
             type         : "reference",
-            defaultValue : "red-light-10",
+            defaultValue : "red-light10",
         },
         "meter-low"           : {
             type         : "reference",
-            defaultValue : "amber-light-10",
+            defaultValue : "amber-light10",
         },
         "meter-optimum"       : {
             type         : "reference",
-            defaultValue : "green-dark-10",
+            defaultValue : "green-dark10",
         },
     },
 };
