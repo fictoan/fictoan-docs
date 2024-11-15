@@ -26,7 +26,7 @@ export const SiteHeader = ({ toggleSidebarOnMobile }) => {
 
             <Div verticallyCentreItems>
                 <Badge bgColour="black" textColour="white" shape="rounded" marginRight="micro">
-                    v1.5.0
+                    v1.6.0
                 </Badge>
 
                 <Link href="https://github.com/fictoan/fictoan-react" target="_blank" rel="noopener noreferrer">

@@ -1,38 +1,50 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
+# Dependencies
+/node_modules/
+/.pnp/
 .pnp.js
-.yarn/install-state.gz
-.yalc/
-.yalc.lock
+/.yalc/
 
-# testing
-/coverage
+# Testing
+/coverage/
 
-# next.js
+# Production
+/build/
+/dist*/
+/src/app/
+
+# Development
 /.next/
 /out/
+/.idea/
+/.vscode/
 
-# production
-/build
+# Debug logs
+/npm-debug.log*
+/yarn-debug.log*
+/yarn-error.log*
+/.pnpm-debug.log*
 
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
+# Environment
 .env*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# vercel
-.vercel
-
-# typescript
+# TypeScript
 *.tsbuildinfo
-next-env.d.ts
+
+# Rust
+/debug/
+/target/
+/backend/Cargo.lock
+**/*.rs.bk
+*.pdb
+
+# Storybook
+/storybook-static/
+
+# Misc
+.DS_Store
+.vercel
+/stats*.html
