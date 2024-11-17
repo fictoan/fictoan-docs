@@ -182,7 +182,7 @@ const TableDocs = () => {
                                             { id : "borders-for-opt-2", value : "columns", label : "columns" },
                                             { id : "borders-for-opt-3", value : "both", label : "both" },
                                         ]}
-                                        defaultValue={bordersFor}
+                                        value={bordersFor}
                                         onChange={() => setBordersFor(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
@@ -201,7 +201,7 @@ const TableDocs = () => {
                                             { id : "padding-opt-6", value : "large", label : "large" },
                                             { id : "padding-opt-7", value : "huge", label : "huge" },
                                         ]}
-                                        defaultValue={selectedPadding}
+                                        value={selectedPadding}
                                         onChange={() => setSelectedPadding(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 

@@ -64,8 +64,8 @@ export const ComponentGrid = () => {
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
                                     <Button
-                                        kind="primary" shape="rounded"
-                                        bgColour="violet-40" textColour="violet"
+                                        shape="rounded"
+                                        bgColour="violet-dark20" textColour="white"
                                         marginBottom="nano"
                                         isFullWidth
                                     >
@@ -74,7 +74,7 @@ export const ComponentGrid = () => {
 
                                     <Button
                                         kind="custom" shape="rounded"
-                                        bgColour="amber-40" textColour="amber"
+                                        bgColour="amber" textColour="amber"
                                         isLoading isFullWidth
                                     >
                                         Load
@@ -110,7 +110,7 @@ export const ComponentGrid = () => {
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
                                     <Button
-                                        kind="custom" bgColour="blue-20" textColour="blue"
+                                        kind="custom" bgColour="blue-light20" textColour="blue"
                                         shape="rounded" shadow="mild"
                                         marginBottom="nano" marginRight="nano"
                                         onClick={() => setShowNotification1(true)}
@@ -147,7 +147,7 @@ export const ComponentGrid = () => {
                                     <ProgressBar
                                         value="60" max="100" unit="%"
                                         label="Loading..."
-                                        barBg="green-20" barFill="green-90"
+                                        barBg="green-light20" barFill="green-dark90"
                                         height="8px" shape="rounded"
                                     />
 

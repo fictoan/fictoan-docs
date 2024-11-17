@@ -26,7 +26,7 @@ import {
     Range,
     InputField,
     Checkbox,
-    CodeBlock
+    CodeBlock, ListBox,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -58,23 +58,6 @@ const ButtonDocs = () => {
     const [selectedTextColour, setSelectedTextColour] = useState("");
 
     // THEME ===========================================================================================================
-
-
-    const handleIsLoadingChange = (event) => {
-        setIsLoading(event.target.checked);
-    };
-
-    const handleBgColourChange = (event) => {
-        setSelectedBgColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
-    const handleBorderColourChange = (event) => {
-        setSelectedBorderColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
-    const handleTextColourChange = (event) => {
-        setSelectedTextColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
 
     return (
         <Article id="page-component">
@@ -183,6 +166,7 @@ const ButtonDocs = () => {
                                         type="text"
                                         label="Label"
                                         placeholder="Label"
+                                        defaultValue={label}
                                         onChange={(e) => setLabel(e.target.value)}
                                     />
 
@@ -197,7 +181,7 @@ const ButtonDocs = () => {
                                         name="checkbox-loading"
                                         label="Is loading"
                                         checked={isLoading}
-                                        onChange={handleIsLoadingChange}
+                                        onChange={() => setIsLoading(event.target.checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -215,7 +199,7 @@ const ButtonDocs = () => {
                                             { id : "kind-opt-2", value : "secondary", label : "secondary" },
                                             { id : "kind-opt-3", value : "tertiary", label : "tertiary" },
                                         ]}
-                                        defaultValue={selectedKind}
+                                        value={selectedKind}
                                         onChange={() => setSelectedKind(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
@@ -238,7 +222,7 @@ const ButtonDocs = () => {
                                             { id : "size-opt-6", value : "large", label : "large" },
                                             { id : "size-opt-7", value : "huge", label : "huge" },
                                         ]}
-                                        defaultValue={selectedSize}
+                                        value={selectedSize}
                                         onChange={() => setSelectedSize(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
@@ -256,7 +240,7 @@ const ButtonDocs = () => {
                                             { id : "shape-opt-1", value : "rounded", label : "rounded" },
                                             { id : "shape-opt-2", value : "curved", label : "curved" },
                                         ]}
-                                        defaultValue={selectedShape}
+                                        value={selectedShape}
                                         onChange={() => setSelectedShape(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
@@ -273,7 +257,7 @@ const ButtonDocs = () => {
                                             { id : "shadow-opt-3", value : "hard", label : "hard" },
                                             { id : "shadow-opt-2", value : "soft", label : "soft" },
                                         ]}
-                                        defaultValue={selectedShadow}
+                                        value={selectedShadow}
                                         onChange={() => setSelectedShadow(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
@@ -282,54 +266,48 @@ const ButtonDocs = () => {
 
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
-                                    <Select
+                                    <ListBox
                                         label="Background colour"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",
                                             disabled : true,
                                             selected : true,
-                                        },
-                                            ...colourOptions,
-                                        ]}
-                                        defaultValue="select-a-colour"
-                                        onChange={handleBgColourChange}
+                                        }, ...colourOptions,]}
+                                        value="select-a-colour"
+                                        onChange={(value) => setSelectedBgColour(value)}
                                         isFullWidth
                                     />
                                 </Portion>
 
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
-                                    <Select
+                                    <ListBox
                                         label="Border colour"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",
                                             disabled : true,
                                             selected : true,
-                                        },
-                                            ...colourOptions,
-                                        ]}
-                                        defaultValue="select-a-colour"
-                                        onChange={handleBorderColourChange}
+                                        }, ...colourOptions,]}
+                                        value="select-a-colour"
+                                        onChange={(value) => setSelectedBorderColour(value)}
                                         isFullWidth
                                     />
                                 </Portion>
 
                                 {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
-                                    <Select
+                                    <ListBox
                                         label="Text colour"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",
                                             disabled : true,
                                             selected : true,
-                                        },
-                                            ...colourOptions,
-                                        ]}
-                                        defaultValue="select-a-colour"
-                                        onChange={handleTextColourChange}
+                                        }, ...colourOptions,]}
+                                        value="select-a-colour"
+                                        onChange={(value) => setSelectedTextColour(value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -359,6 +337,7 @@ const ButtonDocs = () => {
                                 </Portion>
                             </Row>
 
+                            {/* PRIMARY BUTTON ////////////////////////////////////////////////////////////////..... */}
                             <Row marginBottom="none">
                                 <Portion>
                                     <Text weight="700" marginBottom="nano">
@@ -366,7 +345,7 @@ const ButtonDocs = () => {
                                     </Text>
                                 </Portion>
 
-                                {/* BORDER RADIUS ============================================== */}
+                                {/* BORDER RADIUS ================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Border radius"
@@ -377,7 +356,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BORDER WIDTH =============================================== */}
+                                {/* BORDER WIDTH =================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Border width"
@@ -388,7 +367,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BG COLOUR ============================================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Background colour"
@@ -404,7 +383,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BORDER COLOUR ========================================== */}
+                                {/* BORDER COLOUR ================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Border colour"
@@ -420,7 +399,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* TEXT COLOUR ================================================ */}
+                                {/* TEXT COLOUR ==================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Text colour"
@@ -439,7 +418,7 @@ const ButtonDocs = () => {
 
                             <Divider kind="secondary" verticalMargin="micro" />
 
-                            {/* HOVER ////////////////////////////////////////////////////////////////////////////////////////////// */}
+                            {/* HOVER ////////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
                                 <Portion>
                                     <Text weight="700" marginBottom="nano">
@@ -447,7 +426,7 @@ const ButtonDocs = () => {
                                     </Text>
                                 </Portion>
 
-                                {/* BORDER RADIUS ============================================== */}
+                                {/* BORDER RADIUS ================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Border radius"
@@ -458,7 +437,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BORDER WIDTH =============================================== */}
+                                {/* BORDER WIDTH =================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Border width"
@@ -469,7 +448,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BG COLOUR ============================================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Background colour"
@@ -485,7 +464,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BORDER COLOUR ========================================== */}
+                                {/* BORDER COLOUR ================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Border colour"
@@ -501,7 +480,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* TEXT COLOUR ================================================ */}
+                                {/* TEXT COLOUR ==================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Text colour"
@@ -520,7 +499,7 @@ const ButtonDocs = () => {
 
                             <Divider kind="secondary" verticalMargin="micro" />
 
-                            {/* HOVER ////////////////////////////////////////////////////////////////////////////////////////////// */}
+                            {/* HOVER ////////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
                                 <Portion>
                                     <Text weight="700" marginBottom="nano">
@@ -528,7 +507,7 @@ const ButtonDocs = () => {
                                     </Text>
                                 </Portion>
 
-                                {/* BORDER RADIUS ============================================== */}
+                                {/* BORDER RADIUS ================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Border radius"
@@ -539,7 +518,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BORDER WIDTH =============================================== */}
+                                {/* BORDER WIDTH =================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Range
                                         label="Border width"
@@ -550,7 +529,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BG COLOUR ============================================== */}
+                                {/* BG COLOUR ====================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Background colour"
@@ -566,7 +545,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* BORDER COLOUR ========================================== */}
+                                {/* BORDER COLOUR ================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Border colour"
@@ -582,7 +561,7 @@ const ButtonDocs = () => {
                                     />
                                 </Portion>
 
-                                {/* TEXT COLOUR ================================================ */}
+                                {/* TEXT COLOUR ==================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Text colour"
@@ -601,7 +580,7 @@ const ButtonDocs = () => {
 
                             <Divider kind="secondary" verticalMargin="micro" />
 
-                            {/* SPINNER //////////////////////////////////////////////////////////////////////////////////////////// */}
+                            {/* SPINNER //////////////////////////////////////////////////////////////////////////// */}
                             <Row marginBottom="none">
                                 <Portion>
                                     <Text weight="700" marginBottom="nano">
@@ -609,7 +588,7 @@ const ButtonDocs = () => {
                                     </Text>
                                 </Portion>
 
-                                {/* SPINNER COLOUR ============================================= */}
+                                {/* SPINNER COLOUR ================================================================= */}
                                 <Portion desktopSpan="half">
                                     <Select
                                         label="Spinner colour"

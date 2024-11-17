@@ -158,7 +158,7 @@ const CardDocs = () => {
                                             { id : "padding-opt-6", value : "large", label : "large" },
                                             { id : "padding-opt-7", value : "huge", label : "huge" },
                                         ]}
-                                        defaultValue={selectedPadding}
+                                        value={selectedPadding}
                                         onChange={handlePaddingChange}
                                     />
 
@@ -174,7 +174,7 @@ const CardDocs = () => {
                                             { id : "shape-opt-1", value : "rounded", label : "rounded" },
                                             { id : "shape-opt-2", value : "curved", label : "curved" },
                                         ]}
-                                        defaultValue={selectedShape}
+                                        value={selectedShape}
                                         onChange={handleShapeChange}
                                     />
 

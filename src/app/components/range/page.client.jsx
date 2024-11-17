@@ -14,7 +14,6 @@ import {
     Card,
     Form,
     Header,
-    RadioTabGroup,
     Checkbox,
     Range,
     Select,
@@ -69,7 +68,7 @@ const RangeDocs = () => {
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
                     <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light-80"
+                        as="div" padding="small" shape="rounded" bgColour="slate-light80"
                         data-centered-children
                     >
                         <Range

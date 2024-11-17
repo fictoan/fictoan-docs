@@ -140,7 +140,7 @@ const ProgressBarDocs = () => {
                                             { id : "shape-opt-1", value : "rounded", label : "rounded" },
                                             { id : "shape-opt-2", value : "curved", label : "curved" },
                                         ]}
-                                        defaultValue={selectedShape}
+                                        value={selectedShape}
                                         onChange={() => setSelectedShape(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 

@@ -146,7 +146,7 @@ const SkeletonDocs = () => {
                                             { id : "vertical", value : "vertical", label : "vertical" },
                                             { id : "horizontal", value : "horizontal", label : "horizontal" },
                                         ]}
-                                        defaultValue={direction}
+                                        value={direction}
                                         onChange={(e) => setDirection(e.target.value)}
                                     />
                                 </Portion>

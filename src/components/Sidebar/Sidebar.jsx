@@ -22,6 +22,7 @@ import {
 // ASSETS //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import FictoanIcon from "../../assets/images/fictoan-icon.svg";
 import FictoanLogo from "../../assets/images/fictoan-logo.svg";
+
 import AccordionIcon from "../../assets/icons/accordion.svg";
 import BadgeIcon from "../../assets/icons/badge.svg";
 import BaseElementIcon from "../../assets/icons/building-block.svg";
@@ -33,15 +34,18 @@ import CheckboxIcon from "../../assets/icons/checkbox.svg";
 import CodeIcon from "../../assets/icons/braces.svg";
 import ColourIcon from "../../assets/icons/water.svg";
 import DividerIcon from "../../assets/icons/hrule.svg";
-import FormWrapperIcon from "../../assets/icons/writing.svg";
+import FormWrapperIcon from "../../assets/icons/form-wrapper.svg";
 import HomeIcon from "../../assets/icons/home.svg";
 import InfoPanelIcon from "../../assets/icons/info-panel.svg";
 import InputFieldIcon from "../../assets/icons/input.svg";
 import ListBoxIcon from "../../assets/icons/list-box.svg";
 import LayoutIcon from "../../assets/icons/layout.svg";
+import ModalIcon from "../../assets/icons/modal.svg";
 import ManifestoIcon from "../../assets/icons/manifesto.svg";
 import NotificationIcon from "../../assets/icons/notification.svg";
+import PaginationIcon from "../../assets/icons/pagination.svg";
 import PinInputIcon from "../../assets/icons/pin-input.svg";
+import OptionCardsIcon from "../../assets/icons/option-cards.svg";
 import ProgressBarIcon from "../../assets/icons/progress-bar.svg";
 import RadioButtonIcon from "../../assets/icons/radio-button.svg";
 import RangeIcon from "../../assets/icons/range.svg";
@@ -355,7 +359,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, se
             <Link href="/components/modal">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
-                        <ProgressBarIcon />
+                        <ModalIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Modal" />
                 </SidebarItem>
@@ -375,9 +379,19 @@ export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, se
             <Link href="/components/option-cards">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <SidebarItemIcon iconType="stroked">
-                        <NotificationIcon />
+                        <OptionCardsIcon />
                     </SidebarItemIcon>
                     <SidebarItemText weight="400" linkText="Option cards" />
+                </SidebarItem>
+            </Link>
+
+            {/* PAGINATION ========================================================================================= */}
+            <Link href="/components/pagination">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <SidebarItemIcon iconType="stroked">
+                        <PaginationIcon />
+                    </SidebarItemIcon>
+                    <SidebarItemText weight="400" linkText="Pagination" />
                 </SidebarItem>
             </Link>
 

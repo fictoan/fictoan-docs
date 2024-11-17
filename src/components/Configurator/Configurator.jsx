@@ -405,7 +405,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                                     { id : "kind-opt-2", value : "secondary", label : "secondary" },
                                                     { id : "kind-opt-3", value : "tertiary", label : "tertiary" },
                                                 ]}
-                                                defaultValue={selectedKind}
+                                                value={selectedKind}
                                                 onChange={handleKindChange}
                                             />
                                             <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
@@ -424,7 +424,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                                     { id : "kind-opt-2", value : "error", label : "error" },
                                                     { id : "kind-opt-3", value : "success", label : "success" },
                                                 ]}
-                                                defaultValue={selectedKind}
+                                                value={selectedKind}
                                                 onChange={handleKindChange}
                                             />
                                             <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
@@ -479,7 +479,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                             { id : "padding-opt-6", value : "large", label : "large" },
                                             { id : "padding-opt-7", value : "huge", label : "huge" },
                                         ]}
-                                        defaultValue={selectedPadding}
+                                        value={selectedPadding}
                                         onChange={handlePaddingChange}
                                     />
 
@@ -503,7 +503,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                             { id : "size-opt-6", value : "large", label : "large" },
                                             { id : "size-opt-7", value : "huge", label : "huge" },
                                         ]}
-                                        defaultValue={selectedSize}
+                                        value={selectedSize}
                                         onChange={handleSizeChange}
                                     />
 
@@ -522,7 +522,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                             { id : "shape-opt-1", value : "rounded", label : "rounded" },
                                             { id : "shape-opt-2", value : "curved", label : "curved" },
                                         ]}
-                                        defaultValue={selectedShape}
+                                        value={selectedShape}
                                         onChange={handleShapeChange}
                                     />
 
@@ -542,7 +542,7 @@ export const ComponentConfigurator = ({ component, properties, variablesStructur
                                             { id : "shadow-opt-3", value : "hard", label : "hard" },
                                             { id : "shadow-opt-2", value : "soft", label : "soft" },
                                         ]}
-                                        defaultValue={selectedShadow}
+                                        value={selectedShadow}
                                         onChange={handleShadowChange}
                                     />
 

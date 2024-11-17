@@ -242,7 +242,7 @@ const CodeBlockDocs = () => {
                                             { id : "approach-opt-0", value : "import", label : "import" },
                                             { id : "approach-opt-1", value : "embed", label : "embed" },
                                         ]}
-                                        defaultValue={selectedApproach}
+                                        value={selectedApproach}
                                         onChange={() => setSelectedApproach(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 

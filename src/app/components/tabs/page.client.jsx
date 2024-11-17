@@ -174,7 +174,7 @@ const TabsDocs = () => {
                                             { id : "align-opt-2", value : "centre", label : "centre" },
                                             { id : "align-opt-3", value : "center", label : "center" },
                                         ]}
-                                        defaultValue={selectedAlign}
+                                        value={selectedAlign}
                                         onChange={() => setSelectedAlign(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 

@@ -151,7 +151,7 @@ const FormDocs = () => {
                                             { id : "spacing-opt-6", value : "large", label : "large" },
                                             { id : "spacing-opt-7", value : "huge", label : "huge" },
                                         ]}
-                                        defaultValue={selectedSpacing}
+                                        value={selectedSpacing}
                                         onChange={() => setSelectedSpacing(event.target.value)}
                                     />
 

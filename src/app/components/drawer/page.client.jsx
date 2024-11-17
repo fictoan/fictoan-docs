@@ -144,7 +144,7 @@ const DrawerDocs = () => {
                                             { id : "position-opt-2", value : "right", label : "right" },
                                             { id : "position-opt-3", value : "bottom", label : "bottom" },
                                         ]}
-                                        defaultValue={selectedPosition || "right"}
+                                        value={selectedPosition || "right"}
                                         onChange={() => setSelectedPosition(event.target.value)}
                                     />
 
@@ -163,7 +163,7 @@ const DrawerDocs = () => {
                                             { id : "size-opt-6", value : "large", label : "large" },
                                             { id : "size-opt-7", value : "huge", label : "huge" },
                                         ]}
-                                        defaultValue={selectedSize}
+                                        value={selectedSize}
                                         onChange={() => setSelectedSize(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 
@@ -184,7 +184,7 @@ const DrawerDocs = () => {
                                             { id : "padding-opt-6", value : "large", label : "large" },
                                             { id : "padding-opt-7", value : "huge", label : "huge" },
                                         ]}
-                                        defaultValue={selectedPadding}
+                                        value={selectedPadding}
                                         onChange={() => setSelectedPadding(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
 

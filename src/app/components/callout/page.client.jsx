@@ -155,7 +155,7 @@ const CalloutDocs = () => {
                                             { id : "kind-opt-2", value : "warning", label : "warning" },
                                             { id : "kind-opt-3", value : "error", label : "error" },
                                         ]}
-                                        defaultValue={selectedKind}
+                                        value={selectedKind}
                                         onChange={handleKindChange}
                                     />
                                 </Portion>

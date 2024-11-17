@@ -133,7 +133,7 @@ const InputFieldDocs = () => {
                                     <CodeBlock language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
-                                            `InputField`,
+                                            `<InputField`,
                                             label ? `    label="${label}"` : null,
                                             placeholder ? `    placeholder="${placeholder}"` : null,
                                             isRequired ? `    required` : null,

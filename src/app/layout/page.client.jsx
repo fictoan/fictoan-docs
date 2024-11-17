@@ -301,7 +301,7 @@ const LayoutDocs = () => {
                                                 { id : "hp-large", label : "large", value : "large" },
                                                 { id : "hp-huge", label : "huge", value : "huge" },
                                             ]}
-                                            defaultValue={horizontalPadding}
+                                            value={horizontalPadding}
                                             onChange={(e) => setHorizontalPadding(e.target.value)}
                                         />
                                     </Portion>
@@ -321,7 +321,7 @@ const LayoutDocs = () => {
                                                 { id : "gutters-large", label : "large", value : "large" },
                                                 { id : "gutters-huge", label : "huge", value : "huge" },
                                             ]}
-                                            defaultValue={gutters}
+                                            value={gutters}
                                             onChange={(e) => setGutters(e.target.value)}
                                         />
                                     </Portion>

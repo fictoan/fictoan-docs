@@ -167,7 +167,7 @@ const BadgeDocs = () => {
                                             { id : "size-opt-6", value : "large", label : "large" },
                                             { id : "size-opt-7", value : "huge", label : "huge" },
                                         ]}
-                                        defaultValue={selectedSize}
+                                        value={selectedSize}
                                         onChange={handleSizeChange}
                                     />
 
@@ -183,7 +183,7 @@ const BadgeDocs = () => {
                                             { id : "shape-opt-1", value : "rounded", label : "rounded" },
                                             { id : "shape-opt-2", value : "curved", label : "curved" },
                                         ]}
-                                        defaultValue={selectedShape}
+                                        value={selectedShape}
                                         onChange={handleShapeChange}
                                     />
 

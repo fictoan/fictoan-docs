@@ -157,7 +157,7 @@ const ToastDocs = () => {
                                             { id : "position-opt-0", value : "top", label : "top" },
                                             { id : "position-opt-1", value : "bottom", label : "bottom" },
                                         ]}
-                                        defaultValue={selectedPosition || "right"}
+                                        value={selectedPosition || "right"}
                                         onChange={() => setSelectedPosition(event.target.value)}
                                     />
 

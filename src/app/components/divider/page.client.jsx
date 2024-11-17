@@ -123,7 +123,7 @@ const DividerDocs = () => {
                                             { id : "kind-opt-2", value : "secondary", label : "secondary" },
                                             { id : "kind-opt-3", value : "tertiary", label : "tertiary" },
                                         ]}
-                                        defaultValue={selectedKind}
+                                        value={selectedKind}
                                         onChange={() => setSelectedKind(event.target.value !== "none" ? event.target.value : undefined)}
                                     />
                                 </Portion>

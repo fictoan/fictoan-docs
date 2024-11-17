@@ -203,7 +203,7 @@ const NotificationsDocs = () => {
                                             { id : "position-opt-0", value : "left", label : "left" },
                                             { id : "position-opt-1", value : "right", label : "right" },
                                         ]}
-                                        defaultValue={selectedPosition || "right"}
+                                        value={selectedPosition || "right"}
                                         onChange={() => setSelectedPosition(event.target.value)}
                                     />
 
@@ -218,7 +218,7 @@ const NotificationsDocs = () => {
                                             { id : "anchor-opt-0", value : "top", label : "top" },
                                             { id : "anchor-opt-1", value : "bottom", label : "bottom" },
                                         ]}
-                                        defaultValue={selectedAnchor || "right"}
+                                        value={selectedAnchor || "right"}
                                         onChange={() => setSelectedAnchor(event.target.value)}
                                     />
 
@@ -233,7 +233,7 @@ const NotificationsDocs = () => {
                                             { id : "order-opt-0", value : "new-on-top", label : "new-on-top" },
                                             { id : "order-opt-1", value : "new-on-bottom", label : "new-on-bottom" },
                                         ]}
-                                        defaultValue={selectedOrder || "right"}
+                                        value={selectedOrder || "right"}
                                         onChange={() => setSelectedOrder(event.target.value)}
                                     />
                                 </Portion>
