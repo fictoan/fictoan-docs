@@ -1,4 +1,4 @@
-import SkeletonDocs from "./page.client";
+import HomePage from "./page.client";
 
 export const metadata = {
     title       : "Fictoan — A React UI framework",
@@ -31,5 +31,5 @@ export const metadata = {
 };
 
 export default function Page() {
-    return <SkeletonDocs />;
+    return <HomePage />;
 }
