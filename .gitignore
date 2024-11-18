@@ -10,7 +10,6 @@
 # Production
 /build/
 /dist*/
-/src/app/
 
 # Development
 /.next/
