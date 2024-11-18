@@ -1,4 +1,4 @@
-import HomePage from "./page.client";
+import HomePage from "./page.client.jsx";
 
 export const metadata = {
     title       : "Fictoan — A React UI framework",
