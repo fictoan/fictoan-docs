@@ -1,10 +1,10 @@
 "use client";
 
-// EXTERNAL DEPS ===============================================================
-import React, { useEffect, useState } from "react";
+// EXTERNAL DEPS =======================================================================================================
+import React, { useState } from "react";
 import Link from "next/link";
 
-// INTERNAL DEPS ===============================================================
+// INTERNAL DEPS =======================================================================================================
 import {
     Element,
     Row,
@@ -19,21 +19,24 @@ import {
     Divider,
     Drawer,
     Tabs,
-CodeBlock
+    CodeBlock,
+    Accordion,
+    Section,
+    Span,
 } from "fictoan-react";
 
-// COMPONENTS ==================================================================
+// COMPONENTS ==========================================================================================================
 import { InteractiveCardExample } from "./InteractiveCardExample";
 
-// STYLES ======================================================================
+// STYLES ==============================================================================================================
 import "./getting-started.css";
 
-// STYLES ======================================================================
+// STYLES ==============================================================================================================
 import PNPMIcon from "../../assets/icons/pnpm.svg";
 import YarnIcon from "../../assets/icons/yarn.svg";
 import NPMIcon from "../../assets/icons/npm.svg";
 
-// CODE SAMPLES ================================================================
+// CODE SAMPLES ========================================================================================================
 import {
     snippetPageSetupJSX,
     snippetPageSetupCSS,
@@ -42,22 +45,7 @@ import {
 } from "../../assets/code-samples/CodeSamples";
 
 const GettingStarted = () => {
-    const tabOneContent = () => (
-        <CodeBlock language="bash" showCopyButton>
-            pnpm add fictoan-react
-        </CodeBlock>
-    );
-
-    const tabTwoContent = () => (
-        <CodeBlock language="bash">yarn add fictoan-react</CodeBlock>
-    );
-
-    const tabThreeContent = () => (
-        <CodeBlock language="bash">npm install fictoan-react</CodeBlock>
-    );
-
-    const [isComplexSetupDrawerOpen, setIsComplexSetupDrawerOpen] =
-        useState(false);
+    const [isComplexSetupDrawerOpen, setIsComplexSetupDrawerOpen] = useState(false);
 
     return (
         <article id="page-getting-started">
@@ -71,91 +59,262 @@ const GettingStarted = () => {
                 </Portion>
             </Row>
 
-            {/* //////////////////////////////////////////////////////////// */}
-            {/* FIRST STEPS */}
-            {/* //////////////////////////////////////////////////////////// */}
-            <Element as="section" id="first-steps">
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* ENV SETUP */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Section id="dev-environment-setup">
                 <Row horizontalPadding="huge">
                     <Portion>
-                        <Heading4>First steps</Heading4>
-                    </Portion>
-
-                    <Portion>
-                        <Text
-                            weight="700"
-                            size="large"
-                            textColour="white"
-                            marginBottom="nano"
+                        <Accordion
+                            isFullWidth
+                            summary={
+                                <Heading4>First time coding? Click here.</Heading4>
+                            }
                         >
-                            Installation
-                        </Text>
+                            {/* STEP 1 — INSTALL HOMEBREW ////////////////////////////////////////////////////////// */}
+                            <Text marginTop="small" marginBottom="micro">
+                                This might <em>seem</em> scary—but it really is not! You got this! 😊
+                            </Text>
 
-                        <Text marginBottom="micro">
-                            If you’re starting a new project from scratch,
-                            consider using the{" "}
-                            <a
-                                href="https://github.com/fictoan/next-boilerplate"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                Fictoan boilerplate &#8599;
-                            </a>
-                            . It’s a simple, bare-bones NextJS app with Fictoan
-                            already installed, and a few basics already setup.
-                        </Text>
+                            <Heading6 marginBottom="nano">Step 1 — Install Homebrew</Heading6>
 
-                        <Text marginBottom="micro">
-                            Or, you can install it in your existing project—
-                        </Text>
+                            <Text marginBottom="micro">
+                                First, you&rsquo;ll need a package manager called <a href="https://brew.sh"
+                                                                                     target="_blank"
+                                                                                     rel="noreferrer">Homebrew &#8599;</a>.
+                                A package manager is a tool that lets you install and manage
+                                software &ldquo;packages&rdquo; on your computer, right from within your terminal.
+                            </Text>
 
-                        <Tabs
-                            tabs={[
-                                {
-                                    key     : "tab1",
-                                    label   : (
-                                        <Element verticallyCentreItems>
-                                            <PNPMIcon />
-                                            <Text marginLeft="nano">pnpm</Text>
-                                        </Element>
-                                    ),
-                                    content : tabOneContent(),
-                                },
-                                {
-                                    key     : "tab2",
-                                    label   : (
-                                        <Element verticallyCentreItems>
-                                            <YarnIcon />
-                                            <Text marginLeft="nano">yarn</Text>
-                                        </Element>
-                                    ),
-                                    content : tabTwoContent(),
-                                },
-                                {
-                                    key     : "tab3",
-                                    label   : (
-                                        <Element verticallyCentreItems>
-                                            <NPMIcon />
-                                            <Text marginLeft="nano">npm</Text>
-                                        </Element>
-                                    ),
-                                    content : tabThreeContent(),
-                                },
-                            ]}
-                            marginBottom="micro"
-                        />
+                            <ul className="tutorial-steps">
+                                <li>
+                                    Open up the <strong>Terminal</strong> app.<br />
+                                    <Span opacity="60">This is what is called a CLI—a command line interface—no buttons
+                                        or menus, just commands that you type and have the computer execute.</Span>
+                                </li>
+                                <li>
+                                    Copy the below command and paste it into the terminal, and hit Enter.
+                                    <CodeBlock language="bash" showCopyButton>
+                                        /bin/bash -c "$(curl -fsSL
+                                        https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+                                    </CodeBlock>
+                                </li>
+                            </ul>
 
-                        <Divider kind="tertiary" verticalMargin="micro" />
+                            <ul className="tutorial-steps">
+                                <li>
+                                    Enter your password if asked, and follow any instructions you may see on the screen.
+                                </li>
+                                <li>
+                                    Once the installation is complete, you can verify that Homebrew is installed by
+                                    typing this command:
+                                    <CodeBlock language="bash" showCopyButton>
+                                        brew --version
+                                    </CodeBlock>
+                                </li>
+                            </ul>
+
+                            <Divider kind="secondary" verticalMargin="tiny" />
+
+                            {/* STEP 2 — INSTALL NODE.JS /////////////////////////////////////////////////////////// */}
+                            <Heading6 weight="700" marginBottom="nano">Step 2 — Install Node.js</Heading6>
+
+                            <Text marginBottom="micro">
+                                Next, we&rsquo;ll need to install Node.js on your computer. <Span opacity="60">Most
+                                modern web apps are built with Javascript, or JS. You can think of Node.js as the box
+                                within which you can build and run those web apps.</Span>
+                            </Text>
+
+                            <ul className="tutorial-steps">
+                                <li>Visit the <a href="https://nodejs.org/en/download/prebuilt-binaries" target="_blank"
+                                                 rel="noreferrer">NodeJS downloads &#8599;</a> page.<br />
+                                    That link should already point your to appropriate version for your machine. If not,
+                                    pick the latest Long Term Support(LTS) version.
+                                </li>
+
+                                <li>
+                                    Verify installation by opening your terminal and running:
+                                    <CodeBlock language="bash" showCopyButton>node --version</CodeBlock>
+                                </li>
+
+                                <li>
+                                    And then:
+                                    <CodeBlock language="bash" showCopyButton>npm --version</CodeBlock>
+                                    Both should display a version number.
+                                </li>
+                            </ul>
+
+                            <Divider kind="secondary" verticalMargin="tiny" />
+
+                            {/* STEP 3 — INSTALL PNPM ////////////////////////////////////////////////////////////// */}
+                            <Heading6 weight="700" marginBottom="nano">Step 3 — Install pnpm</Heading6>
+
+                            <Text marginBottom="micro">
+                                Now, we need to install <code>pnpm</code>. <Span opacity="60">This is also a package
+                                manager, but we&rsquo;ll just for your project dependencies, not for your entire
+                                system.</Span>
+                            </Text>
+
+                            <ul className="tutorial-steps">
+                                <li>
+                                    Open your terminal and run:
+                                    <CodeBlock language="bash" showCopyButton>brew install pnpm</CodeBlock>
+                                </li>
+                            </ul>
+
+                            <Divider kind="secondary" verticalMargin="tiny" />
+
+                            {/* STEP 4 — INSTALL NODE.JS /////////////////////////////////////////////////////////// */}
+                            <Heading6 weight="700" marginBottom="nano">Step 4 — Download starter project</Heading6>
+
+                            <Text marginBottom="micro">
+                                Almost there. We&rsquo;ll need a boilerplate setup. <Span opacity="60">A boilerplate is
+                                a starting point for a new project, like a template with everything you need to
+                                begin coding.</Span>
+                            </Text>
+
+                            <ul className="tutorial-steps">
+                                <li>Visit the <a href="https://github.com/fictoan/next-boilerplate" target="_blank"
+                                                 rel="noreferrer">Fictoan boilerplate &#8599;</a> page on Github.
+                                </li>
+
+                                <li>
+                                    Click the green <code>Code</code> dropdown, and click on <code>Download
+                                    ZIP</code> link. Extract this file to your computer.
+                                </li>
+
+                                <li>
+                                    In your terminal, navigate to the directory you extracted the file to, and run:
+                                    <CodeBlock language="bash" showCopyButton marginBottom="nano">
+                                        pnpm install
+                                    </CodeBlock>
+                                    This will install all the dependencies the project needs to run.
+                                </li>
+
+                                <li>
+                                    Once the installation is complete, then run:
+                                    <CodeBlock language="bash" showCopyButton marginBottom="nano">pnpm dev</CodeBlock>
+                                    This should open a new tab in your default browser, go
+                                    to <code>http://localhost:3000</code> and display the home page of the boilerplate.
+                                </li>
+                            </ul>
+
+                            <Divider kind="secondary" verticalMargin="tiny" />
+
+                            {/* STEP 3 — INSTALL IDE /////////////////////////////////////////////////////////////// */}
+                            <Heading6 weight="700" marginBottom="nano">Step 5 — Install VSCode</Heading6>
+
+                            <Text marginBottom="micro">
+                                Last step, we&rsquo;ll need an IDE. <Span opacity="60">An IDE, or Integrated Development
+                                Environment, is a program that allows you to write, compile, and debug code.</Span>
+                            </Text>
+
+                            <ul className="tutorial-steps">
+                                <li>Visit the <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer">
+                                    VSCode &#8599;</a> website. Download and install the latest version.
+                                </li>
+
+                                <li>
+                                    Once installed, go to File &rarr; Open Folder, and select the folder you extracted
+                                    the boilerplate file to. You should now see the code files listed on the left side
+                                    of
+                                    the IDE window.
+                                </li>
+
+                                <li>
+                                    That&rsquo;s it— you&rsquo;re ready to start your coding journey!
+                                </li>
+                            </ul>
+
+                            <Heading6 weight="400" marginTop="tiny">Good luck and build great things! 🥳</Heading6>
+                        </Accordion>
                     </Portion>
+                </Row>
 
+                <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
+            </Section>
+
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* FIRST STEPS */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Section id="first-steps">
+                <Row horizontalPadding="huge">
                     <Portion>
-                        <Text
-                            weight="700"
-                            size="large"
-                            textColour="white"
-                            marginBottom="nano"
+                        <Accordion
+                            isFullWidth
+                            summary={<Heading4>Done this before? Jump right in.</Heading4>}
                         >
-                            Boilerplate structure
-                        </Text>
+                            <Heading6 marginTop="small" marginBottom="nano">Installation</Heading6>
+
+                            <Text marginBottom="micro">
+                                If you’re starting a new project from scratch, consider using the{" "}
+                                <a
+                                    href="https://github.com/fictoan/next-boilerplate"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    Fictoan boilerplate &#8599;
+                                </a>
+                                . It’s a simple, bare-bones NextJS app with Fictoan already installed, and a few basics
+                                already setup.
+                            </Text>
+
+                            <Text marginBottom="micro">
+                                Or, you can install it in your existing project—
+                            </Text>
+
+                            <Tabs
+                                tabs={[
+                                    {
+                                        key     : "tab1",
+                                        label   : (
+                                            <Element verticallyCentreItems>
+                                                <PNPMIcon />
+                                                <Text marginLeft="nano">pnpm</Text>
+                                            </Element>
+                                        ),
+                                        content : (
+                                            <CodeBlock language="bash" showCopyButton>
+                                                pnpm add fictoan-react
+                                            </CodeBlock>
+                                        ),
+                                    },
+                                    {
+                                        key     : "tab2",
+                                        label   : (
+                                            <Element verticallyCentreItems>
+                                                <YarnIcon />
+                                                <Text marginLeft="nano">yarn</Text>
+                                            </Element>
+                                        ),
+                                        content : (
+                                            <CodeBlock language="bash">yarn add fictoan-react</CodeBlock>
+                                        ),
+                                    },
+                                    {
+                                        key     : "tab3",
+                                        label   : (
+                                            <Element verticallyCentreItems>
+                                                <NPMIcon />
+                                                <Text marginLeft="nano">npm</Text>
+                                            </Element>
+                                        ),
+                                        content : (
+                                            <CodeBlock language="bash">npm install fictoan-react</CodeBlock>
+                                        ),
+                                    },
+                                ]}
+                                marginBottom="micro"
+                            />
+                        </Accordion>
+                    </Portion>
+                </Row>
+
+                <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
+
+                <Row horizontalPadding="huge">
+                    <Portion>
+                        <Heading6 marginBottom="nano">Boilerplate structure</Heading6>
 
                         <Text marginBottom="micro">
                             The{" "}
@@ -185,52 +344,35 @@ const GettingStarted = () => {
                         />
 
                         <Text marginBottom="micro">
-                            There are four main folders—<code>app</code>,{" "}
-                            <code>components</code>, <code>styles</code>, and{" "}
-                            <code>assets</code>.
+                            There are four main
+                            folders—<code>app</code>,{" "}<code>components</code>, <code>styles</code>,
+                            and{" "}<code>assets</code>.
                         </Text>
-
-                        <Divider kind="tertiary" verticalMargin="nano" />
 
                         {/* /app =========================================== */}
-                        <Text weight="700" marginBottom="nano">
-                            /app
-                        </Text>
-
+                        <Text weight="700" marginBottom="nano">/app</Text>
                         <Text marginBottom="nano">
-                            <code>page.tsx</code> is where you can start adding
-                            your content.
+                            <code>page.tsx</code> is where you can start adding your content.
                         </Text>
 
                         <Text marginBottom="micro">
-                            <code>layout.tsx</code> is the main entry point for
-                            the app. We have a <code>RootClientSideLayout</code>{" "}
-                            component which contains the{" "}
-                            <code>ThemeProvider</code> and
+                            <code>layout.tsx</code> is the main entry point for the app. We have
+                            a <code>RootClientSideLayout</code>{" "}component which contains
+                            the{" "}<code>ThemeProvider</code> and
                         </Text>
 
                         <Text marginBottom="micro">
-                            Why such a roundabout setup, you ask? Click
-                            <Element
-                                as="span"
-                                textColour="blue"
-                                onClick={() =>
-                                    setIsComplexSetupDrawerOpen(true)
-                                }
-                            >
-                                {" "}
-                                here{" "}
-                            </Element>
-                            for a rant.
+                            Why such a roundabout setup, you ask? Click&nbsp;
+                            <Span textColour="blue" onClick={() => setIsComplexSetupDrawerOpen(true)}>here</Span>
+                            &nbsp;for a rant.
                         </Text>
 
+                        {/* DRAWER */}
                         <Drawer
-                            position="right"
+                            position="right" size="medium"
+                            showOverlay closeOnClickOutside
                             openWhen={isComplexSetupDrawerOpen}
                             closeWhen={() => setIsComplexSetupDrawerOpen(false)}
-                            size="medium"
-                            showOverlay
-                            closeOnClickOutside
                             padding="micro"
                         >
                             <Heading4>NextJS sucks</Heading4>
@@ -239,15 +381,11 @@ const GettingStarted = () => {
                         <Divider kind="tertiary" verticalMargin="nano" />
 
                         {/* /app/About =========================================== */}
-                        <Text weight="700" marginBottom="nano">
-                            /app/about
-                        </Text>
+                        <Text weight="700" marginBottom="nano">/app/about</Text>
 
                         <Text marginBottom="nano">
-                            This is a sample sub-page that you can use as a
-                            reference for creating your own pages. Routing is
-                            based on the folder structure, so this one is
-                            available at <code>/about</code>.
+                            This is a sample sub-page that you can use as a reference for creating your own pages.
+                            Routing is based on the folder structure, so this one is available at <code>/about</code>.
                         </Text>
 
                         <CodeBlock
@@ -265,11 +403,9 @@ const GettingStarted = () => {
                         />
 
                         <Text marginBottom="micro">
-                            We’re using a simple method to scope the CSS to the
-                            page—the <code>id</code> of the page is used as the
-                            parent-most selector, and the CSS is written inside
-                            it. This way, the CSS is scoped to the page, and
-                            doesn’t leak to other pages.
+                            We’re using a simple method to scope the CSS to the page—the <code>id</code> of the page is
+                            used as the parent-most selector, and the CSS is written inside it. This way, the CSS is
+                            scoped to the page, and doesn’t leak to other pages.
                         </Text>
 
                         <Text>
@@ -277,17 +413,13 @@ const GettingStarted = () => {
                         </Text>
                     </Portion>
                 </Row>
-            </Element>
+            </Section>
 
-            <Divider
-                kind="primary"
-                horizontalMargin="huge"
-                verticalMargin="small"
-            />
+            <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* USAGE */}
-            {/* //////////////////////////////////////////////////////////// */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Element as="section" id="patterns">
                 <Row horizontalPadding="huge">
                     <Portion>
@@ -295,7 +427,7 @@ const GettingStarted = () => {
                     </Portion>
                 </Row>
 
-                {/* IMPORT ================================================= */}
+                {/* IMPORT ========================================================================================= */}
                 <Row
                     id="nomenclature"
                     layout="grid"
@@ -303,19 +435,11 @@ const GettingStarted = () => {
                     marginBottom="nano"
                 >
                     <Portion>
-                        <Text
-                            weight="700"
-                            size="large"
-                            textColour="white"
-                            marginBottom="nano"
-                        >
-                            Importing
-                        </Text>
+                        <Heading6 marginBottom="nano">Importing</Heading6>
 
                         <Text marginBottom="micro">
-                            Import the main CSS file in your app entry point.
-                            This will make sure that the Fictoan styles are
-                            available to all components.
+                            Import the main CSS file in your app entry point. This will make sure that the Fictoan
+                            styles are available to all components.
                         </Text>
 
                         <CodeBlock
@@ -325,9 +449,8 @@ const GettingStarted = () => {
                         />
 
                         <Text marginBottom="micro">
-                            In your content files, just import the components
-                            you need at the top, and use them inside the return
-                            function like so—
+                            In your content files, just import the components you need at the top, and use them inside
+                            the return function like so—
                         </Text>
 
                         <CodeBlock
@@ -337,42 +460,29 @@ const GettingStarted = () => {
                         />
 
                         <Text marginBottom="micro">
-                            Now you’re ready to use Fictoan components in your
-                            project.
+                            Now you’re ready to use Fictoan components in your project.
                         </Text>
                     </Portion>
 
                     <Portion>
-                        <Text
-                            weight="700"
-                            size="large"
-                            textColour="white"
-                            marginBottom="nano"
-                        >
-                            Usage
+                        <Heading6 marginBottom="nano">Usage</Heading6>
+
+                        <Text marginBottom="micro">
+                            Fictoan components are just simple wrappers around HTML elements. You can extend their look
+                            and feel by passing props to them.
+                        </Text>
+
+                        <Text marginBottom="micro">For example, a <code>Card</code> component has props such
+                            as <code>shape</code>, <code>shadow</code> and{" "}<code>padding</code>. Similarly,
+                            a{" "}<code>Table</code> has <code>bordersFor</code>,{" "}<code>isStriped</code> and so on.
+                            You don’t have to remember complex terminology, and Fictoan tries to be as intuitive as
+                            possible.
                         </Text>
 
                         <Text marginBottom="micro">
-                            Fictoan components are just simple wrappers around
-                            HTML elements. You can extend their look and feel by
-                            passing props to them.
-                        </Text>
-
-                        <Text marginBottom="micro">
-                            For example, a <code>Card</code> component has props
-                            such as <code>shape</code>, <code>shadow</code> and{" "}
-                            <code>padding</code>. Similarly, a{" "}
-                            <code>Table</code> has <code>bordersFor</code>,{" "}
-                            <code>isStriped</code> and so on. You don’t have to
-                            remember complex terminology, and Fictoan tries to
-                            be as intuitive as possible.
-                        </Text>
-
-                        <Text marginBottom="micro">
-                            Here’s an interactive example. Here we have a
-                            default <code>Card</code> component. It looks like
-                            just a line because all you’re seeing is the border.
-                            Start by adding some padding to it.
+                            Here’s an interactive example. Here we have a default <code>Card</code> component. It looks
+                            like just a line because all you’re seeing is the border. Start by adding some padding to
+                            it.
                         </Text>
                     </Portion>
                 </Row>
@@ -401,13 +511,9 @@ const GettingStarted = () => {
                     </Portion>
                 </Row>
 
-                <Divider
-                    kind="primary"
-                    horizontalMargin="huge"
-                    verticalMargin="small"
-                />
+                <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-                {/*   ATTRIBUTE VALUES  //////////////////////////////////////////////////////////////////////////  */}
+                {/* ATTRIBUTE VALUES /////////////////////////////////////////////////////////////////////////////// */}
                 <Row id="attributes" horizontalPadding="huge">
                     <Portion>
                         <Text

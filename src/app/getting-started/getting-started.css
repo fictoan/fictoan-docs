@@ -1,4 +1,12 @@
 #page-getting-started {
+    .tutorial-steps > li + li {
+        margin-top: 12px;
+    }
+
+    .tutorial-steps > div:has(pre) + li {
+        margin-top: 12px;
+    }
+
     #interactive-card {
         transition : all 0.2s ease-in-out;
     }

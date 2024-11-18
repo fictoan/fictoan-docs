@@ -2,11 +2,7 @@
 
 import React from "react";
 
-import { Heading1,
-    Heading2,
-    Heading3,
-    Heading4,
-    Heading5,
+import {
     Heading6, Divider, Portion, Row, Text } from "fictoan-react";
 
 import "./props-list.css";
@@ -48,17 +44,13 @@ export const PropsList = ({ propData }) => {
                     >
                         <Portion desktopSpan="5">
                             <Text>
-                                {
-                                    <span dangerouslySetInnerHTML={{ __html: props.name }} />
-                                }
+                                {<span dangerouslySetInnerHTML={{ __html: props.name }} />}
                             </Text>
                         </Portion>
 
                         <Portion desktopSpan="9">
                             <Text>
-                                {
-                                    <span dangerouslySetInnerHTML={{ __html: props.description }} />
-                                }
+                                {<span dangerouslySetInnerHTML={{ __html: props.description }} />}
                             </Text>
                         </Portion>
 

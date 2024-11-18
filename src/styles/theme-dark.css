@@ -44,13 +44,13 @@
     --divider-height                          : 1px;
 
     --divider-primary-height                  : 2px;
-    --divider-primary-bg                      : var(--grey-dark20);
+    --divider-primary-bg                      : var(--slate-dark20);
 
     --divider-secondary-height                : 2px;
-    --divider-secondary-bg                    : var(--grey-dark60);
+    --divider-secondary-bg                    : var(--slate-dark60);
 
     --divider-tertiary-height                 : 1px;
-    --divider-tertiary-bg                     : var(--grey-dark80);
+    --divider-tertiary-bg                     : var(--slate-dark80);
 
     /* INPUT FIELD ////////////////////////////////////////////////////////// */
     --drawer-bg                               : var(--grey-dark70);
