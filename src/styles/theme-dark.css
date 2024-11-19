@@ -186,11 +186,14 @@
     --component-card-footer-border            : var(--slate-dark60);
 
     /* SITE HEADER ////////////////////////////////////////////////////////// */
-    --site-header-bg                          : var(--red);
+    --site-header-bg                          : var(--black-opacity20);
     --site-header-border                      : var(--grey-dark60);
 
     /* USP CARDS //////////////////////////////////////////////////////////// */
     --usp-section-bg                          : var(--grey-dark90);
+
+    --usp-card-gradient-top                   : var(--grey-dark90);
+    --usp-card-gradient-bottom                : var(--grey-dark90);
 
     --usp-card-1-bg                           : var(--blue-dark70);
     --usp-card-1-border                       : var(--blue-dark30);

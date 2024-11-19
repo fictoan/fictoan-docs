@@ -44,8 +44,8 @@ const HomePage = () => {
                 {/* GROUP 1 //////////////////////////////////////////////////////////////////////////////////////// */}
                 <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
                     <Portion desktopSpan="two-third">
-                        <Heading2 marginBottom="nano" textColour="grey">
-                            <Span textColour="white">As simple as it gets.</Span>
+                        <Heading2 marginBottom="nano">
+                            As simple as it gets.
                         </Heading2>
                     </Portion>
 
@@ -54,7 +54,6 @@ const HomePage = () => {
                     <Portion desktopSpan="half">
                         <Card
                             id="usp-card-1" className="usp-card"
-                            bgColour="blue-dark70" borderColour="blue-dark30"
                             padding="micro" shape="rounded" shadow="soft"
                         >
                             <Heading5 weight="400" opacity="80" marginBottom="micro">
@@ -111,9 +110,9 @@ const HomePage = () => {
                 {/* GROUP 2 //////////////////////////////////////////////////////////////////////////////////////// */}
                 <Row horizontalPadding="medium" gutters="large" marginBottom="tiny">
                     <Portion desktopSpan="two-third">
-                        <Heading4 marginBottom="nano">
+                        <Heading2 marginBottom="nano">
                             But wait, there’s more!
-                        </Heading4>
+                        </Heading2>
                     </Portion>
 
                     <Portion desktopSpan="one-third" />

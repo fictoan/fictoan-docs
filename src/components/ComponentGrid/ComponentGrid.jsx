@@ -110,7 +110,7 @@ export const ComponentGrid = () => {
                             <Card shape="rounded" className="component-wrapper" isFullHeight>
                                 <Div className="component-card">
                                     <Button
-                                        kind="custom" bgColour="blue-light20" textColour="blue"
+                                        kind="custom" bgColour="blue-light70" textColour="blue"
                                         shape="rounded" shadow="mild"
                                         marginBottom="nano" marginRight="nano"
                                         onClick={() => setShowNotification1(true)}

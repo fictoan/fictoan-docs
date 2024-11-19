@@ -9,13 +9,14 @@ import {
     Button,
     Div,
     Heading1,
+    Heading4,
     Heading5,
     Portion,
     Row,
     Section,
     Switch,
     Text,
-CodeBlock
+    CodeBlock
 } from "fictoan-react";
 
 // STYLES ==============================================================================================================
@@ -39,20 +40,23 @@ export const IntroCode = () => {
     });
 
     const [mainHeadingProps, setMainHeadingProps] = useState({
-        as           : "h1",
         textColour   : "blue",
         marginBottom : "micro",
         weight       : "700",
     });
 
+    const [taglineProps, setTaglineProps] = useState({
+        textColour   : "blue-light30",
+        marginBottom : "micro",
+        weight       : "700",
+    });
+
     const [subHeading1Props, setSubHeading1Props] = useState({
-        as           : "h5",
         weight       : "400",
         marginBottom : "micro",
     });
 
     const [subHeading2Props, setSubHeading2Props] = useState({
-        as           : "h5",
         weight       : "400",
         marginBottom : "micro",
     });
@@ -119,12 +123,22 @@ export const IntroCode = () => {
                     else if (index === 1) setPortion2Props(props);
                 });
 
-                // Heading1
+                // Main opener
                 setMainHeadingProps(prevProps => (
                     { ...prevProps, ...newProps.Heading1 }
                 ));
 
-                // Heading5
+                // Tagline
+                setTaglineProps(prevProps => (
+                    { ...prevProps, ...newProps.Heading4 }
+                ));
+
+                // Button
+                setButtonProps(prevProps => (
+                    { ...prevProps, ...newProps.Button }
+                ));
+
+                // Right-side text
                 if (newProps.Heading5.length > 0) {
                     setSubHeading1Props(prevProps => (
                         { ...prevProps, ...newProps.Heading5[0] }
@@ -135,11 +149,6 @@ export const IntroCode = () => {
                         ));
                     }
                 }
-
-                // Button
-                setButtonProps(prevProps => (
-                    { ...prevProps, ...newProps.Button }
-                ));
             };
 
             codeBlockElement.addEventListener("input", handleInput);
@@ -157,6 +166,7 @@ export const IntroCode = () => {
     return (
         <Section id="intro-code" verticalPadding="small">
             <Div id="intro-section">
+                {/* ROW VISUALISATION ////////////////////////////////////////////////////////////////////////////// */}
                 {vizMode && (
                     <Row id="viz-row" horizontalPadding={rowProps.horizontalPadding} retainLayoutAlways>
                         {Array.from({ length : numberOfPortions }, (_, index) => (
@@ -167,11 +177,16 @@ export const IntroCode = () => {
                     </Row>
                 )}
 
+                {/* MAIN ROW /////////////////////////////////////////////////////////////////////////////////////// */}
                 <Row {...rowProps}>
                     <Portion {...portion1Props} className={`demo-portion ${vizMode ? "border-red" : ""}`}>
                         <Heading1 {...mainHeadingProps}>
                             Ship UI {flipACoin() ? "in half the time" : "twice as fast"}
                         </Heading1>
+
+                        <Heading4 {...taglineProps}>
+                            Empower designers to edit code
+                        </Heading4>
 
                         <Link href="/getting-started">
                             <Button {...buttonProps}>
@@ -204,6 +219,7 @@ export const IntroCode = () => {
                 </Row>
             </Div>
 
+            {/* EDITABLE CODE BLOCK //////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="medium" gutters="large" verticalMargin="small">
                 <Portion>
                     <Div verticallyCentreItems pushItemsToEnds>
@@ -222,7 +238,7 @@ export const IntroCode = () => {
 
                     <Div id="intro-code-block" ref={codeBlockRef}>
                         <CodeBlock
-                            language="jsx"
+                            language="tsx"
                             showCopyButton
                             contentEditable
                             suppressContentEditableWarning={true}
@@ -230,18 +246,19 @@ export const IntroCode = () => {
                             theme="custom"
                         >
                             {[
-                                `<Row horizontalPadding="medium" marginTop="tiny" marginBottom="small"> // Try "none", "small", "medium", "large" or "huge"`,
-                                `    <Portion desktopSpan="half"> // Try values like "one-third", or whole numbers between 1 and 24`,
+                                `<Row horizontalPadding="medium" marginTop="tiny" marginBottom="small"> {/* Try "none", "small", "medium", "large" or "huge" */}`,
+                                `    <Portion desktopSpan="half"> {/* Try "one-third", or whole numbers between 1–24 */}`,
                                 `        <Heading1 textColour="blue-light20" marginBottom="micro" weight="700">`,
                                 `            Ship UI in half the time.`,
                                 `        </Heading1> \n`,
-                                `        <Link href="/getting-started">`,
-                                `            <Button kind="primary"> // "secondary", or "custom" with bgColour="amber" textColour="black"`,
-                                `                Get started &rarr;`,
-                                `            </Button>`,
-                                `        </Link>`,
+                                `        <Heading4 marginBottom="micro">`,
+                                `            Empower designers to edit code`,
+                                `        </Heading4> \n`,
+                                `        <Button kind="primary"> {/* "secondary", or kind="custom" with bgColour="amber" textColour="black" */}`,
+                                `            Get started &rarr;`,
+                                `        </Button>`,
                                 `    </Portion> \n`,
-                                `    <Portion desktopSpan="half"> // Try adding mobileSpan="half"`,
+                                `    <Portion desktopSpan="half"> {/* Try adding mobileSpan="half" */}`,
                                 `        <Heading5 weight="400" marginBottom="micro">`,
                                 `            Create ready-to-integrate UI in minutes with designer-friendly, plain-English syntax.`,
                                 `        </Heading5>\n`,

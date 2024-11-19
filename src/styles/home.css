@@ -102,7 +102,7 @@
     }
 
     .usp-card {
-        background : linear-gradient(135deg, #111214 24%, #0c0d0f 80%);
+        background : linear-gradient(135deg, var(--usp-card-gradient-top) 24%, var(--usp-card-gradient-bottom) 80%);
         border     : 1px solid hsla(0, 0%, 80%, .08);
     }
 }

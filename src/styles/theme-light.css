@@ -25,6 +25,14 @@
     --card-border-radius                      : 16px;
 
     /* BREADCRUMBS ////////////////////////////////////////////////////////// */
+    --code-block-bg                           : var(--slate-light80);
+    --code-block-font-size                    : 0.8rem;
+    --token-plain                             : var(--black);
+    --token-comment                           : var(--slate-opacity70);
+    --token-attrName                          : var(--blue);
+    --token-attrValue                         : var(--purple);
+
+    /* BREADCRUMBS ////////////////////////////////////////////////////////// */
     --breadcrumbs-wrapper-bg                  : var(--transparent);
 
     --breadcrumb-item-separator               : "/";
@@ -34,16 +42,16 @@
     --breadcrumb-item-text-colour-active      : var(--paragraph-text-colour);
 
     /* DIVIDER ////////////////////////////////////////////////////////////// */
-    --divider-height                               : 1px;
+    --divider-height                          : 1px;
 
-    --divider-primary-height                       : 2px;
-    --divider-primary-bg                           : var(--grey-light20);
+    --divider-primary-height                  : 2px;
+    --divider-primary-bg                      : var(--grey-light20);
 
-    --divider-secondary-height                     : 2px;
-    --divider-secondary-bg                         : var(--grey-light60);
+    --divider-secondary-height                : 2px;
+    --divider-secondary-bg                    : var(--grey-light60);
 
-    --divider-tertiary-height                      : 1px;
-    --divider-tertiary-bg                          : var(--grey-light80);
+    --divider-tertiary-height                 : 1px;
+    --divider-tertiary-bg                     : var(--grey-light80);
 
     /* INPUT FIELD ////////////////////////////////////////////////////////// */
     --input-bg-default                        : var(--grey-light90);
@@ -134,9 +142,6 @@
     --heading-size-multiplier                 : 1.2;
     --heading-line-height                     : 1.2;
 
-    --code-block-font-size                    : 0.8rem;
-    --code-block-bg                           : var(--slate-dark70);
-
     /* SWITCH /////////////////////////////////////////////////////////////// */
     --switch-bg-default                       : var(--slate-dark40);
     --switch-bg-hover                         : var(--slate-dark20);
@@ -150,14 +155,18 @@
     /* ////////////////////////////////////////////////////////////////////// */
     /* CUSTOM COMPONENTS */
     /* ////////////////////////////////////////////////////////////////////// */
-    --component-card-bg                       : rgba(236, 236, 236, 0.4);
+    --component-card-bg                       : var(--grey-light90);
     --component-card-footer-border            : var(--slate-light60);
 
-    --site-header-bg                          : var(--grey-light90);
+    --site-header-bg                          : var(--white-opacity20);
     --site-header-border                      : var(--grey-light60);
 
     /* USP CARDS //////////////////////////////////////////////////////////// */
-    --usp-section-bg                           : var(--amber);
+    --usp-section-bg                          : var(--amber-light70);
+
+    --usp-card-gradient-top                   : var(--grey-light90);
+    --usp-card-gradient-bottom                : var(--grey-light70);
+
     --usp-card-1-bg                           : var(--blue-light70);
     --usp-card-1-border                       : var(--blue-light30);
     --usp-card-2-bg                           : var(--green-light70);
