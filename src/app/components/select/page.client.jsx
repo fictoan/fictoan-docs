@@ -25,8 +25,6 @@ import {
 // STYLES ==============================================================================================================
 import "./page-select.css";
 
-// TODO: Add SelectWithSearch
-
 // DATA ================================================================================================================
 import { useThemeVariables } from "../../../utils/useThemeVariables";
 import { selectProps } from "./config";
@@ -241,15 +239,15 @@ const SelectDocs = () => {
                                 {/* CHEVRON ======================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
-                                        label="Dropdown chevron"
+                                        label="Select chevron"
                                         options={[{
                                             label    : "Select a colour",
                                             value    : "select-a-colour",
                                             disabled : true,
                                             selected : true,
                                         }, ...colourOptions]}
-                                        defaultValue={componentVariables["dropdown-chevron"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("dropdown-chevron", e.target.value)}
+                                        defaultValue={componentVariables["select-chevron"].defaultValue || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("select-chevron", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>

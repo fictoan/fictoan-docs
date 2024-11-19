@@ -1,6 +1,6 @@
 export const selectProps = {
     variables  : {
-        "dropdown-chevron"            : {
+        "select-chevron"            : {
             type         : "reference",
             defaultValue : "slate-light40",
         },
