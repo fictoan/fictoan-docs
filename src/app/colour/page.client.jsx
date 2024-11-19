@@ -131,7 +131,7 @@ const ColourDocs = () => {
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/*  CONFIGURATOR */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
-                <Row horizontalPadding="huge" marginBottom="micro">
+                <Row horizontalPadding="huge" marginBottom="micro" retainLayoutAlways>
                     <Portion>
                         {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////// */}
                         <Div
