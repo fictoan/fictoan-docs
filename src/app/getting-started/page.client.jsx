@@ -1,7 +1,7 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 // INTERNAL DEPS =======================================================================================================
@@ -35,17 +35,36 @@ import "./getting-started.css";
 import PNPMIcon from "../../assets/icons/pnpm.svg";
 import YarnIcon from "../../assets/icons/yarn.svg";
 import NPMIcon from "../../assets/icons/npm.svg";
+import AppleIcon from "../../assets/icons/logo-apple.svg";
+import WindowsIcon from "../../assets/icons/logo-windows.svg";
+import LinuxIcon from "../../assets/icons/logo-linux.svg";
 
 // CODE SAMPLES ========================================================================================================
 import {
     snippetPageSetupJSX,
     snippetPageSetupCSS,
     snippetStructure,
-    snippetUsage, snippetInstallation,
+    snippetUsage,
+    snippetInstallation,
 } from "../../assets/code-samples/CodeSamples";
 
 const GettingStarted = () => {
     const [isComplexSetupDrawerOpen, setIsComplexSetupDrawerOpen] = useState(false);
+    const [selectedTab, setSelectedTab] = useState("macos-docs");
+
+    useEffect(() => {
+        // Check if we're in a browser environment
+        if (typeof window !== "undefined") {
+            const platform = navigator.platform.toLowerCase();
+            if (platform.includes("win")) {
+                setSelectedTab("windows-docs");
+            } else if (platform.includes("mac")) {
+                setSelectedTab("macos-docs");
+            } else if (platform.includes("linux")) {
+                setSelectedTab("linux-docs");
+            }
+        }
+    }, []);
 
     return (
         <article id="page-getting-started">
@@ -71,162 +90,509 @@ const GettingStarted = () => {
                                 <Heading4>First time coding? Click here.</Heading4>
                             }
                         >
-                            {/* STEP 1 — INSTALL HOMEBREW ////////////////////////////////////////////////////////// */}
-                            <Text marginTop="small" marginBottom="micro">
-                                This might <em>seem</em> scary—but it really is not! You got this! 😊
-                            </Text>
+                            <Tabs
+                                activeTab={selectedTab}
+                                onTabChange={setSelectedTab}
+                                tabs={[
+                                    {
+                                        key     : "macos-docs",
+                                        label   : (
+                                            <Element verticallyCentreItems>
+                                                <AppleIcon />
+                                                <Text marginLeft="nano">Mac OS</Text>
+                                            </Element>
+                                        ),
+                                        content : (
+                                            <>
+                                                {/* STEP 1 — INSTALL HOMEBREW ////////////////////////////////////////////////////////// */}
+                                                <Text marginTop="small" marginBottom="micro">
+                                                    This might <em>seem</em> scary—but it really is not! You got this!
+                                                    😊
+                                                </Text>
 
-                            <Heading6 marginBottom="nano">Step 1 — Install Homebrew</Heading6>
+                                                <Heading6 marginBottom="nano">Step 1 — Install Homebrew</Heading6>
 
-                            <Text marginBottom="micro">
-                                First, you&rsquo;ll need a package manager called <a href="https://brew.sh"
-                                                                                     target="_blank"
-                                                                                     rel="noreferrer">Homebrew &#8599;</a>.
-                                A package manager is a tool that lets you install and manage
-                                software &ldquo;packages&rdquo; on your computer, right from within your terminal.
-                            </Text>
+                                                <Text marginBottom="micro">
+                                                    First, you&rsquo;ll need a package manager called <a
+                                                    href="https://brew.sh"
+                                                    target="_blank"
+                                                    rel="noreferrer">Homebrew &#8599;</a>.
+                                                    A package manager is a tool that lets you install and manage
+                                                    software &ldquo;packages&rdquo; on your computer, right from within
+                                                    your terminal.
+                                                </Text>
 
-                            <ul className="tutorial-steps">
-                                <li>
-                                    Open up the <strong>Terminal</strong> app.<br />
-                                    <Span opacity="60">This is what is called a CLI—a command line interface—no buttons
-                                        or menus, just commands that you type and have the computer execute.</Span>
-                                </li>
-                                <li>
-                                    Copy the below command and paste it into the terminal, and hit Enter.
-                                    <CodeBlock language="bash" showCopyButton>
-                                        /bin/bash -c "$(curl -fsSL
-                                        https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-                                    </CodeBlock>
-                                </li>
-                            </ul>
+                                                <ul className="tutorial-steps">
+                                                    <li>
+                                                        Open up the <strong>Terminal</strong> app.<br />
+                                                        <Span opacity="60">This is what is called a CLI—a command line
+                                                            interface—no buttons
+                                                            or menus, just commands that you type and have the computer
+                                                            execute.</Span>
+                                                    </li>
+                                                    <li>
+                                                        Copy the below command and paste it into the terminal, and hit
+                                                        Enter.
+                                                        <CodeBlock language="bash" showCopyButton>
+                                                            /bin/bash -c "$(curl -fsSL
+                                                            https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+                                                        </CodeBlock>
+                                                    </li>
+                                                </ul>
 
-                            <ul className="tutorial-steps">
-                                <li>
-                                    Enter your password if asked, and follow any instructions you may see on the screen.
-                                </li>
-                                <li>
-                                    Once the installation is complete, you can verify that Homebrew is installed by
-                                    typing this command:
-                                    <CodeBlock language="bash" showCopyButton>
-                                        brew --version
-                                    </CodeBlock>
-                                </li>
-                            </ul>
+                                                <ul className="tutorial-steps">
+                                                    <li>
+                                                        Enter your password if asked, and follow any instructions you
+                                                        may see on the screen.
+                                                    </li>
+                                                    <li>
+                                                        Once the installation is complete, you can verify that Homebrew
+                                                        is installed by
+                                                        typing this command:
+                                                        <CodeBlock language="bash" showCopyButton>
+                                                            brew --version
+                                                        </CodeBlock>
+                                                    </li>
+                                                </ul>
 
-                            <Divider kind="secondary" verticalMargin="tiny" />
+                                                <Divider kind="secondary" verticalMargin="tiny" />
 
-                            {/* STEP 2 — INSTALL NODE.JS /////////////////////////////////////////////////////////// */}
-                            <Heading6 weight="700" marginBottom="nano">Step 2 — Install Node.js</Heading6>
+                                                {/* STEP 2 — INSTALL NODE.JS /////////////////////////////////////////////////////////// */}
+                                                <Heading6 weight="700" marginBottom="nano">Step 2 — Install
+                                                    Node.js</Heading6>
 
-                            <Text marginBottom="micro">
-                                Next, we&rsquo;ll need to install Node.js on your computer. <Span opacity="60">Most
-                                modern web apps are built with Javascript, or JS. You can think of Node.js as the box
-                                within which you can build and run those web apps.</Span>
-                            </Text>
+                                                <Text marginBottom="micro">
+                                                    Next, we&rsquo;ll need to install Node.js on your computer. <Span
+                                                    opacity="60">Most
+                                                    modern web apps are built with Javascript, or JS. You can think of
+                                                    Node.js as the box
+                                                    within which you can build and run those web apps.</Span>
+                                                </Text>
 
-                            <ul className="tutorial-steps">
-                                <li>Visit the <a href="https://nodejs.org/en/download/prebuilt-binaries" target="_blank"
-                                                 rel="noreferrer">NodeJS downloads &#8599;</a> page.<br />
-                                    That link should already point your to appropriate version for your machine. If not,
-                                    pick the latest Long Term Support(LTS) version.
-                                </li>
+                                                <ul className="tutorial-steps">
+                                                    <li>Visit the <a
+                                                        href="https://nodejs.org/en/download/prebuilt-binaries"
+                                                        target="_blank"
+                                                        rel="noreferrer">NodeJS downloads &#8599;</a> page.<br />
+                                                        That link should already point your to appropriate version for
+                                                        your machine. If not,
+                                                        pick the latest Long Term Support(LTS) version.
+                                                    </li>
 
-                                <li>
-                                    Verify installation by opening your terminal and running:
-                                    <CodeBlock language="bash" showCopyButton>node --version</CodeBlock>
-                                </li>
+                                                    <li>
+                                                        Verify installation by opening your terminal and running:
+                                                        <CodeBlock language="bash" showCopyButton>node
+                                                            --version</CodeBlock>
+                                                    </li>
 
-                                <li>
-                                    And then:
-                                    <CodeBlock language="bash" showCopyButton>npm --version</CodeBlock>
-                                    Both should display a version number.
-                                </li>
-                            </ul>
+                                                    <li>
+                                                        And then:
+                                                        <CodeBlock language="bash" showCopyButton>npm
+                                                            --version</CodeBlock>
+                                                        Both should display a version number.
+                                                    </li>
+                                                </ul>
 
-                            <Divider kind="secondary" verticalMargin="tiny" />
+                                                <Divider kind="secondary" verticalMargin="tiny" />
 
-                            {/* STEP 3 — INSTALL PNPM ////////////////////////////////////////////////////////////// */}
-                            <Heading6 weight="700" marginBottom="nano">Step 3 — Install pnpm</Heading6>
+                                                {/* STEP 3 — INSTALL PNPM ////////////////////////////////////////////////////////////// */}
+                                                <Heading6 weight="700" marginBottom="nano">Step 3 — Install
+                                                    pnpm</Heading6>
 
-                            <Text marginBottom="micro">
-                                Now, we need to install <code>pnpm</code>. <Span opacity="60">This is also a package
-                                manager, but we&rsquo;ll just for your project dependencies, not for your entire
-                                system.</Span>
-                            </Text>
+                                                <Text marginBottom="micro">
+                                                    Now, we need to install <code>pnpm</code>. <Span opacity="60">This
+                                                    is also a package
+                                                    manager, but we&rsquo;ll just for your project dependencies, not for
+                                                    your entire
+                                                    system.</Span>
+                                                </Text>
 
-                            <ul className="tutorial-steps">
-                                <li>
-                                    Open your terminal and run:
-                                    <CodeBlock language="bash" showCopyButton>brew install pnpm</CodeBlock>
-                                </li>
-                            </ul>
+                                                <ul className="tutorial-steps">
+                                                    <li>
+                                                        Open your terminal and run:
+                                                        <CodeBlock language="bash" showCopyButton>brew install
+                                                            pnpm</CodeBlock>
+                                                    </li>
+                                                </ul>
 
-                            <Divider kind="secondary" verticalMargin="tiny" />
+                                                <Divider kind="secondary" verticalMargin="tiny" />
 
-                            {/* STEP 4 — INSTALL NODE.JS /////////////////////////////////////////////////////////// */}
-                            <Heading6 weight="700" marginBottom="nano">Step 4 — Download starter project</Heading6>
+                                                {/* STEP 4 — INSTALL NODE.JS /////////////////////////////////////////////////////////// */}
+                                                <Heading6 weight="700" marginBottom="nano">Step 4 — Download starter
+                                                    project</Heading6>
 
-                            <Text marginBottom="micro">
-                                Almost there. We&rsquo;ll need a boilerplate setup. <Span opacity="60">A boilerplate is
-                                a starting point for a new project, like a template with everything you need to
-                                begin coding.</Span>
-                            </Text>
+                                                <Text marginBottom="micro">
+                                                    Almost there. We&rsquo;ll need a boilerplate setup. <Span
+                                                    opacity="60">A boilerplate is
+                                                    a starting point for a new project, like a template with everything
+                                                    you need to
+                                                    begin coding.</Span>
+                                                </Text>
 
-                            <ul className="tutorial-steps">
-                                <li>Visit the <a href="https://github.com/fictoan/next-boilerplate" target="_blank"
-                                                 rel="noreferrer">Fictoan boilerplate &#8599;</a> page on Github.
-                                </li>
+                                                <ul className="tutorial-steps">
+                                                    <li>Visit the <a href="https://github.com/fictoan/next-boilerplate"
+                                                                     target="_blank"
+                                                                     rel="noreferrer">Fictoan
+                                                        boilerplate &#8599;</a> page on Github.
+                                                    </li>
 
-                                <li>
-                                    Click the green <code>Code</code> dropdown, and click on <code>Download
-                                    ZIP</code> link. Extract this file to your computer.
-                                </li>
+                                                    <li>
+                                                        Click the green <code>Code</code> dropdown, and click on <code>Download
+                                                        ZIP</code> link. Extract this file to your computer.
+                                                    </li>
 
-                                <li>
-                                    In your terminal, navigate to the directory you extracted the file to, and run:
-                                    <CodeBlock language="bash" showCopyButton marginBottom="nano">
-                                        pnpm install
-                                    </CodeBlock>
-                                    This will install all the dependencies the project needs to run.
-                                </li>
+                                                    <li>
+                                                        In your terminal, navigate to the directory you extracted the
+                                                        file to, and run:
+                                                        <CodeBlock language="bash" showCopyButton marginBottom="nano">
+                                                            pnpm install
+                                                        </CodeBlock>
+                                                        This will install all the dependencies the project needs to run.
+                                                    </li>
 
-                                <li>
-                                    Once the installation is complete, then run:
-                                    <CodeBlock language="bash" showCopyButton marginBottom="nano">pnpm dev</CodeBlock>
-                                    This should open a new tab in your default browser, go
-                                    to <code>http://localhost:3000</code> and display the home page of the boilerplate.
-                                </li>
-                            </ul>
+                                                    <li>
+                                                        Once the installation is complete, then run:
+                                                        <CodeBlock language="bash" showCopyButton marginBottom="nano">pnpm
+                                                            dev</CodeBlock>
+                                                        This should open a new tab in your default browser, go
+                                                        to <code>http://localhost:3000</code> and display the home page
+                                                        of the boilerplate.
+                                                    </li>
+                                                </ul>
 
-                            <Divider kind="secondary" verticalMargin="tiny" />
+                                                <Divider kind="secondary" verticalMargin="tiny" />
 
-                            {/* STEP 3 — INSTALL IDE /////////////////////////////////////////////////////////////// */}
-                            <Heading6 weight="700" marginBottom="nano">Step 5 — Install VSCode</Heading6>
+                                                {/* STEP 3 — INSTALL IDE /////////////////////////////////////////////////////////////// */}
+                                                <Heading6 weight="700" marginBottom="nano">Step 5 — Install
+                                                    VSCode</Heading6>
 
-                            <Text marginBottom="micro">
-                                Last step, we&rsquo;ll need an IDE. <Span opacity="60">An IDE, or Integrated Development
-                                Environment, is a program that allows you to write, compile, and debug code.</Span>
-                            </Text>
+                                                <Text marginBottom="micro">
+                                                    Last step, we&rsquo;ll need an IDE. <Span opacity="60">An IDE, or
+                                                    Integrated Development
+                                                    Environment, is a program that allows you to write, compile, and
+                                                    debug code.</Span>
+                                                </Text>
 
-                            <ul className="tutorial-steps">
-                                <li>Visit the <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer">
-                                    VSCode &#8599;</a> website. Download and install the latest version.
-                                </li>
+                                                <ul className="tutorial-steps">
+                                                    <li>Visit the <a href="https://code.visualstudio.com/"
+                                                                     target="_blank" rel="noreferrer">
+                                                        VSCode &#8599;</a> website. Download and install the latest
+                                                        version.
+                                                    </li>
 
-                                <li>
-                                    Once installed, go to File &rarr; Open Folder, and select the folder you extracted
-                                    the boilerplate file to. You should now see the code files listed on the left side
-                                    of
-                                    the IDE window.
-                                </li>
+                                                    <li>
+                                                        Once installed, go to File &rarr; Open Folder, and select the
+                                                        folder you extracted
+                                                        the boilerplate file to. You should now see the code files
+                                                        listed on the left side
+                                                        of
+                                                        the IDE window.
+                                                    </li>
 
-                                <li>
-                                    That&rsquo;s it— you&rsquo;re ready to start your coding journey!
-                                </li>
-                            </ul>
+                                                    <li>
+                                                        That&rsquo;s it— you&rsquo;re ready to start your coding
+                                                        journey!
+                                                    </li>
+                                                </ul>
 
-                            <Heading6 weight="400" marginTop="tiny">Good luck and build great things! 🥳</Heading6>
+                                                <Heading6 weight="400" marginTop="tiny">Good luck and build great
+                                                    things! 🥳</Heading6>
+                                            </>
+                                        ),
+                                    },
+                                    {
+                                        key     : "windows-docs",
+                                        label   : (
+                                            <Element verticallyCentreItems>
+                                                <WindowsIcon />
+                                                <Text marginLeft="nano">Windows</Text>
+                                            </Element>
+                                        ),
+                                        content : (
+                                            <>
+                                                <Text marginTop="small" marginBottom="micro">
+                                                    This might <em>seem</em> scary—but it really is not! You got this!
+                                                    😊
+                                                </Text>
+
+                                                <Heading6 marginBottom="nano">Step 1 — Install Node.js</Heading6>
+
+                                                <Text marginBottom="micro">
+                                                    First, we’ll need to install Node.js on your computer. <Span
+                                                    opacity="60">Most modern web apps are built with Javascript, or JS.
+                                                    You can think of Node.js as the box within which you can build and
+                                                    run those web apps.</Span>
+                                                </Text>
+
+                                                <ul className="tutorial-steps">
+                                                    <li>
+                                                        Visit the <a href="https://nodejs.org/en/download"
+                                                                     target="_blank" rel="noreferrer">NodeJS
+                                                        downloads &#8599;</a> page.<br />
+                                                        Download the Windows Installer (.msi) file. Make sure to select
+                                                        the LTS (Long Term Support) version.
+                                                    </li>
+                                                    <li>
+                                                        Run the installer you downloaded and follow the installation
+                                                        wizard’s instructions.
+                                                    </li>
+                                                    <li>
+                                                        Verify installation by opening Command Prompt (cmd) and running:
+                                                        <CodeBlock language="bash" showCopyButton>node
+                                                            --version</CodeBlock>
+                                                    </li>
+                                                    <li>
+                                                        And then:
+                                                        <CodeBlock language="bash" showCopyButton>npm
+                                                            --version</CodeBlock>
+                                                        Both should display a version number.
+                                                    </li>
+                                                </ul>
+
+                                                <Divider kind="secondary" verticalMargin="tiny" />
+
+                                                <Heading6 weight="700" marginBottom="nano">Step 2 — Install
+                                                    pnpm</Heading6>
+
+                                                <Text marginBottom="micro">
+                                                    Now, we need to install <code>pnpm</code>. <Span opacity="60">This
+                                                    is a package manager that we’ll use for your project
+                                                    dependencies.</Span>
+                                                </Text>
+
+                                                <ul className="tutorial-steps">
+                                                    <li>
+                                                        Open PowerShell as Administrator and run:
+                                                        <CodeBlock language="bash" showCopyButton>iwr
+                                                            https://get.pnpm.io/install.ps1 -useb | iex</CodeBlock>
+                                                    </li>
+                                                    <li>
+                                                        Close and reopen PowerShell, then verify the installation by
+                                                        running:
+                                                        <CodeBlock language="bash" showCopyButton>pnpm
+                                                            --version</CodeBlock>
+                                                    </li>
+                                                </ul>
+
+                                                <Divider kind="secondary" verticalMargin="tiny" />
+
+                                                <Heading6 weight="700" marginBottom="nano">Step 3 — Download starter
+                                                    project</Heading6>
+
+                                                <Text marginBottom="micro">
+                                                    Almost there. We’ll need a boilerplate setup. <Span opacity="60">A
+                                                    boilerplate is a starting point for a new project, like a template
+                                                    with everything you need to begin coding.</Span>
+                                                </Text>
+
+                                                <ul className="tutorial-steps">
+                                                    <li>
+                                                        Visit the <a href="https://github.com/fictoan/next-boilerplate"
+                                                                     target="_blank" rel="noreferrer">Fictoan
+                                                        boilerplate &#8599;</a> page on Github.
+                                                    </li>
+                                                    <li>
+                                                        Click the green <code>Code</code> dropdown, and click on <code>Download
+                                                        ZIP</code> link. Extract this file to your computer.
+                                                    </li>
+                                                    <li>
+                                                        Open PowerShell, navigate to the directory you extracted the
+                                                        file to, and run:
+                                                        <CodeBlock language="bash" showCopyButton marginBottom="nano">pnpm
+                                                            install</CodeBlock>
+                                                        This will install all the dependencies the project needs to run.
+                                                    </li>
+                                                    <li>
+                                                        Once the installation is complete, then run:
+                                                        <CodeBlock language="bash" showCopyButton marginBottom="nano">pnpm
+                                                            dev</CodeBlock>
+                                                        This should open a new tab in your default browser, go
+                                                        to <code>http://localhost:3000</code> and display the home page
+                                                        of the boilerplate.
+                                                    </li>
+                                                </ul>
+
+                                                <Divider kind="secondary" verticalMargin="tiny" />
+
+                                                <Heading6 weight="700" marginBottom="nano">Step 4 — Install
+                                                    VSCode</Heading6>
+
+                                                <Text marginBottom="micro">
+                                                    Last step, we’ll need an IDE. <Span opacity="60">An IDE, or
+                                                    Integrated Development Environment, is a program that allows you to
+                                                    write, compile, and debug code.</Span>
+                                                </Text>
+
+                                                <ul className="tutorial-steps">
+                                                    <li>
+                                                        Visit the <a href="https://code.visualstudio.com/"
+                                                                     target="_blank"
+                                                                     rel="noreferrer">VSCode &#8599;</a> website.
+                                                        Download and install the latest version for Windows.
+                                                    </li>
+                                                    <li>
+                                                        Once installed, go to File → Open Folder, and select the folder
+                                                        you extracted the boilerplate file to. You should now see the
+                                                        code files listed on the left side of the IDE window.
+                                                    </li>
+                                                    <li>
+                                                        That's it— you're ready to start your coding journey!
+                                                    </li>
+                                                </ul>
+
+                                                <Heading6 weight="400" marginTop="tiny">Good luck and build great
+                                                    things! 🥳</Heading6>
+                                            </>
+                                        ),
+                                    },
+                                    {
+                                        key     : "linux-docs",
+                                        label   : (
+                                            <Element verticallyCentreItems>
+                                                <LinuxIcon />
+                                                <Text marginLeft="nano">Linux</Text>
+                                            </Element>
+                                        ),
+                                        content : (
+                                            <>
+                                                <Text marginTop="small" marginBottom="micro">
+                                                    This might <em>seem</em> scary—but it really is not! Plus, if you’re using Linux—you obviously got this!
+                                                    😊
+                                                </Text>
+
+                                                <Heading6 marginBottom="nano">Step 1 — Install Node.js</Heading6>
+
+                                                <Text marginBottom="micro">
+                                                    First, we’ll need to install Node.js on your computer. <Span
+                                                    opacity="60">Most modern web apps are built with Javascript, or JS.
+                                                    You can think of Node.js as the box within which you can build and
+                                                    run those web apps.</Span>
+                                                </Text>
+
+                                                <ul className="tutorial-steps">
+                                                    <li>
+                                                        Open your terminal and run these commands:
+                                                        <CodeBlock language="bash" showCopyButton>
+                                                            curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E
+                                                            bash -
+                                                            sudo apt-get install -y nodejs
+                                                        </CodeBlock>
+                                                    </li>
+                                                    <li>
+                                                        Verify installation by running:
+                                                        <CodeBlock language="bash" showCopyButton>node
+                                                            --version</CodeBlock>
+                                                    </li>
+                                                    <li>
+                                                        And then:
+                                                        <CodeBlock language="bash" showCopyButton>npm
+                                                            --version</CodeBlock>
+                                                        Both should display a version number.
+                                                    </li>
+                                                </ul>
+
+                                                <Divider kind="secondary" verticalMargin="tiny" />
+
+                                                <Heading6 weight="700" marginBottom="nano">Step 2 — Install
+                                                    pnpm</Heading6>
+
+                                                <Text marginBottom="micro">
+                                                    Now, we need to install <code>pnpm</code>. <Span opacity="60">This
+                                                    is a package manager that we’ll use for your project
+                                                    dependencies.</Span>
+                                                </Text>
+
+                                                <ul className="tutorial-steps">
+                                                    <li>
+                                                        Run this command:
+                                                        <CodeBlock language="bash" showCopyButton>
+                                                            curl -fsSL https://get.pnpm.io/install.sh | sh -
+                                                        </CodeBlock>
+                                                    </li>
+                                                    <li>
+                                                        Close and reopen your terminal, then verify the installation:
+                                                        <CodeBlock language="bash" showCopyButton>pnpm
+                                                            --version</CodeBlock>
+                                                    </li>
+                                                </ul>
+
+                                                <Divider kind="secondary" verticalMargin="tiny" />
+
+                                                <Heading6 weight="700" marginBottom="nano">Step 3 — Download starter
+                                                    project</Heading6>
+
+                                                <Text marginBottom="micro">
+                                                    Almost there. We’ll need a boilerplate setup. <Span opacity="60">A
+                                                    boilerplate is a starting point for a new project, like a template
+                                                    with everything you need to begin coding.</Span>
+                                                </Text>
+
+                                                <ul className="tutorial-steps">
+                                                    <li>
+                                                        Visit the <a href="https://github.com/fictoan/next-boilerplate"
+                                                                     target="_blank" rel="noreferrer">Fictoan
+                                                        boilerplate &#8599;</a> page on Github.
+                                                    </li>
+                                                    <li>
+                                                        Click the green <code>Code</code> dropdown, and click on <code>Download
+                                                        ZIP</code> link. Extract this file to your computer.
+                                                    </li>
+                                                    <li>
+                                                        In your terminal, navigate to the directory you extracted the
+                                                        file to, and run:
+                                                        <CodeBlock language="bash" showCopyButton marginBottom="nano">
+                                                            pnpm install
+                                                        </CodeBlock>
+                                                        This will install all the dependencies the project needs to run.
+                                                    </li>
+                                                    <li>
+                                                        Once the installation is complete, then run:
+                                                        <CodeBlock language="bash" showCopyButton marginBottom="nano">pnpm
+                                                            dev</CodeBlock>
+                                                        This should open a new tab in your default browser, go
+                                                        to <code>http://localhost:3000</code> and display the home page
+                                                        of the boilerplate.
+                                                    </li>
+                                                </ul>
+
+                                                <Divider kind="secondary" verticalMargin="tiny" />
+
+                                                <Heading6 weight="700" marginBottom="nano">Step 4 — Install
+                                                    VSCode</Heading6>
+
+                                                <Text marginBottom="micro">
+                                                    Last step, we’ll need an IDE. <Span opacity="60">An IDE, or
+                                                    Integrated Development Environment, is a program that allows you to
+                                                    write, compile, and debug code.</Span>
+                                                </Text>
+
+                                                <ul className="tutorial-steps">
+                                                    <li>
+                                                        For Ubuntu/Debian-based systems:
+                                                        <CodeBlock language="bash" showCopyButton>
+                                                            sudo apt-get install code
+                                                        </CodeBlock>
+                                                        For other distributions, visit the <a
+                                                        href="https://code.visualstudio.com/" target="_blank"
+                                                        rel="noreferrer">VSCode &#8599;</a> website.
+                                                    </li>
+                                                    <li>
+                                                        Once installed, go to File → Open Folder, and select the folder
+                                                        you extracted the boilerplate file to. You should now see the
+                                                        code files listed on the left side of the IDE window.
+                                                    </li>
+                                                    <li>
+                                                        That's it— you're ready to start your coding journey!
+                                                    </li>
+                                                </ul>
+
+                                                <Heading6 weight="400" marginTop="tiny">Good luck and build great
+                                                    things! 🥳</Heading6>
+                                            </>
+                                        ),
+                                    },
+                                ]}
+                            />
                         </Accordion>
                     </Portion>
                 </Row>
