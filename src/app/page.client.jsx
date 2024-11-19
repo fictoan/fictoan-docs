@@ -159,36 +159,51 @@ const HomePage = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* MANIFESTO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row horizontalPadding="medium" verticalMargin="small">
-                <Portion>
-                    <Div className="manifesto-card" shadow="soft">
-                        <Div className="manifesto-card-content">
-                            <Row marginBottom="none">
-                                <Portion desktopSpan="half">
-                                    <Heading4 textColour="blue-light30" marginBottom="micro">
-                                        We want to blur the lines between designers and developers.
-                                    </Heading4>
+            <Section id="manifesto" bgColour="violet-light70" verticalPadding="medium">
+                <Row horizontalPadding="medium" marginBottom="none">
+                    <Portion>
+                        <Div className="manifesto-card" shadow="soft">
+                            <Div className="manifesto-card-content">
+                                <Row marginBottom="none">
+                                    <Portion desktopSpan="half">
+                                        <Heading4 textColour="blue-light30" marginBottom="micro">
+                                            We want to blur the lines between designers and developers.
+                                        </Heading4>
 
-                                    <Text size="large">
                                         <Link href="/manifesto">
-                                            Read our manifesto&nbsp;&rarr;
+                                            <Text size="large" textColour="amber">
+                                                Read our manifesto&nbsp;&rarr;
+                                            </Text>
                                         </Link>
-                                    </Text>
-                                </Portion>
-                            </Row>
+                                    </Portion>
+                                </Row>
 
-                            <ManifestoIcon />
+                                <ManifestoIcon />
+                            </Div>
+
+                            <Div id="manifesto-card-bg" />
                         </Div>
-
-                        <Div id="manifesto-card-bg" />
-                    </Div>
-                </Portion>
-            </Row>
+                    </Portion>
+                </Row>
+            </Section>
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* COMPONENT GRID */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <ComponentGrid />
+            <Section id="component-grid" verticalPadding="medium">
+                <Row horizontalPadding="medium">
+                    <Portion>
+                        <Heading4 weight="400" marginBottom="nano">
+                            Some components
+                        </Heading4>
+                    </Portion>
+
+                    <Portion>
+                        <ComponentGrid />
+                        <Heading4 weight="400" marginTop="micro">...and many more.</Heading4>
+                    </Portion>
+                </Row>
+            </Section>
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* VIDEO */}

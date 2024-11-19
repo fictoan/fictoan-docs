@@ -182,7 +182,7 @@
     /* CUSTOM COMPONENTS */
     /* ////////////////////////////////////////////////////////////////////// */
     /* COMPONENT GRID /////////////////////////////////////////////////////// */
-    --component-card-bg                       : rgba(0, 0, 0, 0.4);
+    --component-card-bg                       : var(--slate-dark80);
     --component-card-footer-border            : var(--slate-dark60);
 
     /* SITE HEADER ////////////////////////////////////////////////////////// */

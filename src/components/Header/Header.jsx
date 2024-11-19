@@ -3,9 +3,11 @@
 import React from "react";
 import Link from "next/link";
 
-import { Badge, Div, Header, Heading5 } from "fictoan-react";
+import { Badge, Div, Header, Heading5, Text } from "fictoan-react";
 
 import "./header.css";
+
+import GithubIcon from "../../assets/icons/github.svg";
 
 export const SiteHeader = ({ toggleSidebarOnMobile }) => {
     const handleMenuToggleClick = (e) => {
@@ -30,7 +32,10 @@ export const SiteHeader = ({ toggleSidebarOnMobile }) => {
                 </Badge>
 
                 <Link href="https://github.com/fictoan/fictoan-react" target="_blank" rel="noopener noreferrer">
-                    Github ↗
+                    <Div id="github-link" verticallyCentreItems>
+                        <GithubIcon />
+                        Github ↗
+                    </Div>
                 </Link>
             </Div>
 

@@ -98,6 +98,7 @@
     --sidebar-bg                              : var(--grey-light90);
     --sidebar-header-bg                       : var(--grey-light90);
     --sidebar-header-border-bottom            : var(--grey-light70);
+    --sidebar-border                          : var(--grey-light60);
 
     --sidebar-item-text-colour-default        : var(--grey-dark20);
     --sidebar-item-icon-stroke-default        : var(--grey-light40);
@@ -114,8 +115,19 @@
     --sidebar-footer-bg                       : var(--grey-light90);
     --sidebar-footer-border-top               : var(--grey-light70);
 
+
+    /* SWITCH /////////////////////////////////////////////////////////////// */
+    --switch-bg-default                       : var(--slate-dark40);
+    --switch-bg-hover                         : var(--slate-dark20);
+    --switch-bg-checked                       : var(--hue);
+
+    --switch-slider-bg-default                : var(--white);
+    --switch-slider-bg-hover                  : var(--white);
+    --switch-slider-bg-checked                : var(--white);
+    --switch-slider-bg-disabled               : var(--slate-light40);
+
     /* TABLE //////////////////////////////////////////////////////////////// */
-    --table-bg                                : var(--slate-light);
+    --table-bg                                : var(--slate-light10);
     --table-border                            : var(--slate-dark60);
     --table-font-family                       : var(--paragraph-font);
     --table-text                              : var(--paragraph-text-colour);
@@ -141,16 +153,6 @@
     --heading-text-colour                     : var(--slate-dark60);
     --heading-size-multiplier                 : 1.2;
     --heading-line-height                     : 1.2;
-
-    /* SWITCH /////////////////////////////////////////////////////////////// */
-    --switch-bg-default                       : var(--slate-dark40);
-    --switch-bg-hover                         : var(--slate-dark20);
-    --switch-bg-checked                       : var(--hue);
-
-    --switch-slider-bg-default                : var(--white);
-    --switch-slider-bg-hover                  : var(--white);
-    --switch-slider-bg-checked                : var(--white);
-    --switch-slider-bg-disabled               : var(--slate-light40);
 
     /* ////////////////////////////////////////////////////////////////////// */
     /* CUSTOM COMPONENTS */

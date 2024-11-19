@@ -35,6 +35,8 @@
     }
 
     /* GRID ITEMS =========================================================== */
+    #type-card { grid-area : type; }
+
     #notification-card { grid-area : notification; }
 
     #input-card { grid-area : input; }
@@ -104,7 +106,6 @@
     /* CARD COMMON CLASSES ================================================== */
     .component-wrapper {
         background-color : var(--component-card-bg);
-        backdrop-filter  : blur(4px);
         overflow         : hidden;
     }
 
