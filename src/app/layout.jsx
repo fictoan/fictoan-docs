@@ -1,4 +1,3 @@
-// app/layout.tsx
 import { RootLayoutClient } from "./layout.client";
 
 export default function RootLayout({ children }) {

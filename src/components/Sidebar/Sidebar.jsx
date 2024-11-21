@@ -36,7 +36,7 @@ import ColourIcon from "../../assets/icons/water.svg";
 import DividerIcon from "../../assets/icons/hrule.svg";
 import FormWrapperIcon from "../../assets/icons/form-wrapper.svg";
 import HomeIcon from "../../assets/icons/home.svg";
-import InfoPanelIcon from "../../assets/icons/info-panel.svg";
+import InfoPanelIcon from "../../assets/icons/drawer.svg";
 import InputFieldIcon from "../../assets/icons/input.svg";
 import ListBoxIcon from "../../assets/icons/list-box.svg";
 import LayoutIcon from "../../assets/icons/layout.svg";

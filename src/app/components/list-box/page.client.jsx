@@ -89,7 +89,7 @@ const ListBoxDocs = () => {
                         as="div"
                         padding="small"
                         shape="rounded"
-                        bgColor="slate-light-80"
+                        bgColor="slate-light80"
                         data-centered-children
                     >
                         <ListBox
