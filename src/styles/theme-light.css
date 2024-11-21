@@ -94,6 +94,10 @@
     --input-icon-focus                        : var(--hue);
     --input-icon-valid                        : var(--green-dark30);
 
+    /* KEYBOARD ///////////////////////////////////////////////////////////// */
+    --kbd-bg                                  : var(--slate-light70);
+    --kbd-text                                : var(--slate-light10);
+
     /* SIDEBAR ////////////////////////////////////////////////////////////// */
     --sidebar-bg                              : var(--grey-light90);
     --sidebar-header-bg                       : var(--grey-light90);
@@ -179,4 +183,13 @@
     --usp-card-4-border                       : var(--violet-light50);
     --usp-card-5-bg                           : var(--teal-light70);
     --usp-card-5-border                       : var(--teal-light50);
+
+    /* SEARCH /////////////////////////////////////////////////////////////// */
+    --search-input-bg                         : var(--grey-light90);
+    --search-input-border                     : var(--grey-light40);
+    --search-input-text                       : var(--slate);
+
+    --search-result-item-bg-default           : var(--slate-dark80);
+    --search-result-item-bg-hover             : var(--blue-dark80);
+    --search-result-item-border-hover         : var(--blue-dark60);
 }

@@ -98,8 +98,9 @@
     --input-icon-valid                        : var(--green-dark30);
 
     /* KEYBOARD ///////////////////////////////////////////////////////////// */
-    --kbd-bg                                  : var(--slate-light10);
-    --kbd-text                                : var(--slate-dark30);
+    --kbd-bg                                  : var(--black);
+    --kbd-text                                : var(--slate-light10);
+    --kbd-shadow                              : var(--transparent);
 
     /* LIST BOX ///////////////////////////////////////////////////////////// */
     --list-box-badge-bg                       : var(--slate-dark40);
@@ -108,7 +109,7 @@
     /* MODAL //////////////////////////////////////////////////////////////// */
     --modal-backdrop-bg                       : var(--amber);
     --modal-backdrop-opacity                  : 0.8;
-    --modal-backdrop-blur                     : 25px;
+    --modal-backdrop-blur                     : 4px;
 
     /* OPTION CARDS ///////////////////////////////////////////////////////// */
     --option-card-border-width                : var(--global-border-width);
@@ -205,4 +206,13 @@
     --usp-card-4-border                       : var(--violet-dark50);
     --usp-card-5-bg                           : var(--teal-dark70);
     --usp-card-5-border                       : var(--teal-dark50);
+
+    /* SEARCH /////////////////////////////////////////////////////////////// */
+    --search-input-bg                         : var(--slate-dark80);
+    --search-input-border                     : var(--slate-dark70);
+    --search-input-text                       : var(--slate);
+
+    --search-result-item-bg-default           : var(--slate-dark80);
+    --search-result-item-bg-hover             : var(--blue-dark80);
+    --search-result-item-border-hover         : var(--blue-dark20);
 }

@@ -11,7 +11,7 @@ export const listBoxProps = {
         },
         "list-box-badge-text"          : {
             type         : "reference",
-            defaultValue : "slate-dark70",
+            defaultValue : "slate-light70",
         },
     }
 };

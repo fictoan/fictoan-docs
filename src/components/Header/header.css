@@ -1,5 +1,6 @@
 #site-header {
     display         : flex;
+    flex-direction  : row;
     border-bottom   : 1px solid var(--site-header-border);
     position        : sticky;
     top             : 0;
@@ -10,15 +11,21 @@
     align-items     : center;
     justify-content : space-between;
 
+    /* MOBILE MENU TOGGLE /////////////////////////////////////////////////// */
     #menu-toggle * {
         line-height : 9px;
         cursor      : pointer;
     }
 
-    .links-wrapper {
-        display        : flex;
-        flex-direction : column;
-        gap            : 2px;
+    /* LINKS //////////////////////////////////////////////////////////////// */
+    #links-wrapper {
+        display     : flex;
+        align-items : center;
+
+        a {
+            font-weight : normal;
+            color       : var(--paragraph-text-colour);
+        }
     }
 
     #github-link svg {
@@ -28,17 +35,11 @@
         margin-right : 6px;
     }
 
-    a {
-        font-weight : normal;
-        color       : var(--paragraph-text-colour);
+    /* SEARCH /////////////////////////////////////////////////////////////// */
+    #search-wrapper {
+        display         : flex;
+        justify-content : center;
     }
 
-    input {
-        padding   : 6px 12px;
-        font-size : 14px;
-    }
-
-    #wip-badge {
-        margin-left : auto;
-    }
+    /* WIP BADGE //////////////////////////////////////////////////////////// */
 }

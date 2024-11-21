@@ -26,7 +26,7 @@ import {
     Checkbox,
     Range,
     Select,
-    CodeBlock, Modal,
+    CodeBlock,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
