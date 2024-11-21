@@ -469,7 +469,7 @@ export const ComponentGrid = () => {
                         >
                             <Row marginBottom="none">
                                 {sampleOptionCards.map((card) => (
-                                    <Portion desktopSpan="one-third" key={card.id}>
+                                    <Portion desktopSpan="one-third" mobileSpan="half" key={card.id}>
                                         <OptionCard
                                             id={card.id}
                                             padding="small" shape="rounded"

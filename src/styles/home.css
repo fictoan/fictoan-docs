@@ -31,12 +31,12 @@
         position : relative;
 
         @media screen and (max-width : 600px) {
-            [data-row] { gap: 12px 4px; }
+            [data-row] { gap : 12px 4px; }
         }
     }
 
     .usp-card {
-        height          : 240px;
+        min-height      : 240px;
         display         : flex;
         flex-direction  : column;
         justify-content : space-between;
@@ -46,8 +46,8 @@
     }
 
     #fictoan-bg {
-        position  : sticky;
-        top       : 40vh;
+        position  : absolute;
+        bottom    : -10%;
         left      : 8%;
         width     : 100%;
         height    : auto;
@@ -56,10 +56,11 @@
         opacity   : 0.16;
         filter    : saturate(150%);
 
-        @media screen and (max-width : 600px) {
-            bottom : 0;
-            top    : unset;
-            transform: scale(2) rotate(-24deg);
+        @media screen and (max-width : 900px) {
+            position  : sticky;
+            bottom    : 0;
+            top       : unset;
+            transform : scale(2) rotate(-24deg);
         }
     }
 
