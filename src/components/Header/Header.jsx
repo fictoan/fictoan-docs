@@ -13,6 +13,7 @@ import {
     Header,
     Heading5,
     Text,
+    Span
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -48,13 +49,12 @@ export const SiteHeader = ({ toggleSidebarOnMobile }) => {
 
                 <Div id="links-wrapper">
                     {/* VERSION BADGE =============================================================================== */}
-                    <Text weight="600" marginRight="micro">v1.7.2</Text>
+                    <Text weight="600" marginRight="micro">v1.8.0</Text>
 
                     {/* LOGO ======================================================================================== */}
                     <Link href="https://github.com/fictoan/fictoan-react" target="_blank" rel="noopener noreferrer">
                         <Div id="github-link" verticallyCentreItems>
                             <GithubIcon />
-                            Github ↗
                         </Div>
                     </Link>
                 </Div>

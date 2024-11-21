@@ -26,7 +26,7 @@ import {
 import "./search-bar.css";
 
 // ASSETS ==============================================================================================================
-import CodeIcon from "../../../assets/icons/parenthesis.svg";
+import SearchIcon from "../../../assets/icons/search.svg";
 
 // DATA ================================================================================================================
 import { generateSearchIndex, searchConfig } from "./searchIndex";
@@ -203,17 +203,27 @@ export const SearchBar = () => {
     return (
         <>
             {/* HEADER SEARCH INPUT ================================================================================ */}
-            <InputField
-                id="header-search-input"
-                className="search-input"
-                type="search"
-                value={searchTerm}
-                onChange={(e) => handleSearch(e.target.value)}
-                placeholder="Search components and variables"
+            <Div
+                showOnlyOnMobile showOnlyOnTabletPortrait
                 onClick={() => showModal("search-modal")}
-            />
+                role="button"
+            >
+                <SearchIcon id="header-search-icon" />
+            </Div>
 
-            <kbd>/</kbd>
+            <Div hideOnMobile hideOnTabletPortrait verticallyCentreItems>
+                <InputField
+                    id="header-search-input"
+                    className="search-input"
+                    type="search"
+                    value={searchTerm}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    placeholder="Search components and variables"
+                    onClick={() => showModal("search-modal")}
+                />
+
+                <kbd>/</kbd>
+            </Div>
 
             {/* SEARCH MODAL ======================================================================================= */}
             <Modal

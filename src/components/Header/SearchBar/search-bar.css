@@ -17,6 +17,15 @@ kbd {
     text-shadow : none !important;
 }
 
+#header-search-icon {
+    width        : 24px;
+    height       : 24px;
+    flex-shrink  : 0;
+    stroke       : var(--sidebar-item-icon-stroke-default);
+    stroke-width : var(--sidebar-item-icon-stroke-width-default);
+    fill         : none;
+}
+
 /* SEARCH MODAL ///////////////////////////////////////////////////////////// */
 #search-modal {
     width         : 600px;
