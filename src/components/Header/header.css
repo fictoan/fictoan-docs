@@ -11,6 +11,8 @@
     align-items     : center;
     justify-content : space-between;
 
+    > * { line-height: 1; }
+
     /* MOBILE MENU TOGGLE /////////////////////////////////////////////////// */
     #menu-toggle * {
         line-height : 9px;

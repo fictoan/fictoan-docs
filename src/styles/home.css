@@ -29,6 +29,10 @@
     /* USP SECTION ////////////////////////////////////////////////////////// */
     #usp-section {
         position : relative;
+
+        @media screen and (max-width : 600px) {
+            [data-row] { gap: 12px 4px; }
+        }
     }
 
     .usp-card {
@@ -42,7 +46,7 @@
     }
 
     #fictoan-bg {
-        position  : absolute;
+        position  : sticky;
         top       : 40vh;
         left      : 8%;
         width     : 100%;
@@ -51,6 +55,12 @@
         transform : rotate(-24deg);
         opacity   : 0.16;
         filter    : saturate(150%);
+
+        @media screen and (max-width : 600px) {
+            bottom : 0;
+            top    : unset;
+            transform: scale(2) rotate(-24deg);
+        }
     }
 
     /* MANIFESTO-CARD ======================================================= */
