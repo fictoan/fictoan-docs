@@ -98,8 +98,7 @@ const HomePage = () => {
 
                             <Text size="large">
                                 Every single configurable aspect of the UI is controlled by a single theme file. Create
-                                as
-                                many as you need, and switch.
+                                as many as you need, and switch.
                             </Text>
                         </Card>
                     </Portion>
@@ -153,7 +152,27 @@ const HomePage = () => {
                             </Text>
                         </Card>
                     </Portion>
+
+                    <Portion desktopSpan="half">
+                        <Card
+                            id="usp-card-5" className="usp-card"
+                            bgColour="teal-dark70" borderColour="teal-dark50"
+                            padding="micro" shape="rounded" shadow="soft"
+                        >
+                            <Heading5 weight="400" opacity="80" marginBottom="nano">
+                                Write little CSS
+                            </Heading5>
+
+                            <Text size="large">
+                                Style everything with meaningful markup and self-explanatory props.
+                            </Text>
+                        </Card>
+                    </Portion>
                 </Row>
+
+                <video id="fictoan-bg" autoPlay muted loop>
+                    <source src="/logo-render1.mp4" />
+                </video>
             </Section>
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -208,9 +227,7 @@ const HomePage = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* VIDEO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* <video id="fictoan-bg" autoPlay muted loop> */}
-            {/*     <source src="/logo-render.mp4" /> */}
-            {/* </video> */}
+
         </article>
     );
 };

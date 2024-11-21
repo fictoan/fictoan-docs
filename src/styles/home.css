@@ -25,16 +25,10 @@
         z-index    : -1;
     }
 
-    #fictoan-bg {
-        position  : fixed;
-        top       : -10vh;
-        left      : 8%;
-        width     : 100%;
-        height    : auto;
-        z-index   : -1;
-        transform : rotate(-40deg);
-        opacity   : 0.16;
-        filter    : saturate(150%);
+
+    /* USP SECTION ////////////////////////////////////////////////////////// */
+    #usp-section {
+        position : relative;
     }
 
     .usp-card {
@@ -42,6 +36,21 @@
         display         : flex;
         flex-direction  : column;
         justify-content : space-between;
+        background      : linear-gradient(135deg, var(--usp-card-gradient-top) 24%, var(--usp-card-gradient-bottom) 80%);
+        border          : 1px solid hsla(0, 0%, 80%, .08);
+        backdrop-filter : blur(24px);
+    }
+
+    #fictoan-bg {
+        position  : absolute;
+        top       : 40vh;
+        left      : 8%;
+        width     : 100%;
+        height    : auto;
+        z-index   : -1;
+        transform : rotate(-24deg);
+        opacity   : 0.16;
+        filter    : saturate(150%);
     }
 
     /* MANIFESTO-CARD ======================================================= */
@@ -54,16 +63,15 @@
         background    : linear-gradient(90deg, var(--indigo), var(--indigo-dark40));
         border-radius : 16px;
         transform     : translateZ(0);
-        box-shadow    :
-                0 0 0 1px var(--blue),
-                0 112px 107px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.27),
-                0 56px 56px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.21),
-                0 32px 32px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.18),
-                0 24px 20px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.15),
-                0 16px 12px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.14),
-                0 8px 8px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.12),
-                0 6px 4px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.09),
-                0 2px 2px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.06);
+        box-shadow    : 0 0 0 1px var(--blue),
+        0 112px 107px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.27),
+        0 56px 56px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.21),
+        0 32px 32px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.18),
+        0 24px 20px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.15),
+        0 16px 12px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.14),
+        0 8px 8px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.12),
+        0 6px 4px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.09),
+        0 2px 2px 0 color(display-p3 0.0745 0.0863 0.1765 / 0.06);
 
         svg {
             position        : absolute;
@@ -104,15 +112,5 @@
         /* Keyframes are defined in globals.css, doesn't work if kept here */
         animation        : border-glow -.64s linear 4s infinite;
         will-change      : transform
-    }
-
-    /* USP SECTION ////////////////////////////////////////////////////////// */
-    #usp-section {
-        background-color : var(--usp-section-bg);
-    }
-
-    .usp-card {
-        background : linear-gradient(135deg, var(--usp-card-gradient-top) 24%, var(--usp-card-gradient-bottom) 80%);
-        border     : 1px solid hsla(0, 0%, 80%, .08);
     }
 }

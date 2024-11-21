@@ -37,7 +37,7 @@
     --code-inline-bg                          : var(--slate-dark70);
     --code-inline-text                        : var(--slate-light40);
 
-    --code-block-font-size                    : 0.8rem;
+    --code-block-font-size                    : 0.98rem;
     --code-block-bg                           : var(--slate-dark80);
 
     /* DIVIDER ////////////////////////////////////////////////////////////// */
@@ -170,6 +170,7 @@
 
     /* TEXT ///////////////////////////////////////////////////////////////// */
     --font-sans-serif                         : "Inter", sans-serif;
+    --font-mono                               : "Geist Mono", monospace;
 
     --paragraph-font-size                     : 1rem;
     --paragraph-line-height                   : 1.6;
@@ -183,7 +184,7 @@
     /* CUSTOM COMPONENTS */
     /* ////////////////////////////////////////////////////////////////////// */
     /* COMPONENT GRID /////////////////////////////////////////////////////// */
-    --component-card-bg                       : var(--slate-dark80);
+    --component-card-bg                       : var(--slate-dark90);
     --component-card-footer-border            : var(--slate-dark60);
 
     /* SITE HEADER ////////////////////////////////////////////////////////// */
@@ -191,10 +192,10 @@
     --site-header-border                      : var(--grey-dark60);
 
     /* USP CARDS //////////////////////////////////////////////////////////// */
-    --usp-section-bg                          : var(--grey-dark90);
+    /*--usp-section-bg                          : var(--grey-dark90);*/
 
-    --usp-card-gradient-top                   : var(--grey-dark90);
-    --usp-card-gradient-bottom                : var(--grey-dark90);
+    --usp-card-gradient-top                   : var(--grey-dark80-opacity40);
+    --usp-card-gradient-bottom                : var(--grey-dark80-opacity40);
 
     --usp-card-1-bg                           : var(--blue-dark70);
     --usp-card-1-border                       : var(--blue-dark30);
