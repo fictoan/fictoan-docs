@@ -9,6 +9,7 @@ import {
     Element,
     Heading1,
     Heading4,
+    Heading6,
     Divider,
     Portion,
     Row,
@@ -22,8 +23,15 @@ import {
     ToastItem,
     ToastsWrapper,
     Button,
-    Range, SidebarHeader, SidebarWrapper, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarFooter,
-    CodeBlock
+    Range,
+    SidebarWrapper,
+    SidebarHeader,
+    SidebarItem,
+    SidebarFooter,
+    CodeBlock,
+    Section,
+    Div,
+    Footer
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -38,21 +46,23 @@ import { useThemeVariables } from "../../../utils/useThemeVariables";
 import { colourOptions } from "../../colour/colours";
 
 // DATA ================================================================================================================
-import { toastProps } from "./config";
+import { sidebarProps } from "./config";
 import FictoanLogo from "@/assets/images/fictoan-logo.svg";
 import FictoanIcon from "@/assets/images/fictoan-icon.svg";
 import ThemeSwitchIcon from "@/assets/icons/theme.svg";
 import HomeIcon from "@/assets/icons/home.svg";
 
-const ToastDocs = () => {
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(toastProps.variables);
+const SidebarDocs = () => {
+    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(sidebarProps.variables);
+
+    const [sidebarState, setSidebarState] = useState("");
+    const headerOnClick = () => {
+        setSidebarState(sidebarState === "collapsed" ? "" : "collapsed");
+    };
 
     // SAMPLE ==========================================================================================================
-    const [showSampleToast, setShowSampleToast] = useState(false);
 
     // CUSTOMISE =======================================================================================================
-    const [selectedPosition, setSelectedPosition] = useState("top");
-    const [secondsToShowFor, setSecondsToShowFor] = useState(100);
 
     // THEME ===========================================================================================================
 
@@ -76,6 +86,73 @@ const ToastDocs = () => {
             <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* EXAMPLE SETUP */}
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Section id="example-setup" marginBottom="huge">
+                {/* BASIC SETUP ==================================================================================== */}
+                <Row className="example-component-row" horizontalPadding="small">
+                    <Portion>
+                        <Heading6 marginBottom="micro">Basic setup</Heading6>
+                    </Portion>
+
+                    <Portion desktopSpan="half">
+                        <Div className="example-component-content">
+                            <CodeBlock language="tsx" marginBottom="nano">
+                                {[
+                                    `// Paste this in your content file`,
+                                    `<SidebarWrapper>`,
+                                    `    <SidebarHeader>`,
+                                    `    </SidebarHeader> \n`,
+                                    `    <SidebarFooter>`,
+                                    `    </SidebarFooter>`,
+                                    `</SidebarWrapper> \n`,
+                                    `<ContentWrapper>`,
+                                    `    {/* Your content */}`,
+                                    `</ContentWrapper>`,
+                                ].filter(Boolean).join("\n")}
+                            </CodeBlock>
+
+                            <Text marginBottom="nano">
+                                You can set this up on your root layout, or any page that needs a sidebar.
+                            </Text>
+                        </Div>
+                    </Portion>
+
+                    <Portion
+                        className="example-component-demo"
+                        desktopSpan="half"
+                    >
+                        <Div padding="small" shape="rounded" bgColour="slate-light80">
+                            <Div id="demo-page-content">
+                                <Div id="demo-sidebar">
+                                    <Header id="demo-sidebar-header">
+                                        <Text textColour="black">
+                                            &lt;SidebarHeader&gt;
+                                        </Text>
+                                    </Header>
+
+                                    <Text textColour="black" align="centre">
+                                        &lt;SidebarWrapper&gt;
+                                    </Text>
+
+                                    <Footer id="demo-sidebar-footer">
+                                        <Text textColour="black">
+                                            &lt;SidebarFooter&gt;
+                                        </Text>
+                                    </Footer>
+                                </Div>
+
+                                <Text textColour="black" margin="micro">
+                                    &lt;ContentWrapper&gt;
+                                </Text>
+                            </Div>
+                        </Div>
+                    </Portion>
+                </Row>
+            </Section>
+
+
+            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="small" className="rendered-component">
@@ -85,9 +162,11 @@ const ToastDocs = () => {
                         as="div" padding="small" shape="rounded" bgColour="slate-light80"
                         data-centered-children isFullHeight
                     >
-                        <SidebarWrapper>
+                        <SidebarWrapper
+                            className={`${sidebarState === "collapsed" ? "collapsed" : ""}`}
+                        >
                             {/* HEADER */}
-                            <SidebarHeader>
+                            <SidebarHeader onClick={headerOnClick}>
                                 <div className="header-logo">
                                     <FictoanLogo />
                                 </div>
@@ -99,89 +178,22 @@ const ToastDocs = () => {
 
                             <Link href="/getting-started">
                                 <SidebarItem>
-                                    <SidebarItemIcon iconType="stroked">
-                                        <HomeIcon />
-                                    </SidebarItemIcon>
-                                    <SidebarItemText weight="400" linkText="Home" />
+                                    <HomeIcon />
+                                    <Text>Home</Text>
                                 </SidebarItem>
                             </Link>
 
                             <SidebarFooter>
                                 <SidebarItem>
-                                    <SidebarItemIcon iconType="stroked">
-                                        <ThemeSwitchIcon />
-                                    </SidebarItemIcon>
-                                    <SidebarItemText weight="400" linkText="Theme" />
+                                    <ThemeSwitchIcon />
+                                    <Text>Theme</Text>
                                 </SidebarItem>
                             </SidebarFooter>
                         </SidebarWrapper>
                     </Element>
                 </Portion>
 
-                {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
                 <Portion desktopSpan="half">
-                    <Form spacing="none">
-                        <Card padding="micro" shape="rounded">
-                            <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
-                                <Text size="large" weight="700" textColour="white">
-                                    Configure props
-                                </Text>
-                            </Header>
-
-                            <Row marginBottom="none">
-                                <Portion>
-                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
-                                        {[
-                                            `// Paste this in your content file`,
-                                            `const [showSampleToast, setShowSampleToast] = useState(false); \n`,
-                                            `<ToastsWrapper`,
-                                            selectedPosition ? `    position="${selectedPosition}"` : null,
-                                            `>`,
-                                            `    <ToastItem`,
-                                            `        showWhen={showSampleToast}`,
-                                            `        secondsToShowFor={${secondsToShowFor}}`,
-                                            `        closeWhen={() => setShowSampleToast(false)}`,
-                                            `    >`,
-                                            `        <Text>Hello there, folks!</Text>`,
-                                            `    </ToastItem>`,
-                                            `</ToastsWrapper>`,
-                                        ].filter(Boolean).join("\n")}
-                                    </CodeBlock>
-                                </Portion>
-
-                                {/* POSITION ======================================================================= */}
-                                <Portion>
-                                    <RadioTabGroup
-                                        id="position" label="Position" name="position"
-                                        options={[
-                                            { id : "position-opt-0", value : "top", label : "top" },
-                                            { id : "position-opt-1", value : "bottom", label : "bottom" },
-                                        ]}
-                                        value={selectedPosition || "right"}
-                                        onChange={() => setSelectedPosition(event.target.value)}
-                                    />
-
-                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
-                                </Portion>
-
-                                {/* SHOW FOR ======================================================================= */}
-                                <Portion desktopSpan="half">
-                                    <Range
-                                        label="Show toast for"
-                                        value={secondsToShowFor}
-                                        onChange={(e) => setSecondsToShowFor(e.target.value)}
-                                        min={1} max={50} step={1}
-                                        suffix={secondsToShowFor > 1 ? " seconds" : " second"}
-                                    />
-                                </Portion>
-                            </Row>
-                        </Card>
-                    </Form>
-                </Portion>
-            </Row>
-
-            <Row horizontalPadding="small">
-                <Portion>
                     <Card padding="micro" shape="rounded">
                         <Header verticallyCentreItems pushItemsToEnds>
                             <Text size="large" weight="700" textColour="white" marginBottom="nano">
@@ -189,58 +201,52 @@ const ToastDocs = () => {
                             </Text>
                         </Header>
 
+                        <CodeBlock
+                            source={cssVariablesList}
+                            language="css"
+                            showCopyButton
+                            marginBottom="micro"
+                        />
+
                         <Row marginBottom="none">
+                            {/* BG COLOUR ================================================================== */}
                             <Portion desktopSpan="half">
-                                <CodeBlock
-                                    source={cssVariablesList}
-                                    language="css"
-                                    showCopyButton
-                                    marginBottom="micro"
+                                <Select
+                                    label="Background"
+                                    options={[{
+                                        label    : "Select a colour",
+                                        value    : "select-a-colour",
+                                        disabled : true,
+                                        selected : true,
+                                    }, ...colourOptions]}
+                                    defaultValue={componentVariables["sidebar-bg"].defaultValue || "select-a-colour"}
+                                    onChange={(e) => handleVariableChange("sidebar-bg", e.target.value)}
+                                    isFullWidth
                                 />
                             </Portion>
 
+                            <Portion desktopSpan="half" />
+
+                            {/* WIDTH ====================================================================== */}
                             <Portion desktopSpan="half">
-                                <Row marginBottom="none">
-                                    {/* BG COLOUR ================================================================== */}
-                                    <Portion desktopSpan="half">
-                                        <Select
-                                            label="Background"
-                                            options={[{
-                                                label    : "Select a colour",
-                                                value    : "select-a-colour",
-                                                disabled : true,
-                                                selected : true,
-                                            }, ...colourOptions]}
-                                            defaultValue={componentVariables["sidebar-bg"].defaultValue || "select-a-colour"}
-                                            onChange={(e) => handleVariableChange("sidebar-bg", e.target.value)}
-                                            isFullWidth
-                                        />
-                                    </Portion>
+                                <Range
+                                    label="Width — default"
+                                    value={componentVariables["sidebar-width-default"].value}
+                                    onChange={(e) => handleVariableChange("sidebar-width-default", e.target.value)}
+                                    suffix={componentVariables["sidebar-width-default"].unit}
+                                    min={48} max={320} step={1}
+                                />
+                            </Portion>
 
-                                    <Portion desktopSpan="half" />
-
-                                    {/* WIDTH ====================================================================== */}
-                                    <Portion desktopSpan="half">
-                                        <Range
-                                            label="Width — default"
-                                            value={componentVariables["sidebar-width-default"].value}
-                                            onChange={(e) => handleVariableChange("sidebar-width-default", e.target.value)}
-                                            suffix={componentVariables["sidebar-width-default"].unit}
-                                            min={48} max={320} step={1}
-                                        />
-                                    </Portion>
-
-                                    {/* WIDTH ====================================================================== */}
-                                    <Portion desktopSpan="half">
-                                        <Range
-                                            label="Width — collapsed"
-                                            value={componentVariables["sidebar-width-default"].value}
-                                            onChange={(e) => handleVariableChange("sidebar-width-default", e.target.value)}
-                                            min={0} max={50} step={1}
-                                            suffix={componentVariables["sidebar-width-default"].unit}
-                                        />
-                                    </Portion>
-                                </Row>
+                            {/* WIDTH ====================================================================== */}
+                            <Portion desktopSpan="half">
+                                <Range
+                                    label="Width — collapsed"
+                                    value={componentVariables["sidebar-width-default"].value}
+                                    onChange={(e) => handleVariableChange("sidebar-width-default", e.target.value)}
+                                    min={0} max={50} step={1}
+                                    suffix={componentVariables["sidebar-width-default"].unit}
+                                />
                             </Portion>
                         </Row>
                     </Card>
@@ -250,4 +256,4 @@ const ToastDocs = () => {
     );
 };
 
-export default ToastDocs;
+export default SidebarDocs;

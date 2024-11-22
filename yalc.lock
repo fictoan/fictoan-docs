@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "fictoan-react": {
+      "signature": "7916676f7ae811838bf3186a44fd79ee",
+      "file": true,
+      "replaced": "^1.8.0"
+    }
+  }
+}

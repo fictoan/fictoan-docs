@@ -8,16 +8,17 @@ import {
     SidebarWrapper,
     SidebarHeader,
     SidebarItem,
-    SidebarItemIcon,
-    SidebarItemText,
     SidebarFooter,
     Divider,
-    Accordion, useTheme,
+    Accordion,
+    useTheme,
+    Text,
 } from "fictoan-react";
 
 // COMPONENTS //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // STYLES //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import "./sidebar.css";
 
 // ASSETS //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import FictoanIcon from "../../assets/images/fictoan-icon.svg";
@@ -80,7 +81,7 @@ export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, se
 
     const closeMobileSidebar = () => {
         setShowSidebarOnMobile(false);
-    }
+    };
 
     const pathname = usePathname();
 
@@ -110,390 +111,295 @@ export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, se
 
             <Link href="/" className={`${pathname === "/" ? "active" : ""}`}>
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <HomeIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Home" />
+                    <HomeIcon />
+                    <Text weight="400">Home</Text>
                 </SidebarItem>
             </Link>
 
             <Link href="/manifesto" className={`${pathname === "/manifesto" ? "active" : ""}`}>
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ManifestoIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Manifesto" />
+                    <ManifestoIcon />
+                    <Text weight="400">Manifesto</Text>
                 </SidebarItem>
             </Link>
 
-            <Divider bgColour="grey-dark70" marginTop="micro" marginBottom="micro" />
+            <Divider kind="tertiary" verticalMargin="micro" />
 
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* OVERVIEW */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <SidebarItem>
-                <SidebarItemIcon iconType="stroked" />
-                <SidebarItemText
-                    linkText="OVERVIEW"
-                    weight="600" textColour="slate-60" size="small"
-                />
+            <SidebarItem hasEmptyIcon>
+                <Text weight="400">OVERVIEW</Text>
             </SidebarItem>
 
             {/* GETTING STARTED ==================================================================================== */}
             <Link href="/getting-started">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <HomeIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Getting started" />
+                    <HomeIcon />
+                    <Text weight="400">Getting started</Text>
                 </SidebarItem>
             </Link>
 
             {/* BASE ELEMENT ======================================================================================= */}
             <Link href="/base-element">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <BaseElementIcon />
-                    </SidebarItemIcon>
+                    <BaseElementIcon />
 
-                    <SidebarItemText weight="400" linkText="Base element" />
+                    <Text weight="400">Base element</Text>
                 </SidebarItem>
             </Link>
 
             {/* THEME ============================================================================================== */}
             <Link href="/theme" className={`${pathname === "/theme" ? "active" : ""}`}>
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ThemeIcon />
-                    </SidebarItemIcon>
+                    <ThemeIcon />
 
-                    <SidebarItemText weight="400" linkText="Theme" />
+                    <Text weight="400">Theme</Text>
                 </SidebarItem>
             </Link>
 
             {/* LAYOUT ============================================================================================= */}
             <Link href="/layout">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <LayoutIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Layout" />
+                    <LayoutIcon />
+                    <Text weight="400">Layout</Text>
                 </SidebarItem>
             </Link>
 
             {/* TYPOGRAPHY ========================================================================================= */}
             <Link href="/typography">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <TypographyIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Typography" />
+                    <TypographyIcon />
+                    <Text weight="400">Typography</Text>
                 </SidebarItem>
             </Link>
 
             {/* COLOUR ============================================================================================= */}
-            <Link href="/colour" className={`${pathname === "/colour" ? "active" : ""}`}>
+            <Link href="/colour">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ColourIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Colour" />
+                    <ColourIcon />
+                    <Text weight="400">Colour</Text>
                 </SidebarItem>
             </Link>
 
-            <Divider bgColour="grey-dark70" marginTop="micro" marginBottom="micro" />
+            <Divider kind="tertiary" verticalMargin="micro" />
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* ELEMENTS */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <SidebarItem>
-                <SidebarItemIcon iconType="stroked" />
-                <SidebarItemText
-                    linkText="COMPONENTS"
-                    weight="600" textColour="slate-60" size="small"
-                />
+            <SidebarItem hasEmptyIcon>
+                <Text weight="400">COMPONENTS</Text>
             </SidebarItem>
 
             {/* ACCORDION ========================================================================================== */}
             <Link href="/components/accordion">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <AccordionIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Accordion" />
+                    <AccordionIcon />
+                    <Text weight="400">Accordion</Text>
                 </SidebarItem>
             </Link>
 
             {/* BADGE ============================================================================================== */}
             <Link href="/components/badge">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <BadgeIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Badge" />
+                    <BadgeIcon />
+                    <Text weight="400">Badge</Text>
                 </SidebarItem>
             </Link>
 
             {/* BREADCRUMBS ======================================================================================== */}
             <Link href="/components/breadcrumbs">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <BreadcrumbsIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Breadcrumbs" />
+                    <BreadcrumbsIcon />
+                    <Text weight="400">Breadcrumbs</Text>
                 </SidebarItem>
             </Link>
 
             {/* BUTTON ============================================================================================= */}
             <Link href="/components/button">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ButtonIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Button" />
+                    <ButtonIcon />
+                    <Text weight="400">Button</Text>
                 </SidebarItem>
             </Link>
 
             {/* CALLOUT ============================================================================================ */}
             <Link href="/components/callout">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <CalloutIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Callout" />
+                    <CalloutIcon />
+                    <Text weight="400">Callout</Text>
                 </SidebarItem>
             </Link>
 
             {/* CARD =============================================================================================== */}
             <Link href="/components/card">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <CardIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Card" />
+                    <CardIcon />
+                    <Text weight="400">Card</Text>
                 </SidebarItem>
             </Link>
 
             {/* CHECKBOX / SWITCH ================================================================================== */}
             <Link href="/components/checkbox">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <CheckboxIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Checkbox / Switch" />
+                    <CheckboxIcon />
+                    <Text weight="400">Checkbox / Switch</Text>
                 </SidebarItem>
             </Link>
 
             {/* CODE BLOCK ========================================================================================= */}
             <Link href="/components/code-block">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <CodeIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Code block" />
+                    <CodeIcon />
+                    <Text weight="400">Code block</Text>
                 </SidebarItem>
             </Link>
 
             {/* DIVIDER ============================================================================================ */}
             <Link href="/components/divider">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <DividerIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Divider" />
+                    <DividerIcon />
+                    <Text weight="400">Divider</Text>
                 </SidebarItem>
             </Link>
 
             {/* DRAWER ============================================================================================= */}
             <Link href="/components/drawer">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <InfoPanelIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Drawer" />
+                    <InfoPanelIcon />
+                    <Text weight="400">Drawer</Text>
                 </SidebarItem>
             </Link>
 
             {/* FORM WRAPPER ======================================================================================= */}
             <Link href="/components/form-wrapper">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <FormWrapperIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Form wrapper" />
+                    <FormWrapperIcon />
+                    <Text weight="400">Form wrapper</Text>
                 </SidebarItem>
             </Link>
 
             {/* INPUT FIELD ======================================================================================== */}
             <Link href="/components/input-field">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <InputFieldIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Input field" />
+                    <InputFieldIcon />
+                    <Text weight="400">Input field</Text>
                 </SidebarItem>
             </Link>
 
             {/* METER ============================================================================================== */}
             <Link href="/components/list-box">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ListBoxIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="List box" />
+                    <ListBoxIcon />
+                    <Text weight="400">List box</Text>
                 </SidebarItem>
             </Link>
 
             {/* METER ============================================================================================== */}
             <Link href="/components/meter">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ProgressBarIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Meter" />
+                    <ProgressBarIcon />
+                    <Text weight="400">Meter</Text>
                 </SidebarItem>
             </Link>
 
             {/* MODAL ============================================================================================== */}
             <Link href="/components/modal">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ModalIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Modal" />
+                    <ModalIcon />
+                    <Text weight="400">Modal</Text>
                 </SidebarItem>
             </Link>
 
             {/* NOTIFICATIONS ====================================================================================== */}
             <Link href="/components/notifications">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <NotificationIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Notifications" />
+                    <NotificationIcon />
+                    <Text weight="400">Notifications</Text>
                 </SidebarItem>
             </Link>
 
             {/* OPTION CARDS ======================================================================================= */}
             <Link href="/components/option-cards">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <OptionCardsIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Option cards" />
+                    <OptionCardsIcon />
+                    <Text weight="400">Option cards</Text>
                 </SidebarItem>
             </Link>
 
             {/* PAGINATION ========================================================================================= */}
             <Link href="/components/pagination">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <PaginationIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Pagination" />
+                    <PaginationIcon />
+                    <Text weight="400">Pagination</Text>
                 </SidebarItem>
             </Link>
 
             {/* PIN INPUT FIELD ==================================================================================== */}
             <Link href="/components/pin-input-field">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <PinInputIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Pin Input" />
+                    <PinInputIcon />
+                    <Text weight="400">Pin Input</Text>
                 </SidebarItem>
             </Link>
 
             {/* PROGRESS BAR ======================================================================================= */}
             <Link href="/components/progress-bar">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ProgressBarIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Progress bar" />
+                    <ProgressBarIcon />
+                    <Text weight="400">Progress bar</Text>
                 </SidebarItem>
             </Link>
 
             {/* RADIO BUTTON ======================================================================================= */}
             <Link href="/components/radio-button">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <RadioButtonIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Radio button" />
+                    <RadioButtonIcon />
+                    <Text weight="400">Radio button</Text>
                 </SidebarItem>
             </Link>
 
             {/* RADIO TABS ========================================================================================= */}
             <Link href="/components/radio-tab-group">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <TabsIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Radio tab group" />
+                    <TabsIcon />
+                    <Text weight="400">Radio tab group</Text>
                 </SidebarItem>
             </Link>
 
             {/* SELECT ============================================================================================= */}
             <Link href="/components/range">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <RangeIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Range" />
+                    <RangeIcon />
+                    <Text weight="400">Range</Text>
                 </SidebarItem>
             </Link>
 
             {/* SELECT ============================================================================================= */}
             <Link href="/components/select">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <SelectIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Select" />
+                    <SelectIcon />
+                    <Text weight="400">Select</Text>
                 </SidebarItem>
             </Link>
 
             {/* SIDEBAR ============================================================================================ */}
             <Accordion summary={(
                 <SidebarItem>
-                    <SidebarItemIcon iconType="stroked">
-                        <SidebarIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Sidebar" />
+                    <SidebarIcon />
+                    <Text weight="400">Sidebar</Text>
                 </SidebarItem>
             )}>
                 <Link href="/components/sidebar">
-                    <SidebarItem onClick={closeMobileSidebar}>
-                        <SidebarItemIcon iconType="stroked">
-                            <SidebarIcon />
-                        </SidebarItemIcon>
-                        <SidebarItemText weight="400" linkText="Sidebar" />
-                    </SidebarItem>
-                </Link>
-
-                <Link href="/components/sidebar-wrapper">
-                    <SidebarItem onClick={closeMobileSidebar}>
-                        <SidebarItemIcon iconType="stroked">
-                        </SidebarItemIcon>
-                        <SidebarItemText weight="400" linkText="Wrapper" />
+                    <SidebarItem onClick={closeMobileSidebar} hasEmptyIcon>
+                        <Text weight="400" marginLeft="micro">Wrapper</Text>
                     </SidebarItem>
                 </Link>
 
                 <Link href="/components/sidebar-item">
-                    <SidebarItem onClick={closeMobileSidebar}>
-                        <SidebarItemIcon iconType="stroked">
-                        </SidebarItemIcon>
-                        <SidebarItemText weight="400" linkText="Item" />
-                    </SidebarItem>
-                </Link>
-
-                <Link href="/components/expandable-group">
-                    <SidebarItem onClick={closeMobileSidebar}>
-                        <SidebarItemIcon iconType="stroked">
-                        </SidebarItemIcon>
-                        <SidebarItemText weight="400" linkText="Expandable group" />
+                    <SidebarItem onClick={closeMobileSidebar} hasEmptyIcon>
+                        <Text weight="400" marginLeft="micro">Item</Text>
                     </SidebarItem>
                 </Link>
             </Accordion>
@@ -501,40 +407,32 @@ export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, se
             {/* SKELETON =========================================================================================== */}
             <Link href="/components/skeleton">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <SkeletonIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Skeleton" />
+                    <SkeletonIcon />
+                    <Text weight="400">Skeleton</Text>
                 </SidebarItem>
             </Link>
 
             {/* TABLE ============================================================================================== */}
             <Link href="/components/table">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <TableIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Table" />
+                    <TableIcon />
+                    <Text weight="400">Table</Text>
                 </SidebarItem>
             </Link>
 
             {/* TABS =============================================================================================== */}
             <Link href="/components/tabs">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <TabsIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Tabs" />
+                    <TabsIcon />
+                    <Text weight="400">Tabs</Text>
                 </SidebarItem>
             </Link>
 
             {/* TOAST ============================================================================================== */}
             <Link href="/components/toast">
                 <SidebarItem onClick={closeMobileSidebar}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ToastIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Toast" />
+                    <ToastIcon />
+                    <Text weight="400">Toast</Text>
                 </SidebarItem>
             </Link>
 
@@ -543,10 +441,8 @@ export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, se
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <SidebarFooter>
                 <SidebarItem onClick={toggleTheme}>
-                    <SidebarItemIcon iconType="stroked">
-                        <ThemeSwitchIcon />
-                    </SidebarItemIcon>
-                    <SidebarItemText weight="400" linkText="Theme" />
+                    <ThemeSwitchIcon />
+                    <Text weight="400">Theme</Text>
                 </SidebarItem>
             </SidebarFooter>
         </SidebarWrapper>
