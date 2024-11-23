@@ -53,7 +53,7 @@ const CardDocs = () => {
         interactiveElementRef,
         componentProps: themeConfig,
         themeConfigurator,
-    } = createThemeConfigurator(CardComponent);
+    } = createThemeConfigurator("Card", CardComponent);
 
     return (
         <Article id="page-card">

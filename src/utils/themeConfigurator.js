@@ -3,6 +3,7 @@ import {
     ListBox,
     Row,
     Portion,
+    Heading6,
     Text,
     Div,
     Range,
@@ -91,7 +92,7 @@ const RangeInput = ({ name, defaultValue, onChange, suffix = "px" }) => {
     );
 };
 
-export const createThemeConfigurator = (filter) => {
+export const createThemeConfigurator = (componentName, filter) => {
     const [variables, setVariables] = useState({
         componentVariables: {},
         cssVariablesList: "",
@@ -102,14 +103,17 @@ export const createThemeConfigurator = (filter) => {
 
     const formatCSSVariablesList = useCallback((vars) => {
         if (!Object.keys(vars).length) return "";
+
         const longestLength = findLongestVarNameLength(vars);
-        return Object.entries(vars)
+        const variablesList = Object.entries(vars)
             .map(([name, value]) => {
                 const fullVarName = `--${name}`;
                 const paddedName = fullVarName.padEnd(longestLength);
                 return `${paddedName} : ${value};`;
             })
             .join("\n");
+
+        return `/* Paste this in your theme file */\n${variablesList}`;
     }, []);
 
     const extractVariables = useCallback(() => {
@@ -210,9 +214,12 @@ export const createThemeConfigurator = (filter) => {
 
         return (
             <Card padding="micro" shape="rounded">
-                <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
-                    <Text size="large" weight="700" textColour="white">
+                <Header marginBottom="micro">
+                    <Heading6 style={{ marginBottom: "4px" }}>
                         Set global theme values
+                    </Heading6>
+                    <Text size="small">
+                        This will affect all {componentName} elements
                     </Text>
                 </Header>
 
@@ -281,7 +288,7 @@ export const createThemeConfigurator = (filter) => {
                 </Row>
             </Card>
         );
-    }, [variables.componentVariables, variables.cssVariablesList, handleVariableChange]);
+    }, [variables.componentVariables, variables.cssVariablesList, handleVariableChange, componentName]);
 
     const componentProps = useMemo(() => ({
         id: "interactive-component",

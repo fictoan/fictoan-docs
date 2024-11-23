@@ -7,6 +7,7 @@ import {
     Card,
     Form,
     Header,
+    Heading6,
     Text,
     Divider,
     CodeBlock,
@@ -110,7 +111,7 @@ export const createPropsConfigurator = (componentName, propsToConfig = [], color
             .join("\n");
 
         return [
-            `// Paste this in your content file`,
+            `{/* Paste this in your content file */}`,
             `<${componentName}`,
             props,
             `>`,
@@ -201,9 +202,12 @@ export const createPropsConfigurator = (componentName, propsToConfig = [], color
     // Return the props configurator function
     const propsConfigurator = () => (
         <Card padding="micro" shape="rounded">
-            <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
-                <Text size="large" weight="700" textColour="white">
+            <Header marginBottom="micro">
+                <Heading6 style={{ marginBottom: "4px" }}>
                     Configure props
+                </Heading6>
+                <Text size="small">
+                    This is for individual instances of {componentName}
                 </Text>
             </Header>
 
