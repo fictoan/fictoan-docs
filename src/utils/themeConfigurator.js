@@ -1,14 +1,22 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
-import { ListBox, Row, Portion, Text, Div, Range } from "fictoan-react";
+import {
+    ListBox,
+    Row,
+    Portion,
+    Text,
+    Div,
+    Range,
+    Card,
+    Header,
+    CodeBlock
+} from "fictoan-react";
 import { colourOptionsWithShades, listOfColours } from "../app/colour/colours";
 
-// Finds the longest variable name so that we can column indent on the `:`. This is used in the CSS variables code block
+// Utility functions remain the same...
 const findLongestVarNameLength = (variables) => {
     return Math.max(...Object.keys(variables).map(varName => varName.length + 2));
 };
 
-// Checks if a CSS variable is a color variable by looking at its value and if the value references a colour from the
-// Fictoan colour list
 const isColorVariable = (value) => {
     if (value?.startsWith("var(--")) {
         const varName = value.match(/var\(--([^)]+)\)/)?.[1];
@@ -17,7 +25,6 @@ const isColorVariable = (value) => {
     return false;
 };
 
-// Strips `var()`. For example, converts "var(--blue-light20)" to "blue-light20"
 const extractColorValue = (value) => {
     if (value?.startsWith("var(--")) {
         const match = value.match(/var\(--([^)]+)\)/);
@@ -26,8 +33,6 @@ const extractColorValue = (value) => {
     return null;
 };
 
-// Checks if a CSS variable contains a numerical value, works for both direct numbers and references to other
-// numerical variables
 const isNumericalVariable = (value) => {
     if (value?.startsWith("var(--")) {
         const varName = value.match(/var\(--([^)]+)\)/)?.[1];
@@ -39,7 +44,6 @@ const isNumericalVariable = (value) => {
     return !isNaN(parseInt(value));
 };
 
-// Extracts the numerical value from a CSS variable, and handles both direct numbers and references to other variables
 const extractNumericalValue = (value) => {
     if (value?.startsWith("var(--")) {
         const varName = value.match(/var\(--([^)]+)\)/)?.[1];
@@ -51,7 +55,6 @@ const extractNumericalValue = (value) => {
     return parseInt(value) || 0;
 };
 
-// Extracts the unit suffix from a CSS value (px, rem, em, etc)
 const extractUnitSuffix = (value) => {
     if (value?.startsWith("var(--")) {
         const varName = value.match(/var\(--([^)]+)\)/)?.[1];
@@ -65,7 +68,6 @@ const extractUnitSuffix = (value) => {
     return match?.[1] || "px";
 };
 
-// Create range input controls for numerical variables
 const RangeInput = ({ name, defaultValue, onChange, suffix = "px" }) => {
     const [rangeValue, setRangeValue] = useState(defaultValue);
 
@@ -89,21 +91,15 @@ const RangeInput = ({ name, defaultValue, onChange, suffix = "px" }) => {
     );
 };
 
-// Main hook for managing theme variables and controls
-// Takes a filter function to limit which CSS variables to process
 export const createThemeConfigurator = (filter) => {
-    // State for storing theme variables and their formatted CSS representation
     const [variables, setVariables] = useState({
         componentVariables: {},
         cssVariablesList: "",
     });
 
-    // Refs for DOM element and initialisation tracking
     const interactiveElementRef = useRef(null);
     const isInitializedRef = useRef(false);
 
-    // Formats CSS variables into a pretty-printed string
-    // Used for displaying in the code block
     const formatCSSVariablesList = useCallback((vars) => {
         if (!Object.keys(vars).length) return "";
         const longestLength = findLongestVarNameLength(vars);
@@ -116,7 +112,6 @@ export const createThemeConfigurator = (filter) => {
             .join("\n");
     }, []);
 
-    // Extracts CSS variables from the main theme file for component with `id="interactive-component"`
     const extractVariables = useCallback(() => {
         const extractedVars = {};
         try {
@@ -142,7 +137,6 @@ export const createThemeConfigurator = (filter) => {
         return extractedVars;
     }, [filter]);
 
-    // Initialise variables on first render
     useEffect(() => {
         if (!isInitializedRef.current) {
             const vars = extractVariables();
@@ -155,7 +149,6 @@ export const createThemeConfigurator = (filter) => {
         }
     }, [extractVariables, formatCSSVariablesList]);
 
-    // Handles changes to variables from the UI controls
     const handleVariableChange = useCallback((varName, newValue) => {
         const isColor = Object.entries(variables.componentVariables)
             .some(([name, value]) => name === varName && isColorVariable(value));
@@ -163,13 +156,19 @@ export const createThemeConfigurator = (filter) => {
         const cssValue = isColor ? `var(--${newValue})` : newValue;
         const property = `--${varName}`;
 
-        // Update the DOM element directly
         const element = interactiveElementRef.current;
         if (element) {
             element.style.setProperty(property, cssValue);
+
+            if (isColor) {
+                const classPrefix = varName.split('-')[0];
+                const oldClasses = Array.from(element.classList)
+                    .filter(cls => cls.startsWith(`${classPrefix}-`));
+                oldClasses.forEach(cls => element.classList.remove(cls));
+                element.classList.add(`${classPrefix}-${newValue}`);
+            }
         }
 
-        // Update React state and formatted CSS
         setVariables(prev => {
             const updatedVars = {
                 ...prev.componentVariables,
@@ -182,9 +181,7 @@ export const createThemeConfigurator = (filter) => {
         });
     }, [variables.componentVariables, formatCSSVariablesList]);
 
-    // Generates the UI controls based on variable types
     const themeConfigurator = useCallback(() => {
-        // Find and process color variables
         const colorVariables = Object.entries(variables.componentVariables)
             .filter(([_, value]) => isColorVariable(value))
             .map(([varName, value]) => ({
@@ -194,7 +191,6 @@ export const createThemeConfigurator = (filter) => {
                 defaultValue: extractColorValue(value),
             }));
 
-        // Find and process numerical variables
         const numericalVariables = Object.entries(variables.componentVariables)
             .filter(([_, value]) => isNumericalVariable(value))
             .map(([varName, value]) => {
@@ -212,75 +208,89 @@ export const createThemeConfigurator = (filter) => {
         const allVariables = [...colorVariables, ...numericalVariables];
         if (allVariables.length === 0) return null;
 
-        // Render appropriate controls for each variable type
         return (
-            <Row marginBottom="none">
-                {allVariables.map(({ type, name, currentValue, defaultValue, suffix }) => {
-                    if (type === "color") {
-                        // Create color picker with default color option
-                        const extendedOptions = [...colourOptionsWithShades];
-                        if (defaultValue && !extendedOptions.find(opt => opt.value === defaultValue)) {
-                            extendedOptions.unshift({
-                                customLabel: (
-                                    <Div verticallyCentreItems>
-                                        <Div
-                                            className="color-option"
-                                            bgColour={defaultValue}
-                                            padding="nano"
-                                            shape="rounded"
-                                        />
-                                        <Text marginLeft="nano">{defaultValue}</Text>
-                                    </Div>
-                                ),
-                                label: defaultValue,
-                                value: defaultValue,
-                            });
+            <Card padding="micro" shape="rounded">
+                <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
+                    <Text size="large" weight="700" textColour="white">
+                        Set global theme values
+                    </Text>
+                </Header>
+
+                <Row marginBottom="none">
+                    <Portion>
+                        <CodeBlock
+                            source={variables.cssVariablesList}
+                            language="css"
+                            showCopyButton
+                            marginBottom="micro"
+                        />
+                    </Portion>
+                </Row>
+
+                <Row marginBottom="none">
+                    {allVariables.map(({ type, name, currentValue, defaultValue, suffix }) => {
+                        if (type === "color") {
+                            const extendedOptions = [...colourOptionsWithShades];
+                            if (defaultValue && !extendedOptions.find(opt => opt.value === defaultValue)) {
+                                extendedOptions.unshift({
+                                    customLabel: (
+                                        <Div verticallyCentreItems>
+                                            <Div
+                                                className="color-option"
+                                                bgColour={defaultValue}
+                                                padding="nano"
+                                                shape="rounded"
+                                            />
+                                            <Text marginLeft="nano">{defaultValue}</Text>
+                                        </Div>
+                                    ),
+                                    label: defaultValue,
+                                    value: defaultValue,
+                                });
+                            }
+
+                            return (
+                                <Portion desktopSpan="half" key={name}>
+                                    <ListBox
+                                        label={name}
+                                        options={extendedOptions}
+                                        defaultValue={defaultValue}
+                                        onChange={(value) => handleVariableChange(name, value)}
+                                        allowCustomEntries
+                                        isFullWidth
+                                    />
+                                </Portion>
+                            );
                         }
 
-                        return (
-                            <Portion desktopSpan="half" key={name}>
-                                <ListBox
-                                    label={name}
-                                    options={extendedOptions}
-                                    defaultValue={defaultValue}
-                                    onChange={(value) => handleVariableChange(name, value)}
-                                    allowCustomEntries
-                                    isFullWidth
-                                />
-                            </Portion>
-                        );
-                    }
+                        if (type === "number") {
+                            return (
+                                <Portion desktopSpan="half" key={name}>
+                                    <RangeInput
+                                        name={name}
+                                        defaultValue={currentValue}
+                                        onChange={handleVariableChange}
+                                        suffix={suffix}
+                                    />
+                                </Portion>
+                            );
+                        }
 
-                    if (type === "number") {
-                        // Create range slider for numerical values
-                        return (
-                            <Portion desktopSpan="half" key={name}>
-                                <RangeInput
-                                    name={name}
-                                    defaultValue={currentValue}
-                                    onChange={handleVariableChange}
-                                    suffix={suffix}
-                                />
-                            </Portion>
-                        );
-                    }
-
-                    return null;
-                })}
-            </Row>
+                        return null;
+                    })}
+                </Row>
+            </Card>
         );
-    }, [variables.componentVariables, handleVariableChange]);
+    }, [variables.componentVariables, variables.cssVariablesList, handleVariableChange]);
 
-    // Memoized props for the interactive component
     const componentProps = useMemo(() => ({
         id: "interactive-component",
     }), []);
 
     return {
-        componentVariables : variables.componentVariables,
+        componentVariables: variables.componentVariables,
         componentProps,
         handleVariableChange,
-        cssVariablesList   : variables.cssVariablesList,
         themeConfigurator,
         interactiveElementRef
     };

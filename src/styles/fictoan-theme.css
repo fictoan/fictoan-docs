@@ -176,8 +176,8 @@
 
 /* CARD ///////////////////////////////////////////////////////////////////// */
 #interactive-component {
-    --card-bg            : var(--slate-opacity40);
-    --card-border        : var(--slate-dark30);
+    --card-bg            : var(--amber);
+    --card-border        : var(--amber-dark30);
     --card-border-radius : var(--global-border-radius);
     --card-border-width  : var(--global-border-width);
 }
