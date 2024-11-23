@@ -24,6 +24,7 @@ import {
     Select,
     Range,
     CodeBlock,
+    Section
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -32,17 +33,26 @@ import {
 import "./page-card.css";
 
 // HOOKS ===============================================================================================================
-import { useThemeVariables } from "../../../utils/useThemeVariables";
+import { createThemeConfigurator } from "../../../utils/themeConfigurator";
 
 // UTILS ===============================================================================================================
 import { colourOptions } from "../../colour/colours";
 
 // DATA ================================================================================================================
-import { cardProps } from "./config";
+import "../../../styles/fictoan-theme.css";
 
 
 const CardDocs = () => {
-    const { componentVariables, cssVariablesList, handleVariableChange } = useThemeVariables(cardProps.variables);
+    const CardComponent = (varName) => {
+        return varName.startsWith("card-");
+    };
+    
+    const {
+        interactiveElementRef,
+        componentProps,
+        cssVariablesList,
+        themeConfigurator,
+    } = createThemeConfigurator(CardComponent);
 
     const [selectedPadding, setSelectedPadding] = useState("");
     const [selectedShape, setSelectedShape] = useState("");
@@ -67,28 +77,29 @@ const CardDocs = () => {
 
     return (
         <Article id="page-card">
-            <Row horizontalPadding="huge" marginTop="medium" marginBottom="tiny">
-                <Portion>
-                    <Heading1 marginBottom="micro">Card</Heading1>
-                    <Text size="large" marginBottom="small">
-                        A box to put all sorts of content inside
-                    </Text>
-                </Portion>
+            <Section>
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="tiny">
+                    <Portion>
+                        <Heading1 marginBottom="micro">Card</Heading1>
+                        <Text size="large" marginBottom="small">
+                            A box to put all sorts of content inside
+                        </Text>
+                    </Portion>
 
-                <Portion>
-                    <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <ul>
-                        <li>Accepts any React node as a child</li>
-                        <li>The card always takes up 100% width of its parent</li>
-                        <li>It grows to take the height of its content</li>
-                        <li>Border-radius values work only when <code>shape="rounded"</code> is present</li>
-                    </ul>
-                </Portion>
-            </Row>
+                    <Portion>
+                        <Heading4 marginBottom="micro">Characteristics</Heading4>
+                        <ul>
+                            <li>Accepts any React node as a child</li>
+                            <li>The card always takes up 100% width of its parent</li>
+                            <li>It grows to take the height of its content</li>
+                            <li>Border-radius values work only when <code>shape="rounded"</code> is present</li>
+                        </ul>
+                    </Portion>
+                </Row>
+            </Section>
 
             <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-            {/*  CONFIGURATOR ////////////////////////////////////////////////////////////////////////////////////// */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -101,6 +112,7 @@ const CardDocs = () => {
                     >
                         <Card
                             id="interactive-component"
+                            ref={interactiveElementRef}
                             {...(
                                 selectedPadding !== undefined ? { padding : selectedPadding } : {}
                             )}
@@ -113,6 +125,7 @@ const CardDocs = () => {
                             {...(
                                 selectedBorderColour !== undefined ? { borderColor : selectedBorderColour } : {}
                             )}
+                            {...componentProps}
                         >
                             Content goes here
                         </Card>
@@ -139,7 +152,9 @@ const CardDocs = () => {
                                             selectedShape ? `    shape="${selectedShape}"` : null,
                                             selectedBgColour ? `    bgColour="${selectedBgColour}"` : null,
                                             selectedBorderColour ? `    borderColour="${selectedBorderColour}"` : null,
-                                            `>Content goes here</Card>`,
+                                            `>`,
+                                            `    {/* Content goes here */}`,
+                                            `</Card>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
                                 </Portion>
@@ -234,67 +249,17 @@ const CardDocs = () => {
                             <Row marginBottom="none">
                                 <Portion>
                                     <CodeBlock
+                                        id="interactive-component-theme-values"
                                         source={cssVariablesList}
                                         language="css"
                                         showCopyButton
                                         marginBottom="micro"
                                     />
                                 </Portion>
-
-                                {/* BG COLOUR ====================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Select
-                                        label="Background colour"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        }, ...colourOptions]}
-                                        defaultValue={componentVariables["card-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("card-bg", e.target.value)}
-                                        isFullWidth
-                                    />
-                                </Portion>
-
-                                {/* BORDER COLOUR ================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Select
-                                        label="Border colour"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        }, ...colourOptions]}
-                                        defaultValue={componentVariables["card-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("card-border", e.target.value)}
-                                        isFullWidth
-                                    />
-                                </Portion>
-
-                                {/* BORDER RADIUS ================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Range
-                                        label="Border radius"
-                                        value={componentVariables["card-border-radius"].value}
-                                        onChange={(e) => handleVariableChange("card-border-radius", e.target.value)}
-                                        min={0} max={50} step={1}
-                                        suffix={componentVariables["card-border-radius"].unit}
-                                    />
-                                </Portion>
-
-                                {/* BORDER WIDTH =================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Range
-                                        label="Border width"
-                                        value={componentVariables["card-border-width"].value}
-                                        onChange={(e) => handleVariableChange("card-border-width", e.target.value)}
-                                        min={0} max={50} step={1}
-                                        suffix={componentVariables["card-border-width"].unit}
-                                    />
-                                </Portion>
                             </Row>
+
+                            {/* Render the controls directly */}
+                            {themeConfigurator && themeConfigurator()}
                         </Form>
                     </Card>
                 </Portion>

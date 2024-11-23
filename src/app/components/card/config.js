@@ -10,7 +10,7 @@ export const cardProps = {
     variables  : {
         "card-bg"            : {
             type         : "reference",
-            defaultValue : "black",
+            defaultValue : "white",
         },
         "card-border"        : {
             type         : "reference",
@@ -20,11 +20,15 @@ export const cardProps = {
             type         : "value-unit",
             defaultValue : 1,
             unit         : "px",
+            max          : 10,
+            step         : 1,
         },
         "card-border-radius" : {
             type         : "value-unit",
             defaultValue : 8,
             unit         : "px",
+            max          : 20,
+            step         : 1,
         },
-    }
+    },
 };
