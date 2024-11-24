@@ -398,7 +398,7 @@ export const ComponentGrid = () => {
                     <Div className="component-card">
                         <Div id="badge-wrapper">
                             <Badge
-                                bgColour="red-light40" textColour="red-dark10"
+                                bgColour="red-light70" textColour="red-dark10"
                                 shape="curved"
                                 margin="nano" withDelete
                             >
@@ -406,7 +406,7 @@ export const ComponentGrid = () => {
                             </Badge>
 
                             <Badge
-                                bgColour="green-light40" textColour="green-dark20"
+                                bgColour="green-light60" textColour="green-dark40"
                                 shape="curved" size="large"
                                 margin="nano" withDelete
                             >
@@ -414,7 +414,7 @@ export const ComponentGrid = () => {
                             </Badge>
 
                             <Badge
-                                bgColour="amber-light20" textColour="orange-dark10"
+                                bgColour="amber-light40" textColour="orange-dark30"
                                 shape="rounded"
                                 margin="nano" withDelete
                             >
