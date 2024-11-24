@@ -21,6 +21,7 @@ import {
 import "./page-card.css";
 
 // HOOKS ===============================================================================================================
+import { createPropsConfigurator } from "../../../utils/propsConfigurator";
 import { createThemeConfigurator } from "../../../utils/themeConfigurator";
 
 // UTILS ===============================================================================================================
@@ -28,7 +29,6 @@ import { colourOptions } from "../../colour/colours";
 
 // DATA ================================================================================================================
 import "../../../styles/fictoan-theme.css";
-import { createPropsConfigurator } from "../../../utils/propsConfigurator";
 
 const CardDocs = () => {
     const {

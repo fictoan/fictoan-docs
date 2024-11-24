@@ -8,57 +8,53 @@ import {
     Element,
     Heading1,
     Heading4,
-    Heading5,
-    Heading6,
     Divider,
     Portion,
     Row,
     Text,
     Article,
     Badge,
-    Card,
-    Form,
-    Header,
-    InputField,
-    RadioTabGroup,
-    Range,
-    ListBox,
-    CodeBlock, Select,
 } from "fictoan-react";
-
-// COMPONENTS ==========================================================================================================
 
 // STYLES ==============================================================================================================
 import "./page-badge.css";
+import "../../../styles/fictoan-theme.css";
 
 // HOOKS ===============================================================================================================
-import { useThemeVariables } from "../../../utils/useThemeVariables";
+import { createPropsConfigurator } from "../../../utils/propsConfigurator";
+import { createThemeConfigurator } from "../../../utils/themeConfigurator";
 
 // UTILS ===============================================================================================================
 import { colourOptions } from "../../colour/colours";
 
-// DATA ================================================================================================================
-import { badgeProps } from "./config";
-
-
 const BadgeDocs = () => {
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(badgeProps.variables);
+    // PROPS CONFIG ====================================================================================================
+    const {
+        propsConfigurator,
+        componentProps: propsConfig,
+    } = createPropsConfigurator(
+        "Badge", [
+            "content",
+            "size",
+            "shape",
+            "bgColour",
+            "borderColour",
+            "textColour",
+            "withDelete"
+        ],
+        colourOptions,
+    );
 
-    const [label, setLabel] = useState("Text");
-    const [selectedSize, setSelectedSize] = useState("");
-    const [selectedShape, setSelectedShape] = useState("");
-    const [selectedBgColour, setSelectedBgColour] = useState("");
-    const [selectedBorderColour, setSelectedBorderColour] = useState("");
-    const [selectedTextColour, setSelectedTextColour] = useState("");
-
-
-    const handleSizeChange = (event) => {
-        setSelectedSize(event.target.value !== "none" ? event.target.value : undefined);
+    // THEME CONFIG ====================================================================================================
+    const BadgeComponent = (varName) => {
+        return varName.startsWith("badge-");
     };
 
-    const handleShapeChange = (event) => {
-        setSelectedShape(event.target.value !== "none" ? event.target.value : undefined);
-    };
+    const {
+        interactiveElementRef,
+        componentProps: themeConfig,
+        themeConfigurator,
+    } = createThemeConfigurator("Badge", BadgeComponent);
 
     return (
         <Article id="page-badge">
@@ -73,232 +69,45 @@ const BadgeDocs = () => {
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
                     <ul>
-                        <li>The badge is a simple, styled <code>mark</code> element</li>
-                        <li>You have to manually align it with its sibling</li>
+                        <li>You have to manually align the Badge with its sibling</li>
+                        <li>Default size is <code>medium</code></li>
                     </ul>
                 </Portion>
             </Row>
 
             <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/*  CONFIGURATOR */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="small" className="rendered-component">
-                {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
                     <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light80"
+                        as="div"
+                        padding="small"
+                        shape="rounded"
+                        bgColour="slate-light80"
                         data-centered-children
                     >
                         <Badge
                             id="interactive-component"
-                            {...(
-                                selectedShape !== undefined ? { shape : selectedShape } : {}
-                            )}
-                            {...(
-                                selectedSize !== undefined ? { size : selectedSize } : {}
-                            )}
-                            {...(
-                                selectedBgColour !== undefined ? { bgColour : selectedBgColour } : {}
-                            )}
-                            {...(
-                                selectedBorderColour !== undefined ? { borderColor : selectedBorderColour } : {}
-                            )}
-                            {...(
-                                selectedTextColour !== undefined ? { textColour : selectedTextColour } : {}
-                            )}
+                            ref={interactiveElementRef}
+                            {...propsConfig}
+                            {...themeConfig}
                         >
-                            {label}
+                            {propsConfig.content}
                         </Badge>
                     </Element>
                 </Portion>
+            </Row>
 
-                {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
+            <Row horizontalPadding="small">
+                {/* PROPS CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
                 <Portion desktopSpan="half">
-                    <Form>
-                        <Card padding="micro" shape="rounded">
-                            <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
-                                <Text size="large" weight="700" textColour="white">
-                                    Configure props
-                                </Text>
-                            </Header>
-
-                            <Row marginBottom="none">
-                                <Portion>
-                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
-                                        {[
-                                            `// Paste this in your content file`,
-                                            `<Badge`,
-                                            selectedShape ? `    shape="${selectedShape}"` : null,
-                                            selectedSize ? `    size="${selectedSize}"` : null,
-                                            selectedBgColour ? `    bgColour="${selectedBgColour}"` : null,
-                                            selectedBorderColour ? `    borderColour="${selectedBorderColour}"` : null,
-                                            selectedTextColour ? `    textColour="${selectedTextColour}"` : null,
-                                            `>${label ? `\n    ${label}\n` : ""}</Badge>`,
-                                        ].filter(Boolean).join("\n")}
-                                    </CodeBlock>
-
-                                </Portion>
-
-                                {/* LABEL ========================================================================== */}
-                                <Portion>
-                                    <InputField
-                                        type="text"
-                                        label="Label"
-                                        placeholder="Label"
-                                        onChange={(e) => setLabel(e.target.value)}
-                                    />
-
-                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
-                                </Portion>
-
-                                {/* SIZE =========================================================================== */}
-                                <Portion>
-                                    <RadioTabGroup
-                                        id="size" label="Size" name="size"
-                                        options={[
-                                            { id : "size-opt-0", value : "none", label : "none" },
-                                            { id : "size-opt-1", value : "nano", label : "nano" },
-                                            { id : "size-opt-2", value : "micro", label : "micro" },
-                                            { id : "size-opt-3", value : "tiny", label : "tiny" },
-                                            { id : "size-opt-4", value : "small", label : "small" },
-                                            { id : "size-opt-5", value : "medium", label : "medium" },
-                                            { id : "size-opt-6", value : "large", label : "large" },
-                                            { id : "size-opt-7", value : "huge", label : "huge" },
-                                        ]}
-                                        value={selectedSize}
-                                        onChange={handleSizeChange}
-                                    />
-
-                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
-                                </Portion>
-
-                                {/* SHAPE ========================================================================== */}
-                                <Portion>
-                                    <RadioTabGroup
-                                        id="shape" label="Shape" name="shape"
-                                        options={[
-                                            { id : "shape-opt-0", value : "none", label : "none" },
-                                            { id : "shape-opt-1", value : "rounded", label : "rounded" },
-                                            { id : "shape-opt-2", value : "curved", label : "curved" },
-                                        ]}
-                                        value={selectedShape}
-                                        onChange={handleShapeChange}
-                                    />
-
-                                    <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
-                                </Portion>
-
-                                {/* BG COLOUR ====================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <ListBox
-                                        label="Background colour"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        },
-                                            ...colourOptions,
-                                        ]}
-                                        defaultValue={selectedBgColour || "select-a-colour"}
-                                        onChange={(value) => setSelectedBgColour(value)}
-                                        isFullWidth
-                                    />
-                                </Portion>
-
-                                {/* BORDER COLOUR ================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <ListBox
-                                        label="Border colour"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        },
-                                            ...colourOptions,
-                                        ]}
-                                        defaultValue={selectedBorderColour || "select-a-colour"}
-                                        onChange={(value) => setSelectedBorderColour(value)}
-                                        isFullWidth
-                                    />
-                                </Portion>
-
-                                {/* TEXT COLOUR ==================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Select
-                                        label="Text colour"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        },
-                                            ...colourOptions,
-                                        ]}
-                                        defaultValue="select-a-colour"
-                                        onChange={(e) => setSelectedTextColour(e.target.value)}
-                                        isFullWidth
-                                    />
-                                </Portion>
-                            </Row>
-                        </Card>
-                    </Form>
+                    {propsConfigurator()}
                 </Portion>
 
-                {/* GLOBAL THEME /////////////////////////////////////////////////////////////////////////////////// */}
+                {/* THEME CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
                 <Portion desktopSpan="half">
-                    <Card padding="micro" shape="rounded">
-                        <Form>
-                            <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
-                                <Text size="large" weight="700" textColour="white">
-                                    Set global theme values
-                                </Text>
-                            </Header>
-
-                            <Row marginBottom="none">
-                                <Portion>
-                                    <CodeBlock
-                                        source={cssVariablesList}
-                                        language="css"
-                                        showCopyButton
-                                        marginBottom="micro"
-                                    />
-                                </Portion>
-
-                                <Portion>
-                                    <Text marginBottom="micro">
-                                        The font for the badge is set to take the <code>--paragraph-font</code> by
-                                        default. You can change it in the theme file.
-                                    </Text>
-                                </Portion>
-
-                                {/* BORDER RADIUS ================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Range
-                                        label="Border radius"
-                                        value={componentVariables["badge-border-radius"].value}
-                                        onChange={(e) => handleVariableChange("badge-border-radius", e.target.value)}
-                                        min={0} max={50} step={1}
-                                        suffix="px"
-                                    />
-                                </Portion>
-
-                                {/* BORDER WIDTH =================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Range
-                                        label="Border width"
-                                        value={componentVariables["badge-border-width"].value}
-                                        onChange={(e) => handleVariableChange("badge-border-width", e.target.value)}
-                                        min={0} max={50} step={1}
-                                        suffix="px"
-                                    />
-                                </Portion>
-                            </Row>
-                        </Form>
-                    </Card>
+                    {themeConfigurator()}
                 </Portion>
             </Row>
         </Article>
