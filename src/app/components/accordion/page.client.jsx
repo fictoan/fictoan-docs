@@ -5,46 +5,52 @@ import React, { useState } from "react";
 
 // INTERFACE ===========================================================================================================
 import {
-    Element,
+    Article,
+    Div,
     Heading1,
     Heading4,
     Divider,
-    Portion,
     Row,
+    Portion,
     Text,
-    Article,
-    Card,
-    Form,
-    Header,
-    Checkbox,
-    Select,
     Accordion,
-    CodeBlock
 } from "fictoan-react";
-
-// COMPONENTS ==========================================================================================================
 
 // STYLES ==============================================================================================================
 import "./page-accordion.css";
+import "../../../styles/fictoan-theme.css";
 
 // HOOKS ===============================================================================================================
-import { useThemeVariables } from "../../../utils/useThemeVariables";
+import { createPropsConfigurator } from "../../../utils/propsConfigurator";
+import { createThemeConfigurator } from "../../../utils/themeConfigurator";
 
 // UTILS ===============================================================================================================
 import { colourOptions } from "../../colour/colours";
 
-// DATA ================================================================================================================
-import { accordionProps } from "./config";
-
 const AccordionDocs = () => {
-    // SAMPLE ==========================================================================================================
-    const [makeFullWidth, setMakeFullWidth] = useState(false);
+    // PROPS CONFIG ====================================================================================================
+    const {
+        propsConfigurator,
+        componentProps : propsConfig,
+    } = createPropsConfigurator(
+        "Accordion", [
+            "summary",
+            "isFullWidth",
+        ],
+        colourOptions,
+        { canHaveChildren : true },
+    );
 
-    // CUSTOMISE =======================================================================================================
+    // THEME CONFIG ====================================================================================================
+    const AccordionComponent = (varName) => {
+        return varName.startsWith("accordion-");
+    };
 
-    // THEME ===========================================================================================================
-    const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(accordionProps.variables);
-
+    const {
+        interactiveElementRef,
+        componentProps : themeConfig,
+        themeConfigurator,
+    } = createThemeConfigurator("Accordion", AccordionComponent);
 
     return (
         <Article id="page-toast">
@@ -59,7 +65,10 @@ const AccordionDocs = () => {
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
                     <ul>
-                        <li>The <code>summary</code> accepts any React node as a child</li>
+                        <li>
+                            The <code>summary</code> accepts any React node as a child. Feel free to style it however
+                            you want with any element.
+                        </li>
                         <li>The component is typically used with the <code>isFullWidth</code> prop</li>
                     </ul>
                 </Portion>
@@ -73,103 +82,35 @@ const AccordionDocs = () => {
             <Row horizontalPadding="small" className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
-                    <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light80"
+                    <Div
+                        padding="small"
+                        shape="rounded"
+                        bgColour="slate-light80"
                         data-centered-children
                     >
                         <Accordion
-                            isFullWidth={makeFullWidth}
-                            summary={(
-                                <Text>Click me</Text>
-                            )}
+                            id="interactive-component"
+                            ref={interactiveElementRef}
+                            {...propsConfig}
+                            {...themeConfig}
+                            summary={<Text>Click me</Text>}
                         >
                             <Text>Accordion content</Text>
+                            {propsConfig.content}
                         </Accordion>
-                    </Element>
+                    </Div>
+                </Portion>
+            </Row>
+
+            <Row horizontalPadding="small">
+                {/* PROPS CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    {propsConfigurator()}
                 </Portion>
 
-                {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
+                {/* THEME CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
                 <Portion desktopSpan="half">
-                    <Form spacing="none">
-                        <Card padding="micro" shape="rounded">
-                            <Header verticallyCentreItems pushItemsToEnds>
-                                <Text size="large" weight="700" textColour="white" marginBottom="nano">
-                                    Configure props
-                                </Text>
-                            </Header>
-
-                            <Row marginBottom="none">
-                                <Portion>
-                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
-                                        {[
-                                            `// Paste this in your content file`,
-                                            `<Accordion`,
-                                            makeFullWidth ? `    isFullWidth` : null,
-                                            `    summary={(`,
-                                            `        <Text>Click me</Text>`,
-                                            `    )}`,
-                                            `>`,
-                                            `    <Text>Accordion content</Text>`,
-                                            `</Accordion>`,
-                                        ].filter(Boolean).join("\n")}
-                                    </CodeBlock>
-                                </Portion>
-
-                                {/* COPY BUTTON ==================================================================== */}
-                                <Portion>
-                                    <Checkbox
-                                        id="checkbox-full-width"
-                                        value="checkbox-full-width"
-                                        name="checkbox-full-width"
-                                        label="Make full width"
-                                        checked={makeFullWidth}
-                                        onChange={() => setMakeFullWidth(event.target.checked)}
-                                    />
-                                </Portion>
-                            </Row>
-                        </Card>
-                    </Form>
-                </Portion>
-
-                {/* GLOBAL THEME /////////////////////////////////////////////////////////////////////////////////// */}
-                <Portion desktopSpan="half">
-                    <Card padding="micro" shape="rounded">
-                        <Form>
-                            <Header verticallyCentreItems pushItemsToEnds>
-                                <Text size="large" weight="700" textColour="white" marginBottom="nano">
-                                    Set global theme values
-                                </Text>
-                            </Header>
-
-                            <Row marginBottom="none">
-                                <Portion>
-                                    <CodeBlock
-                                        source={cssVariablesList}
-                                        language="css"
-                                        showCopyButton
-                                        marginBottom="micro"
-                                    />
-                                </Portion>
-
-                                {/* BG COLOUR ====================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Select
-                                        id="accordion-chevron"
-                                        label="Chevron"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        }, ...colourOptions]}
-                                        defaultValue={componentVariables["accordion-chevron"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("accordion-chevron", e.target.value)}
-                                        isFullWidth
-                                    />
-                                </Portion>
-                            </Row>
-                        </Form>
-                    </Card>
+                    {themeConfigurator()}
                 </Portion>
             </Row>
         </Article>

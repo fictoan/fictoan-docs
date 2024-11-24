@@ -15,14 +15,14 @@ import {
 
 // Master configurations for different prop types
 const MASTER_PROPS_CONFIG = {
-    // Label props =====================================================================================================
+    // LABEL PROPS =====================================================================================================
     content : {
         type         : "text",
         label        : "Content",
         defaultValue : "Badge",
     },
 
-    // Size props ======================================================================================================
+    // SIZE PROPS ======================================================================================================
     size : {
         type    : "size",
         label   : "Size",
@@ -38,7 +38,7 @@ const MASTER_PROPS_CONFIG = {
         ],
     },
 
-    // Spacing props ===================================================================================================
+    // SPACING PROPS ===================================================================================================
     padding : {
         type    : "spacing",
         label   : "Padding",
@@ -54,7 +54,7 @@ const MASTER_PROPS_CONFIG = {
         ],
     },
 
-    // Shape-related props =============================================================================================
+    // SHAPE-RELATED PROPS =============================================================================================
     shape : {
         type    : "shape",
         label   : "Shape",
@@ -65,7 +65,7 @@ const MASTER_PROPS_CONFIG = {
         ],
     },
 
-    // Color-related props =============================================================================================
+    // COLOR-RELATED PROPS =============================================================================================
     bgColour     : {
         type               : "select",
         label              : "Background colour",
@@ -85,7 +85,7 @@ const MASTER_PROPS_CONFIG = {
         customOptionPrefix : "border",
     },
 
-    // Boolean props ===================================================================================================
+    // BOOLEAN PROPS ===================================================================================================
     canHaveChildren : {
         type : "boolean",
     },
@@ -102,20 +102,19 @@ const MASTER_PROPS_CONFIG = {
         label : "Show a delete icon",
     },
 
-    // Kind/emphasis props =============================================================================================
-    // Kind/emphasis props in MASTER_PROPS_CONFIG
+    // KIND/EMPHASIS PROPS =============================================================================================
     kind : {
         type          : "emphasis",
         label         : "Kind",
         variants      : {
-            // Default options for most components ---------------------------------------------------------------------
+            // DEFAULT OPTIONS FOR MOST COMPONENTS ---------------------------------------------------------------------
             default : [
                 { id : "kind-opt-0", value : "none", label : "none" },
                 { id : "kind-opt-1", value : "primary", label : "primary" },
                 { id : "kind-opt-2", value : "secondary", label : "secondary" },
                 { id : "kind-opt-3", value : "tertiary", label : "tertiary" },
             ],
-            // Callout -------------------------------------------------------------------------------------------------
+            // CALLOUT -------------------------------------------------------------------------------------------------
             callout : [
                 { id : "kind-opt-0", value : "info", label : "info", defaultChecked : true },
                 { id : "kind-opt-1", value : "success", label : "success" },
@@ -126,6 +125,14 @@ const MASTER_PROPS_CONFIG = {
         defaultValues : {
             callout : "info",
         },
+    },
+
+    // OTHER PROPS =====================================================================================================
+    summary : {
+        type         : "reactNode",
+        label        : "Summary content",
+        defaultValue : "<Text>Click me</Text>",
+        isRequired   : true,
     },
 };
 
@@ -183,6 +190,16 @@ export const createPropsConfigurator = (
             .filter(Boolean) // Remove null values from boolean props that were false
             .join("\n");
 
+        // Handle props that are react nodes ---------------------------------------------------------------------------
+        const reactNodeProps = Object.entries(MASTER_PROPS_CONFIG)
+            .filter(([key]) => propsToConfig.includes(key) && MASTER_PROPS_CONFIG[key].type === "reactNode")
+            .map(([key, config]) => {
+                return `    ${key}={(
+        ${config.defaultValue}
+    )}`;
+            })
+            .join("\n");
+
         // Conditional prop addition -----------------------------------------------------------------------------------
         // Add onDelete prop when withDelete is true
         const additionalProps = propValues.withDelete
@@ -190,8 +207,8 @@ export const createPropsConfigurator = (
             : "";
 
         // Decide if the closing tag should on a new line or not -------------------------------------------------------
-        const shouldClosingTagBeInNewLine = props.length > 0 || additionalProps
-            ? [`<${componentName}`, props, additionalProps, ">"].filter(Boolean).join("\n")
+        const shouldClosingTagBeInNewLine = props.length > 0 || additionalProps || reactNodeProps
+            ? [`<${componentName}`, props, additionalProps, reactNodeProps, ">"].filter(Boolean).join("\n")
             : `<${componentName}>`;
 
         // Decide if the closing tag should on a new line or not -------------------------------------------------------

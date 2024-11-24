@@ -5,7 +5,7 @@ import React from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
-    Element,
+    Div,
     Heading1,
     Heading4,
     Divider,
@@ -80,8 +80,7 @@ const BadgeDocs = () => {
             {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="small" className="rendered-component">
                 <Portion id="component-wrapper">
-                    <Element
-                        as="div"
+                    <Div
                         padding="small"
                         shape="rounded"
                         bgColour="slate-light80"
@@ -95,7 +94,7 @@ const BadgeDocs = () => {
                         >
                             {propsConfig.content}
                         </Badge>
-                    </Element>
+                    </Div>
                 </Portion>
             </Row>
 
