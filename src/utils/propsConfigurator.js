@@ -1,15 +1,12 @@
 import { useState, useCallback } from "react";
 import {
     RadioTabGroup,
-    Select,
     Row,
     Portion,
     Card,
-    Form,
     Header,
     Heading6,
     Text,
-    Divider,
     CodeBlock,
     ListBox,
     Checkbox,
@@ -89,47 +86,73 @@ const MASTER_PROPS_CONFIG = {
     },
 
     // Boolean props ===================================================================================================
-    isFullWidth : {
+    canHaveChildren : {
+        type : "boolean",
+    },
+    isFullWidth     : {
         type  : "boolean",
         label : "Full width",
     },
-    disabled    : {
+    disabled        : {
         type  : "boolean",
         label : "Disabled",
     },
-    withDelete  : {
+    withDelete      : {
         type  : "boolean",
         label : "Show a delete icon",
     },
 
     // Kind/emphasis props =============================================================================================
+    // Kind/emphasis props in MASTER_PROPS_CONFIG
     kind : {
-        type    : "emphasis",
-        label   : "Kind",
-        options : [
-            { id : "kind-opt-0", value : "none", label : "none" },
-            { id : "kind-opt-1", value : "primary", label : "primary" },
-            { id : "kind-opt-2", value : "secondary", label : "secondary" },
-            { id : "kind-opt-3", value : "tertiary", label : "tertiary" },
-        ],
+        type          : "emphasis",
+        label         : "Kind",
+        variants      : {
+            // Default options for most components ---------------------------------------------------------------------
+            default : [
+                { id : "kind-opt-0", value : "none", label : "none" },
+                { id : "kind-opt-1", value : "primary", label : "primary" },
+                { id : "kind-opt-2", value : "secondary", label : "secondary" },
+                { id : "kind-opt-3", value : "tertiary", label : "tertiary" },
+            ],
+            // Callout -------------------------------------------------------------------------------------------------
+            callout : [
+                { id : "kind-opt-0", value : "info", label : "info", defaultChecked : true },
+                { id : "kind-opt-1", value : "success", label : "success" },
+                { id : "kind-opt-2", value : "warning", label : "warning" },
+                { id : "kind-opt-3", value : "error", label : "error" },
+            ],
+        },
+        defaultValues : {
+            callout : "info",
+        },
     },
 };
 
-export const createPropsConfigurator = (componentName, propsToConfig = [], colorOptions = []) => {
+export const createPropsConfigurator = (
+    componentName,
+    propsToConfig = [],
+    colorOptions = [],
+    componentConfig = {
+        canHaveChildren : false,
+    }) => {
     // Initialise state with undefined values ==========================================================================
     const [propValues, setPropValues] = useState(() => {
-        // Initialise with default values for text props
         const defaults = {};
         propsToConfig.forEach(prop => {
             const config = MASTER_PROPS_CONFIG[prop];
             if (config?.type === "text" && config?.defaultValue) {
                 defaults[prop] = config.defaultValue;
             }
+            // Handle emphasis defaults
+            if (config?.type === "emphasis" && config?.defaultValues?.[componentName.toLowerCase()]) {
+                defaults[prop] = config.defaultValues[componentName.toLowerCase()];
+            }
         });
         return defaults;
     });
 
-    // Generic handler for prop changes
+    // Generic handler for prop changes ================================================================================
     const handlePropChange = useCallback((propName, value) => {
         setPropValues(prev => {
             // Only update if value is meaningful
@@ -166,10 +189,15 @@ export const createPropsConfigurator = (componentName, propsToConfig = [], color
             ? `    onDelete={() => doSomething()}`
             : "";
 
-        // Decide if the closing tag should on a new line or not
+        // Decide if the closing tag should on a new line or not -------------------------------------------------------
         const shouldClosingTagBeInNewLine = props.length > 0 || additionalProps
             ? [`<${componentName}`, props, additionalProps, ">"].filter(Boolean).join("\n")
             : `<${componentName}>`;
+
+        // Decide if the closing tag should on a new line or not -------------------------------------------------------
+        const showChildrenComment = componentConfig.canHaveChildren
+            ? `    {/* Add content here */}`
+            : "";
 
         // Content prop addition ---------------------------------------------------------------------------------------
         const content = propValues.content;
@@ -179,9 +207,10 @@ export const createPropsConfigurator = (componentName, propsToConfig = [], color
             `import { ${componentName} } from "fictoan-react";\n`,
             shouldClosingTagBeInNewLine,
             content ? `    ${content}` : "",
+            showChildrenComment,
             `</${componentName}>`,
         ].filter(Boolean).join("\n");
-    }, [componentName, propValues]);
+    }, [componentName, propValues, componentConfig]);
 
     // Generate controls for different prop types ======================================================================
     const generateControl = useCallback((propName) => {
@@ -196,13 +225,15 @@ export const createPropsConfigurator = (componentName, propsToConfig = [], color
             case "shape":
             case "size":
             case "emphasis":
+
                 return (
                     <Portion key={propName}>
                         <RadioTabGroup
                             id={propName}
                             label={label}
                             name={propName}
-                            options={options}
+                            // Get the variant options or fall back to default options
+                            options={options || config.variants?.[componentName.toLowerCase()] || config.variants?.default || []}
                             value={propValues[propName]}
                             onChange={(e) => handlePropChange(propName, e.target.value)}
                         />

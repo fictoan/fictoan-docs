@@ -12,13 +12,14 @@ import {
     Row,
     Text,
     Article,
-    Element,
+    Div,
     Card,
     Section,
 } from "fictoan-react";
 
 // STYLES ==============================================================================================================
 import "./page-card.css";
+import "../../../styles/fictoan-theme.css";
 
 // HOOKS ===============================================================================================================
 import { createPropsConfigurator } from "../../../utils/propsConfigurator";
@@ -27,10 +28,8 @@ import { createThemeConfigurator } from "../../../utils/themeConfigurator";
 // UTILS ===============================================================================================================
 import { colourOptions } from "../../colour/colours";
 
-// DATA ================================================================================================================
-import "../../../styles/fictoan-theme.css";
-
 const CardDocs = () => {
+    // PROPS CONFIG ====================================================================================================
     const {
         propsConfigurator,
         componentProps: propsConfig,
@@ -43,8 +42,10 @@ const CardDocs = () => {
             "borderColour",
         ],
         colourOptions,
+        { canHaveChildren: true }
     );
 
+    // THEME CONFIG ====================================================================================================
     const CardComponent = (varName) => {
         return varName.startsWith("card-");
     };
@@ -83,8 +84,7 @@ const CardDocs = () => {
             {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="small" className="rendered-component">
                 <Portion id="component-wrapper">
-                    <Element
-                        as="div"
+                    <Div
                         padding="small"
                         shape="rounded"
                         bgColour="slate-light80"
@@ -96,9 +96,9 @@ const CardDocs = () => {
                             {...propsConfig}
                             {...themeConfig}
                         >
-                            Content goes here
+                            Content shows up here
                         </Card>
-                    </Element>
+                    </Div>
                 </Portion>
             </Row>
 

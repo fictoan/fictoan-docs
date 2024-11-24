@@ -24,9 +24,14 @@
     --card-border-width                       : var(--global-border-width);
     --card-border-radius                      : 16px;
 
-    /* BREADCRUMBS ////////////////////////////////////////////////////////// */
+    /* CODE ///////////////////////////////////////////////////////////////// */
+    --code-inline-bg                          : var(--slate-dark70);
+    --code-inline-text                        : var(--slate-light40);
+
     --code-block-bg                           : var(--slate-light80);
-    --code-block-font-size                    : 0.8rem;
+    --code-block-font-size                    : 0.98rem;
+
+    /* BREADCRUMBS ////////////////////////////////////////////////////////// */
     --token-plain                             : var(--black);
     --token-comment                           : var(--slate-opacity70);
     --token-attrName                          : var(--blue);
@@ -58,7 +63,7 @@
     --input-border-default                    : var(--grey-light40);
     --input-border-radius-default             : var(--global-border-radius);
     --input-label-default                     : var(--paragraph-text-colour);
-    --input-placeholder-default               : var(--red-light60);
+    --input-placeholder-default               : var(--slate-light20);
     --input-text-default                      : var(--slate-dark60);
 
     --input-bg-focus                          : var(--grey-light70);
@@ -97,6 +102,11 @@
     /* KEYBOARD ///////////////////////////////////////////////////////////// */
     --kbd-bg                                  : var(--slate-light70);
     --kbd-text                                : var(--slate-light10);
+
+    /* RADIO BUTTON ///////////////////////////////////////////////////////// */
+    --radio-tabs-height                       : 32px;
+    --radio-tabs-bg                           : var(--slate-light70);
+    --radio-tabs-border                       : var(--slate-light70);
 
     /* SIDEBAR ////////////////////////////////////////////////////////////// */
     --sidebar-bg                              : var(--grey-light90);
@@ -149,6 +159,7 @@
 
     /* TEXT ///////////////////////////////////////////////////////////////// */
     --font-sans-serif                         : "Inter", sans-serif;
+    --font-mono                               : "Geist Mono", monospace;
 
     --paragraph-font-size                     : 1rem;
     --paragraph-line-height                   : 1.6;
@@ -157,6 +168,9 @@
     --heading-text-colour                     : var(--slate-dark60);
     --heading-size-multiplier                 : 1.2;
     --heading-line-height                     : 1.2;
+
+    --token-imports                           : var(--sky-dark40);
+    --token-string                            : var(--black);
 
     /* ////////////////////////////////////////////////////////////////////// */
     /* CUSTOM COMPONENTS */
