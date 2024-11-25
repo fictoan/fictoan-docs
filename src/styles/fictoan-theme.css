@@ -216,10 +216,10 @@
     --divider-primary-bg       : var(--slate);
 
     --divider-secondary-height : 2px;
-    --divider-secondary-bg     : var(--slate-light60);
+    --divider-secondary-bg     : var(--slate-light20);
 
     --divider-tertiary-height  : 1px;
-    --divider-tertiary-bg      : var(--slate-light20);
+    --divider-tertiary-bg      : var(--slate-light60);
 }
 
 /* INPUT FIELD ////////////////////////////////////////////////////////////// */

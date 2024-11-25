@@ -1,3 +1,9 @@
+
+
+
+
+
+
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
@@ -33,6 +39,11 @@ import {
 
 // STYLES ==============================================================================================================
 import "./page-breadcrumbs.css";
+import "../../../styles/fictoan-theme.css";
+
+// HOOKS ===============================================================================================================
+import { createPropsConfigurator } from "../../../utils/propsConfigurator";
+import { createThemeConfigurator } from "../../../utils/themeConfigurator";
 
 // ASSETS ==============================================================================================================
 
@@ -47,6 +58,30 @@ import { breadcrumbsProps } from "./config";
 
 
 const BreadcrumbsDocs = () => {
+    // PROPS CONFIG ====================================================================================================
+    const {
+        propsConfigurator,
+        componentProps: propsConfig,
+    } = createPropsConfigurator(
+        "Breadcrumbs", [
+        ],
+        colourOptions,
+        { canHaveChildren: true }
+    );
+
+    // THEME CONFIG ====================================================================================================
+    const BreadcrumbsComponent = (varName) => {
+        return varName.startsWith("breadcrumb");
+    };
+
+    const {
+        interactiveElementRef,
+        componentProps: themeConfig,
+        themeConfigurator,
+    } = createThemeConfigurator("Breadcrumbs", BreadcrumbsComponent);
+
+
+
     const [selectedBgColour, setSelectedBgColour] = useState("");
     const [showCurrentPageMessage, setShowCurrentPageMessage] = useState(false);
 
@@ -101,9 +136,9 @@ const BreadcrumbsDocs = () => {
 
                         <Breadcrumbs
                             id="interactive-component"
-                            {...(
-                                selectedBgColour !== undefined ? { bgColour : selectedBgColour } : {}
-                            )}
+                            ref={interactiveElementRef}
+                            {...propsConfig}
+                            {...themeConfig}
                         >
                             <BreadcrumbItem>
                                 <Link href="/">Home</Link>
@@ -265,6 +300,18 @@ const BreadcrumbsDocs = () => {
                             </Row>
                         </Form>
                     </Card>
+                </Portion>
+            </Row>
+
+            <Row horizontalPadding="small">
+                {/* PROPS CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    {propsConfigurator()}
+                </Portion>
+
+                {/* THEME CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
+                <Portion desktopSpan="half">
+                    {themeConfigurator()}
                 </Portion>
             </Row>
         </Article>

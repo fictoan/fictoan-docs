@@ -4,11 +4,4 @@
         top      : 8px;
         margin   : 0 auto;
     }
-
-    svg {
-        width : 24px;
-        height : 24px;
-        stroke : var(--black);
-        stroke-width : 2;
-    }
 }

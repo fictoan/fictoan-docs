@@ -1,10 +1,8 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import Fuse from "fuse.js";
 
 // INTERNAL DEPS =======================================================================================================
 import {
@@ -13,19 +11,17 @@ import {
     Header,
     Heading5,
     Text,
-    Span
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
 import { SearchBar } from "./SearchBar/SearchBar";
+import { VersionBadge } from "./VersionBadge";
 
 // STYLES ==============================================================================================================
 import "./header.css";
 
 // ASSETS ==============================================================================================================
 import GithubIcon from "../../assets/icons/github.svg";
-
-// DATA ================================================================================================================
 
 export const SiteHeader = ({ toggleSidebarOnMobile }) => {
     // Handle mobile menu toggle =======================================================================================
@@ -48,10 +44,10 @@ export const SiteHeader = ({ toggleSidebarOnMobile }) => {
                 </Div>
 
                 <Div id="links-wrapper">
-                    {/* VERSION BADGE =============================================================================== */}
-                    <Text weight="600" marginRight="micro">v1.8.0</Text>
+                    {/* VERSION BADGE ============================================================================== */}
+                    <VersionBadge />
 
-                    {/* LOGO ======================================================================================== */}
+                    {/* LOGO ======================================================================================= */}
                     <Link href="https://github.com/fictoan/fictoan-react" target="_blank" rel="noopener noreferrer">
                         <Div id="github-link" verticallyCentreItems>
                             <GithubIcon />

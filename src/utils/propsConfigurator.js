@@ -142,8 +142,9 @@ export const createPropsConfigurator = (
     colorOptions = [],
     componentConfig = {
         canHaveChildren : false,
+        isSelfClosing   : false,
     }) => {
-    // Initialise state with undefined values ==========================================================================
+    // INITIALISE STATE WITH UNDEFINED VALUES //////////////////////////////////////////////////////////////////////////
     const [propValues, setPropValues] = useState(() => {
         const defaults = {};
         propsToConfig.forEach(prop => {
@@ -159,7 +160,7 @@ export const createPropsConfigurator = (
         return defaults;
     });
 
-    // Generic handler for prop changes ================================================================================
+    // GENERIC HANDLER FOR PROP CHANGES ////////////////////////////////////////////////////////////////////////////////
     const handlePropChange = useCallback((propName, value) => {
         setPropValues(prev => {
             // Only update if value is meaningful
@@ -172,9 +173,9 @@ export const createPropsConfigurator = (
         });
     }, []);
 
-    // Generate JSX for the code block =================================================================================
+    // GENERATE JSX FOR THE CODE BLOCK /////////////////////////////////////////////////////////////////////////////////
     const generateCodeString = useCallback(() => {
-        // Filter out undefined values and content prop
+        // STEP 1: Generate props string from propValues ===============================================================
         const props = Object.entries(propValues)
             .filter(([key, value]) => value !== undefined && value !== "select-default" && key !== "content")
             .map(([key, value]) => {
@@ -190,7 +191,7 @@ export const createPropsConfigurator = (
             .filter(Boolean) // Remove null values from boolean props that were false
             .join("\n");
 
-        // Handle props that are react nodes ---------------------------------------------------------------------------
+        // STEP 1a: Handle props that are react nodes, if any ==========================================================
         const reactNodeProps = Object.entries(MASTER_PROPS_CONFIG)
             .filter(([key]) => propsToConfig.includes(key) && MASTER_PROPS_CONFIG[key].type === "reactNode")
             .map(([key, config]) => {
@@ -200,36 +201,55 @@ export const createPropsConfigurator = (
             })
             .join("\n");
 
-        // Conditional prop addition -----------------------------------------------------------------------------------
-        // Add onDelete prop when withDelete is true
+        // STEP 1b: CONDITIONAL ADDITIONAL PROPS =======================================================================
+        // BADGE: Add onDelete prop when withDelete is true ------------------------------------------------------------
         const additionalProps = propValues.withDelete
             ? `    onDelete={() => doSomething()}`
-            : "";
+            : ``;
 
-        // Decide if the closing tag should on a new line or not -------------------------------------------------------
-        const shouldClosingTagBeInNewLine = props.length > 0 || additionalProps || reactNodeProps
-            ? [`<${componentName}`, props, additionalProps, reactNodeProps, ">"].filter(Boolean).join("\n")
-            : `<${componentName}>`;
+        // STEP 2 : CONSOLIDATE PROPS ==================================================================================
+        const hasProps = props.length > 0 || additionalProps || reactNodeProps;
 
-        // Decide if the closing tag should on a new line or not -------------------------------------------------------
-        const showChildrenComment = componentConfig.canHaveChildren
-            ? `    {/* Add content here */}`
-            : "";
+        // STEP 3 : OPENING TAG ========================================================================================
+        let openingTag;
+        if (hasProps) {
+            openingTag = [
+                `<${componentName}`,
+                props,
+                additionalProps,
+                reactNodeProps,
+                componentConfig.isSelfClosing ? "/>" : ">"
+            ].filter(Boolean).join("\n");
+        } else {
+            openingTag = `<${componentName}${componentConfig.isSelfClosing ? " />" : ">"}`;
+        }
 
-        // Content prop addition ---------------------------------------------------------------------------------------
-        const content = propValues.content;
+        // STEP 4 : CHILDREN, IF ANY ===================================================================================
+        const childrenContent = [];
+        if (!componentConfig.isSelfClosing) {
+            const content = propValues.content;
+            if (content) {
+                childrenContent.push(`    ${content}`);
+            }
+            if (componentConfig.canHaveChildren) {
+                childrenContent.push("    {/* Add content here */}");
+            }
+        }
 
+        // STEP 4 : CLOSING TAG ========================================================================================
+        const closingTag = !componentConfig.isSelfClosing ? `</${componentName}>` : "";
+
+        // STEP 5 : PUT IT ALL TOGETHER ================================================================================
         return [
             `{/* Paste this in your content file */}`,
             `import { ${componentName} } from "fictoan-react";\n`,
-            shouldClosingTagBeInNewLine,
-            content ? `    ${content}` : "",
-            showChildrenComment,
-            `</${componentName}>`,
+            openingTag,
+            ...childrenContent,
+            closingTag
         ].filter(Boolean).join("\n");
-    }, [componentName, propValues, componentConfig]);
+    }, [componentName, propValues, componentConfig, propsToConfig, MASTER_PROPS_CONFIG]);
 
-    // Generate controls for different prop types ======================================================================
+    // GENERATE CONTROLS FOR DIFFERENT PROP TYPES //////////////////////////////////////////////////////////////////////
     const generateControl = useCallback((propName) => {
         const config = MASTER_PROPS_CONFIG[propName];
         if (!config) return null;
@@ -237,7 +257,7 @@ export const createPropsConfigurator = (
         const { type, label, options } = config;
 
         switch (type) {
-            // RadioTabGroup for spacing, shape, size, and emphasis ====================================================
+            // RADIOTABGROUP FOR SPACING, SHAPE, SIZE, AND EMPHASIS ====================================================
             case "spacing":
             case "shape":
             case "size":
@@ -257,7 +277,7 @@ export const createPropsConfigurator = (
                     </Portion>
                 );
 
-            // ListBox for color props =================================================================================
+            // LISTBOX FOR COLOR PROPS =================================================================================
             case "select":
                 const { defaultOption } = config;
                 return (
@@ -280,7 +300,7 @@ export const createPropsConfigurator = (
                     </Portion>
                 );
 
-            // Checkbox for boolean props ==============================================================================
+            // CHECKBOX FOR BOOLEAN PROPS ==============================================================================
             case "boolean":
                 return (
                     <Portion key={propName} desktopSpan="half" verticallyCentreItems>
@@ -294,7 +314,7 @@ export const createPropsConfigurator = (
                     </Portion>
                 );
 
-            // InputField for text props ===============================================================================
+            // INPUT FOR TEXT PROPS ====================================================================================
             case "text":
                 return (
                     <Portion key={propName}>
@@ -323,7 +343,7 @@ export const createPropsConfigurator = (
             .filter(([_, value]) => value !== undefined && value !== "select-default"),
     );
 
-    // Return the props configurator function
+    // GENERATE PROPS CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////////
     const propsConfigurator = () => (
         <Card padding="micro" shape="rounded">
             <Header marginBottom="micro">

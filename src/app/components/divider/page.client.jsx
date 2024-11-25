@@ -27,6 +27,11 @@ CodeBlock
 
 // STYLES ==============================================================================================================
 import "./page-h-rule.css";
+import "../../../styles/fictoan-theme.css";
+
+// HOOKS ===============================================================================================================
+import { createPropsConfigurator } from "../../../utils/propsConfigurator";
+import { createThemeConfigurator } from "../../../utils/themeConfigurator";
 
 // HOOKS ===============================================================================================================
 import { useThemeVariables } from "../../../utils/useThemeVariables";
@@ -38,6 +43,34 @@ import { colourOptions } from "../../colour/colours";
 import { hRuleProps } from "./config";
 
 const DividerDocs = () => {
+    // PROPS CONFIG ====================================================================================================
+    const {
+        propsConfigurator,
+        componentProps: propsConfig,
+    } = createPropsConfigurator(
+        "Divider", [
+            "kind",
+        ],
+        colourOptions,
+        {
+            isSelfClosing : true
+        }
+    );
+
+    // THEME CONFIG ====================================================================================================
+    const DividerComponent = (varName) => {
+        return varName.startsWith("divider-");
+    };
+
+    const {
+        interactiveElementRef,
+        componentProps: themeConfig,
+        themeConfigurator,
+    } = createThemeConfigurator("Divider", DividerComponent);
+
+
+
+
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(hRuleProps.variables);
 
     const [selectedKind, setSelectedKind] = useState("");
@@ -72,228 +105,25 @@ const DividerDocs = () => {
                         as="div" padding="small" shape="rounded" bgColour="slate-light80"
                         data-centered-children
                     >
-                        <Text marginBottom="nano">Default</Text>
                         <Divider
                             id="interactive-component"
-                            {...(
-                                selectedKind !== undefined ? { kind : selectedKind } : {}
-                            )}
-                            marginBottom="micro"
+                            ref={interactiveElementRef}
+                            {...propsConfig}
+                            {...themeConfig}
                         />
-
-                        <Text marginBottom="nano">Primary</Text>
-                        <Divider kind="primary" marginBottom="micro" />
-
-                        <Text marginBottom="nano">Secondary</Text>
-                        <Divider kind="secondary" marginBottom="micro" />
-
-                        <Text marginBottom="nano">Tertiary</Text>
-                        <Divider kind="tertiary" marginBottom="micro" />
                     </Element>
                 </Portion>
+            </Row>
 
-                {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
+            <Row horizontalPadding="small">
+                {/* PROPS CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
                 <Portion desktopSpan="half">
-                    <Form>
-                        <Card padding="micro" shape="rounded">
-                            <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
-                                <Text size="large" weight="700" textColour="white">
-                                    Configure props
-                                </Text>
-                            </Header>
-
-                            <Row marginBottom="none">
-                                <Portion>
-                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
-                                        {[
-                                            `// Paste this in your content file`,
-                                            `<Divider`,
-                                            selectedKind ? `    kind="${selectedKind}"` : null,
-                                            `/>`,
-                                        ].filter(Boolean).join("\n")}
-                                    </CodeBlock>
-                                </Portion>
-
-                                <Portion>
-                                    <RadioTabGroup
-                                        id="kind" label="Kind" name="kind"
-                                        options={[
-                                            { id : "kind-opt-0", value : "none", label : "none" },
-                                            { id : "kind-opt-1", value : "primary", label : "primary" },
-                                            { id : "kind-opt-2", value : "secondary", label : "secondary" },
-                                            { id : "kind-opt-3", value : "tertiary", label : "tertiary" },
-                                        ]}
-                                        value={selectedKind}
-                                        onChange={() => setSelectedKind(event.target.value !== "none" ? event.target.value : undefined)}
-                                    />
-                                </Portion>
-                            </Row>
-                        </Card>
-                    </Form>
+                    {propsConfigurator()}
                 </Portion>
 
-                {/* GLOBAL THEME /////////////////////////////////////////////////////////////////////////////////// */}
+                {/* THEME CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
                 <Portion desktopSpan="half">
-                    <Card padding="micro" shape="rounded">
-                        <Form>
-                            <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
-                                <Text size="large" weight="700" textColour="white">
-                                    Set global theme values
-                                </Text>
-                            </Header>
-
-                            <Row marginBottom="none">
-                                <Portion>
-                                    <CodeBlock
-                                        source={cssVariablesList}
-                                        language="css"
-                                        showCopyButton
-                                        marginBottom="micro"
-                                    />
-                                </Portion>
-
-                                {/* DEFAULT //////////////////////////////////////////////////////////////////////// */}
-                                <Portion>
-                                    <Text weight="700">Default</Text>
-                                </Portion>
-
-                                {/* BORDER RADIUS ================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Range
-                                        label="Height"
-                                        value={componentVariables["hr-height"].value}
-                                        onChange={(e) => handleVariableChange("hr-height", e.target.value)}
-                                        suffix={componentVariables["hr-height"].unit}
-                                        min={0} max={50} step={1}
-                                    />
-                                </Portion>
-
-                                {/* BG COLOUR ====================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Select
-                                        label="Background colour"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        }, ...colourOptions]}
-                                        defaultValue={componentVariables["hr-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("hr-bg", e.target.value)}
-                                        isFullWidth
-                                    />
-                                </Portion>
-
-                                <Portion>
-                                    <Divider kind="tertiary" />
-                                </Portion>
-
-                                {/* PRIMARY //////////////////////////////////////////////////////////////////////// */}
-                                <Portion>
-                                    <Text weight="700">Primary</Text>
-                                </Portion>
-
-                                {/* BORDER RADIUS ================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Range
-                                        label="Height"
-                                        value={componentVariables["hr-primary-height"].value}
-                                        onChange={(e) => handleVariableChange("hr-primary-height", e.target.value)}
-                                        suffix={componentVariables["hr-primary-height"].unit}
-                                        min={0} max={50} step={1}
-                                    />
-                                </Portion>
-
-                                {/* BG COLOUR ====================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Select
-                                        label="Background colour"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        }, ...colourOptions]}
-                                        defaultValue={componentVariables["hr-primary-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("hr-primary-bg", e.target.value)}
-                                        isFullWidth
-                                    />
-                                </Portion>
-
-                                <Portion>
-                                    <Divider kind="tertiary" />
-                                </Portion>
-
-                                {/* SECONDARY ////////////////////////////////////////////////////////////////////// */}
-                                <Portion>
-                                    <Text weight="700">Secondary</Text>
-                                </Portion>
-
-                                {/* BORDER RADIUS ================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Range
-                                        label="Height"
-                                        value={componentVariables["hr-secondary-height"].value}
-                                        onChange={(e) => handleVariableChange("hr-secondary-height", e.target.value)}
-                                        suffix={componentVariables["hr-secondary-height"].unit}
-                                        min={0} max={50} step={1}
-                                    />
-                                </Portion>
-
-                                {/* BG COLOUR ====================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Select
-                                        label="Background colour"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        }, ...colourOptions]}
-                                        defaultValue={componentVariables["hr-secondary-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("hr-secondary-bg", e.target.value)}
-                                        isFullWidth
-                                    />
-                                </Portion>
-
-                                <Portion>
-                                    <Divider kind="tertiary" />
-                                </Portion>
-
-                                {/* TERTIARY /////////////////////////////////////////////////////////////////////// */}
-                                <Portion>
-                                    <Text weight="700">Tertiary</Text>
-                                </Portion>
-
-                                {/* BORDER RADIUS ================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Range
-                                        label="Height"
-                                        value={componentVariables["hr-tertiary-height"].value}
-                                        onChange={(e) => handleVariableChange("hr-tertiary-height", e.target.value)}
-                                        suffix={componentVariables["hr-tertiary-height"].unit}
-                                        min={0} max={50} step={1}
-                                    />
-                                </Portion>
-
-                                {/* BG COLOUR ====================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Select
-                                        label="Background colour"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        }, ...colourOptions]}
-                                        defaultValue={componentVariables["hr-tertiary-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("hr-tertiary-bg", e.target.value)}
-                                        isFullWidth
-                                    />
-                                </Portion>
-                            </Row>
-                        </Form>
-                    </Card>
+                    {themeConfigurator()}
                 </Portion>
             </Row>
         </Article>
