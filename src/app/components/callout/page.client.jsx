@@ -13,14 +13,7 @@ import {
     Row,
     Text,
     Article,
-    Card,
-    Form,
-    Header,
-    RadioTabGroup,
-    Select,
-    Range,
     Callout,
-    CodeBlock
 } from "fictoan-react";
 
 // STYLES ==============================================================================================================
@@ -46,7 +39,10 @@ const CalloutDocs = () => {
             "kind",
         ],
         colourOptions,
-        { canHaveChildren: true }
+        {
+            canHaveChildren: true,
+            isSelfClosing : false
+        }
     );
 
     // THEME CONFIG ====================================================================================================

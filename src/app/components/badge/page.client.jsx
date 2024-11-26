@@ -34,7 +34,7 @@ const BadgeDocs = () => {
         componentProps: propsConfig,
     } = createPropsConfigurator(
         "Badge", [
-            "content",
+            "strings",
             "size",
             "shape",
             "bgColour",
@@ -43,6 +43,10 @@ const BadgeDocs = () => {
             "withDelete"
         ],
         colourOptions,
+        {
+            isSelfClosing : false,
+            canHaveChildren : true,
+        }
     );
 
     // THEME CONFIG ====================================================================================================

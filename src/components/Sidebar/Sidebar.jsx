@@ -50,7 +50,7 @@ import OptionCardsIcon from "../../assets/icons/option-cards.svg";
 import ProgressBarIcon from "../../assets/icons/progress-bar.svg";
 import RadioButtonIcon from "../../assets/icons/radio-button.svg";
 import RangeIcon from "../../assets/icons/range.svg";
-import SelectIcon from "../../assets/icons/dropdown.svg";
+import SelectIcon from "../../assets/icons/select.svg";
 import SidebarIcon from "../../assets/icons/sidebar.svg";
 import SkeletonIcon from "../../assets/icons/skeleton.svg";
 import TableIcon from "../../assets/icons/table.svg";
@@ -58,6 +58,7 @@ import TabsIcon from "../../assets/icons/tabs.svg";
 import ThemeIcon from "../../assets/icons/paintbrush.svg";
 import ThemeSwitchIcon from "../../assets/icons/theme.svg";
 import ToastIcon from "../../assets/icons/toast.svg";
+import TooltipIcon from "../../assets/icons/tooltip.svg";
 import ToolboxIcon from "../../assets/icons/toolbox.svg";
 import TypographyIcon from "../../assets/icons/typography.svg";
 
@@ -124,7 +125,6 @@ export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, se
             </Link>
 
             <Divider kind="tertiary" verticalMargin="micro" />
-
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* OVERVIEW */}
@@ -433,6 +433,14 @@ export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, se
                 <SidebarItem onClick={closeMobileSidebar}>
                     <ToastIcon />
                     <Text weight="400">Toast</Text>
+                </SidebarItem>
+            </Link>
+
+            {/* TOOLTIP ============================================================================================ */}
+            <Link href="/components/tooltip">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <TooltipIcon />
+                    <Text weight="400">Tooltip</Text>
                 </SidebarItem>
             </Link>
 

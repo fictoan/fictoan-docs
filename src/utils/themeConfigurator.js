@@ -13,7 +13,7 @@ import {
 } from "fictoan-react";
 import { colourOptionsWithShades, listOfColours } from "../app/colour/colours";
 
-// Utility functions remain the same...
+
 const findLongestVarNameLength = (variables) => {
     return Math.max(...Object.keys(variables).map(varName => varName.length + 2));
 };

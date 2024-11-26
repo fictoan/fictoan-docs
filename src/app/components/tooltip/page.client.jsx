@@ -5,6 +5,7 @@ import React from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
+    Div,
     Heading1,
     Heading4,
     Divider,
@@ -12,71 +13,73 @@ import {
     Row,
     Text,
     Article,
-    Div,
-    Card,
-    Section,
+    Tooltip,
+    Button
 } from "fictoan-react";
 
 // STYLES ==============================================================================================================
-import "./page-card.css";
+import "./page-tooltip.css";
 import "../../../styles/fictoan-theme.css";
 
 // HOOKS ===============================================================================================================
 import { createPropsConfigurator } from "../../../utils/propsConfigurator";
 import { createThemeConfigurator } from "../../../utils/themeConfigurator";
 
+
 // UTILS ===============================================================================================================
 import { colourOptions } from "../../colour/colours";
 
-const CardDocs = () => {
+const TooltipDocs = () => {
+    const [sampleComponentId, setSampleComponentId] = React.useState("tooltip-target");
+
     // PROPS CONFIG ====================================================================================================
     const {
         propsConfigurator,
         componentProps: propsConfig,
+        propValues
     } = createPropsConfigurator(
-        "Card", [
-            "padding", "shape", "bgColour", "borderColour",
+        "Tooltip",
+        [
+            "strings", "isTooltipFor", "showOn", "position",
         ],
         colourOptions,
         {
             canHaveChildren: true,
-            isSelfClosing : false
         }
     );
 
     // THEME CONFIG ====================================================================================================
-    const CardComponent = (varName) => {
-        return varName.startsWith("card-");
+    const TooltipComponent = (varName) => {
+        return varName.startsWith("tooltip-");
     };
 
     const {
         interactiveElementRef,
         componentProps: themeConfig,
         themeConfigurator,
-    } = createThemeConfigurator("Card", CardComponent);
+    } = createThemeConfigurator("Tooltip", TooltipComponent);
+
+    const tooltipTargetId = propValues.isTooltipFor || "tooltip-target";
 
     return (
-        <Article id="page-card">
-            <Section>
-                <Row horizontalPadding="huge" marginTop="medium" marginBottom="tiny">
-                    <Portion>
-                        <Heading1 marginBottom="micro">Card</Heading1>
-                        <Text size="large" marginBottom="small">
-                            A box to put all sorts of content inside
-                        </Text>
-                    </Portion>
+        <Article id="page-badge">
+            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
+                <Portion>
+                    <Heading1>Tooltip</Heading1>
+                    <Text size="large" marginBottom="small">
+                        A small helper popup to display extra information
+                    </Text>
+                </Portion>
 
-                    <Portion>
-                        <Heading4 marginBottom="micro">Characteristics</Heading4>
-                        <ul>
-                            <li>Accepts any React node as a child</li>
-                            <li>The card always takes up 100% width of its parent</li>
-                            <li>It grows to take the height of its content</li>
-                            <li>Border-radius values work only when <code>shape="rounded"</code> is present</li>
-                        </ul>
-                    </Portion>
-                </Row>
-            </Section>
+                <Portion>
+                    <Heading4 marginBottom="micro">Characteristics</Heading4>
+                    <ul>
+                        <li>Requires an element with a specified ID to attach to. Can be any element with an ID.</li>
+                        <li>Automatically positions itself to stay within viewport</li>
+                        <li>Tooltip can have any React node as children</li>
+                    </ul>
+                </Portion>
+            </Row>
 
             <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
@@ -89,14 +92,17 @@ const CardDocs = () => {
                         bgColour="slate-light80"
                         data-centered-children
                     >
-                        <Card
+                        <Div id={tooltipTargetId}>Tooltip target</Div>
+
+                        <Tooltip
                             id="interactive-component"
                             ref={interactiveElementRef}
+                            isTooltipFor={sampleComponentId}
                             {...propsConfig}
                             {...themeConfig}
                         >
-                            Content shows up here
-                        </Card>
+                            This is a tooltip, you can add any content here
+                        </Tooltip>
                     </Div>
                 </Portion>
             </Row>
@@ -116,4 +122,4 @@ const CardDocs = () => {
     );
 };
 
-export default CardDocs;
+export default TooltipDocs;

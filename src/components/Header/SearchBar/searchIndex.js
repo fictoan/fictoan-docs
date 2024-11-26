@@ -20,7 +20,7 @@ import OptionCardsIcon from "../../../assets/icons/option-cards.svg";
 import ProgressBarIcon from "../../../assets/icons/progress-bar.svg";
 import RadioButtonIcon from "../../../assets/icons/radio-button.svg";
 import RangeIcon from "../../../assets/icons/range.svg";
-import SelectIcon from "../../../assets/icons/dropdown.svg";
+import SelectIcon from "../../../assets/icons/select.svg";
 import SidebarIcon from "../../../assets/icons/sidebar.svg";
 import SkeletonIcon from "../../../assets/icons/skeleton.svg";
 import TableIcon from "../../../assets/icons/table.svg";

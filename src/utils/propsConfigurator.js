@@ -13,128 +13,7 @@ import {
     InputField,
 } from "fictoan-react";
 
-// Master configurations for different prop types
-const MASTER_PROPS_CONFIG = {
-    // LABEL PROPS =====================================================================================================
-    content : {
-        type         : "text",
-        label        : "Content",
-        defaultValue : "Badge",
-    },
-
-    // SIZE PROPS ======================================================================================================
-    size : {
-        type    : "size",
-        label   : "Size",
-        options : [
-            { id : "size-opt-0", value : "none", label : "none" },
-            { id : "size-opt-1", value : "nano", label : "nano" },
-            { id : "size-opt-2", value : "micro", label : "micro" },
-            { id : "size-opt-3", value : "tiny", label : "tiny" },
-            { id : "size-opt-4", value : "small", label : "small" },
-            { id : "size-opt-5", value : "medium", label : "medium" },
-            { id : "size-opt-6", value : "large", label : "large" },
-            { id : "size-opt-7", value : "huge", label : "huge" },
-        ],
-    },
-
-    // SPACING PROPS ===================================================================================================
-    padding : {
-        type    : "spacing",
-        label   : "Padding",
-        options : [
-            { id : "spacing-opt-0", value : "none", label : "none" },
-            { id : "spacing-opt-1", value : "nano", label : "nano" },
-            { id : "spacing-opt-2", value : "micro", label : "micro" },
-            { id : "spacing-opt-3", value : "tiny", label : "tiny" },
-            { id : "spacing-opt-4", value : "small", label : "small" },
-            { id : "spacing-opt-5", value : "medium", label : "medium" },
-            { id : "spacing-opt-6", value : "large", label : "large" },
-            { id : "spacing-opt-7", value : "huge", label : "huge" },
-        ],
-    },
-
-    // SHAPE-RELATED PROPS =============================================================================================
-    shape : {
-        type    : "shape",
-        label   : "Shape",
-        options : [
-            { id : "shape-opt-0", value : "none", label : "none" },
-            { id : "shape-opt-1", value : "rounded", label : "rounded" },
-            { id : "shape-opt-2", value : "curved", label : "curved" },
-        ],
-    },
-
-    // COLOR-RELATED PROPS =============================================================================================
-    bgColour     : {
-        type               : "select",
-        label              : "Background colour",
-        defaultOption      : "Select colour",
-        customOptionPrefix : "bg",
-    },
-    textColour   : {
-        type               : "select",
-        label              : "Text colour",
-        defaultOption      : "Select colour",
-        customOptionPrefix : "text",
-    },
-    borderColour : {
-        type               : "select",
-        label              : "Border colour",
-        defaultOption      : "Select colour",
-        customOptionPrefix : "border",
-    },
-
-    // BOOLEAN PROPS ===================================================================================================
-    canHaveChildren : {
-        type : "boolean",
-    },
-    isFullWidth     : {
-        type  : "boolean",
-        label : "Full width",
-    },
-    disabled        : {
-        type  : "boolean",
-        label : "Disabled",
-    },
-    withDelete      : {
-        type  : "boolean",
-        label : "Show a delete icon",
-    },
-
-    // KIND/EMPHASIS PROPS =============================================================================================
-    kind : {
-        type          : "emphasis",
-        label         : "Kind",
-        variants      : {
-            // DEFAULT OPTIONS FOR MOST COMPONENTS ---------------------------------------------------------------------
-            default : [
-                { id : "kind-opt-0", value : "none", label : "none" },
-                { id : "kind-opt-1", value : "primary", label : "primary" },
-                { id : "kind-opt-2", value : "secondary", label : "secondary" },
-                { id : "kind-opt-3", value : "tertiary", label : "tertiary" },
-            ],
-            // CALLOUT -------------------------------------------------------------------------------------------------
-            callout : [
-                { id : "kind-opt-0", value : "info", label : "info", defaultChecked : true },
-                { id : "kind-opt-1", value : "success", label : "success" },
-                { id : "kind-opt-2", value : "warning", label : "warning" },
-                { id : "kind-opt-3", value : "error", label : "error" },
-            ],
-        },
-        defaultValues : {
-            callout : "info",
-        },
-    },
-
-    // OTHER PROPS =====================================================================================================
-    summary : {
-        type         : "reactNode",
-        label        : "Summary content",
-        defaultValue : "<Text>Click me</Text>",
-        isRequired   : true,
-    },
-};
+import { MASTER_PROPS_CONFIG } from "./masterPropsConfig";
 
 export const createPropsConfigurator = (
     componentName,
@@ -143,16 +22,39 @@ export const createPropsConfigurator = (
     componentConfig = {
         canHaveChildren : false,
         isSelfClosing   : false,
+        defaultChildren : null,
     }) => {
     // INITIALISE STATE WITH UNDEFINED VALUES //////////////////////////////////////////////////////////////////////////
     const [propValues, setPropValues] = useState(() => {
-        const defaults = {};
+        const defaults = {
+            // Set default children for components that can have them
+            children : componentConfig.defaultChildren || null,
+        };
+
         propsToConfig.forEach(prop => {
             const config = MASTER_PROPS_CONFIG[prop];
-            if (config?.type === "text" && config?.defaultValue) {
-                defaults[prop] = config.defaultValue;
+
+            if (config?.type === "text") {
+                // Handle the strings config
+                if (prop === "strings") {
+                    const componentSpecific = config[componentName];
+                    const defaultConfig = config.default;
+                    const defaultValue = componentSpecific?.value || defaultConfig?.value;
+
+                    if (defaultValue) {
+                        // For Tooltip, we want to use this as isTooltipFor ============================================
+                        if (componentName === "Tooltip") {
+                            defaults.isTooltipFor = defaultValue;
+                            // Also set content to maintain sync with input
+                            defaults.content = defaultValue;
+                        } else {
+                            defaults.content = defaultValue;
+                        }
+                    }
+                }
             }
-            // Handle emphasis defaults
+
+            // Handle emphasis defaults ================================================================================
             if (config?.type === "emphasis" && config?.defaultValues?.[componentName.toLowerCase()]) {
                 defaults[prop] = config.defaultValues[componentName.toLowerCase()];
             }
@@ -169,29 +71,52 @@ export const createPropsConfigurator = (
                 delete newProps[propName];
                 return newProps;
             }
+
+            // Special handling for Tooltip ============================================================================
+            if (componentName === "Tooltip") {
+                // If we're updating content or isTooltipFor, update both to stay in sync
+                if (propName === "content" || propName === "isTooltipFor") {
+                    return {
+                        ...prev,
+                        content      : value,
+                        isTooltipFor : value,
+                    };
+                }
+            }
+
             return { ...prev, [propName] : value };
         });
-    }, []);
+    }, [componentName]);
 
     // GENERATE JSX FOR THE CODE BLOCK /////////////////////////////////////////////////////////////////////////////////
     const generateCodeString = useCallback(() => {
-        // STEP 1: Generate props string from propValues ===============================================================
+        // STEP 1 : Generate props string from propValues ==============================================================
         const props = Object.entries(propValues)
-            .filter(([key, value]) => value !== undefined && value !== "select-default" && key !== "content")
+            .filter(([key, value]) => {
+                // Don't include content if it's being handled by contentStrategy
+                if (key === "content" && componentConfig.canHaveChildren) {
+                    return false;
+                }
+                // Don't include children in props string
+                if (key === "children") {
+                    return false;
+                }
+                return value !== undefined && value !== "select-default";
+            })
             .map(([key, value]) => {
                 // Special handling for boolean props
                 const config = MASTER_PROPS_CONFIG[key];
                 if (config?.type === "boolean") {
-                    // Only show prop name if true, omit if false
                     return value === true ? `    ${key}` : null;
                 }
-                // For all other props, show key="value"
+
                 return `    ${key}="${value}"`;
             })
-            .filter(Boolean) // Remove null values from boolean props that were false
+            .filter(Boolean)
             .join("\n");
 
-        // STEP 1a: Handle props that are react nodes, if any ==========================================================
+
+        // STEP 1a : Handle props that are react nodes, if any =========================================================
         const reactNodeProps = Object.entries(MASTER_PROPS_CONFIG)
             .filter(([key]) => propsToConfig.includes(key) && MASTER_PROPS_CONFIG[key].type === "reactNode")
             .map(([key, config]) => {
@@ -201,8 +126,16 @@ export const createPropsConfigurator = (
             })
             .join("\n");
 
-        // STEP 1b: CONDITIONAL ADDITIONAL PROPS =======================================================================
-        // BADGE: Add onDelete prop when withDelete is true ------------------------------------------------------------
+        // STEP 1b : Handle additional imports =========================================================================
+        const imports = new Set([componentName]);
+        // For Tooltip, we need Div component too
+        if (componentName === "Tooltip") {
+            imports.add("Div");
+        }
+        const importsString = `import { ${Array.from(imports).join(", ")} } from "fictoan-react";`;
+
+        // STEP 1c : CONDITIONAL ADDITIONAL PROPS ======================================================================
+        // Add any component-specific conditional props (like onDelete for Badge)
         const additionalProps = propValues.withDelete
             ? `    onDelete={() => doSomething()}`
             : ``;
@@ -211,43 +144,61 @@ export const createPropsConfigurator = (
         const hasProps = props.length > 0 || additionalProps || reactNodeProps;
 
         // STEP 3 : OPENING TAG ========================================================================================
-        let openingTag;
-        if (hasProps) {
-            openingTag = [
-                `<${componentName}`,
-                props,
-                additionalProps,
-                reactNodeProps,
-                componentConfig.isSelfClosing ? "/>" : ">"
-            ].filter(Boolean).join("\n");
-        } else {
-            openingTag = `<${componentName}${componentConfig.isSelfClosing ? " />" : ">"}`;
+        let codeStructure = [];
+
+        switch(componentName) {
+            // Need extra demo div for Tooltip -------------------------------------------------------------------------
+            case "Tooltip": {
+                const targetId = propValues.isTooltipFor || "tooltip-target";
+                codeStructure.push(`<Div id="${targetId}">Tooltip target</Div>\n`);
+
+                // Add Tooltip with props
+                codeStructure.push(
+                    `<${componentName}${hasProps ? "" : ">"}`,
+                    hasProps && props,
+                    hasProps && additionalProps,
+                    hasProps && reactNodeProps,
+                    hasProps && ">"
+                );
+                break;
+            }
+
+            // Regular component opening tag ---------------------------------------------------------------------------
+            default: {
+                codeStructure.push(
+                    `<${componentName}${hasProps ? "" : componentConfig.isSelfClosing ? " />" : ">"}`,
+                    hasProps && props,
+                    hasProps && additionalProps,
+                    hasProps && reactNodeProps,
+                    hasProps && (componentConfig.isSelfClosing ? "/>" : ">")
+                );
+            }
         }
 
-        // STEP 4 : CHILDREN, IF ANY ===================================================================================
-        const childrenContent = [];
+        // STEP 4 : ADD CONTENT AND CLOSING TAGS =======================================================================
+        // Children content only for non-self-closing components
         if (!componentConfig.isSelfClosing) {
-            const content = propValues.content;
+            // Add children content ------------------------------------------------------------------------------------
+            const content = propValues.children || (componentName === "Badge" ? propValues.content : null);
+
             if (content) {
-                childrenContent.push(`    ${content}`);
+                codeStructure.push(content);
             }
-            if (componentConfig.canHaveChildren) {
-                childrenContent.push("    {/* Add content here */}");
-            }
+
+            // Add closing tag -----------------------------------------------------------------------------------------
+            codeStructure.push(`</${componentName}>`);
         }
 
-        // STEP 4 : CLOSING TAG ========================================================================================
-        const closingTag = !componentConfig.isSelfClosing ? `</${componentName}>` : "";
+        // STEP 5 : Put it all together ================================================================================
+        const componentCode = codeStructure.filter(Boolean).join("\n");
 
-        // STEP 5 : PUT IT ALL TOGETHER ================================================================================
         return [
             `{/* Paste this in your content file */}`,
-            `import { ${componentName} } from "fictoan-react";\n`,
-            openingTag,
-            ...childrenContent,
-            closingTag
+            importsString,
+            ` `,
+            componentCode
         ].filter(Boolean).join("\n");
-    }, [componentName, propValues, componentConfig, propsToConfig, MASTER_PROPS_CONFIG]);
+    }, [componentName, propValues, componentConfig, propsToConfig]);
 
     // GENERATE CONTROLS FOR DIFFERENT PROP TYPES //////////////////////////////////////////////////////////////////////
     const generateControl = useCallback((propName) => {
@@ -261,7 +212,9 @@ export const createPropsConfigurator = (
             case "spacing":
             case "shape":
             case "size":
+            case "position":
             case "emphasis":
+            case "showOn":
 
                 return (
                     <Portion key={propName}>
@@ -315,29 +268,58 @@ export const createPropsConfigurator = (
                 );
 
             // INPUT FOR TEXT PROPS ====================================================================================
-            case "text":
+            case "text": {
+                const componentSpecific = config[componentName];
+                const defaultConfig = config.default;
+                const labelText = componentSpecific?.label || defaultConfig?.label;
+                const helpText = componentSpecific?.helpText;
+
+                // Special handling for strings config
+                if (propName === "strings") {
+                    const componentSpecific = config[componentName];
+                    const defaultConfig = config.default;
+                    const labelText = componentSpecific?.label || defaultConfig?.label;
+                    const helpText = componentSpecific?.helpText;
+
+                    return (
+                        <Portion key={propName}>
+                            <InputField
+                                type="text"
+                                label={labelText}
+                                placeholder={labelText}
+                                value={propValues.content}  // Note: we use content here
+                                onChange={(e) => handlePropChange("content", e.target.value)}
+                                helpText={helpText}
+                                isFullWidth
+                            />
+                        </Portion>
+                    );
+                }
+
                 return (
                     <Portion key={propName}>
                         <InputField
                             type="text"
-                            label={label || "Label"}
-                            placeholder={label}
+                            label={labelText}
+                            placeholder={labelText}
                             value={propValues[propName]}
                             onChange={(e) => handlePropChange(propName, e.target.value)}
+                            helpText={helpText}
                             isFullWidth
                         />
                     </Portion>
                 );
+            }
 
             default:
                 return null;
         }
     }, [propValues, handlePropChange, colorOptions]);
 
-    // Get valid configuration for requested props
+    // GET VALID CONFIGURATION FOR REQUESTED PROPS /////////////////////////////////////////////////////////////////////
     const validProps = propsToConfig.filter(prop => MASTER_PROPS_CONFIG[prop]);
 
-    // Component props based on current values - filter out undefined and select-default values
+    // Component props based on current values - filter out undefined and select-default values ========================
     const componentProps = Object.fromEntries(
         Object.entries(propValues)
             .filter(([_, value]) => value !== undefined && value !== "select-default"),

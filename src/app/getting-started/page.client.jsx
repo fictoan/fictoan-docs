@@ -117,9 +117,11 @@ const GettingStarted = () => {
                                                     href="https://brew.sh"
                                                     target="_blank"
                                                     rel="noreferrer">Homebrew &#8599;</a>.
-                                                    A package manager is a tool that lets you install and manage
-                                                    software &ldquo;packages&rdquo; on your computer, right from within
-                                                    your terminal.
+                                                    <Span opacity="60">
+                                                        A package manager is a tool that lets you install and manage
+                                                        software &ldquo;packages&rdquo; on your computer, right from
+                                                        within your terminal.
+                                                    </Span>
                                                 </Text>
 
                                                 <ul className="tutorial-steps">
