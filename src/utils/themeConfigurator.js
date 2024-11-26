@@ -1,4 +1,7 @@
+// EXTERNAL DEPS =======================================================================================================
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+
+// INTERNAL DEPS =======================================================================================================
 import {
     ListBox,
     Row,
@@ -11,13 +14,17 @@ import {
     Header,
     CodeBlock
 } from "fictoan-react";
+
+// DATA ================================================================================================================
 import { colourOptionsWithShades, listOfColours } from "../app/colour/colours";
 
-
+// Calculate the maximum length of variable names for formatting =======================================================
 const findLongestVarNameLength = (variables) => {
     return Math.max(...Object.keys(variables).map(varName => varName.length + 2));
 };
 
+// COLOR VARIABLE HANDLING =============================================================================================
+// Check if a CSS variable value refers to a color variable ------------------------------------------------------------
 const isColorVariable = (value) => {
     if (value?.startsWith("var(--")) {
         const varName = value.match(/var\(--([^)]+)\)/)?.[1];
@@ -26,6 +33,7 @@ const isColorVariable = (value) => {
     return false;
 };
 
+// Extract the actual color value from a CSS variable ------------------------------------------------------------------
 const extractColorValue = (value) => {
     if (value?.startsWith("var(--")) {
         const match = value.match(/var\(--([^)]+)\)/);
@@ -34,6 +42,8 @@ const extractColorValue = (value) => {
     return null;
 };
 
+// NUMERICAL VARIABLE HANDLING =========================================================================================
+// Check if a CSS variable contains a numerical value ------------------------------------------------------------------
 const isNumericalVariable = (value) => {
     if (value?.startsWith("var(--")) {
         const varName = value.match(/var\(--([^)]+)\)/)?.[1];
@@ -45,6 +55,7 @@ const isNumericalVariable = (value) => {
     return !isNaN(parseInt(value));
 };
 
+// Extract numerical value from a CSS variable -------------------------------------------------------------------------
 const extractNumericalValue = (value) => {
     if (value?.startsWith("var(--")) {
         const varName = value.match(/var\(--([^)]+)\)/)?.[1];
@@ -56,6 +67,7 @@ const extractNumericalValue = (value) => {
     return parseInt(value) || 0;
 };
 
+// Extract unit suffix (px, rem, etc) from a CSS value -----------------------------------------------------------------
 const extractUnitSuffix = (value) => {
     if (value?.startsWith("var(--")) {
         const varName = value.match(/var\(--([^)]+)\)/)?.[1];
@@ -69,6 +81,7 @@ const extractUnitSuffix = (value) => {
     return match?.[1] || "px";
 };
 
+// RANGE INPUT COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////
 const RangeInput = ({ name, defaultValue, onChange, suffix = "px" }) => {
     const [rangeValue, setRangeValue] = useState(defaultValue);
 
@@ -92,7 +105,9 @@ const RangeInput = ({ name, defaultValue, onChange, suffix = "px" }) => {
     );
 };
 
+// THEME CONFIGURATOR CREATOR //////////////////////////////////////////////////////////////////////////////////////////
 export const createThemeConfigurator = (componentName, filter) => {
+    // STATE AND REFS ==================================================================================================
     const [variables, setVariables] = useState({
         componentVariables: {},
         cssVariablesList: "",
@@ -101,6 +116,8 @@ export const createThemeConfigurator = (componentName, filter) => {
     const interactiveElementRef = useRef(null);
     const isInitializedRef = useRef(false);
 
+    // CSS VARIABLE FORMATTING =========================================================================================
+    // Format CSS variables into a readable string for display ---------------------------------------------------------
     const formatCSSVariablesList = useCallback((vars) => {
         if (!Object.keys(vars).length) return "";
 
@@ -116,6 +133,8 @@ export const createThemeConfigurator = (componentName, filter) => {
         return `/* Paste this in your theme file */\n${variablesList}`;
     }, []);
 
+    // VARIABLE EXTRACTION =============================================================================================
+    // Extract CSS variables from stylesheets --------------------------------------------------------------------------
     const extractVariables = useCallback(() => {
         const extractedVars = {};
         try {
@@ -141,6 +160,7 @@ export const createThemeConfigurator = (componentName, filter) => {
         return extractedVars;
     }, [filter]);
 
+    // INITIALIZATION EFFECT ===========================================================================================
     useEffect(() => {
         if (!isInitializedRef.current) {
             const vars = extractVariables();
@@ -153,17 +173,21 @@ export const createThemeConfigurator = (componentName, filter) => {
         }
     }, [extractVariables, formatCSSVariablesList]);
 
+    // VARIABLE CHANGE HANDLER =========================================================================================
     const handleVariableChange = useCallback((varName, newValue) => {
+        // Check if the variable is a color variable
         const isColor = Object.entries(variables.componentVariables)
             .some(([name, value]) => name === varName && isColorVariable(value));
 
         const cssValue = isColor ? `var(--${newValue})` : newValue;
         const property = `--${varName}`;
 
+        // Update the interactive element's styles ---------------------------------------------------------------------
         const element = interactiveElementRef.current;
         if (element) {
             element.style.setProperty(property, cssValue);
 
+            // Handle colour-specific class updates --------------------------------------------------------------------
             if (isColor) {
                 const classPrefix = varName.split('-')[0];
                 const oldClasses = Array.from(element.classList)
@@ -173,6 +197,7 @@ export const createThemeConfigurator = (componentName, filter) => {
             }
         }
 
+        // Update state with new variable values -----------------------------------------------------------------------
         setVariables(prev => {
             const updatedVars = {
                 ...prev.componentVariables,
@@ -185,7 +210,9 @@ export const createThemeConfigurator = (componentName, filter) => {
         });
     }, [variables.componentVariables, formatCSSVariablesList]);
 
+    // THEME CONFIGURATOR UI COMPONENT /////////////////////////////////////////////////////////////////////////////////
     const themeConfigurator = useCallback(() => {
+        // Process color variables -------------------------------------------------------------------------------------
         const colorVariables = Object.entries(variables.componentVariables)
             .filter(([_, value]) => isColorVariable(value))
             .map(([varName, value]) => ({
@@ -195,6 +222,7 @@ export const createThemeConfigurator = (componentName, filter) => {
                 defaultValue: extractColorValue(value),
             }));
 
+        // Process numerical variables ---------------------------------------------------------------------------------
         const numericalVariables = Object.entries(variables.componentVariables)
             .filter(([_, value]) => isNumericalVariable(value))
             .map(([varName, value]) => {
@@ -209,9 +237,11 @@ export const createThemeConfigurator = (componentName, filter) => {
                 };
             });
 
+        // Combine all variables ---------------------------------------------------------------------------------------
         const allVariables = [...colorVariables, ...numericalVariables];
         if (allVariables.length === 0) return null;
 
+        // Return configurator UI component ----------------------------------------------------------------------------
         return (
             <Card padding="micro" shape="rounded">
                 <Header marginBottom="micro">
@@ -223,6 +253,7 @@ export const createThemeConfigurator = (componentName, filter) => {
                     </Text>
                 </Header>
 
+                {/* Theme code ------------------------------------------------------------------------------------- */}
                 <Row marginBottom="none">
                     <Portion>
                         <CodeBlock
@@ -236,6 +267,7 @@ export const createThemeConfigurator = (componentName, filter) => {
 
                 <Row marginBottom="none">
                     {allVariables.map(({ type, name, currentValue, defaultValue, suffix }) => {
+                        // Render colour variable controls -------------------------------------------------------------
                         if (type === "color") {
                             const extendedOptions = [...colourOptionsWithShades];
                             if (defaultValue && !extendedOptions.find(opt => opt.value === defaultValue)) {
@@ -270,6 +302,7 @@ export const createThemeConfigurator = (componentName, filter) => {
                             );
                         }
 
+                        // Render numerical variable controls ----------------------------------------------------------
                         if (type === "number") {
                             return (
                                 <Portion desktopSpan="half" key={name}>
@@ -290,10 +323,12 @@ export const createThemeConfigurator = (componentName, filter) => {
         );
     }, [variables.componentVariables, variables.cssVariablesList, handleVariableChange, componentName]);
 
+    // Create memoized component props ---------------------------------------------------------------------------------
     const componentProps = useMemo(() => ({
         id: "interactive-component",
     }), []);
 
+    // Return configurator interface -----------------------------------------------------------------------------------
     return {
         componentVariables: variables.componentVariables,
         componentProps,

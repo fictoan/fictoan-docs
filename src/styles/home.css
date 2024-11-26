@@ -29,6 +29,7 @@
     /* USP SECTION ////////////////////////////////////////////////////////// */
     #usp-section {
         position : relative;
+        overflow : hidden;
 
         @media screen and (max-width : 600px) {
             [data-row] { gap : 12px 4px; }
