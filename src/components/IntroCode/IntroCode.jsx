@@ -65,6 +65,25 @@ export const IntroCode = () => {
         kind : "primary",
     });
 
+    const handleCodeChange = (newContent) => {
+        const newProps = parseCodeToProperties(newContent);
+
+        // Update all component props based on parsed content
+        setRowProps(prev => ({ ...prev, ...newProps.Row }));
+
+        // Update portions
+        if (newProps.Portion[0]) setPortion1Props(newProps.Portion[0]);
+        if (newProps.Portion[1]) setPortion2Props(newProps.Portion[1]);
+
+        // Update headings
+        setMainHeadingProps(prev => ({ ...prev, ...newProps.Heading1 }));
+        if (newProps.Heading5[0]) setSubHeading1Props(prev => ({ ...prev, ...newProps.Heading5[0] }));
+        if (newProps.Heading5[1]) setSubHeading2Props(prev => ({ ...prev, ...newProps.Heading5[1] }));
+
+        // Update button
+        setButtonProps(prev => ({ ...prev, ...newProps.Button }));
+    };
+
     const codeBlockRef = useRef(null);
 
     const parseCodeToProperties = (codeContent) => {
@@ -105,59 +124,32 @@ export const IntroCode = () => {
         return newProps;
     };
 
+    const [mountKey, setMountKey] = useState(0);
+
+    // Use this effect to trigger a remount after the initial load
     useEffect(() => {
-        const codeBlockElement = codeBlockRef.current;
+        // We'll wait for everything to settle
+        const remountTimer = setTimeout(() => {
+            setMountKey(prev => prev + 1);
+        }, 100);
 
-        if (codeBlockElement) {
-            const handleInput = () => {
-                const codeContent = codeBlockElement.textContent;
-                const newProps = parseCodeToProperties(codeContent);
+        return () => clearTimeout(remountTimer);
+    }, []); // Only run once on initial mount
 
-                // Row
-                setRowProps(prevProps => (
-                    { ...prevProps, ...newProps.Row }
-                ));
+    useEffect(() => {
+        const checkPrism = () => {
+            if (window.Prism) {
+                console.log('Prism is loaded');
+                setMountKey(prev => prev + 1);
+            } else {
+                console.log('Prism not loaded yet, retrying...');
+                setTimeout(checkPrism, 100);
+            }
+        };
 
-                newProps.Portion.forEach((props, index) => {
-                    if (index === 0) setPortion1Props(props);
-                    else if (index === 1) setPortion2Props(props);
-                });
-
-                // Main opener
-                setMainHeadingProps(prevProps => (
-                    { ...prevProps, ...newProps.Heading1 }
-                ));
-
-                // Tagline
-                setTaglineProps(prevProps => (
-                    { ...prevProps, ...newProps.Heading4 }
-                ));
-
-                // Button
-                setButtonProps(prevProps => (
-                    { ...prevProps, ...newProps.Button }
-                ));
-
-                // Right-side text
-                if (newProps.Heading5.length > 0) {
-                    setSubHeading1Props(prevProps => (
-                        { ...prevProps, ...newProps.Heading5[0] }
-                    ));
-                    if (newProps.Heading5.length > 1) {
-                        setSubHeading2Props(prevProps => (
-                            { ...prevProps, ...newProps.Heading5[1] }
-                        ));
-                    }
-                }
-            };
-
-            codeBlockElement.addEventListener("input", handleInput);
-
-            return () => {
-                codeBlockElement.removeEventListener("input", handleInput);
-            };
-        }
+        checkPrism();
     }, []);
+
 
     // FOR VIZ ROW =====================================================================================================
     const [vizMode, setVizMode] = useState(true);
@@ -222,8 +214,8 @@ export const IntroCode = () => {
             {/* EDITABLE CODE BLOCK //////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="medium" gutters="large" verticalMargin="small">
                 <Portion>
-                    <Div verticallyCentreItems pushItemsToEnds>
-                        <Text size="large" textColour="blue" weight="700" marginBottom="nano">
+                    <Div verticallyCentreItems pushItemsToEnds marginBottom="nano">
+                        <Text textColour="blue" weight="700">
                             EDIT SOME PROPS AND VALUES HERE—
                         </Text>
 
@@ -236,12 +228,15 @@ export const IntroCode = () => {
                         />
                     </Div>
 
-                    <Div id="intro-code-block" ref={codeBlockRef}>
+                    <Div id="intro-code-block">
                         <CodeBlock
-                            language="tsx"
+                            key={mountKey}
+                            withSyntaxHighlighting
+                            language="jsx"
                             showCopyButton
                             contentEditable
                             suppressContentEditableWarning={true}
+                            onChange={handleCodeChange}
                             marginBottom="micro"
                             theme="custom"
                         >

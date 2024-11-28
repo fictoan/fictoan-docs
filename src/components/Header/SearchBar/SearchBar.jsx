@@ -174,7 +174,7 @@ export const SearchBar = () => {
             className={`result-card result-theme ${isSelected ? "highlighted" : null}`}
             padding="nano" shape="rounded"
         >
-            <CodeBlock language="css">{result.title} : {result.value}</CodeBlock>
+            <CodeBlock withSyntaxHighlighting language="css">{result.title} : {result.value}</CodeBlock>
             {copiedVariable === result.title && (
                 <Badge
                     className="copied-variable-confirmation"

@@ -1,5 +1,5 @@
 //  Code sample 01 ////////////////////////////////////////////////////////////
-export const sampleCodeBlock = `<CodeBlock source=\{sampleCode} language="jsx" />`;
+export const sampleCodeBlock = `<CodeBlock withSyntaxHighlighting source=\{sampleCode} language="jsx" />`;
 
 //  Code sample 02 ////////////////////////////////////////////////////////////
 export const sampleBashCode = `#!/bin/bash

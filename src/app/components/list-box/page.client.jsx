@@ -71,7 +71,7 @@ const ListBoxDocs = () => {
                         <li>Searchable options with fuzzy matching</li>
                         <li>
                             Pass the <code>value</code> directly to the onChange handler, like so:
-                            <CodeBlock source={sampleOnChangeCode} language="javascript" />
+                            <CodeBlock withSyntaxHighlighting source={sampleOnChangeCode} language="javascript" />
                         </li>
                     </ul>
                 </Portion>
@@ -122,7 +122,7 @@ const ListBoxDocs = () => {
 
                             <Row marginBottom="none">
                                 <Portion>
-                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                    <CodeBlock withSyntaxHighlighting language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
                                             `<ListBox`,
@@ -261,6 +261,7 @@ const ListBoxDocs = () => {
                             <Row marginBottom="none">
                                 <Portion>
                                     <CodeBlock
+                                        withSyntaxHighlighting
                                         source={cssVariablesList}
                                         language="css"
                                         showCopyButton

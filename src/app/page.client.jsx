@@ -60,7 +60,7 @@ const HomePage = () => {
                                 Code the way you design
                             </Heading5>
 
-                            <Text size="large">
+                            <Text>
                                 Plain-English props, attributes and values. No complex keywords or convoluted
                                 abbreviations
                                 to
@@ -79,7 +79,7 @@ const HomePage = () => {
                                 0 – 1 in minutes
                             </Heading5>
 
-                            <Text size="large">
+                            <Text>
                                 Built for rapid iteration, so you can quickly create complex pages and layouts. Modular
                                 too, so you can build on top for specific needs.
                             </Text>
@@ -96,7 +96,7 @@ const HomePage = () => {
                                 One theme to rule them all
                             </Heading5>
 
-                            <Text size="large">
+                            <Text>
                                 Every single configurable aspect of the UI is controlled by a single theme file. Create
                                 as many as you need, and switch.
                             </Text>
@@ -126,7 +126,7 @@ const HomePage = () => {
                                 Performant
                             </Heading5>
 
-                            <Text size="large">
+                            <Text>
                                 100 on Lighthouse performance, and Best Practices. No JS, plain CSS styling. No
                                 dependency
                                 bloat. As close to the metal as it gets. How apps were meant to be built.
@@ -144,11 +144,9 @@ const HomePage = () => {
                                 Clear separation of concerns
                             </Heading5>
 
-                            <Text size="large">
+                            <Text>
                                 Leave the pixel-perfection to the designers, so you can focus on logic and
-                                functionality.
-                                Move
-                                faster, eliminate the dreaded back-and-forth.
+                                functionality. Move faster, eliminate the dreaded back-and-forth.
                             </Text>
                         </Card>
                     </Portion>
@@ -163,7 +161,7 @@ const HomePage = () => {
                                 Write little CSS
                             </Heading5>
 
-                            <Text size="large">
+                            <Text>
                                 Style everything with meaningful markup and self-explanatory props.
                             </Text>
                         </Card>
@@ -178,7 +176,7 @@ const HomePage = () => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* MANIFESTO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Section id="manifesto" bgColour="violet-light70" verticalPadding="medium">
+            <Section id="manifesto" verticalPadding="medium">
                 <Row horizontalPadding="medium" marginBottom="none">
                     <Portion>
                         <Div className="manifesto-card" shadow="soft">
@@ -204,6 +202,8 @@ const HomePage = () => {
                         </Div>
                     </Portion>
                 </Row>
+
+                <Div className="gradient-bg" />
             </Section>
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}

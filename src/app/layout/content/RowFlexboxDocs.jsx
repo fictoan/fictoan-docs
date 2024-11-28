@@ -23,7 +23,7 @@ const RowFlexboxDocs = () => {
                             The flexbox-based grid is a simpler version of the grid layout.
                         </Text>
 
-                        <CodeBlock source={sampleFlexboxRow} language="jsx" marginBottom="micro" />
+                        <CodeBlock withSyntaxHighlighting source={sampleFlexboxRow} language="jsx" marginBottom="micro" />
 
                         <Text marginBottom="nano">
                             This creates a row with 24 columns.

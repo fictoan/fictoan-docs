@@ -78,9 +78,9 @@ const ThemingDocs = () => {
                         the toggle.
                     </Text>
 
-                    <CodeBlock source={sampleThemeProviderSetup} language="jsx" marginBottom="micro" />
-                    <CodeBlock source={sampleHeaderSetup} language="jsx" marginBottom="micro" />
-                    <CodeBlock source={sampleCSSSetup} language="css" marginBottom="micro" />
+                    <CodeBlock withSyntaxHighlighting source={sampleThemeProviderSetup} language="jsx" marginBottom="micro" />
+                    <CodeBlock withSyntaxHighlighting source={sampleHeaderSetup} language="jsx" marginBottom="micro" />
+                    <CodeBlock withSyntaxHighlighting source={sampleCSSSetup} language="css" marginBottom="micro" />
 
                     <Text marginBottom="micro">
                         Here, the Fictoan theme is first loaded as the default theme. You can also create your own
@@ -102,7 +102,7 @@ const ThemingDocs = () => {
 
                     <Text size="large" weight="700" textColour="white" marginBottom="nano">Globals</Text>
 
-                    <CodeBlock source={sampleThemeGlobals} language="css" marginBottom="micro" />
+                    <CodeBlock withSyntaxHighlighting source={sampleThemeGlobals} language="css" marginBottom="micro" />
                 </Portion>
             </Row>
 

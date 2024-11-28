@@ -143,7 +143,7 @@ const ModalDocs = () => {
 
                             <Row marginBottom="none">
                                 <Portion>
-                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                    <CodeBlock withSyntaxHighlighting language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
                                             `<Button onClick={() => showModal("${id}")}>Open the modal</Button>`,
@@ -245,6 +245,7 @@ const ModalDocs = () => {
                             <Row marginBottom="none">
                                 <Portion>
                                     <CodeBlock
+                                        withSyntaxHighlighting
                                         source={cssVariablesList}
                                         language="css"
                                         showCopyButton

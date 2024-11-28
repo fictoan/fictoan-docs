@@ -1,11 +1,12 @@
 "use client";
 
 // FRAMEWORK ===========================================================================================================
-import React, { useState } from "react";
+import React from "react";
 
 // INTERFACE ===========================================================================================================
 import {
     Article,
+    Section,
     Div,
     Heading1,
     Heading4,
@@ -54,65 +55,69 @@ const AccordionDocs = () => {
 
     return (
         <Article id="page-toast">
-            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
-                <Portion>
-                    <Heading1>Accordion</Heading1>
-                    <Text size="large" marginBottom="small">
-                        A simple click to expand/collapse block element.
-                    </Text>
-                </Portion>
+            {/*  INTRO ///////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Section>
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
+                    <Portion>
+                        <Heading1>Accordion</Heading1>
+                        <Text size="large" marginBottom="small">
+                            A simple click to expand/collapse block element.
+                        </Text>
+                    </Portion>
 
-                <Portion>
-                    <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <ul>
-                        <li>
-                            The <code>summary</code> accepts any React node as a child. Feel free to style it however
-                            you want with any element.
-                        </li>
-                        <li>The component is typically used with the <code>isFullWidth</code> prop</li>
-                    </ul>
-                </Portion>
-            </Row>
+                    <Portion>
+                        <Heading4 marginBottom="micro">Characteristics</Heading4>
+                        <ul>
+                            <li>
+                                The <code>summary</code> accepts any React node as a child. Feel free to style it however
+                                you want with any element.
+                            </li>
+                            <li>The component is typically used with the <code>isFullWidth</code> prop</li>
+                        </ul>
+                    </Portion>
+                </Row>
+            </Section>
 
             <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/*  CONFIGURATOR */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row horizontalPadding="small" className="rendered-component">
-                {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
-                <Portion id="component-wrapper">
-                    <Div
-                        padding="small"
-                        shape="rounded"
-                        bgColour="slate-light80"
-                        data-centered-children
-                    >
-                        <Accordion
-                            id="interactive-component"
-                            ref={interactiveElementRef}
-                            {...propsConfig}
-                            {...themeConfig}
-                            summary={<Text>Click me</Text>}
+            {/* INTERACTIVE COMPONENT ////////////////////////////////////////////////////////////////////////////// */}
+            <Section>
+                {/* DEMO COMPONENT ================================================================================= */}
+                <Row id="component-wrapper" horizontalPadding="small" className="rendered-component">
+                    <Portion>
+                        <Div
+                            padding="small"
+                            shape="rounded"
+                            bgColour="slate-light80"
+                            data-centered-children
                         >
-                            <Text>Accordion content</Text>
-                            {propsConfig.content}
-                        </Accordion>
-                    </Div>
-                </Portion>
-            </Row>
+                            <Accordion
+                                id="interactive-component"
+                                ref={interactiveElementRef}
+                                {...propsConfig}
+                                {...themeConfig}
+                                summary={<Text>Click me</Text>}
+                            >
+                                <Text>Accordion content</Text>
+                                {propsConfig.content}
+                            </Accordion>
+                        </Div>
+                    </Portion>
+                </Row>
 
-            <Row horizontalPadding="small">
-                {/* PROPS CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
-                <Portion desktopSpan="half">
-                    {propsConfigurator()}
-                </Portion>
+                <Row horizontalPadding="small">
+                    {/* PROPS CONFIGURATOR ========================================================================= */}
+                    <Portion desktopSpan="half">
+                        {propsConfigurator()}
+                    </Portion>
 
-                {/* THEME CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
-                <Portion desktopSpan="half">
-                    {themeConfigurator()}
-                </Portion>
-            </Row>
+                    {/* THEME CONFIGURATOR ========================================================================= */}
+                    <Portion desktopSpan="half">
+                        {themeConfigurator()}
+                    </Portion>
+                </Row>
+            </Section>
+
         </Article>
     );
 };

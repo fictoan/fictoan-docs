@@ -86,7 +86,7 @@ const BaseElementDocs = () => {
                 <Portion>
                     <Heading4 marginBottom="micro">Usage</Heading4>
 
-                    <CodeBlock source={sampleElement} language="jsx" />
+                    <CodeBlock withSyntaxHighlighting source={sampleElement} language="jsx" />
 
                     <Text marginTop="micro" marginBottom="micro">
                         Not adding the <code>as</code> prop will render a <code>div</code> element by default.

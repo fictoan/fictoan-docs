@@ -204,7 +204,7 @@ const RadioTabGroupDocs = () => {
 
                             <Row marginBottom="none">
                                 <Portion>
-                                    <CodeBlock language="jsx" showCopyButton>
+                                    <CodeBlock withSyntaxHighlighting language="jsx" showCopyButton>
                                         {[
                                             `// Paste this in your content file`,
                                             `<RadioTabGroup`,
@@ -320,6 +320,7 @@ const RadioTabGroupDocs = () => {
                             <Row marginBottom="none">
                                 <Portion>
                                     <CodeBlock
+                                        withSyntaxHighlighting
                                         source={cssVariablesList}
                                         language="css"
                                         showCopyButton

@@ -14,6 +14,7 @@ import {
     Text,
     Article,
     Callout,
+    Section,
 } from "fictoan-react";
 
 // STYLES ==============================================================================================================
@@ -26,7 +27,6 @@ import { createThemeConfigurator } from "../../../utils/themeConfigurator";
 
 // UTILS ===============================================================================================================
 import { colourOptions } from "../../colour/colours";
-
 
 const CalloutDocs = () => {
     // PROPS CONFIG ====================================================================================================
@@ -58,58 +58,63 @@ const CalloutDocs = () => {
 
     return (
         <Article id="page-callout">
-            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
-                <Portion>
-                    <Heading1>Callout</Heading1>
-                    <Text size="large" marginBottom="small">
-                        A box that can be used to highlight important information. It comes in four
-                        variants.
-                    </Text>
-                </Portion>
+            {/*  INTRO ///////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Section>
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
+                    <Portion>
+                        <Heading1>Callout</Heading1>
+                        <Text size="large" marginBottom="small">
+                            A box that can be used to highlight important information. It comes in four
+                            variants.
+                        </Text>
+                    </Portion>
 
-                <Portion>
-                    <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <ul>
-                        <li>Accepts any React node as a child</li>
-                    </ul>
-                </Portion>
-            </Row>
+                    <Portion>
+                        <Heading4 marginBottom="micro">Characteristics</Heading4>
+                        <ul>
+                            <li>Accepts any React node as a child</li>
+                        </ul>
+                    </Portion>
+                </Row>
+            </Section>
 
             <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/*  CONFIGURATOR */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <Row horizontalPadding="small" className="rendered-component">
-                <Portion id="component-wrapper">
-                    <Div
-                        padding="small"
-                        shape="rounded"
-                        bgColour="slate-light80"
-                        data-centered-children
-                    >
-                        <Callout
-                            id="interactive-component"
-                            ref={interactiveElementRef}
-                            {...propsConfig}
-                            {...themeConfig}
+
+            {/* INTERACTIVE COMPONENT ////////////////////////////////////////////////////////////////////////////// */}
+            <Section>
+                {/* DEMO COMPONENT ================================================================================= */}
+                <Row id="component-wrapper" horizontalPadding="small" className="rendered-component">
+                    <Portion>
+                        <Div
+                            padding="small"
+                            shape="rounded"
+                            bgColour="slate-light80"
+                            data-centered-children
                         >
-                            Content goes here
-                        </Callout>
-                    </Div>
-                </Portion>
-            </Row>
+                            <Callout
+                                id="interactive-component"
+                                ref={interactiveElementRef}
+                                {...propsConfig}
+                                {...themeConfig}
+                            >
+                                Content goes here
+                            </Callout>
+                        </Div>
+                    </Portion>
+                </Row>
 
-            <Row horizontalPadding="small">
-                {/* PROPS CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
-                <Portion desktopSpan="half">
-                    {propsConfigurator()}
-                </Portion>
+                <Row horizontalPadding="small">
+                    {/* PROPS CONFIGURATOR ========================================================================= */}
+                    <Portion desktopSpan="half">
+                        {propsConfigurator()}
+                    </Portion>
 
-                {/* THEME CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
-                <Portion desktopSpan="half">
-                    {themeConfigurator()}
-                </Portion>
-            </Row>
+                    {/* THEME CONFIGURATOR ========================================================================= */}
+                    <Portion desktopSpan="half">
+                        {themeConfigurator()}
+                    </Portion>
+                </Row>
+            </Section>
         </Article>
     );
 };

@@ -14,6 +14,7 @@ import {
     Text,
     Article,
     Badge,
+    Section,
 } from "fictoan-react";
 
 // STYLES ==============================================================================================================
@@ -62,57 +63,63 @@ const BadgeDocs = () => {
 
     return (
         <Article id="page-badge">
-            <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
-                <Portion>
-                    <Heading1>Badge</Heading1>
-                    <Text size="large" marginBottom="small">
-                        The badge is a small inline element that can be used to highlight a piece of information.
-                    </Text>
-                </Portion>
+            {/*  INTRO ///////////////////////////////////////////////////////////////////////////////////////////// */}
+            <Section>
+                <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
+                    <Portion>
+                        <Heading1>Badge</Heading1>
+                        <Text size="large" marginBottom="small">
+                            The badge is a small inline element that can be used to highlight a piece of information.
+                        </Text>
+                    </Portion>
 
-                <Portion>
-                    <Heading4 marginBottom="micro">Characteristics</Heading4>
-                    <ul>
-                        <li>You have to manually align the Badge with its sibling</li>
-                        <li>Default size is <code>medium</code></li>
-                    </ul>
-                </Portion>
-            </Row>
+                    <Portion>
+                        <Heading4 marginBottom="micro">Characteristics</Heading4>
+                        <ul>
+                            <li>You have to manually align the Badge with its sibling</li>
+                            <li>Default size is <code>medium</code></li>
+                        </ul>
+                    </Portion>
+                </Row>
+            </Section>
 
             <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-            {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////////// */}
-            <Row horizontalPadding="small" className="rendered-component">
-                <Portion id="component-wrapper">
-                    <Div
-                        padding="small"
-                        shape="rounded"
-                        bgColour="slate-light80"
-                        data-centered-children
-                    >
-                        <Badge
-                            id="interactive-component"
-                            ref={interactiveElementRef}
-                            {...propsConfig}
-                            {...themeConfig}
+            {/* INTERACTIVE COMPONENT ////////////////////////////////////////////////////////////////////////////// */}
+            <Section>
+                {/* DEMO COMPONENT ================================================================================= */}
+                <Row id="component-wrapper" horizontalPadding="small" className="rendered-component">
+                    <Portion>
+                        <Div
+                            padding="small"
+                            shape="rounded"
+                            bgColour="slate-light80"
+                            data-centered-children
                         >
-                            {propsConfig.content}
-                        </Badge>
-                    </Div>
-                </Portion>
-            </Row>
+                            <Badge
+                                id="interactive-component"
+                                ref={interactiveElementRef}
+                                {...propsConfig}
+                                {...themeConfig}
+                            >
+                                {propsConfig.content}
+                            </Badge>
+                        </Div>
+                    </Portion>
+                </Row>
 
-            <Row horizontalPadding="small">
-                {/* PROPS CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
-                <Portion desktopSpan="half">
-                    {propsConfigurator()}
-                </Portion>
+                <Row horizontalPadding="small">
+                    {/* PROPS CONFIGURATOR ========================================================================= */}
+                    <Portion desktopSpan="half">
+                        {propsConfigurator()}
+                    </Portion>
 
-                {/* THEME CONFIGURATOR ///////////////////////////////////////////////////////////////////////////// */}
-                <Portion desktopSpan="half">
-                    {themeConfigurator()}
-                </Portion>
-            </Row>
+                    {/* THEME CONFIGURATOR ========================================================================= */}
+                    <Portion desktopSpan="half">
+                        {themeConfigurator()}
+                    </Portion>
+                </Row>
+            </Section>
         </Article>
     );
 };

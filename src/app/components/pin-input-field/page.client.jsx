@@ -74,7 +74,7 @@ const PINInputFieldDocs = () => {
 
                         <Text marginBottom="micro">As the bare minimum, add the <code>numberOfFields</code> prop.</Text>
 
-                        <CodeBlock source={samplePinInput} language="jsx" marginBottom="micro" />
+                        <CodeBlock withSyntaxHighlighting source={samplePinInput} language="jsx" marginBottom="micro" />
 
                         <PinInputField numberOfFields={4} />
                     </Portion>
@@ -98,7 +98,7 @@ const PINInputFieldDocs = () => {
                             This decides the length of PIN you want to accept.
                         </Text>
 
-                        <CodeBlock source={sampleInputNumberOfFields} language="jsx" marginBottom="micro" />
+                        <CodeBlock withSyntaxHighlighting source={sampleInputNumberOfFields} language="jsx" marginBottom="micro" />
 
                         <PinInputField numberOfFields={3} />
                         <PinInputField numberOfFields={5} />
@@ -123,7 +123,7 @@ const PINInputFieldDocs = () => {
                             digits.
                         </Text>
 
-                        <CodeBlock source={samplePinInputType} language="jsx" marginBottom="micro" />
+                        <CodeBlock withSyntaxHighlighting source={samplePinInputType} language="jsx" marginBottom="micro" />
 
                         <Text marginBottom="nano">Numeric:</Text>
                         <PinInputField numberOfFields={4} type="numeric" />
@@ -151,7 +151,7 @@ const PINInputFieldDocs = () => {
                             This hides the entered character and shows a dot instead.
                         </Text>
 
-                        <CodeBlock source={samplePinInputMask} language="jsx" marginBottom="micro" />
+                        <CodeBlock withSyntaxHighlighting source={samplePinInputMask} language="jsx" marginBottom="micro" />
 
                         <PinInputField numberOfFields={4} mask />
                     </Portion>
@@ -171,7 +171,7 @@ const PINInputFieldDocs = () => {
                             paste-able value.
                         </Text>
 
-                        <CodeBlock source={samplePinInputOTP} language="jsx" marginBottom="micro" />
+                        <CodeBlock withSyntaxHighlighting source={samplePinInputOTP} language="jsx" marginBottom="micro" />
 
                         <PinInputField numberOfFields={4} isOTP />
                     </Portion>

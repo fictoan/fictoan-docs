@@ -90,7 +90,7 @@ const CodeBlockDocs = () => {
             case "jsx":
                 setSelectedSampleCode(sampleJSXCode);
                 break;
-            case "objective-c":
+            case "objectivec":
                 setSelectedSampleCode(sampleObjectiveCCode);
                 break;
             case "markdown":
@@ -149,6 +149,7 @@ const CodeBlockDocs = () => {
                          data-centered-children
                     >
                         <CodeBlock
+                            withSyntaxHighlighting
                             source={selectedSampleCode}
                             language={selectedLanguage}
                             showCopyButton={enableCopyButton}
@@ -170,7 +171,7 @@ const CodeBlockDocs = () => {
                             <Row marginBottom="none">
                                 <Portion>
                                     {selectedApproach === "embed" ? (
-                                            <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                            <CodeBlock withSyntaxHighlighting language="jsx" showCopyButton marginBottom="micro">
                                                 {[
                                                     `// Paste this in your content file`,
                                                     selectedApproach === "import" ? `import { sampleCode } from "./codeSamples.js"; \n` : null,
@@ -187,7 +188,7 @@ const CodeBlockDocs = () => {
                                             </CodeBlock>
                                         )
                                         : (
-                                            <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                            <CodeBlock withSyntaxHighlighting language="jsx" showCopyButton marginBottom="micro">
                                                 {[
                                                     `// Paste this in your content file`,
                                                     selectedApproach === "import" ? `import { sampleCode } from "./codeSamples.js"; \n` : null,
@@ -217,7 +218,7 @@ const CodeBlockDocs = () => {
                                             { label : "JSX", value : "jsx" },
                                             { label : "Kotlin", value : "kotlin" },
                                             { label : "Markdown", value : "markdown" },
-                                            { label : "Objective-C", value : "objective-c" },
+                                            { label : "ObjectiveC", value : "objectivec" },
                                             { label : "Python", value : "python" },
                                             { label : "Rust", value : "rust" },
                                             { label : "Swift", value : "swift" },
@@ -292,6 +293,7 @@ const CodeBlockDocs = () => {
                             <Row marginBottom="none">
                                 <Portion>
                                     <CodeBlock
+                                        withSyntaxHighlighting
                                         source={cssVariablesList}
                                         language="css"
                                         showCopyButton

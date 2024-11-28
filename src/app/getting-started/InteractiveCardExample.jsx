@@ -169,7 +169,7 @@ export const InteractiveCardExample = () => {
             </Portion>
 
             <Portion desktopSpan="half">
-                <CodeBlock language="jsx" marginBottom="micro">{[
+                <CodeBlock withSyntaxHighlighting language="jsx" marginBottom="micro">{[
                     // Lol, hacky max pro
                     `<Card`,
                     selectedPadding && `    padding="${selectedPadding}"`,

@@ -87,7 +87,7 @@ const GettingStarted = () => {
                         <Accordion
                             isFullWidth
                             summary={
-                                <Heading4>First time coding? Click here.</Heading4>
+                                <Heading5>First time coding? Click here.</Heading5>
                             }
                         >
                             <Tabs
@@ -135,7 +135,7 @@ const GettingStarted = () => {
                                                     <li>
                                                         Copy the below command and paste it into the terminal, and hit
                                                         Enter.
-                                                        <CodeBlock language="bash" showCopyButton>
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>
                                                             /bin/bash -c "$(curl -fsSL
                                                             https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
                                                         </CodeBlock>
@@ -151,7 +151,7 @@ const GettingStarted = () => {
                                                         Once the installation is complete, you can verify that Homebrew
                                                         is installed by
                                                         typing this command:
-                                                        <CodeBlock language="bash" showCopyButton>
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>
                                                             brew --version
                                                         </CodeBlock>
                                                     </li>
@@ -183,13 +183,13 @@ const GettingStarted = () => {
 
                                                     <li>
                                                         Verify installation by opening your terminal and running:
-                                                        <CodeBlock language="bash" showCopyButton>node
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>node
                                                             --version</CodeBlock>
                                                     </li>
 
                                                     <li>
                                                         And then:
-                                                        <CodeBlock language="bash" showCopyButton>npm
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>npm
                                                             --version</CodeBlock>
                                                         Both should display a version number.
                                                     </li>
@@ -198,8 +198,9 @@ const GettingStarted = () => {
                                                 <Divider kind="secondary" verticalMargin="tiny" />
 
                                                 {/* STEP 3 — INSTALL PNPM ////////////////////////////////////////////////////////////// */}
-                                                <Heading6 weight="700" marginBottom="nano">Step 3 — Install
-                                                    pnpm</Heading6>
+                                                <Heading6 weight="700" marginBottom="nano">
+                                                    Step 3 — Install pnpm
+                                                </Heading6>
 
                                                 <Text marginBottom="micro">
                                                     Now, we need to install <code>pnpm</code>. <Span opacity="60">This
@@ -212,7 +213,7 @@ const GettingStarted = () => {
                                                 <ul className="tutorial-steps">
                                                     <li>
                                                         Open your terminal and run:
-                                                        <CodeBlock language="bash" showCopyButton>brew install
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>brew install
                                                             pnpm</CodeBlock>
                                                     </li>
                                                 </ul>
@@ -220,8 +221,9 @@ const GettingStarted = () => {
                                                 <Divider kind="secondary" verticalMargin="tiny" />
 
                                                 {/* STEP 4 — INSTALL NODE.JS /////////////////////////////////////////////////////////// */}
-                                                <Heading6 weight="700" marginBottom="nano">Step 4 — Download starter
-                                                    project</Heading6>
+                                                <Heading6 weight="700" marginBottom="nano">
+                                                    Step 4 — Download starter project
+                                                </Heading6>
 
                                                 <Text marginBottom="micro">
                                                     Almost there. We&rsquo;ll need a boilerplate setup. <Span
@@ -246,7 +248,7 @@ const GettingStarted = () => {
                                                     <li>
                                                         In your terminal, navigate to the directory you extracted the
                                                         file to, and run:
-                                                        <CodeBlock language="bash" showCopyButton marginBottom="nano">
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton marginBottom="nano">
                                                             pnpm install
                                                         </CodeBlock>
                                                         This will install all the dependencies the project needs to run.
@@ -254,7 +256,7 @@ const GettingStarted = () => {
 
                                                     <li>
                                                         Once the installation is complete, then run:
-                                                        <CodeBlock language="bash" showCopyButton marginBottom="nano">pnpm
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton marginBottom="nano">pnpm
                                                             dev</CodeBlock>
                                                         This should open a new tab in your default browser, go
                                                         to <code>http://localhost:3000</code> and display the home page
@@ -340,12 +342,12 @@ const GettingStarted = () => {
                                                     </li>
                                                     <li>
                                                         Verify installation by opening Command Prompt (cmd) and running:
-                                                        <CodeBlock language="bash" showCopyButton>node
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>node
                                                             --version</CodeBlock>
                                                     </li>
                                                     <li>
                                                         And then:
-                                                        <CodeBlock language="bash" showCopyButton>npm
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>npm
                                                             --version</CodeBlock>
                                                         Both should display a version number.
                                                     </li>
@@ -365,13 +367,14 @@ const GettingStarted = () => {
                                                 <ul className="tutorial-steps">
                                                     <li>
                                                         Open PowerShell as Administrator and run:
-                                                        <CodeBlock language="bash" showCopyButton>iwr
-                                                            https://get.pnpm.io/install.ps1 -useb | iex</CodeBlock>
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>
+                                                            iwr https://get.pnpm.io/install.ps1 -useb | iex
+                                                        </CodeBlock>
                                                     </li>
                                                     <li>
                                                         Close and reopen PowerShell, then verify the installation by
                                                         running:
-                                                        <CodeBlock language="bash" showCopyButton>pnpm
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>pnpm
                                                             --version</CodeBlock>
                                                     </li>
                                                 </ul>
@@ -400,13 +403,13 @@ const GettingStarted = () => {
                                                     <li>
                                                         Open PowerShell, navigate to the directory you extracted the
                                                         file to, and run:
-                                                        <CodeBlock language="bash" showCopyButton marginBottom="nano">pnpm
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton marginBottom="nano">pnpm
                                                             install</CodeBlock>
                                                         This will install all the dependencies the project needs to run.
                                                     </li>
                                                     <li>
                                                         Once the installation is complete, then run:
-                                                        <CodeBlock language="bash" showCopyButton marginBottom="nano">pnpm
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton marginBottom="nano">pnpm
                                                             dev</CodeBlock>
                                                         This should open a new tab in your default browser, go
                                                         to <code>http://localhost:3000</code> and display the home page
@@ -474,7 +477,7 @@ const GettingStarted = () => {
                                                 <ul className="tutorial-steps">
                                                     <li>
                                                         Open your terminal and run these commands:
-                                                        <CodeBlock language="bash" showCopyButton>
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>
                                                             curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E
                                                             bash -
                                                             sudo apt-get install -y nodejs
@@ -482,12 +485,12 @@ const GettingStarted = () => {
                                                     </li>
                                                     <li>
                                                         Verify installation by running:
-                                                        <CodeBlock language="bash" showCopyButton>node
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>node
                                                             --version</CodeBlock>
                                                     </li>
                                                     <li>
                                                         And then:
-                                                        <CodeBlock language="bash" showCopyButton>npm
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>npm
                                                             --version</CodeBlock>
                                                         Both should display a version number.
                                                     </li>
@@ -507,13 +510,13 @@ const GettingStarted = () => {
                                                 <ul className="tutorial-steps">
                                                     <li>
                                                         Run this command:
-                                                        <CodeBlock language="bash" showCopyButton>
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>
                                                             curl -fsSL https://get.pnpm.io/install.sh | sh -
                                                         </CodeBlock>
                                                     </li>
                                                     <li>
                                                         Close and reopen your terminal, then verify the installation:
-                                                        <CodeBlock language="bash" showCopyButton>pnpm
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>pnpm
                                                             --version</CodeBlock>
                                                     </li>
                                                 </ul>
@@ -542,14 +545,14 @@ const GettingStarted = () => {
                                                     <li>
                                                         In your terminal, navigate to the directory you extracted the
                                                         file to, and run:
-                                                        <CodeBlock language="bash" showCopyButton marginBottom="nano">
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton marginBottom="nano">
                                                             pnpm install
                                                         </CodeBlock>
                                                         This will install all the dependencies the project needs to run.
                                                     </li>
                                                     <li>
                                                         Once the installation is complete, then run:
-                                                        <CodeBlock language="bash" showCopyButton marginBottom="nano">pnpm
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton marginBottom="nano">pnpm
                                                             dev</CodeBlock>
                                                         This should open a new tab in your default browser, go
                                                         to <code>http://localhost:3000</code> and display the home page
@@ -571,7 +574,7 @@ const GettingStarted = () => {
                                                 <ul className="tutorial-steps">
                                                     <li>
                                                         For Ubuntu/Debian-based systems:
-                                                        <CodeBlock language="bash" showCopyButton>
+                                                        <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>
                                                             sudo apt-get install code
                                                         </CodeBlock>
                                                         For other distributions, visit the <a
@@ -610,7 +613,7 @@ const GettingStarted = () => {
                     <Portion>
                         <Accordion
                             isFullWidth
-                            summary={<Heading4>Done this before? Jump right in.</Heading4>}
+                            summary={<Heading5>Done this before? Jump right in.</Heading5>}
                         >
                             <Heading6 marginTop="small" marginBottom="nano">Installation</Heading6>
 
@@ -642,7 +645,7 @@ const GettingStarted = () => {
                                             </Element>
                                         ),
                                         content : (
-                                            <CodeBlock language="bash" showCopyButton>
+                                            <CodeBlock withSyntaxHighlighting language="bash" showCopyButton>
                                                 pnpm add fictoan-react
                                             </CodeBlock>
                                         ),
@@ -656,7 +659,7 @@ const GettingStarted = () => {
                                             </Element>
                                         ),
                                         content : (
-                                            <CodeBlock language="bash">yarn add fictoan-react</CodeBlock>
+                                            <CodeBlock withSyntaxHighlighting language="bash">yarn add fictoan-react</CodeBlock>
                                         ),
                                     },
                                     {
@@ -668,7 +671,7 @@ const GettingStarted = () => {
                                             </Element>
                                         ),
                                         content : (
-                                            <CodeBlock language="bash">npm install fictoan-react</CodeBlock>
+                                            <CodeBlock withSyntaxHighlighting language="bash">npm install fictoan-react</CodeBlock>
                                         ),
                                     },
                                 ]}
@@ -757,13 +760,15 @@ const GettingStarted = () => {
                         </Text>
 
                         <CodeBlock
+                            withSyntaxHighlighting
                             id="boilerplate-structure"
-                            source={snippetPageSetupJSX}
                             language="jsx"
+                            source={snippetPageSetupJSX}
                             marginBottom="micro"
                         />
 
                         <CodeBlock
+                            withSyntaxHighlighting
                             id="boilerplate-structure"
                             source={snippetPageSetupCSS}
                             language="css"
@@ -811,8 +816,10 @@ const GettingStarted = () => {
                         </Text>
 
                         <CodeBlock
+                            withSyntaxHighlighting
+                            showCopyButton
                             source={snippetInstallation}
-                            language="javascript"
+                            language="jsx"
                             marginBottom="micro"
                         />
 
@@ -822,8 +829,10 @@ const GettingStarted = () => {
                         </Text>
 
                         <CodeBlock
+                            withSyntaxHighlighting
+                            showCopyButton
                             source={snippetUsage}
-                            language="javascript"
+                            language="jsx"
                             marginBottom="micro"
                         />
 

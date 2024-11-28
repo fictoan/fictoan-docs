@@ -359,7 +359,9 @@ export const ComponentGrid = () => {
                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                     <Div className="component-card">
                         <CodeBlock
-                            source={cardComponentSample} language="jsx"
+                            withSyntaxHighlighting
+                            source={cardComponentSample}
+                            language="javascript"
                             marginTop="micro" marginBottom="micro"
                             showCopyButton
                             showLineNumbers

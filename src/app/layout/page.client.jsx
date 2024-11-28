@@ -256,7 +256,7 @@ const LayoutDocs = () => {
 
                         {/* CONFIGURATOR */}
                         <Portion desktopSpan="two-third">
-                            <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                            <CodeBlock withSyntaxHighlighting language="jsx" showCopyButton marginBottom="micro">
                                 {[
                                     `// Paste this in your content file`,
                                     `<Row`,
@@ -492,7 +492,7 @@ const LayoutDocs = () => {
                         </Portion>
 
                         <Portion>
-                            <CodeBlock source={sampleResonsiveness} language="jsx" />
+                            <CodeBlock withSyntaxHighlighting source={sampleResonsiveness} language="jsx" />
                         </Portion>
                     </Row>
 
@@ -560,7 +560,7 @@ const LayoutDocs = () => {
                         </Portion>
 
                         <Portion>
-                            <CodeBlock source={sampleTurnOffResponsiveness} language="jsx" />
+                            <CodeBlock withSyntaxHighlighting source={sampleTurnOffResponsiveness} language="jsx" />
                         </Portion>
                     </Row>
                 </Element>

@@ -170,7 +170,7 @@ const NotificationsDocs = () => {
 
                             <Row marginBottom="none">
                                 <Portion>
-                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                    <CodeBlock withSyntaxHighlighting language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
                                             `const [showSampleNotification, setShowSampleNotification] = useState(false); \n`,
@@ -271,6 +271,7 @@ const NotificationsDocs = () => {
                             <Row marginBottom="micro">
                                 <Portion>
                                     <CodeBlock
+                                        withSyntaxHighlighting
                                         source={cssVariablesList}
                                         language="css"
                                         showCopyButton

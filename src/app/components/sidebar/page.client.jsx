@@ -97,7 +97,7 @@ const SidebarDocs = () => {
 
                     <Portion desktopSpan="half">
                         <Div className="example-component-content">
-                            <CodeBlock language="tsx" marginBottom="nano">
+                            <CodeBlock withSyntaxHighlighting language="tsx" marginBottom="nano">
                                 {[
                                     `// Paste this in your content file`,
                                     `<SidebarWrapper>`,
@@ -202,6 +202,7 @@ const SidebarDocs = () => {
                         </Header>
 
                         <CodeBlock
+                            withSyntaxHighlighting
                             source={cssVariablesList}
                             language="css"
                             showCopyButton

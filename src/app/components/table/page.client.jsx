@@ -141,7 +141,7 @@ const TableDocs = () => {
 
                             <Row marginBottom="none">
                                 <Portion>
-                                    <CodeBlock language="jsx" showCopyButton marginBottom="micro">
+                                    <CodeBlock withSyntaxHighlighting language="jsx" showCopyButton marginBottom="micro">
                                         {[
                                             `// Paste this in your content file`,
                                             `<Table`,
@@ -265,6 +265,7 @@ const TableDocs = () => {
                             <Row marginBottom="none">
                                 <Portion>
                                     <CodeBlock
+                                        withSyntaxHighlighting
                                         source={cssVariablesList}
                                         language="css"
                                         showCopyButton

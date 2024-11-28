@@ -66,6 +66,10 @@
     }
 
     /* MANIFESTO-CARD ======================================================= */
+    #manifesto {
+        position : relative;
+    }
+
     .manifesto-card {
         position      : relative;
         min-width     : 100%;
@@ -108,7 +112,6 @@
         background    : linear-gradient(0deg, rgb(27, 51, 176), rgb(0, 45, 136));
         border        : 1px solid hsla(0, 0%, 100%, .1);
         border-radius : 16px;
-
     }
 
     /* THE GLOWING BORDER */
@@ -124,5 +127,20 @@
         /* Keyframes are defined in globals.css, doesn't work if kept here */
         animation        : border-glow -.64s linear 4s infinite;
         will-change      : transform
+    }
+
+    .gradient-bg {
+        z-index         : -1;
+        background      : linear-gradient(
+                135deg, var(--amber), var(--green), var(--white), var(--purple), var(--red), var(--black)
+        );
+        background-size : 400% 400%;
+        animation       : gradient 15s ease infinite;
+        height          : 100%;
+        display         : block;
+        position        : absolute;
+        top             : 0;
+        left            : 0;
+        width           : 100%;
     }
 }

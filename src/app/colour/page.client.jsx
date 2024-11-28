@@ -150,7 +150,7 @@ const ColourDocs = () => {
                                 verticalPadding="small" horizontalPadding="micro"
                                 bgColour={computedValues.bgColour}
                             >
-                                <CodeBlock language="jsx" showCopyButton>
+                                <CodeBlock withSyntaxHighlighting language="jsx" showCopyButton>
                                     {[
                                         `<Card`,
                                         computedValues.bgColour ? ` bgColour="${computedValues.bgColour}"` : null,
@@ -301,21 +301,21 @@ const ColourDocs = () => {
                     <Portion>
                         <Element as="div" id="usage-examples">
                             <Element as="div" marginBottom="micro">
-                                <CodeBlock source={sampleUsage1} language="jsx" marginBottom="nano" />
+                                <CodeBlock withSyntaxHighlighting source={sampleUsage1} language="jsx" marginBottom="nano" />
                                 <Card padding="small" bgColour="crimson-light10" borderColour="pistachio-light30" />
                             </Element>
 
                             <Divider kind="tertiary" verticalMargin="micro" />
 
                             <Element as="div" marginBottom="micro">
-                                <CodeBlock source={sampleUsage2} language="jsx" marginBottom="nano" />
+                                <CodeBlock withSyntaxHighlighting source={sampleUsage2} language="jsx" marginBottom="nano" />
                                 <Element as="section" bgColour="amber-light30" padding="small" />
                             </Element>
 
                             <Divider kind="tertiary" verticalMargin="micro" />
 
                             <Element as="div" marginBottom="micro">
-                                <CodeBlock source={sampleUsage3} language="jsx" marginBottom="nano" />
+                                <CodeBlock withSyntaxHighlighting source={sampleUsage3} language="jsx" marginBottom="nano" />
                                 <Element as="ul" borderColour="cyan-dark10" bgColour="slate-light70" padding="micro">
                                     <Element as="li" borderColour="pink-light30">
                                         Hello

@@ -129,6 +129,12 @@
     --sidebar-footer-bg                       : var(--grey-light90);
     --sidebar-footer-border-top               : var(--grey-light70);
 
+    /* SKELETON ///////////////////////////////////////////////////////////// */
+    :root {
+        --skeleton-bg        : var(--slate-light40);
+        --skeleton-highlight : var(--slate-light60);
+    }
+
 
     /* SWITCH /////////////////////////////////////////////////////////////// */
     --switch-bg-default                       : var(--slate-dark40);
@@ -206,4 +212,6 @@
     --search-result-item-bg-default           : var(--slate-dark80);
     --search-result-item-bg-hover             : var(--blue-dark80);
     --search-result-item-border-hover         : var(--blue-dark60);
+
+    --scale-ratio-max  : 1.16;
 }
