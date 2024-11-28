@@ -257,6 +257,7 @@ export const createThemeConfigurator = (componentName, filter) => {
                 <Row marginBottom="none">
                     <Portion>
                         <CodeBlock
+                            withSyntaxHighlighting
                             source={variables.cssVariablesList}
                             language="css"
                             showCopyButton
