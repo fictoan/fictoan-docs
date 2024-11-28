@@ -340,6 +340,7 @@ export const createPropsConfigurator = (
             <Row marginBottom="none">
                 <Portion>
                     <CodeBlock
+                        withSyntaxHighlighting
                         language="jsx"
                         showCopyButton
                         marginBottom="micro"
