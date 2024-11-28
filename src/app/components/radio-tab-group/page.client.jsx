@@ -98,10 +98,10 @@ const RadioTabGroupDocs = () => {
         };
     }, []);
 
-    const handleNameChange = (e) => {
-        setName(e.target.value);
+    const handleNameChange = (value) => {
+        setName(value);
         setManualNameSet(true); // Mark `name` as manually set
-        saveToLocalStorage("radioTabGroup_name", e.target.value);
+        saveToLocalStorage("radioTabGroup_name", value);
     };
 
 
@@ -125,6 +125,8 @@ const RadioTabGroupDocs = () => {
         setOptions(newOptions);
         saveToLocalStorage("radioTabGroup_options", newOptions);
     };
+
+    const [selectedTabValue, setSelectedTabValue] = useState(options[0].value);
 
     // Add new option
     const addOption = () => {
@@ -188,6 +190,8 @@ const RadioTabGroupDocs = () => {
                             label={label}
                             name={name}
                             options={options}
+                            value={selectedTabValue}
+                            onChange={(e) => setSelectedTabValue(e.target.value)}
                         />
                     </Element>
                 </Portion>

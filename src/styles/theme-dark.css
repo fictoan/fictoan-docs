@@ -8,11 +8,10 @@
     /* BREADCRUMBS ////////////////////////////////////////////////////////// */
     --breadcrumbs-wrapper-bg                  : var(--transparent);
 
-    --breadcrumb-item-separator               : "/";
-    --breadcrumb-item-separator-colour        : var(--slate-light10);
-
     --breadcrumb-item-text-colour             : var(--paragraph-text-colour);
     --breadcrumb-item-text-colour-active      : var(--paragraph-text-colour);
+
+    --breadcrumb-item-separator-colour        : var(--slate-light10);
 
     /* BODY ///////////////////////////////////////////////////////////////// */
     --callout-border-radius                   : var(--global-border-radius);

@@ -2,17 +2,14 @@ export const breadcrumbsProps = {
     component  : "Breadcrumbs",
     properties : [
         "label",
-        "padding",
+        "spacing",
         "bgColour",
+        "separator",
     ],
     variables  : {
         "breadcrumbs-wrapper-bg"            : {
             type         : "reference",
             defaultValue : "transparent",
-        },
-        "breadcrumb-item-separator"        : {
-            type         : "string",
-            defaultValue : "/",
         },
         "breadcrumb-item-separator-colour"  : {
             type         : "reference",

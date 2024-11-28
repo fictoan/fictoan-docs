@@ -25,7 +25,8 @@ import {
     InputField,
     Select,
     Breadcrumbs,
-    BreadcrumbItem, Div,
+    Div,
+    RadioTabGroup,
     CodeBlock
 } from "fictoan-react";
 
@@ -48,6 +49,9 @@ import { breadcrumbsProps } from "./config";
 
 const BreadcrumbsDocs = () => {
     const [selectedBgColour, setSelectedBgColour] = useState("");
+    const [separator, setSeparator] = useState("/");
+    const [selectedSpacing, setSelectedSpacing] = useState("small");
+
     const [showCurrentPageMessage, setShowCurrentPageMessage] = useState(false);
 
     useEffect(() => {
@@ -104,23 +108,19 @@ const BreadcrumbsDocs = () => {
                             {...(
                                 selectedBgColour !== undefined ? { bgColour : selectedBgColour } : {}
                             )}
+                            {...(
+                                separator !== undefined ? { separator } : {}
+                            )}
+                            spacing={selectedSpacing}
                         >
-                            <BreadcrumbItem>
-                                <Link href="/">Home</Link>
-                            </BreadcrumbItem>
-
-                            <BreadcrumbItem>
-                                <Link href="/components">Components</Link>
-                            </BreadcrumbItem>
-
-                            <BreadcrumbItem current>
-                                <Link
-                                    href="/components/breadcrumbs"
-                                    onClick={() => setShowCurrentPageMessage(true)}
-                                >
-                                    Breadcrumbs
-                                </Link>
-                            </BreadcrumbItem>
+                            <Link href="/">Home</Link>
+                            <Link href="/components">Components</Link>
+                            <Link
+                                href="/components/breadcrumbs"
+                                onClick={() => setShowCurrentPageMessage(true)}
+                            >
+                                Breadcrumbs
+                            </Link>
                         </Breadcrumbs>
                     </Div>
                 </Portion>
@@ -140,23 +140,48 @@ const BreadcrumbsDocs = () => {
                                     <CodeBlock withSyntaxHighlighting language="jsx" showCopyButton>
                                         {[
                                             `// Paste this in your content file`,
-                                            `<Breadcrumbs>`,
-                                            `    <BreadcrumbItem>`,
-                                            `        <Link href="/">Home</Link>`,
-                                            `    </BreadcrumbItem>`,
-                                            `    <BreadcrumbItem>`,
-                                            `        <Link href="/components">Components</Link>`,
-                                            `    </BreadcrumbItem>`,
-                                            `    <BreadcrumbItem>`,
-                                            `        <Link href="/components/breadcrumbs">Breadcrumbs</Link>`,
-                                            `    </BreadcrumbItem>`,
+                                            `<Breadcrumbs`,
+                                            `    separator="${separator}"`,
+                                            `    spacing="${selectedSpacing}"`,
+                                            `>`,
+                                            `    <Link href="/">Home</Link>`,
+                                            `    <Link href="/components">Components</Link>`,
+                                            `    <Link href="/components/breadcrumbs">Breadcrumbs</Link>`,
                                             `</Breadcrumbs>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
                                 </Portion>
 
+                                {/* MIN ============================================================================ */}
+                                <Portion desktopSpan="half">
+                                    <InputField
+                                        type="text"
+                                        label="Separator"
+                                        placeholder="Enter a character to separate breadcrumbs"
+                                        value={separator}
+                                        onChange={(e) => setSeparator(e.target.value)}
+                                    />
+                                </Portion>
+
+                                {/* POSITION ======================================================================= */}
                                 <Portion>
-                                    <Text>Breadcrumbs doesn’t have any props to customise individual instances</Text>
+                                    <RadioTabGroup
+                                        id="spacing" label="Spacing" name="spacing"
+                                        options={[
+                                            { id : "spacing-opt-0", value : "none", label : "none" },
+                                            { id : "spacing-opt-1", value : "nano", label : "nano" },
+                                            { id : "spacing-opt-2", value : "micro", label : "micro" },
+                                            { id : "spacing-opt-3", value : "tiny", label : "tiny" },
+                                            { id : "spacing-opt-4", value : "small", label : "small" },
+                                            { id : "spacing-opt-5", value : "medium", label : "medium" },
+                                            { id : "spacing-opt-6", value : "large", label : "large" },
+                                            { id : "spacing-opt-7", value : "huge", label : "huge" },
+                                        ]}
+                                        value={selectedSpacing}
+                                        onChange={() => setSelectedSpacing(event.target.value)}
+                                    />
+
+                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
                             </Row>
                         </Card>
@@ -203,33 +228,6 @@ const BreadcrumbsDocs = () => {
 
                                 <Portion desktopSpan="half" />
 
-                                {/* ITEM SEPARATOR ================================================================= */}
-                                <Portion desktopSpan="half">
-                                    <InputField
-                                        label="Separator character"
-                                        placeholder="Separator"
-                                        defaultValue={componentVariables["breadcrumb-item-separator"]?.value}
-                                        onChange={(e) => handleVariableChange("breadcrumb-item-separator", e.target.value)}
-                                    />
-                                </Portion>
-
-                                {/* BG COLOUR ====================================================================== */}
-                                <Portion desktopSpan="half">
-                                    <Select
-                                        id="separator-colour"
-                                        label="Separator colour"
-                                        options={[{
-                                            label    : "Select a colour",
-                                            value    : "select-a-colour",
-                                            disabled : true,
-                                            selected : true,
-                                        }, ...colourOptions]}
-                                        defaultValue={componentVariables["breadcrumb-item-separator-colour"] || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("breadcrumb-item-separator-colour", e.target.value)}
-                                        isFullWidth
-                                    />
-                                </Portion>
-
                                 {/* ITEM COLOUR ==================================================================== */}
                                 <Portion desktopSpan="half">
                                     <Select
@@ -260,6 +258,23 @@ const BreadcrumbsDocs = () => {
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["breadcrumb-item-text-colour-active"] || "select-a-colour"}
                                         onChange={(e) => handleVariableChange("breadcrumb-item-text-colour-active", e.target.value)}
+                                        isFullWidth
+                                    />
+                                </Portion>
+
+                                {/* ITEM SEPARATOR COLOUR ========================================================== */}
+                                <Portion desktopSpan="half">
+                                    <Select
+                                        id="separator-colour"
+                                        label="Separator colour"
+                                        options={[{
+                                            label    : "Select a colour",
+                                            value    : "select-a-colour",
+                                            disabled : true,
+                                            selected : true,
+                                        }, ...colourOptions]}
+                                        defaultValue={componentVariables["breadcrumb-item-separator-colour"] || "select-a-colour"}
+                                        onChange={(e) => handleVariableChange("breadcrumb-item-separator-colour", e.target.value)}
                                         isFullWidth
                                     />
                                 </Portion>

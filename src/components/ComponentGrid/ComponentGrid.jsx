@@ -255,36 +255,12 @@ export const ComponentGrid = () => {
             <Div id="breadcrumbs-card" className="grid-item">
                 <Card shape="rounded" className="component-wrapper" isFullHeight>
                     <Div className="component-card">
-                        <Breadcrumbs>
-                            <BreadcrumbItem>
-                                <Link href="/components/breadcrumbs">
-                                    A
-                                </Link>
-                            </BreadcrumbItem>
-
-                            <BreadcrumbItem>
-                                <Link href="/components/breadcrumbs">
-                                    long
-                                </Link>
-                            </BreadcrumbItem>
-
-                            <BreadcrumbItem>
-                                <Link href="/components/breadcrumbs">
-                                    trail
-                                </Link>
-                            </BreadcrumbItem>
-
-                            <BreadcrumbItem>
-                                <Link href="/components/breadcrumbs">
-                                    of
-                                </Link>
-                            </BreadcrumbItem>
-
-                            <BreadcrumbItem>
-                                <Link href="/components/breadcrumbs">
-                                    crumbs
-                                </Link>
-                            </BreadcrumbItem>
+                        <Breadcrumbs spacing="small">
+                            <Link href="/components/breadcrumbs">A</Link>
+                            <Link href="/components/breadcrumbs">long</Link>
+                            <Link href="/components/breadcrumbs">trail</Link>
+                            <Link href="/components/breadcrumbs">of</Link>
+                            <Link href="/components/breadcrumbs">crumbs</Link>
                         </Breadcrumbs>
 
                         <Element as="footer" className="footer-bottom">
