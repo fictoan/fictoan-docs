@@ -1,7 +1,7 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
@@ -28,6 +28,7 @@ import {
     Range,
     Select,
     CodeBlock,
+    Div,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -81,6 +82,25 @@ const InputFieldDocs = () => {
             </Row>
 
             <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
+
+            {/* SAMPLE COMPONENT /////////////////////////////////////////////////////////////////////////////////// */}
+            {/* <Row horizontalPadding="small" id="sample-component"> */}
+            {/*     <Portion> */}
+            {/*         <Div */}
+            {/*             verticalPadding="medium" shape="rounded" bgColour="slate-light80" */}
+            {/*             data-centered-children */}
+            {/*         > */}
+            {/*             <InputField */}
+            {/*                 id="sample-input" */}
+            {/*                 label="Label" */}
+            {/*                 stringLeft="stringLeft" */}
+            {/*                 // iconLeft={<BadgeIcon />} */}
+            {/*                 stringRight="stringRight" */}
+            {/*                 // iconRight={<CheckboxIcon />} */}
+            {/*             /> */}
+            {/*         </Div> */}
+            {/*     </Portion> */}
+            {/* </Row> */}
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/*  CONFIGURATOR */}

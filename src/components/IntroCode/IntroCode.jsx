@@ -41,14 +41,14 @@ export const IntroCode = () => {
 
     const [mainHeadingProps, setMainHeadingProps] = useState({
         textColour   : "blue",
-        marginBottom : "micro",
+        marginBottom : "nano",
         weight       : "700",
     });
 
     const [taglineProps, setTaglineProps] = useState({
         textColour   : "blue-light30",
         marginBottom : "micro",
-        weight       : "700",
+        weight       : "400",
     });
 
     const [subHeading1Props, setSubHeading1Props] = useState({
@@ -199,7 +199,7 @@ export const IntroCode = () => {
                         </Heading5>
 
                         <Heading5 {...subHeading2Props}>
-                            Hand-off responsive, performant React code to your dev team.
+                            Why not hand-off responsive, performant React code, rather than just static artboards?
                         </Heading5>
 
                         {vizMode && (

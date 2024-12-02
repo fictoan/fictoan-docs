@@ -226,6 +226,4 @@
     --search-result-item-bg-default           : var(--slate-dark80);
     --search-result-item-bg-hover             : var(--blue-dark80);
     --search-result-item-border-hover         : var(--blue-dark20);
-
-    --scale-ratio-max  : 1.2;
 }

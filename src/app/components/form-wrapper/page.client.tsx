@@ -6,6 +6,7 @@ import React, { useState } from "react";
 // INTERNAL DEPS =======================================================================================================
 import {
     Element,
+    Div,
     Heading1,
     Heading2,
     Heading3,
@@ -25,8 +26,11 @@ import {
     ToastItem,
     ToastsWrapper,
     Button,
-    Range, FormItemGroup, Checkbox,
-CodeBlock
+    Range,
+    FormItemGroup,
+    Checkbox,
+    CodeBlock,
+    Select
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -35,6 +39,8 @@ CodeBlock
 import "./page-form.css";
 
 // HOOKS ===============================================================================================================
+import BadgeIcon from "../../../assets/icons/badge.svg";
+import CheckboxIcon from "../../../assets/icons/checkbox.svg";
 
 // UTILS ===============================================================================================================
 
@@ -77,8 +83,8 @@ const FormDocs = () => {
             <Row horizontalPadding="small" className="rendered-component">
                 {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////////////// */}
                 <Portion id="component-wrapper">
-                    <Element
-                        as="div" padding="small" shape="rounded" bgColour="slate-light80"
+                    <Div
+                        padding="small" shape="rounded" bgColour="slate-light80"
                         data-centered-children
                     >
                         <Row horizontalPadding="large" marginBottom="none">
@@ -86,13 +92,30 @@ const FormDocs = () => {
                                 <Card padding="micro" shape="rounded" shadow="soft">
                                     <Text size="large" weight="700" marginBottom="micro">Sign up</Text>
 
-                                    <Form spacing={selectedSpacing}>
+                                    <Form spacing="small">
                                         <FormItemGroup isJoint={isJoint}>
                                             <InputField label="First name" />
                                             <InputField label="Last name" />
                                         </FormItemGroup>
 
-                                        <InputField label="Email" />
+                                        <InputField
+                                            label="Amount"
+                                            stringLeft="https://"
+                                            // iconLeft={<BadgeIcon />}
+                                            stringRight=".com"
+                                            // iconRight={<CheckboxIcon />}
+                                        />
+
+                                        <Select
+                                            id="language"
+                                            label="Language"
+                                            name="list-of-languages"
+                                            options={[
+                                                { label : "Bash", value : "bash" },
+                                                { label : "Swift", value : "swift" },
+                                            ]}
+                                            isFullWidth
+                                        />
 
                                         <InputField label="Address" />
 
@@ -106,7 +129,7 @@ const FormDocs = () => {
                                 </Card>
                             </Portion>
                         </Row>
-                    </Element>
+                    </Div>
                 </Portion>
 
                 {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
@@ -152,7 +175,7 @@ const FormDocs = () => {
                                             { id : "spacing-opt-7", value : "huge", label : "huge" },
                                         ]}
                                         value={selectedSpacing}
-                                        onChange={() => setSelectedSpacing(event.target.value)}
+                                        onChange={(e) => setSelectedSpacing(e.target.value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -166,7 +189,7 @@ const FormDocs = () => {
                                         name="checkbox-is-joint"
                                         label="Join inputs inside the FormItemGroup"
                                         checked={isJoint}
-                                        onChange={() => setIsJoint(event.target.checked)}
+                                        onChange={(e) => setIsJoint(e.target.checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -180,7 +203,7 @@ const FormDocs = () => {
                                         name="checkbox-button-full-width"
                                         label="Make button full width"
                                         checked={isButtonFullWidth}
-                                        onChange={() => setIsButtonFullWidth(event.target.checked)}
+                                        onChange={(e) => setIsButtonFullWidth(e.target.checked)}
                                     />
                                 </Portion>
                             </Row>

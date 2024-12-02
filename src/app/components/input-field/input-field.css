@@ -1,6 +1,6 @@
 #page-input-field {
-    #test-regex {
-        display               : grid;
-        grid-template-columns : 24% 1fr;
+    #sample-component [data-form-item] {
+        width     : 480px;
+        /*transform : scale(2);*/
     }
 }

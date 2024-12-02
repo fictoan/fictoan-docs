@@ -7,6 +7,7 @@ import Link from "next/link";
 // INTERNAL DEPS =======================================================================================================
 import {
     Div,
+    Article,
     Divider,
     Portion,
     Row,
@@ -31,7 +32,7 @@ import ManifestoIcon from "../assets/icons/manifesto.svg";
 
 const HomePage = () => {
     return (
-        <article id="home-page">
+        <Article id="home-page">
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* HERO */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -62,9 +63,7 @@ const HomePage = () => {
 
                             <Text>
                                 Plain-English props, attributes and values. No complex keywords or convoluted
-                                abbreviations
-                                to
-                                remember.
+                                abbreviations to remember.
                             </Text>
                         </Card>
                     </Portion>
@@ -128,8 +127,7 @@ const HomePage = () => {
 
                             <Text>
                                 100 on Lighthouse performance, and Best Practices. No JS, plain CSS styling. No
-                                dependency
-                                bloat. As close to the metal as it gets. How apps were meant to be built.
+                                dependency bloat. As close to the metal as it gets. How apps were meant to be built.
                             </Text>
                         </Card>
                     </Portion>
@@ -162,7 +160,8 @@ const HomePage = () => {
                             </Heading5>
 
                             <Text>
-                                Style everything with meaningful markup and self-explanatory props.
+                                Extremely declarative syntax to style everything with meaningful markup and
+                                self-explanatory props.
                             </Text>
                         </Card>
                     </Portion>
@@ -223,12 +222,7 @@ const HomePage = () => {
                     </Portion>
                 </Row>
             </Section>
-
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* VIDEO */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-
-        </article>
+        </Article>
     );
 };
 
