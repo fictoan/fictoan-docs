@@ -177,7 +177,7 @@ export const IntroCode = () => {
                         </Heading1>
 
                         <Heading4 {...taglineProps}>
-                            Empower designers to edit code
+                            Empower designers to contribute in code
                         </Heading4>
 
                         <Link href="/getting-started">
