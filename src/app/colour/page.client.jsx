@@ -6,11 +6,10 @@ import React, { useState } from "react";
 // INTERNAL DEPS =======================================================================================================
 import {
     Element, Card, Heading1,
-    Heading6, Text, Divider, Portion, Row, Callout, Article, FictoanColours, Div, OptionCard, OptionCardsGroup,
+    Heading6, Text, Divider, Portion, Row, Callout, Article, FictoanColours, Div, OptionCard, OptionCardsGroup, CodeBlock
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
-import { CodeBlock } from "fictoan-react/components";
 
 // STYLES ==============================================================================================================
 import "./page-colour.css";
