@@ -200,7 +200,7 @@ const ButtonDocs = () => {
                                             { id : "kind-opt-3", value : "tertiary", label : "tertiary" },
                                         ]}
                                         value={selectedKind}
-                                        onChange={() => setSelectedKind(event.target.value !== "none" ? event.target.value : undefined)}
+                                        onChange={(e) => setSelectedKind(e.target.value !== "none" ? e.target.value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -223,7 +223,7 @@ const ButtonDocs = () => {
                                             { id : "size-opt-7", value : "huge", label : "huge" },
                                         ]}
                                         value={selectedSize}
-                                        onChange={() => setSelectedSize(event.target.value !== "none" ? event.target.value : undefined)}
+                                        onChange={(e) => setSelectedSize(e.target.value !== "none" ? e.target.value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -241,7 +241,7 @@ const ButtonDocs = () => {
                                             { id : "shape-opt-2", value : "curved", label : "curved" },
                                         ]}
                                         value={selectedShape}
-                                        onChange={() => setSelectedShape(event.target.value !== "none" ? event.target.value : undefined)}
+                                        onChange={(e) => setSelectedShape(e.target.value !== "none" ? e.target.value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -258,7 +258,7 @@ const ButtonDocs = () => {
                                             { id : "shadow-opt-2", value : "soft", label : "soft" },
                                         ]}
                                         value={selectedShadow}
-                                        onChange={() => setSelectedShadow(event.target.value !== "none" ? event.target.value : undefined)}
+                                        onChange={(e) => setSelectedShadow(e.target.value !== "none" ? e.target.value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />

@@ -178,7 +178,7 @@ const BreadcrumbsDocs = () => {
                                             { id : "spacing-opt-7", value : "huge", label : "huge" },
                                         ]}
                                         value={selectedSpacing}
-                                        onChange={() => setSelectedSpacing(event.target.value)}
+                                        onChange={(e) => setSelectedSpacing(e.target.value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />

@@ -133,7 +133,7 @@ const ToastDocs = () => {
                                             { id : "position-opt-1", value : "bottom", label : "bottom" },
                                         ]}
                                         value={selectedPosition || "right"}
-                                        onChange={() => setSelectedPosition(event.target.value)}
+                                        onChange={(e) => setSelectedPosition(e.target.value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />

@@ -167,7 +167,6 @@ const RadioTabGroupDocs = () => {
                 <Portion>
                     <Heading4 marginBottom="micro">Characteristics</Heading4>
                     <ul>
-                        <li>Accepts upto 12 options</li>
                         <li>Each option takes the width of the longest option</li>
                     </ul>
                 </Portion>

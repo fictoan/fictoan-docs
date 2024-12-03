@@ -14,49 +14,24 @@ import {
     Heading6,
     Text,
     Divider, Card, RadioGroup, Select,
-CodeBlock
+    CodeBlock, RadioTabGroup, ListBox,
 } from "fictoan-react";
-import { listOfColours, generateShades } from "../colour/colours";
+
+import { listOfColours, generateShades, colourOptions } from "../colour/colours";
 
 // COMPONENTS ==================================================================
 
 
 export const InteractiveCardExample = () => {
-    const [selectedPadding, setSelectedPadding] = useState("");
-    const [selectedShape, setSelectedShape] = useState("");
-    const [selectedShadow, setSelectedShadow] = useState("");
-    const [selectedBgColour, setSelectedBgColour] = useState("white");
-    const [selectedBorderColour, setSelectedBorderColour] = useState("slate");
-
-    // Function to handle radio button change
-    const handlePaddingChange = (event) => {
-        setSelectedPadding(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
-    const handleShapeChange = (event) => {
-        setSelectedShape(event.target.value !== "none" ? event.target.value : undefined);
-    };
+    const [selectedPadding, setSelectedPadding] = useState("none");
+    const [selectedShape, setSelectedShape] = useState("none");
+    const [selectedShadow, setSelectedShadow] = useState("none");
+    const [selectedBgColour, setSelectedBgColour] = useState(null);
+    const [selectedBorderColour, setSelectedBorderColour] = useState(null);
 
     const handleShadowChange = (event) => {
         setSelectedShadow(event.target.value !== "none" ? event.target.value : undefined);
     };
-
-    const handleBgColourChange = (event) => {
-        setSelectedBgColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
-    const handleBorderColourChange = (event) => {
-        setSelectedBorderColour(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
-    const colorOptions = listOfColours.flatMap(color =>
-        generateShades(color).map(shade => (
-            {
-                label : shade,
-                value : shade,
-            }
-        )),
-    );
 
     return (
         <Row horizontalPadding="large">
@@ -69,18 +44,19 @@ export const InteractiveCardExample = () => {
 
                         <Portion desktopSpan="three-fourth">
                             <RadioGroup
+                                id="padding"
                                 options={[
-                                    { id : "padding-opt-0", name : "padding", value : "none", label : "none" },
-                                    { id : "padding-opt-1", name : "padding", value : "nano", label : "nano" },
-                                    { id : "padding-opt-2", name : "padding", value : "micro", label : "micro" },
-                                    { id : "padding-opt-3", name : "padding", value : "tiny", label : "tiny" },
-                                    { id : "padding-opt-4", name : "padding", value : "small", label : "small" },
-                                    { id : "padding-opt-5", name : "padding", value : "medium", label : "medium" },
-                                    { id : "padding-opt-6", name : "padding", value : "large", label : "large" },
-                                    { id : "padding-opt-7", name : "padding", value : "huge", label : "huge" },
+                                    { id : "padding-opt-0", value : "none", label : "none" },
+                                    { id : "padding-opt-1", value : "nano", label : "nano" },
+                                    { id : "padding-opt-2", value : "micro", label : "micro" },
+                                    { id : "padding-opt-3", value : "tiny", label : "tiny" },
+                                    { id : "padding-opt-4", value : "small", label : "small" },
+                                    { id : "padding-opt-5", value : "medium", label : "medium" },
+                                    { id : "padding-opt-6", value : "large", label : "large" },
+                                    { id : "padding-opt-7", value : "huge", label : "huge" },
                                 ]}
-                                defaultValue={selectedPadding}
-                                onChange={handlePaddingChange}
+                                value={selectedPadding}
+                                onChange={(e) => setSelectedPadding(e.target.value)}
                             />
                         </Portion>
                     </Row>
@@ -94,13 +70,14 @@ export const InteractiveCardExample = () => {
 
                         <Portion desktopSpan="three-fourth">
                             <RadioGroup
+                                name="shape-group"
                                 options={[
-                                    { id : "shape-opt-0", name : "shape", value : "none", label : "none" },
-                                    { id : "shape-opt-1", name : "shape", value : "rounded", label : "rounded" },
-                                    { id : "shape-opt-2", name : "shape", value : "curved", label : "curved" },
+                                    { id : "shape-opt-0", value : "none", label : "none" },
+                                    { id : "shape-opt-1", value : "rounded", label : "rounded" },
+                                    { id : "shape-opt-2", value : "curved", label : "curved" },
                                 ]}
-                                defaultValue={selectedShape}
-                                onChange={handleShapeChange}
+                                value={selectedShape}
+                                onChange={(e) => setSelectedShape(e.target.value)}
                             />
                         </Portion>
                     </Row>
@@ -114,13 +91,15 @@ export const InteractiveCardExample = () => {
 
                         <Portion desktopSpan="three-fourth">
                             <RadioGroup
+                                id="shadow"
+                                name="shadow"
                                 options={[
-                                    { id : "shadow-opt-0", name : "shadow", value : "none", label : "none" },
-                                    { id : "shadow-opt-1", name : "shadow", value : "mild", label : "mild" },
-                                    { id : "shadow-opt-3", name : "shadow", value : "hard", label : "hard" },
-                                    { id : "shadow-opt-2", name : "shadow", value : "soft", label : "soft" },
+                                    { id : "shadow-opt-0", value : "none", label : "none" },
+                                    { id : "shadow-opt-1", value : "mild", label : "mild" },
+                                    { id : "shadow-opt-3", value : "hard", label : "hard" },
+                                    { id : "shadow-opt-2", value : "soft", label : "soft" },
                                 ]}
-                                defaultValue={selectedShadow}
+                                value={selectedShadow}
                                 onChange={handleShadowChange}
                             />
                         </Portion>
@@ -134,33 +113,32 @@ export const InteractiveCardExample = () => {
                         </Portion>
 
                         <Portion desktopSpan="one-fourth">
-                            <Select
+                            <ListBox
                                 label="Background colour"
                                 options={[{
-                                    label    : "Select an option",
-                                    value    : "select-an-option",
-                                    disabled : true,
-                                    selected : true,
-                                },
-                                    ...colorOptions,
-                                ]}
-                                onChange={handleBgColourChange}
+                                    label: "Select a colour",
+                                    value: "select-a-colour",
+                                    disabled: true,
+                                }, ...colourOptions]}
+                                defaultValue="select-a-colour"
+                                onChange={(e) => setSelectedBgColour(e.target.value)}
                                 isFullWidth
                             />
                         </Portion>
 
                         <Portion desktopSpan="one-fourth">
-                            <Select
+                            <ListBox
                                 label="Border colour"
                                 options={[{
-                                    name     : "Select an option",
-                                    value    : "select-an-option",
+                                    label    : "Select a colour",
+                                    value    : "select-a-colour",
                                     disabled : true,
                                     selected : true,
                                 },
-                                    ...colorOptions,
+                                    ...colourOptions,
                                 ]}
-                                onChange={handleBorderColourChange}
+                                defaultValue="select-a-colour"
+                                onChange={(e) => setSelectedBorderColour(e.target.value)}
                                 isFullWidth
                             />
                         </Portion>
@@ -179,7 +157,7 @@ export const InteractiveCardExample = () => {
                     selectedBorderColour && `    borderColor="${selectedBorderColour}"`,
                     `>`,
                     `    {/* Add any content here */}`,
-                    `</Card>`
+                    `</Card>`,
                 ].filter(Boolean).join("\n")}
                 </CodeBlock>
             </Portion>

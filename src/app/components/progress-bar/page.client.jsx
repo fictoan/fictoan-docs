@@ -141,7 +141,7 @@ const ProgressBarDocs = () => {
                                             { id : "shape-opt-2", value : "curved", label : "curved" },
                                         ]}
                                         value={selectedShape}
-                                        onChange={() => setSelectedShape(event.target.value !== "none" ? event.target.value : undefined)}
+                                        onChange={(e) => setSelectedShape(e.target.value !== "none" ? e.target.value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />

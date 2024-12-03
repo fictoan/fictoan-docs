@@ -175,6 +175,9 @@ export const createThemeConfigurator = (componentName, filter) => {
 
     // VARIABLE CHANGE HANDLER =========================================================================================
     const handleVariableChange = useCallback((varName, newValue) => {
+        // Ensure newValue is a string
+        const stringValue = typeof newValue === "object" ? newValue.value : String(newValue);
+
         // Check if the variable is a color variable
         const isColor = Object.entries(variables.componentVariables)
             .some(([name, value]) => name === varName && isColorVariable(value));
@@ -189,11 +192,15 @@ export const createThemeConfigurator = (componentName, filter) => {
 
             // Handle colour-specific class updates --------------------------------------------------------------------
             if (isColor) {
-                const classPrefix = varName.split('-')[0];
+                const classPrefix = varName.split("-")[0];
                 const oldClasses = Array.from(element.classList)
                     .filter(cls => cls.startsWith(`${classPrefix}-`));
                 oldClasses.forEach(cls => element.classList.remove(cls));
-                element.classList.add(`${classPrefix}-${newValue}`);
+
+                // Only add the class if stringValue is valid
+                if (stringValue && typeof stringValue === "string") {
+                    element.classList.add(`${classPrefix}-${stringValue}`);
+                }
             }
         }
 

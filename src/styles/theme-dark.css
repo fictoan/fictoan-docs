@@ -130,8 +130,6 @@
 
     /* RADIO BUTTON ///////////////////////////////////////////////////////// */
     --radio-tabs-height                       : 32px;
-    --radio-tabs-bg                           : var(--slate-light40);
-    --radio-tabs-border                       : var(--slate-light40);
 
     /* SIDEBAR ////////////////////////////////////////////////////////////// */
     --sidebar-bg                              : var(--grey-dark90);

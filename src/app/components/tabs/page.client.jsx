@@ -175,7 +175,7 @@ const TabsDocs = () => {
                                             { id : "align-opt-3", value : "center", label : "center" },
                                         ]}
                                         value={selectedAlign}
-                                        onChange={() => setSelectedAlign(event.target.value !== "none" ? event.target.value : undefined)}
+                                        onChange={(e) => setSelectedAlign(e.target.value !== "none" ? e.target.value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />

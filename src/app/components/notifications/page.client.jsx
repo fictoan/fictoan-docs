@@ -204,7 +204,7 @@ const NotificationsDocs = () => {
                                             { id : "position-opt-1", value : "right", label : "right" },
                                         ]}
                                         value={selectedPosition || "right"}
-                                        onChange={() => setSelectedPosition(event.target.value)}
+                                        onChange={(e) => setSelectedPosition(e.target.value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -219,7 +219,7 @@ const NotificationsDocs = () => {
                                             { id : "anchor-opt-1", value : "bottom", label : "bottom" },
                                         ]}
                                         value={selectedAnchor || "right"}
-                                        onChange={() => setSelectedAnchor(event.target.value)}
+                                        onChange={(e) => setSelectedAnchor(e.target.value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -234,7 +234,7 @@ const NotificationsDocs = () => {
                                             { id : "order-opt-1", value : "new-on-bottom", label : "new-on-bottom" },
                                         ]}
                                         value={selectedOrder || "right"}
-                                        onChange={() => setSelectedOrder(event.target.value)}
+                                        onChange={(e) => setSelectedOrder(e.target.value)}
                                     />
                                 </Portion>
 

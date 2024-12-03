@@ -10,8 +10,6 @@ import {
     Row,
     Portion,
     Heading1,
-    Heading2,
-    Heading3,
     Heading4,
     Heading5,
     Heading6,
@@ -22,7 +20,7 @@ import {
     CodeBlock,
     Accordion,
     Section,
-    Span,
+    Span, Article,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -67,7 +65,7 @@ const GettingStarted = () => {
     }, []);
 
     return (
-        <article id="page-getting-started">
+        <Article id="page-getting-started">
             <Row
                 horizontalPadding="huge"
                 marginTop="medium"
@@ -79,7 +77,7 @@ const GettingStarted = () => {
             </Row>
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* ENV SETUP */}
+            {/* FIRST TIMERS */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Section id="dev-environment-setup">
                 <Row horizontalPadding="huge">
@@ -606,7 +604,7 @@ const GettingStarted = () => {
             </Section>
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* FIRST STEPS */}
+            {/* EXPERIENCED DEVS */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Section id="first-steps">
                 <Row horizontalPadding="huge">
@@ -710,7 +708,7 @@ const GettingStarted = () => {
                         <CodeBlock
                             id="boilerplate-structure"
                             source={snippetStructure}
-                            language="bash"
+                            language="html"
                             marginBottom="micro"
                         />
 
@@ -1069,7 +1067,7 @@ const GettingStarted = () => {
                     </Portion>
                 </Row>
             </Element>
-        </article>
+        </Article>
     );
 };
 

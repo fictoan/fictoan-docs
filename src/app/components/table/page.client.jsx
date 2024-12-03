@@ -183,7 +183,7 @@ const TableDocs = () => {
                                             { id : "borders-for-opt-3", value : "both", label : "both" },
                                         ]}
                                         value={bordersFor}
-                                        onChange={() => setBordersFor(event.target.value !== "none" ? event.target.value : undefined)}
+                                        onChange={(e) => setBordersFor(e.target.value !== "none" ? e.target.value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -202,7 +202,7 @@ const TableDocs = () => {
                                             { id : "padding-opt-7", value : "huge", label : "huge" },
                                         ]}
                                         value={selectedPadding}
-                                        onChange={() => setSelectedPadding(event.target.value !== "none" ? event.target.value : undefined)}
+                                        onChange={(e) => setSelectedPadding(e.target.value !== "none" ? e.target.value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />

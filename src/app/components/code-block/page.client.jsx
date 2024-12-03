@@ -244,7 +244,7 @@ const CodeBlockDocs = () => {
                                             { id : "approach-opt-1", value : "embed", label : "embed" },
                                         ]}
                                         value={selectedApproach}
-                                        onChange={() => setSelectedApproach(event.target.value !== "none" ? event.target.value : undefined)}
+                                        onChange={(e) => setSelectedApproach(e.target.value !== "none" ? e.target.value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />

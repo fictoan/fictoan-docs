@@ -30,7 +30,10 @@ import {
     FormItemGroup,
     Checkbox,
     CodeBlock,
-    Select
+    Select,
+    RadioButton,
+    Switch,
+    ListBox
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -39,8 +42,6 @@ import {
 import "./page-form.css";
 
 // HOOKS ===============================================================================================================
-import BadgeIcon from "../../../assets/icons/badge.svg";
-import CheckboxIcon from "../../../assets/icons/checkbox.svg";
 
 // UTILS ===============================================================================================================
 
@@ -48,9 +49,29 @@ import CheckboxIcon from "../../../assets/icons/checkbox.svg";
 
 const FormDocs = () => {
     // SAMPLE ==========================================================================================================
-    const [selectedSpacing, setSelectedSpacing] = useState("");
+    const [selectedSpacing, setSelectedSpacing] = useState("small");
     const [isJoint, setIsJoint] = useState(false);
     const [isButtonFullWidth, setIsButtonFullWidth] = useState(false);
+
+    const [formValues, setFormValues] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        address: "",
+        city: "",
+        state: "",
+        zip: "",
+        age: "",
+        about: "",
+        gender: "",
+        terms: false,
+        newsletter: false,
+        notifications: false,
+    });
+
+    const [ subscription, setSubscription ] = useState("monthly");
 
     // CUSTOMISE =======================================================================================================
 
@@ -92,37 +113,170 @@ const FormDocs = () => {
                                 <Card padding="micro" shape="rounded" shadow="soft">
                                     <Text size="large" weight="700" marginBottom="micro">Sign up</Text>
 
-                                    <Form spacing="small">
+                                    {/* @ts-ignore */}
+                                    <Form spacing={selectedSpacing}>
+                                        {/* Text Input Fields */}
                                         <FormItemGroup isJoint={isJoint}>
-                                            <InputField label="First name" />
-                                            <InputField label="Last name" />
+                                            <InputField label="First name" placeholder="John" />
+                                            <InputField label="Last name" placeholder="Doe" />
                                         </FormItemGroup>
 
-                                        <InputField
-                                            label="Amount"
-                                            stringLeft="https://"
-                                            // iconLeft={<BadgeIcon />}
-                                            stringRight=".com"
-                                            // iconRight={<CheckboxIcon />}
+                                        {/* Email Input */}
+                                        <InputField 
+                                            label="Email address" 
+                                            type="email"
+                                            placeholder="john.doe@example.com"
+                                            helpText="We'll never share your email"
                                         />
 
+                                        {/* Password Input */}
+                                        <InputField 
+                                            label="Password" 
+                                            type="password"
+                                            placeholder="Enter your password"
+                                        />
+
+                                        {/* Number Input */}
+                                        <InputField 
+                                            label="Age"
+                                            type="number"
+                                            min={0}
+                                            max={120}
+                                        />
+
+                                        {/* Textarea */}
+                                        <InputField 
+                                            label="About you"
+                                            type="textarea"
+                                            rows={4}
+                                            placeholder="Tell us about yourself..."
+                                        />
+
+                                        {/* Select Dropdown */}
                                         <Select
-                                            id="language"
-                                            label="Language"
-                                            name="list-of-languages"
+                                            label="Country"
                                             options={[
-                                                { label : "Bash", value : "bash" },
-                                                { label : "Swift", value : "swift" },
+                                                { label: "United States", value: "us" },
+                                                { label: "United Kingdom", value: "uk" },
+                                                { label: "Canada", value: "ca" }
                                             ]}
-                                            isFullWidth
                                         />
 
-                                        <InputField label="Address" />
+                                        {/* Radio Buttons */}
+                                        <FormItemGroup>
+                                            <Text marginBottom="nano">Gender</Text>
+                                            <RadioButton
+                                                id="gender-male"
+                                                name="gender"
+                                                value="male"
+                                                label="Male"
+                                            />
+                                            <RadioButton
+                                                id="gender-female"
+                                                name="gender"
+                                                value="female"
+                                                label="Female"
+                                            />
+                                            <RadioButton
+                                                id="gender-other"
+                                                name="gender"
+                                                value="other"
+                                                label="Other"
+                                            />
+                                        </FormItemGroup>
 
-                                        <Button
-                                            kind="primary"
-                                            {...(isButtonFullWidth ? { isFullWidth : true } : {})}
-                                        >
+                                        {/* Checkboxes */}
+                                        <FormItemGroup>
+                                            <Text marginBottom="nano">Interests</Text>
+                                            <Checkbox
+                                                id="interest-sports"
+                                                name="interests"
+                                                value="sports"
+                                                label="Sports"
+                                            />
+                                            <Checkbox
+                                                id="interest-music"
+                                                name="interests"
+                                                value="music"
+                                                label="Music"
+                                            />
+                                            <Checkbox
+                                                id="interest-reading"
+                                                name="interests"
+                                                value="reading"
+                                                label="Reading"
+                                            />
+                                        </FormItemGroup>
+
+                                        {/* Switch */}
+                                        <Switch
+                                            id="notifications"
+                                            label="Enable notifications"
+                                        />
+
+                                        {/* File Upload */}
+                                        <InputField
+                                            type="file"
+                                            label="Profile picture"
+                                            accept="image/*"
+                                        />
+
+                                        {/* Range Input */}
+                                        <Range
+                                            label="Experience level"
+                                            min={1}
+                                            max={10}
+                                            defaultValue={5}
+                                        />
+
+                                        {/* Date Input */}
+                                        <InputField
+                                            type="date"
+                                            label="Birth date"
+                                        />
+
+                                        {/* Time Input */}
+                                        <InputField
+                                            type="time"
+                                            label="Preferred contact time"
+                                        />
+
+                                        {/* Radio Tab Group */}
+                                        <RadioTabGroup
+                                            id="subscription-plan"
+                                            name="subscription"
+                                            label="Subscription Plan"
+                                            value={subscription}
+                                            options={[
+                                                { id: "monthly", label: "Monthly", value: "monthly" },
+                                                { id: "yearly", label: "Yearly", value: "yearly" },
+                                                { id: "lifetime", label: "Lifetime", value: "lifetime" }
+                                            ]}
+                                            onChange={(e) => setSubscription(e.target.value)}
+                                        />
+
+                                        {/* ListBox */}
+                                        <ListBox
+                                            label="Choose your role"
+                                            defaultValue="developer"
+                                            options={[
+                                                {
+                                                    value: "developer",
+                                                    label: "Developer",
+                                                },
+                                                {
+                                                    value: "designer",
+                                                    label: "Designer",
+                                                },
+                                                {
+                                                    value: "manager",
+                                                    label: "Project Manager",
+                                                }
+                                            ]}
+                                        />
+
+                                        {/* Submit Button */}
+                                        <Button kind="primary" type="submit">
                                             Submit
                                         </Button>
                                     </Form>
@@ -185,11 +339,9 @@ const FormDocs = () => {
                                 <Portion>
                                     <Checkbox
                                         id="checkbox-is-joint"
-                                        value="checkbox-is-joint"
-                                        name="checkbox-is-joint"
                                         label="Join inputs inside the FormItemGroup"
                                         checked={isJoint}
-                                        onChange={(e) => setIsJoint(e.target.checked)}
+                                        onChange={(e) => setIsJoint((e.target as HTMLInputElement).checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -203,7 +355,7 @@ const FormDocs = () => {
                                         name="checkbox-button-full-width"
                                         label="Make button full width"
                                         checked={isButtonFullWidth}
-                                        onChange={(e) => setIsButtonFullWidth(e.target.checked)}
+                                        onChange={(e) => setIsButtonFullWidth((e.target as HTMLInputElement).checked)}
                                     />
                                 </Portion>
                             </Row>
