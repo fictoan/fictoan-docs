@@ -54,12 +54,12 @@ const BaseElementDocs = () => {
             <Row horizontalPadding="huge" marginTop="medium">
                 <Portion>
                     <Heading1 marginBottom="micro">Base element</Heading1>
-                    <Text size="large" marginBottom="micro">
+                    <Text marginBottom="micro">
                         This is a common wrapper tag that lets you use the Fictoan props, such as <code>marginTop</code>,
                         or <code>horizontallyCentreThis</code> etc.
                     </Text>
 
-                    <Text size="large" marginBottom="micro">
+                    <Text marginBottom="micro">
                         While <code>Element</code> supports all HTML entities, you can explicitly use some tags
                         natively:
                         <code>Article</code>,

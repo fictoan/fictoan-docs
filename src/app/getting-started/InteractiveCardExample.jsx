@@ -182,6 +182,7 @@ export const InteractiveCardExample = () => {
                             selectedBorderColour !== undefined ? { borderColor : selectedBorderColour } : {}
                         )}
                     >
+                        <Text>Example card</Text>
                     </Card>
                 </Element>
             </Portion>
