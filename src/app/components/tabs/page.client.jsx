@@ -175,7 +175,7 @@ const TabsDocs = () => {
                                             { id : "align-opt-3", value : "center", label : "center" },
                                         ]}
                                         value={selectedAlign}
-                                        onChange={(e) => setSelectedAlign(e.target.value !== "none" ? e.target.value : undefined)}
+                                        onChange={(value) => setSelectedAlign(value !== "none" ? value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -243,7 +243,7 @@ const TabsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["tabs-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("tabs-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("tabs-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -261,7 +261,7 @@ const TabsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["tab-label-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("tab-label-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("tab-label-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -277,7 +277,7 @@ const TabsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["tab-label-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("tab-label-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("tab-label-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -293,7 +293,7 @@ const TabsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["tab-label-active"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("tab-label-active", e.target.value)}
+                                        onChange={(value) => handleVariableChange("tab-label-active", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -309,7 +309,7 @@ const TabsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["tab-label-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("tab-label-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("tab-label-disabled", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -325,7 +325,7 @@ const TabsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["tab-alert-badge-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("tab-alert-badge-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("tab-alert-badge-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -341,7 +341,7 @@ const TabsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["tab-alert-badge-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("tab-alert-badge-border", e.target.value)}
+                                        onChange={(value) => handleVariableChange("tab-alert-badge-border", value)}
                                         isFullWidth
                                     />
                                 </Portion>

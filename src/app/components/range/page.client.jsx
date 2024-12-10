@@ -74,7 +74,7 @@ const RangeDocs = () => {
                         <Range
                             label={showLabel ? rangeLabel : undefined}
                             value={rangeValue}
-                            onChange={(e) => setRangeValue(Number(e.target.value))}
+                            onChange={(value) => setRangeValue(Number(value))}
                             min={selectedMin}
                             max={selectedMax}
                             step={selectedStep}
@@ -132,7 +132,7 @@ const RangeDocs = () => {
                                         <InputField
                                             type="text"
                                             value={rangeLabel}
-                                            onChange={(e) => setRangeLabel(e.target.value)}
+                                            onChange={(value) => setRangeLabel(value)}
                                             placeholder="Enter label text"
                                         />
 
@@ -146,7 +146,7 @@ const RangeDocs = () => {
                                         type="number"
                                         label="Min value"
                                         value={selectedMin}
-                                        onChange={(e) => setSelectedMin(Number(e.target.value))}
+                                        onChange={(value) => setSelectedMin(Number(value))}
                                     />
                                 </Portion>
 
@@ -156,7 +156,7 @@ const RangeDocs = () => {
                                         type="number"
                                         label="Max value"
                                         value={selectedMax}
-                                        onChange={(e) => setSelectedMax(Number(e.target.value))}
+                                        onChange={(value) => setSelectedMax(Number(value))}
                                     />
                                 </Portion>
 
@@ -166,7 +166,7 @@ const RangeDocs = () => {
                                         type="number"
                                         label="Step size"
                                         value={selectedStep}
-                                        onChange={(e) => setSelectedStep(Number(e.target.value))}
+                                        onChange={(value) => setSelectedStep(Number(value))}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -178,7 +178,7 @@ const RangeDocs = () => {
                                         type="text"
                                         label="Suffix"
                                         value={selectedSuffix}
-                                        onChange={(e) => setSelectedSuffix((e.target.value))}
+                                        onChange={(value) => setSelectedSuffix((value))}
                                     />
                                 </Portion>
                             </Row>
@@ -219,7 +219,7 @@ const RangeDocs = () => {
                                         },
                                             ...colourOptions]}
                                         defaultValue={componentVariables["range-track-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("range-track-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("range-track-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -236,7 +236,7 @@ const RangeDocs = () => {
                                         },
                                             ...colourOptions]}
                                         defaultValue={componentVariables["range-thumb-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("range-thumb-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("range-thumb-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -253,7 +253,7 @@ const RangeDocs = () => {
                                         },
                                             ...colourOptions]}
                                         defaultValue={componentVariables["range-thumb-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("range-thumb-border", e.target.value)}
+                                        onChange={(value) => handleVariableChange("range-thumb-border", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -270,7 +270,7 @@ const RangeDocs = () => {
                                         },
                                             ...colourOptions]}
                                         defaultValue={componentVariables["range-border-focus"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("range-border-focus", e.target.value)}
+                                        onChange={(value) => handleVariableChange("range-border-focus", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -287,7 +287,7 @@ const RangeDocs = () => {
                                         },
                                             ...colourOptions]}
                                         defaultValue={componentVariables["range-outline-focus"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("range-outline-focus", e.target.value)}
+                                        onChange={(value) => handleVariableChange("range-outline-focus", value)}
                                         isFullWidth
                                     />
                                 </Portion>

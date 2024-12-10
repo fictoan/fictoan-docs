@@ -167,7 +167,7 @@ const ModalDocs = () => {
                                         type="text"
                                         label="Id"
                                         placeholder="Id"
-                                        onChange={(e) => setId(e.target.value)}
+                                        onChange={(value) => setId(value)}
                                         defaultValue={id}
                                     />
 
@@ -182,7 +182,7 @@ const ModalDocs = () => {
                                         name="checkbox-is-dismissible"
                                         label="Is dismissible"
                                         checked={isDismissible}
-                                        onChange={(e) => setIsDismissible(e.target.checked)}
+                                        onChange={(value) => setIsDismissible(e.target.checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -196,7 +196,7 @@ const ModalDocs = () => {
                                         name="checkbox-explicit-close"
                                         label="Add explicit close button"
                                         checked={addExplicitClose}
-                                        onChange={(e) => setAddExplicitClose(e.target.checked)}
+                                        onChange={(value) => setAddExplicitClose(e.target.checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -210,7 +210,7 @@ const ModalDocs = () => {
                                         name="checkbox-show-backdrop"
                                         label="Show backdrop"
                                         checked={showBackdrop}
-                                        onChange={(e) => setShowBackdrop(e.target.checked)}
+                                        onChange={(value) => setShowBackdrop(e.target.checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -224,7 +224,7 @@ const ModalDocs = () => {
                                         name="checkbox-blur-backdrop"
                                         label="Blur backdrop"
                                         checked={blurBackdrop}
-                                        onChange={(e) => setBlurBackdrop(e.target.checked)}
+                                        onChange={(value) => setBlurBackdrop(e.target.checked)}
                                     />
                                 </Portion>
                             </Row>
@@ -258,7 +258,7 @@ const ModalDocs = () => {
                                     <Range
                                         label="Backdrop blur"
                                         value={componentVariables["modal-backdrop-blur"].value}
-                                        onChange={(e) => handleVariableChange("modal-backdrop-blur", e.target.value)}
+                                        onChange={(value) => handleVariableChange("modal-backdrop-blur", value)}
                                         min={0} max={50} step={1}
                                         suffix={componentVariables["modal-backdrop-blur"].unit}
                                     />

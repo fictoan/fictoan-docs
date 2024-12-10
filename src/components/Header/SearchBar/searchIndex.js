@@ -1688,7 +1688,7 @@ const docsMetadata = {
         "form-wrapper"    : {
             title       : "Form Wrapper",
             description : "A container for form elements",
-            path        : "/components/form-wrapper",
+            path        : "/components/form",
             icon        : FormWrapperIcon,
         },
         "input-field"     : {

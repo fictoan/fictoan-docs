@@ -151,7 +151,7 @@ const ListBoxDocs = () => {
                                         type="text"
                                         label="Label"
                                         value={label}
-                                        onChange={(e) => setLabel(e.target.value)}
+                                        onChange={(value) => setLabel(value)}
                                     />
                                 </Portion>
 
@@ -161,7 +161,7 @@ const ListBoxDocs = () => {
                                         type="text"
                                         label="Placeholder"
                                         value={placeholder}
-                                        onChange={(e) => setPlaceholder(e.target.value)}
+                                        onChange={(value) => setPlaceholder(value)}
                                     />
                                 </Portion>
 
@@ -171,7 +171,7 @@ const ListBoxDocs = () => {
                                         id="multi-select"
                                         label="Allow multi-select"
                                         checked={allowMultiSelect}
-                                        onChange={(e) => setAllowMultiSelect(e.target.checked)}
+                                        onChange={(value) => setAllowMultiSelect(e.target.checked)}
                                     />
                                 </Portion>
 
@@ -183,7 +183,7 @@ const ListBoxDocs = () => {
                                             label="Selection limit"
                                             placeholder="Enter a number"
                                             value={selectionLimit || ""}
-                                            onChange={(e) => setSelectionLimit(parseInt(e.target.value) || null)}
+                                            onChange={(value) => setSelectionLimit(parseInt(value) || null)}
                                             min="1"  // Prevent negative numbers
                                             step="1" // Only allow whole numbers
                                             marginBottom="micro"
@@ -194,7 +194,7 @@ const ListBoxDocs = () => {
                                             id="custom-entries"
                                             label="Allow custom entries"
                                             checked={allowCustomEntries}
-                                            onChange={(e) => setAllowCustomEntries(e.target.checked)}
+                                            onChange={(value) => setAllowCustomEntries(e.target.checked)}
                                         />
 
                                         {/* BADGE BG COLOUR -------------------------------------------------------- */}
@@ -240,7 +240,7 @@ const ListBoxDocs = () => {
                                         id="disabled"
                                         label="Disabled"
                                         checked={disabled}
-                                        onChange={(e) => setDisabled(e.target.checked)}
+                                        onChange={(value) => setDisabled(e.target.checked)}
                                     />
                                 </Portion>
                             </Row>
@@ -282,7 +282,7 @@ const ListBoxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={listBoxProps.variables["list-box-badge-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("list-box-badge-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("list-box-badge-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -298,7 +298,7 @@ const ListBoxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={listBoxProps.variables["list-box-badge-text"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("list-box-badge-text", e.target.value)}
+                                        onChange={(value) => handleVariableChange("list-box-badge-text", value)}
                                         isFullWidth
                                     />
                                 </Portion>

@@ -167,7 +167,7 @@ const ButtonDocs = () => {
                                         label="Label"
                                         placeholder="Label"
                                         defaultValue={label}
-                                        onChange={(e) => setLabel(e.target.value)}
+                                        onChange={(value) => setLabel(value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -200,7 +200,7 @@ const ButtonDocs = () => {
                                             { id : "kind-opt-3", value : "tertiary", label : "tertiary" },
                                         ]}
                                         value={selectedKind}
-                                        onChange={(e) => setSelectedKind(e.target.value !== "none" ? e.target.value : undefined)}
+                                        onChange={(value) => setSelectedKind(value !== "none" ? value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -223,7 +223,7 @@ const ButtonDocs = () => {
                                             { id : "size-opt-7", value : "huge", label : "huge" },
                                         ]}
                                         value={selectedSize}
-                                        onChange={(e) => setSelectedSize(e.target.value !== "none" ? e.target.value : undefined)}
+                                        onChange={(value) => setSelectedSize(value !== "none" ? value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -241,7 +241,7 @@ const ButtonDocs = () => {
                                             { id : "shape-opt-2", value : "curved", label : "curved" },
                                         ]}
                                         value={selectedShape}
-                                        onChange={(e) => setSelectedShape(e.target.value !== "none" ? e.target.value : undefined)}
+                                        onChange={(value) => setSelectedShape(value !== "none" ? value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -258,7 +258,7 @@ const ButtonDocs = () => {
                                             { id : "shadow-opt-2", value : "soft", label : "soft" },
                                         ]}
                                         value={selectedShadow}
-                                        onChange={(e) => setSelectedShadow(e.target.value !== "none" ? e.target.value : undefined)}
+                                        onChange={(value) => setSelectedShadow(value !== "none" ? value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -351,7 +351,7 @@ const ButtonDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={componentVariables["button-primary-border-radius-default"].value}
-                                        onChange={(e) => handleVariableChange("button-primary-border-radius-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-border-radius-default", value)}
                                         min={0} max={50} step={1}
                                         suffix={componentVariables["button-primary-border-radius-default"].unit}
                                     />
@@ -362,7 +362,7 @@ const ButtonDocs = () => {
                                     <Range
                                         label="Border width"
                                         value={componentVariables["button-primary-border-width-default"].value}
-                                        onChange={(e) => handleVariableChange("button-primary-border-width-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-border-width-default", value)}
                                         min={0} max={50} step={1}
                                         suffix={componentVariables["button-primary-border-width-default"].unit}
                                     />
@@ -379,7 +379,7 @@ const ButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={buttonProps.variables["button-primary-bg-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("button-primary-bg-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-bg-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -395,7 +395,7 @@ const ButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={buttonProps.variables["button-primary-border-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("button-primary-border-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-border-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -411,7 +411,7 @@ const ButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={buttonProps.variables["button-primary-text-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("button-primary-text-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-text-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -432,7 +432,7 @@ const ButtonDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={buttonProps.variables["button-primary-border-radius-hover"].value}
-                                        onChange={(e) => handleVariableChange("button-primary-border-radius-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-border-radius-hover", value)}
                                         min={0} max={50} step={1}
                                         suffix={componentVariables["button-primary-border-radius-hover"].unit}
                                     />
@@ -443,7 +443,7 @@ const ButtonDocs = () => {
                                     <Range
                                         label="Border width"
                                         value={componentVariables["button-primary-border-width-hover"].value}
-                                        onChange={(e) => handleVariableChange("button-primary-border-width-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-border-width-hover", value)}
                                         min={0} max={50} step={1}
                                         suffix={componentVariables["button-primary-border-width-hover"].unit}
                                     />
@@ -460,7 +460,7 @@ const ButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={buttonProps.variables["button-primary-bg-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("button-primary-bg-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-bg-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -476,7 +476,7 @@ const ButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={buttonProps.variables["button-primary-border-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("button-primary-border-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-border-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -492,7 +492,7 @@ const ButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={buttonProps.variables["button-primary-text-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("button-primary-text-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-text-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -513,7 +513,7 @@ const ButtonDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={buttonProps.variables["button-primary-border-radius-disabled"].value}
-                                        onChange={(e) => handleVariableChange("button-primary-border-radius-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-border-radius-disabled", value)}
                                         min={0} max={50} step={1}
                                         suffix={componentVariables["button-primary-border-radius-disabled"].unit}
                                     />
@@ -524,7 +524,7 @@ const ButtonDocs = () => {
                                     <Range
                                         label="Border width"
                                         value={componentVariables["button-primary-border-width-disabled"].value}
-                                        onChange={(e) => handleVariableChange("button-primary-border-width-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-border-width-disabled", value)}
                                         min={0} max={50} step={1}
                                         suffix={componentVariables["button-primary-border-width-disabled"].unit}
                                     />
@@ -541,7 +541,7 @@ const ButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={buttonProps.variables["button-primary-bg-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("button-primary-bg-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-bg-disabled", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -557,7 +557,7 @@ const ButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={buttonProps.variables["button-primary-border-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("button-primary-border-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-border-disabled", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -573,7 +573,7 @@ const ButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={buttonProps.variables["button-primary-text-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("button-primary-text-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-text-disabled", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -600,7 +600,7 @@ const ButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={buttonProps.variables["button-primary-spinner-loading"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("button-primary-spinner-loading", e.target.value)}
+                                        onChange={(value) => handleVariableChange("button-primary-spinner-loading", value)}
                                         isFullWidth
                                     />
                                 </Portion>

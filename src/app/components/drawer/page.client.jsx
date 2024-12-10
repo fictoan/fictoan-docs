@@ -145,7 +145,7 @@ const DrawerDocs = () => {
                                             { id : "position-opt-3", value : "bottom", label : "bottom" },
                                         ]}
                                         value={selectedPosition || "right"}
-                                        onChange={(e) => (e.target.value)}
+                                        onChange={(value) => (value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -164,7 +164,7 @@ const DrawerDocs = () => {
                                             { id : "size-opt-7", value : "huge", label : "huge" },
                                         ]}
                                         value={selectedSize}
-                                        onChange={(e) => setSelectedSize(e.target.value !== "none" ? e.target.value : undefined)}
+                                        onChange={(value) => setSelectedSize(value !== "none" ? value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
@@ -185,7 +185,7 @@ const DrawerDocs = () => {
                                             { id : "padding-opt-7", value : "huge", label : "huge" },
                                         ]}
                                         value={selectedPadding}
-                                        onChange={(e) => setSelectedPadding(e.target.value !== "none" ? e.target.value : undefined)}
+                                        onChange={(value) => setSelectedPadding(value !== "none" ? value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -268,7 +268,7 @@ const DrawerDocs = () => {
                                         },
                                             ...colourOptions,]}
                                         defaultValue={componentVariables["drawer-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("drawer-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("drawer-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -286,7 +286,7 @@ const DrawerDocs = () => {
                                             ...colourOptions,
                                         ]}
                                         defaultValue={componentVariables["drawer-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("drawer-border", e.target.value)}
+                                        onChange={(value) => handleVariableChange("drawer-border", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -304,7 +304,7 @@ const DrawerDocs = () => {
                                             ...colourOptions,
                                         ]}
                                         defaultValue={componentVariables["drawer-dismiss-button"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("drawer-dismiss-button", e.target.value)}
+                                        onChange={(value) => handleVariableChange("drawer-dismiss-button", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -316,7 +316,7 @@ const DrawerDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={componentVariables["drawer-border-radius"].value}
-                                        onChange={(e) => handleVariableChange("drawer-border-radius", e.target.value)}
+                                        onChange={(value) => handleVariableChange("drawer-border-radius", value)}
                                         min={0} max={50} step={1}
                                         suffix={componentVariables["drawer-border-radius"].unit}
                                     />
@@ -327,7 +327,7 @@ const DrawerDocs = () => {
                                     <Range
                                         label="Overlay blur"
                                         value={componentVariables["drawer-overlay-blur"].value}
-                                        onChange={(e) => handleVariableChange("drawer-overlay-blur", e.target.value)}
+                                        onChange={(value) => handleVariableChange("drawer-overlay-blur", value)}
                                         min={0} max={50} step={1}
                                         suffix={componentVariables["drawer-overlay-blur"].unit}
                                     />

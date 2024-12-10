@@ -130,7 +130,7 @@ const SelectDocs = () => {
                                 <Portion>
                                     <InputField
                                         label="Label"
-                                        onChange={(e) => setLabel(e.target.value)}
+                                        onChange={(value) => setLabel(value)}
                                     />
                                 </Portion>
                             </Row>
@@ -158,14 +158,14 @@ const SelectDocs = () => {
                                             <InputField
                                                 placeholder="Label"
                                                 value={option.label}
-                                                onChange={(e) => updateOption(index, e.target.value, option.value)}
+                                                onChange={(value) => updateOption(index, value, option.value)}
                                             />
                                         </Portion>
                                         <Portion desktopSpan="half">
                                             <InputField
                                                 placeholder="Value"
                                                 value={option.value}
-                                                onChange={(e) => updateOption(index, option.label, e.target.value)}
+                                                onChange={(value) => updateOption(index, option.label, value)}
                                             />
                                         </Portion>
                                     </React.Fragment>
@@ -184,7 +184,7 @@ const SelectDocs = () => {
                                             label={`Set ${option.label} as default`}
                                             value={option.value}
                                             checked={selectedDefaultValue === option.value}
-                                            onChange={(e) => setSelectedDefaultValue(e.target.value)}
+                                            onChange={(value) => setSelectedDefaultValue(value)}
                                         />
                                     ))}
                                 </Portion>
@@ -248,7 +248,7 @@ const SelectDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["select-chevron"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("select-chevron", e.target.value)}
+                                        onChange={(value) => handleVariableChange("select-chevron", value)}
                                         isFullWidth
                                     />
                                 </Portion>

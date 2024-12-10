@@ -204,7 +204,7 @@ const NotificationsDocs = () => {
                                             { id : "position-opt-1", value : "right", label : "right" },
                                         ]}
                                         value={selectedPosition || "right"}
-                                        onChange={(e) => setSelectedPosition(e.target.value)}
+                                        onChange={(value) => setSelectedPosition(value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -219,7 +219,7 @@ const NotificationsDocs = () => {
                                             { id : "anchor-opt-1", value : "bottom", label : "bottom" },
                                         ]}
                                         value={selectedAnchor || "right"}
-                                        onChange={(e) => setSelectedAnchor(e.target.value)}
+                                        onChange={(value) => setSelectedAnchor(value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -234,7 +234,7 @@ const NotificationsDocs = () => {
                                             { id : "order-opt-1", value : "new-on-bottom", label : "new-on-bottom" },
                                         ]}
                                         value={selectedOrder || "right"}
-                                        onChange={(e) => setSelectedOrder(e.target.value)}
+                                        onChange={(value) => setSelectedOrder(value)}
                                     />
                                 </Portion>
 
@@ -248,7 +248,7 @@ const NotificationsDocs = () => {
                                     <Range
                                         label="Show toast for"
                                         value={secondsToShowFor}
-                                        onChange={(e) => setSecondsToShowFor(e.target.value)}
+                                        onChange={(value) => setSecondsToShowFor(value)}
                                         suffix={secondsToShowFor > 1 ? " seconds" : " second"}
                                         min={1} max={50} step={1}
                                     />
@@ -296,7 +296,7 @@ const NotificationsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["notification-item-generic-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("notification-item-generic-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("notification-item-generic-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -312,7 +312,7 @@ const NotificationsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["notification-item-generic-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("notification-item-generic-border", e.target.value)}
+                                        onChange={(value) => handleVariableChange("notification-item-generic-border", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -328,7 +328,7 @@ const NotificationsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["notification-item-generic-text"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("notification-item-generic-text", e.target.value)}
+                                        onChange={(value) => handleVariableChange("notification-item-generic-text", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -338,7 +338,7 @@ const NotificationsDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={componentVariables["notification-item-border-radius"].value}
-                                        onChange={(e) => handleVariableChange("notification-item-border-radius", e.target.value)}
+                                        onChange={(value) => handleVariableChange("notification-item-border-radius", value)}
                                         suffix={componentVariables["notification-item-border-radius"].unit}
                                         min={0} max={50} step={1}
                                     />
@@ -364,7 +364,7 @@ const NotificationsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["notification-item-info-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("notification-item-info-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("notification-item-info-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -380,7 +380,7 @@ const NotificationsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["notification-item-info-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("notification-item-info-border", e.target.value)}
+                                        onChange={(value) => handleVariableChange("notification-item-info-border", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -405,7 +405,7 @@ const NotificationsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["notification-item-error-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("notification-item-error-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("notification-item-error-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -421,7 +421,7 @@ const NotificationsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["notification-item-error-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("notification-item-error-border", e.target.value)}
+                                        onChange={(value) => handleVariableChange("notification-item-error-border", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -446,7 +446,7 @@ const NotificationsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["notification-item-success-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("notification-item-success-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("notification-item-success-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -462,7 +462,7 @@ const NotificationsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["notification-item-success-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("notification-item-success-border", e.target.value)}
+                                        onChange={(value) => handleVariableChange("notification-item-success-border", value)}
                                         isFullWidth
                                     />
                                 </Portion>

@@ -283,7 +283,7 @@ const RadioButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["radio-circle-bg-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("radio-circle-bg-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-circle-bg-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -299,7 +299,7 @@ const RadioButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["radio-circle-bg-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("radio-circle-bg-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-circle-bg-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -315,7 +315,7 @@ const RadioButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["radio-circle-bg-checked"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("radio-circle-bg-checked", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-circle-bg-checked", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -331,7 +331,7 @@ const RadioButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["radio-circle-bg-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("radio-circle-bg-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-circle-bg-disabled", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -347,7 +347,7 @@ const RadioButtonDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["radio-button-dot"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("radio-button-dot", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-button-dot", value)}
                                         isFullWidth
                                     />
                                 </Portion>

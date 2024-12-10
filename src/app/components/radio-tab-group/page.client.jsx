@@ -190,7 +190,7 @@ const RadioTabGroupDocs = () => {
                             name={name}
                             options={options}
                             value={selectedTabValue}
-                            onChange={(e) => setSelectedTabValue(e.target.value)}
+                            onChange={(value) => setSelectedTabValue(value)}
                         />
                     </Element>
                 </Portion>
@@ -230,7 +230,7 @@ const RadioTabGroupDocs = () => {
                                         label="Group label"
                                         placeholder="Enter group label"
                                         value={label}
-                                        onChange={(e) => setLabel(e.target.value)}
+                                        onChange={(value) => setLabel(value)}
                                     />
                                 </Portion>
 
@@ -255,7 +255,7 @@ const RadioTabGroupDocs = () => {
                                                     label={`Option ${index + 1} ID`}
                                                     placeholder="Enter ID"
                                                     value={option.id}
-                                                    onChange={(e) => handleOptionChange(index, "id", e.target.value)}
+                                                    onChange={(value) => handleOptionChange(index, "id", value)}
                                                 />
                                             </Portion>
 
@@ -265,7 +265,7 @@ const RadioTabGroupDocs = () => {
                                                     label={`Option ${index + 1} label`}
                                                     placeholder="Enter label"
                                                     value={option.label}
-                                                    onChange={(e) => handleOptionChange(index, "label", e.target.value)}
+                                                    onChange={(value) => handleOptionChange(index, "label", value)}
                                                 />
                                             </Portion>
 
@@ -275,7 +275,7 @@ const RadioTabGroupDocs = () => {
                                                     label={`Option ${index + 1} value`}
                                                     placeholder="Enter value"
                                                     value={option.value}
-                                                    onChange={(e) => handleOptionChange(index, "value", e.target.value)}
+                                                    onChange={(value) => handleOptionChange(index, "value", value)}
                                                 />
                                             </Portion>
                                         </Row>
@@ -336,7 +336,7 @@ const RadioTabGroupDocs = () => {
                                     <Range
                                         label="Height"
                                         value={componentVariables["radio-tabs-height"].value}
-                                        onChange={(e) => handleVariableChange("radio-tabs-height", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-tabs-height", value)}
                                         min={0} max={100} step={1}
                                         suffix={componentVariables["radio-tabs-height"].unit}
                                     />
@@ -347,7 +347,7 @@ const RadioTabGroupDocs = () => {
                                     <Range
                                         label="Vertical gap"
                                         value={componentVariables["radio-tabs-vertical-gap"].value}
-                                        onChange={(e) => handleVariableChange("radio-tabs-vertical-gap", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-tabs-vertical-gap", value)}
                                         min={0} max={50} step={1}
                                         suffix={componentVariables["radio-tabs-vertical-gap"].unit}
                                     />
@@ -364,7 +364,7 @@ const RadioTabGroupDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["radio-tabs-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("radio-tabs-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-tabs-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -380,7 +380,7 @@ const RadioTabGroupDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["radio-tabs-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("radio-tabs-border", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-tabs-border", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -396,7 +396,7 @@ const RadioTabGroupDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["radio-tabs-label-text-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("radio-tabs-label-text-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-tabs-label-text-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -412,7 +412,7 @@ const RadioTabGroupDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["radio-tabs-label-text-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("radio-tabs-label-text-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-tabs-label-text-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -428,7 +428,7 @@ const RadioTabGroupDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["radio-tabs-label-bg-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("radio-tabs-label-bg-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-tabs-label-bg-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -444,7 +444,7 @@ const RadioTabGroupDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["radio-tabs-label-bg-active"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("radio-tabs-label-bg-active", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-tabs-label-bg-active", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -460,7 +460,7 @@ const RadioTabGroupDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["radio-tabs-label-text-active"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("radio-tabs-label-text-active", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-tabs-label-text-active", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -476,7 +476,7 @@ const RadioTabGroupDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["radio-tabs-label-focus-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("radio-tabs-label-focus-border", e.target.value)}
+                                        onChange={(value) => handleVariableChange("radio-tabs-label-focus-border", value)}
                                         isFullWidth
                                     />
                                 </Portion>

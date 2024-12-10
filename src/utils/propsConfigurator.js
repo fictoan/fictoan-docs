@@ -225,7 +225,7 @@ export const createPropsConfigurator = (
                             // Get the variant options or fall back to default options
                             options={options || config.variants?.[componentName.toLowerCase()] || config.variants?.default || []}
                             value={propValues[propName]}
-                            onChange={(e) => handlePropChange(propName, e.target.value)}
+                            onChange={(value) => handlePropChange(propName, value)}
                         />
                     </Portion>
                 );
@@ -262,7 +262,7 @@ export const createPropsConfigurator = (
                             label={label}
                             name={propName}
                             isChecked={propValues[propName] || false}
-                            onChange={(e) => handlePropChange(propName, e.target.checked)}
+                            onChange={(value) => handlePropChange(propName, e.target.checked)}
                         />
                     </Portion>
                 );
@@ -288,7 +288,7 @@ export const createPropsConfigurator = (
                                 label={labelText}
                                 placeholder={labelText}
                                 value={propValues.content}  // Note: we use content here
-                                onChange={(e) => handlePropChange("content", e.target.value)}
+                                onChange={(value) => handlePropChange("content", value)}
                                 helpText={helpText}
                                 isFullWidth
                             />
@@ -303,7 +303,7 @@ export const createPropsConfigurator = (
                             label={labelText}
                             placeholder={labelText}
                             value={propValues[propName]}
-                            onChange={(e) => handlePropChange(propName, e.target.value)}
+                            onChange={(value) => handlePropChange(propName, value)}
                             helpText={helpText}
                             isFullWidth
                         />

@@ -29,10 +29,6 @@ export const InteractiveCardExample = () => {
     const [selectedBgColour, setSelectedBgColour] = useState(null);
     const [selectedBorderColour, setSelectedBorderColour] = useState(null);
 
-    const handleShadowChange = (event) => {
-        setSelectedShadow(event.target.value !== "none" ? event.target.value : undefined);
-    };
-
     return (
         <Row horizontalPadding="large">
             <Portion>
@@ -56,7 +52,6 @@ export const InteractiveCardExample = () => {
                                     { id : "padding-opt-7", value : "huge", label : "huge" },
                                 ]}
                                 value={selectedPadding}
-                                onChange={(e) => setSelectedPadding(e.target.value)}
                             />
                         </Portion>
                     </Row>
@@ -77,7 +72,7 @@ export const InteractiveCardExample = () => {
                                     { id : "shape-opt-2", value : "curved", label : "curved" },
                                 ]}
                                 value={selectedShape}
-                                onChange={(e) => setSelectedShape(e.target.value)}
+                                onChange={(value) => setSelectedShape(value)}
                             />
                         </Portion>
                     </Row>
@@ -100,7 +95,7 @@ export const InteractiveCardExample = () => {
                                     { id : "shadow-opt-2", value : "soft", label : "soft" },
                                 ]}
                                 value={selectedShadow}
-                                onChange={handleShadowChange}
+                                onChange={(value) => setSelectedShadow(value)}
                             />
                         </Portion>
                     </Row>
@@ -121,7 +116,7 @@ export const InteractiveCardExample = () => {
                                     disabled: true,
                                 }, ...colourOptions]}
                                 defaultValue="select-a-colour"
-                                onChange={(e) => setSelectedBgColour(e.target.value)}
+                                onChange={(value) => setSelectedBgColour(value)}
                                 isFullWidth
                             />
                         </Portion>
@@ -138,7 +133,7 @@ export const InteractiveCardExample = () => {
                                     ...colourOptions,
                                 ]}
                                 defaultValue="select-a-colour"
-                                onChange={(e) => setSelectedBorderColour(e.target.value)}
+                                onChange={(value) => setSelectedBorderColour(value)}
                                 isFullWidth
                             />
                         </Portion>

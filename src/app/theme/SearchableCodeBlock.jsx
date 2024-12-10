@@ -14,7 +14,7 @@ export const SearchableCodeBlock = ({ source, language, ...props }) => {
     const [matchCount, setMatchCount] = useState(0);
 
     const handleSearch = (e) => {
-        const search = e.target.value.toLowerCase();
+        const search = value.toLowerCase();
         setSearchString(search);
 
         if (!search) {

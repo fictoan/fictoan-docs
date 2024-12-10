@@ -133,7 +133,7 @@ const ToastDocs = () => {
                                             { id : "position-opt-1", value : "bottom", label : "bottom" },
                                         ]}
                                         value={selectedPosition || "right"}
-                                        onChange={(e) => setSelectedPosition(e.target.value)}
+                                        onChange={(value) => setSelectedPosition(value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -144,7 +144,7 @@ const ToastDocs = () => {
                                     <Range
                                         label="Show toast for"
                                         value={secondsToShowFor}
-                                        onChange={(e) => setSecondsToShowFor(e.target.value)}
+                                        onChange={(value) => setSecondsToShowFor(value)}
                                         min={1} max={50} step={1}
                                         suffix={secondsToShowFor > 1 ? " seconds" : " second"}
                                     />
@@ -186,7 +186,7 @@ const ToastDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["toast-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("toast-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("toast-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -202,7 +202,7 @@ const ToastDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["toast-text"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("toast-text", e.target.value)}
+                                        onChange={(value) => handleVariableChange("toast-text", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -212,7 +212,7 @@ const ToastDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={componentVariables["toast-border-radius"].value}
-                                        onChange={(e) => handleVariableChange("toast-border-radius", e.target.value)}
+                                        onChange={(value) => handleVariableChange("toast-border-radius", value)}
                                         suffix={componentVariables["toast-border-radius"].unit}
                                         min={0} max={50} step={1}
                                     />

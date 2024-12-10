@@ -302,7 +302,7 @@ const LayoutDocs = () => {
                                                 { id : "hp-huge", label : "huge", value : "huge" },
                                             ]}
                                             value={horizontalPadding}
-                                            onChange={(e) => setHorizontalPadding(e.target.value)}
+                                            onChange={(value) => setHorizontalPadding(value)}
                                         />
                                     </Portion>
 
@@ -322,7 +322,7 @@ const LayoutDocs = () => {
                                                 { id : "gutters-huge", label : "huge", value : "huge" },
                                             ]}
                                             value={gutters}
-                                            onChange={(e) => setGutters(e.target.value)}
+                                            onChange={(value) => setGutters(value)}
                                         />
                                     </Portion>
 
@@ -332,7 +332,7 @@ const LayoutDocs = () => {
                                             name="retain-layout"
                                             label="Retain layout always"
                                             checked={retainLayout}
-                                            onChange={(e) => setRetainLayout(e.target.checked)}
+                                            onChange={(value) => setRetainLayout(e.target.checked)}
                                         />
                                     </Portion>
                                 </Row>
@@ -390,9 +390,9 @@ const LayoutDocs = () => {
                                                     label="Desktop span"
                                                     options={spanOptions}
                                                     defaultValue={portion.desktopSpan}
-                                                    onChange={(e) => {
+                                                    onChange={(value) => {
                                                         const newPortions              = [ ...portions ];
-                                                        newPortions[index].desktopSpan = e.target.value;
+                                                        newPortions[index].desktopSpan = value;
                                                         setPortions(newPortions);
                                                     }}
                                                     isFullWidth
@@ -404,9 +404,9 @@ const LayoutDocs = () => {
                                                     label="Tablet landscape"
                                                     options={spanOptions}
                                                     defaultValue={portion.tabletLandscapeSpan}
-                                                    onChange={(e) => {
+                                                    onChange={(value) => {
                                                         const newPortions                      = [ ...portions ];
-                                                        newPortions[index].tabletLandscapeSpan = e.target.value;
+                                                        newPortions[index].tabletLandscapeSpan = value;
                                                         setPortions(newPortions);
                                                     }}
                                                     isFullWidth
@@ -418,9 +418,9 @@ const LayoutDocs = () => {
                                                     label="Tablet portrait"
                                                     options={spanOptions}
                                                     defaultValue={portion.tabletPortraitSpan}
-                                                    onChange={(e) => {
+                                                    onChange={(value) => {
                                                         const newPortions                     = [ ...portions ];
-                                                        newPortions[index].tabletPortraitSpan = e.target.value;
+                                                        newPortions[index].tabletPortraitSpan = value;
                                                         setPortions(newPortions);
                                                     }}
                                                     isFullWidth
@@ -432,9 +432,9 @@ const LayoutDocs = () => {
                                                     label="Mobile"
                                                     options={spanOptions}
                                                     defaultValue={portion.mobileSpan}
-                                                    onChange={(e) => {
+                                                    onChange={(value) => {
                                                         const newPortions             = [ ...portions ];
-                                                        newPortions[index].mobileSpan = e.target.value;
+                                                        newPortions[index].mobileSpan = value;
                                                         setPortions(newPortions);
                                                     }}
                                                     isFullWidth

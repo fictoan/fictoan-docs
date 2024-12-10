@@ -141,7 +141,7 @@ const ProgressBarDocs = () => {
                                             { id : "shape-opt-2", value : "curved", label : "curved" },
                                         ]}
                                         value={selectedShape}
-                                        onChange={(e) => setSelectedShape(e.target.value !== "none" ? e.target.value : undefined)}
+                                        onChange={(value) => setSelectedShape(value !== "none" ? value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -152,7 +152,7 @@ const ProgressBarDocs = () => {
                                         type="number"
                                         label="Max possible value"
                                         placeholder="Enter a number"
-                                        onChange={(e) => setMax(e.target.value)}
+                                        onChange={(value) => setMax(value)}
                                     />
                                 </Portion>
 
@@ -160,7 +160,7 @@ const ProgressBarDocs = () => {
                                     <Range
                                         label="Current value"
                                         value={value}
-                                        onChange={(e) => setValue(e.target.value)}
+                                        onChange={(value) => setValue(value)}
                                         suffix={suffix}
                                         min={0} max={max} step={1}
                                     />
@@ -171,7 +171,7 @@ const ProgressBarDocs = () => {
                                         type="text"
                                         label="Label"
                                         placeholder="Enter text"
-                                        onChange={(e) => setLabel(e.target.value)}
+                                        onChange={(value) => setLabel(value)}
                                     />
                                 </Portion>
 
@@ -180,7 +180,7 @@ const ProgressBarDocs = () => {
                                         type="text"
                                         label="Suffix"
                                         placeholder="Enter text"
-                                        onChange={(e) => setSuffix(e.target.value)}
+                                        onChange={(value) => setSuffix(value)}
                                     />
                                 </Portion>
                             </Row>
@@ -214,7 +214,7 @@ const ProgressBarDocs = () => {
                                     <Range
                                         label="Height"
                                         value={componentVariables["progress-bar-height"].value}
-                                        onChange={(e) => handleVariableChange("progress-bar-height", e.target.value)}
+                                        onChange={(value) => handleVariableChange("progress-bar-height", value)}
                                         suffix={componentVariables["progress-bar-height"].unit}
                                         min={0} max={200} step={1}
                                     />
@@ -225,7 +225,7 @@ const ProgressBarDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={componentVariables["progress-bar-border-radius"].value}
-                                        onChange={(e) => handleVariableChange("progress-bar-border-radius", e.target.value)}
+                                        onChange={(value) => handleVariableChange("progress-bar-border-radius", value)}
                                         suffix={componentVariables["progress-bar-border-radius"].unit}
                                         min={0} max={50} step={1}
                                     />
@@ -242,7 +242,7 @@ const ProgressBarDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["progress-bar-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("progress-bar-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("progress-bar-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -258,7 +258,7 @@ const ProgressBarDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["progress-bar-fill"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("progress-bar-fill", e.target.value)}
+                                        onChange={(value) => handleVariableChange("progress-bar-fill", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -274,7 +274,7 @@ const ProgressBarDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["progress-bar-label"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("progress-bar-label", e.target.value)}
+                                        onChange={(value) => handleVariableChange("progress-bar-label", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -290,7 +290,7 @@ const ProgressBarDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["progress-bar-value"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("progress-bar-value", e.target.value)}
+                                        onChange={(value) => handleVariableChange("progress-bar-value", value)}
                                         isFullWidth
                                     />
                                 </Portion>

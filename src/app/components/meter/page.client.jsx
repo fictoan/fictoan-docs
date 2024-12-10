@@ -196,7 +196,7 @@ const MeterDocs = () => {
                                         label="Min possible value"
                                         placeholder="Enter a number"
                                         value={min}
-                                        onChange={(e) => setMin(e.target.value)}
+                                        onChange={(value) => setMin(value)}
                                     />
                                 </Portion>
 
@@ -207,7 +207,7 @@ const MeterDocs = () => {
                                         label="Max possible value"
                                         placeholder="Enter a number"
                                         value={max}
-                                        onChange={(e) => setMax(e.target.value)}
+                                        onChange={(value) => setMax(value)}
                                     />
                                 </Portion>
 
@@ -218,7 +218,7 @@ const MeterDocs = () => {
                                         label="Low threshold"
                                         placeholder="Enter a number"
                                         value={low}
-                                        onChange={(e) => setLow(e.target.value)}
+                                        onChange={(value) => setLow(value)}
                                     />
                                 </Portion>
 
@@ -229,7 +229,7 @@ const MeterDocs = () => {
                                         label="High threshold"
                                         placeholder="Enter a number"
                                         value={high}
-                                        onChange={(e) => setHigh(e.target.value)}
+                                        onChange={(value) => setHigh(value)}
                                     />
                                 </Portion>
 
@@ -240,7 +240,7 @@ const MeterDocs = () => {
                                         label="Optimum value"
                                         placeholder="Enter a number"
                                         value={optimum}
-                                        onChange={(e) => setOptimum(e.target.value)}
+                                        onChange={(value) => setOptimum(value)}
                                     />
                                 </Portion>
 
@@ -262,7 +262,7 @@ const MeterDocs = () => {
                                     <Range
                                         label="Current value"
                                         value={value}
-                                        onChange={(e) => setValue(e.target.value)}
+                                        onChange={(value) => setValue(value)}
                                         suffix={suffix}
                                         min={0} max={max} step={1}
                                     />
@@ -275,7 +275,7 @@ const MeterDocs = () => {
                                         label="Label"
                                         placeholder="Enter text"
                                         value={label}
-                                        onChange={(e) => setLabel(e.target.value)}
+                                        onChange={(value) => setLabel(value)}
                                     />
                                 </Portion>
 
@@ -286,7 +286,7 @@ const MeterDocs = () => {
                                         label="Suffix"
                                         placeholder="Enter text"
                                         value={suffix}
-                                        onChange={(e) => setSuffix(e.target.value)}
+                                        onChange={(value) => setSuffix(value)}
                                     />
                                 </Portion>
                             </Row>
@@ -326,7 +326,7 @@ const MeterDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["meter-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("meter-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("meter-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -342,7 +342,7 @@ const MeterDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["meter-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("meter-border", e.target.value)}
+                                        onChange={(value) => handleVariableChange("meter-border", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -352,7 +352,7 @@ const MeterDocs = () => {
                                     <Range
                                         label="Border width"
                                         value={componentVariables["meter-border-width"].value}
-                                        onChange={(e) => handleVariableChange("meter-border-width", e.target.value)}
+                                        onChange={(value) => handleVariableChange("meter-border-width", value)}
                                         suffix={componentVariables["meter-border-width"].unit}
                                         min={0} max={50} step={1}
                                     />
@@ -363,7 +363,7 @@ const MeterDocs = () => {
                                     <Range
                                         label="Height"
                                         value={componentVariables["meter-height"].value}
-                                        onChange={(e) => handleVariableChange("meter-height", e.target.value)}
+                                        onChange={(value) => handleVariableChange("meter-height", value)}
                                         suffix={componentVariables["meter-height"].unit}
                                         min={0} max={200} step={1}
                                     />
@@ -374,7 +374,7 @@ const MeterDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={componentVariables["meter-border-radius"].value}
-                                        onChange={(e) => handleVariableChange("meter-border-radius", e.target.value)}
+                                        onChange={(value) => handleVariableChange("meter-border-radius", value)}
                                         suffix={componentVariables["meter-border-radius"].unit}
                                         min={0} max={50} step={1}
                                     />
@@ -393,7 +393,7 @@ const MeterDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["meter-label"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("meter-label", e.target.value)}
+                                        onChange={(value) => handleVariableChange("meter-label", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -409,7 +409,7 @@ const MeterDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["meter-value"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("meter-value", e.target.value)}
+                                        onChange={(value) => handleVariableChange("meter-value", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -425,7 +425,7 @@ const MeterDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["meter-danger"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("meter-danger", e.target.value)}
+                                        onChange={(value) => handleVariableChange("meter-danger", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -441,7 +441,7 @@ const MeterDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["meter-low"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("meter-low", e.target.value)}
+                                        onChange={(value) => handleVariableChange("meter-low", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -457,7 +457,7 @@ const MeterDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["meter-optimum"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("meter-optimum", e.target.value)}
+                                        onChange={(value) => handleVariableChange("meter-optimum", value)}
                                         isFullWidth
                                     />
                                 </Portion>

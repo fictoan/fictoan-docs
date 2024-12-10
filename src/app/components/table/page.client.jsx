@@ -183,7 +183,7 @@ const TableDocs = () => {
                                             { id : "borders-for-opt-3", value : "both", label : "both" },
                                         ]}
                                         value={bordersFor}
-                                        onChange={(e) => setBordersFor(e.target.value !== "none" ? e.target.value : undefined)}
+                                        onChange={(value) => setBordersFor(value !== "none" ? value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -202,7 +202,7 @@ const TableDocs = () => {
                                             { id : "padding-opt-7", value : "huge", label : "huge" },
                                         ]}
                                         value={selectedPadding}
-                                        onChange={(e) => setSelectedPadding(e.target.value !== "none" ? e.target.value : undefined)}
+                                        onChange={(value) => setSelectedPadding(value !== "none" ? value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -284,7 +284,7 @@ const TableDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("table-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("table-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -300,7 +300,7 @@ const TableDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("table-border", e.target.value)}
+                                        onChange={(value) => handleVariableChange("table-border", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -316,7 +316,7 @@ const TableDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-text"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("table-text", e.target.value)}
+                                        onChange={(value) => handleVariableChange("table-text", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -334,7 +334,7 @@ const TableDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-striped-header-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("table-striped-header-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("table-striped-header-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -350,7 +350,7 @@ const TableDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-striped-cell-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("table-striped-cell-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("table-striped-cell-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -366,7 +366,7 @@ const TableDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-highlight-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("table-highlight-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("table-highlight-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -382,7 +382,7 @@ const TableDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["table-highlight-text"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("table-highlight-text", e.target.value)}
+                                        onChange={(value) => handleVariableChange("table-highlight-text", value)}
                                         isFullWidth
                                     />
                                 </Portion>

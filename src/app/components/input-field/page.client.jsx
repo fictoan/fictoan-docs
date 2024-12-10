@@ -171,7 +171,7 @@ const InputFieldDocs = () => {
                                     <InputField
                                         type="text"
                                         label="Label"
-                                        onChange={(e) => setLabel(e.target.value)}
+                                        onChange={(value) => setLabel(value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -182,7 +182,7 @@ const InputFieldDocs = () => {
                                     <InputField
                                         type="text"
                                         label="Placeholder"
-                                        onChange={(e) => setPlaceholder(e.target.value)}
+                                        onChange={(value) => setPlaceholder(value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -207,7 +207,7 @@ const InputFieldDocs = () => {
                                     <InputField
                                         type="text"
                                         label="Help text"
-                                        onChange={(e) => setHelpText(e.target.value)}
+                                        onChange={(value) => setHelpText(value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -234,7 +234,7 @@ const InputFieldDocs = () => {
                                             type="text"
                                             label="Validation regex pattern"
                                             value={pattern}
-                                            onChange={(e) => setPattern(e.target.value)}
+                                            onChange={(value) => setPattern(value)}
                                         />
 
                                         <Button
@@ -257,7 +257,7 @@ const InputFieldDocs = () => {
                                         <InputField
                                             type="text"
                                             label="Error text"
-                                            onChange={(e) => setErrorText(e.target.value)}
+                                            onChange={(value) => setErrorText(value)}
                                         />
 
                                         <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -301,7 +301,7 @@ const InputFieldDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={componentVariables["input-border-radius-default"].value}
-                                        onChange={(e) => handleVariableChange("input-border-radius-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-border-radius-default", value)}
                                         min={0} max={50} step={1}
                                         suffix="px"
                                     />
@@ -312,7 +312,7 @@ const InputFieldDocs = () => {
                                     <Range
                                         label="Border width"
                                         value={componentVariables["input-border-width-default"].value}
-                                        onChange={(e) => handleVariableChange("input-border-width-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-border-width-default", value)}
                                         min={0} max={50} step={1}
                                         suffix="px"
                                     />
@@ -338,7 +338,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-bg-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-bg-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-bg-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -354,7 +354,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-border-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-border-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-border-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -370,7 +370,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-label-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-label-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-label-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -386,7 +386,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-placeholder-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-placeholder-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-placeholder-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -402,7 +402,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-text-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-text-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-text-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -420,7 +420,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-helptext"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-helptext", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-helptext", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -430,7 +430,7 @@ const InputFieldDocs = () => {
                                     <Range
                                         label="Help text scale"
                                         value={componentVariables["input-helptext-scale"].value}
-                                        onChange={(e) => handleVariableChange("input-helptext-scale", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-helptext-scale", value)}
                                         min={80} max={100} step={1}
                                         suffix="%"
                                     />
@@ -456,7 +456,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-bg-focus"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-bg-focus", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-bg-focus", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -472,7 +472,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-border-focus"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-border-focus", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-border-focus", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -482,7 +482,7 @@ const InputFieldDocs = () => {
                                     <Range
                                         label="Border width"
                                         value={componentVariables["input-border-width-focus"].value}
-                                        onChange={(e) => handleVariableChange("input-border-width-focus", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-border-width-focus", value)}
                                         min={0} max={50} step={1}
                                         suffix="px"
                                     />
@@ -499,7 +499,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-text-focus"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-text-focus", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-text-focus", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -524,7 +524,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-bg-valid"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-bg-valid", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-bg-valid", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -540,7 +540,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-border-valid"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-border-valid", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-border-valid", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -556,7 +556,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-label-valid"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-label-valid", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-label-valid", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -581,7 +581,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-bg-invalid"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-bg-invalid", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-bg-invalid", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -597,7 +597,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-border-invalid"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-border-invalid", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-border-invalid", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -613,7 +613,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-label-invalid"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-label-invalid", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-label-invalid", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -629,7 +629,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-text-invalid"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-text-invalid", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-text-invalid", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -645,7 +645,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-error-text-invalid"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-error-text-invalid", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-error-text-invalid", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -671,7 +671,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-bg-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-bg-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-bg-disabled", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -687,7 +687,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-border-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-border-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-border-disabled", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -703,7 +703,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-label-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-label-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-label-disabled", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -719,7 +719,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-text-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-text-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-text-disabled", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -744,7 +744,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-bg-read-only"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-bg-read-only", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-bg-read-only", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -760,7 +760,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-border-read-only"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-border-read-only", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-border-read-only", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -776,7 +776,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-label-read-only"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-label-read-only", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-label-read-only", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -792,7 +792,7 @@ const InputFieldDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["input-text-read-only"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("input-text-read-only", e.target.value)}
+                                        onChange={(value) => handleVariableChange("input-text-read-only", value)}
                                         isFullWidth
                                     />
                                 </Portion>

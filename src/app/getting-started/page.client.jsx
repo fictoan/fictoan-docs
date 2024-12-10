@@ -417,8 +417,9 @@ const GettingStarted = () => {
 
                                                 <Divider kind="secondary" verticalMargin="tiny" />
 
-                                                <Heading6 weight="700" marginBottom="nano">Step 4 — Install
-                                                    VSCode</Heading6>
+                                                <Heading6 weight="700" marginBottom="nano">
+                                                    Step 4 — Install VSCode
+                                                </Heading6>
 
                                                 <Text marginBottom="micro">
                                                     Last step, we’ll need an IDE. <Span opacity="60">An IDE, or

@@ -223,9 +223,9 @@ const CodeBlockDocs = () => {
                                             { label : "Rust", value : "rust" },
                                             { label : "Swift", value : "swift" },
                                         ]}
-                                        onChange={(e) => {
-                                            setSelectedLanguage(e.target.value);
-                                            showSelectedLanguageCode(e.target.value);
+                                        onChange={(value) => {
+                                            setSelectedLanguage(value);
+                                            showSelectedLanguageCode(value);
                                         }}
                                         isFullWidth
                                     />
@@ -244,7 +244,7 @@ const CodeBlockDocs = () => {
                                             { id : "approach-opt-1", value : "embed", label : "embed" },
                                         ]}
                                         value={selectedApproach}
-                                        onChange={(e) => setSelectedApproach(e.target.value !== "none" ? e.target.value : undefined)}
+                                        onChange={(value) => setSelectedApproach(value !== "none" ? value : undefined)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
@@ -313,7 +313,7 @@ const CodeBlockDocs = () => {
                                     <InputField
                                         label="Font"
                                         defaultValue={componentVariables["code-font"].defaultValue}
-                                        onChange={(e) => handleVariableChange("code-font", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-font", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -338,7 +338,7 @@ const CodeBlockDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["code-inline-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("code-inline-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-inline-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -354,7 +354,7 @@ const CodeBlockDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["code-inline-text"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("code-inline-text", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-inline-text", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -364,7 +364,7 @@ const CodeBlockDocs = () => {
                                     <Range
                                         label="Font size"
                                         value={componentVariables["code-inline-font-size"].value}
-                                        onChange={(e) => handleVariableChange("code-inline-font-size", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-inline-font-size", value)}
                                         suffix={componentVariables["code-inline-font-size"].unit}
                                         min={0} max={20} step={0.1}
                                     />
@@ -375,7 +375,7 @@ const CodeBlockDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={componentVariables["code-inline-border-radius"].value}
-                                        onChange={(e) => handleVariableChange("code-inline-border-radius", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-inline-border-radius", value)}
                                         suffix={componentVariables["code-inline-border-radius"].unit}
                                         min={0} max={20} step={0.1}
                                     />
@@ -401,7 +401,7 @@ const CodeBlockDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["code-block-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("code-block-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-block-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -417,7 +417,7 @@ const CodeBlockDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["code-block-text"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("code-block-text", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-block-text", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -427,7 +427,7 @@ const CodeBlockDocs = () => {
                                     <Range
                                         label="Font size"
                                         value={componentVariables["code-block-font-size"].value}
-                                        onChange={(e) => handleVariableChange("code-block-font-size", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-block-font-size", value)}
                                         suffix={componentVariables["code-block-font-size"].unit}
                                         min={0} max={20} step={0.1}
                                     />
@@ -438,7 +438,7 @@ const CodeBlockDocs = () => {
                                     <Range
                                         label="Line height"
                                         value={componentVariables["code-block-line-height"].value}
-                                        onChange={(e) => handleVariableChange("code-block-line-height", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-block-line-height", value)}
                                         min={1} max={3} step={0.1}
                                     />
                                 </Portion>
@@ -448,7 +448,7 @@ const CodeBlockDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={componentVariables["code-block-border-radius"].value}
-                                        onChange={(e) => handleVariableChange("code-block-border-radius", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-block-border-radius", value)}
                                         suffix={componentVariables["code-block-border-radius"].unit}
                                         min={0} max={20} step={0.1}
                                     />
@@ -465,7 +465,7 @@ const CodeBlockDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["code-block-line-numbers"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("code-block-line-numbers", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-block-line-numbers", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -490,7 +490,7 @@ const CodeBlockDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["code-block-copy-button-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("code-block-copy-button-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-block-copy-button-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -506,7 +506,7 @@ const CodeBlockDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["code-block-copy-button-text"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("code-block-copy-button-text", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-block-copy-button-text", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -522,7 +522,7 @@ const CodeBlockDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["code-block-copy-button-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("code-block-copy-button-border", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-block-copy-button-border", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -540,7 +540,7 @@ const CodeBlockDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["code-block-copied-badge-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("code-block-copied-badge-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-block-copied-badge-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -556,7 +556,7 @@ const CodeBlockDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["code-block-copied-badge-text"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("code-block-copied-badge-text", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-block-copied-badge-text", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -572,7 +572,7 @@ const CodeBlockDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["code-block-copied-badge-border"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("code-block-copied-badge-border", e.target.value)}
+                                        onChange={(value) => handleVariableChange("code-block-copied-badge-border", value)}
                                         isFullWidth
                                     />
                                 </Portion>

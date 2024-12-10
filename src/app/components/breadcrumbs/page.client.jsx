@@ -159,7 +159,7 @@ const BreadcrumbsDocs = () => {
                                         label="Separator"
                                         placeholder="Enter a character to separate breadcrumbs"
                                         value={separator}
-                                        onChange={(e) => setSeparator(e.target.value)}
+                                        onChange={(value) => setSeparator(value)}
                                     />
                                 </Portion>
 
@@ -178,7 +178,7 @@ const BreadcrumbsDocs = () => {
                                             { id : "spacing-opt-7", value : "huge", label : "huge" },
                                         ]}
                                         value={selectedSpacing}
-                                        onChange={(e) => setSelectedSpacing(e.target.value)}
+                                        onChange={(value) => setSelectedSpacing(value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -221,7 +221,7 @@ const BreadcrumbsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["breadcrumbs-wrapper-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("breadcrumbs-wrapper-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("breadcrumbs-wrapper-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -240,7 +240,7 @@ const BreadcrumbsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["breadcrumb-item-text-colour"] || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("breadcrumb-item-text-colour", e.target.value)}
+                                        onChange={(value) => handleVariableChange("breadcrumb-item-text-colour", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -257,7 +257,7 @@ const BreadcrumbsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["breadcrumb-item-text-colour-active"] || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("breadcrumb-item-text-colour-active", e.target.value)}
+                                        onChange={(value) => handleVariableChange("breadcrumb-item-text-colour-active", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -274,7 +274,7 @@ const BreadcrumbsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["breadcrumb-item-separator-colour"] || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("breadcrumb-item-separator-colour", e.target.value)}
+                                        onChange={(value) => handleVariableChange("breadcrumb-item-separator-colour", value)}
                                         isFullWidth
                                     />
                                 </Portion>

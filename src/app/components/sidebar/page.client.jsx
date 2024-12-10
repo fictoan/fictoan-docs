@@ -221,7 +221,7 @@ const SidebarDocs = () => {
                                         selected : true,
                                     }, ...colourOptions]}
                                     defaultValue={componentVariables["sidebar-bg"].defaultValue || "select-a-colour"}
-                                    onChange={(e) => handleVariableChange("sidebar-bg", e.target.value)}
+                                    onChange={(value) => handleVariableChange("sidebar-bg", value)}
                                     isFullWidth
                                 />
                             </Portion>
@@ -233,7 +233,7 @@ const SidebarDocs = () => {
                                 <Range
                                     label="Width — default"
                                     value={componentVariables["sidebar-width-default"].value}
-                                    onChange={(e) => handleVariableChange("sidebar-width-default", e.target.value)}
+                                    onChange={(value) => handleVariableChange("sidebar-width-default", value)}
                                     suffix={componentVariables["sidebar-width-default"].unit}
                                     min={48} max={320} step={1}
                                 />
@@ -244,7 +244,7 @@ const SidebarDocs = () => {
                                 <Range
                                     label="Width — collapsed"
                                     value={componentVariables["sidebar-width-default"].value}
-                                    onChange={(e) => handleVariableChange("sidebar-width-default", e.target.value)}
+                                    onChange={(value) => handleVariableChange("sidebar-width-default", value)}
                                     min={0} max={50} step={1}
                                     suffix={componentVariables["sidebar-width-default"].unit}
                                 />

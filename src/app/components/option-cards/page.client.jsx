@@ -222,7 +222,7 @@ const OptionCardsDocs = () => {
                                         },
                                             ...colourOptions]}
                                         defaultValue={componentVariables["option-card-bg-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("option-card-bg-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("option-card-bg-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -238,7 +238,7 @@ const OptionCardsDocs = () => {
                                         },
                                             ...colourOptions]}
                                         defaultValue={componentVariables["option-card-border-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("option-card-border-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("option-card-border-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -255,7 +255,7 @@ const OptionCardsDocs = () => {
                                         },
                                             ...colourOptions]}
                                         defaultValue={componentVariables["option-card-bg-selected"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("option-card-bg-selected", e.target.value)}
+                                        onChange={(value) => handleVariableChange("option-card-bg-selected", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -271,7 +271,7 @@ const OptionCardsDocs = () => {
                                         },
                                             ...colourOptions]}
                                         defaultValue={componentVariables["option-card-border-selected"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("option-card-border-selected", e.target.value)}
+                                        onChange={(value) => handleVariableChange("option-card-border-selected", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -288,7 +288,7 @@ const OptionCardsDocs = () => {
                                         },
                                             ...colourOptions]}
                                         defaultValue={componentVariables["option-card-tick-bg-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("option-card-tick-bg-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("option-card-tick-bg-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -304,7 +304,7 @@ const OptionCardsDocs = () => {
                                         },
                                             ...colourOptions]}
                                         defaultValue={componentVariables["option-card-tick-line-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("option-card-tick-line-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("option-card-tick-line-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -320,7 +320,7 @@ const OptionCardsDocs = () => {
                                         },
                                             ...colourOptions]}
                                         defaultValue={componentVariables["option-card-tick-bg-selected"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("option-card-tick-bg-selected", e.target.value)}
+                                        onChange={(value) => handleVariableChange("option-card-tick-bg-selected", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -336,7 +336,7 @@ const OptionCardsDocs = () => {
                                         },
                                             ...colourOptions]}
                                         defaultValue={componentVariables["option-card-tick-line-selected"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("option-card-tick-line-selected", e.target.value)}
+                                        onChange={(value) => handleVariableChange("option-card-tick-line-selected", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -351,7 +351,7 @@ const OptionCardsDocs = () => {
                                             selected : true,
                                         }]}
                                         defaultValue={componentVariables["option-card-border-width"].defaultValue}
-                                        onChange={(e) => handleVariableChange("option-card-border-width", e.target.value)}
+                                        onChange={(value) => handleVariableChange("option-card-border-width", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -366,7 +366,7 @@ const OptionCardsDocs = () => {
                                             selected : true,
                                         }]}
                                         defaultValue={componentVariables["option-card-focus"].defaultValue}
-                                        onChange={(e) => handleVariableChange("option-card-focus", e.target.value)}
+                                        onChange={(value) => handleVariableChange("option-card-focus", value)}
                                         isFullWidth
                                     />
                                 </Portion>

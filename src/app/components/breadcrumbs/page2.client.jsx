@@ -231,7 +231,7 @@ const BreadcrumbsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["breadcrumbs-wrapper-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("breadcrumbs-wrapper-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("breadcrumbs-wrapper-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -244,7 +244,7 @@ const BreadcrumbsDocs = () => {
                                         label="Separator character"
                                         placeholder="Separator"
                                         defaultValue={componentVariables["breadcrumb-item-separator"]?.value}
-                                        onChange={(e) => handleVariableChange("breadcrumb-item-separator", e.target.value)}
+                                        onChange={(value) => handleVariableChange("breadcrumb-item-separator", value)}
                                     />
                                 </Portion>
 
@@ -260,7 +260,7 @@ const BreadcrumbsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["breadcrumb-item-separator-colour"] || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("breadcrumb-item-separator-colour", e.target.value)}
+                                        onChange={(value) => handleVariableChange("breadcrumb-item-separator-colour", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -277,7 +277,7 @@ const BreadcrumbsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["breadcrumb-item-text-colour"] || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("breadcrumb-item-text-colour", e.target.value)}
+                                        onChange={(value) => handleVariableChange("breadcrumb-item-text-colour", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -294,7 +294,7 @@ const BreadcrumbsDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["breadcrumb-item-text-colour-active"] || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("breadcrumb-item-text-colour-active", e.target.value)}
+                                        onChange={(value) => handleVariableChange("breadcrumb-item-text-colour-active", value)}
                                         isFullWidth
                                     />
                                 </Portion>

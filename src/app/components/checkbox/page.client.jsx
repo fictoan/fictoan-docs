@@ -224,7 +224,7 @@ const CheckboxDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={componentVariables["checkbox-square-border-radius"].value}
-                                        onChange={(e) => handleVariableChange("checkbox-square-border-radius", e.target.value)}
+                                        onChange={(value) => handleVariableChange("checkbox-square-border-radius", value)}
                                         suffix={componentVariables["checkbox-square-border-radius"].unit}
                                         min={0} max={10} step={1}
                                     />
@@ -241,7 +241,7 @@ const CheckboxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["checkbox-tick"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("checkbox-tick", e.target.value)}
+                                        onChange={(value) => handleVariableChange("checkbox-tick", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -257,7 +257,7 @@ const CheckboxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["checkbox-square-bg-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("checkbox-square-bg-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("checkbox-square-bg-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -273,7 +273,7 @@ const CheckboxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["checkbox-square-bg-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("checkbox-square-bg-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("checkbox-square-bg-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -289,7 +289,7 @@ const CheckboxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["checkbox-square-bg-checked"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("checkbox-square-bg-checked", e.target.value)}
+                                        onChange={(value) => handleVariableChange("checkbox-square-bg-checked", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -305,7 +305,7 @@ const CheckboxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["checkbox-square-bg-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("checkbox-square-bg-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("checkbox-square-bg-disabled", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -330,7 +330,7 @@ const CheckboxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["switch-bg-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("switch-bg-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("switch-bg-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -346,7 +346,7 @@ const CheckboxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["switch-slider-bg-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("switch-slider-bg-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("switch-slider-bg-default", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -362,7 +362,7 @@ const CheckboxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["switch-bg-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("switch-bg-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("switch-bg-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -378,7 +378,7 @@ const CheckboxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["switch-slider-bg-hover"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("switch-slider-bg-hover", e.target.value)}
+                                        onChange={(value) => handleVariableChange("switch-slider-bg-hover", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -394,7 +394,7 @@ const CheckboxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["switch-bg-checked"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("switch-bg-checked", e.target.value)}
+                                        onChange={(value) => handleVariableChange("switch-bg-checked", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -410,7 +410,7 @@ const CheckboxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["switch-slider-bg-checked"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("switch-slider-bg-checked", e.target.value)}
+                                        onChange={(value) => handleVariableChange("switch-slider-bg-checked", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -426,7 +426,7 @@ const CheckboxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["switch-bg-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("switch-bg-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("switch-bg-disabled", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -442,7 +442,7 @@ const CheckboxDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={componentVariables["switch-slider-bg-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("switch-slider-bg-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("switch-slider-bg-disabled", value)}
                                         isFullWidth
                                     />
                                 </Portion>

@@ -86,7 +86,7 @@ const RangeInput = ({ name, defaultValue, onChange, suffix = "px" }) => {
     const [rangeValue, setRangeValue] = useState(defaultValue);
 
     const handleChange = useCallback((e) => {
-        const newValue = parseInt(e.target.value);
+        const newValue = parseInt(value);
         setRangeValue(newValue);
         onChange(name, `${newValue}${suffix}`);
     }, [name, onChange, suffix]);

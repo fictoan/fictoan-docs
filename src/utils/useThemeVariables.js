@@ -119,7 +119,7 @@ export const useThemeVariables = (variablesStructure, targetElementId = "interac
                         <Range
                             label={humanReadableLabel}
                             value={varDetails.value}
-                            onChange={(e) => handleVariableChange(varName, e.target.value)}
+                            onChange={(value) => handleVariableChange(varName, value)}
                             min={0}
                             max={varDetails.max || 50}
                             step={varDetails.step || 1}

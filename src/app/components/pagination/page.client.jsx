@@ -154,7 +154,7 @@ const PaginationDocs = () => {
                                         type="number"
                                         label="Total items"
                                         value={totalItems}
-                                        onChange={(e) => setTotalItems(parseInt(e.target.value))}
+                                        onChange={(value) => setTotalItems(parseInt(value))}
                                     />
                                 </Portion>
 
@@ -164,7 +164,7 @@ const PaginationDocs = () => {
                                         type="number"
                                         label="Items to show each side"
                                         value={itemsToShowEachSide}
-                                        onChange={(e) => setItemsToShowEachSide(parseInt(e.target.value))}
+                                        onChange={(value) => setItemsToShowEachSide(parseInt(value))}
                                     />
                                 </Portion>
 
@@ -174,7 +174,7 @@ const PaginationDocs = () => {
                                     <InputField
                                         label="Loading text"
                                         value={loadingText}
-                                        onChange={(e) => setLoadingText(e.target.value)}
+                                        onChange={(value) => setLoadingText(value)}
                                     />
                                 </Portion>
 
@@ -183,7 +183,7 @@ const PaginationDocs = () => {
                                     <InputField
                                         label="Empty text"
                                         value={emptyText}
-                                        onChange={(e) => setEmptyText(e.target.value)}
+                                        onChange={(value) => setEmptyText(value)}
                                     />
                                 </Portion>
 
@@ -200,7 +200,7 @@ const PaginationDocs = () => {
                                             { id : "kind-filled", value : "filled", label : "filled" },
                                         ]}
                                         value={kind}
-                                        onChange={(e) => setKind(e.target.value)}
+                                        onChange={(value) => setKind(value)}
                                     />
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
@@ -219,7 +219,7 @@ const PaginationDocs = () => {
                                         name="disabled"
                                         label="Disabled"
                                         checked={disabled}
-                                        onChange={(e) => setDisabled(e.target.checked)}
+                                        onChange={(value) => setDisabled(e.target.checked)}
                                     />
                                 </Portion>
 
@@ -231,7 +231,7 @@ const PaginationDocs = () => {
                                         name="hide-disabled-buttons"
                                         label="Hide disabled buttons"
                                         checked={hideDisabledButtons}
-                                        onChange={(e) => setHideDisabledButtons(e.target.checked)}
+                                        onChange={(value) => setHideDisabledButtons(e.target.checked)}
                                     />
                                 </Portion>
 
@@ -243,7 +243,7 @@ const PaginationDocs = () => {
                                         name="show-go-to-first-button"
                                         label="Show go to first button"
                                         checked={showGoToFirstItemButton}
-                                        onChange={(e) => setShowGoToFirstItemButton(e.target.checked)}
+                                        onChange={(value) => setShowGoToFirstItemButton(e.target.checked)}
                                     />
                                 </Portion>
 
@@ -255,7 +255,7 @@ const PaginationDocs = () => {
                                         name="show-go-to-last-button"
                                         label="Show go to last button"
                                         checked={showGoToLastItemButton}
-                                        onChange={(e) => setShowGoToLastItemButton(e.target.checked)}
+                                        onChange={(value) => setShowGoToLastItemButton(e.target.checked)}
                                     />
                                 </Portion>
 
@@ -267,7 +267,7 @@ const PaginationDocs = () => {
                                         name="show-previous-button"
                                         label="Show previous button"
                                         checked={showPreviousButton}
-                                        onChange={(e) => setShowPreviousButton(e.target.checked)}
+                                        onChange={(value) => setShowPreviousButton(e.target.checked)}
                                     />
                                 </Portion>
 
@@ -279,7 +279,7 @@ const PaginationDocs = () => {
                                         name="show-next-button"
                                         label="Show next button"
                                         checked={showNextButton}
-                                        onChange={(e) => setShowNextButton(e.target.checked)}
+                                        onChange={(value) => setShowNextButton(e.target.checked)}
                                     />
                                 </Portion>
 
@@ -291,7 +291,7 @@ const PaginationDocs = () => {
                                         name="show-go-to-input"
                                         label="Show go to input"
                                         checked={showGoToInput}
-                                        onChange={(e) => setShowGoToInput(e.target.checked)}
+                                        onChange={(value) => setShowGoToInput(e.target.checked)}
                                     />
                                 </Portion>
 
@@ -303,7 +303,7 @@ const PaginationDocs = () => {
                                         name="is-loading"
                                         label="Is loading"
                                         checked={isLoading}
-                                        onChange={(e) => setIsLoading(e.target.checked)}
+                                        onChange={(value) => setIsLoading(e.target.checked)}
                                     />
                                 </Portion>
 
@@ -346,7 +346,7 @@ const PaginationDocs = () => {
                                     <Range
                                         label="Item height"
                                         value={componentVariables["pagination-item-height"].value}
-                                        onChange={(e) => handleVariableChange("pagination-item-height", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-height", value)}
                                         min={20} max={64} step={1}
                                         suffix={componentVariables["pagination-item-height"].unit}
                                     />
@@ -356,7 +356,7 @@ const PaginationDocs = () => {
                                     <Range
                                         label="Min width"
                                         value={componentVariables["pagination-item-min-width"].value}
-                                        onChange={(e) => handleVariableChange("pagination-item-min-width", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-min-width", value)}
                                         min={20} max={64} step={1}
                                         suffix={componentVariables["pagination-item-min-width"].unit}
                                     />
@@ -366,7 +366,7 @@ const PaginationDocs = () => {
                                     <Range
                                         label="Border width"
                                         value={componentVariables["pagination-item-border-width"].value}
-                                        onChange={(e) => handleVariableChange("pagination-item-border-width", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-border-width", value)}
                                         min={0} max={4} step={1}
                                         suffix="px"
                                     />
@@ -376,7 +376,7 @@ const PaginationDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={componentVariables["pagination-item-border-radius"].value}
-                                        onChange={(e) => handleVariableChange("pagination-item-border-radius", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-border-radius", value)}
                                         min={0} max={24} step={1}
                                         suffix="px"
                                     />
@@ -405,7 +405,7 @@ const PaginationDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={paginationProps.variables["pagination-item-bg-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("pagination-item-bg-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-bg-default", value)}
                                     />
                                 </Portion>
 
@@ -420,7 +420,7 @@ const PaginationDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={paginationProps.variables["pagination-item-text-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("pagination-item-text-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-text-default", value)}
                                     />
                                 </Portion>
 
@@ -436,7 +436,7 @@ const PaginationDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={paginationProps.variables["pagination-item-bg-selected"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("pagination-item-bg-selected", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-bg-selected", value)}
                                     />
                                 </Portion>
 
@@ -451,7 +451,7 @@ const PaginationDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={paginationProps.variables["pagination-item-text-selected"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("pagination-item-text-selected", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-text-selected", value)}
                                     />
                                 </Portion>
 
@@ -466,7 +466,7 @@ const PaginationDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={paginationProps.variables["pagination-arrows-stroke"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("pagination-arrows-stroke", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-arrows-stroke", value)}
                                     />
                                 </Portion>
                             </Row>
@@ -493,7 +493,7 @@ const PaginationDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={paginationProps.variables["pagination-item-filled-bg-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("pagination-item-filled-bg-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-filled-bg-default", value)}
                                     />
                                 </Portion>
 
@@ -508,7 +508,7 @@ const PaginationDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={paginationProps.variables["pagination-item-filled-text-default"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("pagination-item-filled-text-default", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-filled-text-default", value)}
                                     />
                                 </Portion>
 
@@ -524,7 +524,7 @@ const PaginationDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={paginationProps.variables["pagination-item-filled-bg-selected"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("pagination-item-filled-bg-selected", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-filled-bg-selected", value)}
                                     />
                                 </Portion>
 
@@ -539,7 +539,7 @@ const PaginationDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={paginationProps.variables["pagination-item-filled-text-selected"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("pagination-item-filled-text-selected", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-filled-text-selected", value)}
                                     />
                                 </Portion>
                             </Row>
@@ -565,7 +565,7 @@ const PaginationDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={paginationProps.variables["pagination-item-bg-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("pagination-item-bg-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-bg-disabled", value)}
                                     />
                                 </Portion>
 
@@ -580,7 +580,7 @@ const PaginationDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={paginationProps.variables["pagination-item-text-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("pagination-item-text-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-item-text-disabled", value)}
                                     />
                                 </Portion>
 
@@ -595,7 +595,7 @@ const PaginationDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={paginationProps.variables["pagination-arrows-stroke-disabled"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("pagination-arrows-stroke-disabled", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-arrows-stroke-disabled", value)}
                                     />
                                 </Portion>
                             </Row>
@@ -621,7 +621,7 @@ const PaginationDocs = () => {
                                             selected : true,
                                         }, ...colourOptions]}
                                         defaultValue={paginationProps.variables["pagination-info-text"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("pagination-info-text", e.target.value)}
+                                        onChange={(value) => handleVariableChange("pagination-info-text", value)}
                                     />
                                 </Portion>
                             </Row>

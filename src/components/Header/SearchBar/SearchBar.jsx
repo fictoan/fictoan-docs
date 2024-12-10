@@ -217,7 +217,7 @@ export const SearchBar = () => {
                     className="search-input"
                     type="search"
                     value={searchTerm}
-                    onChange={(e) => handleSearch(e.target.value)}
+                    onChange={(value) => handleSearch(value)}
                     placeholder="Search components and variables"
                     onClick={() => showModal("search-modal")}
                 />
@@ -240,7 +240,7 @@ export const SearchBar = () => {
                             ref={searchInputRef}
                             value={searchTerm}
                             onKeyDown={handleSearchInputKeyDown}
-                            onChange={(e) => handleSearch(e.target.value)}
+                            onChange={(value) => handleSearch(value)}
                             placeholder="Search components and CSS variables"
                         />
                     </Header>

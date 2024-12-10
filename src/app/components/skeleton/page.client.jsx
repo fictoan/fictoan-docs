@@ -54,7 +54,7 @@ const SkeletonDocs = () => {
 
     // Add handler for width change that updates height for circles
     const handleWidthChange = (e) => {
-        const newWidth = e.target.value;
+        const newWidth = value;
         setWidth(newWidth);
 
         // If circle variant, update height to match width
@@ -147,7 +147,7 @@ const SkeletonDocs = () => {
                                             { id : "horizontal", value : "horizontal", label : "horizontal" },
                                         ]}
                                         value={direction}
-                                        onChange={(e) => setDirection(e.target.value)}
+                                        onChange={(value) => setDirection(value)}
                                     />
                                 </Portion>
 
@@ -155,7 +155,7 @@ const SkeletonDocs = () => {
                                     <Range
                                         label="Repeat"
                                         value={repeat}
-                                        onChange={(e) => setRepeat(parseInt(e.target.value))}
+                                        onChange={(value) => setRepeat(parseInt(value))}
                                         min={1} max={10} step={1}
                                     />
                                 </Portion>
@@ -175,7 +175,7 @@ const SkeletonDocs = () => {
                                             { id : "spacing-huge", value : "huge", label : "huge" },
                                         ]}
                                         value={spacing}
-                                        onChange={(e) => setSpacing(e.target.value)}
+                                        onChange={(value) => setSpacing(value)}
                                     />
                                 </Portion>
 
@@ -190,7 +190,7 @@ const SkeletonDocs = () => {
                                             { id : "effect-wave", value : "wave", label : "wave" },
                                         ]}
                                         value={groupEffect}
-                                        onChange={(e) => setGroupEffect(e.target.value)}
+                                        onChange={(value) => setGroupEffect(value)}
                                     />
                                 </Portion>
                             </Row>
@@ -219,7 +219,7 @@ const SkeletonDocs = () => {
                                         label="Height"
                                         placeholder="Height"
                                         value={height}
-                                        onChange={(e) => setHeight(e.target.value)}
+                                        onChange={(value) => setHeight(value)}
                                         disabled={variant === "circle"}
                                         helpText={variant === "circle" ? "Height matches width for circles" : undefined}
                                     />
@@ -250,7 +250,7 @@ const SkeletonDocs = () => {
                                             { id : "shape-rounded", value : "rounded", label : "rounded" },
                                         ]}
                                         value={shape}
-                                        onChange={(e) => setShape(e.target.value)}
+                                        onChange={(value) => setShape(value)}
                                     />
                                 </Portion>
                             </Row>
@@ -291,7 +291,7 @@ const SkeletonDocs = () => {
                                             ...colourOptions,
                                         ]}
                                         defaultValue={skeletonProps.variables["skeleton-bg"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("skeleton-bg", e.target.value)}
+                                        onChange={(value) => handleVariableChange("skeleton-bg", value)}
                                         isFullWidth
                                     />
                                 </Portion>
@@ -308,7 +308,7 @@ const SkeletonDocs = () => {
                                             ...colourOptions,
                                         ]}
                                         defaultValue={skeletonProps.variables["skeleton-highlight"].defaultValue || "select-a-colour"}
-                                        onChange={(e) => handleVariableChange("skeleton-highlight", e.target.value)}
+                                        onChange={(value) => handleVariableChange("skeleton-highlight", value)}
                                         isFullWidth
                                     />
                                 </Portion>

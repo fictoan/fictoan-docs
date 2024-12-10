@@ -130,7 +130,7 @@ const ThemingDocs = () => {
                                     <Range
                                         label="Border radius"
                                         value={cssValues["--global-border-radius"].value}
-                                        onChange={(e) => handleRangeChange("--global-border-radius", e.target.value)}
+                                        onChange={(value) => handleRangeChange("--global-border-radius", value)}
                                         suffix={cssValues["--global-border-radius"].unit}
                                         min={0} max={50} step={1}
                                     />
@@ -140,7 +140,7 @@ const ThemingDocs = () => {
                                     <Range
                                         label="Border width"
                                         value={cssValues["--global-border-width"].value}
-                                        onChange={(e) => handleRangeChange("--global-border-width", e.target.value)}
+                                        onChange={(value) => handleRangeChange("--global-border-width", value)}
                                         suffix={cssValues["--global-border-width"].unit}
                                         min={0} max={50} step={1}
                                     />
@@ -197,7 +197,7 @@ const ThemingDocs = () => {
                                     <Range
                                         label="Text size"
                                         value={cssValues["--paragraph-font-size"].value}
-                                        onChange={(e) => handleRangeChange("--paragraph-font-size", e.target.value)}
+                                        onChange={(value) => handleRangeChange("--paragraph-font-size", value)}
                                         suffix={cssValues["--paragraph-font-size"].unit}
                                         min={0.5} max={5} step={0.1}
                                     />
@@ -207,7 +207,7 @@ const ThemingDocs = () => {
                                     <Range
                                         label="Heading size multiplier"
                                         value={cssValues["--heading-size-multiplier"].value}
-                                        onChange={(e) => handleRangeChange("--heading-size-multiplier", e.target.value)}
+                                        onChange={(value) => handleRangeChange("--heading-size-multiplier", value)}
                                         suffix={cssValues["--heading-size-multiplier"].unit}
                                         min={0} max={3} step={0.1}
                                     />
