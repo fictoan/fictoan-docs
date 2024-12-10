@@ -34,13 +34,6 @@ kbd {
     overflow-y    : auto;
     border-radius : calc(var(--global-border-radius) + 1px);
 
-    header {
-        position        : sticky;
-        top             : 0;
-        z-index         : 50;
-        backdrop-filter : blur(4px);
-    }
-
     .dismiss-button {
         display : none;
     }

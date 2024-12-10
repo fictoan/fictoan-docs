@@ -162,7 +162,7 @@ export const SearchBar = () => {
                 )}
                 <Div>
                     <Text weight="400">{result.title}</Text>
-                    <Text weight="400" size="small" isSubtext>{result.description}</Text>
+                    <Text weight="400" isSubtext>{result.description}</Text>
                 </Div>
             </Card>
         </Link>
