@@ -84,8 +84,7 @@ const ThemingDocs = () => {
 
                     <Text marginBottom="micro">
                         Here, the Fictoan theme is first loaded as the default theme. You can also create your own
-                        theme,
-                        with a class, and put in all your custom variables there. This will over-ride the default
+                        theme, with a class, and put in all your custom variables there. This will over-ride the default
                         values.
                     </Text>
 
@@ -112,7 +111,7 @@ const ThemingDocs = () => {
             {/* COMPONENTS ================================================= */}
             <Row horizontalPadding="huge">
                 <Portion>
-                    <Text size="large" weight="700" textColour="white" marginBottom="nano">Components</Text>
+                    <Text size="large" weight="700" textColour="white" marginBottom="nano">Full Fictoan theme</Text>
 
                     <SearchableCodeBlock source={sampleFictoanTheme} language="css" marginBottom="micro" />
                 </Portion>

@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import {
     InputField,
     Text,
-    CodeBlock
+    CodeBlock,
 } from "fictoan-react";
 
 export const SearchableCodeBlock = ({ source, language, ...props }) => {
@@ -13,7 +13,7 @@ export const SearchableCodeBlock = ({ source, language, ...props }) => {
     const [filteredSource, setFilteredSource] = useState(source);
     const [matchCount, setMatchCount] = useState(0);
 
-    const handleSearch = (e) => {
+    const handleSearch = (value) => {
         const search = value.toLowerCase();
         setSearchString(search);
 
