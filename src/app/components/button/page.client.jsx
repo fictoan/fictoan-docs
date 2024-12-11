@@ -181,7 +181,7 @@ const ButtonDocs = () => {
                                         name="checkbox-loading"
                                         label="Is loading"
                                         checked={isLoading}
-                                        onChange={() => setIsLoading(event.target.checked)}
+                                        onChange={(checked) => setIsLoading(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />

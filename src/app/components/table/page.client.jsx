@@ -216,7 +216,7 @@ const TableDocs = () => {
                                         name="checkbox-overlay"
                                         label="Striped rows"
                                         checked={isStriped}
-                                        onChange={() => setIsStriped(event.target.checked)}
+                                        onChange={(checked) => setIsStriped(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -230,7 +230,7 @@ const TableDocs = () => {
                                         name="checkbox-dismissible"
                                         label="Highlight row on hover"
                                         checked={highlightRowOnHover}
-                                        onChange={() => setHighlightRowOnHover(event.target.checked)}
+                                        onChange={(checked) => setHighlightRowOnHover(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -244,7 +244,7 @@ const TableDocs = () => {
                                         name="checkbox-full-width"
                                         label="Make table full width"
                                         checked={isFullWidth}
-                                        onChange={() => setIsFullWidth(event.target.checked)}
+                                        onChange={(checked) => setIsFullWidth(checked)}
                                     />
                                 </Portion>
                             </Row>

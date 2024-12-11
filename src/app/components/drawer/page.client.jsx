@@ -199,7 +199,7 @@ const DrawerDocs = () => {
                                         name="checkbox-overlay"
                                         label="Show overlay"
                                         checked={showOverlay}
-                                        onChange={() => setShowOverlay(event.target.checked)}
+                                        onChange={(checked) => setShowOverlay(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -213,7 +213,7 @@ const DrawerDocs = () => {
                                         name="checkbox-dismissible"
                                         label="Is dismissible"
                                         checked={isDismissible}
-                                        onChange={() => setIsDismissible(event.target.checked)}
+                                        onChange={(checked) => setIsDismissible(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -227,7 +227,7 @@ const DrawerDocs = () => {
                                         name="checkbox-close-on-click-outside"
                                         label="Close on clicking outside"
                                         checked={closeOnClickOutside}
-                                        onChange={() => setCloseOnClickOutside(event.target.checked)}
+                                        onChange={(checked) => setCloseOnClickOutside(checked)}
                                     />
                                 </Portion>
                             </Row>

@@ -153,7 +153,7 @@ const OptionCardsDocs = () => {
                                         name="checkbox-multiple"
                                         label="Allow multiple selections"
                                         checked={allowMultipleSelections}
-                                        onChange={() => setAllowMultipleSelections(event.target.checked)}
+                                        onChange={(checked) => setAllowMultipleSelections(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -167,7 +167,7 @@ const OptionCardsDocs = () => {
                                         name="checkbox-tick"
                                         label="Show tick icon"
                                         checked={showTickIcon}
-                                        onChange={() => setShowTickIcon(event.target.checked)}
+                                        onChange={(checked) => setShowTickIcon(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -181,7 +181,7 @@ const OptionCardsDocs = () => {
                                         name="checkbox-disabled"
                                         label="Disabled"
                                         checked={isDisabled}
-                                        onChange={() => setIsDisabled(event.target.checked)}
+                                        onChange={(checked) => setIsDisabled(checked)}
                                     />
                                 </Portion>
                             </Row>

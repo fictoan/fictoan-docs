@@ -196,7 +196,7 @@ const InputFieldDocs = () => {
                                         name="checkbox-required"
                                         label="Make it a required field"
                                         checked={isRequired}
-                                        onChange={() => setIsRequired(event.target.checked)}
+                                        onChange={(checked) => setIsRequired(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -221,7 +221,7 @@ const InputFieldDocs = () => {
                                         name="checkbox-validate-this"
                                         label="I want to validate this input"
                                         checked={validateThis}
-                                        onChange={() => setValidateThis(event.target.checked)}
+                                        onChange={(checked) => setValidateThis(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />

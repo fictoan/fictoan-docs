@@ -189,7 +189,7 @@ const TabsDocs = () => {
                                         name="checkbox-full-width"
                                         label="Make full width"
                                         checked={isFullWidth}
-                                        onChange={(event) => setIsFullWidth(event.target.checked)}
+                                        onChange={(event) => setIsFullWidth(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />

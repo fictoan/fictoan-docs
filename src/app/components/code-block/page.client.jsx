@@ -258,7 +258,7 @@ const CodeBlockDocs = () => {
                                         name="checkbox-copy-button"
                                         label="Show Copy button"
                                         checked={enableCopyButton}
-                                        onChange={() => setEnableCopyButton(event.target.checked)}
+                                        onChange={(checked) => setEnableCopyButton(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="micro" />
@@ -272,7 +272,7 @@ const CodeBlockDocs = () => {
                                         name="checkbox-line-numbers"
                                         label="Show line numbers"
                                         checked={enableLineNumbers}
-                                        onChange={() => setEnableLineNumbers(event.target.checked)}
+                                        onChange={(checked) => setEnableLineNumbers(checked)}
                                     />
                                 </Portion>
                             </Row>

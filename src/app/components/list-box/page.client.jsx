@@ -171,7 +171,7 @@ const ListBoxDocs = () => {
                                         id="multi-select"
                                         label="Allow multi-select"
                                         checked={allowMultiSelect}
-                                        onChange={(value) => setAllowMultiSelect(e.target.checked)}
+                                        onChange={(checked) => setAllowMultiSelect(checked)}
                                     />
                                 </Portion>
 
@@ -194,7 +194,7 @@ const ListBoxDocs = () => {
                                             id="custom-entries"
                                             label="Allow custom entries"
                                             checked={allowCustomEntries}
-                                            onChange={(value) => setAllowCustomEntries(e.target.checked)}
+                                            onChange={(checked) => setAllowCustomEntries(checked)}
                                         />
 
                                         {/* BADGE BG COLOUR -------------------------------------------------------- */}
@@ -240,7 +240,7 @@ const ListBoxDocs = () => {
                                         id="disabled"
                                         label="Disabled"
                                         checked={disabled}
-                                        onChange={(value) => setDisabled(e.target.checked)}
+                                        onChange={(checked) => setDisabled(checked)}
                                     />
                                 </Portion>
                             </Row>
