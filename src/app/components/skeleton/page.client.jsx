@@ -42,8 +42,8 @@ const SkeletonDocs = () => {
     const [shape, setShape] = useState("rounded");
 
     // Add handler for variant change that updates height for circles
-    const handleVariantChange = (event) => {
-        const newVariant = event.target.value;
+    const handleVariantChange = (value) => {
+        const newVariant = value;
         setVariant(newVariant);
 
         // If switching to circle variant, set height to match width
@@ -53,7 +53,7 @@ const SkeletonDocs = () => {
     };
 
     // Add handler for width change that updates height for circles
-    const handleWidthChange = (e) => {
+    const handleWidthChange = (value) => {
         const newWidth = value;
         setWidth(newWidth);
 

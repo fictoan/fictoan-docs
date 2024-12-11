@@ -130,11 +130,12 @@ const ColourDocs = () => {
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
                 {/*  CONFIGURATOR */}
                 {/* //////////////////////////////////////////////////////////////////////////////////////////////// */}
-                <Row horizontalPadding="huge" marginBottom="micro" retainLayoutAlways>
+                <Row horizontalPadding="large" marginBottom="micro" retainLayoutAlways>
                     <Portion>
                         {/* DEMO COMPONENT ///////////////////////////////////////////////////////////////////////// */}
                         <Div
-                            padding="small" shape="rounded" bgColour="slate-light80"
+                            id="configurator"
+                            padding="small" shape="rounded"
                             data-centered-children
                         >
                             <Text
@@ -151,18 +152,22 @@ const ColourDocs = () => {
                             >
                                 <CodeBlock withSyntaxHighlighting language="jsx" showCopyButton>
                                     {[
-                                        `<Card`,
-                                        computedValues.bgColour ? ` bgColour="${computedValues.bgColour}"` : null,
-                                        `>Your content here</Card>`,
-                                    ].filter(Boolean).join("")}
+                                        `/* Example use */`,
+                                        `<Card${computedValues.bgColour ? ` bgColour="${computedValues.bgColour}"` : ""}>`,
+                                        "    Your content here",
+                                        "</Card>"
+                                    ].join("\n")}
                                 </CodeBlock>
                             </Card>
+                            <Div className="gradient-bg" />
                         </Div>
                     </Portion>
 
                     {/* STEP 1 — COLOUR //////////////////////////////////////////////////////////////////////////// */}
                     <Portion desktopSpan="one-third">
-                        <Text align="centre">First, pick a colour</Text>
+                        <Text align="centre" weight="600" marginBottom="nano">
+                            First, pick a colour
+                        </Text>
 
                         <OptionCardsGroup
                             showTickIcon
@@ -198,7 +203,9 @@ const ColourDocs = () => {
 
                     {/* STEP 2 — LUMINANCE ///////////////////////////////////////////////////////////////////////// */}
                     <Portion desktopSpan="one-third">
-                        <Text align="centre">...then, luminance</Text>
+                        <Text align="centre" weight="600" marginBottom="nano">
+                            ...then, luminance
+                        </Text>
                         <OptionCardsGroup
                             showTickIcon
                             onSelectionChange={(selectedIds) => {
@@ -258,7 +265,9 @@ const ColourDocs = () => {
 
                     {/* STEP 3 — OPACITY /////////////////////////////////////////////////////////////////////////// */}
                     <Portion desktopSpan="one-third">
-                        <Text align="centre">...finally, opacity</Text>
+                        <Text align="centre" weight="600" marginBottom="nano">
+                            ...finally, opacity
+                        </Text>
 
                         <OptionCardsGroup
                             showTickIcon

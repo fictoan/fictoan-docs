@@ -219,7 +219,7 @@ const PaginationDocs = () => {
                                         name="disabled"
                                         label="Disabled"
                                         checked={disabled}
-                                        onChange={(value) => setDisabled(e.target.checked)}
+                                        onChange={(checked) => setDisabled(checked)}
                                     />
                                 </Portion>
 
@@ -231,7 +231,7 @@ const PaginationDocs = () => {
                                         name="hide-disabled-buttons"
                                         label="Hide disabled buttons"
                                         checked={hideDisabledButtons}
-                                        onChange={(value) => setHideDisabledButtons(e.target.checked)}
+                                        onChange={(checked) => setHideDisabledButtons(checked)}
                                     />
                                 </Portion>
 
@@ -243,7 +243,7 @@ const PaginationDocs = () => {
                                         name="show-go-to-first-button"
                                         label="Show go to first button"
                                         checked={showGoToFirstItemButton}
-                                        onChange={(value) => setShowGoToFirstItemButton(e.target.checked)}
+                                        onChange={(checked) => setShowGoToFirstItemButton(checked)}
                                     />
                                 </Portion>
 
@@ -255,7 +255,7 @@ const PaginationDocs = () => {
                                         name="show-go-to-last-button"
                                         label="Show go to last button"
                                         checked={showGoToLastItemButton}
-                                        onChange={(value) => setShowGoToLastItemButton(e.target.checked)}
+                                        onChange={(checked) => setShowGoToLastItemButton(checked)}
                                     />
                                 </Portion>
 
@@ -267,7 +267,7 @@ const PaginationDocs = () => {
                                         name="show-previous-button"
                                         label="Show previous button"
                                         checked={showPreviousButton}
-                                        onChange={(value) => setShowPreviousButton(e.target.checked)}
+                                        onChange={(checked) => setShowPreviousButton(checked)}
                                     />
                                 </Portion>
 
@@ -279,7 +279,7 @@ const PaginationDocs = () => {
                                         name="show-next-button"
                                         label="Show next button"
                                         checked={showNextButton}
-                                        onChange={(value) => setShowNextButton(e.target.checked)}
+                                        onChange={(checked) => setShowNextButton(checked)}
                                     />
                                 </Portion>
 
@@ -291,7 +291,7 @@ const PaginationDocs = () => {
                                         name="show-go-to-input"
                                         label="Show go to input"
                                         checked={showGoToInput}
-                                        onChange={(value) => setShowGoToInput(e.target.checked)}
+                                        onChange={(checked) => setShowGoToInput(checked)}
                                     />
                                 </Portion>
 
@@ -303,7 +303,7 @@ const PaginationDocs = () => {
                                         name="is-loading"
                                         label="Is loading"
                                         checked={isLoading}
-                                        onChange={(value) => setIsLoading(e.target.checked)}
+                                        onChange={(checked) => setIsLoading(checked)}
                                     />
                                 </Portion>
 
