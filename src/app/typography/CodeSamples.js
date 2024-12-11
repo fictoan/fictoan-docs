@@ -8,47 +8,46 @@ export const sampleHeadings = `<Heading1>Heading 1</Heading1>
 
 
 // Code sample 02 ==============================================================
-export const sampleText = `<Text>Sample text goes here</Text>`;
+export const sampleTextTheme = `/* FLUID TYPE =================================================== */
+:root {
+    --screen-width-min : 320;
+    --screen-width-max : 1600;
+    --font-size-min    : 16;
+    --font-size-max    : 20;
+    --scale-ratio-min  : 1.08;
+    --scale-ratio-max  : 1.12;
+}
 
+:root {
+    /* GENERICS ================================================= */
+    --font-sans-serif                : sans-serif;
+    --font-serif                     : serif;
+    --font-mono                      : monospace;
 
-// Code sample 02 ==============================================================
-export const sampleTextTheme = `/* GENERICS ============================================================= */
---font-sans-serif           : "IBM Plex Sans", sans-serif;
---font-serif                : "IBM Plex Serif", serif;
---font-mono                 : "IBM Plex Mono", monospace;
+    /* PARAGRAPHS =============================================== */
+    --paragraph-font                 : var(--font-sans-serif);
+    --paragraph-font-size            : var(--text-medium);
+    --paragraph-line-height          : 1.2;
+    --paragraph-font-weight          : 400;
+    --paragraph-text-colour          : var(--grey);
 
-/* PARAGRAPHS =========================================================== */
---paragraph-font            : var(--font-sans-serif);
---paragraph-font-size       : 1rem;
---paragraph-line-height     : 1.2;
---paragraph-font-weight     : 400;
---paragraph-text-colour     : var(--grey);
+    --paragraph-subtext-colour       : var(--slate-dark30);
+    --paragraph-subtext-size         : calc(var(--paragraph-font-size) * 0.8);
 
---paragraph-subtext-colour  : var(--slate-dark30);
---paragraph-subtext-size    : 0.8rem;
+    /* HEADINGS ================================================= */
+    --heading-font                   : var(--font-sans-serif);
+    --heading-text-colour            : var(--slate);
+    --heading-font-weight            : 700;
+    --heading-line-height            : 1;
 
-/* HEADINGS ============================================================= */
---heading-font              : var(--font-sans-serif);
---heading-font-size         : 1.5rem;
---heading-size-multiplier   : 1.2;
---heading-line-height       : 1;
---heading-font-weight       : 700;
---heading-text-colour       : var(--slate);
+    /* LINKS ==================================================== */
+    --link-font                      : var(--paragraph-font);
+    --link-text-default              : var(--blue);
+    --link-text-hover                : var(--blue);
 
-/* LINKS ================================================================ */
---link-font                 : var(--paragraph-font);
---link-text-default         : var(--blue);
---link-text-hover           : var(--blue);
-
-/* SELECTION ============================================================ */
---text-selected             : var(--white);
---text-bg-selected          : var(--hue);`;
-
-
-// Code sample 03 ==============================================================
-export const sampleColouring1 = `<Heading6 textColour="red-light30">I’m red-light30</Heading6>`;
-export const sampleColouring2 = `<Text textColor="violet-dark10">I’m violet-dark10</Text>`;
-export const sampleColouring3 = `<Heading4 textColour="pistachio">I’m pistachio</Heading4>`;
+    /* SELECTION ================================================ */
+    --text-selected                  : var(--white);
+    --text-bg-selected               : var(--hue);`;
 
 
 // Code sample 03 ==============================================================

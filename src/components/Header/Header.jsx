@@ -10,7 +10,6 @@ import {
     Div,
     Header,
     Heading5,
-    Text,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -47,7 +46,7 @@ export const SiteHeader = ({ toggleSidebarOnMobile }) => {
                     {/* VERSION BADGE ============================================================================== */}
                     <VersionBadge />
 
-                    {/* LOGO ======================================================================================= */}
+                    {/* GITHUB LOGO ================================================================================ */}
                     <Link href="https://github.com/fictoan/fictoan-react" target="_blank" rel="noopener noreferrer">
                         <Div id="github-link" verticallyCentreItems>
                             <GithubIcon />

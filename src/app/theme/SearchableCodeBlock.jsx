@@ -57,11 +57,13 @@ export const SearchableCodeBlock = ({ source, language, ...props }) => {
                 placeholder="Search for a variable"
                 marginBottom="micro"
             />
+
             {searchString && (
                 <Text verticalMargin="nano">
                     Found {matchCount} result{matchCount !== 1 ? "s" : ""} for <code>{searchString}</code>
                 </Text>
             )}
+
             <CodeBlock withSyntaxHighlighting source={filteredSource} language={language} {...props} />
         </>
     );

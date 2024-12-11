@@ -1,23 +1,19 @@
-// EXTERNAL DEPS ===============================================================
+// EXTERNAL DEPS =======================================================================================================
 import React from "react";
 
-// INTERNAL DEPS ===============================================================
+// INTERNAL DEPS =======================================================================================================
 import {
     Heading1,
-    Heading2,
-    Heading3,
-    Heading4,
-    Heading5,
-    Heading6, Divider, Portion, Row, Text, Article, CodeBlock,
+    Heading4, Divider, Portion, Row, Text, Article, CodeBlock,
 } from "fictoan-react";
 
-// COMPONENTS ==================================================================
+// COMPONENTS ==========================================================================================================
 import { SearchableCodeBlock } from "./SearchableCodeBlock";
 
-// STYLES ======================================================================
+// STYLES ==============================================================================================================
 import "./page-theming.css";
 
-// CODE SNIPPETS ===============================================================
+// CODE SNIPPETS =======================================================================================================
 import {
     sampleThemeProviderSetup,
     sampleHeaderSetup,
@@ -56,9 +52,7 @@ export const metadata = {
 const ThemingDocs = () => {
     return (
         <Article id="page-theming">
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            {/* INTRO */}
-            {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
+            {/* INTRO ////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
                     <Heading1 marginBottom="micro">Theme</Heading1>
@@ -69,7 +63,7 @@ const ThemingDocs = () => {
                 </Portion>
             </Row>
 
-            {/* GLOBALS ==================================================== */}
+            {/* GLOBALS //////////////////////////////////////////////////////////////////////////////////////////// */}
             <Row horizontalPadding="huge">
                 <Portion>
                     <Heading4 marginBottom="nano">Usage</Heading4>
@@ -94,7 +88,7 @@ const ThemingDocs = () => {
 
             <Divider kind="primary" horizontalMargin="huge" verticalMargin="small" />
 
-            {/* GLOBALS ==================================================== */}
+            {/* VARIABLES ========================================================================================== */}
             <Row horizontalPadding="huge">
                 <Portion>
                     <Heading4 marginBottom="micro">Variables</Heading4>
@@ -108,7 +102,7 @@ const ThemingDocs = () => {
             <Divider kind="secondary" horizontalMargin="huge" verticalMargin="micro" />
 
 
-            {/* COMPONENTS ================================================= */}
+            {/* THEME ============================================================================================== */}
             <Row horizontalPadding="huge">
                 <Portion>
                     <Text size="large" weight="700" textColour="white" marginBottom="nano">Full Fictoan theme</Text>

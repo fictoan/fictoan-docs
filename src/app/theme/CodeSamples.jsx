@@ -1,4 +1,4 @@
-// Code sample 01 //////////////////////////////////////////////////////////////
+// THEME PROVIDER SETUP ////////////////////////////////////////////////////////////////////////////////////////////////
 export const sampleThemeProviderSetup = `import React, { useState } from "react";
 import { ThemeProvider } from "fictoan-react";
 import { Header } from "../Header/Header";
@@ -18,6 +18,7 @@ export const RootClientSideLayout = ({ theme, setTheme, children }: { children: 
     );
 };`;
 
+// COMPONENT WITH THEME TOGGLE /////////////////////////////////////////////////////////////////////////////////////////
 export const sampleHeaderSetup = `import { SetStateAction } from "react";
 import { Element, Button } from "fictoan-react";
 
@@ -52,7 +53,7 @@ export const sampleCSSSetup = `.theme-dark {
 
 
 
-// Code sample 01 //////////////////////////////////////////////////////////////
+// GLOBAL VARIABLES ////////////////////////////////////////////////////////////////////////////////////////////////////
 export const sampleThemeGlobals = `--global-border-radius : 8px;
 --global-border-width  : 1px;
 --global-focus-colour  : var(--blue);
@@ -66,7 +67,7 @@ export const sampleThemeGlobals = `--global-border-radius : 8px;
 --huge   : 24vmax;`;
 
 
-// Code sample 01 //////////////////////////////////////////////////////////////
+// FULL THEME //////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const sampleFictoanTheme = `/* ACCORDION //////////////////////////////////////////////////////////////// */
 :root {
     --accordion-chevron : var(--slate);
