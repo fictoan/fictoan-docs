@@ -145,7 +145,7 @@ const DrawerDocs = () => {
                                             { id : "position-opt-3", value : "bottom", label : "bottom" },
                                         ]}
                                         value={selectedPosition || "right"}
-                                        onChange={(value) => (value)}
+                                        onChange={(value) => setSelectedPosition(value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
