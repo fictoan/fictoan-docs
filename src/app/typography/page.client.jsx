@@ -31,8 +31,6 @@ import "./page-typography.css";
 import {
     sampleFontImport,
     sampleHeadings,
-    sampleHeadingSizing,
-    sampleHeadingSizingCalc,
     sampleTextSizing,
     sampleTextTheme,
 } from "./CodeSamples";

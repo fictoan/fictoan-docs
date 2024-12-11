@@ -1,4 +1,4 @@
-// Code sample 01 ==============================================================
+// Code sample 01 //////////////////////////////////////////////////////////////////////////////////////////////////////
 export const sampleHeadings = `<Heading1>Heading 1</Heading1>
 <Heading2>Heading 2</Heading2>
 <Heading3>Heading 3</Heading3>
@@ -7,7 +7,7 @@ export const sampleHeadings = `<Heading1>Heading 1</Heading1>
 <Heading6>Heading 6</Heading6>`;
 
 
-// Code sample 02 ==============================================================
+// Code sample 02 //////////////////////////////////////////////////////////////////////////////////////////////////////
 export const sampleTextTheme = `/* FLUID TYPE =================================================== */
 :root {
     --screen-width-min : 320;
@@ -50,7 +50,7 @@ export const sampleTextTheme = `/* FLUID TYPE ==================================
     --text-bg-selected               : var(--hue);`;
 
 
-// Code sample 03 ==============================================================
+// Code sample 03 //////////////////////////////////////////////////////////////////////////////////////////////////////
 export const sampleFontImport = `// fonts.css
 @font-face {
     font-family : "IBM Plex Sans";
@@ -66,22 +66,7 @@ export const sampleFontImport = `// fonts.css
     font-style  : normal;
 }`;
 
-
-// Code sample 04 ==============================================================
-export const sampleHeadingSizing = `--paragraph-font-size     : 1rem;
---heading-font-size       : 1.5rem;
---heading-size-multiplier : 1.2;`;
-
-// Code sample 04 ==============================================================
-export const sampleHeadingSizingCalc = `h1 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 2.4); }
-h2 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 2); }
-h3 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.64); }
-h4 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.48); }
-h5 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.24); }
-h6 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.16); }`;
-
-
-// Code sample 04 ==============================================================
+// Code sample 04 //////////////////////////////////////////////////////////////////////////////////////////////////////
 export const sampleTextSizing = `<Text size="nano">Nano text</Text>
 <Text size="micro">Micro text</Text>
 <Text size="tiny">Tiny text</Text>
