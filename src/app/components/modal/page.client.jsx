@@ -182,7 +182,7 @@ const ModalDocs = () => {
                                         name="checkbox-is-dismissible"
                                         label="Is dismissible"
                                         checked={isDismissible}
-                                        onChange={(value) => setIsDismissible(e.target.checked)}
+                                        onChange={(checked) => setIsDismissible(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -196,7 +196,7 @@ const ModalDocs = () => {
                                         name="checkbox-explicit-close"
                                         label="Add explicit close button"
                                         checked={addExplicitClose}
-                                        onChange={(value) => setAddExplicitClose(e.target.checked)}
+                                        onChange={(checked) => setAddExplicitClose(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -210,7 +210,7 @@ const ModalDocs = () => {
                                         name="checkbox-show-backdrop"
                                         label="Show backdrop"
                                         checked={showBackdrop}
-                                        onChange={(value) => setShowBackdrop(e.target.checked)}
+                                        onChange={(checked) => setShowBackdrop(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" verticalMargin="nano" />
@@ -224,7 +224,7 @@ const ModalDocs = () => {
                                         name="checkbox-blur-backdrop"
                                         label="Blur backdrop"
                                         checked={blurBackdrop}
-                                        onChange={(value) => setBlurBackdrop(e.target.checked)}
+                                        onChange={(checked) => setBlurBackdrop(checked)}
                                     />
                                 </Portion>
                             </Row>
