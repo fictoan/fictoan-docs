@@ -1,25 +1,26 @@
 "use client";
 
-// EXTERNAL DEPS ///////////////////////////////////////////////////////////////
+// EXTERNAL DEPS =======================================================================================================
 import { useState } from "react";
 
-// INTERNAL DEPS ///////////////////////////////////////////////////////////////
+// INTERNAL DEPS =======================================================================================================
 import {
     ContentWrapper,
     ThemeProvider,
 } from "fictoan-react";
 
-// COMPONENTS //////////////////////////////////////////////////////////////////
+// COMPONENTS ==========================================================================================================
 import { Sidebar } from "../components/Sidebar/Sidebar";
 import { SiteHeader } from "../components/Header/Header";
 import { SiteFooter } from "../components/Footer/Footer";
 
-// CONTEXTS ////////////////////////////////////////////////////////////////////
+// CONTEXTS ============================================================================================================
 
-// STYLES //////////////////////////////////////////////////////////////////////
+// STYLES ==============================================================================================================
 import "../styles/globals.css";
+import LoadingBar from "../components/LoadingBar/LoadingBar";
 
-// ASSETS //////////////////////////////////////////////////////////////////////
+// ASSETS ==============================================================================================================
 
 export const RootLayoutClient = ({ children }) => {
     const [sidebarState, setSidebarState] = useState("");
@@ -49,6 +50,8 @@ export const RootLayoutClient = ({ children }) => {
                     {children}
                     <SiteFooter />
                 </ContentWrapper>
+
+                <LoadingBar />
             </ThemeProvider>
         </body>
         </html>
