@@ -1378,10 +1378,10 @@ esutils@^2.0.2:
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
 
-fictoan-react@^1.11.1:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/fictoan-react/-/fictoan-react-1.11.1.tgz#9106726a73cc3e479b6ddb0587fdb9862e6265a8"
-  integrity sha512-DXRElEFc4ePc9kjc9kF2k5Le5gBQAx16XrCZ2ZQ2t/W35pv9FHZ9nSz1+tR5WE4udA700c1j9m/nXnWLmCY59g==
+fictoan-react@^1.11.2:
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/fictoan-react/-/fictoan-react-1.11.2.tgz#e498fa863134e360656a8369d0096b0ec682dfc5"
+  integrity sha512-cjmv435bRoDfysdyhttKsarUINJYtr7/bTKNHg5/VLAAvTD2bAtstUwGxUF9kk9wcW3N37quSRufwheCvIy1ww==
 
 function-bind@^1.1.2:
   version "1.1.2"

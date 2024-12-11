@@ -158,7 +158,6 @@ const PaginationDocs = () => {
                                     />
                                 </Portion>
 
-
                                 <Portion desktopSpan="half">
                                     <InputField
                                         type="number"
@@ -168,7 +167,6 @@ const PaginationDocs = () => {
                                     />
                                 </Portion>
 
-
                                 {/* Text inputs */}
                                 <Portion desktopSpan="half">
                                     <InputField
@@ -177,7 +175,6 @@ const PaginationDocs = () => {
                                         onChange={(value) => setLoadingText(value)}
                                     />
                                 </Portion>
-
 
                                 <Portion desktopSpan="half">
                                     <InputField
@@ -271,7 +268,6 @@ const PaginationDocs = () => {
                                     />
                                 </Portion>
 
-
                                 <Portion desktopSpan="half">
                                     <Checkbox
                                         id="show-next-button"
@@ -283,18 +279,16 @@ const PaginationDocs = () => {
                                     />
                                 </Portion>
 
-
                                 <Portion desktopSpan="half">
                                     <Checkbox
                                         id="show-go-to-input"
                                         value="show-go-to-input"
                                         name="show-go-to-input"
-                                        label="Show go to input"
+                                        label="Show “Go to page” input"
                                         checked={showGoToInput}
                                         onChange={(checked) => setShowGoToInput(checked)}
                                     />
                                 </Portion>
-
 
                                 <Portion desktopSpan="half">
                                     <Checkbox
@@ -306,7 +300,6 @@ const PaginationDocs = () => {
                                         onChange={(checked) => setIsLoading(checked)}
                                     />
                                 </Portion>
-
                             </Row>
                         </Card>
                     </Form>
