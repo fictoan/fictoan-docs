@@ -273,10 +273,10 @@ export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, se
             </Link>
 
             {/* FORM WRAPPER ======================================================================================= */}
-            <Link href="/components/form-wrapper">
+            <Link href="/components/form">
                 <SidebarItem onClick={closeMobileSidebar}>
                     <FormWrapperIcon />
-                    <Text weight="400">Form wrapper</Text>
+                    <Text weight="400">Form</Text>
                 </SidebarItem>
             </Link>
 
