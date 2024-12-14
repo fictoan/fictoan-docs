@@ -141,21 +141,21 @@ export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, se
                 </SidebarItem>
             </Link>
 
-            {/* BASE ELEMENT ======================================================================================= */}
-            <Link href="/base-element">
-                <SidebarItem onClick={closeMobileSidebar}>
-                    <BaseElementIcon />
-
-                    <Text weight="400">Base element</Text>
-                </SidebarItem>
-            </Link>
-
             {/* THEME ============================================================================================== */}
             <Link href="/theme" className={`${pathname === "/theme" ? "active" : ""}`}>
                 <SidebarItem onClick={closeMobileSidebar}>
                     <ThemeIcon />
 
                     <Text weight="400">Theme</Text>
+                </SidebarItem>
+            </Link>
+
+            {/* BASE ELEMENT ======================================================================================= */}
+            <Link href="/base-element">
+                <SidebarItem onClick={closeMobileSidebar}>
+                    <BaseElementIcon />
+
+                    <Text weight="400">Base element</Text>
                 </SidebarItem>
             </Link>
 
