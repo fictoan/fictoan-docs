@@ -216,7 +216,7 @@ export const IntroCode = () => {
                 <Portion>
                     <Div verticallyCentreItems pushItemsToEnds marginBottom="nano">
                         <Text textColour="blue" weight="700">
-                            EDIT SOME PROPS AND VALUES HERE—
+                            GO AHEAD, EDIT THESE  PROPS AND VALUES HERE—
                         </Text>
 
                         <Switch
@@ -264,6 +264,10 @@ export const IntroCode = () => {
                                 `</Row>`,
                             ].filter(Boolean).join("\n")}
                         </CodeBlock>
+
+                        <Heading5>
+                            Wasn&rsquo;t that some simple, elegant syntax?
+                        </Heading5>
                     </Div>
                 </Portion>
             </Row>
