@@ -193,7 +193,7 @@ const ColourDocs = () => {
                                 >
                                     <Div
                                         className="colour-indicator"
-                                        shape="rounded" padding="nano" marginRight="nano" bgColour={colour}
+                                        shape="rounded" marginRight="nano" bgColour={colour}
                                     />
                                     <Text align="centre">{colour}</Text>
                                 </OptionCard>

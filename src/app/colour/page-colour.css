@@ -15,12 +15,18 @@
     .colour-card {
         cursor : pointer;
 
+
         &:hover {
             .colour-name {
                 opacity     : 1;
                 font-weight : 700;
             }
         }
+    }
+
+    .colour-indicator {
+        width  : 64px;
+        height : 32px;
     }
 
     .colour-card[class*="dark"] {
@@ -45,7 +51,7 @@
     }
 
     #configurator {
-        position: relative;
+        position : relative;
     }
 
     .gradient-bg {

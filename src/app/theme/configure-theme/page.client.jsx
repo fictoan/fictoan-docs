@@ -36,8 +36,8 @@ import "../page-theming.css";
 // CODE SNIPPETS ===============================================================
 import {
     sampleThemeProviderSetup,
-    sampleHeaderSetup,
-    sampleCSSSetup,
+    sampleSwitcherSetup,
+    sampleThemeFile1,
     sampleThemeGlobals,
     sampleFictoanTheme,
 } from "../CodeSamples";

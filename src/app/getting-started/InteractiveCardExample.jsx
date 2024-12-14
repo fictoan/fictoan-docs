@@ -40,6 +40,7 @@ export const InteractiveCardExample = () => {
 
                         <Portion desktopSpan="three-fourth">
                             <RadioGroup
+                                name="padding-group"
                                 id="padding"
                                 options={[
                                     { id : "padding-opt-0", value : "none", label : "none" },

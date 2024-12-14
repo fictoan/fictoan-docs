@@ -444,8 +444,9 @@ const GettingStarted = () => {
                                                     </li>
                                                 </ul>
 
-                                                <Heading6 weight="400" marginTop="tiny">Good luck and build great
-                                                    things! 🥳</Heading6>
+                                                <Heading6 weight="400" marginTop="tiny">
+                                                    Good luck and build great things! 🥳
+                                                </Heading6>
                                             </>
                                         ),
                                     },

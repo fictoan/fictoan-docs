@@ -1,53 +1,108 @@
+// CSS THEMES SETUP ////////////////////////////////////////////////////////////////////////////////////////////////////
+export const sampleThemeFile1 = `/* File 1 — styles/theme-light.css */
+.theme-light {
+    --body-bg : var(--white);
+}`;
+
+export const sampleThemeFile2 = `/* File 2 — styles/theme-dark.css */
+.theme-dark {
+    --body-bg : var(--black);
+}`;
+
+export const sampleThemeFile3 = `/* File 3 — styles/company-x-theme.css */
+.company-x-theme {
+    --body-bg : var(--brand-bg-colour);
+}`;
+
 // THEME PROVIDER SETUP ////////////////////////////////////////////////////////////////////////////////////////////////
-export const sampleThemeProviderSetup = `import React, { useState } from "react";
-import { ThemeProvider } from "fictoan-react";
-import { Header } from "../Header/Header";
+export const sampleThemeProviderSetup = `import React from "react";
+import { ThemeProvider } from "fictoan-react"; // 1. Import ThemeProvider
 
+// 2. Import main Fictoan CSS
 import "fictoan-react/dist/index.css";
-import "../styles/theme-dark.css";
 
-export const RootClientSideLayout = ({ theme, setTheme, children }: { children: React.ReactNode }) => {
-    const [theme, setTheme] = useState<"theme-light" | "theme-dark">("theme-light");
+// 3. Import theme files
+import "../styles/theme-light.css";
+import "../styles/theme-dark.css";
+import "../styles/company-x-theme.css";
+
+export const RootClientSideLayout = ({ children }) => {
+    // 4. Create a themes array, based on the class names
+    const listOfThemes = ["theme-light", "theme-dark, "company-x-theme"];
     
     return (
-        <ThemeProvider currentTheme={theme}>
-            <Header theme={theme} setTheme={setTheme} />
-
+        <ThemeProvider
+            themeList={listOfThemes} // 5. Pass the themes array
+            currentTheme="theme-light" // 6. Pass a default theme
+        >
             {children}
         </ThemeProvider>
     );
 };`;
 
 // COMPONENT WITH THEME TOGGLE /////////////////////////////////////////////////////////////////////////////////////////
-export const sampleHeaderSetup = `import { SetStateAction } from "react";
-import { Element, Button } from "fictoan-react";
+export const sampleSwitcherSetup = `import React from "react";
+// 7. Import useTheme
+import { ThemeProvider, useTheme } from "fictoan-react";
 
-type HeaderProps = {
-    theme    : string;
-    setTheme : (theme: SetStateAction<"theme-light" | "theme-dark">) => void;
-};
+import "fictoan-react/dist/index.css";
 
-export const Header = ({ theme, setTheme }: HeaderProps) => {
-    const toggleTheme = () => {
-        if (theme === "theme-light") {
-            setTheme("theme-dark");
-        } else {
-            setTheme("theme-light");
-        }
+import "../styles/theme-light.css";
+import "../styles/theme-dark.css";
+import "../styles/company-x-theme.css";
+
+export const RootClientSideLayout = ({ children }) => {
+    // 8. Create an array of the themes, based on the class names
+    const listOfThemes = ["theme-light", "theme-dark", "company-x-theme"];
+    
+    // 9. Create a component to toggle between themes
+    const ThemeButtons = () => {
+        const [ theme, setTheme ] = useTheme();
+        return (
+            <>
+                {/* 9a. Direct usage ============================== */}
+                <Button onClick={() => setTheme("theme-light")}>
+                    Set light theme
+                </Button>
+                <Button onClick={() => setTheme("theme-dark")}>
+                    Set dark theme
+                </Button>
+                <Button onClick={() => setTheme("theme-test")}>
+                    Set test theme
+                </Button>
+
+                {/* #### OR #### */}
+
+                {/* 9b. Toggle between two themes ================== */}
+                <button onClick={() => setTheme(prevTheme => 
+                    prevTheme === "theme-light" ? "theme-dark" : "theme-light"
+                )}>
+                    Toggle Theme
+                </button>
+            </>
+        );
     };
 
     return (
-        <Element as="header">
-            <Button onClick={toggleTheme}>
-                Toggle theme
-            </Button>
-        </Element>
+        <ThemeProvider
+            themeList={listOfThemes}
+            currentTheme="theme-light"
+        >
+            // 10. Put it inside the ThemeProvider
+            <ThemeButtons />
+
+            {children}
+        </ThemeProvider>
     );
 };`;
 
-export const sampleCSSSetup = `.theme-dark {
-    --body-bg : var(--black)
-};`;
+
+
+
+
+
+
+
 
 
 

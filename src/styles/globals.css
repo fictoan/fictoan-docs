@@ -1,6 +1,7 @@
 @import "fictoan-react/dist/index.css";
 @import "./fonts.css";
 @import "./theme-dark.css";
+@import "./theme-test.css";
 @import "./theme-light.css";
 
 img { width : auto; }
@@ -78,14 +79,4 @@ li { color : var(--paragraph-text-colour); }
     0% { background-position : 0 50%; }
     50% { background-position : 100% 50%; }
     100% { background-position : 0 50%; }
-}
-
-/* TOP LEVEL LOADING BAR ==================================================== */
-@keyframes loading-gradient {
-    0% {
-        background-position: 0% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
 }

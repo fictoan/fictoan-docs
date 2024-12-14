@@ -66,7 +66,7 @@ import TypographyIcon from "../../assets/icons/typography.svg";
 export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, setShowSidebarOnMobile }) => {
     const ref = useRef(null);
 
-    const { theme, setTheme } = useTheme();
+    const [ theme, setTheme ] = useTheme();
 
     const toggleTheme = () => {
         if (theme === "theme-light") {

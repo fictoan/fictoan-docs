@@ -1,12 +1,14 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import { useState } from "react";
+import React, { useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
+    Button,
     ContentWrapper,
-    ThemeProvider,
+    ThemeProvider, useTheme,
+    // LoadingBar
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -15,20 +17,25 @@ import { SiteHeader } from "../components/Header/Header";
 import { SiteFooter } from "../components/Footer/Footer";
 
 // CONTEXTS ============================================================================================================
+// import { useNavigationProgress } from "./slow/usePageLoadProgress";
 
 // STYLES ==============================================================================================================
 import "../styles/globals.css";
-import LoadingBar from "../components/LoadingBar/LoadingBar";
 
-// ASSETS ==============================================================================================================
-
+// ROOT LAYOUT /////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const RootLayoutClient = ({ children }) => {
+    // SIDEBAR =========================================================================================================
     const [sidebarState, setSidebarState] = useState("");
     const [showSidebarOnMobile, setShowSidebarOnMobile] = useState(false);
 
     const toggleSidebarOnMobile = () => {
         setShowSidebarOnMobile(isShowing => !isShowing);
     };
+
+    const listOfThemes = ["theme-light", "theme-dark", "theme-test"];
+
+    // LOADING BAR =====================================================================================================
+    // const { progress, isLoading } = useNavigationProgress();
 
     return (
         <html lang="en">
@@ -37,22 +44,27 @@ export const RootLayoutClient = ({ children }) => {
         </head>
 
         <body>
-            <ThemeProvider currentTheme="theme-dark">
-                <Sidebar
-                    sidebarState={sidebarState}
-                    setSidebarState={setSidebarState}
-                    showSidebarOnMobile={showSidebarOnMobile}
-                    setShowSidebarOnMobile={setShowSidebarOnMobile}
-                />
+        <ThemeProvider themeList={listOfThemes} currentTheme="theme-dark">
+            {/* <LoadingBar */}
+            {/*     animateWhen={isLoading} */}
+            {/*     progress={progress} */}
+            {/*     isIndeterminate={false} */}
+            {/*     height="4px" */}
+            {/* /> */}
 
-                <ContentWrapper>
-                    <SiteHeader toggleSidebarOnMobile={toggleSidebarOnMobile} />
-                    {children}
-                    <SiteFooter />
-                </ContentWrapper>
+            <Sidebar
+                sidebarState={sidebarState}
+                setSidebarState={setSidebarState}
+                showSidebarOnMobile={showSidebarOnMobile}
+                setShowSidebarOnMobile={setShowSidebarOnMobile}
+            />
 
-                <LoadingBar />
-            </ThemeProvider>
+            <ContentWrapper>
+                <SiteHeader toggleSidebarOnMobile={toggleSidebarOnMobile} />
+                {children}
+                <SiteFooter />
+            </ContentWrapper>
+        </ThemeProvider>
         </body>
         </html>
     );
