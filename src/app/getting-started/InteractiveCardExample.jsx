@@ -41,7 +41,6 @@ export const InteractiveCardExample = () => {
                         <Portion desktopSpan="three-fourth">
                             <RadioGroup
                                 name="padding-group"
-                                id="padding"
                                 options={[
                                     { id : "padding-opt-0", value : "none", label : "none" },
                                     { id : "padding-opt-1", value : "nano", label : "nano" },
@@ -53,6 +52,7 @@ export const InteractiveCardExample = () => {
                                     { id : "padding-opt-7", value : "huge", label : "huge" },
                                 ]}
                                 value={selectedPadding}
+                                onChange={(value) => setSelectedPadding(value)}
                             />
                         </Portion>
                     </Row>
