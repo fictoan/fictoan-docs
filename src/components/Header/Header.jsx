@@ -68,6 +68,7 @@ export const SiteHeader = ({ toggleSidebarOnMobile }) => {
                     <Badge
                         id="wip-badge"
                         bgColour="red" textColour="white" shape="rounded"
+                        hideOnMobile
                     >
                         These Docs are WIP
                     </Badge>
