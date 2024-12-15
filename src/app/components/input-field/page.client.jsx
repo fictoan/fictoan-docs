@@ -28,7 +28,7 @@ import {
     Range,
     Select,
     CodeBlock,
-    Div,
+    Div, Badge,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -140,7 +140,7 @@ const InputFieldDocs = () => {
 
                 {/* CONFIGURATOR /////////////////////////////////////////////////////////////////////////////////// */}
                 <Portion desktopSpan="half">
-                    <Form spacing="none">
+                    <Form spacing="none" onSubmit={(e) => e.preventDefault()}>
                         <Card padding="micro" shape="rounded">
                             <Header verticallyCentreItems pushItemsToEnds marginBottom="micro">
                                 <Text size="large" weight="700" textColour="white">
@@ -167,25 +167,21 @@ const InputFieldDocs = () => {
                                 </Portion>
 
                                 {/* LABEL ========================================================================== */}
-                                <Portion>
+                                <Portion desktopSpan="half">
                                     <InputField
                                         type="text"
                                         label="Label"
                                         onChange={(value) => setLabel(value)}
                                     />
-
-                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* PLACEHOLDER ==================================================================== */}
-                                <Portion>
+                                <Portion desktopSpan="half">
                                     <InputField
                                         type="text"
                                         label="Placeholder"
                                         onChange={(value) => setPlaceholder(value)}
                                     />
-
-                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* REQUIRED ======================================================================= */}
@@ -198,8 +194,6 @@ const InputFieldDocs = () => {
                                         checked={isRequired}
                                         onChange={(checked) => setIsRequired(checked)}
                                     />
-
-                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* HELP TEXT ====================================================================== */}
@@ -209,12 +203,14 @@ const InputFieldDocs = () => {
                                         label="Help text"
                                         onChange={(value) => setHelpText(value)}
                                     />
-
-                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
+                            </Row>
 
+                            <Divider verticalMargin="micro" />
+
+                            <Row marginBottom="none">
                                 {/* REQUIRED ======================================================================= */}
-                                <Portion>
+                                <Portion desktopSpan="half">
                                     <Checkbox
                                         id="checkbox-validate-this"
                                         value="checkbox-validate-this"
@@ -223,18 +219,25 @@ const InputFieldDocs = () => {
                                         checked={validateThis}
                                         onChange={(checked) => setValidateThis(checked)}
                                     />
-
-                                    <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                 </Portion>
 
                                 {/* PATTERN ======================================================================== */}
                                 {validateThis && (
-                                    <Portion>
+                                    <Portion desktopSpan="half">
                                         <InputField
                                             type="text"
                                             label="Validation regex pattern"
                                             value={pattern}
                                             onChange={(value) => setPattern(value)}
+                                            iconRight={
+                                                <Button
+                                                    isFullWidth isFullHeight
+                                                    padding="none" bgColour="transparent" textColour="slate"
+                                                    onClick={() => setPattern("")}
+                                                >
+                                                    &times;
+                                                </Button>
+                                            }
                                         />
 
                                         <Button
@@ -242,25 +245,16 @@ const InputFieldDocs = () => {
                                             size="small"
                                             kind="tertiary"
                                             onClick={() => setPattern(emailPattern)}
-                                            marginTop="micro"
+                                            marginTop="nano" marginBottom="micro"
                                         >
                                             Use email pattern
                                         </Button>
 
-                                        <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
-                                    </Portion>
-                                )}
-
-                                {/* HELP TEXT ====================================================================== */}
-                                {validateThis && (
-                                    <Portion>
                                         <InputField
                                             type="text"
                                             label="Error text"
                                             onChange={(value) => setErrorText(value)}
                                         />
-
-                                        <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
                                     </Portion>
                                 )}
                             </Row>

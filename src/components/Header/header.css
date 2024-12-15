@@ -54,4 +54,7 @@
     }
 }
 
+.theme-light #site-header #github-link svg {
+    fill: black;
+}
 

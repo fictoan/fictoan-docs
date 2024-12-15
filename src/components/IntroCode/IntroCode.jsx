@@ -243,7 +243,7 @@ export const IntroCode = () => {
                             {[
                                 `<Row horizontalPadding="medium" marginTop="tiny" marginBottom="small"> {/* Try "none", "small", "medium", "large" or "huge" */}`,
                                 `    <Portion desktopSpan="half"> {/* Try "one-third", or whole numbers between 1–24 */}`,
-                                `        <Heading1 textColour="blue-light20" marginBottom="micro" weight="700">`,
+                                `        <Heading1 textColour="blue-light20" marginBottom="nano" weight="700">`,
                                 `            Ship UI in half the time.`,
                                 `        </Heading1> \n`,
                                 `        <Heading4 marginBottom="micro">`,
