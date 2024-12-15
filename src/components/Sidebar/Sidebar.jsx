@@ -66,15 +66,15 @@ import TypographyIcon from "../../assets/icons/typography.svg";
 export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, setShowSidebarOnMobile }) => {
     const ref = useRef(null);
 
-    const [ theme, setTheme ] = useTheme();
-
-    const toggleTheme = () => {
-        if (theme === "theme-light") {
-            setTheme("theme-dark");
-        } else {
-            setTheme("theme-light");
-        }
-    };
+    // const [ theme, setTheme ] = useTheme();
+    //
+    // const toggleTheme = () => {
+    //     if (theme === "theme-light") {
+    //         setTheme("theme-dark");
+    //     } else {
+    //         setTheme("theme-light");
+    //     }
+    // };
 
     const openMobileSidebar = () => {
         setShowSidebarOnMobile(true);
@@ -447,12 +447,12 @@ export const Sidebar = ({ sidebarState, setSidebarState, showSidebarOnMobile, se
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {/* FOOTER */}
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
-            <SidebarFooter>
-                <SidebarItem onClick={toggleTheme}>
-                    <ThemeSwitchIcon />
-                    <Text weight="400">Theme</Text>
-                </SidebarItem>
-            </SidebarFooter>
+            {/* <SidebarFooter> */}
+            {/*     <SidebarItem onClick={toggleTheme}> */}
+            {/*         <ThemeSwitchIcon /> */}
+            {/*         <Text weight="400">Theme</Text> */}
+            {/*     </SidebarItem> */}
+            {/* </SidebarFooter> */}
         </SidebarWrapper>
     );
 };

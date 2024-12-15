@@ -10,8 +10,9 @@
     height          : 56px;
     align-items     : center;
     justify-content : space-between;
+    overflow        : hidden;
 
-    > * { line-height: 1; }
+    > * { line-height : 1; }
 
     /* MOBILE MENU TOGGLE /////////////////////////////////////////////////// */
     #menu-toggle * {
@@ -42,7 +43,15 @@
         display         : flex;
         justify-content : center;
         align-items     : center;
+        z-index         : 500;
     }
 
-    /* WIP BADGE //////////////////////////////////////////////////////////// */
+    #toggle-and-badge-wrapper {
+        display        : flex;
+        align-items    : center;
+        flex-direction : row;
+        gap            : 32px;
+    }
 }
+
+

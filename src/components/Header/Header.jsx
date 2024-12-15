@@ -1,7 +1,7 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 // INTERNAL DEPS =======================================================================================================
@@ -9,11 +9,12 @@ import {
     Badge,
     Div,
     Header,
-    Heading5,
+    Heading5, Span, Text, useTheme,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
 import { SearchBar } from "./SearchBar/SearchBar";
+import { ThemeToggle } from "./ThemeToggle/ThemeToggle";
 import { VersionBadge } from "./VersionBadge";
 
 // STYLES ==============================================================================================================
@@ -59,13 +60,18 @@ export const SiteHeader = ({ toggleSidebarOnMobile }) => {
                     <SearchBar />
                 </Div>
 
-                {/* WIP BADGE ====================================================================================== */}
-                <Badge
-                    id="wip-badge"
-                    bgColour="red" textColour="white" shape="rounded"
-                >
-                    These Docs are WIP
-                </Badge>
+                <Div id="toggle-and-badge-wrapper">
+                    {/* THEME TOGGLE =============================================================================== */}
+                    <ThemeToggle />
+
+                    {/* WIP BADGE ================================================================================== */}
+                    <Badge
+                        id="wip-badge"
+                        bgColour="red" textColour="white" shape="rounded"
+                    >
+                        These Docs are WIP
+                    </Badge>
+                </Div>
             </Header>
         </>
     );
