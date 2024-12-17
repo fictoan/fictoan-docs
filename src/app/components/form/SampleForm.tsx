@@ -228,7 +228,7 @@ export const SampleForm = ({ spacing, isJoint, isButtonFullWidth }) => {
                             value={formData.password}
                             onChange={handleInputChange("password")}
                             helpText="At least 8 characters"
-                            iconRight={
+                            innerIconRight={
                                 <div
                                     onClick={(e) => {
                                         e.stopPropagation();

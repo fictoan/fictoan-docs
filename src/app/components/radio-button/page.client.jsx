@@ -22,7 +22,7 @@ import {
     Header,
     Select,
     Range, Checkbox, Switch, RadioButton,
-CodeBlock
+    CodeBlock, RadioGroup,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -51,16 +51,17 @@ const RadioButtonDocs = () => {
     // THEME ===========================================================================================================
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(radioButtonProps.variables);
 
-    const handleDefaultCheckedChange = (event) => {
-        setDefaultChecked(event.target.value);
+    const handleDefaultCheckedChange = (checked) => {
+        setDefaultChecked(checked);
     };
 
-    const handleRadioChange = (event) => {
-        setUserSelectedRadio(event.target.value); // Update the user-selected radio button
+    const handleRadioChange = (value) => {
+        setUserSelectedRadio(value);
     };
 
-    const handleDisableChange = (radioId) => {
-        setIsDisabled((prev) => ({ ...prev, [radioId]: !prev[radioId] }));
+    const handleDisableChange = (value) => {
+        const id = value.split("-").pop(); // Extract yes/no/maybe from the ID
+        setIsDisabled((prev) => ({ ...prev, [id]: !prev[id] }));
     };
 
     const isChecked = (value) => {
@@ -101,32 +102,16 @@ const RadioButtonDocs = () => {
                         as="div" padding="small" shape="rounded" bgColour="slate-light80"
                         data-centered-children
                     >
-                        <RadioButton
+                        <RadioGroup
                             id="radio-1"
                             name="demo-group"
-                            value="yes"
-                            label="Yes"
-                            checked={isChecked("yes")}
+                            value={userSelectedRadio || defaultChecked} // Use controlled value
+                            options={[
+                                { id: "radio-1", value: "yes", label: "Yes", disabled: isDisabled.yes },
+                                { id: "radio-2", value: "no", label: "No", disabled: isDisabled.no },
+                                { id: "radio-3", value: "maybe", label: "Maybe", disabled: isDisabled.maybe },
+                            ]}
                             onChange={handleRadioChange}
-                            disabled={isDisabled.yes}
-                        />
-                        <RadioButton
-                            id="radio-2"
-                            name="demo-group"
-                            value="no"
-                            label="No"
-                            checked={isChecked("no")}
-                            onChange={handleRadioChange}
-                            disabled={isDisabled.no}
-                        />
-                        <RadioButton
-                            id="radio-3"
-                            name="demo-group"
-                            value="maybe"
-                            label="Maybe"
-                            checked={isChecked("maybe")}
-                            onChange={handleRadioChange}
-                            disabled={isDisabled.maybe}
                         />
                     </Element>
                 </Portion>
@@ -216,29 +201,29 @@ const RadioButtonDocs = () => {
                                 <Portion>
                                     <Checkbox
                                         id="checkbox-disable-first"
-                                        value="checkbox-disable-first"
-                                        name="checkbox-disable-first"
+                                        value="checkbox-disable-yes"
+                                        name="checkbox-disable"
                                         label="Disable 'Yes'"
                                         checked={isDisabled.yes}
-                                        onChange={() => handleDisableChange("yes")}
+                                        onChange={() => handleDisableChange("checkbox-disable-yes")}
                                     />
 
                                     <Checkbox
                                         id="checkbox-disable-second"
-                                        value="checkbox-disable-second"
-                                        name="checkbox-disable-second"
+                                        value="checkbox-disable-no"
+                                        name="checkbox-disable"
                                         label="Disable 'No'"
                                         checked={isDisabled.no}
-                                        onChange={() => handleDisableChange("no")}
+                                        onChange={() => handleDisableChange("checkbox-disable-no")}
                                     />
 
                                     <Checkbox
                                         id="checkbox-disable-third"
-                                        value="checkbox-disable-third"
-                                        name="checkbox-disable-third"
+                                        value="checkbox-disable-maybe"
+                                        name="checkbox-disable"
                                         label="Disable 'Maybe'"
                                         checked={isDisabled.maybe}
-                                        onChange={() => handleDisableChange("maybe")}
+                                        onChange={() => handleDisableChange("checkbox-disable-maybe")}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />

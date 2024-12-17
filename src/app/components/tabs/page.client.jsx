@@ -175,7 +175,7 @@ const TabsDocs = () => {
                                             { id : "align-opt-3", value : "center", label : "center" },
                                         ]}
                                         value={selectedAlign}
-                                        onChange={(value) => setSelectedAlign(value !== "none" ? value : undefined)}
+                                        onChange={(value) => setSelectedAlign(value)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
@@ -189,7 +189,7 @@ const TabsDocs = () => {
                                         name="checkbox-full-width"
                                         label="Make full width"
                                         checked={isFullWidth}
-                                        onChange={(event) => setIsFullWidth(checked)}
+                                        onChange={(checked) => setIsFullWidth(checked)}
                                     />
 
                                     <Divider kind="secondary" horizontalMargin="none" marginTop="micro" />
