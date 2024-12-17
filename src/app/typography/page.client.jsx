@@ -387,10 +387,6 @@ const TypographyDocs = () => {
                         <Text size="medium">Medium text</Text>
                         <Text size="large">Large text</Text>
                         <Text size="huge">Huge text</Text>
-                        <Text size="mega">Mega text</Text>
-                        <Text size="giga">Giga text</Text>
-                        <Text size="tera">Tera text</Text>
-                        <Text size="peta">Peta text</Text>
                     </Portion>
 
                     <Portion>

@@ -51,7 +51,7 @@ const InputFieldDocs = () => {
     const [isRequired, setIsRequired] = useState(false);
     const [helpText, setHelpText] = useState("");
     const [validateThis, setValidateThis] = useState(false);
-    const [pattern, setPattern] = useState("");
+    const [pattern, setPattern] = useState(null);
     const [emailPattern, setEmailPattern] = useState("[a-zA-Z0-9_.+\\-]+@[a-zA-Z0-9\\-]+\\.[a-zA-Z0-9\\-.]+$");
     const [errorText, setErrorText] = useState("");
     const [innerTextLeft, setInnerTextLeft] = useState("");
