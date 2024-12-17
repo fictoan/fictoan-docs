@@ -83,17 +83,17 @@ li { color : var(--paragraph-text-colour); }
 
 /* Airplane =========================================== */
 @keyframes animateAirplane {
-    0% { transform: translateX(-102vw) translateY(60px) rotate(12deg); } /* Source, facing right */
-    5% { transform: translateX(-102vw) translateY(60px) rotate(12deg); } /* Source, facing right */
+    0% { transform: translateX(-102vw) translateY(50px) rotate(12deg); } /* Source, facing right */
+    5% { transform: translateX(-102vw) translateY(50px) rotate(12deg); } /* Source, facing right */
 
 
-    49% { transform : translateX(102vw) translateY(60px) rotate(12deg); } /* Destination, facing right */
-    51% { transform : translateX(102vw) translateY(60px) scaleX(-1) rotate(12deg); } /* Destination, facing left */
+    49% { transform : translateX(102vw) translateY(50px) rotate(12deg); } /* Destination, facing right */
+    51% { transform : translateX(102vw) translateY(50px) scaleX(-1) rotate(12deg); } /* Destination, facing left */
 
 
-    95% { transform : translateX(-102vw) translateY(60px) scaleX(-1) rotate(12deg); } /* Source, facing left */
-    99% { transform : translateX(-102vw) translateY(60px) scaleX(-1) rotate(12deg); } /* Source, facing left */
-    100% { transform : translateX(-102vw) translateY(60px) rotate(12deg); } /* Source, facing right */
+    95% { transform : translateX(-102vw) translateY(50px) scaleX(-1) rotate(12deg); } /* Source, facing left */
+    99% { transform : translateX(-102vw) translateY(50px) scaleX(-1) rotate(12deg); } /* Source, facing left */
+    100% { transform : translateX(-102vw) translateY(50px) rotate(12deg); } /* Source, facing right */
 }
 
 /* Blinking light of the airplane =========================================== */

@@ -37,13 +37,11 @@ export const SampleForm = ({ spacing, isJoint, isButtonFullWidth }) => {
         password    : "",
         phoneNumber : "",
         website     : "",
-        searchQuery : "",
 
         // Rich inputs
         birthDate : "",
         age       : "",
         about     : "",
-        comments  : "",
 
         // Selects and ListBox
         country  : "",
@@ -53,7 +51,6 @@ export const SampleForm = ({ spacing, isJoint, isButtonFullWidth }) => {
 
         // Options
         gender            : "female",
-        subscription      : "monthly",
         contactPreference : "sms",
 
         // Checkboxes and Switches
@@ -62,15 +59,15 @@ export const SampleForm = ({ spacing, isJoint, isButtonFullWidth }) => {
         hobbies       : [] as string[],
         notifications : false,
         newsletter    : false,
-        termsAccepted : false,
 
         // Range
         experienceLevel     : "5",
         experienceAsManager : "3",
 
         // File
-        profilePicture : "",
         documents      : [],
+
+        termsAccepted : false,
     });
 
     const [showPassword, setShowPassword] = useState(false);
@@ -275,7 +272,7 @@ export const SampleForm = ({ spacing, isJoint, isButtonFullWidth }) => {
                         />
 
                         {/* COUNTRY AND LANGUAGE =================================================================== */}
-                        <FormItemGroup>
+                        <FormItemGroup equalWidthForChildren>
                             <Select
                                 label="Country"
                                 name="country"
@@ -317,6 +314,8 @@ export const SampleForm = ({ spacing, isJoint, isButtonFullWidth }) => {
                                 { value : "svelte", label : "Svelte" },
                             ]}
                             allowMultiSelect
+                            allowCustomEntries
+                            helpText="Select from the list, or add your own"
                         />
 
                         {/* FILE UPLOAD ============================================================================ */}
@@ -335,7 +334,7 @@ export const SampleForm = ({ spacing, isJoint, isButtonFullWidth }) => {
                         />
 
                         {/* EXPERIENCE ============================================================================= */}
-                        <FormItemGroup>
+                        <FormItemGroup equalWidthForChildren>
                             <Range
                                 isFullWidth
                                 label="Experience"
@@ -452,23 +451,25 @@ export const SampleForm = ({ spacing, isJoint, isButtonFullWidth }) => {
                         {/*     onChange={(values: any) => setFormData({ ...formData, food : values })} */}
                         {/* /> */}
 
-                        {/* NOTIFICATIONS ========================================================================== */}
-                        <Switch
-                            id="notifications"
-                            name="notifications"
-                            label="Enable notifications"
-                            checked={formData.notifications}
-                            onChange={handleCheckboxChange("notifications")}
-                        />
+                        <FormItemGroup equalWidthForChildren>
+                            {/* NOTIFICATIONS ========================================================================== */}
+                            <Switch
+                                id="notifications"
+                                name="notifications"
+                                label="Enable notifications"
+                                checked={formData.notifications}
+                                onChange={handleCheckboxChange("notifications")}
+                            />
 
-                        {/* NEWSLETTER ============================================================================= */}
-                        <Switch
-                            id="newsletter"
-                            name="newsletter"
-                            label="Subscribe to newsletter"
-                            checked={formData.newsletter}
-                            onChange={handleCheckboxChange("newsletter")}
-                        />
+                            {/* NEWSLETTER ============================================================================= */}
+                            <Switch
+                                id="newsletter"
+                                name="newsletter"
+                                label="Subscribe to newsletter"
+                                checked={formData.newsletter}
+                                onChange={handleCheckboxChange("newsletter")}
+                            />
+                        </FormItemGroup>
 
                         <Divider marginBottom="micro" kind="secondary" />
 

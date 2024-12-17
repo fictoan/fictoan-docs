@@ -73,23 +73,24 @@
         left     : 0;
 
         p {
-            animation : 120s infinite animateAirplane;
-            clip-path : inset(0 0 30% 0);
+            position  : relative;
+            font-size : 28px;
+            animation : 140s infinite animateAirplane;
+            clip-path : inset(0 0 32% 0);
 
             &::after {
                 content       : "";
                 position      : absolute;
                 opacity       : 0;
-                top           : 10px;
-                left          : 3px;
+                top           : 18px;
+                left          : 6px;
                 border-radius : 50%;
                 width         : 2px;
                 height        : 2px;
                 background    : var(--green);
                 box-shadow    : 0 0 2px 1px var(--green-light10);
-                animation:
-                        2s infinite blinkingLight,
-                        120s infinite lightColor;
+                animation     : 2s infinite blinkingLight,
+                140s infinite lightColor;
             }
         }
     }

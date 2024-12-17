@@ -1,14 +1,14 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
     Button,
     ContentWrapper,
-    ThemeProvider, useTheme,
-    // LoadingBar
+    ThemeProvider,
+    LoadingBar
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -17,7 +17,7 @@ import { SiteHeader } from "../components/Header/Header";
 import { SiteFooter } from "../components/Footer/Footer";
 
 // CONTEXTS ============================================================================================================
-// import { useNavigationProgress } from "./slow/usePageLoadProgress";
+import { useNavigationProgress } from "./slow/usePageLoadProgress";
 
 // STYLES ==============================================================================================================
 import "../styles/globals.css";
@@ -28,6 +28,7 @@ export const RootLayoutClient = ({ children }) => {
     const [sidebarState, setSidebarState] = useState("");
     const [showSidebarOnMobile, setShowSidebarOnMobile] = useState(false);
 
+
     const toggleSidebarOnMobile = () => {
         setShowSidebarOnMobile(isShowing => !isShowing);
     };
@@ -35,7 +36,8 @@ export const RootLayoutClient = ({ children }) => {
     const listOfThemes = ["theme-light", "theme-dark", "theme-test"];
 
     // LOADING BAR =====================================================================================================
-    // const { progress, isLoading } = useNavigationProgress();
+    const loadingBarRef = useRef(null);
+    useNavigationProgress(loadingBarRef);
 
     return (
         <html lang="en">
@@ -45,12 +47,13 @@ export const RootLayoutClient = ({ children }) => {
 
         <body>
         <ThemeProvider themeList={listOfThemes} currentTheme="theme-dark">
-            {/* <LoadingBar */}
-            {/*     animateWhen={isLoading} */}
-            {/*     progress={progress} */}
-            {/*     isIndeterminate={false} */}
-            {/*     height="4px" */}
-            {/* /> */}
+            <LoadingBar
+                ref={loadingBarRef}
+                height="4px"
+                bgColour="blue"
+                minimum={10}
+                position="top"
+            />
 
             <Sidebar
                 sidebarState={sidebarState}

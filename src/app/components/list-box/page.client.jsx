@@ -49,8 +49,6 @@ const ListBoxDocs = () => {
 
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(listBoxProps.variables);
 
-    const sampleOnChangeCode = `onChange={(value) => setSomeState(value)}`;
-
     return (
         <Article id="page-list-box">
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -69,10 +67,6 @@ const ListBoxDocs = () => {
                     <ul>
                         <li>Supports both single and multi-select modes</li>
                         <li>Searchable options with fuzzy matching</li>
-                        <li>
-                            Pass the <code>value</code> directly to the onChange handler, like so:
-                            <CodeBlock withSyntaxHighlighting source={sampleOnChangeCode} language="javascript" />
-                        </li>
                     </ul>
                 </Portion>
             </Row>

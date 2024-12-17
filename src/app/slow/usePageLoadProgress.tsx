@@ -1,66 +1,34 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useParams, useSearchParams, usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
+// import type { LoadingBarRef } from "fictoan-react";
 
-export function useNavigationProgress() {
-    const [progress, setProgress] = useState(0);
-    const [isLoading, setIsLoading] = useState(false);
-
+export function useNavigationProgress(loadingRef: React.RefObject<any>) {
     const pathname = usePathname();
-    const params = useParams();
     const searchParams = useSearchParams();
+    const isFirstRender = useRef(true);
 
     useEffect(() => {
-        let timeoutId: NodeJS.Timeout;
-
-        const startLoading = () => {
-            console.log("🚀 Navigation started");
-            setIsLoading(true);
-            setProgress(0);
-
-            // Simulate progress
-            const simulateProgress = () => {
-                setProgress(prev => {
-                    if (prev < 90) {
-                        // Schedule next increment
-                        timeoutId = setTimeout(simulateProgress, 200);
-                        // Gradually slow down progress
-                        const increment = Math.max(1, (90 - prev) / 10);
-                        return Math.min(90, prev + increment);
-                    }
-                    return prev;
-                });
-            };
-
-            // Start progress simulation
-            simulateProgress();
-        };
-
-        const completeLoading = () => {
-            clearTimeout(timeoutId);
-            setProgress(100);
-
-            // Wait for completion animation
-            setTimeout(() => {
-                setIsLoading(false);
-                setProgress(0);
-            }, 500);
-        };
-
-        // Start loading on any navigation change
-        if (!isLoading) {
-            startLoading();
-
-            // Simulate navigation completion
-            // In a real app, you might want to detect actual content load
-            setTimeout(completeLoading, 1000);
+        // Skip initial render
+        if (isFirstRender.current) {
+            isFirstRender.current = false;
+            return;
         }
 
-        return () => {
-            clearTimeout(timeoutId);
-        };
-    }, [pathname, searchParams, params]);
+        // Start progress on navigation
+        loadingRef.current?.start();
 
-    return { progress, isLoading };
+        // Complete after a short delay to account for content loading
+        const timer = setTimeout(() => {
+            loadingRef.current?.complete();
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, [pathname, searchParams, loadingRef]);
+
+    return {
+        pathname,
+        searchParams
+    };
 }

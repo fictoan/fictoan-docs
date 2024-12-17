@@ -1,7 +1,7 @@
 "use client";
 
 // EXTERNAL DEPS =======================================================================================================
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // INTERNAL DEPS =======================================================================================================
 import {
@@ -28,7 +28,7 @@ import {
     Range,
     Select,
     CodeBlock,
-    Div, Badge,
+    Div, Badge, FormItem, FormItemGroup,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
@@ -45,8 +45,6 @@ import { colourOptions } from "../../colour/colours";
 
 
 const InputFieldDocs = () => {
-    // SAMPLE ==========================================================================================================
-
     // CUSTOMISE =======================================================================================================
     const [label, setLabel] = useState("");
     const [placeholder, setPlaceholder] = useState("");
@@ -56,6 +54,10 @@ const InputFieldDocs = () => {
     const [pattern, setPattern] = useState("");
     const [emailPattern, setEmailPattern] = useState("[a-zA-Z0-9_.+\\-]+@[a-zA-Z0-9\\-]+\\.[a-zA-Z0-9\\-.]+$");
     const [errorText, setErrorText] = useState("");
+    const [innerTextLeft, setInnerTextLeft] = useState("");
+    const [innerTextRight, setInnerTextRight] = useState("");
+    const [innerIconLeft, setInnerIconLeft] = useState(null);
+    const [innerIconRight, setInnerIconRight] = useState(null);
 
     // THEME ===========================================================================================================
     const { componentVariables, handleVariableChange, cssVariablesList } = useThemeVariables(inputProps.variables);
@@ -93,10 +95,10 @@ const InputFieldDocs = () => {
             {/*             <InputField */}
             {/*                 id="sample-input" */}
             {/*                 label="Label" */}
-            {/*                 stringLeft="stringLeft" */}
-            {/*                 // iconLeft={<BadgeIcon />} */}
-            {/*                 stringRight="stringRight" */}
-            {/*                 // iconRight={<CheckboxIcon />} */}
+            {/*                 innerTextLeft="innerTextLeft" */}
+            {/*                 // innerIconLeft={<BadgeIcon />} */}
+            {/*                 innerTextRight="innerTextRight" */}
+            {/*                 // innerIconRight={<CheckboxIcon />} */}
             {/*             /> */}
             {/*         </Div> */}
             {/*     </Portion> */}
@@ -112,29 +114,29 @@ const InputFieldDocs = () => {
                         as="div" padding="small" shape="rounded" bgColour="slate-light80"
                         data-centered-children
                     >
-                        <InputField
-                            {...(
-                                label !== undefined ? { label : label } : {}
-                            )}
-                            {...(
-                                placeholder !== undefined ? { placeholder : placeholder } : {}
-                            )}
-                            {...(
-                                isRequired !== undefined ? { required : isRequired } : {}
-                            )}
-                            {...(
-                                helpText !== undefined ? { helpText : helpText } : {}
-                            )}
-                            {...(
-                                validateThis !== undefined ? { validateThis : validateThis } : {}
-                            )}
-                            {...(
-                                pattern !== undefined ? { pattern : pattern } : {}
-                            )}
-                            {...(
-                                errorText !== undefined ? { errorText : errorText } : {}
-                            )}
-                        />
+                        <Form>
+                            {/* <FormItemGroup isJoint> */}
+                                {/* <Select options={[ */}
+                                {/*     { label : "Bash", value : "bash" }, */}
+                                {/*     { label : "Rust", value : "rust" }, */}
+                                {/*     { label : "Swift", value : "swift" }, */}
+                                {/* ]} /> */}
+                                <InputField
+                                    {...(label !== undefined ? { label : label } : {})}
+                                    {...(placeholder !== undefined ? { placeholder : placeholder } : {})}
+                                    {...(isRequired !== undefined ? { required : isRequired } : {})}
+                                    {...(helpText !== undefined ? { helpText : helpText } : {})}
+                                    {...(validateThis !== undefined ? { validateThis : validateThis } : {})}
+                                    {...(pattern !== undefined ? { pattern : pattern } : {})}
+                                    {...(errorText !== undefined ? { errorText : errorText } : {})}
+                                    {...(innerTextLeft !== undefined ? { innerTextLeft : innerTextLeft } : {})}
+                                    {...(innerTextRight !== undefined ? { innerTextRight : innerTextRight } : {})}
+                                    {...(innerIconLeft !== undefined ? { innerIconLeft : innerIconLeft } : {})}
+                                    {...(innerIconRight !== undefined ? { innerIconRight : innerIconRight } : {})}
+                                />
+                                {/* <Button kind="primary">hlsdd</Button> */}
+                            {/* </FormItemGroup> */}
+                        </Form>
                     </Element>
                 </Portion>
 
@@ -161,6 +163,10 @@ const InputFieldDocs = () => {
                                             validateThis ? `    validateThis` : null,
                                             pattern ? `    pattern="${pattern}"` : null,
                                             errorText ? `    errorText="${errorText}"` : null,
+                                            innerTextLeft ? `    stringLeft="${innerTextLeft}"` : null,
+                                            innerTextRight ? `    stringRight="${innerTextRight}"` : null,
+                                            innerIconLeft ? `    iconLeft={${innerIconLeft}}` : null,
+                                            innerIconRight ? `    iconRight={${innerIconRight}}` : null,
                                             `/>`,
                                         ].filter(Boolean).join("\n")}
                                     </CodeBlock>
@@ -202,6 +208,24 @@ const InputFieldDocs = () => {
                                         type="text"
                                         label="Help text"
                                         onChange={(value) => setHelpText(value)}
+                                    />
+                                </Portion>
+
+                                {/* LEFT STRING ==================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <InputField
+                                        type="text"
+                                        label="Left side text"
+                                        onChange={(value) => setInnerTextLeft(value)}
+                                    />
+                                </Portion>
+
+                                {/* RIGHT STRING =================================================================== */}
+                                <Portion desktopSpan="half">
+                                    <InputField
+                                        type="text"
+                                        label="Right side text"
+                                        onChange={(value) => setInnerTextRight(value)}
                                     />
                                 </Portion>
                             </Row>
