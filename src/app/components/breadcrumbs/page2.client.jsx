@@ -106,7 +106,7 @@ const BreadcrumbsDocs = () => {
         <Article id="page-breadcrumbs">
             <Row horizontalPadding="huge" marginTop="medium" marginBottom="small">
                 <Portion>
-                    <Heading1>Breadcrumbs</Heading1>
+                    <Heading1>Breadcrumbsss</Heading1>
                     <Text size="large" marginBottom="small">
                         A set of links to show the current page’s hierarchy
                     </Text>

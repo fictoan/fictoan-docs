@@ -8,7 +8,7 @@
     /* BREADCRUMBS ////////////////////////////////////////////////////////// */
     --breadcrumbs-wrapper-bg                  : var(--transparent);
 
-    --breadcrumb-item-text-colour             : var(--paragraph-text-colour);
+    --breadcrumb-item-text-colour             : var(--slate);
     --breadcrumb-item-text-colour-active      : var(--paragraph-text-colour);
 
     --breadcrumb-item-separator-colour        : var(--slate-light10);

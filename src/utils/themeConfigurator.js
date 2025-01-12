@@ -85,8 +85,8 @@ const extractUnitSuffix = (value) => {
 const RangeInput = ({ name, defaultValue, onChange, suffix = "px" }) => {
     const [rangeValue, setRangeValue] = useState(defaultValue);
 
-    const handleChange = useCallback((e) => {
-        const newValue = parseInt(value);
+    const handleChange = useCallback((newValue) => {
+        // newValue is already a number from Range component
         setRangeValue(newValue);
         onChange(name, `${newValue}${suffix}`);
     }, [name, onChange, suffix]);

@@ -27,7 +27,7 @@ import {
     Breadcrumbs,
     Div,
     RadioTabGroup,
-    CodeBlock
+    CodeBlock,
 } from "fictoan-react";
 
 // COMPONENTS ==========================================================================================================
