@@ -1,3 +1,10 @@
+| :warning: WARNING          |
+|:---------------------------|
+| This repo is now read-only, Docs has been moved to [fictoan/fictoan](https://github.com/fictoan/fictoan)      |
+
+---
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
